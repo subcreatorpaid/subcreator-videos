@@ -1,0 +1,75 @@
+{
+  "slug": "streamNN_name",
+  "brand": "SUB-CREATOR PAID",
+  "handle": "@subcreatorpaid",
+  "audio": {
+    "engine": "kokoro",
+    "kokoro_voice": "af_heart",
+    "speed": 1.0
+  },
+  "beats": [
+    {
+      "say": "Hook line, spoken.",
+      "show": {
+        "type": "hook",
+        "style": "stack",
+        "lines": [
+          "Small line *BIG WORD*",
+          "payoff in the black box"
+        ]
+      }
+    },
+    {
+      "say": "It's called Name.",
+      "show": {
+        "type": "title_card",
+        "label": "It's",
+        "intro": "It's called",
+        "badge": "Name",
+        "letter": "N",
+        "image": "assets/screenshot.png"
+      }
+    },
+    {
+      "say": "One headline number.",
+      "show": {
+        "type": "stat",
+        "top": "Small line above",
+        "big": "$50-$400",
+        "caption": "*per video*"
+      }
+    },
+    {
+      "say": "A process in three steps.",
+      "show": {
+        "type": "flow",
+        "steps": [
+          "Step *one*",
+          "Step *two*",
+          "Step *three*"
+        ]
+      }
+    },
+    {
+      "say": "The catch line.",
+      "show": {
+        "type": "statement",
+        "text": "The catch: *BIG WORD*",
+        "highlight": "short payoff"
+      }
+    },
+    {
+      "say": "Follow Sub-Creator Paid for one income stream every day.",
+      "show": {
+        "type": "follow",
+        "text": "one new income stream every *DAY*"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "Source name (date)",
+      "url": "https://example.com"
+    }
+  ]
+}

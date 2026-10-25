@@ -1,0 +1,103 @@
+name: Render videos
+
+# Runs when you add or change anything inside videos/  (or press "Run workflow" on the Actions tab).
+on:
+  push:
+    paths: ["videos/**"]
+  workflow_dispatch:
+    inputs:
+      videos:
+        description: "Video folder names (space separated), or 'all'"
+        default: "all"
+
+permissions:
+  contents: write   # lets the workflow publish finished videos on the Releases page
+
+concurrency:
+  group: render
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      - name: Install Python packages
+        run: pip install -r requirements.txt
+
+      - name: Cache the free voice model
+        uses: actions/cache@v4
+        with:
+          path: models
+          key: kokoro-v1.0
+
+      - name: Download the free voice model (first run only, ~350 MB)
+        run: |
+          mkdir -p models
+          base=https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0
+          [ -s models/kokoro-v1.0.onnx ] || curl -fsSL -o models/kokoro-v1.0.onnx "$base/kokoro-v1.0.onnx"
+          [ -s models/voices-v1.0.bin ] || curl -fsSL -o models/voices-v1.0.bin "$base/voices-v1.0.bin"
+
+      - name: Work out which videos to render
+        id: pick
+        env:
+          EVENT: ${{ github.event_name }}
+          INPUT: ${{ github.event.inputs.videos }}
+          BEFORE: ${{ github.event.before }}
+          SHA: ${{ github.sha }}
+        run: |
+          if [ "$EVENT" = "workflow_dispatch" ] && [ -n "$INPUT" ] && [ "$INPUT" != "all" ]; then
+            LIST="$INPUT"
+          elif [ "$EVENT" = "workflow_dispatch" ] || [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            LIST=$(ls videos)
+          else
+            LIST=$(git diff --name-only "$BEFORE" "$SHA" | grep '^videos/' | cut -d/ -f2 | sort -u)
+          fi
+          echo "list=$(echo $LIST)" >> "$GITHUB_OUTPUT"
+          echo "Videos to render: $LIST"
+
+      - name: Render
+        run: |
+          mkdir -p out
+          for v in ${{ steps.pick.outputs.list }}; do
+            case "$v" in _*) continue;; esac
+            [ -f "videos/$v/spec.json" ] || continue
+            echo "::group::$v"
+            python renderer/render_list.py "videos/$v/spec.json" "out/$v"
+            echo "::endgroup::"
+            echo "- **$v**: $(python -c "import json,glob;d=json.load(open(glob.glob('out/$v/*_render.json')[0]));print(round(d['duration'],1),'s', '(FALLBACK VOICE)' if d['fallback_voice'] else '')")" >> "$GITHUB_STEP_SUMMARY"
+          done
+
+      - name: Save videos (Actions tab > this run > Artifacts)
+        uses: actions/upload-artifact@v4
+        with:
+          name: rendered-videos
+          path: |
+            out/**/*.mp4
+            out/**/*_cover.png
+            out/**/*_render.json
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Publish videos on the Releases page (easy phone download)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for d in out/*/; do
+            [ -d "$d" ] || continue
+            v=$(basename "$d"); tag="video-$v"
+            gh release view "$tag" >/dev/null 2>&1 || gh release create "$tag" --title "$v" --notes "Rendered automatically. Download the MP4 below."
+            gh release upload "$tag" "$d"*.mp4 "$d"*_cover.png --clobber
+          done
