@@ -6,13 +6,15 @@
       "name": "beehiiv",
       "category": "Newsletter",
       "official_url": "https://www.beehiiv.com",
-      "earns": "50-60% of what they pay, for 12 months",
+      "earns": "50% of what they pay for 12 months (up to 60% at higher partner tiers)",
       "source": "https://www.beehiiv.com/partners",
       "free_plan": true,
       "for": "Start a free newsletter and later a paid one",
-      "referral_url": "",
+      "referral_url": "https://www.beehiiv.com/?via=subcreator-paid",
       "checked": "2026-10-25",
-      "pays_you": true
+      "pays_you": true,
+      "perk": "14-day free trial + 20% off paid plans for 3 months through our link",
+      "joined": "2026-10-25"
     },
     {
       "id": "kit",
