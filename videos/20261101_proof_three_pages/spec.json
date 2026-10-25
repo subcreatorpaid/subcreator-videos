@@ -7,15 +7,11 @@
    "say": "Here are three official pages that show you don't need ten thousand followers to earn.",
    "show": {
     "type": "hook",
-    "style": "sandwich",
-    "images": [
-     "assets/yt_help.png",
-     "assets/spotify_news.png",
-     "assets/opus_affiliate.png"
-    ],
+    "style": "stack",
     "lines": [
-     "3 official pages",
-     "*NO 10K* needed"
+     "3 official pages:",
+     "*NO 10K*",
+     "followers needed"
     ]
    }
   },
@@ -112,17 +108,6 @@
   }
  ],
  "snaps": [
-  {
-   "url": "https://support.google.com/youtube/answer/13429240?hl=en",
-   "file": "assets/yt_help.png",
-   "find": "500",
-   "height": 1400
-  },
-  {
-   "url": "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/",
-   "file": "assets/spotify_news.png",
-   "height": 1400
-  },
   {
    "url": "https://www.opus.pro/affiliate",
    "file": "assets/opus_affiliate.png",

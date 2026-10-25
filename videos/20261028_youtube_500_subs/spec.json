@@ -108,13 +108,5 @@
    "title": "YouTube Help: expanded YouTube Partner Program",
    "url": "https://support.google.com/youtube/answer/13429240?hl=en"
   }
- ],
- "snaps": [
-  {
-   "url": "https://support.google.com/youtube/answer/13429240?hl=en",
-   "file": "assets/yt_help.png",
-   "find": "500",
-   "height": 1400
-  }
  ]
 }

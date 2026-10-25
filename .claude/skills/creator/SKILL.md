@@ -17,7 +17,7 @@ For each post in week-plan (status "drafted"):
 5. Put everything into ONE Claude Docs doc "Week of <date> - review" (summary first, then the 10-post table, then each post). Save its link in `week-plan.json -> review_doc`; set status "drafted". Do NOT commit specs or render yet.
 
 ## Stage B - after the owner says "approve the week" (or approves single posts)
-1. Write `videos/<slug>/spec.json` (+ `assets/` screenshots of public pages only, cropped, essential cookies) and the stream JSON files.
+1. Write `videos/<slug>/spec.json` and the stream JSON files. Page images: list public pages under `"snaps"` (GitHub captures them; renderer/snap.py). Sites that block bots (Google support, Spotify newsroom, ftc.gov) get a labelled source card instead: `python3 renderer/source_card.py videos/<slug>/assets/x.png --site ... --title ... --fact ... --hl N --checked "<date>"` (committed to assets/).
 2. Run `python3 scripts/virality.py` (aim for PASS 75+; under 60 blocks) and `python3 scripts/guard.py --strict`; fix every error and most FIX notes.
 3. Commit + push -> `.github/workflows/render.yml` renders with Kokoro and publishes MP4s on the repo's Releases page (~8 min per batch). Watch with `gh api "repos/subcreatorpaid/subcreator-videos/actions/workflows/render.yml/runs?per_page=1" --jq '.workflow_runs[]|[.status,.conclusion,.created_at,.html_url]|@tsv'` (use `gh api` REST only; GraphQL-based gh commands are blocked in Claude sessions).
 4. Download each MP4 (`gh api repos/subcreatorpaid/subcreator-videos/releases/latest` -> asset `browser_download_url`, download with `gh api` + `-H 'Accept: application/octet-stream'`), check 3 frames per video (hook, middle, end) for typos, overlaps, cut-off text, wrong facts. Re-render if needed.
