@@ -14,6 +14,17 @@ Cost: $0. GitHub gives free accounts over 33 hours of Actions time a month for p
 public repos); one video takes about 5-10 minutes. The voice is Kokoro, a free open-source voice that runs
 inside the workflow, so no vidIQ credits are needed.
 
+## The website (free on GitHub Pages)
+`site/` builds the website: one page per income stream, a best-tools page, a free income tracker, the guide
+sign-up, and the disclosure and privacy pages. It republishes itself whenever `site/` changes.
+- One-time: **Settings → Pages → Source: GitHub Actions**. Your site appears at `https://<username>.github.io/subcreator-videos/`.
+- **Your referral links live in one file: `site/data/links.json`.** When you join a program, paste your link
+  into its `referral_url`. Every short link (`/go/stan/`, `/go/beehiiv/` …) on the site, in captions and in
+  ebooks then points to it. Until then they point to the program's normal page.
+- New income stream page: add a file to `site/data/streams/` (copy an existing one).
+- Newsletter: when beehiiv or Kit is set up, paste its sign-up page link into `site/data/config.json` →
+  `newsletter_form_url`. Own domain: put it in `custom_domain` and point the domain at GitHub Pages.
+
 ## Make a new video
 - Ask Claude: "write the spec for Stream #03 about <topic>" and upload the folder it gives you, **or**
 - Copy `videos/_template` to a new folder (e.g. `videos/stream03_name`), edit `spec.json`, add screenshots

@@ -1,0 +1,33 @@
+{
+  "slug": "ugc",
+  "title": "UGC (user-generated content)",
+  "one_liner": "Brands pay you to make videos they post on their own pages and ads.",
+  "followers": "None. Brands judge your samples, not your follower count.",
+  "pay": "Beginners usually charge $50-$400 per video.",
+  "pay_source": "https://insense.pro/blog/ugc-creator-rates",
+  "steps": [
+    "Make 3 sample videos with your phone (unboxing, review, how-to).",
+    "Put them in a simple portfolio or link-in-bio page.",
+    "Pitch brands directly or apply to briefs on UGC marketplaces.",
+    "Agree price, usage rights and deadlines in writing, then deliver."
+  ],
+  "catch": "Brands want to see samples before they say yes, and rates vary a lot by niche and usage rights.",
+  "great_for": [
+    "Beauty",
+    "Food",
+    "Tech"
+  ],
+  "tools": [
+    "insense",
+    "stan",
+    "fiverr"
+  ],
+  "sources": [
+    [
+      "Insense: UGC creator rates (Sep 2026)",
+      "https://insense.pro/blog/ugc-creator-rates"
+    ]
+  ],
+  "video": "stream01_ugc",
+  "checked": "2026-10-25"
+}

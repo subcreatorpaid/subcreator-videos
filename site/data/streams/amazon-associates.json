@@ -1,0 +1,35 @@
+{
+  "slug": "amazon-associates",
+  "title": "Amazon Associates",
+  "one_liner": "Share a product link and earn a cut when someone buys.",
+  "followers": "None to join.",
+  "pay": "Most categories pay about 3% to 4.5%. Example: a $40 item at 4.5% earns about $1.80.",
+  "pay_source": "https://getlasso.co/amazon-affiliate-commission-rate/",
+  "steps": [
+    "Apply on the Amazon Associates site with your channel or website.",
+    "Create links to products you actually use.",
+    "Share them with clear disclosure (\"As an Amazon Associate I earn from qualifying purchases\").",
+    "Make 3 qualifying sales in your first 180 days to keep the account."
+  ],
+  "catch": "You need 3 qualifying sales in your first 180 days, or the account is closed. Rates differ by category and some were cut in 2026.",
+  "great_for": [
+    "Reviews",
+    "Home",
+    "Tech"
+  ],
+  "tools": [
+    "amazon-associates"
+  ],
+  "sources": [
+    [
+      "Lasso: Amazon affiliate commission rates (Oct 2026)",
+      "https://getlasso.co/amazon-affiliate-commission-rate/"
+    ],
+    [
+      "Makeinfluence: Associates vs Influencer Program",
+      "https://www.makeinfluence.com/en/academy/amazon-associates-vs-amazon-influencer-program-whats-actually-different"
+    ]
+  ],
+  "video": "stream02_amazon_associates",
+  "checked": "2026-10-25"
+}
