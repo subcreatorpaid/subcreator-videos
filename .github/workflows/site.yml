@@ -1,10 +1,8 @@
 name: Publish website
 
-# Rebuilds and publishes the website whenever anything in site/ changes.
-# One-time setup: repo Settings > Pages > Source: "GitHub Actions".
+# Paused: this project is private, and free GitHub Pages needs a public project.
+# The website gets its own public project in the website setup step; until then run it by hand only.
 on:
-  push:
-    paths: ["site/**"]
   workflow_dispatch:
 
 permissions:
