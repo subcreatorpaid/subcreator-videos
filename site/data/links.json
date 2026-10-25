@@ -64,9 +64,11 @@
       "source": "https://elevenlabs.io/affiliate",
       "free_plan": true,
       "for": "AI voiceovers and dubbing",
-      "referral_url": "",
+      "referral_url": "https://try.elevenlabs.io/zz6cc2ygc3wq",
       "checked": "2026-10-25",
-      "pays_you": true
+      "pays_you": true,
+      "joined": "2026-10-25",
+      "rules": "No paid search ads on ElevenLabs brand terms (account cancellation)."
     },
     {
       "id": "opusclip",
