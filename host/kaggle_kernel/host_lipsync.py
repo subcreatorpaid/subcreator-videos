@@ -17,6 +17,9 @@ if not ins: raise SystemExit("host.png not found in inputs")
 IN = os.path.dirname(ins[0]); wavs = sorted(glob.glob(os.path.join(IN, "*.wav")))
 log.write(f"inputs: {IN} {wavs}\n")
 sh("pip install -q librosa tqdm filetype imageio opencv_python_headless scikit-image cython imageio-ffmpeg colored polygraphy huggingface_hub", check=False)
+sh("pip install -q onnxruntime-gpu || pip install -q onnxruntime", check=False)
+sh("pip install -q mediapipe", check=False)
+sh("python -c 'import onnxruntime as o; print(o.__version__, o.get_available_providers())'", check=False)
 sh("cd /kaggle/working && rm -rf ditto && git clone -q --depth 1 https://github.com/antgroup/ditto-talkinghead ditto")
 from huggingface_hub import snapshot_download
 snapshot_download("digital-avatar/ditto-talkinghead", local_dir="/kaggle/working/ditto/checkpoints",
