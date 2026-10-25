@@ -1,0 +1,90 @@
+{
+ "slug": "20261027_fake_brand_deals",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "beats": [
+  {
+   "say": "A brand DM doesn't always mean a brand deal. The FTC lists five signs it's fake.",
+   "show": {
+    "type": "hook",
+    "style": "stack",
+    "lines": [
+     "A brand DM",
+     "is not always a *DEAL*",
+     "5 signs it's fake"
+    ]
+   }
+  },
+  {
+   "say": "One: a brand ambassador manager messages you out of nowhere. Two: heavy flattery about your page or style.",
+   "show": {
+    "type": "features",
+    "heading": "*RED FLAGS* (FTC)",
+    "items": [
+     [
+      "x",
+      "1. A 'manager' DMs out of nowhere"
+     ],
+     [
+      "x",
+      "2. Heavy flattery about your page"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Three: they name-drop real people at the company. Four: they send links to a lookalike website.",
+   "show": {
+    "type": "features",
+    "heading": "*RED FLAGS* (FTC)",
+    "items": [
+     [
+      "x",
+      "3. Name-drops real staff"
+     ],
+     [
+      "x",
+      "4. Links to a lookalike website"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Five, the big one: they ask for bank or personal details so payments can start.",
+   "show": {
+    "type": "statement",
+    "text": "5. They ask for *bank or personal details*",
+    "highlight": "stop right there"
+   }
+  },
+  {
+   "say": "To check, contact the brand on a number you already know is real.",
+   "show": {
+    "type": "flow",
+    "steps": [
+     "Find the brand's *real site* yourself",
+     "Use *their* contact details",
+     "Ask if the offer is *real*"
+    ]
+   }
+  },
+  {
+   "say": "Save this for the next DM, and follow for one income stream every day.",
+   "show": {
+    "type": "save",
+    "text": "Save this for the next *DM*"
+   }
+  }
+ ],
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "af_heart",
+  "speed": 1.0
+ },
+ "sources": [
+  {
+   "title": "FTC consumer alert: bogus brand ambassador managers",
+   "url": "https://consumer.ftc.gov/"
+  }
+ ]
+}

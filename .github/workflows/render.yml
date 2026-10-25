@@ -68,6 +68,17 @@ jobs:
           echo "list=$(echo $LIST)" >> "$GITHUB_OUTPUT"
           echo "Videos to render: $LIST"
 
+      - name: Capture page screenshots listed in specs ("snaps")
+        run: |
+          need=""
+          for v in ${{ steps.pick.outputs.list }}; do
+            [ -f "videos/$v/spec.json" ] && grep -q '"snaps"' "videos/$v/spec.json" && need="$need $v"
+          done
+          if [ -n "$need" ]; then
+            pip install -q playwright && python -m playwright install --with-deps chromium >/dev/null
+            for v in $need; do python renderer/snap.py "videos/$v/spec.json"; done
+          fi
+
       - name: Render
         run: |
           mkdir -p out

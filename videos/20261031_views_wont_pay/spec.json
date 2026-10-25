@@ -1,0 +1,107 @@
+{
+ "slug": "20261031_views_wont_pay",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "beats": [
+  {
+   "say": "Going viral won't pay you yet. Here's what the numbers actually say.",
+   "show": {
+    "type": "hook",
+    "style": "stack",
+    "lines": [
+     "Going viral",
+     "*WON'T PAY* you yet",
+     "the real numbers"
+    ]
+   }
+  },
+  {
+   "say": "To earn from ads on YouTube Shorts, you need one thousand subscribers and ten million Shorts views in ninety days.",
+   "show": {
+    "type": "stat",
+    "top": "Shorts ad money needs",
+    "big": "10,000,000",
+    "caption": "Shorts views in 90 days + *1,000 subscribers*"
+   }
+  },
+  {
+   "say": "Compare that with fans paying you directly. Spotify Memberships asks for one hundred listeners. YouTube fan funding starts at five hundred subscribers, plus watch time.",
+   "show": {
+    "type": "stack",
+    "cards": [
+     {
+      "node": "Ads",
+      "title": "Shorts ad share",
+      "big": "10M views",
+      "sub": "+ 1,000 subs"
+     },
+     {
+      "node": "Fans",
+      "title": "YouTube fan funding",
+      "big": "500 subs",
+      "sub": "+ watch time"
+     },
+     {
+      "node": "Fans",
+      "title": "Spotify Memberships",
+      "big": "100",
+      "sub": "listeners"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Views are a long road; a small group who'd pay is a shorter one.",
+   "show": {
+    "type": "statement",
+    "text": "A small group who'd pay is the",
+    "strike": "views",
+    "strike_pre": "Not",
+    "highlight": "shorter road"
+   }
+  },
+  {
+   "say": "The catch: fans need something worth paying for, like bonus episodes or live chats.",
+   "show": {
+    "type": "features",
+    "heading": "*THE CATCH*",
+    "items": [
+     [
+      "x",
+      "Needs bonus content"
+     ],
+     [
+      "x",
+      "Needs regular posting"
+     ],
+     [
+      "x",
+      "Needs a clear offer"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Send this to a creator friend chasing views, and follow for one income stream every day.",
+   "show": {
+    "type": "follow",
+    "text": "one new income stream every *DAY*"
+   }
+  }
+ ],
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "af_heart",
+  "speed": 1.0
+ },
+ "sources": [
+  {
+   "title": "YouTube Help: YPP",
+   "url": "https://support.google.com/youtube/answer/13429240?hl=en"
+  },
+  {
+   "title": "Spotify newsroom: Memberships",
+   "url": "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/"
+  }
+ ]
+}

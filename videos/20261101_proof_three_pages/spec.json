@@ -1,0 +1,132 @@
+{
+ "slug": "20261101_proof_three_pages",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "beats": [
+  {
+   "say": "Here are three official pages that show you don't need ten thousand followers to earn.",
+   "show": {
+    "type": "hook",
+    "style": "sandwich",
+    "images": [
+     "assets/yt_help.png",
+     "assets/spotify_news.png",
+     "assets/opus_affiliate.png"
+    ],
+    "lines": [
+     "3 official pages",
+     "*NO 10K* needed"
+    ]
+   }
+  },
+  {
+   "say": "One: YouTube's help page. Fan funding and Shopping start at five hundred subscribers, with upload and watch-time rules.",
+   "show": {
+    "type": "shot",
+    "style": "brutal",
+    "image": "assets/yt_help.png",
+    "headline": "YouTube: fan funding from *500 subscribers*",
+    "sticker": "500 subs",
+    "step": [
+     1,
+     3
+    ],
+    "step_labels": [
+     "YouTube",
+     "Spotify",
+     "OpusClip"
+    ]
+   }
+  },
+  {
+   "say": "Two: Spotify's announcement from October twentieth. Memberships need one hundred listeners and one hundred hours in thirty days.",
+   "show": {
+    "type": "shot",
+    "style": "brutal",
+    "image": "assets/spotify_news.png",
+    "headline": "Spotify Memberships: *100 listeners*",
+    "sticker": "100 listeners",
+    "step": [
+     2,
+     3
+    ],
+    "step_labels": [
+     "YouTube",
+     "Spotify",
+     "OpusClip"
+    ]
+   }
+  },
+  {
+   "say": "Three: OpusClip's affiliate page. Any creator can apply, and it lists no follower minimum.",
+   "show": {
+    "type": "shot",
+    "style": "brutal",
+    "image": "assets/opus_affiliate.png",
+    "headline": "OpusClip affiliates: *no follower minimum*",
+    "sticker": "any creator",
+    "step": [
+     3,
+     3
+    ],
+    "step_labels": [
+     "YouTube",
+     "Spotify",
+     "OpusClip"
+    ]
+   }
+  },
+  {
+   "say": "The catch: each one still needs approval and real work.",
+   "show": {
+    "type": "statement",
+    "text": "The catch: each one needs",
+    "highlight": "approval + real work"
+   }
+  },
+  {
+   "say": "Send this to a creator friend who thinks they're too small, and get the free guide in my bio.",
+   "show": {
+    "type": "follow",
+    "text": "Send this. Free guide: *link in bio*"
+   }
+  }
+ ],
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "af_heart",
+  "speed": 1.0
+ },
+ "sources": [
+  {
+   "title": "YouTube Help: expanded YPP",
+   "url": "https://support.google.com/youtube/answer/13429240?hl=en"
+  },
+  {
+   "title": "Spotify newsroom",
+   "url": "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/"
+  },
+  {
+   "title": "OpusClip affiliate program",
+   "url": "https://www.opus.pro/affiliate"
+  }
+ ],
+ "snaps": [
+  {
+   "url": "https://support.google.com/youtube/answer/13429240?hl=en",
+   "file": "assets/yt_help.png",
+   "find": "500",
+   "height": 1400
+  },
+  {
+   "url": "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/",
+   "file": "assets/spotify_news.png",
+   "height": 1400
+  },
+  {
+   "url": "https://www.opus.pro/affiliate",
+   "file": "assets/opus_affiliate.png",
+   "height": 1300
+  }
+ ]
+}

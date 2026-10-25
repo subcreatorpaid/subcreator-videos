@@ -1,0 +1,107 @@
+{
+ "slug": "20261030_ftc_disclosure",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "beats": [
+  {
+   "say": "The FTC says a disclosure in your bio isn't enough. Here's how to disclose a link the right way.",
+   "show": {
+    "type": "hook",
+    "style": "stack",
+    "lines": [
+     "A disclosure in your bio",
+     "is *NOT ENOUGH*",
+     "says the FTC"
+    ]
+   }
+  },
+  {
+   "say": "Put it in the post itself, where it's hard to miss.",
+   "show": {
+    "type": "shot",
+    "style": "brutal",
+    "image": "assets/ftc_disclosures.png",
+    "headline": "Disclose *in the post*, where it's hard to miss"
+   }
+  },
+  {
+   "say": "Not only in your bio, at the very end, or behind a more button.",
+   "show": {
+    "type": "features",
+    "heading": "*NOT ENOUGH* on its own",
+    "items": [
+     [
+      "x",
+      "Bio only"
+     ],
+     [
+      "x",
+      "At the very end"
+     ],
+     [
+      "x",
+      "Behind 'more'"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "In a video, say it and show it on screen, because some people watch without sound.",
+   "show": {
+    "type": "statement",
+    "text": "In a video: *say it* and *show it*",
+    "highlight": "Ad: my referral link"
+   }
+  },
+  {
+   "say": "Use clear words like ad or sponsored. Skip sp, spon and collab, and don't rely on the platform's tool alone. Posting from outside the US? US rules can still apply.",
+   "show": {
+    "type": "features",
+    "heading": "*SKIP THESE*",
+    "items": [
+     [
+      "x",
+      "sp / spon"
+     ],
+     [
+      "x",
+      "collab"
+     ],
+     [
+      "x",
+      "The platform tool alone"
+     ],
+     [
+      "check",
+      "Use: Ad, Sponsored"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Save this before your next link, and follow for one income stream every day.",
+   "show": {
+    "type": "save",
+    "text": "Save this. General info, *not legal advice*"
+   }
+  }
+ ],
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "af_heart",
+  "speed": 1.0
+ },
+ "sources": [
+  {
+   "title": "FTC: Disclosures 101 for Social Media Influencers",
+   "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+  }
+ ],
+ "snaps": [
+  {
+   "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+   "file": "assets/ftc_disclosures.png",
+   "height": 1300
+  }
+ ]
+}

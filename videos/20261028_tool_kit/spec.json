@@ -1,0 +1,97 @@
+{
+ "slug": "20261028_tool_kit",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "beats": [
+  {
+   "say": "Under one thousand followers? Start your email list now, for free, with a tool called Kit.",
+   "show": {
+    "type": "hook",
+    "style": "stack",
+    "lines": [
+     "Under 1,000 followers?",
+     "Start an *EMAIL LIST*",
+     "free, with Kit"
+    ]
+   }
+  },
+  {
+   "say": "Make a sign-up page, offer a free guide, and send your first email.",
+   "show": {
+    "type": "title_card",
+    "intro": "It's called",
+    "badge": "Kit",
+    "letter": "K",
+    "image": "assets/kit_home.png"
+   }
+  },
+  {
+   "say": "Here's the setup I'd use.",
+   "show": {
+    "type": "orbit",
+    "center": "Your list",
+    "items": [
+     "Free guide",
+     "Updates",
+     "Ebook launch",
+     "Sponsors"
+    ],
+    "text": "One list, *many ways* to earn"
+   }
+  },
+  {
+   "say": "The honest limit: the free plan has no automated email sequences. Those start on the Creator plan, at thirty-three dollars a month.",
+   "show": {
+    "type": "features",
+    "heading": "*HONEST LIMIT*",
+    "items": [
+     [
+      "x",
+      "No automated sequences on free"
+     ],
+     [
+      "tag",
+      "Creator plan: $33 a month"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Free alternative: collect emails with a free form, like Google Forms, and email people yourself. Fine for your first hundred.",
+   "show": {
+    "type": "statement",
+    "text": "Free alternative: a *Google Form* + manual emails",
+    "highlight": "fine for your first 100"
+   }
+  },
+  {
+   "say": "Disclosure: the link in my bio is my referral link, and I may earn a commission if you upgrade. Follow for one tool and one income stream every day.",
+   "show": {
+    "type": "follow",
+    "text": "Ad: affiliate link in bio. One tool + one stream every *DAY*"
+   }
+  }
+ ],
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "af_heart",
+  "speed": 1.0
+ },
+ "sources": [
+  {
+   "title": "Kit pricing",
+   "url": "https://kit.com/pricing"
+  },
+  {
+   "title": "Kit affiliate program",
+   "url": "https://kit.com/affiliate"
+  }
+ ],
+ "snaps": [
+  {
+   "url": "https://kit.com",
+   "file": "assets/kit_home.png",
+   "height": 1300
+  }
+ ]
+}

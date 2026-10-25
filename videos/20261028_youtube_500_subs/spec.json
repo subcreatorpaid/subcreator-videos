@@ -1,0 +1,120 @@
+{
+ "slug": "20261028_youtube_500_subs",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "beats": [
+  {
+   "say": "You don't need one thousand subscribers to get paid on YouTube. Five hundred can be enough.",
+   "show": {
+    "type": "hook",
+    "style": "stack",
+    "lines": [
+     "You don't need",
+     "*1,000* subscribers",
+     "500 can be enough"
+    ]
+   }
+  },
+  {
+   "say": "It's the expanded YouTube Partner Program.",
+   "show": {
+    "type": "title_card",
+    "intro": "It's called",
+    "badge": "Expanded YPP",
+    "letter": "Y",
+    "image": "assets/yt_help.png"
+   }
+  },
+  {
+   "say": "Fans can pay you through memberships, Super Thanks, Super Chat and Shopping.",
+   "show": {
+    "type": "fanout",
+    "top": "At *500 subscribers*, fans can pay you through",
+    "from": "Your channel",
+    "to": [
+     "Memberships",
+     "Super Thanks",
+     "Super Chat",
+     "Shopping"
+    ],
+    "text": "Fan funding, *not ads*"
+   }
+  },
+  {
+   "say": "You need five hundred subscribers, three public uploads in ninety days,",
+   "show": {
+    "type": "stat",
+    "top": "You need",
+    "big": "500",
+    "caption": "subscribers + *3 public uploads* in 90 days"
+   }
+  },
+  {
+   "say": "and either three thousand watch hours in a year or three million Shorts views in ninety days.",
+   "show": {
+    "type": "stack",
+    "cards": [
+     {
+      "node": "Option A",
+      "title": "Watch hours",
+      "big": "3,000",
+      "sub": "in 12 months"
+     },
+     {
+      "node": "or",
+      "title": "Option B",
+      "big": "3M",
+      "sub": "Shorts views in 90 days"
+     }
+    ]
+   }
+  },
+  {
+   "say": "It suits tutorial, gaming and niche channels. The catch: no ad revenue yet, eligible countries only, and review takes about a month.",
+   "show": {
+    "type": "features",
+    "heading": "*THE CATCH*",
+    "items": [
+     [
+      "x",
+      "No ad revenue at this tier"
+     ],
+     [
+      "x",
+      "Eligible countries only"
+     ],
+     [
+      "clock",
+      "About 1 month review"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Send this to a creator friend on YouTube, and follow for one income stream every day.",
+   "show": {
+    "type": "follow",
+    "text": "one new income stream every *DAY*"
+   }
+  }
+ ],
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "af_heart",
+  "speed": 1.0
+ },
+ "sources": [
+  {
+   "title": "YouTube Help: expanded YouTube Partner Program",
+   "url": "https://support.google.com/youtube/answer/13429240?hl=en"
+  }
+ ],
+ "snaps": [
+  {
+   "url": "https://support.google.com/youtube/answer/13429240?hl=en",
+   "file": "assets/yt_help.png",
+   "find": "500",
+   "height": 1400
+  }
+ ]
+}

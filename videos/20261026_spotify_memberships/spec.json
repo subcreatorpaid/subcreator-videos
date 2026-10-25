@@ -1,0 +1,127 @@
+{
+ "slug": "20261026_spotify_memberships",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "beats": [
+  {
+   "say": "Under one thousand followers with a podcast? Spotify just opened a way for your fans to pay you.",
+   "show": {
+    "type": "hook",
+    "style": "stack",
+    "lines": [
+     "Under 1,000 followers",
+     "with a *PODCAST*?",
+     "Spotify can pay you now"
+    ]
+   }
+  },
+  {
+   "say": "It's called Spotify Memberships.",
+   "show": {
+    "type": "title_card",
+    "intro": "It's called",
+    "badge": "Spotify Memberships",
+    "letter": "S",
+    "image": "assets/spotify_news.png"
+   }
+  },
+  {
+   "say": "You set monthly tiers, fans join for bonus content, and you get paid.",
+   "show": {
+    "type": "flow",
+    "steps": [
+     "You set *monthly tiers*",
+     "Fans join for *bonus content*",
+     "You get *paid*"
+    ]
+   }
+  },
+  {
+   "say": "You need three episodes, one hundred listeners and one hundred hours listened in the last thirty days.",
+   "show": {
+    "type": "stack",
+    "cards": [
+     {
+      "node": "Publish",
+      "title": "Episodes",
+      "big": "3",
+      "sub": "published"
+     },
+     {
+      "node": "Grow",
+      "title": "Listeners",
+      "big": "100",
+      "sub": "last 30 days"
+     },
+     {
+      "node": "Qualify",
+      "title": "Hours listened",
+      "big": "100",
+      "sub": "last 30 days"
+     }
+    ]
+   }
+  },
+  {
+   "say": "You keep ninety percent.",
+   "show": {
+    "type": "stat",
+    "top": "Creators keep",
+    "big": "90%",
+    "caption": "Example: 20 members x $5 = $100, *you keep $90*",
+    "rows": [
+     [
+      "check",
+      "No follower minimum"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "It suits interview, hobby and study podcasts. The catch: it's live in thirty-four markets, and only fans there can join.",
+   "show": {
+    "type": "features",
+    "heading": "*THE CATCH*",
+    "items": [
+     [
+      "x",
+      "Live in 34 markets only"
+     ],
+     [
+      "x",
+      "Fans must be in those markets"
+     ],
+     [
+      "x",
+      "Hosted on Spotify for Creators or Megaphone"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Send this to a creator friend with a podcast, and follow for one income stream every day.",
+   "show": {
+    "type": "follow",
+    "text": "one new income stream every *DAY*"
+   }
+  }
+ ],
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "af_heart",
+  "speed": 1.0
+ },
+ "sources": [
+  {
+   "title": "Spotify newsroom: Memberships (20 Oct 2026)",
+   "url": "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/"
+  }
+ ],
+ "snaps": [
+  {
+   "url": "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/",
+   "file": "assets/spotify_news.png",
+   "height": 1400
+  }
+ ]
+}

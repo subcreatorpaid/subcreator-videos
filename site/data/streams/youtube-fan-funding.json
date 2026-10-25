@@ -1,0 +1,54 @@
+{
+  "slug": "youtube-fan-funding",
+  "title": "YouTube fan funding (expanded YPP)",
+  "one_liner": "From 500 subscribers, fans can pay you through memberships, Super Thanks, Super Chat and Shopping.",
+  "followers": "500 YouTube subscribers.",
+  "pay": "Fan payments and Shopping commissions; YouTube publishes no fixed rate. Ad revenue unlocks later at 1,000 subscribers + 4,000 watch hours (12 months) or 10M Shorts views (90 days).",
+  "pay_source": "https://support.google.com/youtube/answer/13429240?hl=en",
+  "steps": [
+    "Reach 500 subscribers.",
+    "Post 3 valid public uploads in 90 days.",
+    "Get 3,000 watch hours in 12 months or 3M Shorts views in 90 days.",
+    "Turn on 2-Step Verification, link one AdSense account and apply."
+  ],
+  "catch": "Only in eligible countries; review takes about a month; no ad revenue share at this tier.",
+  "great_for": [
+    "Tutorials",
+    "Gaming",
+    "Niche hobbies"
+  ],
+  "tools": [
+    "opusclip"
+  ],
+  "sources": [
+    [
+      "YouTube Help: expanded YouTube Partner Program",
+      "https://support.google.com/youtube/answer/13429240?hl=en"
+    ]
+  ],
+  "video": "20261028_youtube_500_subs",
+  "checked": "2026-10-25",
+  "category": "Platform payouts",
+  "cat": "plat",
+  "pay_short": "500",
+  "pay_unit": "subscribers to start",
+  "start": "500 subscribers",
+  "letter": "Y",
+  "match": {
+    "enjoy": [
+      "film",
+      "rec"
+    ],
+    "platform_bonus": [
+      "yt"
+    ],
+    "min_followers": 500,
+    "first_step": "Post 3 public uploads this month and track your watch hours."
+  },
+  "step_labels": [
+    "500 subs",
+    "3 uploads",
+    "Watch time",
+    "Apply"
+  ]
+}

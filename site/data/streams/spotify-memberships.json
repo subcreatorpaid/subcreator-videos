@@ -1,0 +1,52 @@
+{
+  "slug": "spotify-memberships",
+  "title": "Spotify Memberships",
+  "one_liner": "Fans pay a monthly membership you set up on Spotify for bonus podcast content.",
+  "followers": "None. You need 100 listeners and 100 hours listened on Spotify in the last 30 days.",
+  "pay": "Creators keep 90% of revenue; you set the tiers and prices. Example only: 20 members at $5 = $100, you keep $90.",
+  "pay_source": "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/",
+  "steps": [
+    "Host the show on Spotify for Creators or Megaphone.",
+    "Publish 3 episodes.",
+    "Reach 100 listeners and 100 consumption hours in 30 days.",
+    "Set up your tiers and the bonus content members get."
+  ],
+  "catch": "Live in 34 markets only; fans must be Free or Premium users in those markets, and you only get contact details from fans who opt in.",
+  "great_for": [
+    "Interview shows",
+    "Hobby podcasts",
+    "Study podcasts"
+  ],
+  "tools": [
+    "opusclip"
+  ],
+  "sources": [
+    [
+      "Spotify newsroom: Memberships (20 Oct 2026)",
+      "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/"
+    ]
+  ],
+  "video": "20261026_spotify_memberships",
+  "checked": "2026-10-25",
+  "category": "Platform payouts",
+  "cat": "plat",
+  "pay_short": "90%",
+  "pay_unit": "of membership revenue",
+  "start": "100 listeners",
+  "letter": "S",
+  "match": {
+    "enjoy": [
+      "rec",
+      "write"
+    ],
+    "platform_bonus": [],
+    "min_followers": 0,
+    "first_step": "Publish 3 episodes on Spotify for Creators and aim for 100 listeners."
+  },
+  "step_labels": [
+    "Host",
+    "3 episodes",
+    "100 listeners",
+    "Tiers"
+  ]
+}

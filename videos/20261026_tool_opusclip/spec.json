@@ -1,0 +1,102 @@
+{
+ "slug": "20261026_tool_opusclip",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "beats": [
+  {
+   "say": "Here's how to turn one long video into Shorts, with a tool called OpusClip.",
+   "show": {
+    "type": "hook",
+    "style": "stack",
+    "lines": [
+     "1 long video",
+     "into *SHORTS*",
+     "Affiliate link in bio"
+    ]
+   }
+  },
+  {
+   "say": "Upload a file or paste a link.",
+   "show": {
+    "type": "title_card",
+    "intro": "It's called",
+    "badge": "OpusClip",
+    "letter": "O",
+    "image": "assets/opus_home.png"
+   }
+  },
+  {
+   "say": "It picks the moments, adds captions and reframes them upright. Then you choose the ones worth posting.",
+   "show": {
+    "type": "flow",
+    "steps": [
+     "Upload or *paste a link*",
+     "AI picks moments + *captions*",
+     "*You choose* what to post"
+    ]
+   }
+  },
+  {
+   "say": "The honest limit: the free plan gives sixty credits a month, adds a watermark, and clips only export for three days. Starter is fifteen dollars a month.",
+   "show": {
+    "type": "features",
+    "heading": "*HONEST LIMIT*",
+    "items": [
+     [
+      "x",
+      "60 credits a month free"
+     ],
+     [
+      "x",
+      "Watermark on free clips"
+     ],
+     [
+      "x",
+      "Export within 3 days"
+     ],
+     [
+      "tag",
+      "Starter: $15 a month"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Free alternative: cut clips by hand in any free editor you already use. Slower, but it costs nothing.",
+   "show": {
+    "type": "statement",
+    "text": "Free alternative: clip by hand in *any editor*",
+    "highlight": "slower, but $0"
+   }
+  },
+  {
+   "say": "Disclosure: the link in my bio is my referral link, and I may earn a commission if you sign up. Follow for one tool and one income stream every day.",
+   "show": {
+    "type": "follow",
+    "text": "Ad: affiliate link in bio. One tool + one stream every *DAY*"
+   }
+  }
+ ],
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "af_heart",
+  "speed": 1.0
+ },
+ "sources": [
+  {
+   "title": "OpusClip pricing",
+   "url": "https://www.opus.pro/pricing"
+  },
+  {
+   "title": "OpusClip affiliate program",
+   "url": "https://www.opus.pro/affiliate"
+  }
+ ],
+ "snaps": [
+  {
+   "url": "https://www.opus.pro",
+   "file": "assets/opus_home.png",
+   "height": 1300
+  }
+ ]
+}

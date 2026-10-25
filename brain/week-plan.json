@@ -1,10 +1,11 @@
 {
   "week_of": "2026-10-26",
   "review_doc": "https://claude.ai/artifact/CWL9pDUtA8VCvpQ5MYDZ4a",
-  "status": "waiting_owner_ok",
+  "status": "approved",
   "status_flow": "drafted -> approved -> rendered -> checked -> scheduled -> posted",
   "notes": [
-    "Kit referral not approved yet: /go/kit falls back to kit.com until it is. Swap post 5 to beehiiv if Kit is still pending on render day."
+    "Kit referral not approved yet: /go/kit falls back to kit.com until it is. Swap post 5 to beehiiv if Kit is still pending on render day.",
+    "Post 2 hook changed from 'how I turn' to 'how to turn' (owner hasn't used OpusClip yet). Screen recordings replaced by public-page screenshots captured in GitHub Actions (renderer/snap.py)."
   ],
   "posts": [
     {
@@ -13,10 +14,11 @@
       "type": "value",
       "title": "Spotify now pays podcasts with 100 listeners",
       "affiliate": null,
-      "slug": null,
-      "status": "drafted",
+      "slug": "20261026_spotify_memberships",
+      "status": "approved",
       "release_url": null,
-      "buffer": null
+      "buffer": null,
+      "slot": "12:00"
     },
     {
       "n": 2,
@@ -24,10 +26,11 @@
       "type": "tool",
       "title": "OpusClip: one podcast into ten Shorts",
       "affiliate": "opusclip",
-      "slug": null,
-      "status": "drafted",
+      "slug": "20261026_tool_opusclip",
+      "status": "approved",
       "release_url": null,
-      "buffer": null
+      "buffer": null,
+      "slot": "18:00"
     },
     {
       "n": 3,
@@ -35,10 +38,11 @@
       "type": "value",
       "title": "5 signs a brand deal is fake",
       "affiliate": null,
-      "slug": null,
-      "status": "drafted",
+      "slug": "20261027_fake_brand_deals",
+      "status": "approved",
       "release_url": null,
-      "buffer": null
+      "buffer": null,
+      "slot": "18:00"
     },
     {
       "n": 4,
@@ -46,10 +50,11 @@
       "type": "value",
       "title": "YouTube pays from 500 subscribers",
       "affiliate": null,
-      "slug": null,
-      "status": "drafted",
+      "slug": "20261028_youtube_500_subs",
+      "status": "approved",
       "release_url": null,
-      "buffer": null
+      "buffer": null,
+      "slot": "12:00"
     },
     {
       "n": 5,
@@ -57,10 +62,11 @@
       "type": "tool",
       "title": "Kit: start an email list for free",
       "affiliate": "kit",
-      "slug": null,
-      "status": "drafted",
+      "slug": "20261028_tool_kit",
+      "status": "approved",
       "release_url": null,
-      "buffer": null
+      "buffer": null,
+      "slot": "18:00"
     },
     {
       "n": 6,
@@ -68,10 +74,11 @@
       "type": "value",
       "title": "3 UGC samples with just your phone",
       "affiliate": null,
-      "slug": null,
-      "status": "drafted",
+      "slug": "20261029_ugc_3_samples",
+      "status": "approved",
       "release_url": null,
-      "buffer": null
+      "buffer": null,
+      "slot": "18:00"
     },
     {
       "n": 7,
@@ -79,10 +86,11 @@
       "type": "value",
       "title": "How to disclose a link the FTC way",
       "affiliate": null,
-      "slug": null,
-      "status": "drafted",
+      "slug": "20261030_ftc_disclosure",
+      "status": "approved",
       "release_url": null,
-      "buffer": null
+      "buffer": null,
+      "slot": "12:00"
     },
     {
       "n": 8,
@@ -90,10 +98,11 @@
       "type": "tool",
       "title": "ElevenLabs: voiceover as a side service",
       "affiliate": "elevenlabs",
-      "slug": null,
-      "status": "drafted",
+      "slug": "20261030_tool_elevenlabs",
+      "status": "approved",
       "release_url": null,
-      "buffer": null
+      "buffer": null,
+      "slot": "18:00"
     },
     {
       "n": 9,
@@ -101,10 +110,11 @@
       "type": "value",
       "title": "Why views alone won't pay you yet",
       "affiliate": null,
-      "slug": null,
-      "status": "drafted",
+      "slug": "20261031_views_wont_pay",
+      "status": "approved",
       "release_url": null,
-      "buffer": null
+      "buffer": null,
+      "slot": "12:00"
     },
     {
       "n": 10,
@@ -112,10 +122,12 @@
       "type": "proof",
       "title": "3 official pages: no 10k needed",
       "affiliate": null,
-      "slug": null,
-      "status": "drafted",
+      "slug": "20261101_proof_three_pages",
+      "status": "approved",
       "release_url": null,
-      "buffer": null
+      "buffer": null,
+      "slot": "12:00"
     }
-  ]
+  ],
+  "approved": "2026-10-25"
 }

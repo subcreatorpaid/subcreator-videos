@@ -1,0 +1,102 @@
+{
+ "slug": "20261030_tool_elevenlabs",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "beats": [
+  {
+   "say": "AI voiceover is a service small creators can sell. Here's the tool I'd test first: ElevenLabs.",
+   "show": {
+    "type": "hook",
+    "style": "stack",
+    "lines": [
+     "AI voiceover is a",
+     "service you can *SELL*",
+     "Affiliate link in bio"
+    ]
+   }
+  },
+  {
+   "say": "Paste a script, pick a voice, adjust the delivery,",
+   "show": {
+    "type": "title_card",
+    "intro": "It's called",
+    "badge": "ElevenLabs",
+    "letter": "E",
+    "image": "assets/elevenlabs_tts.png"
+   }
+  },
+  {
+   "say": "and download the audio for a client's video or ad.",
+   "show": {
+    "type": "flow",
+    "steps": [
+     "Client *script*",
+     "AI *voice*",
+     "Paid *delivery*"
+    ]
+   }
+  },
+  {
+   "say": "The honest limit: the free plan gives ten thousand credits a month, but selling the audio needs a paid plan. Starter adds the commercial licence. Only clone a voice you have permission to use.",
+   "show": {
+    "type": "features",
+    "heading": "*HONEST LIMIT*",
+    "items": [
+     [
+      "x",
+      "10k credits a month free"
+     ],
+     [
+      "x",
+      "No commercial use on free"
+     ],
+     [
+      "tag",
+      "Starter adds the licence"
+     ],
+     [
+      "alert",
+      "Clone only with permission"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Free alternative: Kokoro, an open-source voice model. It's what this channel's voice runs on.",
+   "show": {
+    "type": "statement",
+    "text": "Free alternative: *Kokoro*",
+    "highlight": "open-source, runs this voice"
+   }
+  },
+  {
+   "say": "Disclosure: the link in my bio is my referral link, and I may earn a commission if you subscribe. Follow for one tool and one income stream every day.",
+   "show": {
+    "type": "follow",
+    "text": "Ad: affiliate link in bio. One tool + one stream every *DAY*"
+   }
+  }
+ ],
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "af_heart",
+  "speed": 1.0
+ },
+ "sources": [
+  {
+   "title": "ElevenLabs pricing",
+   "url": "https://elevenlabs.io/pricing"
+  },
+  {
+   "title": "ElevenLabs affiliate program",
+   "url": "https://elevenlabs.io/affiliates"
+  }
+ ],
+ "snaps": [
+  {
+   "url": "https://elevenlabs.io/text-to-speech",
+   "file": "assets/elevenlabs_tts.png",
+   "height": 1300
+  }
+ ]
+}

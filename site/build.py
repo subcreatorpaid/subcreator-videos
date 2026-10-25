@@ -309,7 +309,7 @@ def build():
     write("static/site.css", CSS)
     shutil.copy(os.path.join(HERE, "site.js"), os.path.join(OUT, "static", "site.js"))
     finder_data = [{"slug": s["slug"], "name": s["title"].split(" (")[0], "pay": s["pay"], "why": s["one_liner"], "catch": s["catch"],
-                    "enjoy": s["match"]["enjoy"], "plat": s["match"].get("platform_bonus", []), "min": s["match"]["min_followers"],
+                    "enjoy": s["match"]["enjoy"], "plat": s["match"].get("platform_bonus", []), "min": (lambda m: 0 if m < 1000 else 1 if m < 5000 else 2 if m < 10000 else 3)(s["match"]["min_followers"]),
                     "first": s["match"]["first_step"]} for s in streams]
     write("static/finder.json", json.dumps(finder_data))
     pay_progs = [p for p in progs.values()]
