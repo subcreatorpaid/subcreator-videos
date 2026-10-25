@@ -9,13 +9,33 @@ unless --force. Usage: python renderer/snap.py videos/<slug>/spec.json [--force]
 """
 import json, pathlib, sys
 
-HIDE = """
-[id*="cookie" i],[class*="cookie" i],[id*="consent" i],[class*="consent" i],[id*="onetrust" i],[class*="onetrust" i],
-[id*="gdpr" i],[class*="gdpr" i],#CybotCookiebotDialog,.cc-window,.cky-consent-container,[aria-label*="cookie" i],
-[role="dialog"][aria-modal="true"],[class*="newsletter-popup" i],[id*="intercom" i],[class*="intercom" i],
-[class*="drift" i],iframe[title*="chat" i]{display:none!important;visibility:hidden!important}
-html,body{overflow:auto!important}
+HIDE_JS = r"""
+() => {
+  let n = 0;
+  for (const el of document.querySelectorAll('body *')) {
+    const cs = getComputedStyle(el);
+    if (cs.position !== 'fixed' && cs.position !== 'sticky') continue;
+    const r = el.getBoundingClientRect();
+    if (r.width === 0 || r.height === 0) continue;
+    const txt = (el.innerText || '').toLowerCase().slice(0, 600);
+    const overlay = r.height > innerHeight * 0.45 && r.width > innerWidth * 0.6;
+    if (/cookie|consent|gdpr|we use|accept all|reject all|privacy choices|newsletter|subscribe|chat with/.test(txt) || overlay) {
+      el.style.setProperty('display', 'none', 'important'); n++;
+    }
+  }
+  for (const f of document.querySelectorAll('iframe')) {
+    if (/consent|cookie|onetrust|chat|intercom/i.test((f.src || '') + (f.title || ''))) { f.style.setProperty('display', 'none', 'important'); n++; }
+  }
+  document.documentElement.style.overflow = 'auto'; document.body.style.overflow = 'auto';
+  return n;
+}
 """
+
+
+def blank(path):
+    from PIL import Image, ImageStat
+    im = Image.open(path).convert("L")
+    return ImageStat.Stat(im).stddev[0] < 12
 
 
 def main():
@@ -36,7 +56,7 @@ def main():
             try:
                 pg.goto(s["url"], wait_until="domcontentloaded", timeout=45000)
                 pg.wait_for_timeout(3500)
-                pg.add_style_tag(content=HIDE)
+                hid = pg.evaluate(HIDE_JS)
                 if s.get("find"):
                     try:
                         loc = pg.get_by_text(s["find"], exact=False).first
@@ -46,7 +66,11 @@ def main():
                         print(f"snap: text not found on {s['url']}: {s['find']!r} ({e.__class__.__name__})")
                 pg.wait_for_timeout(800)
                 pg.screenshot(path=str(out))
-                print(f"snap: {s['url']} -> {out}")
+                if blank(out):
+                    pg.wait_for_load_state("networkidle", timeout=20000); pg.wait_for_timeout(4000); pg.evaluate(HIDE_JS)
+                    pg.screenshot(path=str(out))
+                status = "BLANK - check this page" if blank(out) else "ok"
+                print(f"snap: {s['url']} -> {out} (hid {hid} overlays, {status})")
             except Exception as e:  # noqa: BLE001
                 print(f"snap: FAILED {s['url']}: {e}")
             ctx.close()

@@ -99,6 +99,7 @@ jobs:
             out/**/*.mp4
             out/**/*_cover.png
             out/**/*_render.json
+            videos/**/assets/*.png
           retention-days: 30
           if-no-files-found: warn
 
