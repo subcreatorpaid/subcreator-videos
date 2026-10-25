@@ -1,6 +1,9 @@
 {
-  "name": "Host (name to be decided)",
-  "voices": ["af_heart", "af_bella"],
+  "name": "Ava",
+  "voices": [
+    "af_heart",
+    "af_bella"
+  ],
   "speed": 1.0,
   "lines": [
     "Brands will pay you to make videos, even with under a thousand followers. Here's how.",
