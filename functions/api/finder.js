@@ -20,7 +20,7 @@ export async function onRequestPost({ request, env }) {
   const ok = (v, list) => list.includes(String(v)) ? String(v) : list[0];
   const q = { text, followers: ok(b.followers, ["0", "1", "2", "3"]), platform: ok(b.platform, ["ig", "tt", "yt"]), enjoy: ok(b.enjoy, ["film", "rec", "make", "write"]) };
   const db = await env.ASSETS.fetch(new URL("/static/finder.json", request.url)).then(r => r.json());
-  let matches = rules(db, q).slice(0, 3), summary = "";
+  let matches = rules(db, q).slice(0, 3), summary = "", engine = env.AI ? "ai-pending" : "rules";
   if (env.AI) {
     try {
       const fl = ["0-1k", "1k-5k", "5k-10k", "10k+"][+q.followers], pl = { ig: "Instagram", tt: "TikTok", yt: "YouTube" }[q.platform];
@@ -31,19 +31,20 @@ export async function onRequestPost({ request, env }) {
       const r = await env.AI.run("@cf/meta/llama-3.1-8b-instruct", { messages: [
         { role: "system", content: "You match small creators to income streams. Only use the slugs given. Never invent pay figures, programs or guarantees. Plain, professional English." },
         { role: "user", content: prompt }], max_tokens: 400 });
-      const m = String(r.response || "").match(/\{[\s\S]*\}/);
-      if (m) {
-        const out = JSON.parse(m[0]); const bySlug = Object.fromEntries(db.map(x => [x.slug, x]));
+      const raw = r && r.response, m = typeof raw === "object" && raw ? null : String(raw || "").match(/\{[\s\S]*\}/);
+      engine = "ai-unparsed";
+      if (m || (raw && typeof raw === "object")) {
+        const out = m ? JSON.parse(m[0]) : raw; const bySlug = Object.fromEntries(db.map(x => [x.slug, x]));
         const picks = (out.picks || []).filter(p => bySlug[p.slug]).slice(0, 3).map(p => ({
           slug: p.slug, name: bySlug[p.slug].name, score: Math.max(40, Math.min(97, parseInt(p.score) || 60)),
           why: bySlug[p.slug].why, pay: bySlug[p.slug].pay,
           first: String(p.first || bySlug[p.slug].first).replace(/\$\s?\d[\d,.]*/g, "").replace(/\s{2,}/g, " ").trim().slice(0, 160)
         }));
         for (const x of rules(db, q)) { if (picks.length >= 3) break; if (!picks.some(p => p.slug === x.slug)) picks.push(x); }
-        if (picks.length) { matches = picks; summary = String(out.summary || "").replace(/\$\s?\d[\d,.]*/g, "").slice(0, 240); }
+        if (picks.length) { matches = picks; engine = "ai"; summary = String(out.summary || "").replace(/\$\s?\d[\d,.]*/g, "").slice(0, 240); }
       }
-    } catch (e) { /* fall back to rules */ }
+    } catch (e) { engine = "ai-error"; console.log("finder AI error", String(e && e.message || e)); }
   }
-  return json({ matches, summary, ai: !!summary });
+  return json({ matches, summary, ai: engine === "ai", engine });
 }
 export const onRequest = () => json({ error: "Use POST" }, 405);
