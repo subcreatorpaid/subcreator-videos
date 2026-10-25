@@ -47,13 +47,14 @@
       "name": "Skool",
       "category": "Paid community",
       "official_url": "https://www.skool.com",
-      "earns": "40% recurring (third-party source; confirm on joining)",
-      "source": "https://schoolmaker.com/blog/skool-affiliate-program",
+      "earns": "40% of their Skool fee for as long as they stay (when they create a community)",
+      "source": "https://www.skool.com/settings?t=referrals",
       "free_plan": false,
       "for": "Run a paid community or course",
-      "referral_url": "",
+      "referral_url": "https://www.skool.com/signup?ref=d64faf256fad464bb917b051c1005398",
       "checked": "2026-10-25",
-      "pays_you": true
+      "pays_you": true,
+      "joined": "2026-10-25"
     },
     {
       "id": "elevenlabs",
