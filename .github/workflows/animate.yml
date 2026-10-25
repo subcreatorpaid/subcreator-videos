@@ -1,0 +1,76 @@
+name: Animate video (Remotion trial)
+
+# Renders one video spec with the Remotion animator (animator/) instead of the Python renderer.
+# Actions tab > "Animate video (Remotion trial)" > Run workflow > video folder name.
+on:
+  workflow_dispatch:
+    inputs:
+      video:
+        description: "Video folder name under videos/"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: animate
+  cancel-in-progress: false
+
+jobs:
+  animate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      V: ${{ github.event.inputs.video }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: System packages (ffmpeg + headless Chrome libraries)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg libnss3 libdbus-1-3 libatk1.0-0 libgbm-dev libasound2t64 libxrandr2 libxkbcommon-dev \
+            libxfixes3 libxcomposite1 libxdamage1 libatk-bridge2.0-0 libpango-1.0-0 libcairo2 libcups2
+      - name: Python packages
+        run: pip install -r requirements.txt
+      - name: Cache the free voice model
+        uses: actions/cache@v4
+        with:
+          path: models
+          key: kokoro-v1.0
+      - name: Download the free voice model (first run only)
+        run: |
+          mkdir -p models
+          base=https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0
+          [ -s models/kokoro-v1.0.onnx ] || curl -fsSL -o models/kokoro-v1.0.onnx "$base/kokoro-v1.0.onnx"
+          [ -s models/voices-v1.0.bin ] || curl -fsSL -o models/voices-v1.0.bin "$base/voices-v1.0.bin"
+      - name: Page screenshots (if the spec lists snaps)
+        run: |
+          if grep -q '"snaps"' "videos/$V/spec.json"; then
+            pip install -q playwright && python -m playwright install --with-deps chromium >/dev/null
+            python renderer/snap.py "videos/$V/spec.json"
+          fi
+      - name: Voice + timings
+        run: python animator/prep.py "videos/$V/spec.json"
+      - name: Install Remotion
+        working-directory: animator
+        run: npm install --no-audit --no-fund
+      - name: Render with Remotion
+        working-directory: animator
+        run: |
+          mkdir -p out
+          npx remotion render src/index.jsx Short "out/${V}_animated.mp4" --props=props.json --codec=h264 --crf=20 --concurrency=2
+          npx remotion still src/index.jsx Short "out/${V}_animated_cover.png" --props=props.json --frame=45
+      - name: Publish on the Releases page
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="video-${V}-animated"
+          gh release view "$tag" >/dev/null 2>&1 || gh release create "$tag" --title "${V} (Remotion animator)" --notes "Remotion trial render."
+          gh release upload "$tag" animator/out/*.mp4 animator/out/*.png --clobber
+          echo "- Released: $tag" >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,14 @@
+{
+  "name": "subcreator-animator",
+  "private": true,
+  "description": "Remotion animator for Sub-Creator Paid videos (free licence: individual creator).",
+  "scripts": {
+    "render": "remotion render src/index.jsx Short out/video.mp4 --props=props.json --codec=h264 --crf=20 --concurrency=2"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.490",
+    "remotion": "4.0.490",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}
