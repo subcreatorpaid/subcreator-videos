@@ -42,13 +42,16 @@ CAM_Y = 860           # camera zoom anchor
 WM_Y = 1690           # watermark (handle) position
 DEFAULT_TRANS = {"hook": "zoom", "title_card": "zoom", "bullets": "cut", "statement": "blur",
                  "features": "cut", "book_cta": "shatter", "follow": "zoom", "shot": "cut", "stack": "zoom",
-                 "stat": "blur", "orbit": "zoom", "fanout": "cut", "flow": "whip", "save": "whip"}
+                 "stat": "blur", "orbit": "zoom", "fanout": "cut", "flow": "whip", "save": "whip",
+                 "chart": "zoom", "converge": "cut", "comment_cta": "shatter"}
 
 def pick_type(s, prev=None):
     """Best-fit beat type for {"type": "auto", ...} (rules from reference/editing-playbook.md)."""
     ty = s.get("type", "auto")
     if ty != "auto": return ty
-    if s.get("keyword"): return "book_cta"
+    if s.get("keyword"): return "comment_cta" if s.get("reply") else "book_cta"
+    if s.get("points"): return "chart"
+    if s.get("cards") and s.get("big"): return "converge"
     if s.get("label") and (s.get("title") or s.get("badge")): return "title_card"
     if s.get("cards"): return "stack"
     if s.get("big"): return "stat"
@@ -403,6 +406,96 @@ def spread_img(th, title, brand):
     for i in range(7): d.rounded_rectangle([w // 2 + 60, 360 + i * 36, w // 2 + 60 + [380, 320, 400, 360, 300, 390, 260][i], 372 + i * 36], 6, fill=(220, 216, 208))
     return im
 
+# ---------------------------------------------------------------- v4 graphics (from the 3-profile Instagram study, see reference/editing-playbook.md)
+def hard_card(img, th, border=5, off=(14, 16), r=30):
+    """Neo-brutal card: black outline + solid offset black shadow (no blur)."""
+    w, h = img.size; b = border; ox, oy = off
+    out = Image.new("RGBA", (w + 2 * b + ox, h + 2 * b + oy), (0, 0, 0, 0)); d = ImageDraw.Draw(out)
+    d.rounded_rectangle([ox, oy, ox + w + 2 * b - 1, oy + h + 2 * b - 1], r + b, fill=th.TXT + (255,))
+    d.rounded_rectangle([0, 0, w + 2 * b - 1, h + 2 * b - 1], r + b, fill=th.TXT + (255,))
+    out.paste(img, (b, b), img); return out
+
+def step_chips(d, th, cur, n, t, st, y=150, labels=None):
+    """Progress tracker 01 02 03 ...: done = black, current = green (pops in), next = outlined."""
+    cw, ch, gap = 104, 74, 18; x0 = W / 2 - (n * cw + (n - 1) * gap) / 2
+    for i in range(n):
+        x = x0 + i * (cw + gap); k = back((t - st) / 0.35) if i == cur else 1.0
+        if i == cur: fire_at(t - st, "pop")
+        s_ = 1 + 0.12 * math.sin(min(1, max(0, (t - st) / 0.35)) * math.pi) if i == cur else 1
+        cx, cy = x + cw / 2, y; hw, hh = cw / 2 * s_, ch / 2 * s_
+        if i < cur: fill, fg, ol = th.TXT, (255, 255, 255), None
+        elif i == cur: fill, fg, ol = lerp(th.CARD, th.ACC, min(1, k)), (255, 255, 255), None
+        else: fill, fg, ol = th.CARD, th.TXT, th.TXT
+        d.rounded_rectangle([cx - hw + 5, cy - hh + 7, cx + hw + 5, cy + hh + 7], 16, fill=th.TXT)
+        d.rounded_rectangle([cx - hw, cy - hh, cx + hw, cy + hh], 16, fill=fill, outline=ol, width=4 if ol else 0)
+        text(d, (cx, cy - (8 if labels else 0)), f"{i + 1:02d}", F("Black", int(34 * s_)), fg)
+        if labels and i < len(labels): text(d, (cx, cy + 20), labels[i].upper()[:8], F("Bold", 15), fg)
+
+def sticker_img(th, label, size=78):
+    f = F("Black", size); tw = ImageDraw.Draw(Image.new("RGB", (4, 4))).textlength(label, font=f)
+    card = rrect_img(int(tw + size * 0.9), int(size * 1.5), 18, th.ACC + (255,))
+    ImageDraw.Draw(card).text((card.width / 2, card.height / 2), label, font=f, fill=(255, 255, 255), anchor="mm")
+    return hard_card(card, th, 4, (9, 11), 18)
+
+def callout_box(d, th, cx, cy, big, label, k):
+    """Dark number badge over a screenshot (count-up) - '23,400 stars on GitHub'."""
+    if k <= 0: return
+    f = F("Black", 104); tw = max(d.textlength(big, font=f), d.textlength(label, font=F("Bold", 34))); w = tw / 2 + 56; h = 118
+    s_ = min(1.08, back(k / 0.5)) if k < 0.5 else 1.0; w *= s_; h *= s_
+    d.rounded_rectangle([cx - w + 8, cy - h + 12, cx + w + 8, cy + h + 12], 34, fill=(0, 0, 0))
+    d.rounded_rectangle([cx - w, cy - h, cx + w, cy + h], 34, fill=th.TXT, outline=th.ACC, width=4)
+    d.text((cx, cy - 22 * s_), count_up(big, ease(k / 0.9)), font=F("Black", int(104 * s_)), fill=(255, 255, 255), anchor="mm")
+    d.text((cx, cy + 66 * s_), label, font=F("Bold", int(34 * s_)), fill=lerp(th.TXT, (255, 255, 255), 0.75), anchor="mm")
+
+def draw_marks(img, th, marks, k):
+    """Highlighter wipes / hand-drawn circles on a screenshot; boxes are fractions [x0, y0, x1, y1] of the image."""
+    img = img.copy(); ov = Image.new("RGBA", img.size, (0, 0, 0, 0)); d = ImageDraw.Draw(ov); W_, H_ = img.size
+    for j, m in enumerate(marks):
+        kk = ease(k - 1.0 * j)
+        if kk <= 0: continue
+        x0, y0, x1, y1 = m["box"][0] * W_, m["box"][1] * H_, m["box"][2] * W_, m["box"][3] * H_
+        if m.get("kind", "highlight") == "circle":
+            cx, cy, rx, ry = (x0 + x1) / 2, (y0 + y1) / 2, (x1 - x0) / 2 + 18, (y1 - y0) / 2 + 14; pts = []
+            for i in range(int(64 * kk) + 1):
+                a = -math.pi / 2 + 2.15 * math.pi * i / 64; pts.append((cx + rx * math.cos(a) * (1 + 0.03 * i / 64), cy + ry * math.sin(a)))
+            if len(pts) > 1: d.line(pts, fill=th.ACC + (255,), width=9, joint="curve")
+        else:
+            xe = x0 - 8 + (x1 - x0 + 16) * kk
+            d.rounded_rectangle([x0 - 8, y0 - 6, xe, y1 + 6], 10, fill=th.ACC + (70,), outline=th.ACC + (255,), width=7)
+    img.alpha_composite(ov) if img.mode == "RGBA" else img.paste(ov, (0, 0), ov)
+    return img
+
+def chart_card(th, pts, big, label, title, k):
+    w, h = 900, 640; im = rrect_img(w, h, 30, th.CARD + (255,)); d = ImageDraw.Draw(im)
+    if title: d.text((50, 66), title, font=F("Bold", 36), fill=th.INK, anchor="lm")
+    px0, px1, py0, py1 = 50, w - 50, 250, h - 60
+    for i in range(4): y = py0 + (py1 - py0) * i / 3; d.line([(px0, y), (px1, y)], fill=lerp(th.CARD, th.TXT, 0.10), width=2)
+    lo, hi = min(pts), max(pts); n = len(pts)
+    xy = [(px0 + (px1 - px0) * i / (n - 1), py1 - (py1 - py0) * (v - lo) / max(1e-9, hi - lo)) for i, v in enumerate(pts)]
+    # smooth curve through the points, revealed to fraction k
+    curve = []
+    for i in range(n - 1):
+        a, b = xy[i], xy[i + 1]; mx = (a[0] + b[0]) / 2; curve += bezier(a, (mx, a[1]), (mx, b[1]), b, 16)[:-1]
+    curve.append(xy[-1]); m = max(2, int(len(curve) * max(0.0, min(1.0, k)))); vis = curve[:m]
+    if len(vis) > 1:
+        d.polygon(vis + [(vis[-1][0], py1), (vis[0][0], py1)], fill=lerp(th.CARD, th.ACC, 0.16))
+        d.line(vis, fill=th.ACC, width=9, joint="curve"); hx_, hy_ = vis[-1]
+        d.ellipse([hx_ - 15, hy_ - 15, hx_ + 15, hy_ + 15], fill=th.CARD, outline=th.ACC, width=7)
+    if k > 0.05:
+        f = F("Black", 104); d.text((w - 50, 96), count_up(big, ease(min(1, k))), font=f, fill=th.ACC, anchor="rm")
+        if label and k > 0.6:
+            lf = F("Bold", 26); lw = d.textlength(label.upper(), font=lf)
+            d.rounded_rectangle([w - 50 - lw - 36, 160, w - 50, 204], 10, fill=lerp(th.CARD, th.ACC, 0.14))
+            d.text((w - 50 - lw / 2 - 18, 182), label.upper(), font=lf, fill=th.ACC, anchor="mm")
+    return hard_card(im, th)
+
+def mini_card(th, title, sub):
+    w, h = 300, 176; im = rrect_img(w, h, 24, th.TXT + (255,)); d = ImageDraw.Draw(im)
+    d.rounded_rectangle([22, 22, 70, 70], 12, fill=th.ACC); text(d, (46, 47), title[:1].upper(), F("Black", 30), (255, 255, 255))
+    f, ls = fit_or_wrap(d, title, "Bold", 34, 200, 22); d.text((84, 46), ls[0] if len(ls) == 1 else title[:14], font=f, fill=(255, 255, 255), anchor="lm")
+    if sub: block(d, 22, 112, sub, "Medium", 26, w - 44, lerp(th.TXT, (255, 255, 255), 0.6), 18, anchor="lm")
+    return im
+
 # ---------------------------------------------------------------- background
 def list_background(th):
     """Plain brand background with a dashed grid + intersection dots that fades out towards the edges."""
@@ -527,6 +620,13 @@ class ListReel:
         draw_rows(self.d0 if d is None else d, self.th, rows, 0, t, t0, per, lh=1.12, top=top)
         return top + rows_height(rows, 1.12)
 
+    def headline(self, d, bi, s, t, ws, top=None):
+        """Left-aligned bold headline, *accent* words in green, typed word by word (jayantcreates.ai pattern)."""
+        top = top or (250 if s.get("step") else 190)
+        rows = self.rows(("hl", bi), lambda: build_rows(self.d0, s["headline"], 940, "ExtraBold", 68, "ExtraBold", 68, upper=False, inline=True))
+        draw_rows(d, self.th, rows, 0, t, ws, 0.09, align="left", x0=70, lh=1.12, acc_col=self.th.ACC, top=top)
+        return top + rows_height(rows, 1.12) + 50
+
     def scene(self, bi, lt, t):
         th = self.th; im = self.bg.copy(); d = ImageDraw.Draw(im); s = self.beats[bi]["show"]; ty = s["type"]
         sa, sb = self.S[bi]; ws = sa; speak = max(0.6, sb - sa); dur = self.B[bi + 1] - self.B[bi]
@@ -614,12 +714,52 @@ class ListReel:
             rows = self.rows(("st", bi), lambda: build_rows(self.d0, s["text"], 940, "Medium", 66, "Black", 128, min_a=70))
             nw = sum(len(r) for r in rows); per = speak * 0.7 / max(1, nw + (2 if s.get("highlight") else 0))
             hf = F("Bold", 68); hh = hf.size * 1.55 + 40 if s.get("highlight") else 0
-            top = CAM_Y - 60 - (rows_height(rows, 1.08) + hh) / 2
+            sh_ = 150 if s.get("strike") else 0
+            top = CAM_Y - 60 - (rows_height(rows, 1.08) + hh + sh_) / 2
+            if s.get("strike"):  # "Not ~templates~" - the word appears, then a line strikes through it (phanik.ig pattern)
+                sf = F("Bold", 84); pre = s.get("strike_pre", "Not"); sw_ = self.d0.textlength(s["strike"], font=sf)
+                pw_ = self.d0.textlength(pre + " ", font=sf); x0 = W / 2 - (pw_ + sw_) / 2; ky = top + 50
+                kv = ease((t - ws) / 0.25)
+                if kv > 0:
+                    d.text((x0, ky), pre, font=sf, fill=lerp(th.BG, th.TXT, kv), anchor="lm")
+                    d.text((x0 + pw_, ky), s["strike"], font=sf, fill=lerp(th.BG, th.MUTED_C, kv), anchor="lm")
+                ks = ease((t - ws - 0.45) / 0.3); fire_at(t - ws - 0.45, "zip")
+                if ks > 0: d.line([(x0 + pw_ - 8, ky + 4), (x0 + pw_ - 8 + (sw_ + 16) * ks, ky + 4)], fill=th.ACC, width=12)
+                top += sh_; ws = ws + 0.8
             n = draw_rows(d, th, rows, 0, t, ws, per, lh=1.08, top=top)
             if s.get("highlight"):
                 self.highlight(im, s["highlight"], hf, top + rows_height(rows, 1.08) + 40, (t - ws - n * per) / 0.4); d = ImageDraw.Draw(im)
             k = pop(t, ws, 0.6)
             if k > 0 and s.get("decor") != "soft": sunburst(d, W - 150, 1430, 110, t * 0.4, th.ACC, k); star4(d, 170, 470, 40 * k, th.TXT)
+        elif ty == "shot" and (s.get("style") == "brutal" or s.get("marks") or s.get("callout") or s.get("sticker")):
+            # flat (no tilt) screenshot card with a hard black shadow + overlays: highlighter / circle marks,
+            # a count-up number badge and a tilted sticker (jayantcreates.ai / nick_saraev pattern)
+            y = self.headline(d, bi, s, t, ws) if s.get("headline") else (self.top_text(d, ("shtop", bi), s["top"], t, ws, 0.07, top=250) + 40 if s.get("top") else 320)
+            src = self.img(s["image"])
+            if src is not None:
+                base = self.asset(("bshot", bi), lambda: device_img(src, "card", 900))
+                sc = min(1.0, 960 / base.width, 760 / base.height); k = back((lt - 0.05) / 0.5); fire_at(lt - 0.05, "card")
+                mk_t = lt - max(0.9, speak * 0.35)
+                mks = s.get("marks") or []
+                for j in range(len(mks)): fire_at(mk_t - 0.5 * j, "swipe")
+                if mks and mk_t >= 0.5 * len(mks) + 0.6: card = self.asset(("bshotF", bi), lambda: hard_card(draw_marks(base, th, mks, 99), th))
+                elif mks and mk_t > 0: card = hard_card(draw_marks(base, th, mks, mk_t / 0.5), th)
+                else: card = self.asset(("bshot0", bi), lambda: hard_card(base, th))
+                cw, chh = card.width * sc, card.height * sc; cy = max(y + chh / 2 + 10, CAM_Y - 60 - (120 if s.get("caption") else 0))
+                place(im, card, W / 2, cy + 900 * (1 - min(1, k)) + 6 * math.sin(t * 1.1), scale=sc * (0.9 + 0.1 * min(1, k)), shadow=0)
+                d = ImageDraw.Draw(im)
+                if s.get("callout"):
+                    co = s["callout"]; ct = lt - max(1.0, speak * 0.45); fire_at(ct, "count"); fire_at(ct - 0.9, "ding")
+                    pos = co.get("pos", [0.5, 0.55])
+                    callout_box(d, th, W / 2 - cw / 2 + cw * pos[0], cy - chh / 2 + chh * pos[1], co["big"], co.get("label", ""), ct)
+                if s.get("sticker"):
+                    stt = lt - max(1.2, speak * 0.55); ks = back(stt / 0.35); fire_at(stt, "pop")
+                    if ks > 0:
+                        si = self.asset(("stk", bi), lambda: sticker_img(th, s["sticker"]))
+                        place(im, si, min(W / 2 + cw / 2 - 90, W - si.width / 2 - 50), cy - chh / 2 - 30, rot=-8, scale=max(0.05, ks), shadow=0)
+                        d = ImageDraw.Draw(im)
+                y = cy + chh / 2 + (150 if s.get("callout") and s["callout"].get("pos", [0, 0.5])[1] > 0.8 else 60)
+            if s.get("caption"): self.top_text(d, ("shcap", bi), s["caption"], t, ws + speak * 0.25, 0.07, top=y, size=58)
         elif ty == "shot":
             y = self.top_text(d, ("shtop", bi), s["top"], t, ws, 0.07, top=250) + 30 if s.get("top") else 300
             src = self.img(s["image"]); dev = s.get("device") or ("phone" if src is not None and src.height > src.width * 1.2 else "card")
@@ -782,8 +922,84 @@ class ListReel:
                 star4(d, W / 2 + r * 0.95, cy - r * 0.95, 34 * k, th.TXT)
             trows = self.rows(("ft", bi), lambda: build_rows(self.d0, s["text"], 940, "Medium", 62, "Black", 120, min_a=70))
             draw_rows(d, th, trows, 0, t, ws + speak * 0.35, speak * 0.5 / max(1, sum(len(r) for r in trows)), lh=1.08, top=1220)
+        elif ty == "chart":  # line chart that draws itself + count-up number (jayantcreates.ai pattern)
+            y = self.headline(d, bi, s, t, ws) if s.get("headline") else (self.top_text(d, ("cht", bi), s["top"], t, ws, 0.07, top=260) + 40 if s.get("top") else 400)
+            k0 = back((lt - 0.05) / 0.5); fire_at(lt - 0.05, "card"); kc = (lt - 0.5) / max(1.0, speak * 0.6)
+            fire_at(lt - 0.5, "zip"); fire_at(lt - 0.5, "count"); fire_at(lt - 0.5 - max(1.0, speak * 0.6), "ding")
+            if k0 > 0:
+                card = chart_card(th, s["points"], s["big"], s.get("label", ""), s.get("title", ""), kc) if kc < 1.05 else \
+                    self.asset(("chartF", bi), lambda: chart_card(th, s["points"], s["big"], s.get("label", ""), s.get("title", ""), 1.0))
+                cyc = max(y + card.height / 2, CAM_Y - 40); y = cyc - card.height / 2
+                place(im, card, W / 2, cyc + 900 * (1 - min(1, k0)), scale=min(1.0, 980 / card.width), shadow=0)
+                d = ImageDraw.Draw(im)
+            if s.get("caption"): self.top_text(d, ("chc", bi), s["caption"], t, ws + speak * 0.5, 0.07, top=y + 720, size=58)
+        elif ty == "converge":  # cards drop in, lines run into one counter box (phanik.ig pattern)
+            y = self.headline(d, bi, s, t, ws) if s.get("headline") else (self.top_text(d, ("cvt", bi), s["top"], t, ws, 0.07, top=250) + 40 if s.get("top") else 380)
+            cards = s["cards"]; n_ = len(cards); gap = min(0.45, speak * 0.4 / max(1, n_)); cw = 300 if n_ <= 3 else 230
+            xs = [W / 2 + (i - (n_ - 1) / 2) * (cw + 30) for i in range(n_)]; cy0 = y + 100
+            for i, c in enumerate(cards):
+                k = back((lt - 0.1 - i * gap) / 0.45); fire_at(lt - 0.1 - i * gap, "card")
+                if k > 0:
+                    mc = self.asset(("mc", bi, i), lambda c=c: mini_card(th, c["title"], c.get("sub", "")))
+                    place(im, mc, xs[i], cy0 + 40 * (1 - min(1, k)), scale=cw / 300 * max(0.05, min(1.06, k)), shadow=0.28, sh_off=(10, 22))
+            d = ImageDraw.Draw(im); bx_y = cy0 + 420; kl = (lt - 0.2 - n_ * gap) / 0.5; fire_at(lt - 0.2 - n_ * gap, "zip")
+            for i in range(n_):
+                pts = bezier((xs[i], cy0 + 100), (xs[i], cy0 + 260), (W / 2, bx_y - 260), (W / 2, bx_y - 130), 30)
+                m = int(len(pts) * max(0, min(1, ease(kl))))
+                if m > 1: d.line(pts[:m], fill=th.ACC, width=7, joint="curve")
+            kb = back((kl - 0.8) / 0.5); fire_at(lt - 0.2 - n_ * gap - 0.4, "pop")
+            kn = (lt - 0.2 - n_ * gap - 0.6); fire_at(kn, "count"); fire_at(kn - 0.9, "ding")
+            if kb > 0:
+                bw_, bh_ = 430 * min(1.05, kb), 130 * min(1.05, kb)
+                d.rounded_rectangle([W / 2 - bw_ + 10, bx_y - bh_ + 14, W / 2 + bw_ + 10, bx_y + bh_ + 14], 34, fill=lerp(th.BG, (0, 0, 0), 0.25))
+                d.rounded_rectangle([W / 2 - bw_, bx_y - bh_, W / 2 + bw_, bx_y + bh_], 34, fill=th.TXT, outline=th.ACC, width=5)
+                if s.get("label"): text(d, (W / 2, bx_y - 78 * kb), s["label"].upper(), F("Bold", max(8, int(30 * kb))), lerp(th.TXT, (255, 255, 255), 0.65))
+                f = F("Black", 124)
+                while self.d0.textlength(s["big"], font=f) > 800 and f.size > 60: f = F("Black", f.size - 6)
+                d.text((W / 2, bx_y + 24 * kb), count_up(s["big"], ease(kn / 0.9)) if kn > 0 else count_up(s["big"], 0), font=F("Black", max(8, int(f.size * min(1, kb)))), fill=(255, 255, 255), anchor="mm")
+            if s.get("text"): self.top_text(d, ("cvx", bi), s["text"], t, ws + speak * 0.6, 0.06, top=bx_y + 200, size=58)
+        elif ty == "comment_cta":  # Instagram-style comment box types the keyword, then the DM reply slides in (jayantcreates.ai pattern)
+            rows = self.rows(("cc", bi), lambda: build_rows(self.d0, f"Comment *“{s['keyword']}”*", 940, "Medium", 84, "Black", 160, min_a=90))
+            draw_rows(d, th, rows, 0, t, self.B[bi] + 0.05, 0.2, lh=1.0, top=250)
+            y0 = 250 + rows_height(rows, 1.0) + 70; k = back((lt - 0.25) / 0.45); fire_at(lt - 0.25, "card")
+            kw = s["keyword"].upper(); t_type = 0.75; per = 0.09; done = t_type + per * len(kw)
+            for j in range(len(kw)): fire_at(lt - t_type - j * per, "key")
+            fire_at(lt - done - 0.15, "click"); fire_at(lt - done - 0.6, "pop"); fire_at(lt - done - 0.9, "ding")
+            if k > 0:
+                bw_, bh_ = 900, 150; box = rrect_img(bw_, bh_, 75, th.CARD + (255,)); bd = ImageDraw.Draw(box)
+                bd.ellipse([24, 30, 114, 120], fill=th.GLOW); star4(bd, 69, 75, 22, th.ACC)
+                typed = kw[:max(0, min(len(kw), int((lt - t_type) / per) + 1))] if lt > t_type else ""
+                tx = 144
+                if typed: bd.text((tx, 75), typed, font=F("Bold", 50), fill=th.INK, anchor="lm"); tx += bd.textlength(typed, font=F("Bold", 50)) + 6
+                else: bd.text((tx, 75), "Add a comment...", font=F("Medium", 44), fill=th.MUTED_C, anchor="lm")
+                if (lt * 2) % 1 < 0.6 and lt < done + 0.2: bd.rectangle([tx, 48, tx + 4, 102], fill=th.INK)
+                posted = lt > done + 0.15
+                bd.text((bw_ - 50, 75), "Post", font=F("ExtraBold" if typed else "SemiBold", 44), fill=th.ACC if typed else lerp(th.CARD, th.ACC, 0.4), anchor="rm")
+                place(im, hard_card(box, th, 5, (10, 12), 75), W / 2, y0 + 80 + 700 * (1 - min(1, k)), shadow=0, scale=0.98 if posted and lt < done + 0.3 else 1.0)
+                d = ImageDraw.Draw(im)
+            kd = back((lt - done - 0.6) / 0.5)
+            if kd > 0:
+                dm = self.asset(("dm", bi), lambda: self.dm_card(s))
+                place(im, dm, W / 2, y0 + 470 + 600 * (1 - min(1, kd)), shadow=0); d = ImageDraw.Draw(im)
+            if s.get("text"):
+                trows = self.rows(("cct", bi), lambda: build_rows(self.d0, s["text"], 940, "Medium", 60, "ExtraBold", 72, upper=False, min_a=52))
+                draw_rows(d, th, trows, 0, t, ws + speak * 0.55, speak * 0.4 / max(1, sum(len(r) for r in trows)), lh=1.1, top=y0 + 760)
+        if s.get("step"):  # 01 02 03 progress tracker across a multi-part video
+            cur, n = s["step"]; step_chips(d, th, cur - 1, n, t, self.B[bi] + 0.05, labels=s.get("step_labels"))
         text(d, (W / 2, WM_Y), self.spec.get("handle", "@subcreatorpaid"), F("SemiBold", 48), lerp(th.BG, th.TXT, 0.14))
         return im
+
+    def dm_card(self, s):
+        th = self.th; w, h = 900, 330; im = rrect_img(w, h, 34, th.CARD + (255,)); d = ImageDraw.Draw(im)
+        logo(d, th, 74, 74, 40); d.text((134, 74), self.spec.get("handle", "@subcreatorpaid").lstrip("@"), font=F("Bold", 36), fill=th.INK, anchor="lm")
+        hw = d.textlength(self.spec.get("handle", "@subcreatorpaid").lstrip("@"), font=F("Bold", 36))
+        d.text((134 + hw + 14, 76), "· now", font=F("Medium", 32), fill=th.MUTED_C, anchor="lm")
+        block(d, 44, 160, s.get("reply", "Here's your free guide."), "Medium", 40, w - 88, th.INK, 28, anchor="lm")
+        att = s.get("attachment", "Free guide (PDF)"); f = F("Bold", 32); aw = d.textlength(att, font=f)
+        d.rounded_rectangle([44, 222, 44 + aw + 120, 296], 22, fill=th.TXT)
+        d.rounded_rectangle([64, 236, 96, 282], 5, fill=th.ACC); d.line([(70, 248), (90, 248)], fill=(255, 255, 255), width=3)
+        d.text((112, 259), att, font=f, fill=(255, 255, 255), anchor="lm")
+        return hard_card(im, th, 5, (12, 14), 34)
 
 def build_voice(spec):
     """Voice sources, in order: audio.engine "kokoro" (free, local), audio.voice (a recording / vidIQ MP3 with a
