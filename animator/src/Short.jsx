@@ -202,7 +202,7 @@ const Stat = ({s, sp}) => {
 };
 
 const Stack = ({s, sp, per}) => {
-  const f = useCurrentFrame(); const cards = s.cards || []; const gap = Math.max(14, Math.round(per * 1.4));
+  const f = useCurrentFrame(); const cards = s.cards || []; const gap = Math.max(10, Math.min(30, Math.round(per * 0.6)));
   return (
     <AbsoluteFill>
       <div style={{position: 'absolute', top: 300, left: 0, right: 0, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
@@ -223,10 +223,10 @@ const Stack = ({s, sp, per}) => {
       {cards.map((c, i) => {
         const k = spring({frame: f - sp - i * gap, fps: 30, config: {damping: 11, mass: 0.8}});
         return (
-          <div key={i} style={{position: 'absolute', left: 150 + i * 34, top: 640 + i * 150, width: 780, padding: '34px 40px', background: C.card,
+          <div key={i} style={{position: 'absolute', left: 150 + i * 24, top: 520 + i * Math.min(300, 1050 / Math.max(1, cards.length)), width: 780, padding: '28px 40px', background: C.card,
             border: `3px solid ${C.ink}`, borderRadius: 26, boxShadow: `12px 12px 0 ${C.ink}`, transform: `translateY(${(1 - k) * -900}px) rotate(${(i - 1) * 2.2}deg)`}}>
             <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 36, color: C.ink}}>{c.title}</div>
-            <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 92, color: i === cards.length - 1 ? C.acc : C.ink, letterSpacing: '-0.03em'}}>{c.big}</div>
+            <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 80, color: i === cards.length - 1 ? C.acc : C.ink, letterSpacing: '-0.03em'}}>{c.big}</div>
             <div style={{fontFamily: FONT, fontWeight: 600, fontSize: 32, color: '#5F5E58'}}>{c.sub}</div>
           </div>
         );
