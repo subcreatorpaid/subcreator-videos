@@ -1,11 +1,11 @@
 {
-  "updated": "2026-10-25T14:40:00+00:00",
-  "updated_by": "guard",
+  "updated": "2026-10-25T15:15:00+00:00",
+  "updated_by": "publisher",
   "today": [
     {
-      "task": "Drag all 10 videos into the Claude chat so they can be scheduled in Buffer",
+      "task": "Drag the 3 tool videos (OpusClip, Kit, ElevenLabs) into the Claude chat to finish scheduling",
       "link": null,
-      "mins": 2
+      "mins": 1
     },
     {
       "task": "Log in to Fiverr Affiliates and paste your link (or tell me it's pending)",
@@ -23,8 +23,8 @@
   "pipeline": {
     "drafted": 0,
     "approved": 0,
-    "rendered": 10,
-    "scheduled": 0,
+    "rendered": 3,
+    "scheduled": 7,
     "posted": 0
   },
   "affiliates": [
