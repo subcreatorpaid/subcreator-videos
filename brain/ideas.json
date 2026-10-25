@@ -1,0 +1,54 @@
+{
+  "note": "Queue of ideas not yet in a week plan. Researcher adds, strategist picks. Master list: Claude Docs '100 Video Ideas'.",
+  "ideas": [
+    {
+      "title": "Turn 1 long video into 10 Shorts (OpusClip)",
+      "type": "tool",
+      "source": "owner chat 25 Oct",
+      "affiliate": "opusclip",
+      "status": "queued"
+    },
+    {
+      "title": "Your followers aren't yours: start an email list (beehiiv)",
+      "type": "tool",
+      "source": "owner chat 25 Oct",
+      "affiliate": "beehiiv",
+      "status": "queued"
+    },
+    {
+      "title": "Amazon Associates explained (re-render stream 02 in v4)",
+      "type": "value",
+      "source": "backlog",
+      "affiliate": null,
+      "status": "queued"
+    },
+    {
+      "title": "UGC: brands pay $50-$400 per video (re-render stream 01 in v4)",
+      "type": "value",
+      "source": "backlog",
+      "affiliate": null,
+      "status": "queued"
+    },
+    {
+      "title": "3 ways to get paid under 1,000 followers (list01 v4, already rendered)",
+      "type": "value",
+      "source": "backlog",
+      "affiliate": null,
+      "status": "ready"
+    },
+    {
+      "title": "Post daily without recording your voice (ElevenLabs)",
+      "type": "tool",
+      "source": "owner chat 25 Oct",
+      "affiliate": "elevenlabs",
+      "status": "queued"
+    },
+    {
+      "title": "Start a paid community at 1k followers (Skool)",
+      "type": "tool",
+      "source": "affiliate joined 25 Oct",
+      "affiliate": "skool",
+      "status": "needs_verification"
+    }
+  ]
+}

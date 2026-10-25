@@ -1,0 +1,41 @@
+{
+  "stream_no": 2,
+  "slug": "stream02_amazon_associates",
+  "brand": "SUB-CREATOR PAID",
+  "handle": "@subcreatorpaid",
+  "lines": [
+    "You don't need a single follower to join this. Here's how it pays.",
+    "It's Amazon Associates. Share a link to a product, and you earn a cut when someone buys.",
+    "Most categories pay around three to four and a half percent. A forty dollar kitchen item at four and a half percent earns you about a dollar eighty.",
+    "Great for review, home and tech creators. The catch? You need three sales in your first six months, or the account is closed.",
+    "Send this to a creator friend, and follow for one income stream every day."
+  ],
+  "captions": [
+    "You don't need a single follower to join this. Here's how it pays.",
+    "It's Amazon Associates. Share a link to a product, and you earn a cut when someone buys.",
+    "Most categories pay around 3% to 4.5%. A $40 kitchen item at 4.5% earns you about $1.80.",
+    "Great for review, home and tech creators. The catch? You need 3 sales in your first 6 months, or the account is closed.",
+    "Send this to a creator friend, and follow for 1 income stream every day."
+  ],
+  "scenes": {
+    "hook": {"line1": "0 FOLLOWERS", "line2": "NEEDED", "pill": "HERE'S HOW IT PAYS"},
+    "what": {"title": "AMAZON ASSOCIATES", "subtitle": "Earn a cut of every sale",
+             "flow": [{"icon": "person", "label": "YOU"}, {"icon": "link", "label": "YOUR LINK"}, {"icon": "cart", "label": "A SALE"}],
+             "chip": "No follower minimum"},
+    "proof": {"tag": "EXAMPLE SALE", "title": "$40 kitchen item",
+              "rows": [["Commission rate", "4.5%"], ["Followers needed", "None"], ["Link window", "24 hours"]],
+              "money": {"label": "You earn", "value": 1.80, "prefix": "$", "decimals": 2},
+              "chip": "Most categories pay 3% to 4.5%"},
+    "fit": {"title": "GREAT FOR", "chips": ["Reviews", "Home", "Tech"], "catch_title": "THE CATCH",
+            "catch_text": "3 sales in 180 days, or it closes", "catch_items": ["Sale", "Sale", "Sale"]},
+    "cta": {"big": "SEND THIS", "sub": "to a creator friend", "pill": "Follow: 1 income stream / day"}
+  },
+  "audio": {"voice": null},
+  "nora": {"clip": null, "photo": null},
+  "verified_on": "2026-10-23",
+  "sources": [
+    {"title": "Lasso: Amazon affiliate commission rates (updated 14 Oct 2026)", "url": "https://getlasso.co/amazon-affiliate-commission-rate/"},
+    {"title": "Makeinfluence: Amazon Associates vs Influencer Program", "url": "https://www.makeinfluence.com/en/academy/amazon-associates-vs-amazon-influencer-program-whats-actually-different"},
+    {"title": "Shopifreaks: Amazon cut some Associates rates (May 2026)", "url": "https://www.shopifreaks.com/amazon-quietly-slashed-associates-affiliate-commission-rates-by-up-to-50-across-publisher-ecosystem-and-gutted-reporting-tools/"}
+  ]
+}

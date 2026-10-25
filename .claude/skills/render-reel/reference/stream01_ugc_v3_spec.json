@@ -1,0 +1,122 @@
+{
+  "brand": "SUB-CREATOR PAID",
+  "handle": "@subcreatorpaid",
+  "slug": "stream01_ugc_v3",
+  "beats": [
+    {
+      "say": "Brands will pay you, even with under a thousand followers.",
+      "show": {
+        "type": "hook",
+        "style": "scatter",
+        "lines": [
+          "Brands will *PAY* you",
+          "with under 1,000 followers"
+        ]
+      }
+    },
+    {
+      "say": "Save this for your next brand pitch.",
+      "show": {
+        "type": "save",
+        "text": "Save this for your next *brand pitch*"
+      }
+    },
+    {
+      "say": "It's called U G C.",
+      "show": {
+        "type": "title_card",
+        "label": "It's",
+        "intro": "It's called",
+        "badge": "UGC",
+        "letter": "U",
+        "image": "assets/insense_ugc.png"
+      }
+    },
+    {
+      "say": "Brands pay you to make videos for their own page. Your followers don't matter.",
+      "show": {
+        "type": "fanout",
+        "top": "Brands pay you to make videos for *their own page*",
+        "from": "Your video",
+        "to": [
+          "Brand's TikTok",
+          "Brand's Instagram",
+          "Brand's ads"
+        ],
+        "text": "Your followers *DON'T MATTER*"
+      }
+    },
+    {
+      "say": "Beginners usually charge fifty to four hundred dollars a video.",
+      "show": {
+        "type": "stat",
+        "top": "Beginners usually charge",
+        "big": "$50-$400",
+        "caption": "*per video*",
+        "rows": [
+          [
+            "check",
+            "No follower minimum"
+          ]
+        ]
+      }
+    },
+    {
+      "say": "Make three samples, pitch brands, and get paid per video.",
+      "show": {
+        "type": "flow",
+        "steps": [
+          "Make *3 samples*",
+          "Pitch *brands*",
+          "Get paid *per video*"
+        ]
+      }
+    },
+    {
+      "say": "You don't need a big following, a studio, or a fancy camera.",
+      "show": {
+        "type": "features",
+        "heading": "You *don't need*",
+        "items": [
+          [
+            "x",
+            "a big following"
+          ],
+          [
+            "x",
+            "a studio"
+          ],
+          [
+            "x",
+            "a fancy camera"
+          ]
+        ]
+      }
+    },
+    {
+      "say": "The catch? Brands want to see samples before they say yes.",
+      "show": {
+        "type": "statement",
+        "text": "The catch: brands want *SAMPLES*",
+        "highlight": "before they say yes",
+        "decor": "soft"
+      }
+    },
+    {
+      "say": "Follow Sub-Creator Paid for one income stream every day.",
+      "show": {
+        "type": "follow",
+        "text": "one new income stream every *DAY*"
+      }
+    }
+  ],
+  "audio": {
+    "voice": "voice.wav"
+  },
+  "sources": [
+    {
+      "title": "Insense: UGC creator rates (Sep 2026)",
+      "url": "https://insense.pro/blog/ugc-creator-rates"
+    }
+  ]
+}

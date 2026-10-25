@@ -1,0 +1,29 @@
+name: Guard checks
+
+# Daily live check of the website + every push: brain files, facts, video specs, secrets, site build.
+# A failed run emails the owner; the secretary reads the result each morning.
+on:
+  schedule:
+    - cron: "30 6 * * *"
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Repo checks
+        if: github.event_name == 'push'
+        run: python3 scripts/guard.py --strict
+      - name: Repo + live website checks
+        if: github.event_name != 'push'
+        run: python3 scripts/guard.py --strict --live

@@ -1,0 +1,132 @@
+{
+  "brand": "SUB-CREATOR PAID",
+  "handle": "@subcreatorpaid",
+  "slug": "stream02_amazon_associates_v3",
+  "beats": [
+    {
+      "say": "You need zero followers to join this program.",
+      "show": {
+        "type": "hook",
+        "style": "stack",
+        "lines": [
+          "You need *0 FOLLOWERS*",
+          "to join this program"
+        ]
+      }
+    },
+    {
+      "say": "It's called Amazon Associates.",
+      "show": {
+        "type": "title_card",
+        "label": "It's",
+        "intro": "It's called",
+        "badge": "Amazon Associates",
+        "letter": "a",
+        "image": "assets/amazon_associates.png"
+      }
+    },
+    {
+      "say": "Share a product link. Someone buys within twenty-four hours. You earn a cut.",
+      "show": {
+        "type": "flow",
+        "steps": [
+          "Share a *product link*",
+          "Someone buys within *24 hours*",
+          "You earn a *cut*"
+        ]
+      }
+    },
+    {
+      "say": "Most categories pay three to four and a half percent.",
+      "show": {
+        "type": "stat",
+        "top": "Most categories pay",
+        "big": "3%-4.5%",
+        "caption": "*commission*"
+      }
+    },
+    {
+      "say": "So a forty dollar item at four and a half percent earns about a dollar eighty.",
+      "show": {
+        "type": "stack",
+        "cards": [
+          {
+            "node": "Sale",
+            "title": "Example item",
+            "big": "$40",
+            "sub": "one sale"
+          },
+          {
+            "node": "Rate",
+            "title": "Commission",
+            "big": "4.5%",
+            "sub": "example category rate"
+          },
+          {
+            "node": "You",
+            "title": "You earn",
+            "big": "≈ $1.80",
+            "sub": "from that one sale"
+          }
+        ]
+      }
+    },
+    {
+      "say": "Great for review, home and tech creators.",
+      "show": {
+        "type": "orbit",
+        "center": "Great for",
+        "items": [
+          "Reviews",
+          "Home",
+          "Tech"
+        ],
+        "text": "*Review*, home and tech creators"
+      }
+    },
+    {
+      "say": "The catch? Three sales in your first six months, or the account is closed.",
+      "show": {
+        "type": "stat",
+        "top": "The catch",
+        "big": "3 sales",
+        "caption": "in your first *180 days*",
+        "rows": [
+          [
+            "alert",
+            "or the account is *closed*"
+          ]
+        ],
+        "transition": "shatter"
+      }
+    },
+    {
+      "say": "Send this to a friend.",
+      "show": {
+        "type": "statement",
+        "text": "Send this to a *FRIEND*",
+        "highlight": "who's still waiting for followers"
+      }
+    },
+    {
+      "say": "Follow Sub-Creator Paid for one income stream every day.",
+      "show": {
+        "type": "follow",
+        "text": "one new income stream every *DAY*"
+      }
+    }
+  ],
+  "audio": {
+    "voice": "voice.wav"
+  },
+  "sources": [
+    {
+      "title": "Lasso: Amazon affiliate commission rates (Oct 2026)",
+      "url": "https://getlasso.co/amazon-affiliate-commission-rate/"
+    },
+    {
+      "title": "Makeinfluence: Amazon Associates rules",
+      "url": "https://www.makeinfluence.com/en/academy/amazon-associates-vs-amazon-influencer-program-whats-actually-different"
+    }
+  ]
+}

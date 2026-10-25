@@ -1,0 +1,37 @@
+{
+  "stream_no": 1,
+  "slug": "stream01_ugc",
+  "brand": "SUB-CREATOR PAID",
+  "handle": "@subcreatorpaid",
+  "lines": [
+    "Under a thousand followers? This pays you anyway.",
+    "It's called UGC. Brands pay you to make videos for their own page, so your follower count doesn't matter.",
+    "A typical brief: one thirty-second video. Beginners often get fifty to a hundred and fifty dollars.",
+    "Great for beauty, food and tech creators. The catch? You need three sample videos before brands say yes.",
+    "Send this to a creator friend, and follow for one income stream every day."
+  ],
+  "captions": [
+    "Under 1,000 followers? This pays you anyway.",
+    "It's called UGC. Brands pay you to make videos for their own page, so your follower count doesn't matter.",
+    "A typical brief: one 30-second video. Beginners often get $50 to $150.",
+    "Great for beauty, food and tech creators. The catch? You need 3 sample videos before brands say yes.",
+    "Send this to a creator friend, and follow for 1 income stream every day."
+  ],
+  "scenes": {
+    "hook": {"line1": "UNDER 1,000", "line2": "FOLLOWERS?", "pill": "THIS PAYS YOU ANYWAY"},
+    "what": {"title": "UGC", "subtitle": "User-Generated Content",
+             "flow": [{"icon": "person", "label": "YOU"}, {"icon": "play", "label": "VIDEO"}, {"icon": "store", "label": "BRAND'S PAGE"}],
+             "chip": "Follower count doesn't matter"},
+    "proof": {"tag": "EXAMPLE BRIEF", "title": "Skincare brand",
+              "rows": [["Deliverable", "1 x 30s video"], ["Posted on", "Brand's page"], ["Followers needed", "None"]],
+              "money": {"label": "Pay", "value": 80, "prefix": "$"},
+              "chip": "Typical beginner range: $50-$150"},
+    "fit": {"title": "GREAT FOR", "chips": ["Beauty", "Food", "Tech"], "catch_title": "THE CATCH",
+            "catch_text": "You need 3 sample videos first", "catch_items": ["Sample", "Sample", "Sample"]},
+    "cta": {"big": "SEND THIS", "sub": "to a creator friend", "pill": "Follow: 1 income stream / day"}
+  },
+  "audio": {"voice": null},
+  "nora": {"clip": null, "photo": null},
+  "sources": [],
+  "verified_on": null
+}

@@ -1,0 +1,89 @@
+{
+  "updated": "2026-10-25T13:30:00+00:00",
+  "updated_by": "setup",
+  "today": [
+    {
+      "task": "Read the Week of 26 Oct doc and say \"approve the week\" (or ask for swaps)",
+      "link": "https://claude.ai/artifact/CWL9pDUtA8VCvpQ5MYDZ4a",
+      "mins": 10
+    },
+    {
+      "task": "Log in to Fiverr Affiliates and paste your link (or tell me it's pending)",
+      "link": "https://fiverraffiliates.com/v2/login/",
+      "mins": 2
+    },
+    {
+      "task": "Add payout details: beehiiv (Dub), OpusClip, Skool, PartnerStack",
+      "link": null,
+      "mins": 10
+    }
+  ],
+  "approvals": [
+    {
+      "id": "week-2026-10-26",
+      "what": "10 posts for 26 Oct - 1 Nov",
+      "link": "https://claude.ai/artifact/CWL9pDUtA8VCvpQ5MYDZ4a",
+      "say": "approve the week",
+      "since": "2026-10-25"
+    }
+  ],
+  "alerts": [],
+  "pipeline": {
+    "drafted": 10,
+    "approved": 0,
+    "rendered": 0,
+    "scheduled": 0,
+    "posted": 0
+  },
+  "affiliates": [
+    {
+      "id": "beehiiv",
+      "status": "live",
+      "earns": "50% for 12 months"
+    },
+    {
+      "id": "opusclip",
+      "status": "live",
+      "earns": "25%"
+    },
+    {
+      "id": "elevenlabs",
+      "status": "live",
+      "earns": "22% for 12 months"
+    },
+    {
+      "id": "skool",
+      "status": "live",
+      "earns": "40% while they stay"
+    },
+    {
+      "id": "kit",
+      "status": "in review",
+      "earns": "50% for 12 months"
+    },
+    {
+      "id": "fiverr",
+      "status": "waiting owner",
+      "earns": "hybrid"
+    },
+    {
+      "id": "stan",
+      "status": "later",
+      "earns": "~20% recurring"
+    }
+  ],
+  "website": {
+    "url": "https://subcreatorpaid.com",
+    "health": "ok",
+    "checked": "2026-10-25",
+    "pending_comments": 0,
+    "subscribers": 0
+  },
+  "last_week": null,
+  "money": {
+    "earned_month_usd": 0,
+    "pending_usd": 0,
+    "costs_month_usd": 0,
+    "note": "All tools on free plans."
+  }
+}

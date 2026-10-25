@@ -1,0 +1,174 @@
+{
+  "slug": "list01_3ways_under1k",
+  "brand": "SUB-CREATOR PAID",
+  "handle": "@subcreatorpaid",
+  "beats": [
+    {
+      "say": "Three ways to get paid with under a thousand followers.",
+      "show": {
+        "type": "hook",
+        "lines": [
+          "3 ways to get *PAID*",
+          "with under 1,000 followers"
+        ]
+      }
+    },
+    {
+      "say": "First: U G C.",
+      "show": {
+        "type": "title_card",
+        "label": "First",
+        "title": "UGC",
+        "sub": "User-generated content"
+      }
+    },
+    {
+      "say": "Most small creators think brands only pay accounts with big numbers.",
+      "show": {
+        "type": "bullets",
+        "heading": "Most creators think brands want",
+        "items": [
+          "big followings",
+          "big reach",
+          "big numbers"
+        ]
+      }
+    },
+    {
+      "say": "But with U G C, brands pay you to make videos for their own page. Your follower count doesn't matter.",
+      "show": {
+        "type": "statement",
+        "text": "Brands pay for the *VIDEO*, not your *FOLLOWERS*"
+      }
+    },
+    {
+      "say": "Beginners usually charge fifty to four hundred dollars a video.",
+      "show": {
+        "type": "features",
+        "items": [
+          [
+            "coin",
+            "$50-$400 per video (beginners)"
+          ],
+          [
+            "play",
+            "Priced on the work, not reach"
+          ],
+          [
+            "check",
+            "No follower minimum"
+          ]
+        ]
+      }
+    },
+    {
+      "say": "Second: Amazon Associates.",
+      "show": {
+        "type": "title_card",
+        "label": "Second",
+        "title": "Amazon Associates",
+        "sub": "Earn a cut of every sale"
+      }
+    },
+    {
+      "say": "Share a product link, and earn a cut when someone buys within twenty-four hours.",
+      "show": {
+        "type": "statement",
+        "text": "Share a link. Earn a *CUT* of every sale."
+      }
+    },
+    {
+      "say": "Most categories pay three to four and a half percent. The catch: three sales in your first six months, or the account closes.",
+      "show": {
+        "type": "features",
+        "items": [
+          [
+            "coin",
+            "Most categories: 3%-4.5%"
+          ],
+          [
+            "clock",
+            "24-hour link window"
+          ],
+          [
+            "alert",
+            "Catch: 3 sales in 180 days"
+          ]
+        ]
+      }
+    },
+    {
+      "say": "Third: digital templates on Etsy.",
+      "show": {
+        "type": "title_card",
+        "label": "Third",
+        "title": "Etsy templates",
+        "sub": "Make once, sell again and again"
+      }
+    },
+    {
+      "say": "Make a template once, and sell it as an instant download again and again.",
+      "show": {
+        "type": "statement",
+        "text": "Make it *ONCE*. Sell it *AGAIN* and *AGAIN*."
+      }
+    },
+    {
+      "say": "Etsy charges twenty cents to list, plus about nine and a half percent and twenty-five cents per sale. On a ten dollar template, you keep about eight sixty.",
+      "show": {
+        "type": "features",
+        "items": [
+          [
+            "tag",
+            "$0.20 to list"
+          ],
+          [
+            "coin",
+            "6.5% + 3% + $0.25 per sale (US)"
+          ],
+          [
+            "check",
+            "$10 sale = about $8.60 to you"
+          ]
+        ]
+      }
+    },
+    {
+      "say": "Comment LIST, and I'll send you the free Small Creator Income Guide.",
+      "show": {
+        "type": "book_cta",
+        "keyword": "LIST",
+        "book_title": "The Small Creator Income Guide",
+        "book_sub": "Every way to get paid under 10k"
+      }
+    },
+    {
+      "say": "And follow Sub-Creator Paid for one income stream every day.",
+      "show": {
+        "type": "follow",
+        "text": "one new income stream every *DAY*"
+      }
+    }
+  ],
+  "audio": {
+    "voice": "/home/claude/list01/voice.mp3"
+  },
+  "sources": [
+    {
+      "title": "Insense: UGC creator rates (Sep 2026)",
+      "url": "https://insense.pro/blog/ugc-creator-rates"
+    },
+    {
+      "title": "Lasso: Amazon affiliate commission rates (Oct 2026)",
+      "url": "https://getlasso.co/amazon-affiliate-commission-rate/"
+    },
+    {
+      "title": "Makeinfluence: Amazon Associates rules",
+      "url": "https://www.makeinfluence.com/en/academy/amazon-associates-vs-amazon-influencer-program-whats-actually-different"
+    },
+    {
+      "title": "Checkout Page: Etsy fees 2026",
+      "url": "https://checkoutpage.com/blog/etsy-fees"
+    }
+  ]
+}

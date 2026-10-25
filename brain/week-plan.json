@@ -1,0 +1,121 @@
+{
+  "week_of": "2026-10-26",
+  "review_doc": "https://claude.ai/artifact/CWL9pDUtA8VCvpQ5MYDZ4a",
+  "status": "waiting_owner_ok",
+  "status_flow": "drafted -> approved -> rendered -> checked -> scheduled -> posted",
+  "notes": [
+    "Kit referral not approved yet: /go/kit falls back to kit.com until it is. Swap post 5 to beehiiv if Kit is still pending on render day."
+  ],
+  "posts": [
+    {
+      "n": 1,
+      "day": "2026-10-26",
+      "type": "value",
+      "title": "Spotify now pays podcasts with 100 listeners",
+      "affiliate": null,
+      "slug": null,
+      "status": "drafted",
+      "release_url": null,
+      "buffer": null
+    },
+    {
+      "n": 2,
+      "day": "2026-10-26",
+      "type": "tool",
+      "title": "OpusClip: one podcast into ten Shorts",
+      "affiliate": "opusclip",
+      "slug": null,
+      "status": "drafted",
+      "release_url": null,
+      "buffer": null
+    },
+    {
+      "n": 3,
+      "day": "2026-10-27",
+      "type": "value",
+      "title": "5 signs a brand deal is fake",
+      "affiliate": null,
+      "slug": null,
+      "status": "drafted",
+      "release_url": null,
+      "buffer": null
+    },
+    {
+      "n": 4,
+      "day": "2026-10-28",
+      "type": "value",
+      "title": "YouTube pays from 500 subscribers",
+      "affiliate": null,
+      "slug": null,
+      "status": "drafted",
+      "release_url": null,
+      "buffer": null
+    },
+    {
+      "n": 5,
+      "day": "2026-10-28",
+      "type": "tool",
+      "title": "Kit: start an email list for free",
+      "affiliate": "kit",
+      "slug": null,
+      "status": "drafted",
+      "release_url": null,
+      "buffer": null
+    },
+    {
+      "n": 6,
+      "day": "2026-10-29",
+      "type": "value",
+      "title": "3 UGC samples with just your phone",
+      "affiliate": null,
+      "slug": null,
+      "status": "drafted",
+      "release_url": null,
+      "buffer": null
+    },
+    {
+      "n": 7,
+      "day": "2026-10-30",
+      "type": "value",
+      "title": "How to disclose a link the FTC way",
+      "affiliate": null,
+      "slug": null,
+      "status": "drafted",
+      "release_url": null,
+      "buffer": null
+    },
+    {
+      "n": 8,
+      "day": "2026-10-30",
+      "type": "tool",
+      "title": "ElevenLabs: voiceover as a side service",
+      "affiliate": "elevenlabs",
+      "slug": null,
+      "status": "drafted",
+      "release_url": null,
+      "buffer": null
+    },
+    {
+      "n": 9,
+      "day": "2026-10-31",
+      "type": "value",
+      "title": "Why views alone won't pay you yet",
+      "affiliate": null,
+      "slug": null,
+      "status": "drafted",
+      "release_url": null,
+      "buffer": null
+    },
+    {
+      "n": 10,
+      "day": "2026-11-01",
+      "type": "proof",
+      "title": "3 official pages: no 10k needed",
+      "affiliate": null,
+      "slug": null,
+      "status": "drafted",
+      "release_url": null,
+      "buffer": null
+    }
+  ]
+}

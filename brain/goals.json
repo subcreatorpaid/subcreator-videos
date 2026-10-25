@@ -1,0 +1,26 @@
+{
+  "goal": "10,000 followers across Instagram + TikTok",
+  "start": "2026-10-25",
+  "deadline": "2027-01-23",
+  "weekly_pace": 780,
+  "posts_per_week": 10,
+  "mix": {
+    "value": 6,
+    "tool": 3,
+    "proof": 1
+  },
+  "note": "Numbers are entered by the researcher from Buffer/platform analytics or owner screenshots. Never estimate; leave null if unknown.",
+  "latest": {
+    "date": "2026-10-25",
+    "instagram": 0,
+    "tiktok": 0,
+    "youtube": 0,
+    "telegram": null,
+    "email_subscribers": 0,
+    "site_visitors_7d": null,
+    "affiliate_clicks_7d": null,
+    "affiliate_signups_total": 0,
+    "earned_usd_total": 0
+  },
+  "history": []
+}
