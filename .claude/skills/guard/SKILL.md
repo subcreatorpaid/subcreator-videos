@@ -12,7 +12,7 @@ Code does the checks; Claude judges what code can't. Nothing ships with an open 
 - `scripts/guard.py` checks: brain JSON files parse; week-plan/status fields; every `links.json` program has official_url + earns + checked, referral URLs are https and not raw-pasted into videos/captions; streams have sources + checked within 30 days; specs in `videos/` have no never-list words, no emojis in `say`/on-screen text, tool videos carry an "affiliate" disclosure; site builds; with `--live`: key pages 200, `/go/<id>` redirects to the right target, security headers present, `/api/finder` answers.
 
 ## Daily (inside the daily run)
-Read the latest guard run: `gh run list --workflow guard.yml --limit 1 --json conclusion,url,createdAt`. If it failed, open the log (`gh run view <id> --log-failed`), fix what's safe (typos, broken fallback links), else add an alert to `brain/status.json`.
+Read the latest guard run: `gh api "repos/subcreatorpaid/subcreator-videos/actions/workflows/guard.yml/runs?per_page=1" --jq '.workflow_runs[]|[.status,.conclusion,.created_at,.html_url]|@tsv'`. If it failed, open the log (`gh api repos/subcreatorpaid/subcreator-videos/actions/runs/<id>/jobs` then the job's `logs` URL), fix what's safe (typos, broken fallback links), else add an alert to `brain/status.json`.
 
 ## Before every release (creator stage B, publisher)
 1. `python3 scripts/guard.py --strict` passes.

@@ -11,7 +11,7 @@ The owner should only ever need to read the briefing and press OK. Keep it short
 1. `git pull`. Read CLAUDE.md, `brain/rules.md`, `brain/status.json`, `brain/week-plan.json`, last 10 lines of `brain/log.md`.
 2. **Guard**: read the latest `guard.yml` run (guard skill, daily section).
 3. **Researcher light scan** (researcher skill, daily section).
-4. **Pipeline**: for this week's posts, compare status vs day: anything due today not "scheduled"? -> alert. Renders finished? (`gh run list --workflow render.yml --limit 3`).
+4. **Pipeline**: for this week's posts, compare status vs day: anything due today not "scheduled"? -> alert. Renders finished? (`gh api "repos/subcreatorpaid/subcreator-videos/actions/workflows/render.yml/runs?per_page=3" --jq '.workflow_runs[]|[.status,.conclusion,.created_at,.html_url]|@tsv'`).
 5. **Affiliates**: any program still "in review" for > 7 days -> to-do to check its email.
 6. Rebuild `brain/status.json`:
    - `today`: max 3 to-dos for the owner, most valuable first, each with a link and minutes. Only things only the owner can do (approve, log in, pay-out details, check a DM).

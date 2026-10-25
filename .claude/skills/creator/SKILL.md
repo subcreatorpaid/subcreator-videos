@@ -19,8 +19,8 @@ For each post in week-plan (status "drafted"):
 ## Stage B - after the owner says "approve the week" (or approves single posts)
 1. Write `videos/<slug>/spec.json` (+ `assets/` screenshots of public pages only, cropped, essential cookies) and the stream JSON files.
 2. Run `python3 scripts/guard.py --strict`; fix every error.
-3. Commit + push -> `.github/workflows/render.yml` renders with Kokoro and publishes MP4s on the repo's Releases page (~8 min per batch). Watch with `gh run list --workflow render.yml` / `gh run watch`.
-4. Download each MP4 (`gh release download`), check 3 frames per video (hook, middle, end) for typos, overlaps, cut-off text, wrong facts. Re-render if needed.
+3. Commit + push -> `.github/workflows/render.yml` renders with Kokoro and publishes MP4s on the repo's Releases page (~8 min per batch). Watch with `gh api "repos/subcreatorpaid/subcreator-videos/actions/workflows/render.yml/runs?per_page=1" --jq '.workflow_runs[]|[.status,.conclusion,.created_at,.html_url]|@tsv'` (use `gh api` REST only; GraphQL-based gh commands are blocked in Claude sessions).
+4. Download each MP4 (`gh api repos/subcreatorpaid/subcreator-videos/releases/latest` -> asset `browser_download_url`, download with `gh api` + `-H 'Accept: application/octet-stream'`), check 3 frames per video (hook, middle, end) for typos, overlaps, cut-off text, wrong facts. Re-render if needed.
 5. Captions + MP4 links into `brain/week-plan.json` (status "rendered", `release_url`). Hand to guard -> publisher.
 
 ## Rules
