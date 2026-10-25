@@ -1,0 +1,72 @@
+name: AI host lip sync (Kaggle GPU)
+
+# Makes the AI host's talking clips: Kokoro voice here, lip sync on Kaggle's free GPU, clips back here as artifacts.
+on:
+  push:
+    paths: ["host/**", ".github/workflows/host.yml"]
+  workflow_dispatch:
+
+concurrency:
+  group: host
+  cancel-in-progress: false
+
+jobs:
+  host:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt && pip install -U kaggle
+      - name: Cache the free voice model
+        uses: actions/cache@v4
+        with:
+          path: models
+          key: kokoro-v1.0
+      - name: Download the free voice model (first run only)
+        run: |
+          mkdir -p models
+          base=https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0
+          [ -s models/kokoro-v1.0.onnx ] || curl -fsSL -o models/kokoro-v1.0.onnx "$base/kokoro-v1.0.onnx"
+          [ -s models/voices-v1.0.bin ] || curl -fsSL -o models/voices-v1.0.bin "$base/voices-v1.0.bin"
+      - name: Make the host's voice lines
+        run: python host/make_audio.py && cp host/host.png host_in/
+      - name: Check the Kaggle login
+        run: |
+          kaggle --version
+          kaggle config view || true
+          kaggle datasets list --mine | head -5
+      - name: Upload inputs to Kaggle (private dataset)
+        run: |
+          printf '{"title":"host-inputs","id":"subcreatorpaid/host-inputs","licenses":[{"name":"CC0-1.0"}]}' > host_in/dataset-metadata.json
+          if kaggle datasets status subcreatorpaid/host-inputs >/dev/null 2>&1; then
+            kaggle datasets version -p host_in -m "run ${{ github.run_number }}"
+          else
+            kaggle datasets create -p host_in
+          fi
+          for i in $(seq 1 30); do s=$(kaggle datasets status subcreatorpaid/host-inputs 2>&1 || true); echo "dataset: $s"; echo "$s" | grep -qi ready && break; sleep 10; done
+      - name: Run lip sync on Kaggle's GPU
+        run: |
+          kaggle kernels push -p host/kaggle_kernel
+          for i in $(seq 1 100); do
+            sleep 45; s=$(kaggle kernels status subcreatorpaid/host-lipsync 2>&1 || true); echo "$(date +%T) $s"
+            echo "$s" | grep -qiE 'complete|error|cancel' && break
+          done
+          mkdir -p host_out && kaggle kernels output subcreatorpaid/host-lipsync -p host_out || true
+          ls -la host_out host_out/out 2>/dev/null || true
+          echo '### AI host run' >> "$GITHUB_STEP_SUMMARY"; cat host_out/result.json >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || echo "no result.json (see log)" >> "$GITHUB_STEP_SUMMARY"
+          tail -c 6000 host_out/log.txt 2>/dev/null || true
+      - name: Save the clips (Actions > this run > Artifacts)
+        uses: actions/upload-artifact@v4
+        with:
+          name: host-clips
+          path: |
+            host_out/**
+            host_in/*.wav
+          retention-days: 14
+          if-no-files-found: warn

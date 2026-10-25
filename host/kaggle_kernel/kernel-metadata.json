@@ -1,0 +1,15 @@
+{
+  "id": "subcreatorpaid/host-lipsync",
+  "title": "host-lipsync",
+  "code_file": "host_lipsync.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": ["subcreatorpaid/host-inputs"],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
