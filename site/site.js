@@ -72,3 +72,19 @@ if(tt){const K='scp-tracker-v1';let rows=[];try{rows=JSON.parse(localStorage.get
  $('#tadd').addEventListener('click',()=>{const p=$('#tprog').value;if(!p){$('#terr').textContent='Choose a program first.';return}$('#terr').textContent='';
   rows.push({p,s:$('#tstat').value,a:$('#tamt').value||0});$('#tamt').value='';save();draw()});draw()}
 })();
+// comments (own D1-backed API)
+const cmb=$('#comments');
+if(cmb){const pg=cmb.dataset.page,list=cmb.querySelector('.cm-list'),f=cmb.querySelector('.cm-form'),msg=cmb.querySelector('.cm-msg');
+ const esc=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const day=d=>{try{return new Date(d).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'})}catch(x){return ''}};
+ fetch('/api/comments?page='+encodeURIComponent(pg)).then(r=>r.json()).then(j=>{
+  if(j.open===false){f.hidden=true;list.innerHTML='<p class="hint">Comments open soon. Until then, ask on Telegram or under our videos.</p>';return}
+  list.innerHTML=(j.comments||[]).length?j.comments.map(c=>`<div class="cm-item"><b>${esc(c.name)}</b><time>${day(c.created)}</time><p>${esc(c.body)}</p>${c.reply?`<div class="cm-reply"><b>Sub-Creator Paid</b><p>${esc(c.reply)}</p></div>`:''}</div>`).join(''):'<p class="hint">No questions yet. Be the first to ask.</p>'}).catch(()=>{});
+ f.addEventListener('submit',async e=>{e.preventDefault();const b=f.querySelector('button[type=submit]'),n=$('#cmn').value.trim(),t=$('#cmb').value.trim();
+  if(n.length<2){msg.textContent='Add your name (or a nickname).';$('#cmn').focus();return}
+  if(t.length<3){msg.textContent='Write a question or comment first.';$('#cmb').focus();return}
+  b.disabled=true;msg.textContent='Posting…';
+  try{const r=await fetch('/api/comments',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({page:pg,name:n,body:t,website:f.website.value})});
+   const j=await r.json().catch(()=>({}));msg.textContent=j.message||(r.ok?'Thanks!':'Something went wrong.');if(r.ok&&j.ok){$('#cmb').value=''}}
+  catch(x){msg.textContent='Could not connect. Check your internet and try again.'}
+  b.disabled=false})}

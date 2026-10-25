@@ -208,7 +208,7 @@ section.s{padding-block:84px 10px}
 .tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:15px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
 .prose{max-width:70ch}.prose p,.prose li{margin:12px 0;color:#2B2B28}.prose h2{font-size:28px;margin:30px 0 8px;font-weight:900}
 .trow{display:grid;grid-template-columns:2fr 1.2fr 1fr auto;gap:8px;align-items:center;margin:6px 0}@media(max-width:600px){.trow{grid-template-columns:1fr 1fr}}
-.cm-box{padding:20px;margin-top:30px}
+.cm-box{padding:20px;margin-top:30px}.cm-list{margin:14px 0 6px}.cm-item{border-top:1px solid var(--line);padding:14px 0}.cm-item b{font-size:15px}.cm-item time{color:var(--muted);font-size:13px;margin-left:8px}.cm-item p{margin-top:6px;white-space:pre-wrap}.cm-reply{margin:10px 0 0 14px;padding-left:12px;border-left:3px solid var(--acc)}.cm-form{display:grid;gap:8px;margin-top:10px}.cm-form textarea{resize:vertical;font:500 16px var(--sans)}.lbl{font-weight:700;font-size:14px}.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 footer{margin-top:90px;border-top:1px solid var(--line);background:var(--paper)}
 footer .wrap{padding-block:40px;display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:26px;font-size:14px}
 footer h4{font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin:0 0 10px;font-family:var(--mono)}
@@ -374,10 +374,15 @@ def build():
         steps = "".join(f'<div class="card stepcard{" on" if j == 0 else ""}" data-i="{j}"><div class="n">{j + 1}</div><div><p style="font-size:17px">{e(x)}</p></div></div>' for j, x in enumerate(s["steps"]))
         tools = "".join(f'<li><a href="/go/{t}/" rel="sponsored noopener" target="_blank">{e(progs[t]["name"])}</a>{" <span class=tag>affiliate</span>" if progs[t]["pays_you"] else ""}<br><span class="hint">{e(progs[t]["for"])}</span></li>' for t in s["tools"] if t in progs)
         src = "".join(f'<p style="margin-top:8px"><a href="{e(u)}" rel="noopener" target="_blank">{e(t)}</a></p>' for t, u in s["sources"])
-        comments = (f'<div class="card cm-box"><h3>Questions from creators</h3><div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="{e(cfg["cusdis_app_id"])}" data-page-id="{s["slug"]}" data-page-url="{SITE}/streams/{s["slug"]}/" data-page-title="{e(nm)}"></div></div>'
-                    if cfg.get("cusdis_app_id") else
-                    f'<div class="card cm-box"><h3>Questions?</h3><p style="color:var(--muted);margin-top:8px">Comments open soon. Until then, ask on <a href="{e(cfg.get("telegram", "/"))}">Telegram</a> or in the comments on our videos.</p></div>')
-        cus = '<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>' if cfg.get("cusdis_app_id") else ""
+        comments = (f'<div class="card cm-box" id="comments" data-page="{s["slug"]}"><h3>Questions from creators</h3>'
+                    f'<p class="hint" style="margin-top:6px">Ask anything about {e(nm)}. Comments appear after a quick review.</p>'
+                    f'<div class="cm-list" aria-live="polite"></div>'
+                    f'<form class="cm-form" novalidate><label class="lbl" for="cmn">Name</label><input class="inp" id="cmn" maxlength="40" autocomplete="nickname" placeholder="Your name or nickname">'
+                    f'<label class="lbl" for="cmb">Your question or comment</label><textarea class="inp" id="cmb" rows="4" maxlength="1000" placeholder="e.g. Do I need a business account for this?"></textarea>'
+                    f'<input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">'
+                    f'<p class="cm-msg hint" role="status"></p><button class="btn primary" type="submit">Post comment</button>'
+                    f'<p class="hint">Please don\'t share personal details. See <a href="/privacy/">Privacy</a>.</p></form></div>')
+        cus = ""
         art = {"@context": "https://schema.org", "@type": "Article", "headline": f"{nm}: how small creators earn", "dateModified": s["checked"], "author": {"@type": "Organization", "name": cfg["site_name"]}}
         body = (f'<div class="wrap"><p class="crumb"><a href="/streams/">Income streams</a> / {e(s["category"])} / {e(nm)}</p><div class="phead"><div><p class="eyebrow">{e(s["category"])}</p>'
                 f'<h1 style="margin-top:12px;font-size:clamp(38px,6vw,68px);font-weight:900;letter-spacing:-.04em">{e(nm)}</h1><p class="lead" style="font-size:19px;color:var(--muted);margin-top:16px;max-width:48ch">{e(s["one_liner"])}</p>'
@@ -436,9 +441,9 @@ def build():
                        '<p>Sponsored videos or pages always say "Sponsored" or "Ad". As an Amazon Associate we earn from qualifying purchases where Amazon links are used.</p><p>Nothing on this site is financial advice.</p></div>'),
         "privacy": ("Privacy", "How Sub-Creator Paid handles your data.",
                     '<h1>Privacy</h1><p class="lead">Short version: we collect as little as possible.</p>',
-                    f'<div class="prose"><p><b>Email list.</b> If you join, your name and email are stored by our newsletter provider (beehiiv) and used only to send the guide and our emails. You can unsubscribe at any time with one click.</p>'
+                    f'<div class="prose"><p><b>Email list.</b> If you join, your name and email are stored in our own database (hosted by Cloudflare) and, once our newsletter starts, by our newsletter provider (beehiiv). We use them only to send the guide and our emails, never sell them, and you can unsubscribe at any time with one click or by emailing us.</p>'
                     f'<p><b>AI finder.</b> What you type is sent to our server and an AI model to create your matches. We do not store it with your identity, and we never log in to or post on your accounts.</p>'
-                    f'<p><b>Income tracker.</b> Saved only in your own browser. It never leaves your device.</p><p><b>Comments.</b> If you comment, your name and comment are stored by our comments provider (Cusdis) and shown after approval.</p>'
+                    f'<p><b>Income tracker.</b> Saved only in your own browser. It never leaves your device.</p><p><b>Comments.</b> If you comment, your name and comment are stored in our own database (hosted by Cloudflare) and shown after approval. We do not store your IP address; we keep a one-way scrambled code for a day to block spam.</p>'
                     f'<p><b>Analytics and fonts.</b> We use privacy-friendly, cookie-free analytics from Cloudflare. Some fonts load from Google Fonts. We do not use advertising cookies.</p>'
                     f'<p>Contact: {e(cfg.get("owner_contact_email") or cfg["handle"])}. Last updated {e(cfg["updated"])}.</p></div>'),
         "terms": ("Terms", "Terms of use for Sub-Creator Paid.",
@@ -461,6 +466,7 @@ def build():
           "/static/*\n  Cache-Control: public, max-age=86400\n")
     urls = ["/", "/streams/", "/tools/", "/tracker/", "/blog/", "/guide/", "/about/", "/work-with-us/", "/disclosure/", "/privacy/", "/terms/"] + [f"/streams/{s['slug']}/" for s in streams] + [f"/blog/{p['slug']}/" for p in posts]
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>{SITE}{u}</loc><lastmod>{TODAY}</lastmod></url>" for u in urls) + "</urlset>")
+    if cfg.get("indexnow_key"): write(f"{cfg['indexnow_key']}.txt", cfg["indexnow_key"])
     write("robots.txt", f"User-agent: *\nAllow: /\nDisallow: /go/\nSitemap: {SITE}/sitemap.xml\n")
     write("llms.txt", f"# {cfg['site_name']}\n\n> Verified income streams for creators under 10k followers. Pay figures in USD, every fact dated and sourced.\n\n" + "".join(f"- [{s['title']}]({SITE}/streams/{s['slug']}/): {s['one_liner']}\n" for s in streams))
     n = sum(len(f) for _, _, f in os.walk(OUT)); print(f"built {n} files into {OUT}")

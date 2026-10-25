@@ -5,7 +5,7 @@
   "newsletter_form_url": "",
   "guide_url": "",
   "custom_domain": "subcreatorpaid.com",
-  "owner_contact_email": "",
+  "owner_contact_email": "hello@subcreatorpaid.com",
   "updated": "2026-10-25",
   "social": {
     "instagram": "https://www.instagram.com/subcreatorpaid/",
@@ -16,5 +16,6 @@
   "site_url": "https://subcreatorpaid.com",
   "telegram": "https://t.me/subcreatorpaid",
   "cusdis_app_id": "",
-  "beehiiv_publication_id": ""
+  "beehiiv_publication_id": "",
+  "indexnow_key": "27a0f68460bc9be88bdf6cdcf77335a8"
 }
