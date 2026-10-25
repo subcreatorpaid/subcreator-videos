@@ -56,3 +56,10 @@ mkdir models   # download kokoro-v1.0.onnx and voices-v1.0.bin into it (links in
 python renderer/render_list.py videos/stream01_ugc/spec.json out/stream01_ugc
 ```
 Add `--stills` for a quick one-frame-per-beat preview.
+
+## Website on Cloudflare Pages (v3 design)
+- Build command: `python3 site/build.py` · Build output directory: `site/_site` · Root directory: (repo root)
+- `functions/api/finder.js` = AI income finder (uses the Workers AI binding named `AI` if added; otherwise rule-based matching).
+- `functions/api/subscribe.js` = newsletter sign-up (needs `BEEHIIV_API_KEY` and `BEEHIIV_PUBLICATION_ID` variables).
+- Comments: put the Cusdis app id in `site/data/config.json` → `cusdis_app_id`.
+- Short affiliate links `/go/<id>/` are generated as Cloudflare redirects from `site/data/links.json`.

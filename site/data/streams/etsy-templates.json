@@ -28,5 +28,28 @@
     ]
   ],
   "video": "list01_3ways_under1k",
-  "checked": "2026-10-25"
+  "checked": "2026-10-25",
+  "category": "Digital products",
+  "cat": "prod",
+  "pay_short": "~$8.60",
+  "pay_unit": "kept on a $10 sale (US)",
+  "start": "$0.20 to list",
+  "letter": "E",
+  "match": {
+    "enjoy": [
+      "make",
+      "write"
+    ],
+    "platform_bonus": [
+      "ig"
+    ],
+    "min_followers": 0,
+    "first_step": "Make one simple template and list it for $0.20."
+  },
+  "step_labels": [
+    "Pick a type",
+    "Make it",
+    "List it",
+    "Repeat"
+  ]
 }

@@ -1,6 +1,6 @@
-models/
-out/
-__pycache__/
 *.pyc
 .DS_Store
+__pycache__/
+models/
+out/
 site/_site/

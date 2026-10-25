@@ -4,7 +4,7 @@
   "handle": "@subcreatorpaid",
   "newsletter_form_url": "",
   "guide_url": "",
-  "custom_domain": "",
+  "custom_domain": "subcreatorpaid.com",
   "owner_contact_email": "",
   "updated": "2026-10-25",
   "social": {
@@ -12,5 +12,9 @@
     "tiktok": "https://www.tiktok.com/@subcreatorpaid",
     "youtube": "https://www.youtube.com/@subcreatorpaid",
     "telegram": "https://t.me/subcreatorpaid"
-  }
+  },
+  "site_url": "https://subcreatorpaid.com",
+  "telegram": "https://t.me/subcreatorpaid",
+  "cusdis_app_id": "",
+  "beehiiv_publication_id": ""
 }

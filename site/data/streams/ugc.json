@@ -29,5 +29,28 @@
     ]
   ],
   "video": "stream01_ugc",
-  "checked": "2026-10-25"
+  "checked": "2026-10-25",
+  "category": "Brand deals",
+  "cat": "brand",
+  "pay_short": "$50\u2013$400",
+  "pay_unit": "per video (beginners)",
+  "start": "3 sample videos",
+  "letter": "U",
+  "match": {
+    "enjoy": [
+      "film"
+    ],
+    "platform_bonus": [
+      "tt",
+      "ig"
+    ],
+    "min_followers": 0,
+    "first_step": "Film 3 samples this week: an unboxing, a review and a how-to."
+  },
+  "step_labels": [
+    "Samples",
+    "Portfolio",
+    "Pitch",
+    "Deliver"
+  ]
 }

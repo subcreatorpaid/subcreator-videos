@@ -31,5 +31,28 @@
     ]
   ],
   "video": "stream02_amazon_associates",
-  "checked": "2026-10-25"
+  "checked": "2026-10-25",
+  "category": "Affiliate",
+  "cat": "aff",
+  "pay_short": "3%\u20134.5%",
+  "pay_unit": "on most categories",
+  "start": "3 sales in 180 days",
+  "letter": "a",
+  "match": {
+    "enjoy": [
+      "rec",
+      "write"
+    ],
+    "platform_bonus": [
+      "yt"
+    ],
+    "min_followers": 0,
+    "first_step": "Make one 'things I actually use' video and add your links."
+  },
+  "step_labels": [
+    "Apply",
+    "Links",
+    "Disclose",
+    "3 sales"
+  ]
 }
