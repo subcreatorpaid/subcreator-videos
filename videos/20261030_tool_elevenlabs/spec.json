@@ -70,10 +70,17 @@
    }
   },
   {
-   "say": "Disclosure: the link in my bio is my referral link, and I may earn a commission if you subscribe. Follow for one tool and one income stream every day.",
+   "say": "Save this, and send it to a friend who's good with scripts.",
+   "show": {
+    "type": "save",
+    "text": "Save this. Sell your *first voiceover*"
+   }
+  },
+  {
+   "say": "Disclosure: the link in my bio is an affiliate link, and I may earn a commission. Follow for more.",
    "show": {
     "type": "follow",
-    "text": "Ad: affiliate link in bio. One tool + one stream every *DAY*"
+    "text": "Ad: affiliate link in bio. Follow for *MORE*"
    }
   }
  ],

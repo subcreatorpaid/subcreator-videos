@@ -132,6 +132,19 @@ def check_videos(links):
             err(f"videos/{rel}: affiliate CTA without an 'affiliate' disclosure")
 
 
+def check_virality():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("virality", ROOT / "scripts/virality.py"); v = importlib.util.module_from_spec(spec); spec.loader.exec_module(v)
+    for p in sorted((ROOT / "videos").glob("*/spec.json")):
+        if p.parent.name.startswith("_"):
+            continue
+        s, notes, _ = v.score(json.loads(p.read_text()))
+        if s < 60:
+            err(f"videos/{p.parent.name}: virality score {s}/100 (min 60): " + "; ".join(notes[:3]))
+        elif s < 75:
+            warn(f"videos/{p.parent.name}: virality score {s}/100: " + "; ".join(notes[:2]))
+
+
 def check_secrets():
     skip = {".git", "models", "_site", "node_modules", "out"}
     for p in ROOT.rglob("*"):
@@ -200,6 +213,7 @@ def main():
     links = check_links()
     check_streams()
     check_videos(links)
+    check_virality()
     check_secrets()
     check_build()
     if live:
