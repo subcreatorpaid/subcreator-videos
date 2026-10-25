@@ -1,9 +1,8 @@
 name: AI host lip sync (Kaggle GPU)
 
 # Makes the AI host's talking clips: Kokoro voice here, lip sync on Kaggle's free GPU, clips back here as artifacts.
+# Paused 25 Oct 2026: the owner decided not to use an AI host. Kept for reference; runs only if started by hand.
 on:
-  push:
-    paths: ["host/**", ".github/workflows/host.yml"]
   workflow_dispatch:
 
 concurrency:
