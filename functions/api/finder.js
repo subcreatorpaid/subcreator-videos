@@ -28,9 +28,18 @@ export async function onRequestPost({ request, env }) {
       const prompt = `A creator describes their account: "${text}". Followers: ${fl}. Platform: ${pl}. They enjoy: ${q.enjoy}.\n` +
         `Choose the 3 best income streams ONLY from this list (use the slug exactly):\n${opts}\n` +
         `Reply with JSON only: {"summary":"one friendly sentence about their best path, no numbers","picks":[{"slug":"...","score":50-97,"first":"one specific first step for THIS creator, max 20 words, no money figures"}]}`;
-      const r = await env.AI.run("@cf/meta/llama-3.1-8b-instruct", { messages: [
+      const msgs = [
         { role: "system", content: "You match small creators to income streams. Only use the slugs given. Never invent pay figures, programs or guarantees. Plain, professional English." },
-        { role: "user", content: prompt }], max_tokens: 400 });
+        { role: "user", content: prompt }];
+      // Workers AI retires models over time, so try current ones in order and use the first that answers.
+      const MODELS = ["@cf/meta/llama-3.3-70b-instruct-fp8-fast", "@cf/meta/llama-4-scout-17b-16e-instruct", "@cf/mistralai/mistral-small-3.1-24b-instruct", "@cf/google/gemma-3-12b-it", "@cf/meta/llama-3.1-8b-instruct-fast"];
+      let r, lastErr;
+      for (const model of MODELS) {
+        try { r = await env.AI.run(model, { messages: msgs, max_tokens: 400 }); detail = "model " + model; break; }
+        catch (e) { lastErr = e; }
+      }
+      if (!r) throw lastErr || new Error("no model");
+      if (r && r.response === undefined && r.choices) r = { response: r.choices[0]?.message?.content };
       const raw = r && r.response, m = typeof raw === "object" && raw ? null : String(raw || "").match(/\{[\s\S]*\}/);
       engine = "ai-unparsed";
       if (m || (raw && typeof raw === "object")) {
