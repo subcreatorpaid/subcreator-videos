@@ -1,7 +1,12 @@
 {
-  "updated": "2026-10-25T14:00:00+00:00",
-  "updated_by": "creator",
+  "updated": "2026-10-25T14:40:00+00:00",
+  "updated_by": "guard",
   "today": [
+    {
+      "task": "Drag all 10 videos into the Claude chat so they can be scheduled in Buffer",
+      "link": null,
+      "mins": 2
+    },
     {
       "task": "Log in to Fiverr Affiliates and paste your link (or tell me it's pending)",
       "link": "https://fiverraffiliates.com/v2/login/",
@@ -17,8 +22,8 @@
   "alerts": [],
   "pipeline": {
     "drafted": 0,
-    "approved": 10,
-    "rendered": 0,
+    "approved": 0,
+    "rendered": 10,
     "scheduled": 0,
     "posted": 0
   },
