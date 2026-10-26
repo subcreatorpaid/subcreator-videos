@@ -91,6 +91,7 @@ jobs:
               continue
             fi
             [ -f "videos/$v/spec.json" ] || continue
+            grep -q '"renderer": *"animator"' "videos/$v/spec.json" && { echo "$v uses the Remotion animator (animate.yml)"; continue; }
             echo "::group::$v"
             python renderer/render_list.py "videos/$v/spec.json" "out/$v"
             echo "::endgroup::"

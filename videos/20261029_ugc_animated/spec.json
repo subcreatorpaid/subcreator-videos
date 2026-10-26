@@ -1,0 +1,148 @@
+{
+ "renderer": "animator",
+ "slug": "20261029_ugc_animated",
+ "format": "animated (Remotion v2) - text-sync structure: pain hook, flip, value, caption payoff, loop",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "af_heart",
+  "speed": 1.05
+ },
+ "beats": [
+  {
+   "say": "Hundreds of followers, posting every week, and still zero dollars?",
+   "punch": [
+    "zero"
+   ],
+   "show": {
+    "type": "dashboard",
+    "followers": 847,
+    "posts": "Every week",
+    "posts_word": "posting",
+    "zero_word": "zero",
+    "earnings": "$0.00"
+   }
+  },
+  {
+   "say": "That's not a follower problem. Brands don't pay for followers. They pay for videos.",
+   "punch": [
+    "videos."
+   ],
+   "show": {
+    "type": "versus",
+    "left": "Followers",
+    "left_word": "follower",
+    "right": "Videos",
+    "right_word": "videos.",
+    "left_sub": "doesn't pay",
+    "right_sub": "what brands pay for"
+   }
+  },
+  {
+   "say": "It's called UGC. Short videos you film, that brands run as their own ads. Zero followers needed.",
+   "punch": [
+    "UGC."
+   ],
+   "show": {
+    "type": "phone_ad",
+    "label": "UGC",
+    "label_word": "UGC.",
+    "sticker": "0 followers needed",
+    "sticker_word": "zero",
+    "phone_text": "filmed by you, run by the brand"
+   }
+  },
+  {
+   "say": "Beginners usually charge [$50|fifty] to [$400|four hundred dollars] a video.",
+   "show": {
+    "type": "rate",
+    "low": 50,
+    "high": 400,
+    "low_word": "$50",
+    "high_word": "$400",
+    "unit": "per video, beginners",
+    "src": "Insense, Sep 2026"
+   }
+  },
+  {
+   "say": "To get hired, you need three samples, all filmed on your phone.",
+   "punch": [
+    "three"
+   ],
+   "show": {
+    "type": "samples",
+    "items": [
+     "Sample 1",
+     "Sample 2",
+     "Sample 3"
+    ],
+    "word": "need",
+    "phone_word": "phone.",
+    "chip": "All filmed on your phone"
+   }
+  },
+  {
+   "say": "One rule: label them not sponsored, and never imply a brand hired you.",
+   "punch": [
+    "sponsored,"
+   ],
+   "show": {
+    "type": "stamp",
+    "text": "NOT SPONSORED",
+    "word": "sponsored,",
+    "sub": "Never imply a brand hired you",
+    "sub_word": "never",
+    "tile": "Your sample"
+   }
+  },
+  {
+   "say": "The catch: no brand says yes until it sees your samples, and rates vary by niche.",
+   "show": {
+    "type": "features",
+    "heading": "*THE CATCH*",
+    "items": [
+     [
+      "x",
+      "No samples, no yes"
+     ],
+     [
+      "alert",
+      "Rates vary by niche"
+     ],
+     [
+      "check",
+      "So film samples first"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Which three samples, and how to film each one, are in the caption. Save it,",
+   "punch": [
+    "caption."
+   ],
+   "show": {
+    "type": "caption_cta",
+    "word": "caption.",
+    "save_word": "save",
+    "post": "3 samples, zero followers",
+    "first": "The 3 samples from the video:",
+    "rows": [
+     "Sample 1: the unboxing",
+     "Sample 2: problem + fix",
+     "Sample 3: talking review"
+    ]
+   }
+  },
+  {
+   "say": "and send it to a creator with",
+   "show": {
+    "type": "dashboard",
+    "freeze": true,
+    "followers": 847,
+    "earnings": "$0.00"
+   }
+  }
+ ]
+}

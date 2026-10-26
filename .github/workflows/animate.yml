@@ -55,8 +55,10 @@ jobs:
             pip install -q playwright && python -m playwright install --with-deps chromium >/dev/null
             python renderer/snap.py "videos/$V/spec.json"
           fi
-      - name: Voice + timings
-        run: python animator/prep.py "videos/$V/spec.json"
+      - name: Voice + word timings + music/SFX
+        run: |
+          pip install -q faster-whisper || echo "faster-whisper unavailable: word times will be estimated"
+          python animator/prep.py "videos/$V/spec.json"
       - name: Install Remotion
         working-directory: animator
         run: npm install --no-audit --no-fund

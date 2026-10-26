@@ -49,17 +49,22 @@ def score(spec):
         return 0, ["no beats"], {}
     # hook
     h = 0; first = beats[0]; fs = first.get("show", {})
-    if fs.get("type") == "hook": h += 8
+    visual_hook = fs.get("type") in ("dashboard",)   # animator v2: a moving visual hook replaces the text lines
+    if fs.get("type") == "hook" or visual_hook: h += 8
     else: notes.append("hook: first beat should be a hook")
     fw = words(first.get("say"))
     h += 8 if fw <= 14 else 4 if fw <= 20 else 0
     if fw > 14: notes.append(f"hook: spoken line is {fw} words (aim for 14 or fewer)")
     lines = fs.get("lines", [])
-    if lines and len(lines) <= 3 and all(len(re.sub(r"\*", "", l)) <= 30 for l in lines): h += 6
+    if visual_hook:
+        h += 10 if first.get("punch") else 6
+        if not first.get("punch"): notes.append("hook: add a punch word (camera hit) to the first beat")
+    elif lines and len(lines) <= 3 and all(len(re.sub(r"\*", "", l)) <= 30 for l in lines): h += 6
     elif lines: notes.append("hook: keep to 3 lines of 30 characters or fewer")
-    if any("*" in l for l in lines): h += 4
-    else: notes.append("hook: mark one *ACCENT* word")
-    if len(lines) >= 2: h += 4
+    if not visual_hook:
+        if any("*" in l for l in lines): h += 4
+        else: notes.append("hook: mark one *ACCENT* word")
+        if len(lines) >= 2: h += 4
     pts["hook"] = h
     # pace
     total_w = sum(words(b.get("say")) for b in beats); dur = total_w / WPS
@@ -69,6 +74,7 @@ def score(spec):
         sh = b.get("show", {})
         n = 1 + sum(len(sh.get(k) or []) for k in ELEM_KEYS if isinstance(sh.get(k), list))
         n += 1 if sh.get("highlight") else 0
+        n += sum(1 for k in sh if k == "word" or k.endswith("_word")) + len(b.get("punch", []))  # animator: word-triggered reveals
         secs_per.append(words(b.get("say")) / WPS / max(1, n))
         if words(screen_text(sh)) > 22: crowded += 1
     slow = [i + 1 for i, s in enumerate(secs_per) if s > 4.5]
@@ -86,7 +92,7 @@ def score(spec):
     if re.search(r"\b(send|share)\b", tail): a += 8
     if re.search(r"\b(save)\b", tail): a += 6
     if re.search(r"\b(comment)\b", tail): a += 6
-    if re.search(r"\bfollow\b", tail) or kinds & {"follow", "save", "comment_cta", "book_cta"}: a += 6
+    if re.search(r"\bfollow\b", tail) or kinds & {"follow", "save", "comment_cta", "book_cta", "caption_cta"}: a += 6
     pts["action"] = min(20, a)
     if a < 12: notes.append("action: end with a clear send/save/comment ask plus follow")
     # loop
