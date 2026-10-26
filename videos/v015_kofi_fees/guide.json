@@ -1,0 +1,41 @@
+{
+ "title": "Ko-fi fees and Gold",
+ "subtitle": "When 0% is 0%, and when Gold pays off",
+ "sections": [
+  [
+   "Fees (SchoolMaker, Sep 2026)",
+   [
+    "Tips/donations: 0% on Free and Gold.",
+    "Shop, memberships, commissions: 5% on Free, 0% on Gold.",
+    "Gold: $12/month or $144/year.",
+    "Stripe (~2.9% + $0.30) or PayPal fees on every plan."
+   ]
+  ],
+  [
+   "Break-even",
+   [
+    "Gold is worth it above ~$240/month in shop + membership sales."
+   ]
+  ]
+ ],
+ "steps": [
+  "Create your Ko-fi page.",
+  "Add one tip link to your bio.",
+  "Thank supporters by name in your next video."
+ ],
+ "keyword": "KOFI",
+ "sources": [
+  [
+   "SchoolMaker: Ko-fi pricing (Sep 2026)",
+   "https://schoolmaker.com/blog/ko-fi-pricing"
+  ]
+ ],
+ "video": "Ko-fi: when 0% fees are really 0%",
+ "tool": {
+  "id": "beehiiv",
+  "name": "beehiiv",
+  "earns": "50-60% of what they pay for 12 months",
+  "signup": "https://www.beehiiv.com/partners",
+  "status": "joined"
+ }
+}

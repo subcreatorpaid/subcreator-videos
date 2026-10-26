@@ -1,0 +1,387 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v020_newsletter_boosts_proof",
+ "title": "Proof: a newsletter earned $25,000 from Boosts",
+ "type": "proof",
+ "format": "",
+ "beats": [
+  {
+   "say": "Can a newsletter earn without selling anything? One newsletter made twenty-five thousand dollars from beehiiv Boosts alone.",
+   "show": {
+    "type": "talk",
+    "mood": -0.6,
+    "hold": "laptop",
+    "chips": [
+     [
+      "newsletter",
+      "A newsletter",
+      null
+     ],
+     [
+      "twenty-five",
+      "$25,000",
+      "green"
+     ],
+     [
+      "boosts",
+      "Boosts only",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "twenty-five",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "beehiiv's own case study says it earned twenty-five thousand dollars from Boosts, and eighteen thousand of that came in six months.",
+   "show": {
+    "type": "stat_cards",
+    "title": "FROM BOOSTS ALONE",
+    "green": [
+     "twenty-five",
+     "eighteen"
+    ],
+    "cards": [
+     [
+      "twenty-five",
+      "$25,000",
+      "total",
+      true
+     ],
+     [
+      "eighteen",
+      "$18,000",
+      "in six months",
+      true
+     ]
+    ],
+    "source": "beehiiv case study, Apr 2025"
+   },
+   "sfx": [
+    [
+     "twenty-five",
+     "card"
+    ],
+    [
+     "eighteen",
+     "card"
+    ],
+    [
+     "months",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Boosts work like this: other newsletters pay you when your readers subscribe to them through your recommendation.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "other",
+      "Other newsletters",
+      "laptop",
+      0
+     ],
+     [
+      "recommendation",
+      "You recommend them",
+      "call",
+      -0.3
+     ],
+     [
+      "subscribe",
+      "Readers subscribe",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "other",
+     "pop"
+    ],
+    [
+     "subscribe",
+     "pop"
+    ],
+    [
+     "recommendation",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "But that newsletter had thirty-one thousand subscribers. So this is a result to grow toward, not a day one number.",
+   "show": {
+    "type": "stat_cards",
+    "title": "ITS SIZE",
+    "cards": [
+     [
+      "thirty-one",
+      "31,000",
+      "subscribers"
+     ]
+    ],
+    "hold": null,
+    "mood": 0.4
+   },
+   "sfx": [
+    [
+     "thirty-one",
+     "card"
+    ],
+    [
+     "day",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Start small: a free beehiiv newsletter, one useful issue a week, and Boosts once you have readers.",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "laptop",
+    "chips": [
+     [
+      "free",
+      "Free plan",
+      null
+     ],
+     [
+      "week",
+      "1 issue a week",
+      null
+     ],
+     [
+      "boosts",
+      "Boosts later",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "free",
+     "pop"
+    ],
+    [
+     "week",
+     "pop"
+    ],
+    [
+     "boosts",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: Boosts pay per reader you send, so a small list earns very little at first.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "small",
+      "Small list, small pay",
+      true
+     ],
+     [
+      "reader",
+      "Readers first",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "small",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [NEWSLETTER|newsletter] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. beehiiv is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Newsletter money with beehiiv",
+    "keyword": "NEWSLETTER",
+    "tool": "beehiiv"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$25,000|Twenty-five thousand dollars] from Boosts. Here's the honest part.",
+   "show": {
+    "type": "stat_cards",
+    "title": "FROM BOOSTS ALONE",
+    "green": [
+     "twenty-five",
+     "eighteen"
+    ],
+    "cards": [
+     [
+      "twenty-five",
+      "$25,000",
+      "total",
+      true
+     ],
+     [
+      "eighteen",
+      "$18,000",
+      "in six months",
+      true
+     ]
+    ],
+    "source": "beehiiv case study, Apr 2025"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Writing a newsletter, and not earning a cent from it?",
+   "show": {
+    "type": "talk",
+    "mood": -0.6,
+    "hold": "laptop",
+    "chips": [
+     [
+      "newsletter",
+      "A newsletter",
+      null
+     ],
+     [
+      "twenty-five",
+      "$25,000",
+      "green"
+     ],
+     [
+      "boosts",
+      "Boosts only",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Can a newsletter earn without selling anything?",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "other",
+      "Other newsletters",
+      "laptop",
+      0
+     ],
+     [
+      "recommendation",
+      "You recommend them",
+      "call",
+      -0.3
+     ],
+     [
+      "subscribe",
+      "Readers subscribe",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "beehiiv case study: $25,000 from Boosts (Apr 2025)",
+   "url": "https://www.beehiiv.com/blog/case-study-geekout-newsletter"
+  }
+ ],
+ "thumb": {
+  "headline": "*$25K* from\none feature",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.8,
+  "sticker": "beehiiv Boosts",
+  "chip": "Proof + the honest part",
+  "size": 140
+ },
+ "finder_stream": "email-newsletter"
+}

@@ -1,0 +1,83 @@
+{
+ "title": "Earn with 0 followers",
+ "subtitle": "5 income streams with no follower minimum, the pay and the catch",
+ "sections": [
+  [
+   "1. UGC (user-generated content)",
+   [
+    "Brands pay for videos they run as their own ads.",
+    "Pay: beginners usually charge $50-$400 per video (Insense, Sep 2026).",
+    "First step: film 3 sample videos with your phone.",
+    "Catch: no brand says yes before it sees samples."
+   ]
+  ],
+  [
+   "2. Amazon Associates",
+   [
+    "Earn a commission when people buy through your links.",
+    "Pay: most categories about 3-4.5%. Example: $40 item at 4.5% = about $1.80.",
+    "Catch: 3 qualifying sales in your first 180 days or the account closes."
+   ]
+  ],
+  [
+   "3. Etsy templates",
+   [
+    "Sell digital templates; buyers find you through Etsy search.",
+    "Pay: on a $10 sale you keep about $8.60 (US) after $0.20 listing, 6.5% transaction and ~3% + $0.25 payment fees.",
+    "Catch: popular niches are crowded."
+   ]
+  ],
+  [
+   "4. ElevenLabs Voice Library",
+   [
+    "Share a Professional Voice Clone (Creator plan or above).",
+    "Paid only when paying users use it, through Stripe, usually from a $10 balance.",
+    "Catch: income depends on demand for your voice."
+   ]
+  ],
+  [
+   "5. Fiverr gigs",
+   [
+    "List a service (UGC, editing, voiceover).",
+    "Fiverr keeps 20% of each order, including tips; 14-day clearance for new sellers.",
+    "Catch: new gigs need reviews before orders come steadily."
+   ]
+  ]
+ ],
+ "steps": [
+  "Pick ONE stream that fits what you enjoy.",
+  "Do its first step this week.",
+  "Try the free AI Income Finder on subcreatorpaid.com to see which fits you."
+ ],
+ "keyword": "START",
+ "sources": [
+  [
+   "Insense: UGC creator rates (Sep 2026)",
+   "https://insense.pro/blog/ugc-creator-rates"
+  ],
+  [
+   "Lasso: Amazon affiliate commission rates",
+   "https://getlasso.co/amazon-affiliate-commission-rate/"
+  ],
+  [
+   "Checkout Page: Etsy fees",
+   "https://checkoutpage.com/blog/etsy-fees"
+  ],
+  [
+   "ElevenLabs docs: voice payouts",
+   "https://elevenlabs.io/docs/eleven-creative/voices/payouts"
+  ],
+  [
+   "Wise: how to get paid on Fiverr (20% fee, clearance)",
+   "https://wise.com/us/blog/how-to-get-paid-on-fiverr"
+  ]
+ ],
+ "video": "5 income streams with 0 followers",
+ "tool": {
+  "id": "fiverr",
+  "name": "Fiverr",
+  "earns": "25% of a new buyer's first order + 10% for 12 months",
+  "signup": "https://affiliates.fiverr.com",
+  "status": "waiting for owner login"
+ }
+}

@@ -1,0 +1,408 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v016_stan_store_price",
+ "title": "Stan Store: the real price",
+ "type": "tool",
+ "format": "",
+ "beats": [
+  {
+   "say": "Want one link in your bio that sells your guides and calls? Here's Stan Store's real price, and when it's worth it.",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "link",
+      "One link in bio",
+      null
+     ],
+     [
+      "guides",
+      "Guides + calls",
+      null
+     ],
+     [
+      "price",
+      "Real price?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "link",
+     "pop"
+    ],
+    [
+     "price",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The Creator plan is twenty-nine dollars a month, or three hundred a year. Creator Pro is ninety-nine a month.",
+   "show": {
+    "type": "stat_cards",
+    "title": "STAN STORE PLANS",
+    "cards": [
+     [
+      "twenty-nine",
+      "$29",
+      "per month"
+     ],
+     [
+      "three",
+      "$300",
+      "per year"
+     ],
+     [
+      "ninety-nine",
+      "$99",
+      "Pro, per month"
+     ]
+    ],
+    "source": "Stan pricing page",
+    "hold": null,
+    "mood": 0.4
+   },
+   "sfx": [
+    [
+     "twenty-nine",
+     "card"
+    ],
+    [
+     "three",
+     "card"
+    ],
+    [
+     "ninety-nine",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "Stan itself takes zero percent of your sales. You only pay Stripe or PayPal processing.",
+   "show": {
+    "type": "fee_split",
+    "label": "$20 sale",
+    "mark": "St",
+    "parts": [
+     [
+      "zero",
+      "You keep",
+      19.12,
+      "keep"
+     ],
+     [
+      "processing",
+      "Processing ~2.9% + $0.30",
+      0.88,
+      "fee"
+     ]
+    ],
+    "source": "Stan pricing page"
+   },
+   "sfx": [
+    [
+     "zero",
+     "ding"
+    ],
+    [
+     "processing",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "At twenty-nine dollars a month, two sales of a twenty dollar guide cover the plan.",
+   "show": {
+    "type": "calc",
+    "title": "Break-even",
+    "rows": [
+     [
+      "twenty-nine",
+      "Plan",
+      "$29",
+      null
+     ],
+     [
+      "twenty",
+      "Guide price",
+      "$20",
+      "÷"
+     ]
+    ],
+    "result": [
+     "sales",
+     "Sales to cover it",
+     2,
+     "",
+     " sales",
+     0
+    ]
+   },
+   "sfx": [
+    [
+     "twenty-nine",
+     "pop"
+    ],
+    [
+     "twenty",
+     "pop"
+    ],
+    [
+     "sales",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Add a product, upload your file, and share the store link in your bio.",
+   "show": {
+    "type": "tool_demo",
+    "app": "Stan",
+    "input": "guide.pdf",
+    "input_word": "upload",
+    "process": "Publishing your store",
+    "process_word": "upload",
+    "outputs": [
+     [
+      "share",
+      "Guide"
+     ],
+     [
+      "share",
+      "1:1 call"
+     ],
+     [
+      "share",
+      "Email sign-up"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "product",
+     "click"
+    ],
+    [
+     "upload",
+     "drop"
+    ],
+    [
+     "share",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: it's a monthly cost before you've sold anything. Use the fourteen day trial as your test.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "monthly",
+      "Monthly cost first",
+      true
+     ],
+     [
+      "trial",
+      "14-day trial to test",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "monthly",
+     "whip"
+    ],
+    [
+     "trial",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [STORE|store] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Stan Store is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Stan Store: is it worth it?",
+    "keyword": "STORE",
+    "tool": "Stan Store"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$29|Twenty-nine dollars] a month. Two sales cover it.",
+   "show": {
+    "type": "calc",
+    "title": "Break-even",
+    "rows": [
+     [
+      "twenty-nine",
+      "Plan",
+      "$29",
+      null
+     ],
+     [
+      "twenty",
+      "Guide price",
+      "$20",
+      "÷"
+     ]
+    ],
+    "result": [
+     "sales",
+     "Sales to cover it",
+     2,
+     "",
+     " sales",
+     0
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Ten links in your bio, and nobody buys?",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "link",
+      "One link in bio",
+      null
+     ],
+     [
+      "guides",
+      "Guides + calls",
+      null
+     ],
+     [
+      "price",
+      "Real price?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Is Stan Store worth twenty-nine dollars a month?",
+   "show": {
+    "type": "stat_cards",
+    "title": "STAN STORE PLANS",
+    "cards": [
+     [
+      "twenty-nine",
+      "$29",
+      "per month"
+     ],
+     [
+      "three",
+      "$300",
+      "per year"
+     ],
+     [
+      "ninety-nine",
+      "$99",
+      "Pro, per month"
+     ]
+    ],
+    "source": "Stan pricing page",
+    "hold": null,
+    "mood": 0.4
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Stan Store pricing",
+   "url": "https://stan.store/blog/stan-store-pricing/"
+  }
+ ],
+ "thumb": {
+  "headline": "Stan Store:\nworth *$29*?",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": 0.2,
+  "sticker": "0% sales fee",
+  "chip": "The real price",
+  "size": 130
+ },
+ "finder_stream": null
+}

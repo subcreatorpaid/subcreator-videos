@@ -1,0 +1,434 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v010_tiktok_rewards_rules",
+ "title": "TikTok Creator Rewards: the real rules",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Myth: TikTok pays every creator for views. Fact: its Creator Rewards Program has a high bar, and most small accounts don't qualify yet.",
+   "show": {
+    "type": "myth",
+    "myth": "TikTok pays everyone for views",
+    "myth_word": "myth",
+    "fact": "Creator Rewards has a high bar",
+    "fact_word": "fact"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "myth",
+     "thud"
+    ],
+    [
+     "fact",
+     "swipe"
+    ]
+   ]
+  },
+  {
+   "say": "You need ten thousand followers, and one hundred thousand video views in the last thirty days.",
+   "show": {
+    "type": "progress",
+    "mark": "tiktok",
+    "title": "Creator Rewards",
+    "bars": [
+     [
+      "ten",
+      "Followers",
+      847,
+      10000
+     ],
+     [
+      "hundred",
+      "Views, last 30 days",
+      24000,
+      100000
+     ]
+    ],
+    "red": [
+     "ten",
+     "thousand"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "ten",
+     "count"
+    ],
+    [
+     "hundred",
+     "count"
+    ],
+    [
+     "days",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Your videos must be at least one minute long, you must be eighteen or older, and it's for personal accounts, not business ones.",
+   "show": {
+    "type": "checklist",
+    "title": "Also required",
+    "items": [
+     [
+      "minute",
+      "Videos 1 minute or longer"
+     ],
+     [
+      "eighteen",
+      "18 or older"
+     ],
+     [
+      "personal",
+      "Personal account"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "minute",
+     "click"
+    ],
+    [
+     "eighteen",
+     "click"
+    ],
+    [
+     "personal",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "And it's only open in some countries, like the US, UK, Germany, Japan, Korea, France and Brazil.",
+   "show": {
+    "type": "countries",
+    "title": "Where it's open",
+    "items": [
+     [
+      "us",
+      "US"
+     ],
+     [
+      "uk",
+      "UK"
+     ],
+     [
+      "germany",
+      "Germany"
+     ],
+     [
+      "japan",
+      "Japan"
+     ],
+     [
+      "korea",
+      "Korea"
+     ],
+     [
+      "france",
+      "France"
+     ],
+     [
+      "brazil",
+      "Brazil"
+     ]
+    ],
+    "badge": [
+     "brazil",
+     "7 countries",
+     true
+    ]
+   },
+   "sfx": [
+    [
+     "us",
+     "pop"
+    ],
+    [
+     "germany",
+     "pop"
+    ],
+    [
+     "korea",
+     "pop"
+    ],
+    [
+     "brazil",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Creator guides report pay of around forty cents to a dollar for every thousand qualifying views.",
+   "show": {
+    "type": "stat_cards",
+    "title": "REPORTED RATE",
+    "cards": [
+     [
+      "forty",
+      "$0.40",
+      "per 1,000 views"
+     ],
+     [
+      "dollar",
+      "$1.00",
+      "per 1,000 views",
+      true
+     ]
+    ],
+    "source": "Stack Influence, Jun 2026",
+    "hold": "phone0",
+    "mood": 0.3
+   },
+   "sfx": [
+    [
+     "forty",
+     "card"
+    ],
+    [
+     "dollar",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "So under ten thousand followers, earn somewhere else first: UGC, affiliate links, or a newsletter.",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "laptop",
+    "chips": [
+     [
+      "ugc",
+      "UGC",
+      null
+     ],
+     [
+      "affiliate",
+      "Affiliate links",
+      null
+     ],
+     [
+      "newsletter",
+      "Newsletter",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "ugc",
+     "pop"
+    ],
+    [
+     "affiliate",
+     "pop"
+    ],
+    [
+     "newsletter",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: these rules come from creator guides, so check TikTok's own page inside your app before you plan around them.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "guides",
+      "Third-party summaries",
+      true
+     ],
+     [
+      "app",
+      "Check in your app",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "guides",
+     "whip"
+    ],
+    [
+     "app",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [TIKTOK|tiktok] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. OpusClip is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "TikTok pay: the real rules",
+    "keyword": "TIKTOK",
+    "tool": "OpusClip"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[10,000|Ten thousand] followers and [100,000|one hundred thousand] views. That's TikTok's bar.",
+   "show": {
+    "type": "progress",
+    "mark": "tiktok",
+    "title": "Creator Rewards",
+    "bars": [
+     [
+      "ten",
+      "Followers",
+      847,
+      10000
+     ],
+     [
+      "hundred",
+      "Views, last 30 days",
+      24000,
+      100000
+     ]
+    ],
+    "red": [
+     "ten",
+     "thousand"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Posting on TikTok every day, and still not paid?",
+   "show": {
+    "type": "myth",
+    "myth": "TikTok pays everyone for views",
+    "myth_word": "myth",
+    "fact": "Creator Rewards has a high bar",
+    "fact_word": "fact"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How many followers does TikTok really need before it pays you?",
+   "show": {
+    "type": "progress",
+    "mark": "tiktok",
+    "title": "Creator Rewards",
+    "bars": [
+     [
+      "ten",
+      "Followers",
+      847,
+      10000
+     ],
+     [
+      "hundred",
+      "Views, last 30 days",
+      24000,
+      100000
+     ]
+    ],
+    "red": [
+     "ten",
+     "thousand"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Metricool: TikTok Creator Rewards requirements",
+   "url": "https://metricool.com/tiktok-creator-next/"
+  },
+  {
+   "title": "Stack Influence: 5 TikTok monetization paths (Jun 2026)",
+   "url": "https://stackinfluence.com/blog/5-tiktok-monetization-paths-that-pay-creators-in-2026"
+  }
+ ],
+ "thumb": {
+  "headline": "TikTok pays\nat ~10K~",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 0.9,
+  "sticker": "100K views too",
+  "sticker_color": "red",
+  "chip": "The real Creator Rewards rules",
+  "size": 140
+ },
+ "finder_stream": "tiktok-creator-rewards"
+}

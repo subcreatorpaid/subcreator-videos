@@ -1,0 +1,49 @@
+{
+ "title": "Sell a digital product: fees",
+ "subtitle": "Gumroad's two fees and how to start",
+ "sections": [
+  [
+   "Gumroad fees (checked Aug 2026)",
+   [
+    "Direct sale: 10% + $0.50, plus card processing (~2.9% + $0.30).",
+    "Discover marketplace sale: 30%.",
+    "$10 direct sale: you keep about $7.91."
+   ]
+  ],
+  [
+   "What to sell first",
+   [
+    "A checklist, template or short guide that solves ONE problem.",
+    "One simple price."
+   ]
+  ],
+  [
+   "Alternatives to compare",
+   [
+    "Stan Store: 0% Stan fee, $29/month plan.",
+    "Ko-fi: 5% on shop sales on the free plan, 0% on Gold ($12/month).",
+    "Etsy: listing + 6.5% transaction + payment fees."
+   ]
+  ]
+ ],
+ "steps": [
+  "Write the one problem your guide solves.",
+  "Make it in a day.",
+  "Link it from your bio and mention it in videos."
+ ],
+ "keyword": "SELL",
+ "sources": [
+  [
+   "Fungies: Gumroad fees (checked Aug 2026)",
+   "https://fungies.io/leaving-gumroad-cheaper-alternatives-2026/"
+  ]
+ ],
+ "video": "Gumroad fees: the one that triples",
+ "tool": {
+  "id": "stan",
+  "name": "Stan Store",
+  "earns": "20% recurring (confirm on joining)",
+  "signup": "https://stan.store/affiliates",
+  "status": "to join"
+ }
+}

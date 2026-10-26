@@ -1,0 +1,53 @@
+{
+ "title": "Earn from your voice",
+ "subtitle": "ElevenLabs Voice Library payouts, step by step",
+ "sections": [
+  [
+   "Proof",
+   [
+    "$22M+ paid to 10,400+ voice creators (ElevenLabs, May 2026)."
+   ]
+  ],
+  [
+   "How it works",
+   [
+    "Create a Professional Voice Clone (Creator plan or above).",
+    "Share it in the Voice Library; a short review follows.",
+    "Earn only from paying users' usage.",
+    "Choose a notice period (immediate to 2 years) and your rate settings."
+   ]
+  ],
+  [
+   "Getting paid",
+   [
+    "Stripe Connect payouts, usually from a $10 balance.",
+    "W-8 or W-9 tax form; US usage may have 30% withholding unless a treaty applies.",
+    "About 60 payout countries."
+   ]
+  ]
+ ],
+ "steps": [
+  "Record clean audio in a quiet room.",
+  "Create the clone and share it.",
+  "Write a clear voice description so people can find it."
+ ],
+ "keyword": "VOICE",
+ "sources": [
+  [
+   "ElevenLabs docs: voice payouts",
+   "https://elevenlabs.io/docs/eleven-creative/voices/payouts"
+  ],
+  [
+   "ElevenLabs: $22 million earned by voice creators (May 2026)",
+   "https://elevenlabs.io/blog/22-million-earned-by-voice-creators-on-elevenlabs"
+  ]
+ ],
+ "video": "Get paid when people use your voice",
+ "tool": {
+  "id": "elevenlabs",
+  "name": "ElevenLabs",
+  "earns": "22% of their payments for 12 months",
+  "signup": "https://elevenlabs.io/affiliate",
+  "status": "joined"
+ }
+}

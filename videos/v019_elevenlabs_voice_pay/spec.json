@@ -1,0 +1,398 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v019_elevenlabs_voice_pay",
+ "title": "Get paid when people use your voice",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Your voice can earn money from other people's projects. Here's how ElevenLabs pays voice creators, and what you need first.",
+   "show": {
+    "type": "talk",
+    "mood": -0.5,
+    "hold": "call",
+    "chips": [
+     [
+      "voice",
+      "Your voice",
+      null
+     ],
+     [
+      "pays",
+      "How it pays",
+      "green"
+     ],
+     [
+      "need",
+      "What you need",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "voice",
+     "pop"
+    ],
+    [
+     "pays",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "ElevenLabs says it has paid out over twenty-two million dollars to more than ten thousand four hundred voice creators.",
+   "show": {
+    "type": "stat_cards",
+    "title": "PAID TO VOICE CREATORS",
+    "green": [
+     "twenty-two"
+    ],
+    "cards": [
+     [
+      "twenty-two",
+      "$22M+",
+      "paid out",
+      true
+     ],
+     [
+      "four",
+      "10,400+",
+      "voice creators"
+     ]
+    ],
+    "source": "ElevenLabs blog, May 2026"
+   },
+   "sfx": [
+    [
+     "twenty-two",
+     "card"
+    ],
+    [
+     "twenty-two",
+     "ding"
+    ],
+    [
+     "four",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "You make a Professional Voice Clone on the Creator plan or above, share it in the Voice Library, and pass a short review.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "professional",
+      "Professional Voice Clone",
+      "laptop",
+      0
+     ],
+     [
+      "share",
+      "Share in Voice Library",
+      "laptop",
+      -0.2
+     ],
+     [
+      "review",
+      "Pass a short review",
+      null,
+      -0.6
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "professional",
+     "pop"
+    ],
+    [
+     "share",
+     "pop"
+    ],
+    [
+     "review",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "You're paid only when paying users use your voice, through Stripe, usually once your balance reaches ten dollars.",
+   "show": {
+    "type": "page_card",
+    "url": "elevenlabs.io/docs · voice payouts",
+    "mark": "EL",
+    "title": "How voice payouts work",
+    "checked": "Official docs · checked 26 Oct 2026",
+    "bullets": [
+     [
+      "paying",
+      "Paid only for use by paying users",
+      true
+     ],
+     [
+      "stripe",
+      "Paid through Stripe Connect",
+      false
+     ],
+     [
+      "ten",
+      "Usually from a $10 balance",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "paying",
+     "ding"
+    ],
+    [
+     "stripe",
+     "pop"
+    ],
+    [
+     "ten",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "You'll need a tax form, and payouts work in about sixty countries.",
+   "show": {
+    "type": "checklist",
+    "title": "Before you start",
+    "items": [
+     [
+      "tax",
+      "W-8 or W-9 tax form"
+     ],
+     [
+      "sixty",
+      "One of ~60 payout countries"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "tax",
+     "click"
+    ],
+    [
+     "sixty",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: making the clone needs a paid plan, and your earnings depend on how many people choose your voice.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "call",
+    "items": [
+     [
+      "paid",
+      "Paid plan to create",
+      true
+     ],
+     [
+      "choose",
+      "Depends on demand",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "paid",
+     "whip"
+    ],
+    [
+     "choose",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [VOICE|voice] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. ElevenLabs is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Earn from your voice",
+    "keyword": "VOICE",
+    "tool": "ElevenLabs"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$22,000,000|Twenty-two million dollars], paid to voice creators.",
+   "show": {
+    "type": "stat_cards",
+    "title": "PAID TO VOICE CREATORS",
+    "green": [
+     "twenty-two"
+    ],
+    "cards": [
+     [
+      "twenty-two",
+      "$22M+",
+      "paid out",
+      true
+     ],
+     [
+      "four",
+      "10,400+",
+      "voice creators"
+     ]
+    ],
+    "source": "ElevenLabs blog, May 2026"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "People say you have a great voice, but it earns you nothing?",
+   "show": {
+    "type": "talk",
+    "mood": -0.5,
+    "hold": "call",
+    "chips": [
+     [
+      "voice",
+      "Your voice",
+      null
+     ],
+     [
+      "pays",
+      "How it pays",
+      "green"
+     ],
+     [
+      "need",
+      "What you need",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Can your voice earn money while you sleep? Here's how it really works.",
+   "show": {
+    "type": "page_card",
+    "url": "elevenlabs.io/docs · voice payouts",
+    "mark": "EL",
+    "title": "How voice payouts work",
+    "checked": "Official docs · checked 26 Oct 2026",
+    "bullets": [
+     [
+      "paying",
+      "Paid only for use by paying users",
+      true
+     ],
+     [
+      "stripe",
+      "Paid through Stripe Connect",
+      false
+     ],
+     [
+      "ten",
+      "Usually from a $10 balance",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "ElevenLabs docs: voice payouts",
+   "url": "https://elevenlabs.io/docs/eleven-creative/voices/payouts"
+  },
+  {
+   "title": "ElevenLabs: $22 million earned by voice creators (May 2026)",
+   "url": "https://elevenlabs.io/blog/22-million-earned-by-voice-creators-on-elevenlabs"
+  }
+ ],
+ "thumb": {
+  "headline": "Get paid for\nyour *voice*",
+  "hero": "face",
+  "hold": "call",
+  "mood": -0.6,
+  "sticker": "$22M+ paid out",
+  "sticker_color": "green",
+  "chip": "ElevenLabs Voice Library",
+  "size": 130
+ },
+ "finder_stream": "elevenlabs-voice"
+}

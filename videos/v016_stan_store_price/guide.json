@@ -1,0 +1,54 @@
+{
+ "title": "Stan Store: is it worth it?",
+ "subtitle": "Plans, fees, break-even and a setup checklist",
+ "sections": [
+  [
+   "Plans",
+   [
+    "Creator: $29/month or $300/year.",
+    "Creator Pro: $99/month or $948/year.",
+    "14-day free trial."
+   ]
+  ],
+  [
+   "Fees",
+   [
+    "Stan: 0% of sales.",
+    "Stripe or PayPal processing still applies."
+   ]
+  ],
+  [
+   "Break-even",
+   [
+    "$29 ÷ $20 guide = 2 sales a month."
+   ]
+  ],
+  [
+   "Free alternatives to compare",
+   [
+    "Ko-fi shop (5% on free plan).",
+    "Gumroad (10% + $0.50 direct)."
+   ]
+  ]
+ ],
+ "steps": [
+  "Have one product ready BEFORE starting the trial.",
+  "Set up the store in a day.",
+  "Share it daily for 14 days; keep it only if it sells."
+ ],
+ "keyword": "STORE",
+ "sources": [
+  [
+   "Stan Store pricing",
+   "https://stan.store/blog/stan-store-pricing/"
+  ]
+ ],
+ "video": "Stan Store: the real price",
+ "tool": {
+  "id": "stan",
+  "name": "Stan Store",
+  "earns": "20% recurring (confirm on joining)",
+  "signup": "https://stan.store/affiliates",
+  "status": "to join"
+ }
+}

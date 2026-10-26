@@ -1,0 +1,427 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v012_patreon_fees",
+ "title": "Patreon fees: what you keep from $10",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Thinking about Patreon? Here's what you really keep from a [$10|ten dollar] membership, and what it takes to make it worth it.",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": null,
+    "chips": [
+     [
+      "patreon",
+      "Patreon",
+      null
+     ],
+     [
+      "$10",
+      "$10 / month",
+      null
+     ],
+     [
+      "keep",
+      "What you keep",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "$10",
+     "pop"
+    ],
+    [
+     "keep",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "New creators since August twenty twenty-five pay a ten percent platform fee. US card processing adds two point nine percent plus thirty cents. So you keep about [$8.41|eight forty-one].",
+   "show": {
+    "type": "fee_split",
+    "label": "$10 member",
+    "mark": "Pa",
+    "green": [
+     "$8.41"
+    ],
+    "parts": [
+     [
+      "platform",
+      "Platform fee 10%",
+      1.0,
+      "fee"
+     ],
+     [
+      "processing",
+      "Card 2.9% + $0.30",
+      0.59,
+      "fee"
+     ],
+     [
+      "$8.41",
+      "You keep",
+      8.41,
+      "keep"
+     ]
+    ],
+    "source": "Patreon support"
+   },
+   "sfx": [
+    [
+     "platform",
+     "card"
+    ],
+    [
+     "processing",
+     "card"
+    ],
+    [
+     "$8.41",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Twenty members at [$8.41|eight forty-one] each is about [$168|one hundred sixty-eight dollars] a month, before tax.",
+   "show": {
+    "type": "calc",
+    "title": "Example: 20 members",
+    "green": [
+     "$168"
+    ],
+    "rows": [
+     [
+      "twenty",
+      "Members",
+      "20",
+      null
+     ],
+     [
+      "$8.41",
+      "You keep each",
+      "$8.41",
+      "×"
+     ]
+    ],
+    "result": [
+     "$168",
+     "Per month",
+     168.2,
+     "$",
+     "",
+     0
+    ],
+    "note": "Example only, before tax"
+   },
+   "sfx": [
+    [
+     "twenty",
+     "pop"
+    ],
+    [
+     "$8.41",
+     "pop"
+    ],
+    [
+     "$168",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "If fans pay in a different currency than yours, another two and a half percent conversion fee can apply.",
+   "show": {
+    "type": "talk",
+    "mood": 0.5,
+    "hold": null,
+    "red": [
+     "conversion"
+    ],
+    "chips": [
+     [
+      "currency",
+      "Other currency",
+      "red"
+     ],
+     [
+      "half",
+      "+2.5% fee",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "currency",
+     "pop"
+    ],
+    [
+     "half",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "To start: pick one perk fans can't get for free, set one simple tier, and mention it in every video.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "perk",
+      "One real perk",
+      "film",
+      0
+     ],
+     [
+      "tier",
+      "One simple tier",
+      "laptop",
+      -0.2
+     ],
+     [
+      "mention",
+      "Mention it in videos",
+      null,
+      -0.6
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "perk",
+     "pop"
+    ],
+    [
+     "tier",
+     "pop"
+    ],
+    [
+     "mention",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: fans pay for something extra. A link alone won't sell memberships, so build the perk first.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": null,
+    "items": [
+     [
+      "extra",
+      "Fans need a reason",
+      true
+     ],
+     [
+      "link",
+      "A link alone won't sell",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "extra",
+     "whip"
+    ],
+    [
+     "link",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [PATREON|patreon] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. beehiiv is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Patreon fees explained",
+    "keyword": "PATREON",
+    "tool": "beehiiv"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$8.41|Eight forty-one]. That's what you keep from a [$10|ten dollar] Patreon member.",
+   "show": {
+    "type": "fee_split",
+    "label": "$10 member",
+    "mark": "Pa",
+    "green": [
+     "$8.41"
+    ],
+    "parts": [
+     [
+      "platform",
+      "Platform fee 10%",
+      1.0,
+      "fee"
+     ],
+     [
+      "processing",
+      "Card 2.9% + $0.30",
+      0.59,
+      "fee"
+     ],
+     [
+      "$8.41",
+      "You keep",
+      8.41,
+      "keep"
+     ]
+    ],
+    "source": "Patreon support"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Fans say they'd support you, but you don't know what Patreon takes?",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": null,
+    "chips": [
+     [
+      "patreon",
+      "Patreon",
+      null
+     ],
+     [
+      "$10",
+      "$10 / month",
+      null
+     ],
+     [
+      "keep",
+      "What you keep",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How much does Patreon really take from you?",
+   "show": {
+    "type": "fee_split",
+    "label": "$10 member",
+    "mark": "Pa",
+    "green": [
+     "$8.41"
+    ],
+    "parts": [
+     [
+      "platform",
+      "Platform fee 10%",
+      1.0,
+      "fee"
+     ],
+     [
+      "processing",
+      "Card 2.9% + $0.30",
+      0.59,
+      "fee"
+     ],
+     [
+      "$8.41",
+      "You keep",
+      8.41,
+      "keep"
+     ]
+    ],
+    "source": "Patreon support"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Patreon: standard platform fee for new creators",
+   "url": "https://support.patreon.com/hc/en-us/articles/36426991446797"
+  }
+ ],
+ "thumb": {
+  "headline": "Patreon takes\n~how much?~",
+  "hero": "face",
+  "hold": "money",
+  "mood": 0.3,
+  "sticker": "You keep ~$8.41",
+  "sticker_color": "green",
+  "chip": "On a $10 membership",
+  "size": 130
+ },
+ "finder_stream": "patreon"
+}

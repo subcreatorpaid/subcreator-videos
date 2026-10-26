@@ -254,7 +254,7 @@ const Receipt = ({f, w, s}) => {
     <div style={{position: 'absolute', left: 130, top: 150, width: 820, height: 70, borderRadius: 35, background: C.ink, zIndex: 2, boxShadow: glow('0,0,0', 0.2, 50)}} />
     <div style={{position: 'absolute', left: 180, top: 190, width: 720, height: h, background: '#fff', boxShadow: glow('0,0,0', 0.14, 60), overflow: 'hidden',
       clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 20px), 95% 100%, 90% calc(100% - 20px), 85% 100%, 80% calc(100% - 20px), 75% 100%, 70% calc(100% - 20px), 65% 100%, 60% calc(100% - 20px), 55% 100%, 50% calc(100% - 20px), 45% 100%, 40% calc(100% - 20px), 35% 100%, 30% calc(100% - 20px), 25% 100%, 20% calc(100% - 20px), 15% 100%, 10% calc(100% - 20px), 5% 100%, 0 calc(100% - 20px))'}}>
-      <div style={{position: 'absolute', left: 50, right: 50, top: 50, fontWeight: 900, fontSize: 44, letterSpacing: 4, borderBottom: `4px dashed ${C.line}`, paddingBottom: 20}}>YOUR QUOTE</div>
+      <div style={{position: 'absolute', left: 50, right: 50, top: 50, fontWeight: 900, fontSize: 44, letterSpacing: 4, borderBottom: `4px dashed ${C.line}`, paddingBottom: 20}}>{s.title || 'YOUR QUOTE'}</div>
       {lines.map(([k, t, kind], i) => (
         <div key={k} style={{position: 'absolute', left: 50, right: 50, top: 150 + i * 120, height: 100, display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: `3px solid ${C.line}`,
           opacity: ease(f - w(k) + 2, 6)}}>
@@ -315,7 +315,7 @@ const Contract = ({f, w, s}) => {
   return (<>
     <div style={{position: 'absolute', left: 150, top: 160, width: 760, height: 880, borderRadius: 26, background: '#fff', boxShadow: glow('0,0,0', 0.16, 80), opacity: p,
       transform: `perspective(2200px) rotateY(${-10 + (1 - p) * 40}deg) rotateX(6deg) translateX(${(1 - p) * 300}px)`}}>
-      <div style={{position: 'absolute', left: 60, top: 50, fontWeight: 900, fontSize: 58}}>Agreement</div>
+      <div style={{position: 'absolute', left: 60, top: 50, fontWeight: 900, fontSize: 58}}>{s.title || 'Agreement'}</div>
       {[0, 1].map((i) => <div key={i} style={{position: 'absolute', left: 60, top: 140 + i * 30, width: 500 - i * 140, height: 14, borderRadius: 7, background: C.line}} />)}
       {items.map(([k, t], i) => {
         const tk = ease(f - w(k) + 2, 8);

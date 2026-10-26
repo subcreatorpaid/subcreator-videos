@@ -1,0 +1,48 @@
+{
+ "title": "Patreon fees explained",
+ "subtitle": "What you keep, an example month, and how to start",
+ "sections": [
+  [
+   "Fees (new creators since 4 Aug 2025)",
+   [
+    "10% platform fee.",
+    "Payment processing: US card / Apple Pay 2.9% + $0.30; non-US PayPal 3.9% + $0.30; GBP/EUR 3.4% + 0.35.",
+    "2.5% currency conversion when a fan pays in a different currency."
+   ]
+  ],
+  [
+   "Example",
+   [
+    "$10 membership: about $8.41 kept (US card).",
+    "20 members: about $168/month before tax (example only)."
+   ]
+  ],
+  [
+   "Make it worth joining",
+   [
+    "One perk fans can't get free: bonus episodes, early access, a monthly live Q&A.",
+    "One tier to start. Add more only when asked."
+   ]
+  ]
+ ],
+ "steps": [
+  "Write down your one perk.",
+  "Set up one tier.",
+  "Mention it at the end of every video for a month."
+ ],
+ "keyword": "PATREON",
+ "sources": [
+  [
+   "Patreon: standard platform fee for new creators",
+   "https://support.patreon.com/hc/en-us/articles/36426991446797"
+  ]
+ ],
+ "video": "Patreon fees: what you keep from $10",
+ "tool": {
+  "id": "beehiiv",
+  "name": "beehiiv",
+  "earns": "50-60% of what they pay for 12 months",
+  "signup": "https://www.beehiiv.com/partners",
+  "status": "joined"
+ }
+}

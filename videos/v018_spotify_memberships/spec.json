@@ -1,0 +1,379 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v018_spotify_memberships",
+ "title": "Spotify Memberships: who qualifies, what you keep",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Spotify now lets podcasters charge for memberships. Here's who qualifies, and what you keep.",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": null,
+    "chips": [
+     [
+      "spotify",
+      "Spotify",
+      null
+     ],
+     [
+      "memberships",
+      "Memberships",
+      null
+     ],
+     [
+      "keep",
+      "What you keep",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "memberships",
+     "pop"
+    ],
+    [
+     "keep",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "You need one hundred listeners, and one hundred hours listened, in the last thirty days.",
+   "show": {
+    "type": "progress",
+    "mark": "spotify",
+    "title": "Spotify Memberships",
+    "bars": [
+     [
+      "listeners",
+      "Listeners, 30 days",
+      64,
+      100
+     ],
+     [
+      "hours",
+      "Hours listened, 30 days",
+      100,
+      100
+     ]
+    ],
+    "hold": "phone0",
+    "mood": 0.3
+   },
+   "sfx": [
+    [
+     "listeners",
+     "count"
+    ],
+    [
+     "hours",
+     "count"
+    ]
+   ]
+  },
+  {
+   "say": "Creators keep ninety percent. On a five dollar membership, that's [$4.50|four fifty].",
+   "show": {
+    "type": "fee_split",
+    "label": "$5 member",
+    "mark": "spotify",
+    "green": [
+     "$4.50"
+    ],
+    "parts": [
+     [
+      "ninety",
+      "Spotify 10%",
+      0.5,
+      "fee"
+     ],
+     [
+      "$4.50",
+      "You keep 90%",
+      4.5,
+      "keep"
+     ]
+    ],
+    "source": "Spotify newsroom, Oct 2026"
+   },
+   "sfx": [
+    [
+     "ninety",
+     "card"
+    ],
+    [
+     "$4.50",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Twenty members at five dollars is a hundred dollars a month, and you keep ninety.",
+   "show": {
+    "type": "calc",
+    "title": "Example: 20 members",
+    "green": [
+     "ninety"
+    ],
+    "rows": [
+     [
+      "twenty",
+      "Members",
+      "20",
+      null
+     ],
+     [
+      "five",
+      "Price",
+      "$5",
+      "×"
+     ]
+    ],
+    "result": [
+     "ninety",
+     "You keep",
+     90,
+     "$"
+    ],
+    "note": "Example only"
+   },
+   "sfx": [
+    [
+     "twenty",
+     "pop"
+    ],
+    [
+     "five",
+     "pop"
+    ],
+    [
+     "ninety",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "It's live in thirty-four markets, and your fans must be Spotify users in those markets.",
+   "show": {
+    "type": "countries",
+    "title": "Where it works",
+    "items": [],
+    "badge": [
+     "thirty-four",
+     "34 markets",
+     false
+    ]
+   },
+   "sfx": [
+    [
+     "thirty-four",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: you only get contact details from fans who opt in, and you need a perk worth paying for, like bonus episodes.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": null,
+    "items": [
+     [
+      "opt",
+      "Contacts only if fans opt in",
+      true
+     ],
+     [
+      "bonus",
+      "Needs a real perk",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "opt",
+     "whip"
+    ],
+    [
+     "bonus",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [SPOTIFY|spotify] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Riverside is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Spotify Memberships: start",
+    "keyword": "SPOTIFY",
+    "tool": "Riverside"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[100|One hundred] listeners. That's all Spotify Memberships asks for.",
+   "show": {
+    "type": "progress",
+    "mark": "spotify",
+    "title": "Spotify Memberships",
+    "bars": [
+     [
+      "listeners",
+      "Listeners, 30 days",
+      64,
+      100
+     ],
+     [
+      "hours",
+      "Hours listened, 30 days",
+      100,
+      100
+     ]
+    ],
+    "hold": "phone0",
+    "mood": 0.3
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Running a podcast for months, and it pays you nothing?",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": null,
+    "chips": [
+     [
+      "spotify",
+      "Spotify",
+      null
+     ],
+     [
+      "memberships",
+      "Memberships",
+      null
+     ],
+     [
+      "keep",
+      "What you keep",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Can a small podcast get paid on Spotify?",
+   "show": {
+    "type": "progress",
+    "mark": "spotify",
+    "title": "Spotify Memberships",
+    "bars": [
+     [
+      "listeners",
+      "Listeners, 30 days",
+      64,
+      100
+     ],
+     [
+      "hours",
+      "Hours listened, 30 days",
+      100,
+      100
+     ]
+    ],
+    "hold": "phone0",
+    "mood": 0.3
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Spotify newsroom: Memberships for creators (20 Oct 2026)",
+   "url": "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/"
+  }
+ ],
+ "thumb": {
+  "headline": "Spotify pays\nat *100* listeners",
+  "hero": "face",
+  "hold": "money",
+  "mood": -0.6,
+  "sticker": "Keep 90%",
+  "sticker_color": "green",
+  "chip": "Podcast memberships",
+  "size": 120
+ },
+ "finder_stream": "spotify-memberships"
+}

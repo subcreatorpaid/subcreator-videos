@@ -1,0 +1,54 @@
+{
+ "title": "Paid newsletter fees",
+ "subtitle": "Substack vs Patreon vs Ko-fi, with an example month",
+ "sections": [
+  [
+   "Substack",
+   [
+    "10% of paid subscription revenue + Stripe (~2.9% + $0.30).",
+    "$5/month subscriber: you keep about $4.05."
+   ]
+  ],
+  [
+   "Compared",
+   [
+    "Patreon: 10% platform fee for new creators + processing.",
+    "Ko-fi: 0% on tips; 5% on shop/memberships on the free plan, 0% on Gold ($12/month)."
+   ]
+  ],
+  [
+   "Example",
+   [
+    "100 paid readers × $4.05 ≈ $405/month before tax (example only)."
+   ]
+  ]
+ ],
+ "steps": [
+  "Start a free newsletter (beehiiv or Substack).",
+  "Send one useful issue every week.",
+  "Ask readers what they'd pay for before switching on paid."
+ ],
+ "keyword": "SUBSTACK",
+ "sources": [
+  [
+   "SchoolMaker: Substack pricing (Sep 2026)",
+   "https://schoolmaker.com/blog/substack-pricing"
+  ],
+  [
+   "Patreon: standard platform fee for new creators",
+   "https://support.patreon.com/hc/en-us/articles/36426991446797"
+  ],
+  [
+   "SchoolMaker: Ko-fi pricing (Sep 2026)",
+   "https://schoolmaker.com/blog/ko-fi-pricing"
+  ]
+ ],
+ "video": "Paid newsletter on Substack: what you keep",
+ "tool": {
+  "id": "beehiiv",
+  "name": "beehiiv",
+  "earns": "50-60% of what they pay for 12 months",
+  "signup": "https://www.beehiiv.com/partners",
+  "status": "joined"
+ }
+}

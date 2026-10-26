@@ -6,6 +6,7 @@ import {AbsoluteFill, Sequence, useCurrentFrame, interpolate, Img, staticFile, A
 import {C, FONT, Fonts} from './Short';
 import {RED, ease, pop, glow, FromSide, PopIn, CountUp, RedPill, Logo, BRAND_GLOW, Face, Phone, Cursor, Chip, ReelWall, Stamp, DrawLine, XMark, BlackChip, Payout} from './graphics';
 import {SCENES2} from './Story2';
+import {SCENES3} from './Story3';
 
 const OV = 8; // overlap between scenes (frames)
 const clean = (s) => String(s).replace(/[^\w$%'-]/g, '').toLowerCase();
@@ -210,10 +211,11 @@ const Journey = ({f, w}) => {
   </>);
 };
 
-const EndRows = [
-  ['comment', (<>Comment <span style={{background: C.acc, color: '#fff', borderRadius: 12, padding: '0 14px'}}>GUIDE</span></>), 'free guide'],
-  ['subcreatorpaid', 'subcreatorpaid.com', 'every step, free'],
-  ['tools', 'Tools I use', 'affiliate links in bio'],
+// Ending (owner rules 26 Oct 2026): comment keyword -> topic guide, the website + its free AI Income Finder, the matching tool, follow.
+const endRows = (s) => [
+  ['comment', (<>Comment <span style={{background: C.acc, color: '#fff', borderRadius: 12, padding: '0 14px'}}>{s.keyword || 'GUIDE'}</span></>), s.guide_sub || 'free guide'],
+  ['subcreatorpaid', 'subcreatorpaid.com', 'free AI Income Finder'],
+  [s.tool ? 'linked' : 'tools', s.tool ? `${s.tool}: link in bio` : 'Tools I use', 'affiliate link'],
   ['follow', 'Follow @subcreatorpaid', 'one income stream at a time'],
 ];
 const EndCta = ({f, w, s}) => (<>
@@ -224,7 +226,7 @@ const EndCta = ({f, w, s}) => (<>
     </div>
   </div>
   <div style={{position: 'absolute', left: 520, top: 180, transform: 'scale(0.62)', transformOrigin: 'left top'}}><Face mood={-1} f={f} size={700} hold="money" /></div>
-  {EndRows.map(([k, t, sub], i) => (
+  {endRows(s).map(([k, t, sub], i) => (
     <FromSide key={k} f={f - w(k) + 6} side={i % 2 ? 'right' : 'left'} style={{left: 70, right: 70, top: 680 + i * 165}}>
       <div style={{display: 'flex', alignItems: 'center', gap: 24, background: i === 0 ? C.ink : '#fff', color: i === 0 ? '#fff' : C.ink, borderRadius: 30, padding: '22px 32px',
         border: i === 0 ? 'none' : `3px solid ${C.ink}`, boxShadow: glow('0,0,0', 0.12, 50)}}>
@@ -426,7 +428,7 @@ const Official = ({f, w, s}) => {
   </>);
 };
 
-const SCENES = {...SCENES2, wait10k: Wait10k, proof_intro: ProofIntro, official: Official, viral: Viral, views_fans: ViewsFans, ypp: Ypp, fan_ladder: FanLadder, small_group: SmallGroup, counters: Counters, face_strike: FaceStrike, phone_fly: PhoneFly, ugc_explain: UgcExplain, rate3d: Rate, apps: Apps, wall: Wall, stamp_wall: StampScene, catch: Catch, journey: Journey, end_rows: EndCta};
+const SCENES = {...SCENES2, ...SCENES3, wait10k: Wait10k, proof_intro: ProofIntro, official: Official, viral: Viral, views_fans: ViewsFans, ypp: Ypp, fan_ladder: FanLadder, small_group: SmallGroup, counters: Counters, face_strike: FaceStrike, phone_fly: PhoneFly, ugc_explain: UgcExplain, rate3d: Rate, apps: Apps, wall: Wall, stamp_wall: StampScene, catch: Catch, journey: Journey, end_rows: EndCta};
 
 const Scene = ({b, i, start, len, last}) => {
   const lf = useCurrentFrame();

@@ -1,0 +1,420 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v015_kofi_fees",
+ "title": "Ko-fi: when 0% fees are really 0%",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Ko-fi charges zero percent on tips. Here's when that's true, when it isn't, and when paying for Gold makes sense.",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": null,
+    "chips": [
+     [
+      "zero",
+      "0% on tips",
+      null
+     ],
+     [
+      "isn't",
+      "When it isn't",
+      "red"
+     ],
+     [
+      "gold",
+      "Gold?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "zero",
+     "pop"
+    ],
+    [
+     "isn't",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Tips are zero percent on both plans. Shop sales and memberships cost five percent on the free plan, and zero on Gold, which is twelve dollars a month.",
+   "show": {
+    "type": "compare",
+    "title": "Ko-fi's fee",
+    "cols": [
+     "Free plan",
+     "Gold"
+    ],
+    "rows": [
+     [
+      "tips",
+      "Tips",
+      [
+       "0%",
+       "0%"
+      ]
+     ],
+     [
+      "shop",
+      "Shop + memberships",
+      [
+       "5%",
+       "0%"
+      ],
+      [
+       0
+      ]
+     ],
+     [
+      "twelve",
+      "Price",
+      [
+       "$0",
+       "$12/mo"
+      ]
+     ]
+    ],
+    "source": "SchoolMaker, Sep 2026"
+   },
+   "sfx": [
+    [
+     "tips",
+     "pop"
+    ],
+    [
+     "shop",
+     "pop"
+    ],
+    [
+     "twelve",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Gold pays for itself when five percent of your sales is more than twelve dollars. That's above [$240|two hundred forty dollars] in sales a month.",
+   "show": {
+    "type": "calc",
+    "title": "When Gold pays off",
+    "rows": [
+     [
+      "five",
+      "Free plan fee",
+      "5%",
+      null
+     ],
+     [
+      "twelve",
+      "Gold price",
+      "$12",
+      "vs"
+     ]
+    ],
+    "result": [
+     "$240",
+     "Monthly sales to break even",
+     240,
+     "$"
+    ]
+   },
+   "sfx": [
+    [
+     "five",
+     "pop"
+    ],
+    [
+     "twelve",
+     "pop"
+    ],
+    [
+     "$240",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Payment fees still apply on every plan. Stripe or PayPal take their own cut on each payment.",
+   "show": {
+    "type": "talk",
+    "mood": 0.5,
+    "hold": null,
+    "red": [
+     "fees"
+    ],
+    "chips": [
+     [
+      "stripe",
+      "Stripe fee",
+      "red"
+     ],
+     [
+      "paypal",
+      "PayPal fee",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "stripe",
+     "pop"
+    ],
+    [
+     "paypal",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Set up a page, put one tip link in your bio, and thank every supporter by name in a video.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "page",
+      "Make a page",
+      "laptop",
+      0
+     ],
+     [
+      "tip",
+      "Tip link in bio",
+      null,
+      -0.2
+     ],
+     [
+      "thank",
+      "Thank supporters",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "page",
+     "pop"
+    ],
+    [
+     "tip",
+     "pop"
+    ],
+    [
+     "thank",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: tips come from fans who already love your work, so this works best once people know you.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": null,
+    "items": [
+     [
+      "fans",
+      "Needs real fans",
+      true
+     ],
+     [
+      "know",
+      "Best once people know you",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "fans",
+     "whip"
+    ],
+    [
+     "know",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [KOFI|ko fee] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. beehiiv is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Ko-fi fees and Gold",
+    "keyword": "KOFI",
+    "tool": "beehiiv"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$240|Two hundred forty dollars] a month. That's when Ko-fi Gold pays off.",
+   "show": {
+    "type": "calc",
+    "title": "When Gold pays off",
+    "rows": [
+     [
+      "five",
+      "Free plan fee",
+      "5%",
+      null
+     ],
+     [
+      "twelve",
+      "Gold price",
+      "$12",
+      "vs"
+     ]
+    ],
+    "result": [
+     "$240",
+     "Monthly sales to break even",
+     240,
+     "$"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Paying for a plan you don't need yet?",
+   "show": {
+    "type": "calc",
+    "title": "When Gold pays off",
+    "rows": [
+     [
+      "five",
+      "Free plan fee",
+      "5%",
+      null
+     ],
+     [
+      "twelve",
+      "Gold price",
+      "$12",
+      "vs"
+     ]
+    ],
+    "result": [
+     "$240",
+     "Monthly sales to break even",
+     240,
+     "$"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Is Ko-fi really zero percent for creators?",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": null,
+    "chips": [
+     [
+      "zero",
+      "0% on tips",
+      null
+     ],
+     [
+      "isn't",
+      "When it isn't",
+      "red"
+     ],
+     [
+      "gold",
+      "Gold?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "SchoolMaker: Ko-fi pricing (Sep 2026)",
+   "url": "https://schoolmaker.com/blog/ko-fi-pricing"
+  }
+ ],
+ "thumb": {
+  "headline": "Ko-fi fees:\n0% *or* 5%?",
+  "hero": "face",
+  "hold": null,
+  "mood": 0.3,
+  "sticker": "Gold = $12/mo",
+  "chip": "When 0% is really 0%",
+  "size": 130
+ },
+ "finder_stream": "ko-fi"
+}

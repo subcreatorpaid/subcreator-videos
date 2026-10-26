@@ -1,0 +1,50 @@
+{
+ "title": "Start an email list free",
+ "subtitle": "Set up Kit's free plan and auto-send a guide",
+ "sections": [
+  [
+   "Kit free plan (Aug 2026)",
+   [
+    "Up to 10,000 subscribers.",
+    "Unlimited broadcasts, landing pages and forms.",
+    "1 automation + 1 email sequence.",
+    "Kit branding, no integrations."
+   ]
+  ],
+  [
+   "Setup in 30 minutes",
+   [
+    "Create a form or landing page.",
+    "Upload your free guide as the incentive.",
+    "Write a 1-email sequence that delivers it.",
+    "Put the form link in your bio."
+   ]
+  ],
+  [
+   "When to pay",
+   [
+    "Paid plans from $39/month. Upgrade only when the list earns."
+   ]
+  ]
+ ],
+ "steps": [
+  "Pick your free guide topic.",
+  "Build the form and sequence.",
+  "Mention it at the end of every video."
+ ],
+ "keyword": "EMAIL",
+ "sources": [
+  [
+   "Email Vendor Selection: Kit pricing (Aug 2026)",
+   "https://www.emailvendorselection.com/kit-pricing/"
+  ]
+ ],
+ "video": "Start an email list free up to 10,000",
+ "tool": {
+  "id": "kit",
+  "name": "Kit",
+  "earns": "50% of their first 12 months",
+  "signup": "https://kit.com/affiliate",
+  "status": "to join"
+ }
+}

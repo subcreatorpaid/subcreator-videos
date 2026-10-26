@@ -1,0 +1,48 @@
+{
+ "title": "Spotify Memberships: start",
+ "subtitle": "The bar, the split and a launch plan",
+ "sections": [
+  [
+   "Eligibility (Spotify, 20 Oct 2026)",
+   [
+    "100 listeners and 100 hours listened in the last 30 days.",
+    "Live in 34 markets; fans must be Spotify users there."
+   ]
+  ],
+  [
+   "Money",
+   [
+    "You keep 90% of revenue; you set tiers and prices.",
+    "Example only: 20 members × $5 = $100; you keep $90."
+   ]
+  ],
+  [
+   "Perks that work",
+   [
+    "Bonus episodes",
+    "Ad-free feed",
+    "Early access"
+   ]
+  ]
+ ],
+ "steps": [
+  "Check your Spotify for Creators stats.",
+  "Plan 4 bonus episodes before launch.",
+  "Announce memberships in your next 3 episodes."
+ ],
+ "keyword": "SPOTIFY",
+ "sources": [
+  [
+   "Spotify newsroom: Memberships for creators (20 Oct 2026)",
+   "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/"
+  ]
+ ],
+ "video": "Spotify Memberships: who qualifies, what you keep",
+ "tool": {
+  "id": "riverside",
+  "name": "Riverside",
+  "earns": "up to 20% per subscription",
+  "signup": "https://riverside.com/affiliate-program",
+  "status": "to join"
+ }
+}

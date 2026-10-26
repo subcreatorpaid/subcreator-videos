@@ -1,4 +1,5 @@
 name: Animate video (Remotion)
+run-name: "Animate ${{ inputs.video }} (${{ inputs.mode }})"  # the Render Room reads each video's status from this name
 
 # Renders one video spec with the Remotion animator (animator/), following docs/animator-rules.md.
 # Actions tab > "Animate video (Remotion)" > Run workflow > video folder name + mode.
@@ -177,7 +178,12 @@ jobs:
           cp pieces/piece-1/*.png out/
           if [ "$MODE" = full ]; then
             # apt mirrors sometimes hang: cap each try at 4 min and retry
-            for i in 1 2 3; do timeout 240 sh -c 'sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg' && break; echo "apt try $i failed"; done
+            # Ubuntu's apt mirror hangs often, so take a static ffmpeg build from GitHub first and fall back to apt
+  if ! command -v ffmpeg >/dev/null; then
+    (curl -fsSL --retry 3 -m 180 https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz | tar -xJ -C /tmp \
+      && sudo cp /tmp/ffmpeg-master-latest-linux64-gpl/bin/ffmpeg /tmp/ffmpeg-master-latest-linux64-gpl/bin/ffprobe /usr/local/bin/) \
+      || for i in 1 2; do timeout 240 sh -c 'sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg' && break; echo "apt try $i failed"; done
+  fi
             for p in $(seq 1 $PARTS); do echo "file '$PWD/pieces/piece-$p/part_$p.mp4'"; done > list.txt
             total=$(python3 -c "import json;print(json.load(open('pieces/prep/main/props.json'))['total'])")
             ffmpeg -loglevel error -y -f concat -safe 0 -i list.txt -i pieces/prep/main/public/voice.wav -map 0:v -map 1:a \

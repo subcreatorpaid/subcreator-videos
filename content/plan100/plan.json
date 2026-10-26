@@ -1,0 +1,218 @@
+[
+ {
+  "n": 9,
+  "slug": "v009_zero_follower_streams",
+  "title": "5 income streams with 0 followers",
+  "type": "value",
+  "keyword": "START",
+  "tool": "fiverr",
+  "affiliate": {
+   "id": "fiverr",
+   "name": "Fiverr",
+   "earns": "25% of a new buyer's first order + 10% for 12 months",
+   "signup": "https://affiliates.fiverr.com",
+   "status": "waiting for owner login"
+  },
+  "stream": null,
+  "beats": 8,
+  "words": 164
+ },
+ {
+  "n": 10,
+  "slug": "v010_tiktok_rewards_rules",
+  "title": "TikTok Creator Rewards: the real rules",
+  "type": "value",
+  "keyword": "TIKTOK",
+  "tool": "opusclip",
+  "affiliate": {
+   "id": "opusclip",
+   "name": "OpusClip",
+   "earns": "25% of their payments (at least year one)",
+   "signup": "https://www.opus.pro/affiliate",
+   "status": "joined"
+  },
+  "stream": "tiktok-creator-rewards",
+  "beats": 8,
+  "words": 159
+ },
+ {
+  "n": 11,
+  "slug": "v011_youtube_shopping_500",
+  "title": "YouTube Shopping now opens at 500 subscribers",
+  "type": "value",
+  "keyword": "SHOP",
+  "tool": "vidiq",
+  "affiliate": {
+   "id": "vidiq",
+   "name": "vidIQ",
+   "earns": "15-25% lifetime recurring (by sales tier)",
+   "signup": "https://support.vidiq.com/en/articles/7866006",
+   "status": "to join"
+  },
+  "stream": "youtube-shopping",
+  "beats": 7,
+  "words": 162
+ },
+ {
+  "n": 12,
+  "slug": "v012_patreon_fees",
+  "title": "Patreon fees: what you keep from $10",
+  "type": "value",
+  "keyword": "PATREON",
+  "tool": "beehiiv",
+  "affiliate": {
+   "id": "beehiiv",
+   "name": "beehiiv",
+   "earns": "50-60% of what they pay for 12 months",
+   "signup": "https://www.beehiiv.com/partners",
+   "status": "joined"
+  },
+  "stream": "patreon",
+  "beats": 7,
+  "words": 152
+ },
+ {
+  "n": 13,
+  "slug": "v013_substack_fees",
+  "title": "Paid newsletter on Substack: what you keep",
+  "type": "value",
+  "keyword": "SUBSTACK",
+  "tool": "beehiiv",
+  "affiliate": {
+   "id": "beehiiv",
+   "name": "beehiiv",
+   "earns": "50-60% of what they pay for 12 months",
+   "signup": "https://www.beehiiv.com/partners",
+   "status": "joined"
+  },
+  "stream": "substack",
+  "beats": 7,
+  "words": 159
+ },
+ {
+  "n": 14,
+  "slug": "v014_gumroad_fees",
+  "title": "Gumroad fees: the one that triples",
+  "type": "value",
+  "keyword": "SELL",
+  "tool": "stan",
+  "affiliate": {
+   "id": "stan",
+   "name": "Stan Store",
+   "earns": "20% recurring (confirm on joining)",
+   "signup": "https://stan.store/affiliates",
+   "status": "to join"
+  },
+  "stream": "gumroad",
+  "beats": 7,
+  "words": 149
+ },
+ {
+  "n": 15,
+  "slug": "v015_kofi_fees",
+  "title": "Ko-fi: when 0% fees are really 0%",
+  "type": "value",
+  "keyword": "KOFI",
+  "tool": "beehiiv",
+  "affiliate": {
+   "id": "beehiiv",
+   "name": "beehiiv",
+   "earns": "50-60% of what they pay for 12 months",
+   "signup": "https://www.beehiiv.com/partners",
+   "status": "joined"
+  },
+  "stream": "ko-fi",
+  "beats": 7,
+  "words": 158
+ },
+ {
+  "n": 16,
+  "slug": "v016_stan_store_price",
+  "title": "Stan Store: the real price",
+  "type": "tool",
+  "keyword": "STORE",
+  "tool": "stan",
+  "affiliate": {
+   "id": "stan",
+   "name": "Stan Store",
+   "earns": "20% recurring (confirm on joining)",
+   "signup": "https://stan.store/affiliates",
+   "status": "to join"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 132
+ },
+ {
+  "n": 17,
+  "slug": "v017_kit_free_email",
+  "title": "Start an email list free up to 10,000",
+  "type": "tool",
+  "keyword": "EMAIL",
+  "tool": "kit",
+  "affiliate": {
+   "id": "kit",
+   "name": "Kit",
+   "earns": "50% of their first 12 months",
+   "signup": "https://kit.com/affiliate",
+   "status": "to join"
+  },
+  "stream": "email-newsletter",
+  "beats": 7,
+  "words": 138
+ },
+ {
+  "n": 18,
+  "slug": "v018_spotify_memberships",
+  "title": "Spotify Memberships: who qualifies, what you keep",
+  "type": "value",
+  "keyword": "SPOTIFY",
+  "tool": "riverside",
+  "affiliate": {
+   "id": "riverside",
+   "name": "Riverside",
+   "earns": "up to 20% per subscription",
+   "signup": "https://riverside.com/affiliate-program",
+   "status": "to join"
+  },
+  "stream": "spotify-memberships",
+  "beats": 7,
+  "words": 122
+ },
+ {
+  "n": 19,
+  "slug": "v019_elevenlabs_voice_pay",
+  "title": "Get paid when people use your voice",
+  "type": "value",
+  "keyword": "VOICE",
+  "tool": "elevenlabs",
+  "affiliate": {
+   "id": "elevenlabs",
+   "name": "ElevenLabs",
+   "earns": "22% of their payments for 12 months",
+   "signup": "https://elevenlabs.io/affiliate",
+   "status": "joined"
+  },
+  "stream": "elevenlabs-voice",
+  "beats": 7,
+  "words": 140
+ },
+ {
+  "n": 20,
+  "slug": "v020_newsletter_boosts_proof",
+  "title": "Proof: a newsletter earned $25,000 from Boosts",
+  "type": "proof",
+  "keyword": "NEWSLETTER",
+  "tool": "beehiiv",
+  "affiliate": {
+   "id": "beehiiv",
+   "name": "beehiiv",
+   "earns": "50-60% of what they pay for 12 months",
+   "signup": "https://www.beehiiv.com/partners",
+   "status": "joined"
+  },
+  "stream": "email-newsletter",
+  "beats": 7,
+  "words": 137
+ }
+]

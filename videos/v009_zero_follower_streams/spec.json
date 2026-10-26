@@ -1,0 +1,506 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v009_zero_follower_streams",
+ "title": "5 income streams with 0 followers",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Zero followers? You can still get paid. Five income streams with no follower minimum, and the catch.",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "red": [
+     "zero"
+    ],
+    "chips": [
+     [
+      "zero",
+      "0 followers",
+      "red"
+     ],
+     [
+      "five",
+      "5 streams",
+      null
+     ],
+     [
+      "catch",
+      "+ the catch",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "zero",
+     "thud"
+    ],
+    [
+     "five",
+     "pop"
+    ],
+    [
+     "catch",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "One: UGC. Brands pay you to film videos they run as ads. Beginners usually charge [$50|fifty] to [$400|four hundred dollars] a video.",
+   "show": {
+    "type": "stat_cards",
+    "title": "UGC · BEGINNER RATES",
+    "green": [
+     "$50",
+     "$400"
+    ],
+    "cards": [
+     [
+      "$50",
+      "$50",
+      "per video"
+     ],
+     [
+      "$400",
+      "$400",
+      "per video",
+      true
+     ]
+    ],
+    "source": "Insense, Sep 2026"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "$50",
+     "card"
+    ],
+    [
+     "$400",
+     "card"
+    ],
+    [
+     "$400",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Two: Amazon Associates. Most categories pay about three to four and a half percent. So a [$40|forty dollar] item earns you about [$1.80|a dollar eighty].",
+   "show": {
+    "type": "calc",
+    "title": "Amazon Associates",
+    "green": [
+     "$1.80"
+    ],
+    "rows": [
+     [
+      "$40",
+      "Item price",
+      "$40",
+      null
+     ],
+     [
+      "percent",
+      "Commission",
+      "4.5%",
+      "×"
+     ]
+    ],
+    "result": [
+     "$1.80",
+     "You earn",
+     1.8,
+     "$",
+     "",
+     2
+    ]
+   },
+   "sfx": [
+    [
+     "$40",
+     "pop"
+    ],
+    [
+     "percent",
+     "pop"
+    ],
+    [
+     "$1.80",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Three: Etsy templates. On a [$10|ten dollar] sale you keep about [$8.60|eight sixty] after fees.",
+   "show": {
+    "type": "fee_split",
+    "label": "$10 sale",
+    "mark": "Etsy",
+    "green": [
+     "$8.60"
+    ],
+    "parts": [
+     [
+      "sale",
+      "Listing fee",
+      0.2,
+      "fee"
+     ],
+     [
+      "keep",
+      "Transaction fee 6.5%",
+      0.65,
+      "fee"
+     ],
+     [
+      "fees",
+      "Payment ~3% + $0.25",
+      0.55,
+      "fee"
+     ],
+     [
+      "$8.60",
+      "You keep",
+      8.6,
+      "keep"
+     ]
+    ],
+    "source": "Checkout Page, Etsy fees (US)"
+   },
+   "sfx": [
+    [
+     "sale",
+     "card"
+    ],
+    [
+     "keep",
+     "card"
+    ],
+    [
+     "fees",
+     "card"
+    ],
+    [
+     "$8.60",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Four: share your voice on ElevenLabs. You earn when paying users pick your voice, paid out through Stripe.",
+   "show": {
+    "type": "page_card",
+    "url": "elevenlabs.io/docs · voice payouts",
+    "mark": "EL",
+    "title": "Voice Library payouts",
+    "checked": "Official docs · checked 26 Oct 2026",
+    "bullets": [
+     [
+      "share",
+      "Share a Professional Voice Clone",
+      false
+     ],
+     [
+      "paying",
+      "Paid only for use by paying users",
+      true
+     ],
+     [
+      "stripe",
+      "Paid out through Stripe",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "share",
+     "pop"
+    ],
+    [
+     "paying",
+     "ding"
+    ],
+    [
+     "stripe",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Five: a Fiverr gig. Fiverr keeps twenty percent of every order, so price with that in mind.",
+   "show": {
+    "type": "fee_split",
+    "label": "$50 order",
+    "mark": "Fv",
+    "dec": 0,
+    "parts": [
+     [
+      "twenty",
+      "Fiverr fee 20%",
+      10,
+      "fee"
+     ],
+     [
+      "price",
+      "You keep",
+      40,
+      "keep"
+     ]
+    ],
+    "source": "Wise, Fiverr payments guide"
+   },
+   "sfx": [
+    [
+     "twenty",
+     "card"
+    ],
+    [
+     "price",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: zero followers means nobody to push sales to yet. Each stream starts slow and needs real work before it pays.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "slow",
+      "Starts slow",
+      true
+     ],
+     [
+      "work",
+      "Needs real work",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "slow",
+     "whip"
+    ],
+    [
+     "work",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [START|start] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Fiverr is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Earn with 0 followers",
+    "keyword": "START",
+    "tool": "Fiverr"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$1.80|A dollar eighty] from one Amazon sale. Zero followers needed.",
+   "show": {
+    "type": "calc",
+    "title": "Amazon Associates",
+    "green": [
+     "$1.80"
+    ],
+    "rows": [
+     [
+      "$40",
+      "Item price",
+      "$40",
+      null
+     ],
+     [
+      "percent",
+      "Commission",
+      "4.5%",
+      "×"
+     ]
+    ],
+    "result": [
+     "$1.80",
+     "You earn",
+     1.8,
+     "$",
+     "",
+     2
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Zero followers, and you think you can't earn yet?",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "red": [
+     "zero"
+    ],
+    "chips": [
+     [
+      "zero",
+      "0 followers",
+      "red"
+     ],
+     [
+      "five",
+      "5 streams",
+      null
+     ],
+     [
+      "catch",
+      "+ the catch",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Can you really earn with zero followers? Here are five ways.",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "red": [
+     "zero"
+    ],
+    "chips": [
+     [
+      "zero",
+      "0 followers",
+      "red"
+     ],
+     [
+      "five",
+      "5 streams",
+      null
+     ],
+     [
+      "catch",
+      "+ the catch",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Insense: UGC creator rates (Sep 2026)",
+   "url": "https://insense.pro/blog/ugc-creator-rates"
+  },
+  {
+   "title": "Lasso: Amazon affiliate commission rates",
+   "url": "https://getlasso.co/amazon-affiliate-commission-rate/"
+  },
+  {
+   "title": "Checkout Page: Etsy fees",
+   "url": "https://checkoutpage.com/blog/etsy-fees"
+  },
+  {
+   "title": "ElevenLabs docs: voice payouts",
+   "url": "https://elevenlabs.io/docs/eleven-creative/voices/payouts"
+  },
+  {
+   "title": "Wise: how to get paid on Fiverr (20% fee, clearance)",
+   "url": "https://wise.com/us/blog/how-to-get-paid-on-fiverr"
+  }
+ ],
+ "thumb": {
+  "headline": "0 followers.\n*5 ways* to earn",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 0.6,
+  "sticker": "No minimum",
+  "chip": "With the catch for each",
+  "size": 130
+ },
+ "finder_stream": null
+}

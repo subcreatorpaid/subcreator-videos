@@ -1,0 +1,449 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v013_substack_fees",
+ "title": "Paid newsletter on Substack: what you keep",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Starting a paid newsletter on Substack? Here's the cut on a [$5|five dollar] subscription, and how many readers it takes.",
+   "show": {
+    "type": "talk",
+    "mood": 0.1,
+    "hold": "laptop",
+    "chips": [
+     [
+      "substack",
+      "Substack",
+      null
+     ],
+     [
+      "$5",
+      "$5 / month",
+      null
+     ],
+     [
+      "readers",
+      "How many readers?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "$5",
+     "pop"
+    ],
+    [
+     "readers",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Substack takes ten percent of paid subscriptions, and Stripe charges about two point nine percent plus thirty cents. On [$5|five dollars], you keep about [$4.05|four oh five].",
+   "show": {
+    "type": "fee_split",
+    "label": "$5 subscriber",
+    "mark": "Ss",
+    "green": [
+     "$4.05"
+    ],
+    "parts": [
+     [
+      "ten",
+      "Substack 10%",
+      0.5,
+      "fee"
+     ],
+     [
+      "stripe",
+      "Stripe ~2.9% + $0.30",
+      0.45,
+      "fee"
+     ],
+     [
+      "$4.05",
+      "You keep",
+      4.05,
+      "keep"
+     ]
+    ],
+    "source": "SchoolMaker, Substack pricing"
+   },
+   "sfx": [
+    [
+     "ten",
+     "card"
+    ],
+    [
+     "stripe",
+     "card"
+    ],
+    [
+     "$4.05",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Compare that with Patreon, which also takes ten percent for new creators, and Ko-fi, which takes zero on tips and five percent on memberships on its free plan.",
+   "show": {
+    "type": "compare",
+    "title": "Platform fee",
+    "cols": [
+     "Substack",
+     "Patreon",
+     "Ko-fi"
+    ],
+    "rows": [
+     [
+      "patreon",
+      "Paid members",
+      [
+       "10%",
+       "10%",
+       "5%"
+      ]
+     ],
+     [
+      "tips",
+      "Tips",
+      [
+       "–",
+       "–",
+       "0%"
+      ]
+     ]
+    ],
+    "source": "Patreon, SchoolMaker"
+   },
+   "sfx": [
+    [
+     "patreon",
+     "pop"
+    ],
+    [
+     "ko-fi",
+     "pop"
+    ],
+    [
+     "tips",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "One hundred paid readers at [$4.05|four oh five] each is about [$405|four hundred five dollars] a month.",
+   "show": {
+    "type": "calc",
+    "title": "Example: 100 paid readers",
+    "green": [
+     "$405"
+    ],
+    "rows": [
+     [
+      "hundred",
+      "Paid readers",
+      "100",
+      null
+     ],
+     [
+      "$4.05",
+      "You keep each",
+      "$4.05",
+      "×"
+     ]
+    ],
+    "result": [
+     "$405",
+     "Per month",
+     405,
+     "$"
+    ],
+    "note": "Example only, before tax"
+   },
+   "sfx": [
+    [
+     "hundred",
+     "pop"
+    ],
+    [
+     "$4.05",
+     "pop"
+    ],
+    [
+     "$405",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Start free, send one useful issue every week, and only switch on paid when readers ask for more.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "free",
+      "Start free",
+      "laptop",
+      0
+     ],
+     [
+      "week",
+      "One issue a week",
+      "laptop",
+      -0.2
+     ],
+     [
+      "paid",
+      "Turn on paid",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "free",
+     "pop"
+    ],
+    [
+     "week",
+     "pop"
+    ],
+    [
+     "paid",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: most readers stay on the free list, so you need a big free list before paid adds up.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "stay",
+      "Most readers stay free",
+      true
+     ],
+     [
+      "big",
+      "Grow the free list first",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "stay",
+     "whip"
+    ],
+    [
+     "big",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [SUBSTACK|sub stack] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. beehiiv is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Paid newsletter fees",
+    "keyword": "SUBSTACK",
+    "tool": "beehiiv"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$4.05|Four oh five]. That's what you keep from a [$5|five dollar] Substack reader.",
+   "show": {
+    "type": "fee_split",
+    "label": "$5 subscriber",
+    "mark": "Ss",
+    "green": [
+     "$4.05"
+    ],
+    "parts": [
+     [
+      "ten",
+      "Substack 10%",
+      0.5,
+      "fee"
+     ],
+     [
+      "stripe",
+      "Stripe ~2.9% + $0.30",
+      0.45,
+      "fee"
+     ],
+     [
+      "$4.05",
+      "You keep",
+      4.05,
+      "keep"
+     ]
+    ],
+    "source": "SchoolMaker, Substack pricing"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Writing a newsletter for free every week?",
+   "show": {
+    "type": "talk",
+    "mood": 0.1,
+    "hold": "laptop",
+    "chips": [
+     [
+      "substack",
+      "Substack",
+      null
+     ],
+     [
+      "$5",
+      "$5 / month",
+      null
+     ],
+     [
+      "readers",
+      "How many readers?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Substack, Patreon or Ko-fi: who takes the biggest cut?",
+   "show": {
+    "type": "compare",
+    "title": "Platform fee",
+    "cols": [
+     "Substack",
+     "Patreon",
+     "Ko-fi"
+    ],
+    "rows": [
+     [
+      "patreon",
+      "Paid members",
+      [
+       "10%",
+       "10%",
+       "5%"
+      ]
+     ],
+     [
+      "tips",
+      "Tips",
+      [
+       "–",
+       "–",
+       "0%"
+      ]
+     ]
+    ],
+    "source": "Patreon, SchoolMaker"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "SchoolMaker: Substack pricing (Sep 2026)",
+   "url": "https://schoolmaker.com/blog/substack-pricing"
+  },
+  {
+   "title": "Patreon: standard platform fee for new creators",
+   "url": "https://support.patreon.com/hc/en-us/articles/36426991446797"
+  },
+  {
+   "title": "SchoolMaker: Ko-fi pricing (Sep 2026)",
+   "url": "https://schoolmaker.com/blog/ko-fi-pricing"
+  }
+ ],
+ "thumb": {
+  "headline": "Paid newsletter:\nwhat you *keep*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.3,
+  "sticker": "~$4.05 of $5",
+  "sticker_color": "green",
+  "chip": "Substack fees explained",
+  "size": 120
+ },
+ "finder_stream": "substack"
+}
