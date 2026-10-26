@@ -1,0 +1,372 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v073_ugc_portfolio_page",
+ "title": "A UGC portfolio page in 20 minutes",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Brands ask for your UGC portfolio. Here's a page you can build in twenty minutes.",
+   "show": {
+    "type": "talk",
+    "mood": 0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "portfolio",
+      "Portfolio?",
+      null
+     ],
+     [
+      "twenty",
+      "20 minutes",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "portfolio",
+     "pop"
+    ],
+    [
+     "twenty",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Top: your name, what you make, and who it's for, in one line.",
+   "show": {
+    "type": "page_card",
+    "url": "yourname.com/ugc",
+    "mark": "Me",
+    "title": "Section 1: one line",
+    "checked": "Top of the page",
+    "bullets": [
+     [
+      "name",
+      "Your name"
+     ],
+     [
+      "make",
+      "What you make"
+     ],
+     [
+      "for",
+      "Who it's for",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "name",
+     "pop"
+    ],
+    [
+     "make",
+     "pop"
+    ],
+    [
+     "for",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Then three sample videos you can play right on the page.",
+   "show": {
+    "type": "tool_demo",
+    "app": "Portfolio",
+    "input": "3 sample videos",
+    "input_word": "three",
+    "process": "Adding samples",
+    "process_word": "sample",
+    "outputs": [
+     [
+      "play",
+      "Unboxing"
+     ],
+     [
+      "play",
+      "Problem → fix"
+     ],
+     [
+      "page",
+      "Testimonial"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "three",
+     "drop"
+    ],
+    [
+     "play",
+     "pop"
+    ],
+    [
+     "page",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Then your offer, a starting price, and one way to contact you.",
+   "show": {
+    "type": "checklist",
+    "title": "Section 3",
+    "items": [
+     [
+      "offer",
+      "Your offer"
+     ],
+     [
+      "starting",
+      "Starting price"
+     ],
+     [
+      "contact",
+      "One contact method"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "offer",
+     "click"
+    ],
+    [
+     "starting",
+     "click"
+    ],
+    [
+     "contact",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Brands judge your samples, not your follower count. Billo, for example, has no follower requirement.",
+   "show": {
+    "type": "myth",
+    "myth": "Brands want big follower counts",
+    "myth_word": "brands",
+    "fact": "They judge your samples",
+    "fact_word": "samples"
+   },
+   "sfx": [
+    [
+     "brands",
+     "thud"
+    ],
+    [
+     "samples",
+     "swipe"
+    ],
+    [
+     "billo",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: a portfolio with weak samples hurts more than none. Re-film anything blurry or dark.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "weak",
+      "Weak samples hurt",
+      true
+     ],
+     [
+      "re-film",
+      "Re-film blurry or dark",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "weak",
+     "whip"
+    ],
+    [
+     "re-film",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [PORTFOLIO|portfolio] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Stan Store is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "UGC portfolio page",
+    "keyword": "PORTFOLIO",
+    "tool": "Stan Store"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[20|Twenty] minutes. That's your UGC portfolio page.",
+   "show": {
+    "type": "talk",
+    "mood": 0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "portfolio",
+      "Portfolio?",
+      null
+     ],
+     [
+      "twenty",
+      "20 minutes",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "A brand asks for your portfolio, and you send them your Instagram?",
+   "show": {
+    "type": "talk",
+    "mood": 0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "portfolio",
+      "Portfolio?",
+      null
+     ],
+     [
+      "twenty",
+      "20 minutes",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What goes on a UGC portfolio page?",
+   "show": {
+    "type": "page_card",
+    "url": "yourname.com/ugc",
+    "mark": "Me",
+    "title": "Section 1: one line",
+    "checked": "Top of the page",
+    "bullets": [
+     [
+      "name",
+      "Your name"
+     ],
+     [
+      "make",
+      "What you make"
+     ],
+     [
+      "for",
+      "Who it's for",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Billo: UGC creator jobs (no follower requirement)",
+   "url": "https://billo.app/blog/ugc-creator-jobs/"
+  },
+  {
+   "title": "Insense: UGC creator rates (Sep 2026)",
+   "url": "https://insense.pro/blog/ugc-creator-rates"
+  }
+ ],
+ "thumb": {
+  "headline": "UGC portfolio\nin *20 min*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.4,
+  "sticker": "3 sections",
+  "chip": "One line · samples · offer",
+  "size": 120
+ },
+ "finder_stream": "ugc"
+}

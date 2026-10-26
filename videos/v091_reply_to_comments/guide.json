@@ -1,0 +1,46 @@
+{
+ "title": "Comment reply playbook",
+ "subtitle": "First hour, questions, video replies",
+ "sections": [
+  [
+   "First hour",
+   [
+    "Reply to every comment."
+   ]
+  ],
+  [
+   "How",
+   [
+    "Answer + ask one question back.",
+    "Long questions → video reply."
+   ]
+  ],
+  [
+   "Save",
+   [
+    "Keep repeated questions in one list.",
+    "Use them as next week's ideas."
+   ]
+  ]
+ ],
+ "steps": [
+  "Set a 1-hour reminder after posting.",
+  "Reply to every comment.",
+  "Start your idea list."
+ ],
+ "keyword": "REPLY",
+ "sources": [
+  [
+   "FTC: Disclosures 101 for social media influencers",
+   "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+  ]
+ ],
+ "video": "Turn comments into followers and ideas",
+ "tool": {
+  "id": "vidiq",
+  "name": "vidIQ",
+  "earns": "15-25% lifetime recurring (by sales tier)",
+  "signup": "https://support.vidiq.com/en/articles/7866006",
+  "status": "to join"
+ }
+}

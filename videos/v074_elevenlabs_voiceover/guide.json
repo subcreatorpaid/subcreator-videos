@@ -1,0 +1,48 @@
+{
+ "title": "AI voiceover workflow",
+ "subtitle": "Script, voice, export",
+ "sections": [
+  [
+   "Workflow",
+   [
+    "Write the script like you talk.",
+    "Paste it in ElevenLabs; pick one voice.",
+    "Download and drop it into your editor."
+   ]
+  ],
+  [
+   "Tips",
+   [
+    "Numbers as words.",
+    "One voice for every video.",
+    "Label AI voices where the platform asks."
+   ]
+  ],
+  [
+   "Affiliate",
+   [
+    "22% of referred payments for 12 months."
+   ]
+  ]
+ ],
+ "steps": [
+  "Write a 120-word script.",
+  "Generate the voice.",
+  "Edit one video with it."
+ ],
+ "keyword": "VOICEOVER",
+ "sources": [
+  [
+   "ElevenLabs affiliate program",
+   "https://elevenlabs.io/affiliate"
+  ]
+ ],
+ "video": "Voiceovers without recording (ElevenLabs)",
+ "tool": {
+  "id": "elevenlabs",
+  "name": "ElevenLabs",
+  "earns": "22% of their payments for 12 months",
+  "signup": "https://elevenlabs.io/affiliate",
+  "status": "joined"
+ }
+}

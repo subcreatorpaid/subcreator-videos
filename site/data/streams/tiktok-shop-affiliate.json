@@ -1,0 +1,54 @@
+{
+  "slug": "tiktok-shop-affiliate",
+  "title": "TikTok Shop affiliate",
+  "one_liner": "Earn a commission when people buy products you show on TikTok.",
+  "followers": "Reported 1,000 followers (3rd party; check TikTok's page).",
+  "pay": "Commission set per product by the seller; TikTok publishes no fixed rate.",
+  "pay_source": "https://stackinfluence.com/blog/5-tiktok-monetization-paths-that-pay-creators-in-2026",
+  "steps": [
+    "Reach the follower bar.",
+    "Join TikTok Shop affiliate in TikTok Studio.",
+    "Add products you've really used.",
+    "Show them in use; tag the product."
+  ],
+  "catch": "Only in TikTok Shop countries; commissions vary and returns can cancel them.",
+  "great_for": [
+    "Beauty",
+    "Home",
+    "Tech"
+  ],
+  "tools": [
+    "opusclip"
+  ],
+  "sources": [
+    [
+      "Stack Influence: 5 TikTok monetization paths (Jun 2026)",
+      "https://stackinfluence.com/blog/5-tiktok-monetization-paths-that-pay-creators-in-2026"
+    ]
+  ],
+  "video": "",
+  "checked": "2026-10-26",
+  "category": "Affiliate",
+  "cat": "aff",
+  "pay_short": "1,000",
+  "pay_unit": "followers (reported)",
+  "start": "Products you use",
+  "letter": "S",
+  "match": {
+    "enjoy": [
+      "rec",
+      "film"
+    ],
+    "platform_bonus": [
+      "tt"
+    ],
+    "min_followers": 1000,
+    "first_step": "List 5 products you use daily that sell on TikTok Shop."
+  },
+  "step_labels": [
+    "1k",
+    "Join",
+    "Add",
+    "Show"
+  ]
+}

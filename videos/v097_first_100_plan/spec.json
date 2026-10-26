@@ -1,0 +1,341 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v097_first_100_plan",
+ "title": "A plan for your first $100 online",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Your first hundred dollars online won't come from views. It comes from one of these three paths.",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "money",
+    "chips": [
+     [
+      "views",
+      "Not from views",
+      "red"
+     ],
+     [
+      "three",
+      "3 paths",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "views",
+     "thud"
+    ],
+    [
+     "three",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Path one: a service. One UGC video or one editing gig can cover it.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "service",
+      "1. A service",
+      "laptop",
+      -0.4
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "service",
+     "pop"
+    ],
+    [
+     "ugc",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Path two: a small product, like a template or a mini guide.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "_1",
+      "1. A service",
+      "laptop",
+      -0.4
+     ],
+     [
+      "product",
+      "2. A small product",
+      "money",
+      -0.6
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "product",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Path three: affiliate links to tools you really use.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "_1",
+      "1. A service",
+      "laptop",
+      -0.4
+     ],
+     [
+      "_2",
+      "2. A small product",
+      "money",
+      -0.6
+     ],
+     [
+      "affiliate",
+      "3. Affiliate links",
+      "phone0",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "affiliate",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "A service is usually fastest, because one yes is enough. Beginner UGC videos often go for fifty to four hundred dollars.",
+   "show": {
+    "type": "stat_cards",
+    "title": "BEGINNER UGC",
+    "green": [
+     "fifty"
+    ],
+    "cards": [
+     [
+      "fifty",
+      "$50–$400",
+      "per video (typical range)",
+      true
+     ]
+    ],
+    "source": "Insense, Sep 2026"
+   },
+   "sfx": [
+    [
+     "fastest",
+     "pop"
+    ],
+    [
+     "fifty",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: these are typical ranges, not promises. Your first yes may take many pitches.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "money",
+    "items": [
+     [
+      "ranges",
+      "Ranges, not promises",
+      true
+     ],
+     [
+      "pitches",
+      "Many pitches",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "ranges",
+     "whip"
+    ],
+    [
+     "pitches",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [FIRST100|first hundred] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Fiverr is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "First $100 plan",
+    "keyword": "FIRST100",
+    "tool": "Fiverr"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$100|A hundred dollars]. Here are three ways to earn your first.",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "money",
+    "chips": [
+     [
+      "views",
+      "Not from views",
+      "red"
+     ],
+     [
+      "three",
+      "3 paths",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Thousands of views, and still not one dollar?",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "money",
+    "chips": [
+     [
+      "views",
+      "Not from views",
+      "red"
+     ],
+     [
+      "three",
+      "3 paths",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What's the fastest way to your first hundred dollars online?",
+   "show": {
+    "type": "stat_cards",
+    "title": "BEGINNER UGC",
+    "green": [
+     "fifty"
+    ],
+    "cards": [
+     [
+      "fifty",
+      "$50–$400",
+      "per video (typical range)",
+      true
+     ]
+    ],
+    "source": "Insense, Sep 2026"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Insense: UGC creator rates (Sep 2026)",
+   "url": "https://insense.pro/blog/ugc-creator-rates"
+  },
+  {
+   "title": "Wise: how to get paid on Fiverr (20% fee, clearance)",
+   "url": "https://wise.com/us/blog/how-to-get-paid-on-fiverr"
+  }
+ ],
+ "thumb": {
+  "headline": "Your first\n*$100* online",
+  "hero": "face",
+  "hold": "money",
+  "mood": -0.5,
+  "sticker": "3 paths",
+  "chip": "Service · product · affiliate",
+  "size": 140
+ },
+ "finder_stream": "ugc"
+}

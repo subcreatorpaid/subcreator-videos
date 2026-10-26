@@ -1,0 +1,350 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v085_etsy_titles",
+ "title": "Etsy titles that get found",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Your Etsy listing might be great, but if the title is wrong, nobody finds it.",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "laptop",
+    "chips": [
+     [
+      "great",
+      "Great listing",
+      null
+     ],
+     [
+      "nobody",
+      "Nobody finds it",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "great",
+     "pop"
+    ],
+    [
+     "nobody",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Start with what it is, in the words buyers search. Budget planner template, not Money Magic.",
+   "show": {
+    "type": "compare",
+    "title": "Etsy title",
+    "cols": [
+     "Gets found",
+     "Gets lost"
+    ],
+    "rows": [
+     [
+      "budget",
+      "Start",
+      [
+       "Budget planner template",
+       "Money Magic"
+      ],
+      [
+       1
+      ]
+     ]
+    ],
+    "best": 0,
+    "best_word": "magic"
+   },
+   "sfx": [
+    [
+     "budget",
+     "pop"
+    ],
+    [
+     "magic",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Then add who it's for and the format: for students, printable, A4.",
+   "show": {
+    "type": "page_card",
+    "url": "etsy.com/listing",
+    "mark": "E",
+    "title": "Budget planner template",
+    "checked": "Your title",
+    "bullets": [
+     [
+      "students",
+      "For students"
+     ],
+     [
+      "printable",
+      "Printable"
+     ],
+     [
+      "a4",
+      "A4 + US letter",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "students",
+     "pop"
+    ],
+    [
+     "printable",
+     "pop"
+    ],
+    [
+     "a4",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Use your tags for other ways people search, like monthly budget or savings tracker.",
+   "show": {
+    "type": "checklist",
+    "title": "Tags",
+    "items": [
+     [
+      "monthly",
+      "Monthly budget"
+     ],
+     [
+      "savings",
+      "Savings tracker"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "monthly",
+     "click"
+    ],
+    [
+     "savings",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Each listing costs twenty cents, so testing a new title is cheap.",
+   "show": {
+    "type": "stat_cards",
+    "title": "ETSY LISTING FEE",
+    "cards": [
+     [
+      "twenty",
+      "$0.20",
+      "per listing"
+     ]
+    ],
+    "source": "Etsy fees page"
+   },
+   "sfx": [
+    [
+     "twenty",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: Etsy also takes a transaction fee on every sale, so price with that in mind.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "transaction",
+      "Transaction fee per sale",
+      true
+     ],
+     [
+      "price",
+      "Price for it",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "transaction",
+     "whip"
+    ],
+    [
+     "price",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [ETSY|etsy] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Printify is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Etsy title formula",
+    "keyword": "ETSY",
+    "tool": "Printify"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[20¢|Twenty cents] to test a new Etsy title.",
+   "show": {
+    "type": "stat_cards",
+    "title": "ETSY LISTING FEE",
+    "cards": [
+     [
+      "twenty",
+      "$0.20",
+      "per listing"
+     ]
+    ],
+    "source": "Etsy fees page"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Great Etsy listing, zero views?",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "laptop",
+    "chips": [
+     [
+      "great",
+      "Great listing",
+      null
+     ],
+     [
+      "nobody",
+      "Nobody finds it",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do you write an Etsy title that buyers find?",
+   "show": {
+    "type": "compare",
+    "title": "Etsy title",
+    "cols": [
+     "Gets found",
+     "Gets lost"
+    ],
+    "rows": [
+     [
+      "budget",
+      "Start",
+      [
+       "Budget planner template",
+       "Money Magic"
+      ],
+      [
+       1
+      ]
+     ]
+    ],
+    "best": 0,
+    "best_word": "magic"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Checkout Page: Etsy fees explained",
+   "url": "https://checkoutpage.com/blog/etsy-fees"
+  }
+ ],
+ "thumb": {
+  "headline": "Etsy titles\nthat *get found*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.3,
+  "sticker": "What · who · format",
+  "chip": "Etsy SEO basics",
+  "size": 120
+ },
+ "finder_stream": "etsy-templates"
+}

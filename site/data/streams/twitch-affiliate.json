@@ -1,0 +1,54 @@
+{
+  "slug": "twitch-affiliate",
+  "title": "Twitch Affiliate",
+  "one_liner": "Stream live and earn from subs and Bits once you reach the affiliate bar.",
+  "followers": "50 followers, plus 500 minutes, 7 stream days and an average of 3 viewers in 30 days.",
+  "pay": "Subscriptions and Bits; Twitch publishes no fixed amount per viewer.",
+  "pay_source": "https://www.tomsguide.com/us/how-to-become-twitch-affiliate-requirements,news-30486.html",
+  "steps": [
+    "Stream at fixed times every week.",
+    "Record every stream and clip the best minute.",
+    "Post clips on TikTok and Shorts.",
+    "Accept the affiliate invite when it arrives."
+  ],
+  "catch": "The average 3 viewers is the hard part; check Twitch's own page, since rules change.",
+  "great_for": [
+    "Gaming",
+    "Art",
+    "Just chatting"
+  ],
+  "tools": [
+    "opusclip"
+  ],
+  "sources": [
+    [
+      "Tom's Guide: Twitch Affiliate requirements",
+      "https://www.tomsguide.com/us/how-to-become-twitch-affiliate-requirements,news-30486.html"
+    ]
+  ],
+  "video": "",
+  "checked": "2026-10-26",
+  "category": "Platform payouts",
+  "cat": "plat",
+  "pay_short": "50",
+  "pay_unit": "followers to start",
+  "start": "Fixed stream times",
+  "letter": "T",
+  "match": {
+    "enjoy": [
+      "film",
+      "rec"
+    ],
+    "platform_bonus": [
+      "yt"
+    ],
+    "min_followers": 50,
+    "first_step": "Pick 3 fixed stream times this week and clip each stream."
+  },
+  "step_labels": [
+    "Schedule",
+    "Record",
+    "Clip",
+    "Accept"
+  ]
+}

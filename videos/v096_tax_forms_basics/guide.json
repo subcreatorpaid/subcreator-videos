@@ -1,0 +1,58 @@
+{
+ "title": "Payout tax forms",
+ "subtitle": "W-8 vs W-9, basics only (not tax advice)",
+ "sections": [
+  [
+   "Which one",
+   [
+    "In the US: W-9.",
+    "Outside the US: W-8 (usually W-8BEN for individuals)."
+   ]
+  ],
+  [
+   "Who asks",
+   [
+    "ElevenLabs (voice payouts).",
+    "Amazon (tax info).",
+    "Most US platforms."
+   ]
+  ],
+  [
+   "Fill it",
+   [
+    "Legal name as on ID.",
+    "Your country's tax number if you have one."
+   ]
+  ],
+  [
+   "Important",
+   [
+    "Not tax advice. Ask a local tax professional."
+   ]
+  ]
+ ],
+ "steps": [
+  "Find your ID name.",
+  "Find your tax number.",
+  "Book a short call with a local pro if unsure."
+ ],
+ "keyword": "TAX",
+ "sources": [
+  [
+   "ElevenLabs docs: Voice Library payouts",
+   "https://elevenlabs.io/docs/eleven-creative/voices/payouts"
+  ],
+  [
+   "Make Influence: Amazon Associates vs Amazon Influencer Program",
+   "https://www.makeinfluence.com/en/academy/amazon-associates-vs-amazon-influencer-program-whats-actually-different"
+  ]
+ ],
+ "video": "The tax form every creator platform asks for",
+ "tool": {
+  "id": "kit",
+  "name": "Kit",
+  "earns": "50% of their first 12 months",
+  "signup": "https://kit.com/affiliate",
+  "status": "to join"
+ }
+}

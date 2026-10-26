@@ -200,7 +200,7 @@ V.append(dict(n=26, slug="v026_facebook_fast_track", title="Facebook pays $1,000
       {"type": "stat_cards", "title": "CREATOR FAST TRACK", "green": ["thousand", "three"], "cards": [["thousand", "$1,000/mo", "100K+ followers elsewhere", True], ["three", "$3,000/mo", "1M+ followers elsewhere", True]], "source": "Meta, Mar 2026"},
       [["thousand", "card"], ["three", "card"], ["million", "ding"]]),
     B("It's for three months, and it's meant to bring big creators from other apps to Facebook.",
-      {"type": "timeline", "title": "How it runs", "points": [["three", "3 months", "guaranteed pay", "green"], ["bring", "Goal", "move to Facebook"]], "hold": "laptop"},
+      {"type": "timeline", "title": "How it runs", "points": [["three", "3 months", "fixed pay", "green"], ["bring", "Goal", "move to Facebook"]], "hold": "laptop"},
       [["three", "pop"], ["bring", "pop"]]),
     B("So under a hundred thousand followers, it's not for you yet. Keep it on your list for later.",
       {"type": "talk", "mood": 0.4, "hold": None, "red": ["not"], "chips": [["under", "Under 100K", "red"], ["later", "Save for later", None]]},
@@ -217,10 +217,10 @@ V.append(dict(n=26, slug="v026_facebook_fast_track", title="Facebook pays $1,000
          ("C: the question", "Will Facebook pay you just for showing up?", 0)],
   sources=[FB],
   thumb={"headline": "Facebook pays\n*$1,000*/mo", "hero": "face", "hold": "money", "mood": -0.6, "sticker": "If you have 100K", "sticker_color": "red", "chip": "Creator Fast Track", "size": 130},
-  caption="Meta's Facebook Creator Fast Track (Mar 2026): 3 months of guaranteed pay, $1,000/month for creators with 100k+ followers on Instagram, TikTok or YouTube, $3,000/month at 1M+. Under 100k? Not yet; post your best videos to Facebook too and save this for later. Read Meta's page for the rules.",
+  caption="Meta's Facebook Creator Fast Track (Mar 2026): 3 months of fixed pay, $1,000/month for creators with 100k+ followers on Instagram, TikTok or YouTube, $3,000/month at 1M+. Under 100k? Not yet; post your best videos to Facebook too and save this for later. Read Meta's page for the rules.",
   tags="#facebookcreator #creatoreconomy #monetization",
   guide={"title": "Facebook Creator Fast Track", "subtitle": "Who qualifies and what to do before you do",
-         "sections": [["The program (Meta, Mar 2026)", ["3 months of guaranteed monthly pay.", "$1,000/month: 100,000+ followers on Instagram, TikTok or YouTube.", "$3,000/month: 1,000,000+ followers."]],
+         "sections": [["The program (Meta, Mar 2026)", ["3 months of fixed monthly pay.", "$1,000/month: 100,000+ followers on Instagram, TikTok or YouTube.", "$3,000/month: 1,000,000+ followers."]],
                       ["Before you qualify", ["Cross-post your best videos to Facebook.", "Grow one main platform to 100k."]]],
          "steps": ["Check your biggest platform's follower count.", "Set up a Facebook page for cross-posting.", "Re-read Meta's page when you get close."]}))
 

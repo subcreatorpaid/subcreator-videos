@@ -1,0 +1,433 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "b1_who_we_are",
+ "title": "Who we are: Sub-Creator Paid",
+ "type": "bio",
+ "format": "",
+ "beats": [
+  {
+   "say": "This is Sub-Creator Paid. We help creators with under ten thousand followers find out which income streams really pay.",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "ten",
+      "Under 10k followers",
+      null
+     ],
+     [
+      "pay",
+      "What really pays",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "ten",
+     "pop"
+    ],
+    [
+     "pay",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Every video gives you three things: the real number in US dollars, the source, and the catch.",
+   "show": {
+    "type": "checklist",
+    "title": "Every video",
+    "items": [
+     [
+      "number",
+      "The real number (USD)"
+     ],
+     [
+      "source",
+      "The source"
+     ],
+     [
+      "catch",
+      "The catch"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "number",
+     "click"
+    ],
+    [
+     "source",
+     "click"
+    ],
+    [
+     "catch",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Why under ten thousand? Most money advice is made for big creators. Small creators get told to wait.",
+   "show": {
+    "type": "myth",
+    "myth": "Wait until you're big",
+    "myth_word": "wait",
+    "fact": "Start where you are",
+    "fact_word": "small"
+   },
+   "sfx": [
+    [
+     "small",
+     "swipe"
+    ],
+    [
+     "wait",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "But some streams need no followers at all, like UGC, where brands pay for your videos, or affiliate links to tools you use.",
+   "show": {
+    "type": "ladder",
+    "title": "Where you can start",
+    "rungs": [
+     [
+      "followers",
+      "0",
+      "UGC · affiliate links",
+      null,
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "followers",
+     "pop"
+    ],
+    [
+     "ugc",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Others open early: fifty followers for Twitch Affiliate, five hundred subscribers for YouTube fan funding.",
+   "show": {
+    "type": "ladder",
+    "title": "Where you can start",
+    "rungs": [
+     [
+      "_0",
+      "0",
+      "UGC · affiliate links",
+      null,
+      true
+     ],
+     [
+      "fifty",
+      "50",
+      "Twitch Affiliate",
+      null,
+      true
+     ],
+     [
+      "five",
+      "500",
+      "YouTube fan funding",
+      "youtube",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "fifty",
+     "pop"
+    ],
+    [
+     "five",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "We check numbers against official pages, and we say so when a figure comes from a third party.",
+   "show": {
+    "type": "page_card",
+    "url": "Official page",
+    "mark": "OK",
+    "title": "Checked",
+    "checked": "How we check",
+    "bullets": [
+     [
+      "official",
+      "Official pages first",
+      true
+     ],
+     [
+      "third",
+      "Third party? We say so"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "official",
+     "ding"
+    ],
+    [
+     "third",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Our website, [subcreatorpaid.com|sub creator paid dot com], has a page for every stream and a free AI income finder.",
+   "show": {
+    "type": "page_card",
+    "url": "subcreatorpaid.com",
+    "mark": "S",
+    "title": "Sub-Creator Paid",
+    "checked": "Free website",
+    "bullets": [
+     [
+      "page",
+      "A page per stream"
+     ],
+     [
+      "finder",
+      "Free AI Income Finder",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "page",
+     "pop"
+    ],
+    [
+     "finder",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "You'll never see fake payout screenshots here, and we never promise you'll earn a set amount.",
+   "show": {
+    "type": "catch",
+    "red": [],
+    "hold": "phone0",
+    "items": [
+     [
+      "fake",
+      "No fake screenshots",
+      true
+     ],
+     [
+      "promise",
+      "No promised amounts",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "fake",
+     "whip"
+    ],
+    [
+     "promise",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: no income stream works without effort. We show you where to start. The work is yours.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "effort",
+      "Takes effort",
+      true
+     ],
+     [
+      "start",
+      "We show the start",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "effort",
+     "whip"
+    ],
+    [
+     "start",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [GUIDE|guide] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Tools I use are in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Start here",
+    "keyword": "GUIDE",
+    "tool": null
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "tools",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[10,000|Ten thousand] followers? You don't have to wait for that.",
+   "show": {
+    "type": "ladder",
+    "title": "Where you can start",
+    "rungs": [
+     [
+      "followers",
+      "0",
+      "UGC · affiliate links",
+      null,
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Tired of money advice made for big creators?",
+   "show": {
+    "type": "myth",
+    "myth": "Wait until you're big",
+    "myth_word": "wait",
+    "fact": "Start where you are",
+    "fact_word": "small"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Which income streams really pay small creators?",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "ten",
+      "Under 10k followers",
+      null
+     ],
+     [
+      "pay",
+      "What really pays",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Sub-Creator Paid website",
+   "url": "https://subcreatorpaid.com/"
+  },
+  {
+   "title": "Tom's Guide: Twitch Affiliate requirements",
+   "url": "https://www.tomsguide.com/us/how-to-become-twitch-affiliate-requirements,news-30486.html"
+  },
+  {
+   "title": "YouTube Help: expanded YouTube Partner Program",
+   "url": "https://support.google.com/youtube/answer/13429240?hl=en"
+  }
+ ],
+ "thumb": {
+  "headline": "Who we are",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": -0.5,
+  "sticker": "Under 10k",
+  "chip": "Number · source · catch",
+  "size": 150
+ },
+ "finder_stream": null
+}

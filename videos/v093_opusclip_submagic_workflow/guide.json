@@ -1,0 +1,58 @@
+{
+ "title": "Clip + caption workflow",
+ "subtitle": "OpusClip → pick → Submagic",
+ "sections": [
+  [
+   "Clip",
+   [
+    "Upload long video to OpusClip.",
+    "Let it find moments, vertical format."
+   ]
+  ],
+  [
+   "Pick",
+   [
+    "Clear hook in 2 seconds.",
+    "One idea per clip."
+   ]
+  ],
+  [
+   "Caption",
+   [
+    "Submagic for captions.",
+    "Fix every wrong word."
+   ]
+  ],
+  [
+   "Affiliates",
+   [
+    "OpusClip 25%.",
+    "Submagic 30% recurring."
+   ]
+  ]
+ ],
+ "steps": [
+  "Pick one long video.",
+  "Make 5 clips.",
+  "Post 1 a day."
+ ],
+ "keyword": "CLIPS",
+ "sources": [
+  [
+   "OpusClip affiliate program",
+   "https://www.opus.pro/affiliate"
+  ],
+  [
+   "Submagic affiliate program",
+   "https://www.submagic.co/affiliate"
+  ]
+ ],
+ "video": "Long video to 10 captioned shorts",
+ "tool": {
+  "id": "opusclip",
+  "name": "OpusClip",
+  "earns": "25% of their payments (at least year one)",
+  "signup": "https://www.opus.pro/affiliate",
+  "status": "joined"
+ }
+}

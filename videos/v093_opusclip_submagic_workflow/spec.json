@@ -1,0 +1,378 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v093_opusclip_submagic_workflow",
+ "title": "Long video to 10 captioned shorts",
+ "type": "tool",
+ "format": "",
+ "beats": [
+  {
+   "say": "One long video can become ten captioned shorts. Here's the two-tool workflow.",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "one",
+      "1 long video",
+      null
+     ],
+     [
+      "ten",
+      "10 shorts",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "one",
+     "pop"
+    ],
+    [
+     "ten",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Step one: upload the long video to OpusClip. It finds the best moments and cuts them vertical.",
+   "show": {
+    "type": "tool_demo",
+    "app": "OpusClip",
+    "input": "podcast-ep12.mp4",
+    "input_word": "upload",
+    "process": "Finding best moments",
+    "process_word": "finds",
+    "outputs": [
+     [
+      "vertical",
+      "Clip 1"
+     ],
+     [
+      "vertical",
+      "Clip 2"
+     ],
+     [
+      "cuts",
+      "Clip 3"
+     ],
+     [
+      "cuts",
+      "Clip 4"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "upload",
+     "drop"
+    ],
+    [
+     "finds",
+     "whoosh"
+    ],
+    [
+     "vertical",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Step two: pick the clips with a clear hook in the first two seconds. Delete the rest.",
+   "show": {
+    "type": "checklist",
+    "title": "Keep a clip if",
+    "items": [
+     [
+      "hook",
+      "Clear hook"
+     ],
+     [
+      "seconds",
+      "In the first 2 seconds"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "hook",
+     "click"
+    ],
+    [
+     "seconds",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Step three: run them through Submagic for bold captions, and fix any word it got wrong.",
+   "show": {
+    "type": "tool_demo",
+    "app": "Submagic",
+    "input": "clip-1.mp4",
+    "input_word": "submagic",
+    "process": "Adding captions",
+    "process_word": "captions",
+    "outputs": [
+     [
+      "bold",
+      "Captions"
+     ],
+     [
+      "fix",
+      "Fixed words"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "submagic",
+     "drop"
+    ],
+    [
+     "captions",
+     "whoosh"
+    ],
+    [
+     "fix",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Both have affiliate programs: OpusClip pays twenty-five percent, Submagic thirty percent recurring.",
+   "show": {
+    "type": "stat_cards",
+    "title": "AFFILIATE",
+    "green": [
+     "thirty"
+    ],
+    "cards": [
+     [
+      "twenty-five",
+      "25%",
+      "OpusClip"
+     ],
+     [
+      "thirty",
+      "30%",
+      "Submagic, recurring",
+      true
+     ]
+    ],
+    "source": "OpusClip + Submagic affiliate pages"
+   },
+   "sfx": [
+    [
+     "twenty-five",
+     "card"
+    ],
+    [
+     "thirty",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: AI picks aren't always your best moments. Watch every clip before you post it.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "picks",
+      "AI picks can miss",
+      true
+     ],
+     [
+      "watch",
+      "Watch every clip",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "picks",
+     "whip"
+    ],
+    [
+     "watch",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [CLIPS|clips] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. OpusClip is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Clip + caption workflow",
+    "keyword": "CLIPS",
+    "tool": "OpusClip"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[1|One] long video. [10|Ten] captioned shorts.",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "one",
+      "1 long video",
+      null
+     ],
+     [
+      "ten",
+      "10 shorts",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Spending hours cutting clips by hand?",
+   "show": {
+    "type": "tool_demo",
+    "app": "OpusClip",
+    "input": "podcast-ep12.mp4",
+    "input_word": "upload",
+    "process": "Finding best moments",
+    "process_word": "finds",
+    "outputs": [
+     [
+      "vertical",
+      "Clip 1"
+     ],
+     [
+      "vertical",
+      "Clip 2"
+     ],
+     [
+      "cuts",
+      "Clip 3"
+     ],
+     [
+      "cuts",
+      "Clip 4"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do you turn one long video into ten shorts?",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "one",
+      "1 long video",
+      null
+     ],
+     [
+      "ten",
+      "10 shorts",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "OpusClip affiliate program",
+   "url": "https://www.opus.pro/affiliate"
+  },
+  {
+   "title": "Submagic affiliate program",
+   "url": "https://www.submagic.co/affiliate"
+  }
+ ],
+ "thumb": {
+  "headline": "1 video →\n*10 shorts*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.4,
+  "sticker": "OpusClip + Submagic",
+  "chip": "Clip · pick · caption",
+  "size": 130
+ },
+ "finder_stream": null
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "email-newsletter",
+  "title": "Email newsletter",
+  "one_liner": "Build an email list you own, then earn from sponsors, recommendations and your own products.",
+  "followers": "None.",
+  "pay": "Free to start: Kit free up to 10,000 subscribers. beehiiv Boosts pay per subscriber you send to other newsletters (one case study: $25,000 from Boosts with about 31,000 subscribers).",
+  "pay_source": "https://www.beehiiv.com/blog/case-study-geekout-newsletter",
+  "steps": [
+    "Pick a free tool (Kit or beehiiv).",
+    "Make one freebie and a welcome email.",
+    "Say a comment keyword in every video.",
+    "Send one useful email a week."
+  ],
+  "catch": "Small lists earn small amounts; it takes months of weekly emails to grow.",
+  "great_for": [
+    "Education",
+    "Finance",
+    "Any niche"
+  ],
+  "tools": [
+    "beehiiv",
+    "kit"
+  ],
+  "sources": [
+    [
+      "Email Vendor Selection: Kit pricing (Aug 2026)",
+      "https://www.emailvendorselection.com/kit-pricing/"
+    ],
+    [
+      "beehiiv case study: Geekout newsletter (Apr 2025)",
+      "https://www.beehiiv.com/blog/case-study-geekout-newsletter"
+    ]
+  ],
+  "video": "",
+  "checked": "2026-10-26",
+  "category": "Email & community",
+  "cat": "email",
+  "pay_short": "$0",
+  "pay_unit": "to start",
+  "start": "One freebie",
+  "letter": "N",
+  "match": {
+    "enjoy": [
+      "write"
+    ],
+    "platform_bonus": [],
+    "min_followers": 0,
+    "first_step": "Make one checklist freebie and a 4-line welcome email."
+  },
+  "step_labels": [
+    "Tool",
+    "Freebie",
+    "Keyword",
+    "Weekly"
+  ]
+}

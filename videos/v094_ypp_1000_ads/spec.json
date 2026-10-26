@@ -1,0 +1,357 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v094_ypp_1000_ads",
+ "title": "YouTube ad money: the 1,000 subscriber bar",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "YouTube ad money starts at one thousand subscribers. But that's only half the bar.",
+   "show": {
+    "type": "stat_cards",
+    "title": "YOUTUBE AD REVENUE",
+    "cards": [
+     [
+      "thousand",
+      "1,000",
+      "subscribers"
+     ]
+    ],
+    "source": "YouTube Help"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "thousand",
+     "card"
+    ],
+    [
+     "half",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "You also need four thousand public watch hours in twelve months, or ten million Shorts views in ninety days.",
+   "show": {
+    "type": "compare",
+    "title": "Plus one of these",
+    "cols": [
+     "Long videos",
+     "Shorts"
+    ],
+    "rows": [
+     [
+      "four",
+      "Need",
+      [
+       "4,000 hours",
+       "10M views"
+      ]
+     ],
+     [
+      "twelve",
+      "In",
+      [
+       "12 months",
+       "90 days"
+      ]
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "four",
+     "pop"
+    ],
+    [
+     "ten",
+     "pop"
+    ],
+    [
+     "twelve",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "For most small creators, watch hours from longer videos are the easier path.",
+   "show": {
+    "type": "progress",
+    "title": "Example channel",
+    "bars": [
+     [
+      "hours",
+      "Watch hours",
+      2600,
+      4000
+     ],
+     [
+      "_subs",
+      "Subscribers",
+      1000,
+      1000
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "hours",
+     "count"
+    ]
+   ]
+  },
+  {
+   "say": "Before that, at five hundred subscribers, you can already earn from memberships, Super Thanks and Shopping.",
+   "show": {
+    "type": "ladder",
+    "rungs": [
+     [
+      "five",
+      "500",
+      "Memberships · Super Thanks · Shopping",
+      "youtube",
+      true
+     ],
+     [
+      "_ads",
+      "1,000",
+      "Ad revenue",
+      "youtube",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "five",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Shorts creators keep forty-five percent of their share of the Shorts ad pool.",
+   "show": {
+    "type": "stat_cards",
+    "title": "SHORTS ADS",
+    "green": [
+     "forty-five"
+    ],
+    "cards": [
+     [
+      "forty-five",
+      "45%",
+      "of your share",
+      true
+     ]
+    ],
+    "source": "Engadget, Sep 2022"
+   },
+   "sfx": [
+    [
+     "forty-five",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: you also need two-step verification, an AdSense account, and a review that takes about a month.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "two-step",
+      "2-step verification",
+      false
+     ],
+     [
+      "adsense",
+      "AdSense account",
+      false
+     ],
+     [
+      "month",
+      "About a month review",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "two-step",
+     "whip"
+    ],
+    [
+     "adsense",
+     "whip"
+    ],
+    [
+     "month",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [ADS|ads] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. vidIQ is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "YouTube ad revenue bar",
+    "keyword": "ADS",
+    "tool": "vidIQ"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[1,000|One thousand] subscribers is only half the bar for YouTube ads.",
+   "show": {
+    "type": "stat_cards",
+    "title": "YOUTUBE AD REVENUE",
+    "cards": [
+     [
+      "thousand",
+      "1,000",
+      "subscribers"
+     ]
+    ],
+    "source": "YouTube Help"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Hit a thousand subscribers, and still no ad money?",
+   "show": {
+    "type": "stat_cards",
+    "title": "YOUTUBE AD REVENUE",
+    "cards": [
+     [
+      "thousand",
+      "1,000",
+      "subscribers"
+     ]
+    ],
+    "source": "YouTube Help"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What do you really need for YouTube ad revenue?",
+   "show": {
+    "type": "compare",
+    "title": "Plus one of these",
+    "cols": [
+     "Long videos",
+     "Shorts"
+    ],
+    "rows": [
+     [
+      "four",
+      "Need",
+      [
+       "4,000 hours",
+       "10M views"
+      ]
+     ],
+     [
+      "twelve",
+      "In",
+      [
+       "12 months",
+       "90 days"
+      ]
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "YouTube Help: expanded YouTube Partner Program",
+   "url": "https://support.google.com/youtube/answer/13429240?hl=en"
+  },
+  {
+   "title": "Engadget: YouTube Shorts revenue sharing (Sep 2022)",
+   "url": "https://www.engadget.com/youtube-revenue-sharing-shorts-creators-170137275.html"
+  }
+ ],
+ "thumb": {
+  "headline": "1,000 subs is\n*half* the bar",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": 0.4,
+  "sticker": "+ 4,000 hours",
+  "sticker_color": "red",
+  "chip": "YouTube ad revenue",
+  "size": 120
+ },
+ "finder_stream": "youtube-fan-funding"
+}

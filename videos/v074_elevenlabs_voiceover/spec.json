@@ -1,0 +1,346 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v074_elevenlabs_voiceover",
+ "title": "Voiceovers without recording (ElevenLabs)",
+ "type": "tool",
+ "format": "",
+ "beats": [
+  {
+   "say": "Hate recording your own voice? You can still make videos with a voiceover.",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "call",
+    "chips": [
+     [
+      "hate",
+      "Hate your voice?",
+      "red"
+     ],
+     [
+      "voiceover",
+      "Still voiceover",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "hate",
+     "thud"
+    ],
+    [
+     "voiceover",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "In ElevenLabs, paste your script, pick a voice, and download the audio.",
+   "show": {
+    "type": "tool_demo",
+    "app": "ElevenLabs",
+    "input": "Here are 3 ways to…",
+    "input_word": "paste",
+    "process": "Generating speech",
+    "process_word": "pick",
+    "outputs": [
+     [
+      "download",
+      "Voice A"
+     ],
+     [
+      "download",
+      "Voice B"
+     ],
+     [
+      "audio",
+      "MP3 ready"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "paste",
+     "key"
+    ],
+    [
+     "pick",
+     "whoosh"
+    ],
+    [
+     "download",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Write the script the way you'd talk: short sentences, and numbers written as words so they're read right.",
+   "show": {
+    "type": "checklist",
+    "title": "Script tips",
+    "items": [
+     [
+      "short",
+      "Short sentences"
+     ],
+     [
+      "numbers",
+      "Numbers as words"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "short",
+     "click"
+    ],
+    [
+     "numbers",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Keep one voice for every video, so it becomes your channel's sound.",
+   "show": {
+    "type": "talk",
+    "mood": -0.5,
+    "hold": "call",
+    "chips": [
+     [
+      "one",
+      "One voice",
+      null
+     ],
+     [
+      "sound",
+      "Your sound",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "one",
+     "pop"
+    ],
+    [
+     "sound",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "ElevenLabs' affiliate program pays twenty-two percent of what people you refer pay, for twelve months.",
+   "show": {
+    "type": "stat_cards",
+    "title": "ELEVENLABS AFFILIATE",
+    "green": [
+     "twenty-two"
+    ],
+    "cards": [
+     [
+      "twenty-two",
+      "22%",
+      "for 12 months",
+      true
+     ]
+    ],
+    "source": "ElevenLabs affiliate program"
+   },
+   "sfx": [
+    [
+     "twenty-two",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: say clearly when a voice is AI if your platform asks, and never clone someone else's voice.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "call",
+    "items": [
+     [
+      "ai",
+      "Label AI voice if asked",
+      true
+     ],
+     [
+      "clone",
+      "Never clone others",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "ai",
+     "whip"
+    ],
+    [
+     "clone",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [VOICEOVER|voice over] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. ElevenLabs is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "AI voiceover workflow",
+    "keyword": "VOICEOVER",
+    "tool": "ElevenLabs"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[22%|Twenty-two percent] for twelve months. That's ElevenLabs' affiliate rate.",
+   "show": {
+    "type": "stat_cards",
+    "title": "ELEVENLABS AFFILIATE",
+    "green": [
+     "twenty-two"
+    ],
+    "cards": [
+     [
+      "twenty-two",
+      "22%",
+      "for 12 months",
+      true
+     ]
+    ],
+    "source": "ElevenLabs affiliate program"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Hate the sound of your own voice on video?",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "call",
+    "chips": [
+     [
+      "hate",
+      "Hate your voice?",
+      "red"
+     ],
+     [
+      "voiceover",
+      "Still voiceover",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Can you make voiceover videos without recording yourself?",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "call",
+    "chips": [
+     [
+      "hate",
+      "Hate your voice?",
+      "red"
+     ],
+     [
+      "voiceover",
+      "Still voiceover",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "ElevenLabs affiliate program",
+   "url": "https://elevenlabs.io/affiliate"
+  }
+ ],
+ "thumb": {
+  "headline": "Voiceover\n*without recording*",
+  "hero": "face",
+  "hold": "call",
+  "mood": -0.4,
+  "sticker": "ElevenLabs",
+  "chip": "Script → voice",
+  "size": 110
+ },
+ "finder_stream": "elevenlabs-voice"
+}

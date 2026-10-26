@@ -1,0 +1,368 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v079_track_numbers_sheet",
+ "title": "Track your creator money in one sheet",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "You can't grow what you don't track. Here's the one sheet every small creator needs.",
+   "show": {
+    "type": "talk",
+    "mood": 0.1,
+    "hold": "laptop",
+    "chips": [
+     [
+      "track",
+      "Track it",
+      null
+     ],
+     [
+      "sheet",
+      "One sheet",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "track",
+     "pop"
+    ],
+    [
+     "sheet",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Every Sunday, write followers on each app, and your total views for the week.",
+   "show": {
+    "type": "compare",
+    "title": "Weekly sheet",
+    "cols": [
+     "Followers",
+     "Views"
+    ],
+    "rows": [
+     [
+      "followers",
+      "This week",
+      [
+       "+120",
+       "18,400"
+      ]
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "followers",
+     "pop"
+    ],
+    [
+     "views",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Then email sign-ups, link clicks, and money in, split by source.",
+   "show": {
+    "type": "compare",
+    "title": "Weekly sheet",
+    "cols": [
+     "Sign-ups",
+     "Clicks",
+     "Money in"
+    ],
+    "rows": [
+     [
+      "_1",
+      "This week",
+      [
+       "14",
+       "96",
+       "$32"
+      ]
+     ],
+     [
+      "sign-ups",
+      "Source",
+      [
+       "Guide",
+       "Bio",
+       "Affiliate"
+      ]
+     ]
+    ],
+    "best": 2,
+    "best_word": "money"
+   },
+   "sfx": [
+    [
+     "sign-ups",
+     "pop"
+    ],
+    [
+     "clicks",
+     "pop"
+    ],
+    [
+     "money",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "After four weeks, you'll see which videos bring sign-ups, not just views.",
+   "show": {
+    "type": "progress",
+    "title": "After 4 weeks",
+    "bars": [
+     [
+      "four",
+      "Weeks tracked",
+      4,
+      4
+     ]
+    ],
+    "big": [
+     "sign-ups",
+     "Sign-ups > views",
+     true
+    ]
+   },
+   "sfx": [
+    [
+     "four",
+     "count"
+    ],
+    [
+     "sign-ups",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Make more of what brings sign-ups and money, and less of what only brings views.",
+   "show": {
+    "type": "talk",
+    "mood": -0.6,
+    "hold": "laptop",
+    "chips": [
+     [
+      "more",
+      "More: sign-ups + money",
+      "green"
+     ],
+     [
+      "less",
+      "Less: views only",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "more",
+     "ding"
+    ],
+    [
+     "less",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: it only works if you fill it every week. Set a ten minute Sunday reminder.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "every",
+      "Every week",
+      true
+     ],
+     [
+      "ten",
+      "10-minute Sunday reminder",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "every",
+     "whip"
+    ],
+    [
+     "ten",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [TRACK|track] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Kit is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Weekly creator tracker",
+    "keyword": "TRACK",
+    "tool": "Kit"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[10|Ten] minutes every Sunday. That's all tracking takes.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "every",
+      "Every week",
+      true
+     ],
+     [
+      "ten",
+      "10-minute Sunday reminder",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Posting every day, and no idea what's actually working?",
+   "show": {
+    "type": "progress",
+    "title": "After 4 weeks",
+    "bars": [
+     [
+      "four",
+      "Weeks tracked",
+      4,
+      4
+     ]
+    ],
+    "big": [
+     "sign-ups",
+     "Sign-ups > views",
+     true
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What numbers should a small creator track?",
+   "show": {
+    "type": "compare",
+    "title": "Weekly sheet",
+    "cols": [
+     "Followers",
+     "Views"
+    ],
+    "rows": [
+     [
+      "followers",
+      "This week",
+      [
+       "+120",
+       "18,400"
+      ]
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Email Vendor Selection: Kit pricing (Aug 2026)",
+   "url": "https://www.emailvendorselection.com/kit-pricing/"
+  }
+ ],
+ "thumb": {
+  "headline": "Track it in\n*one sheet*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.3,
+  "sticker": "10 min / week",
+  "chip": "Creator money tracker",
+  "size": 130
+ },
+ "finder_stream": null
+}

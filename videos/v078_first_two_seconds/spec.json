@@ -1,0 +1,343 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v078_first_two_seconds",
+ "title": "The first 2 seconds decide everything",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Most viewers decide in the first two seconds. Here are three ways to stop the scroll.",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "phone0",
+    "chips": [
+     [
+      "two",
+      "2 seconds",
+      "red"
+     ],
+     [
+      "three",
+      "3 ways",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "two",
+     "thud"
+    ],
+    [
+     "three",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "One: start with the result. Say the number or outcome first, then explain.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "result",
+      "1. Result first",
+      "money",
+      -0.6
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "result",
+     "pop"
+    ],
+    [
+     "number",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Two: name the pain. Say the exact problem your viewer has right now.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "_1",
+      "1. Result first",
+      "money",
+      -0.6
+     ],
+     [
+      "pain",
+      "2. Name the pain",
+      "phone0",
+      0.6
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "pain",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Three: ask a question they need answered.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "_1",
+      "1. Result first",
+      "money",
+      -0.6
+     ],
+     [
+      "_2",
+      "2. Name the pain",
+      "phone0",
+      0.6
+     ],
+     [
+      "question",
+      "3. Ask a question",
+      "laptop",
+      0
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "question",
+     "pop"
+    ],
+    [
+     "answered",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Put the hook on screen as text too, so it works with the sound off.",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "screen",
+      "Hook on screen",
+      "green"
+     ],
+     [
+      "sound",
+      "Works on mute",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "screen",
+     "ding"
+    ],
+    [
+     "sound",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: a hook that promises more than the video gives gets people to leave, and the app notices.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "promises",
+      "Don't over-promise",
+      true
+     ],
+     [
+      "leave",
+      "People leave",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "promises",
+     "whip"
+    ],
+    [
+     "leave",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [HOOK|hook] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. OpusClip is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Hook formulas",
+    "keyword": "HOOK",
+    "tool": "OpusClip"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[2|Two] seconds. That's how long your hook gets.",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "phone0",
+    "chips": [
+     [
+      "two",
+      "2 seconds",
+      "red"
+     ],
+     [
+      "three",
+      "3 ways",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Good videos, but everyone scrolls past?",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "phone0",
+    "chips": [
+     [
+      "two",
+      "2 seconds",
+      "red"
+     ],
+     [
+      "three",
+      "3 ways",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do you stop the scroll in two seconds?",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "phone0",
+    "chips": [
+     [
+      "two",
+      "2 seconds",
+      "red"
+     ],
+     [
+      "three",
+      "3 ways",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "FTC: Disclosures 101 for social media influencers",
+   "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+  }
+ ],
+ "thumb": {
+  "headline": "The first\n*2 seconds*",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 0.4,
+  "sticker": "3 hooks",
+  "chip": "Result · pain · question",
+  "size": 140
+ },
+ "finder_stream": null
+}

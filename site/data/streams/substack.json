@@ -1,0 +1,51 @@
+{
+  "slug": "substack",
+  "title": "Substack paid newsletter",
+  "one_liner": "Readers pay a monthly subscription for your writing.",
+  "followers": "None.",
+  "pay": "You set the price; Substack takes 10% of paid subscriptions plus Stripe (about 2.9% + 30c).",
+  "pay_source": "https://schoolmaker.com/blog/substack-pricing",
+  "steps": [
+    "Start free and post weekly.",
+    "Grow free readers first.",
+    "Turn on paid with one clear extra.",
+    "Ask readers directly to upgrade."
+  ],
+  "catch": "Only a small share of free readers usually pay; you need a list first.",
+  "great_for": [
+    "Writing",
+    "Analysis",
+    "Niche news"
+  ],
+  "tools": [
+    "beehiiv"
+  ],
+  "sources": [
+    [
+      "SchoolMaker: Substack pricing (Sep 2026)",
+      "https://schoolmaker.com/blog/substack-pricing"
+    ]
+  ],
+  "video": "",
+  "checked": "2026-10-26",
+  "category": "Email & community",
+  "cat": "email",
+  "pay_short": "10%",
+  "pay_unit": "Substack fee",
+  "start": "Free posts first",
+  "letter": "W",
+  "match": {
+    "enjoy": [
+      "write"
+    ],
+    "platform_bonus": [],
+    "min_followers": 0,
+    "first_step": "Publish one free post this week on a topic your viewers ask about."
+  },
+  "step_labels": [
+    "Free",
+    "Grow",
+    "Paid",
+    "Ask"
+  ]
+}

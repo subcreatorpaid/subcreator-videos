@@ -87,6 +87,16 @@ def main():
              "| # | Video | Type | Length | Tool |", "|---|---|---|---|---|"]
     lines += [f"| {r['n']} | {r['title']} | {r['type']} | ~{r['seconds']} s | {AFF[r['tool']][0] if r.get('tool') else '-'} |" for r in reg]
     (OUT / "README.md").write_text("\n".join(lines) + "\n")
+    used = {}
+    for r in reg:
+        if r.get("tool"): used.setdefault(r["tool"], []).append(r["n"])
+    order = sorted(AFF, key=lambda k: (AFF[k][3] == "joined", -len(used.get(k, []))))  # still to join first, most-used first
+    aff = ["# Affiliate sign-up list (all 105 videos)", "",
+           "Join each program yourself (it means accepting their terms, so it is your step). Then send me the referral link,",
+           "or put it in site/data/links.json, and subcreatorpaid.com/go/<id> starts pointing to it.", "",
+           "| Program | Status | You earn | Videos that use it | Sign up |", "|---|---|---|---|---|"]
+    aff += [f"| {AFF[k][0]} | {AFF[k][3]} | {AFF[k][1]} | {len(used.get(k, []))} ({', '.join(used.get(k, [])[:8])}{'…' if len(used.get(k, [])) > 8 else ''}) | {AFF[k][2]} |" for k in order]
+    (OUT / "AFFILIATE_SIGNUPS.md").write_text("\n".join(aff) + "\n")
     print(len(reg), "folders in", OUT)
 
 

@@ -1,0 +1,46 @@
+{
+ "title": "Creator invoice template",
+ "subtitle": "Fill-in-the-blanks invoice",
+ "sections": [
+  [
+   "Template",
+   [
+    "From: [your name, email]",
+    "To: [company name]",
+    "Invoice #[001] · Date [ ]",
+    "Delivered: [e.g. 2 UGC videos, 30-day organic use]",
+    "Amount: $[ ]",
+    "Due: [date]",
+    "Pay by: [PayPal / bank details]"
+   ]
+  ],
+  [
+   "Habits",
+   [
+    "Number invoices in order.",
+    "Keep every copy in one folder.",
+    "Check your country's tax rules."
+   ]
+  ]
+ ],
+ "steps": [
+  "Copy the template.",
+  "Fill it for your next deal.",
+  "Start an 'Invoices' folder."
+ ],
+ "keyword": "INVOICE",
+ "sources": [
+  [
+   "FTC: Disclosures 101 for social media influencers",
+   "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+  ]
+ ],
+ "video": "Your first invoice: 6 things it needs",
+ "tool": {
+  "id": "kit",
+  "name": "Kit",
+  "earns": "50% of their first 12 months",
+  "signup": "https://kit.com/affiliate",
+  "status": "to join"
+ }
+}

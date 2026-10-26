@@ -1,0 +1,54 @@
+{
+  "slug": "gumroad",
+  "title": "Gumroad digital products",
+  "one_liner": "Sell guides, templates and presets from a simple checkout page.",
+  "followers": "None.",
+  "pay": "You set the price; Gumroad takes 10% + 50c per direct sale (plus card processing), 30% via Discover.",
+  "pay_source": "https://fungies.io/leaving-gumroad-cheaper-alternatives-2026/",
+  "steps": [
+    "Pick one problem your viewers ask about.",
+    "Make a short guide or template.",
+    "Set up a Gumroad product page.",
+    "Link it in your bio and mention it in videos."
+  ],
+  "catch": "Fees on every sale, and nobody finds it unless you send them there.",
+  "great_for": [
+    "Templates",
+    "Presets",
+    "Guides"
+  ],
+  "tools": [
+    "stan"
+  ],
+  "sources": [
+    [
+      "Fungies: Gumroad pricing (Aug 2026)",
+      "https://fungies.io/leaving-gumroad-cheaper-alternatives-2026/"
+    ]
+  ],
+  "video": "",
+  "checked": "2026-10-26",
+  "category": "Digital products",
+  "cat": "prod",
+  "pay_short": "10% + 50c",
+  "pay_unit": "per direct sale",
+  "start": "One small guide",
+  "letter": "G",
+  "match": {
+    "enjoy": [
+      "make",
+      "write"
+    ],
+    "platform_bonus": [
+      "ig"
+    ],
+    "min_followers": 0,
+    "first_step": "Outline a 5-page guide answering your most-asked question."
+  },
+  "step_labels": [
+    "Problem",
+    "Make",
+    "Page",
+    "Link"
+  ]
+}

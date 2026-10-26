@@ -1,0 +1,57 @@
+{
+  "slug": "tiktok-creator-rewards",
+  "title": "TikTok Creator Rewards",
+  "one_liner": "TikTok pays for qualifying views on videos over 1 minute.",
+  "followers": "10,000 followers and 100,000 views in the last 30 days; 18+; personal account; selected countries.",
+  "pay": "Reported $0.40-$1.00 per 1,000 qualifying views (3rd party, not official).",
+  "pay_source": "https://stackinfluence.com/blog/5-tiktok-monetization-paths-that-pay-creators-in-2026",
+  "steps": [
+    "Grow to 10,000 followers with short videos.",
+    "Make videos over 1 minute.",
+    "Reach 100,000 views in 30 days.",
+    "Apply in TikTok Studio (eligible countries)."
+  ],
+  "catch": "High bar, only some countries, and per-view pay is small; most small creators earn more from direct streams first.",
+  "great_for": [
+    "Education",
+    "Storytime",
+    "Reviews"
+  ],
+  "tools": [
+    "opusclip"
+  ],
+  "sources": [
+    [
+      "Stack Influence: 5 TikTok monetization paths (Jun 2026)",
+      "https://stackinfluence.com/blog/5-tiktok-monetization-paths-that-pay-creators-in-2026"
+    ],
+    [
+      "Metricool: TikTok Creator Rewards (Dec 2025)",
+      "https://metricool.com/tiktok-creator-next/"
+    ]
+  ],
+  "video": "",
+  "checked": "2026-10-26",
+  "category": "Platform payouts",
+  "cat": "plat",
+  "pay_short": "10,000",
+  "pay_unit": "followers to start",
+  "start": "1-minute videos",
+  "letter": "R",
+  "match": {
+    "enjoy": [
+      "film"
+    ],
+    "platform_bonus": [
+      "tt"
+    ],
+    "min_followers": 10000,
+    "first_step": "Test one 60-90 second video a week to learn longer formats now."
+  },
+  "step_labels": [
+    "10k",
+    "1 min+",
+    "100k views",
+    "Apply"
+  ]
+}

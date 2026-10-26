@@ -1,0 +1,373 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v098_fiverr_affiliate",
+ "title": "Earn from Fiverr without selling a gig",
+ "type": "tool",
+ "format": "",
+ "beats": [
+  {
+   "say": "You can earn from Fiverr without doing a single gig. It's their affiliate program.",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "gig",
+      "No gig needed",
+      "green"
+     ],
+     [
+      "affiliate",
+      "Affiliate program",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "gig",
+     "ding"
+    ],
+    [
+     "affiliate",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "It pays twenty-five percent of a new buyer's first order, plus ten percent of their orders for twelve months.",
+   "show": {
+    "type": "stat_cards",
+    "title": "FIVERR AFFILIATES",
+    "green": [
+     "twenty-five"
+    ],
+    "cards": [
+     [
+      "twenty-five",
+      "25%",
+      "first order",
+      true
+     ],
+     [
+      "ten",
+      "10%",
+      "12 months"
+     ]
+    ],
+    "source": "Fiverr affiliates"
+   },
+   "sfx": [
+    [
+     "twenty-five",
+     "card"
+    ],
+    [
+     "ten",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "Who buys? Creators who need thumbnails, editing, voiceovers or logos.",
+   "show": {
+    "type": "checklist",
+    "title": "Your viewers need",
+    "items": [
+     [
+      "thumbnails",
+      "Thumbnails"
+     ],
+     [
+      "editing",
+      "Editing"
+     ],
+     [
+      "voiceovers",
+      "Voiceovers"
+     ],
+     [
+      "logos",
+      "Logos"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "thumbnails",
+     "click"
+    ],
+    [
+     "editing",
+     "click"
+    ],
+    [
+     "voiceovers",
+     "click"
+    ],
+    [
+     "logos",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "So make a video about outsourcing one task, and link the category you'd actually use.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "outsourcing",
+      "Video: outsource 1 task",
+      "film",
+      0
+     ],
+     [
+      "link",
+      "Link the category",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "outsourcing",
+     "pop"
+    ],
+    [
+     "link",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Say clearly in the video that it's an affiliate link, not just in the caption.",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "laptop",
+    "chips": [
+     [
+      "clearly",
+      "Say it clearly",
+      null
+     ],
+     [
+      "caption",
+      "Not just caption",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "clearly",
+     "pop"
+    ],
+    [
+     "caption",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: you earn only when a new buyer orders. Clicks alone pay nothing.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "new",
+      "New buyers only",
+      true
+     ],
+     [
+      "clicks",
+      "Clicks pay nothing",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "new",
+     "whip"
+    ],
+    [
+     "clicks",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [REFER|refer] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Fiverr is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Fiverr affiliate",
+    "keyword": "REFER",
+    "tool": "Fiverr"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[25%|Twenty-five percent] of a first order, without doing the gig.",
+   "show": {
+    "type": "stat_cards",
+    "title": "FIVERR AFFILIATES",
+    "green": [
+     "twenty-five"
+    ],
+    "cards": [
+     [
+      "twenty-five",
+      "25%",
+      "first order",
+      true
+     ],
+     [
+      "ten",
+      "10%",
+      "12 months"
+     ]
+    ],
+    "source": "Fiverr affiliates"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Don't have a skill to sell on Fiverr?",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "gig",
+      "No gig needed",
+      "green"
+     ],
+     [
+      "affiliate",
+      "Affiliate program",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Can you earn from Fiverr without selling anything?",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "gig",
+      "No gig needed",
+      "green"
+     ],
+     [
+      "affiliate",
+      "Affiliate program",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Fiverr affiliates",
+   "url": "https://affiliates.fiverr.com"
+  },
+  {
+   "title": "FTC: Disclosures 101 for social media influencers",
+   "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+  }
+ ],
+ "thumb": {
+  "headline": "Fiverr *without*\na gig",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.4,
+  "sticker": "25% + 10%",
+  "sticker_color": "green",
+  "chip": "Fiverr affiliates",
+  "size": 130
+ },
+ "finder_stream": null
+}

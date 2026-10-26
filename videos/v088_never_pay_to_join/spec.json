@@ -1,0 +1,335 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v088_never_pay_to_join",
+ "title": "Never pay to join a brand program",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "A brand DMs you: you're selected as an ambassador! Just pay for the starter kit. Stop right there.",
+   "show": {
+    "type": "page_card",
+    "url": "DM · 1 new message",
+    "mark": "!",
+    "title": "You're selected!",
+    "checked": "Message request",
+    "bullets": [
+     [
+      "ambassador",
+      "Ambassador invite"
+     ],
+     [
+      "pay",
+      "Pay for a starter kit",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "ambassador",
+     "pop"
+    ],
+    [
+     "pay",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Real brand deals pay you. If you have to pay first, it's a sales pitch, not a deal.",
+   "show": {
+    "type": "myth",
+    "myth": "Pay to join, earn later",
+    "myth_word": "real",
+    "fact": "Real deals pay you",
+    "fact_word": "pitch"
+   },
+   "sfx": [
+    [
+     "real",
+     "thud"
+    ],
+    [
+     "pitch",
+     "swipe"
+    ]
+   ]
+  },
+  {
+   "say": "The FTC warns about fake ambassador managers: flattery, big name-drops, and lookalike web addresses.",
+   "show": {
+    "type": "checklist",
+    "title": "FTC red flags",
+    "items": [
+     [
+      "flattery",
+      "Flattery"
+     ],
+     [
+      "name-drops",
+      "Big name-drops"
+     ],
+     [
+      "lookalike",
+      "Lookalike web addresses"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "flattery",
+     "click"
+    ],
+    [
+     "name-drops",
+     "click"
+    ],
+    [
+     "lookalike",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "And they ask for your bank or personal details early. Never send them.",
+   "show": {
+    "type": "talk",
+    "mood": 0.8,
+    "hold": "phone0",
+    "chips": [
+     [
+      "bank",
+      "Bank details?",
+      "red"
+     ],
+     [
+      "never",
+      "Never send",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "bank",
+     "thud"
+    ],
+    [
+     "never",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Check the brand's real website, contact them through it, and report fakes at report fraud dot F T C dot gov.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "website",
+      "Find the real site",
+      "laptop",
+      0
+     ],
+     [
+      "contact",
+      "Contact them there",
+      "call",
+      -0.3
+     ],
+     [
+      "report",
+      "Report fakes",
+      "money",
+      -0.8
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "website",
+     "pop"
+    ],
+    [
+     "contact",
+     "pop"
+    ],
+    [
+     "report",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: some real brands do send free product instead of cash. That's fine, but it's never something you pay for.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "free",
+      "Free product: okay",
+      false
+     ],
+     [
+      "pay",
+      "You paying: never",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "free",
+     "whip"
+    ],
+    [
+     "pay",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [SAFE|safe] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Kit is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Brand scam check",
+    "keyword": "SAFE",
+    "tool": "Kit"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$0|Zero dollars]. That's what a real brand deal costs you.",
+   "show": {
+    "type": "myth",
+    "myth": "Pay to join, earn later",
+    "myth_word": "real",
+    "fact": "Real deals pay you",
+    "fact_word": "pitch"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "A brand wants you as an ambassador, but you have to pay first?",
+   "show": {
+    "type": "page_card",
+    "url": "DM · 1 new message",
+    "mark": "!",
+    "title": "You're selected!",
+    "checked": "Message request",
+    "bullets": [
+     [
+      "ambassador",
+      "Ambassador invite"
+     ],
+     [
+      "pay",
+      "Pay for a starter kit",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Should you ever pay to join a brand ambassador program?",
+   "show": {
+    "type": "myth",
+    "myth": "Pay to join, earn later",
+    "myth_word": "real",
+    "fact": "Real deals pay you",
+    "fact_word": "pitch"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "FTC: bogus brand ambassador managers scam (Oct 2023)",
+   "url": "https://www.ftc.gov/business-guidance/blog/2023/10/influence-peddling-bogus-brand-ambassador-managers-scam-prospective-influencers"
+  }
+ ],
+ "thumb": {
+  "headline": "Never *pay*\nto join",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 0.8,
+  "sticker": "Scam alert",
+  "sticker_color": "red",
+  "chip": "FTC red flags",
+  "size": 140
+ },
+ "finder_stream": "ugc"
+}

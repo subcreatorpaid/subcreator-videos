@@ -1,0 +1,367 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v095_money_calendar",
+ "title": "When each platform actually pays you",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "You earned it, but when does it actually arrive? Here's the money calendar for five platforms.",
+   "show": {
+    "type": "talk",
+    "mood": 0.4,
+    "hold": "money",
+    "chips": [
+     [
+      "earned",
+      "Earned",
+      "green"
+     ],
+     [
+      "arrive",
+      "When does it arrive?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "earned",
+     "ding"
+    ],
+    [
+     "arrive",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Fiverr: money clears fourteen days after an order, or seven for top sellers.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "fiverr",
+      "Order done",
+      "Fiverr"
+     ],
+     [
+      "fourteen",
+      "+14 days",
+      "cleared",
+      "green"
+     ]
+    ],
+    "hold": "money"
+   },
+   "sfx": [
+    [
+     "fiverr",
+     "pop"
+    ],
+    [
+     "fourteen",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "beehiiv partner payouts arrive on the fifteenth of the month.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "beehiiv",
+      "Month end",
+      "beehiiv"
+     ],
+     [
+      "fifteenth",
+      "15th",
+      "paid",
+      "green"
+     ]
+    ],
+    "hold": "money"
+   },
+   "sfx": [
+    [
+     "beehiiv",
+     "pop"
+    ],
+    [
+     "fifteenth",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "ElevenLabs voice payouts go through Stripe, usually from ten dollars.",
+   "show": {
+    "type": "stat_cards",
+    "title": "ELEVENLABS",
+    "cards": [
+     [
+      "ten",
+      "$10",
+      "usual minimum"
+     ]
+    ],
+    "source": "ElevenLabs docs"
+   },
+   "sfx": [
+    [
+     "stripe",
+     "pop"
+    ],
+    [
+     "ten",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "YouTube Shopping is the slowest: sixty to one hundred twenty days after the sale, and returns reverse it.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "shopping",
+      "Sale",
+      "YouTube Shopping"
+     ],
+     [
+      "sixty",
+      "+60 days",
+      ""
+     ],
+     [
+      "hundred",
+      "+120 days",
+      "paid",
+      "green"
+     ]
+    ],
+    "hold": "money"
+   },
+   "sfx": [
+    [
+     "shopping",
+     "pop"
+    ],
+    [
+     "sixty",
+     "pop"
+    ],
+    [
+     "hundred",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: plan your money by when it lands, not when you earn it. And check each page, since terms change.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "money",
+    "items": [
+     [
+      "lands",
+      "Plan by when it lands",
+      false
+     ],
+     [
+      "change",
+      "Terms change",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "lands",
+     "whip"
+    ],
+    [
+     "change",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [CALENDAR|calendar] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. beehiiv is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Creator money calendar",
+    "keyword": "CALENDAR",
+    "tool": "beehiiv"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[120|One hundred twenty] days. That's how long some creator pay takes.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "shopping",
+      "Sale",
+      "YouTube Shopping"
+     ],
+     [
+      "sixty",
+      "+60 days",
+      ""
+     ],
+     [
+      "hundred",
+      "+120 days",
+      "paid",
+      "green"
+     ]
+    ],
+    "hold": "money"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Made your first sale, and the money still hasn't arrived?",
+   "show": {
+    "type": "talk",
+    "mood": 0.4,
+    "hold": "money",
+    "chips": [
+     [
+      "earned",
+      "Earned",
+      "green"
+     ],
+     [
+      "arrive",
+      "When does it arrive?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "When does each creator platform actually pay you?",
+   "show": {
+    "type": "talk",
+    "mood": 0.4,
+    "hold": "money",
+    "chips": [
+     [
+      "earned",
+      "Earned",
+      "green"
+     ],
+     [
+      "arrive",
+      "When does it arrive?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Wise: how to get paid on Fiverr (20% fee, clearance)",
+   "url": "https://wise.com/us/blog/how-to-get-paid-on-fiverr"
+  },
+  {
+   "title": "beehiiv partner program",
+   "url": "https://www.beehiiv.com/partners"
+  },
+  {
+   "title": "ElevenLabs docs: Voice Library payouts",
+   "url": "https://elevenlabs.io/docs/eleven-creative/voices/payouts"
+  },
+  {
+   "title": "PPC Land: YouTube Shopping opens to 500 subscribers (Mar 2026)",
+   "url": "https://ppc.land/youtube-opens-shopping-affiliate-program-to-creators-with-500-subscribers/"
+  }
+ ],
+ "thumb": {
+  "headline": "When does it\n*actually pay?*",
+  "hero": "face",
+  "hold": "money",
+  "mood": 0.3,
+  "sticker": "14 · 15th · 120 days",
+  "chip": "Creator money calendar",
+  "size": 120
+ },
+ "finder_stream": null
+}

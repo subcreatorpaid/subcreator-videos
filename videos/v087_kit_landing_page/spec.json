@@ -1,0 +1,377 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v087_kit_landing_page",
+ "title": "Build a free landing page in Kit",
+ "type": "tool",
+ "format": "",
+ "beats": [
+  {
+   "say": "You don't need a website to start an email list. Kit gives you a free landing page.",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "website",
+      "No website needed",
+      "green"
+     ],
+     [
+      "landing",
+      "Free landing page",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "website",
+     "ding"
+    ],
+    [
+     "landing",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Pick a template, write a headline that says what they get, and add one sign-up box.",
+   "show": {
+    "type": "page_card",
+    "url": "yourname.kit.com",
+    "mark": "K",
+    "title": "Free checklist: …",
+    "checked": "Your landing page",
+    "bullets": [
+     [
+      "template",
+      "A template"
+     ],
+     [
+      "headline",
+      "Headline: what they get",
+      true
+     ],
+     [
+      "box",
+      "One sign-up box"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "template",
+     "pop"
+    ],
+    [
+     "headline",
+     "ding"
+    ],
+    [
+     "box",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Connect it to your welcome email, so the freebie arrives right away.",
+   "show": {
+    "type": "tool_demo",
+    "app": "Kit",
+    "input": "New subscriber",
+    "input_word": "connect",
+    "process": "Sending welcome email",
+    "process_word": "welcome",
+    "outputs": [
+     [
+      "freebie",
+      "Freebie sent"
+     ],
+     [
+      "away",
+      "Tagged"
+     ],
+     [
+      "right",
+      "In your list"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "connect",
+     "drop"
+    ],
+    [
+     "freebie",
+     "pop"
+    ],
+    [
+     "away",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Put the link in your bio, and say the comment keyword in every video.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "link",
+      "Link in bio",
+      "phone0",
+      0
+     ],
+     [
+      "keyword",
+      "Keyword in videos",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "link",
+     "pop"
+    ],
+    [
+     "keyword",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Kit's free plan covers up to ten thousand subscribers, and its affiliate program pays fifty percent for twelve months.",
+   "show": {
+    "type": "stat_cards",
+    "title": "KIT",
+    "green": [
+     "fifty"
+    ],
+    "cards": [
+     [
+      "ten",
+      "10,000",
+      "subs on free plan"
+     ],
+     [
+      "fifty",
+      "50%",
+      "affiliate, 12 months",
+      true
+     ]
+    ],
+    "source": "Kit pricing + affiliate pages"
+   },
+   "sfx": [
+    [
+     "ten",
+     "card"
+    ],
+    [
+     "fifty",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: one sign-up box beats five. Every extra field loses people.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "one",
+      "One box",
+      false
+     ],
+     [
+      "extra",
+      "Extra fields lose people",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "one",
+     "whip"
+    ],
+    [
+     "extra",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [LANDING|landing] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Kit is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Kit landing page",
+    "keyword": "LANDING",
+    "tool": "Kit"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$0|Zero dollars] for an email landing page, up to ten thousand subscribers.",
+   "show": {
+    "type": "stat_cards",
+    "title": "KIT",
+    "green": [
+     "fifty"
+    ],
+    "cards": [
+     [
+      "ten",
+      "10,000",
+      "subs on free plan"
+     ],
+     [
+      "fifty",
+      "50%",
+      "affiliate, 12 months",
+      true
+     ]
+    ],
+    "source": "Kit pricing + affiliate pages"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Want an email list, but don't have a website?",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "website",
+      "No website needed",
+      "green"
+     ],
+     [
+      "landing",
+      "Free landing page",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Do you need a website to start an email list?",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "website",
+      "No website needed",
+      "green"
+     ],
+     [
+      "landing",
+      "Free landing page",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Email Vendor Selection: Kit pricing (Aug 2026)",
+   "url": "https://www.emailvendorselection.com/kit-pricing/"
+  },
+  {
+   "title": "Kit affiliate program",
+   "url": "https://kit.com/affiliate"
+  }
+ ],
+ "thumb": {
+  "headline": "Free *landing page*\nin Kit",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.4,
+  "sticker": "No website needed",
+  "chip": "Template · headline · 1 box",
+  "size": 110
+ },
+ "finder_stream": null
+}

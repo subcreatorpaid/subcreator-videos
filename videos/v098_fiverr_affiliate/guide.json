@@ -1,0 +1,52 @@
+{
+ "title": "Fiverr affiliate",
+ "subtitle": "How it pays and what to post",
+ "sections": [
+  [
+   "Pays",
+   [
+    "25% of a new buyer's first order.",
+    "10% of their orders for 12 months."
+   ]
+  ],
+  [
+   "Video ideas",
+   [
+    "Outsourcing my thumbnails.",
+    "What a $20 logo looks like.",
+    "Hiring an editor for the first time."
+   ]
+  ],
+  [
+   "Rules",
+   [
+    "Say 'affiliate link' in the video.",
+    "Only link what you'd use."
+   ]
+  ]
+ ],
+ "steps": [
+  "Apply to Fiverr affiliates.",
+  "Pick one category.",
+  "Film one outsourcing video."
+ ],
+ "keyword": "REFER",
+ "sources": [
+  [
+   "Fiverr affiliates",
+   "https://affiliates.fiverr.com"
+  ],
+  [
+   "FTC: Disclosures 101 for social media influencers",
+   "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+  ]
+ ],
+ "video": "Earn from Fiverr without selling a gig",
+ "tool": {
+  "id": "fiverr",
+  "name": "Fiverr",
+  "earns": "25% of a new buyer's first order + 10% for 12 months",
+  "signup": "https://affiliates.fiverr.com",
+  "status": "waiting for owner login"
+ }
+}

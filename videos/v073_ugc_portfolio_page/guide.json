@@ -1,0 +1,54 @@
+{
+ "title": "UGC portfolio page",
+ "subtitle": "A 3-section template",
+ "sections": [
+  [
+   "Section 1",
+   [
+    "Name · what you make · who it's for (one line)."
+   ]
+  ],
+  [
+   "Section 2",
+   [
+    "3 playable samples: unboxing, problem→fix, testimonial."
+   ]
+  ],
+  [
+   "Section 3",
+   [
+    "Offer, starting price (beginners usually $50-$400 per video), one contact method."
+   ]
+  ],
+  [
+   "Tools",
+   [
+    "Any free page builder or link-in-bio page."
+   ]
+  ]
+ ],
+ "steps": [
+  "Pick your 3 best samples.",
+  "Build the page in 20 minutes.",
+  "Send it with your next pitch."
+ ],
+ "keyword": "PORTFOLIO",
+ "sources": [
+  [
+   "Billo: UGC creator jobs (no follower requirement)",
+   "https://billo.app/blog/ugc-creator-jobs/"
+  ],
+  [
+   "Insense: UGC creator rates (Sep 2026)",
+   "https://insense.pro/blog/ugc-creator-rates"
+  ]
+ ],
+ "video": "A UGC portfolio page in 20 minutes",
+ "tool": {
+  "id": "stan",
+  "name": "Stan Store",
+  "earns": "20% recurring (confirm on joining)",
+  "signup": "https://stan.store/affiliates",
+  "status": "to join"
+ }
+}

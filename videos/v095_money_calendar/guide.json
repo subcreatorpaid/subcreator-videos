@@ -1,0 +1,53 @@
+{
+ "title": "Creator money calendar",
+ "subtitle": "When each platform pays",
+ "sections": [
+  [
+   "Timings",
+   [
+    "Fiverr: 14-day clearance (7 for Top Rated/Pro).",
+    "beehiiv partners: paid on the 15th.",
+    "ElevenLabs Voice Library: Stripe, usually $10 minimum.",
+    "YouTube Shopping: 60-120 days after purchase; returns reverse it."
+   ]
+  ],
+  [
+   "Tip",
+   [
+    "Track 'earned' and 'landed' as two columns."
+   ]
+  ]
+ ],
+ "steps": [
+  "List your income sources.",
+  "Add each one's pay timing.",
+  "Plan spending by 'landed'."
+ ],
+ "keyword": "CALENDAR",
+ "sources": [
+  [
+   "Wise: how to get paid on Fiverr (20% fee, clearance)",
+   "https://wise.com/us/blog/how-to-get-paid-on-fiverr"
+  ],
+  [
+   "beehiiv partner program",
+   "https://www.beehiiv.com/partners"
+  ],
+  [
+   "ElevenLabs docs: Voice Library payouts",
+   "https://elevenlabs.io/docs/eleven-creative/voices/payouts"
+  ],
+  [
+   "PPC Land: YouTube Shopping opens to 500 subscribers (Mar 2026)",
+   "https://ppc.land/youtube-opens-shopping-affiliate-program-to-creators-with-500-subscribers/"
+  ]
+ ],
+ "video": "When each platform actually pays you",
+ "tool": {
+  "id": "beehiiv",
+  "name": "beehiiv",
+  "earns": "50-60% of what they pay for 12 months",
+  "signup": "https://www.beehiiv.com/partners",
+  "status": "joined"
+ }
+}

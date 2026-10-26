@@ -7,7 +7,7 @@ Each batch file lists videos as dicts; build(v) writes:
 and returns a plan row for content/plan100/plan.json.
 Facts must come from brain/research/2026-10-26_facts_100.md or site/data/streams/*.json.
 """
-import json, pathlib
+import json, pathlib, re
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 TOOLS_LINE = ("Tools I use (affiliate links, I may earn a commission at no cost to you): OpusClip subcreatorpaid.com/go/opusclip · ElevenLabs subcreatorpaid.com/go/elevenlabs · "
@@ -87,3 +87,30 @@ Title: {v['title']}
     (d / "guide.json").write_text(json.dumps(g, indent=1, ensure_ascii=False))
     return {"n": v["n"], "slug": slug, "title": v["title"], "type": v["type"], "keyword": v["keyword"], "tool": tool,
             "affiliate": g["tool"], "stream": v.get("stream"), "beats": len(beats), "words": sum(len(b["say"].split()) for b in beats)}
+
+
+# every timing word used by a scene or a sound must be spoken in that beat, or the animation fires at the wrong time
+def spoken(say):
+    say = re.sub(r"\[([^|\]]+)\|[^\]]+\]", r"\1", say)
+    return [re.sub(r"[^\w$.%'-]", "", x).lower().strip(".") for x in say.split()]
+def keys(o, out):
+    if isinstance(o, list):
+        if o and isinstance(o[0], str) and len(o) > 1: out.append(o[0])
+        for x in o: keys(x, out)
+    elif isinstance(o, dict):
+        if "cols" in o:  # compare table: only each row's first item is a timing word
+            out += [r[0] for r in o.get("rows", [])]; out += [o[k] for k in ("best_word",) if o.get(k)]; return
+        for k, x in o.items():
+            if k.endswith("_word") and isinstance(x, str): out.append(x)
+            elif k not in ("cols", "chips_text"): keys(x, out)
+def check(rows):
+    """Every timing word used by a scene or a sound must be spoken in that beat, or the animation fires at the wrong time."""
+    bad = []
+    for r in rows:
+        for i, b in enumerate(json.load(open(ROOT / "videos" / r["slug"] / "spec.json"))["beats"]):
+            ws = spoken(b["say"]); ks = []; keys(b["show"], ks); ks += [s[0] for s in b["sfx"] if isinstance(s[0], str)]
+            for k in ks:
+                if k.startswith("_"): continue  # shown from the start of the beat on purpose
+                k2 = k.lower().strip(".")
+                if not any(w == k2 or w.startswith(k2) for w in ws): bad.append((r["slug"], i + 1, k))
+    return bad

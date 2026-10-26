@@ -1,0 +1,58 @@
+{
+  "slug": "youtube-shopping",
+  "title": "YouTube Shopping affiliate",
+  "one_liner": "Tag products in your videos and earn when viewers buy.",
+  "followers": "YouTube Partner Program from 500 subscribers (since 27 Mar 2026), in eligible countries.",
+  "pay": "Brands set the commission. Paid via AdSense 60-120 days after the purchase; returns reverse it.",
+  "pay_source": "https://ppc.land/youtube-opens-shopping-affiliate-program-to-creators-with-500-subscribers/",
+  "steps": [
+    "Join the expanded YouTube Partner Program at 500 subscribers.",
+    "Turn on Shopping in YouTube Studio.",
+    "Tag products you use in videos and Shorts.",
+    "Track clicks for 30 days."
+  ],
+  "catch": "Slow payouts (60-120 days), country limits, and many enrolled creators earn small amounts.",
+  "great_for": [
+    "Tech",
+    "Beauty",
+    "Home"
+  ],
+  "tools": [
+    "opusclip"
+  ],
+  "sources": [
+    [
+      "PPC Land: YouTube Shopping opens to 500 subscribers (Mar 2026)",
+      "https://ppc.land/youtube-opens-shopping-affiliate-program-to-creators-with-500-subscribers/"
+    ],
+    [
+      "PPC Land: 35 markets by year end (Sep 2026)",
+      "https://ppc.land/youtube-creators-in-35-markets-to-earn-shopping-commissions-by-year-end/"
+    ]
+  ],
+  "video": "",
+  "checked": "2026-10-26",
+  "category": "Affiliate",
+  "cat": "aff",
+  "pay_short": "500",
+  "pay_unit": "subscribers to start",
+  "start": "Tag 3 products",
+  "letter": "Y",
+  "match": {
+    "enjoy": [
+      "rec",
+      "film"
+    ],
+    "platform_bonus": [
+      "yt"
+    ],
+    "min_followers": 500,
+    "first_step": "Pick 3 products you use and plan a video showing them."
+  },
+  "step_labels": [
+    "500 subs",
+    "Turn on",
+    "Tag",
+    "Track"
+  ]
+}

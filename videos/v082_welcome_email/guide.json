@@ -1,0 +1,47 @@
+{
+ "title": "Welcome email template",
+ "subtitle": "Copy, fill, send",
+ "sections": [
+  [
+   "Template",
+   [
+    "Subject: Here's your [freebie]",
+    "Line 1: link to the freebie.",
+    "Line 2: I'm [name]; I help [who] with [what].",
+    "Line 3: Every [day] you'll get [one useful thing].",
+    "Line 4: Reply and tell me: what are you stuck on?"
+   ]
+  ],
+  [
+   "Rules",
+   [
+    "Send instantly (automation).",
+    "No selling in email 1."
+   ]
+  ]
+ ],
+ "steps": [
+  "Write the 4 lines.",
+  "Set it as your welcome automation.",
+  "Read every reply."
+ ],
+ "keyword": "WELCOME",
+ "sources": [
+  [
+   "Email Vendor Selection: Kit pricing (Aug 2026)",
+   "https://www.emailvendorselection.com/kit-pricing/"
+  ],
+  [
+   "Kit affiliate program",
+   "https://kit.com/affiliate"
+  ]
+ ],
+ "video": "The welcome email that makes money later",
+ "tool": {
+  "id": "kit",
+  "name": "Kit",
+  "earns": "50% of their first 12 months",
+  "signup": "https://kit.com/affiliate",
+  "status": "to join"
+ }
+}

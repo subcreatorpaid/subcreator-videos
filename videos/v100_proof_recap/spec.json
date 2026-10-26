@@ -1,0 +1,371 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v100_proof_recap",
+ "title": "Proof recap: the numbers behind this channel",
+ "type": "proof",
+ "format": "",
+ "beats": [
+  {
+   "say": "One hundred videos in, here's every official number we've shown, in one place.",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "money",
+    "chips": [
+     [
+      "hundred",
+      "100 videos",
+      null
+     ],
+     [
+      "official",
+      "Official numbers",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "hundred",
+     "pop"
+    ],
+    [
+     "official",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Paid out: YouTube over one hundred billion since twenty twenty-one. Patreon over ten billion since twenty thirteen.",
+   "show": {
+    "type": "stat_cards",
+    "title": "PAID OUT",
+    "green": [
+     "hundred",
+     "ten"
+    ],
+    "cards": [
+     [
+      "hundred",
+      "$100B+",
+      "YouTube",
+      true
+     ],
+     [
+      "ten",
+      "$10B+",
+      "Patreon",
+      true
+     ]
+    ],
+    "source": "YouTube Sep 2025; Axios Aug 2025"
+   },
+   "sfx": [
+    [
+     "hundred",
+     "card"
+    ],
+    [
+     "ten",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "ElevenLabs over twenty-two million to voice creators. YouTube Shopping now has over one point three million creators.",
+   "show": {
+    "type": "stat_cards",
+    "title": "GROWING",
+    "green": [
+     "twenty-two"
+    ],
+    "cards": [
+     [
+      "twenty-two",
+      "$22M+",
+      "ElevenLabs voices",
+      true
+     ],
+     [
+      "point",
+      "1.3M+",
+      "Shopping creators"
+     ]
+    ],
+    "source": "ElevenLabs May 2026; PPC Land Sep 2026"
+   },
+   "sfx": [
+    [
+     "twenty-two",
+     "card"
+    ],
+    [
+     "point",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "And the bars keep dropping: Twitch Affiliate at fifty followers, YouTube fan funding at five hundred.",
+   "show": {
+    "type": "ladder",
+    "title": "Bars keep dropping",
+    "rungs": [
+     [
+      "fifty",
+      "50",
+      "Twitch Affiliate",
+      null,
+      true
+     ],
+     [
+      "five",
+      "500",
+      "YouTube fan funding",
+      "youtube",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "five",
+     "pop"
+    ],
+    [
+     "fifty",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The honest part: most of that money goes to big creators. Small creators win by testing one stream at a time.",
+   "show": {
+    "type": "myth",
+    "myth": "Everyone gets a big slice",
+    "myth_word": "honest",
+    "fact": "Test one stream at a time",
+    "fact_word": "testing"
+   },
+   "sfx": [
+    [
+     "honest",
+     "thud"
+    ],
+    [
+     "testing",
+     "swipe"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: these numbers prove the money is real, not that it's easy. That's why every video shows the catch.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "money",
+    "items": [
+     [
+      "real",
+      "Real money",
+      false
+     ],
+     [
+      "easy",
+      "Not easy",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "real",
+     "whip"
+    ],
+    [
+     "easy",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [GUIDE|guide] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. beehiiv is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Proof recap",
+    "keyword": "GUIDE",
+    "tool": "beehiiv"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$100,000,000,000|One hundred billion dollars]. And that's just the first number.",
+   "show": {
+    "type": "stat_cards",
+    "title": "PAID OUT",
+    "green": [
+     "hundred",
+     "ten"
+    ],
+    "cards": [
+     [
+      "hundred",
+      "$100B+",
+      "YouTube",
+      true
+     ],
+     [
+      "ten",
+      "$10B+",
+      "Patreon",
+      true
+     ]
+    ],
+    "source": "YouTube Sep 2025; Axios Aug 2025"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Tired of creator money claims with no proof?",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "money",
+    "chips": [
+     [
+      "hundred",
+      "100 videos",
+      null
+     ],
+     [
+      "official",
+      "Official numbers",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Is creator money real? Here's every official number.",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "money",
+    "chips": [
+     [
+      "hundred",
+      "100 videos",
+      null
+     ],
+     [
+      "official",
+      "Official numbers",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Shacknews: YouTube paid $100B+ since 2021 (Made on YouTube, Sep 2025)",
+   "url": "https://www.shacknews.com/article/145986/youtube-claim-100-billion-dollar-pay-out"
+  },
+  {
+   "title": "Axios: Patreon crosses $10 billion in creator payments (Aug 2025)",
+   "url": "https://www.axios.com/2025/08/05/patreon-10-billion-creator-economy-ai"
+  },
+  {
+   "title": "ElevenLabs: $22 million earned by voice creators (May 2026)",
+   "url": "https://elevenlabs.io/blog/22-million-earned-by-voice-creators-on-elevenlabs"
+  },
+  {
+   "title": "PPC Land: YouTube Shopping in 35 markets by year end (Sep 2026)",
+   "url": "https://ppc.land/youtube-creators-in-35-markets-to-earn-shopping-commissions-by-year-end/"
+  },
+  {
+   "title": "YouTube Help: expanded YouTube Partner Program",
+   "url": "https://support.google.com/youtube/answer/13429240?hl=en"
+  }
+ ],
+ "thumb": {
+  "headline": "Every *official*\nnumber",
+  "hero": "face",
+  "hold": "money",
+  "mood": -0.6,
+  "sticker": "Video 100",
+  "chip": "Proof recap",
+  "size": 120
+ },
+ "finder_stream": null
+}

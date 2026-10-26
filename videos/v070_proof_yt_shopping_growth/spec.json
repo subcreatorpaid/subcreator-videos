@@ -1,0 +1,353 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v070_proof_yt_shopping_growth",
+ "title": "Proof: YouTube Shopping creators more than doubled",
+ "type": "proof",
+ "format": "",
+ "beats": [
+  {
+   "say": "In about a year, the number of creators in YouTube Shopping went from five hundred thousand to over one point three million.",
+   "show": {
+    "type": "stat_cards",
+    "title": "YOUTUBE SHOPPING CREATORS",
+    "green": [
+     "point"
+    ],
+    "cards": [
+     [
+      "five",
+      "500K",
+      "Jul 2025"
+     ],
+     [
+      "point",
+      "1.3M+",
+      "Sep 2026",
+      true
+     ]
+    ],
+    "source": "YouTube via PPC Land, Sep 2026"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "five",
+     "card"
+    ],
+    [
+     "point",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Part of the reason: since March, Partner Program channels from five hundred subscribers can join.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "march",
+      "Mar 2026",
+      "500-sub tier"
+     ],
+     [
+      "join",
+      "Sep 2026",
+      "1.3M+ enrolled",
+      "green"
+     ]
+    ],
+    "hold": "laptop"
+   },
+   "sfx": [
+    [
+     "march",
+     "pop"
+    ],
+    [
+     "join",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "And it's spreading: fifteen countries by August, with a target of thirty-five by the end of the year.",
+   "show": {
+    "type": "stat_cards",
+    "title": "YOUTUBE SHOPPING COUNTRIES",
+    "green": [
+     "thirty-five"
+    ],
+    "cards": [
+     [
+      "fifteen",
+      "15",
+      "by Aug 2026"
+     ],
+     [
+      "thirty-five",
+      "35",
+      "target, end of 2026",
+      true
+     ]
+    ],
+    "source": "PPC Land, Sep 2026"
+   },
+   "sfx": [
+    [
+     "fifteen",
+     "pop"
+    ],
+    [
+     "thirty-five",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The honest part: enrolled doesn't mean earning a lot. Many creators earn small amounts per sale.",
+   "show": {
+    "type": "myth",
+    "myth": "Enrolled = earning big",
+    "myth_word": "honest",
+    "fact": "Many earn small amounts",
+    "fact_word": "small",
+    "fact_green": false
+   },
+   "sfx": [
+    [
+     "honest",
+     "thud"
+    ],
+    [
+     "small",
+     "swipe"
+    ]
+   ]
+  },
+  {
+   "say": "What it shows: small channels are being let in, and product links are becoming normal on YouTube.",
+   "show": {
+    "type": "talk",
+    "mood": -0.6,
+    "hold": "laptop",
+    "chips": [
+     [
+      "small",
+      "Small channels let in",
+      "green"
+     ],
+     [
+      "normal",
+      "Links are normal",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "small",
+     "ding"
+    ],
+    [
+     "normal",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: payouts arrive sixty to one hundred twenty days after a sale, and returns reverse them.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "sixty",
+      "60–120 days to pay",
+      true
+     ],
+     [
+      "returns",
+      "Returns reverse it",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "sixty",
+     "whip"
+    ],
+    [
+     "returns",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [SHOP|shop] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. vidIQ is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "YouTube Shopping: the growth",
+    "keyword": "SHOP",
+    "tool": "vidIQ"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[1,300,000|One point three million] creators now in YouTube Shopping.",
+   "show": {
+    "type": "stat_cards",
+    "title": "YOUTUBE SHOPPING CREATORS",
+    "green": [
+     "point"
+    ],
+    "cards": [
+     [
+      "five",
+      "500K",
+      "Jul 2025"
+     ],
+     [
+      "point",
+      "1.3M+",
+      "Sep 2026",
+      true
+     ]
+    ],
+    "source": "YouTube via PPC Land, Sep 2026"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Think product links are only for big YouTubers?",
+   "show": {
+    "type": "talk",
+    "mood": -0.6,
+    "hold": "laptop",
+    "chips": [
+     [
+      "small",
+      "Small channels let in",
+      "green"
+     ],
+     [
+      "normal",
+      "Links are normal",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Is YouTube Shopping really open to small channels now?",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "march",
+      "Mar 2026",
+      "500-sub tier"
+     ],
+     [
+      "join",
+      "Sep 2026",
+      "1.3M+ enrolled",
+      "green"
+     ]
+    ],
+    "hold": "laptop"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "PPC Land: YouTube Shopping opens to 500 subscribers (Mar 2026)",
+   "url": "https://ppc.land/youtube-opens-shopping-affiliate-program-to-creators-with-500-subscribers/"
+  },
+  {
+   "title": "PPC Land: YouTube Shopping in 35 markets by year end (Sep 2026)",
+   "url": "https://ppc.land/youtube-creators-in-35-markets-to-earn-shopping-commissions-by-year-end/"
+  }
+ ],
+ "thumb": {
+  "headline": "YouTube Shopping\n*1.3M* creators",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.6,
+  "sticker": "Up from 500K",
+  "chip": "Proof + the honest part",
+  "size": 110
+ },
+ "finder_stream": "youtube-fan-funding"
+}

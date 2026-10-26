@@ -1,0 +1,43 @@
+{
+ "title": "Brand scam check",
+ "subtitle": "FTC red flags + what to do",
+ "sections": [
+  [
+   "Red flags",
+   [
+    "You have to pay (starter kit, fee, course).",
+    "Flattery and big name-drops.",
+    "Lookalike URLs or emails.",
+    "Early requests for bank/personal details."
+   ]
+  ],
+  [
+   "Do this",
+   [
+    "Find the brand's real website.",
+    "Contact them through it.",
+    "Report at reportfraud.ftc.gov."
+   ]
+  ]
+ ],
+ "steps": [
+  "Screenshot this list.",
+  "Check your message requests.",
+  "Block and report any fake."
+ ],
+ "keyword": "SAFE",
+ "sources": [
+  [
+   "FTC: bogus brand ambassador managers scam (Oct 2023)",
+   "https://www.ftc.gov/business-guidance/blog/2023/10/influence-peddling-bogus-brand-ambassador-managers-scam-prospective-influencers"
+  ]
+ ],
+ "video": "Never pay to join a brand program",
+ "tool": {
+  "id": "kit",
+  "name": "Kit",
+  "earns": "50% of their first 12 months",
+  "signup": "https://kit.com/affiliate",
+  "status": "to join"
+ }
+}

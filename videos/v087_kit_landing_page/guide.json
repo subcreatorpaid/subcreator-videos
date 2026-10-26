@@ -1,0 +1,51 @@
+{
+ "title": "Kit landing page",
+ "subtitle": "Set up in 20 minutes",
+ "sections": [
+  [
+   "Build",
+   [
+    "Landing Pages → New → template.",
+    "Headline = what they get.",
+    "Email only (one box)."
+   ]
+  ],
+  [
+   "Connect",
+   [
+    "Automation: on sign-up → welcome email with the freebie."
+   ]
+  ],
+  [
+   "Promote",
+   [
+    "Link in bio.",
+    "Comment keyword in every video."
+   ]
+  ]
+ ],
+ "steps": [
+  "Make the page.",
+  "Test it with your own email.",
+  "Put it in your bio."
+ ],
+ "keyword": "LANDING",
+ "sources": [
+  [
+   "Email Vendor Selection: Kit pricing (Aug 2026)",
+   "https://www.emailvendorselection.com/kit-pricing/"
+  ],
+  [
+   "Kit affiliate program",
+   "https://kit.com/affiliate"
+  ]
+ ],
+ "video": "Build a free landing page in Kit",
+ "tool": {
+  "id": "kit",
+  "name": "Kit",
+  "earns": "50% of their first 12 months",
+  "signup": "https://kit.com/affiliate",
+  "status": "to join"
+ }
+}

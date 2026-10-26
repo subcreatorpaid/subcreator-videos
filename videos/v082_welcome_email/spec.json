@@ -1,0 +1,356 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v082_welcome_email",
+ "title": "The welcome email that makes money later",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Someone joins your email list. The first email they get decides if they ever open another one.",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "joins",
+      "New subscriber",
+      "green"
+     ],
+     [
+      "first",
+      "First email",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "joins",
+     "ding"
+    ],
+    [
+     "first",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Send it right away, with the thing you promised in the first line.",
+   "show": {
+    "type": "page_card",
+    "url": "Inbox · 1 new",
+    "mark": "@",
+    "title": "Welcome!",
+    "checked": "Your welcome email",
+    "bullets": [
+     [
+      "away",
+      "Sent right away"
+     ],
+     [
+      "promised",
+      "The promised freebie",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "away",
+     "pop"
+    ],
+    [
+     "promised",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Then one line on who you are, and what they'll get from you each week.",
+   "show": {
+    "type": "page_card",
+    "url": "Inbox · 1 new",
+    "mark": "@",
+    "title": "Welcome!",
+    "checked": "Your welcome email",
+    "bullets": [
+     [
+      "_a",
+      "Sent right away"
+     ],
+     [
+      "_b",
+      "The promised freebie",
+      true
+     ],
+     [
+      "who",
+      "Who you are"
+     ],
+     [
+      "week",
+      "What's coming each week"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "who",
+     "pop"
+    ],
+    [
+     "week",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "End with one question: what are you stuck on? Replies teach you what to make next.",
+   "show": {
+    "type": "talk",
+    "mood": -0.5,
+    "hold": "laptop",
+    "chips": [
+     [
+      "question",
+      "One question",
+      null
+     ],
+     [
+      "replies",
+      "Replies = ideas",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "question",
+     "pop"
+    ],
+    [
+     "replies",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Kit's free plan covers up to ten thousand subscribers, so this costs nothing to start.",
+   "show": {
+    "type": "stat_cards",
+    "title": "KIT FREE PLAN",
+    "green": [
+     "ten"
+    ],
+    "cards": [
+     [
+      "ten",
+      "10,000",
+      "subscribers, $0",
+      true
+     ]
+    ],
+    "source": "Email Vendor Selection, Aug 2026"
+   },
+   "sfx": [
+    [
+     "ten",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: don't sell in the welcome email. Earn trust first, then recommend tools later.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "sell",
+      "No selling yet",
+      true
+     ],
+     [
+      "trust",
+      "Trust first",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "sell",
+     "whip"
+    ],
+    [
+     "trust",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [WELCOME|welcome] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Kit is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Welcome email template",
+    "keyword": "WELCOME",
+    "tool": "Kit"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[1|One] email decides if people ever open the next.",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "joins",
+      "New subscriber",
+      "green"
+     ],
+     [
+      "first",
+      "First email",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "People join your list, then never open a single email?",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "joins",
+      "New subscriber",
+      "green"
+     ],
+     [
+      "first",
+      "First email",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What should your first email to new subscribers say?",
+   "show": {
+    "type": "page_card",
+    "url": "Inbox · 1 new",
+    "mark": "@",
+    "title": "Welcome!",
+    "checked": "Your welcome email",
+    "bullets": [
+     [
+      "away",
+      "Sent right away"
+     ],
+     [
+      "promised",
+      "The promised freebie",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Email Vendor Selection: Kit pricing (Aug 2026)",
+   "url": "https://www.emailvendorselection.com/kit-pricing/"
+  },
+  {
+   "title": "Kit affiliate program",
+   "url": "https://kit.com/affiliate"
+  }
+ ],
+ "thumb": {
+  "headline": "The *welcome*\nemail",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.3,
+  "sticker": "4 lines",
+  "chip": "Freebie · you · weekly · question",
+  "size": 130
+ },
+ "finder_stream": null
+}

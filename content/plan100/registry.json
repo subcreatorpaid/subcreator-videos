@@ -178,5 +178,770 @@
   "type": "proof",
   "seconds": 44,
   "tool": "beehiiv"
+ },
+ {
+  "n": "021",
+  "slug": "v021_follower_ladder",
+  "group": "plan",
+  "title": "What unlocks at each follower count",
+  "type": "value",
+  "seconds": 44,
+  "tool": "vidiq"
+ },
+ {
+  "n": "022",
+  "slug": "v022_twitch_affiliate_50",
+  "group": "plan",
+  "title": "Twitch pays at 50 followers (with 3 more rules)",
+  "type": "value",
+  "seconds": 45,
+  "tool": "riverside"
+ },
+ {
+  "n": "023",
+  "slug": "v023_tiktok_shop_1000",
+  "group": "plan",
+  "title": "TikTok Shop affiliate at 1,000 followers",
+  "type": "value",
+  "seconds": 44,
+  "tool": "opusclip"
+ },
+ {
+  "n": "024",
+  "slug": "v024_shorts_45_percent",
+  "group": "plan",
+  "title": "YouTube Shorts: why views pay so little",
+  "type": "value",
+  "seconds": 46,
+  "tool": "vidiq"
+ },
+ {
+  "n": "025",
+  "slug": "v025_snapchat_bar",
+  "group": "plan",
+  "title": "Snapchat pays creators, but look at the bar",
+  "type": "value",
+  "seconds": 40,
+  "tool": "opusclip"
+ },
+ {
+  "n": "026",
+  "slug": "v026_facebook_fast_track",
+  "group": "plan",
+  "title": "Facebook pays $1,000 a month, if you qualify",
+  "type": "value",
+  "seconds": 45,
+  "tool": "opusclip"
+ },
+ {
+  "n": "027",
+  "slug": "v027_amazon_influencer",
+  "group": "plan",
+  "title": "Amazon Influencer vs Associates",
+  "type": "value",
+  "seconds": 44,
+  "tool": "amazon"
+ },
+ {
+  "n": "028",
+  "slug": "v028_vidiq_tool",
+  "group": "plan",
+  "title": "Find video ideas that already work (vidIQ)",
+  "type": "tool",
+  "seconds": 40,
+  "tool": "vidiq"
+ },
+ {
+  "n": "029",
+  "slug": "v029_riverside_tool",
+  "group": "plan",
+  "title": "Record a studio-quality podcast remotely (Riverside)",
+  "type": "tool",
+  "seconds": 44,
+  "tool": "riverside"
+ },
+ {
+  "n": "030",
+  "slug": "v030_proof_three_numbers",
+  "group": "plan",
+  "title": "Proof: 3 official numbers that show creators get paid",
+  "type": "proof",
+  "seconds": 41,
+  "tool": "elevenlabs"
+ },
+ {
+  "n": "031",
+  "slug": "v031_disclose_in_video",
+  "group": "plan",
+  "title": "Disclose in the video, not just the caption",
+  "type": "value",
+  "seconds": 40,
+  "tool": "beehiiv"
+ },
+ {
+  "n": "032",
+  "slug": "v032_fiverr_price_after_fee",
+  "group": "plan",
+  "title": "Price your Fiverr gig after the 20% cut",
+  "type": "value",
+  "seconds": 40,
+  "tool": "fiverr"
+ },
+ {
+  "n": "033",
+  "slug": "v033_shutterstock_levels",
+  "group": "plan",
+  "title": "Stock footage pay resets every January",
+  "type": "value",
+  "seconds": 38,
+  "tool": "opusclip"
+ },
+ {
+  "n": "034",
+  "slug": "v034_etsy_template_math",
+  "group": "plan",
+  "title": "Etsy templates: the full fee math",
+  "type": "value",
+  "seconds": 41,
+  "tool": "printify"
+ },
+ {
+  "n": "035",
+  "slug": "v035_ugc_usage_rights",
+  "group": "plan",
+  "title": "UGC: charge more when brands run it as an ad",
+  "type": "value",
+  "seconds": 44,
+  "tool": "fiverr"
+ },
+ {
+  "n": "036",
+  "slug": "v036_ambassador_scam_urls",
+  "group": "plan",
+  "title": "Fake brand ambassador DMs: check the link",
+  "type": "value",
+  "seconds": 43,
+  "tool": "beehiiv"
+ },
+ {
+  "n": "037",
+  "slug": "v037_free_newsletter_start",
+  "group": "plan",
+  "title": "Start a newsletter for $0",
+  "type": "value",
+  "seconds": 42,
+  "tool": "kit"
+ },
+ {
+  "n": "038",
+  "slug": "v038_spotify_vs_patreon",
+  "group": "plan",
+  "title": "Podcast members: Spotify vs Patreon",
+  "type": "value",
+  "seconds": 41,
+  "tool": "riverside"
+ },
+ {
+  "n": "039",
+  "slug": "v039_opusclip_tool",
+  "group": "plan",
+  "title": "One long video, ten Shorts (OpusClip)",
+  "type": "tool",
+  "seconds": 45,
+  "tool": "opusclip"
+ },
+ {
+  "n": "040",
+  "slug": "v040_proof_youtube_100b",
+  "group": "plan",
+  "title": "Proof: YouTube paid out $100 billion",
+  "type": "proof",
+  "seconds": 47,
+  "tool": "vidiq"
+ },
+ {
+  "n": "041",
+  "slug": "v041_tiktok_100k_math",
+  "group": "plan",
+  "title": "What 100,000 TikTok views pay (reported)",
+  "type": "value",
+  "seconds": 38,
+  "tool": "opusclip"
+ },
+ {
+  "n": "042",
+  "slug": "v042_submagic_captions",
+  "group": "plan",
+  "title": "Captions that keep people watching (Submagic)",
+  "type": "tool",
+  "seconds": 36,
+  "tool": "submagic"
+ },
+ {
+  "n": "043",
+  "slug": "v043_voice_clone_checklist",
+  "group": "plan",
+  "title": "Before you share your voice clone: 5 checks",
+  "type": "value",
+  "seconds": 42,
+  "tool": "elevenlabs"
+ },
+ {
+  "n": "044",
+  "slug": "v044_bio_link_order",
+  "group": "plan",
+  "title": "Fix your link in bio in 3 minutes",
+  "type": "value",
+  "seconds": 37,
+  "tool": "stan"
+ },
+ {
+  "n": "045",
+  "slug": "v045_sell_20_compare",
+  "group": "plan",
+  "title": "Selling a $20 guide: Gumroad vs Stan vs Ko-fi",
+  "type": "value",
+  "seconds": 41,
+  "tool": "stan"
+ },
+ {
+  "n": "046",
+  "slug": "v046_sell_at_500",
+  "group": "plan",
+  "title": "3 things to sell with 500 followers",
+  "type": "value",
+  "seconds": 40,
+  "tool": "stan"
+ },
+ {
+  "n": "047",
+  "slug": "v047_media_kit_small",
+  "group": "plan",
+  "title": "A media kit when you're small",
+  "type": "value",
+  "seconds": 44,
+  "tool": "kit"
+ },
+ {
+  "n": "048",
+  "slug": "v048_pitch_email",
+  "group": "plan",
+  "title": "The 5-line brand pitch email",
+  "type": "value",
+  "seconds": 39,
+  "tool": "kit"
+ },
+ {
+  "n": "049",
+  "slug": "v049_beehiiv_tool",
+  "group": "plan",
+  "title": "Start a newsletter that can earn (beehiiv)",
+  "type": "tool",
+  "seconds": 39,
+  "tool": "beehiiv"
+ },
+ {
+  "n": "050",
+  "slug": "v050_proof_patreon_10b",
+  "group": "plan",
+  "title": "Proof: Patreon paid creators $10 billion",
+  "type": "proof",
+  "seconds": 45,
+  "tool": "beehiiv"
+ },
+ {
+  "n": "051",
+  "slug": "v051_amazon_3_sales_rule",
+  "group": "plan",
+  "title": "Amazon closes your account without 3 sales",
+  "type": "value",
+  "seconds": 41,
+  "tool": "amazon"
+ },
+ {
+  "n": "052",
+  "slug": "v052_yt_shopping_payout_timing",
+  "group": "plan",
+  "title": "YouTube Shopping pays 60-120 days later",
+  "type": "value",
+  "seconds": 38,
+  "tool": "vidiq"
+ },
+ {
+  "n": "053",
+  "slug": "v053_affiliate_disclose_link",
+  "group": "plan",
+  "title": "Affiliate links: disclose before the link",
+  "type": "value",
+  "seconds": 44,
+  "tool": "beehiiv"
+ },
+ {
+  "n": "054",
+  "slug": "v054_skool_community",
+  "group": "plan",
+  "title": "Run a paid community (Skool)",
+  "type": "tool",
+  "seconds": 43,
+  "tool": "skool"
+ },
+ {
+  "n": "055",
+  "slug": "v055_rate_card",
+  "group": "plan",
+  "title": "Make a UGC rate card in 10 minutes",
+  "type": "value",
+  "seconds": 39,
+  "tool": "kit"
+ },
+ {
+  "n": "056",
+  "slug": "v056_tiktok_one_minute",
+  "group": "plan",
+  "title": "Why TikTok wants 1-minute videos for pay",
+  "type": "value",
+  "seconds": 38,
+  "tool": "opusclip"
+ },
+ {
+  "n": "057",
+  "slug": "v057_comment_keyword_funnel",
+  "group": "plan",
+  "title": "Why I say 'comment a keyword'",
+  "type": "value",
+  "seconds": 42,
+  "tool": "kit"
+ },
+ {
+  "n": "058",
+  "slug": "v058_post_at_zero",
+  "group": "plan",
+  "title": "What to post when you have 0 followers",
+  "type": "value",
+  "seconds": 39,
+  "tool": "opusclip"
+ },
+ {
+  "n": "059",
+  "slug": "v059_descript_edit",
+  "group": "plan",
+  "title": "Edit video like a document (Descript)",
+  "type": "tool",
+  "seconds": 38,
+  "tool": "descript"
+ },
+ {
+  "n": "060",
+  "slug": "v060_proof_kit_coach",
+  "group": "plan",
+  "title": "Proof: an email list behind a $100,000 business",
+  "type": "proof",
+  "seconds": 44,
+  "tool": "kit"
+ },
+ {
+  "n": "061",
+  "slug": "v061_one_video_four_apps",
+  "group": "plan",
+  "title": "Post one video on 4 apps the right way",
+  "type": "value",
+  "seconds": 40,
+  "tool": "opusclip"
+ },
+ {
+  "n": "062",
+  "slug": "v062_ugc_three_samples",
+  "group": "plan",
+  "title": "The 3 UGC samples brands want to see",
+  "type": "value",
+  "seconds": 38,
+  "tool": "fiverr"
+ },
+ {
+  "n": "063",
+  "slug": "v063_tiktok_live_gifts",
+  "group": "plan",
+  "title": "TikTok LIVE gifts: how they turn into money",
+  "type": "value",
+  "seconds": 42,
+  "tool": "riverside"
+ },
+ {
+  "n": "064",
+  "slug": "v064_youtube_fan_funding",
+  "group": "plan",
+  "title": "YouTube fan funding at 500 subscribers",
+  "type": "value",
+  "seconds": 41,
+  "tool": "vidiq"
+ },
+ {
+  "n": "065",
+  "slug": "v065_printify_merch",
+  "group": "plan",
+  "title": "Merch without stock (print on demand)",
+  "type": "tool",
+  "seconds": 43,
+  "tool": "printify"
+ },
+ {
+  "n": "066",
+  "slug": "v066_price_first_guide",
+  "group": "plan",
+  "title": "How to price your first guide",
+  "type": "value",
+  "seconds": 45,
+  "tool": "stan"
+ },
+ {
+  "n": "067",
+  "slug": "v067_amazon_storefront_ideas",
+  "group": "plan",
+  "title": "5 Amazon storefront lists that get clicks",
+  "type": "value",
+  "seconds": 40,
+  "tool": "amazon"
+ },
+ {
+  "n": "068",
+  "slug": "v068_kajabi_courses",
+  "group": "plan",
+  "title": "Sell a course: all-in-one or cheap tools? (Kajabi)",
+  "type": "tool",
+  "seconds": 39,
+  "tool": "kajabi"
+ },
+ {
+  "n": "069",
+  "slug": "v069_kofi_commissions",
+  "group": "plan",
+  "title": "Artists: take commissions on Ko-fi",
+  "type": "value",
+  "seconds": 42,
+  "tool": "beehiiv"
+ },
+ {
+  "n": "070",
+  "slug": "v070_proof_yt_shopping_growth",
+  "group": "plan",
+  "title": "Proof: YouTube Shopping creators more than doubled",
+  "type": "proof",
+  "seconds": 43,
+  "tool": "vidiq"
+ },
+ {
+  "n": "071",
+  "slug": "v071_stream_zero_viewers",
+  "group": "plan",
+  "title": "Streaming to 0 viewers? Do this",
+  "type": "value",
+  "seconds": 39,
+  "tool": "riverside"
+ },
+ {
+  "n": "072",
+  "slug": "v072_spotify_launch_checklist",
+  "group": "plan",
+  "title": "Launch Spotify Memberships: checklist",
+  "type": "value",
+  "seconds": 37,
+  "tool": "riverside"
+ },
+ {
+  "n": "073",
+  "slug": "v073_ugc_portfolio_page",
+  "group": "plan",
+  "title": "A UGC portfolio page in 20 minutes",
+  "type": "value",
+  "seconds": 36,
+  "tool": "stan"
+ },
+ {
+  "n": "074",
+  "slug": "v074_elevenlabs_voiceover",
+  "group": "plan",
+  "title": "Voiceovers without recording (ElevenLabs)",
+  "type": "tool",
+  "seconds": 38,
+  "tool": "elevenlabs"
+ },
+ {
+  "n": "075",
+  "slug": "v075_brand_deal_5_terms",
+  "group": "plan",
+  "title": "5 terms to check before a brand deal",
+  "type": "value",
+  "seconds": 34,
+  "tool": "kit"
+ },
+ {
+  "n": "076",
+  "slug": "v076_invoice_basics",
+  "group": "plan",
+  "title": "Your first invoice: 6 things it needs",
+  "type": "value",
+  "seconds": 36,
+  "tool": "kit"
+ },
+ {
+  "n": "077",
+  "slug": "v077_fiverr_gig_setup",
+  "group": "plan",
+  "title": "Set up a Fiverr gig that gets found",
+  "type": "tool",
+  "seconds": 40,
+  "tool": "fiverr"
+ },
+ {
+  "n": "078",
+  "slug": "v078_first_two_seconds",
+  "group": "plan",
+  "title": "The first 2 seconds decide everything",
+  "type": "value",
+  "seconds": 36,
+  "tool": "opusclip"
+ },
+ {
+  "n": "079",
+  "slug": "v079_track_numbers_sheet",
+  "group": "plan",
+  "title": "Track your creator money in one sheet",
+  "type": "value",
+  "seconds": 36,
+  "tool": "kit"
+ },
+ {
+  "n": "080",
+  "slug": "v080_proof_official_totals",
+  "group": "plan",
+  "title": "Proof: 4 official payout totals",
+  "type": "proof",
+  "seconds": 39,
+  "tool": "beehiiv"
+ },
+ {
+  "n": "081",
+  "slug": "v081_which_platform_pays_first",
+  "group": "plan",
+  "title": "YouTube vs TikTok vs Twitch: which pays first",
+  "type": "value",
+  "seconds": 40,
+  "tool": "vidiq"
+ },
+ {
+  "n": "082",
+  "slug": "v082_welcome_email",
+  "group": "plan",
+  "title": "The welcome email that makes money later",
+  "type": "value",
+  "seconds": 38,
+  "tool": "kit"
+ },
+ {
+  "n": "083",
+  "slug": "v083_lead_magnet_ideas",
+  "group": "plan",
+  "title": "5 freebies that grow your email list",
+  "type": "value",
+  "seconds": 39,
+  "tool": "kit"
+ },
+ {
+  "n": "084",
+  "slug": "v084_amazon_storefront_setup",
+  "group": "plan",
+  "title": "Set up your Amazon Influencer storefront",
+  "type": "tool",
+  "seconds": 39,
+  "tool": "amazon"
+ },
+ {
+  "n": "085",
+  "slug": "v085_etsy_titles",
+  "group": "plan",
+  "title": "Etsy titles that get found",
+  "type": "value",
+  "seconds": 37,
+  "tool": "printify"
+ },
+ {
+  "n": "086",
+  "slug": "v086_batch_filming",
+  "group": "plan",
+  "title": "Film a week of videos in 2 hours",
+  "type": "value",
+  "seconds": 38,
+  "tool": "opusclip"
+ },
+ {
+  "n": "087",
+  "slug": "v087_kit_landing_page",
+  "group": "plan",
+  "title": "Build a free landing page in Kit",
+  "type": "tool",
+  "seconds": 38,
+  "tool": "kit"
+ },
+ {
+  "n": "088",
+  "slug": "v088_never_pay_to_join",
+  "group": "plan",
+  "title": "Never pay to join a brand program",
+  "type": "value",
+  "seconds": 43,
+  "tool": "kit"
+ },
+ {
+  "n": "089",
+  "slug": "v089_30_day_test",
+  "group": "plan",
+  "title": "Test any income stream in 30 days",
+  "type": "value",
+  "seconds": 37,
+  "tool": "vidiq"
+ },
+ {
+  "n": "090",
+  "slug": "v090_proof_beehiiv_boosts",
+  "group": "plan",
+  "title": "Proof: a newsletter earned $18,000 in 6 months from Boosts",
+  "type": "proof",
+  "seconds": 39,
+  "tool": "beehiiv"
+ },
+ {
+  "n": "091",
+  "slug": "v091_reply_to_comments",
+  "group": "plan",
+  "title": "Turn comments into followers and ideas",
+  "type": "value",
+  "seconds": 38,
+  "tool": "vidiq"
+ },
+ {
+  "n": "092",
+  "slug": "v092_ten_posts_week_plan",
+  "group": "plan",
+  "title": "The 10-posts-a-week plan",
+  "type": "value",
+  "seconds": 37,
+  "tool": "opusclip"
+ },
+ {
+  "n": "093",
+  "slug": "v093_opusclip_submagic_workflow",
+  "group": "plan",
+  "title": "Long video to 10 captioned shorts",
+  "type": "tool",
+  "seconds": 38,
+  "tool": "opusclip"
+ },
+ {
+  "n": "094",
+  "slug": "v094_ypp_1000_ads",
+  "group": "plan",
+  "title": "YouTube ad money: the 1,000 subscriber bar",
+  "type": "value",
+  "seconds": 39,
+  "tool": "vidiq"
+ },
+ {
+  "n": "095",
+  "slug": "v095_money_calendar",
+  "group": "plan",
+  "title": "When each platform actually pays you",
+  "type": "value",
+  "seconds": 37,
+  "tool": "beehiiv"
+ },
+ {
+  "n": "096",
+  "slug": "v096_tax_forms_basics",
+  "group": "plan",
+  "title": "The tax form every creator platform asks for",
+  "type": "value",
+  "seconds": 39,
+  "tool": "kit"
+ },
+ {
+  "n": "097",
+  "slug": "v097_first_100_plan",
+  "group": "plan",
+  "title": "A plan for your first $100 online",
+  "type": "value",
+  "seconds": 37,
+  "tool": "fiverr"
+ },
+ {
+  "n": "098",
+  "slug": "v098_fiverr_affiliate",
+  "group": "plan",
+  "title": "Earn from Fiverr without selling a gig",
+  "type": "tool",
+  "seconds": 37,
+  "tool": "fiverr"
+ },
+ {
+  "n": "099",
+  "slug": "v099_money_mistakes",
+  "group": "plan",
+  "title": "5 money mistakes small creators make",
+  "type": "value",
+  "seconds": 40,
+  "tool": "kit"
+ },
+ {
+  "n": "100",
+  "slug": "v100_proof_recap",
+  "group": "plan",
+  "title": "Proof recap: the numbers behind this channel",
+  "type": "proof",
+  "seconds": 43,
+  "tool": "beehiiv"
+ },
+ {
+  "n": "B1",
+  "slug": "b1_who_we_are",
+  "group": "bio",
+  "title": "Who we are: Sub-Creator Paid",
+  "type": "bio",
+  "seconds": 61,
+  "tool": null
+ },
+ {
+  "n": "B2",
+  "slug": "b2_the_website",
+  "group": "bio",
+  "title": "The free website: subcreatorpaid.com",
+  "type": "bio",
+  "seconds": 54,
+  "tool": null
+ },
+ {
+  "n": "B3",
+  "slug": "b3_ai_income_finder",
+  "group": "bio",
+  "title": "Meet the free AI Income Finder",
+  "type": "bio",
+  "seconds": 59,
+  "tool": null
+ },
+ {
+  "n": "B4",
+  "slug": "b4_what_to_expect",
+  "group": "bio",
+  "title": "What you get when you follow",
+  "type": "bio",
+  "seconds": 56,
+  "tool": null
+ },
+ {
+  "n": "T1",
+  "slug": "t1_finder_tutorial",
+  "group": "tutorial",
+  "title": "How to use the AI Income Finder (step by step)",
+  "type": "tutorial",
+  "seconds": 102,
+  "tool": null
  }
 ]

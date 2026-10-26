@@ -1,0 +1,344 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v080_proof_official_totals",
+ "title": "Proof: 4 official payout totals",
+ "type": "proof",
+ "format": "",
+ "beats": [
+  {
+   "say": "Four companies, four official payout numbers. Here's the proof creator income is real.",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "money",
+    "chips": [
+     [
+      "four",
+      "4 companies",
+      null
+     ],
+     [
+      "proof",
+      "Official numbers",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "four",
+     "pop"
+    ],
+    [
+     "proof",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "YouTube: over one hundred billion dollars to creators, artists and media companies since twenty twenty-one.",
+   "show": {
+    "type": "stat_cards",
+    "title": "YOUTUBE",
+    "green": [
+     "hundred"
+    ],
+    "cards": [
+     [
+      "hundred",
+      "$100B+",
+      "since 2021",
+      true
+     ]
+    ],
+    "source": "Made on YouTube, Sep 2025"
+   },
+   "sfx": [
+    [
+     "hundred",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Patreon: over ten billion dollars to creators since twenty thirteen.",
+   "show": {
+    "type": "stat_cards",
+    "title": "PATREON",
+    "green": [
+     "ten"
+    ],
+    "cards": [
+     [
+      "ten",
+      "$10B+",
+      "since 2013",
+      true
+     ]
+    ],
+    "source": "Axios, Aug 2025"
+   },
+   "sfx": [
+    [
+     "ten",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "ElevenLabs: over twenty-two million dollars to voice creators. beehiiv: one newsletter made twenty-five thousand from Boosts.",
+   "show": {
+    "type": "stat_cards",
+    "title": "ELEVENLABS + BEEHIIV",
+    "green": [
+     "twenty-two",
+     "twenty-five"
+    ],
+    "cards": [
+     [
+      "twenty-two",
+      "$22M+",
+      "voice creators",
+      true
+     ],
+     [
+      "twenty-five",
+      "$25K",
+      "one newsletter",
+      true
+     ]
+    ],
+    "source": "ElevenLabs May 2026; beehiiv Apr 2025"
+   },
+   "sfx": [
+    [
+     "twenty-two",
+     "card"
+    ],
+    [
+     "twenty-five",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "The honest part: these are totals across many creators, and most of it goes to the biggest ones.",
+   "show": {
+    "type": "myth",
+    "myth": "Everyone gets a big slice",
+    "myth_word": "honest",
+    "fact": "Totals; biggest earn most",
+    "fact_word": "totals",
+    "fact_green": false
+   },
+   "sfx": [
+    [
+     "honest",
+     "thud"
+    ],
+    [
+     "totals",
+     "swipe"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: proof that a stream pays isn't proof it pays you. Test one for thirty days and track it.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "pays",
+      "Pays someone ≠ pays you",
+      true
+     ],
+     [
+      "thirty",
+      "30-day test",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "pays",
+     "whip"
+    ],
+    [
+     "thirty",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [PROOF|proof] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. beehiiv is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Official payout totals",
+    "keyword": "PROOF",
+    "tool": "beehiiv"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$100,000,000,000|One hundred billion dollars]. And that's just one of four official totals.",
+   "show": {
+    "type": "stat_cards",
+    "title": "YOUTUBE",
+    "green": [
+     "hundred"
+    ],
+    "cards": [
+     [
+      "hundred",
+      "$100B+",
+      "since 2021",
+      true
+     ]
+    ],
+    "source": "Made on YouTube, Sep 2025"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Sick of fake income screenshots?",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "money",
+    "chips": [
+     [
+      "four",
+      "4 companies",
+      null
+     ],
+     [
+      "proof",
+      "Official numbers",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Is creator income actually real? Here are four official totals.",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "money",
+    "chips": [
+     [
+      "four",
+      "4 companies",
+      null
+     ],
+     [
+      "proof",
+      "Official numbers",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Shacknews: YouTube paid $100B+ since 2021 (Made on YouTube, Sep 2025)",
+   "url": "https://www.shacknews.com/article/145986/youtube-claim-100-billion-dollar-pay-out"
+  },
+  {
+   "title": "Axios: Patreon crosses $10 billion in creator payments (Aug 2025)",
+   "url": "https://www.axios.com/2025/08/05/patreon-10-billion-creator-economy-ai"
+  },
+  {
+   "title": "ElevenLabs: $22 million earned by voice creators (May 2026)",
+   "url": "https://elevenlabs.io/blog/22-million-earned-by-voice-creators-on-elevenlabs"
+  },
+  {
+   "title": "beehiiv case study: $25,000 from Boosts (Apr 2025)",
+   "url": "https://www.beehiiv.com/blog/case-study-geekout-newsletter"
+  }
+ ],
+ "thumb": {
+  "headline": "4 *official*\npayout totals",
+  "hero": "face",
+  "hold": "money",
+  "mood": -0.6,
+  "sticker": "No screenshots",
+  "chip": "YouTube · Patreon · ElevenLabs · beehiiv",
+  "size": 120
+ },
+ "finder_stream": null
+}

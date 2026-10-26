@@ -1,0 +1,49 @@
+{
+ "title": "Freebie ideas",
+ "subtitle": "Pick one, make it today",
+ "sections": [
+  [
+   "The 5",
+   [
+    "Checklist",
+    "Template",
+    "Tool list",
+    "Mini guide (3-5 pages)",
+    "5-day email course"
+   ]
+  ],
+  [
+   "Test",
+   [
+    "Does it solve one problem?",
+    "Can someone use it in 10 minutes?"
+   ]
+  ],
+  [
+   "Deliver",
+   [
+    "Kit or beehiiv form + welcome email with the link."
+   ]
+  ]
+ ],
+ "steps": [
+  "Pick one freebie.",
+  "Make it in under 3 hours.",
+  "Add a comment keyword for it."
+ ],
+ "keyword": "FREEBIE",
+ "sources": [
+  [
+   "Email Vendor Selection: Kit pricing (Aug 2026)",
+   "https://www.emailvendorselection.com/kit-pricing/"
+  ]
+ ],
+ "video": "5 freebies that grow your email list",
+ "tool": {
+  "id": "kit",
+  "name": "Kit",
+  "earns": "50% of their first 12 months",
+  "signup": "https://kit.com/affiliate",
+  "status": "to join"
+ }
+}

@@ -1,0 +1,355 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v091_reply_to_comments",
+ "title": "Turn comments into followers and ideas",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Every comment on a small account is a chance. Here's how to reply so it grows your page.",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "phone0",
+    "chips": [
+     [
+      "comment",
+      "Every comment",
+      null
+     ],
+     [
+      "grows",
+      "Grows your page",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "grows",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Reply in the first hour. Early replies keep the conversation going while the video is being shown.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "first",
+      "0-60 min",
+      "reply to all",
+      "green"
+     ],
+     [
+      "shown",
+      "Day 1",
+      "video still pushed"
+     ]
+    ],
+    "hold": "phone0"
+   },
+   "sfx": [
+    [
+     "first",
+     "ding"
+    ],
+    [
+     "shown",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Ask a question back, so they comment again.",
+   "show": {
+    "type": "page_card",
+    "url": "Comments · 12",
+    "mark": "C",
+    "title": "Reply",
+    "checked": "Your reply",
+    "bullets": [
+     [
+      "question",
+      "Ask a question back",
+      true
+     ],
+     [
+      "again",
+      "They comment again"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "question",
+     "ding"
+    ],
+    [
+     "again",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "If a question needs a long answer, reply with a video. That's your next post, already picked.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "long",
+      "Long question",
+      "phone0",
+      0.3
+     ],
+     [
+      "video",
+      "Reply with a video",
+      "film",
+      -0.3
+     ],
+     [
+      "next",
+      "Next post: done",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "long",
+     "pop"
+    ],
+    [
+     "video",
+     "pop"
+    ],
+    [
+     "next",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Save every repeated question in one list. Those become your best ideas.",
+   "show": {
+    "type": "checklist",
+    "title": "Idea list",
+    "items": [
+     [
+      "repeated",
+      "Repeated questions"
+     ],
+     [
+      "ideas",
+      "= your best ideas"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "repeated",
+     "click"
+    ],
+    [
+     "ideas",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: don't reply with just thanks or an emoji. A real answer shows you're a real person.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "thanks",
+      "Not just 'thanks'",
+      true
+     ],
+     [
+      "real",
+      "A real answer",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "thanks",
+     "whip"
+    ],
+    [
+     "real",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [REPLY|reply] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. vidIQ is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Comment reply playbook",
+    "keyword": "REPLY",
+    "tool": "vidIQ"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[60|Sixty] minutes. That's your window to reply to comments.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "first",
+      "0-60 min",
+      "reply to all",
+      "green"
+     ],
+     [
+      "shown",
+      "Day 1",
+      "video still pushed"
+     ]
+    ],
+    "hold": "phone0"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Getting comments, but not getting followers?",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "phone0",
+    "chips": [
+     [
+      "comment",
+      "Every comment",
+      null
+     ],
+     [
+      "grows",
+      "Grows your page",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How should a small creator reply to comments?",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "phone0",
+    "chips": [
+     [
+      "comment",
+      "Every comment",
+      null
+     ],
+     [
+      "grows",
+      "Grows your page",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "FTC: Disclosures 101 for social media influencers",
+   "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+  }
+ ],
+ "thumb": {
+  "headline": "Comments →\n*followers*",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": -0.4,
+  "sticker": "Reply in 1 hour",
+  "chip": "Ask back · video reply",
+  "size": 130
+ },
+ "finder_stream": null
+}

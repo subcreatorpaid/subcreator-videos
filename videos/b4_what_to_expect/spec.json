@@ -1,0 +1,470 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "b4_what_to_expect",
+ "title": "What you get when you follow",
+ "type": "bio",
+ "format": "",
+ "beats": [
+  {
+   "say": "Here's what you get when you follow Sub-Creator Paid.",
+   "show": {
+    "type": "talk",
+    "mood": -0.5,
+    "hold": "phone0",
+    "chips": [
+     [
+      "follow",
+      "Follow",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "follow",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Ten posts a week: six that teach, three tool walkthroughs, and one with official proof.",
+   "show": {
+    "type": "stat_cards",
+    "title": "EVERY WEEK",
+    "cards": [
+     [
+      "six",
+      "6",
+      "teach"
+     ],
+     [
+      "three",
+      "3",
+      "tools"
+     ],
+     [
+      "one",
+      "1",
+      "proof"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "six",
+     "card"
+    ],
+    [
+     "three",
+     "card"
+    ],
+    [
+     "one",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "Proof posts use official numbers only, like YouTube's one hundred billion dollars paid to creators, artists and media companies since twenty twenty-one.",
+   "show": {
+    "type": "stat_cards",
+    "title": "PROOF = OFFICIAL",
+    "green": [
+     "hundred"
+    ],
+    "cards": [
+     [
+      "hundred",
+      "$100B+",
+      "YouTube, since 2021",
+      true
+     ]
+    ],
+    "source": "Made on YouTube, Sep 2025"
+   },
+   "sfx": [
+    [
+     "official",
+     "pop"
+    ],
+    [
+     "hundred",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Tool walkthroughs show the tool working, and we always say when a link pays us.",
+   "show": {
+    "type": "checklist",
+    "title": "Tool walkthroughs",
+    "items": [
+     [
+      "working",
+      "The tool working"
+     ],
+     [
+      "link",
+      "Affiliate links labelled"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "working",
+     "click"
+    ],
+    [
+     "link",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Every video ends with the catch, because every income stream has one.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "every",
+      "Every stream has one",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "every",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "A free guide for every topic. Just comment the keyword.",
+   "show": {
+    "type": "talk",
+    "mood": -0.7,
+    "hold": "phone0",
+    "chips": [
+     [
+      "guide",
+      "Free guide",
+      "green"
+     ],
+     [
+      "keyword",
+      "Comment the keyword",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "guide",
+     "ding"
+    ],
+    [
+     "keyword",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "One income stream a day on our Telegram channel, if you want it in your pocket.",
+   "show": {
+    "type": "page_card",
+    "url": "t.me/subcreatorpaid",
+    "mark": "T",
+    "title": "Telegram",
+    "checked": "Daily",
+    "bullets": [
+     [
+      "day",
+      "One stream a day",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "day",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "What you won't get: fake screenshots, promised income, or pressure to buy.",
+   "show": {
+    "type": "checklist",
+    "title": "Never",
+    "items": [
+     [
+      "fake",
+      "Fake screenshots"
+     ],
+     [
+      "promised",
+      "Promised income"
+     ],
+     [
+      "pressure",
+      "Pressure to buy"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "fake",
+     "click"
+    ],
+    [
+     "promised",
+     "click"
+    ],
+    [
+     "pressure",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Ask your questions in the comments. The best ones become next week's videos.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "ask",
+      "You ask",
+      "phone0",
+      0
+     ],
+     [
+      "best",
+      "We pick the best",
+      "laptop",
+      -0.3
+     ],
+     [
+      "next",
+      "Next week's video",
+      "film",
+      -0.8
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "ask",
+     "pop"
+    ],
+    [
+     "best",
+     "pop"
+    ],
+    [
+     "next",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: we show what pays and how to start. Results depend on your niche, your work and time.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "start",
+      "We show the start",
+      false
+     ],
+     [
+      "results",
+      "Results depend on you",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "start",
+     "whip"
+    ],
+    [
+     "results",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [GUIDE|guide] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Tools I use are in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "What to expect",
+    "keyword": "GUIDE",
+    "tool": null
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "tools",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[10|Ten] posts a week. Here's what's in them.",
+   "show": {
+    "type": "stat_cards",
+    "title": "EVERY WEEK",
+    "cards": [
+     [
+      "six",
+      "6",
+      "teach"
+     ],
+     [
+      "three",
+      "3",
+      "tools"
+     ],
+     [
+      "one",
+      "1",
+      "proof"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Following creators who never show their sources?",
+   "show": {
+    "type": "talk",
+    "mood": -0.7,
+    "hold": "phone0",
+    "chips": [
+     [
+      "guide",
+      "Free guide",
+      "green"
+     ],
+     [
+      "keyword",
+      "Comment the keyword",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What do you get when you follow Sub-Creator Paid?",
+   "show": {
+    "type": "talk",
+    "mood": -0.5,
+    "hold": "phone0",
+    "chips": [
+     [
+      "follow",
+      "Follow",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Sub-Creator Paid website",
+   "url": "https://subcreatorpaid.com/"
+  },
+  {
+   "title": "Sub-Creator Paid on Telegram",
+   "url": "https://t.me/subcreatorpaid"
+  }
+ ],
+ "thumb": {
+  "headline": "What you\n*get here*",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": -0.6,
+  "sticker": "10 posts/week",
+  "chip": "Teach · tools · proof",
+  "size": 140
+ },
+ "finder_stream": null
+}

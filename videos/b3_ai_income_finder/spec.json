@@ -1,0 +1,487 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "b3_ai_income_finder",
+ "title": "Meet the free AI Income Finder",
+ "type": "bio",
+ "format": "",
+ "beats": [
+  {
+   "say": "Not sure which income stream fits you? Our free AI income finder picks three for you in seconds.",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "fits",
+      "Which fits you?",
+      null
+     ],
+     [
+      "three",
+      "3 picks",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "fits",
+     "pop"
+    ],
+    [
+     "three",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Paste your profile link, or describe your account in a few words.",
+   "show": {
+    "type": "tool_demo",
+    "app": "AI Income Finder",
+    "input": "home cooking videos, 800 followers",
+    "input_word": "paste",
+    "process": "Reading your account",
+    "process_word": "describe",
+    "outputs": []
+   },
+   "sfx": [
+    [
+     "paste",
+     "key"
+    ],
+    [
+     "describe",
+     "whoosh"
+    ]
+   ]
+  },
+  {
+   "say": "Pick your followers, your main platform, and what you enjoy: filming, recommending, making or writing.",
+   "show": {
+    "type": "checklist",
+    "title": "Pick what fits",
+    "items": [
+     [
+      "followers",
+      "Followers today"
+     ],
+     [
+      "platform",
+      "Main platform"
+     ],
+     [
+      "enjoy",
+      "What you enjoy"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "followers",
+     "click"
+    ],
+    [
+     "platform",
+     "click"
+    ],
+    [
+     "enjoy",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "It checks our verified income streams, and an AI picks the three that fit you best.",
+   "show": {
+    "type": "tool_demo",
+    "app": "AI Income Finder",
+    "input": "Your answers",
+    "input_word": "checks",
+    "process": "Checking verified streams",
+    "process_word": "picks",
+    "outputs": [
+     [
+      "three",
+      "Match 1"
+     ],
+     [
+      "fit",
+      "Match 2"
+     ],
+     [
+      "best",
+      "Match 3"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "checks",
+     "drop"
+    ],
+    [
+     "picks",
+     "whoosh"
+    ],
+    [
+     "three",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Each match shows why it fits, what it pays, and one first step made for you.",
+   "show": {
+    "type": "page_card",
+    "url": "subcreatorpaid.com/#finder",
+    "mark": "AI",
+    "title": "Your match",
+    "checked": "Finder result",
+    "bullets": [
+     [
+      "why",
+      "Why it fits"
+     ],
+     [
+      "pays",
+      "What it pays",
+      true
+     ],
+     [
+      "step",
+      "Your first step"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "why",
+     "pop"
+    ],
+    [
+     "pays",
+     "ding"
+    ],
+    [
+     "step",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Tap any match to open its full page, with the catch, the first steps and the sources.",
+   "show": {
+    "type": "page_card",
+    "url": "subcreatorpaid.com/streams",
+    "mark": "S",
+    "title": "Full stream page",
+    "checked": "One tap away",
+    "bullets": [
+     [
+      "catch",
+      "The catch"
+     ],
+     [
+      "steps",
+      "First steps",
+      true
+     ],
+     [
+      "sources",
+      "Sources"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "tap",
+     "click"
+    ],
+    [
+     "catch",
+     "pop"
+    ],
+    [
+     "steps",
+     "ding"
+    ],
+    [
+     "sources",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Not happy with the picks? Change what you enjoy or your platform, and run it again.",
+   "show": {
+    "type": "talk",
+    "mood": 0.1,
+    "hold": "laptop",
+    "chips": [
+     [
+      "change",
+      "Change an answer",
+      null
+     ],
+     [
+      "again",
+      "Run it again",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "change",
+     "pop"
+    ],
+    [
+     "again",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Pay figures always come from our checked data, never made up by the AI.",
+   "show": {
+    "type": "myth",
+    "myth": "AI makes up the numbers",
+    "myth_word": "never",
+    "fact": "Numbers from checked data",
+    "fact_word": "checked"
+   },
+   "sfx": [
+    [
+     "checked",
+     "swipe"
+    ],
+    [
+     "never",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "It's free, and we never log in to or post on your accounts.",
+   "show": {
+    "type": "checklist",
+    "title": "Privacy",
+    "items": [
+     [
+      "free",
+      "Free"
+     ],
+     [
+      "log",
+      "Never logs in to your accounts"
+     ],
+     [
+      "post",
+      "Never posts for you"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "free",
+     "click"
+    ],
+    [
+     "log",
+     "click"
+    ],
+    [
+     "post",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: it's a starting point, not a promise. Test your top match for thirty days.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "starting",
+      "A starting point",
+      false
+     ],
+     [
+      "thirty",
+      "Test for 30 days",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "starting",
+     "whip"
+    ],
+    [
+     "thirty",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [FINDER|finder] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Tools I use are in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "AI Income Finder",
+    "keyword": "FINDER",
+    "tool": null
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "tools",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[3|Three] income streams picked for you, in seconds.",
+   "show": {
+    "type": "tool_demo",
+    "app": "AI Income Finder",
+    "input": "Your answers",
+    "input_word": "checks",
+    "process": "Checking verified streams",
+    "process_word": "picks",
+    "outputs": [
+     [
+      "three",
+      "Match 1"
+     ],
+     [
+      "fit",
+      "Match 2"
+     ],
+     [
+      "best",
+      "Match 3"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Too many ways to earn, and no idea which one is yours?",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "fits",
+      "Which fits you?",
+      null
+     ],
+     [
+      "three",
+      "3 picks",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Which income stream actually fits your account?",
+   "show": {
+    "type": "tool_demo",
+    "app": "AI Income Finder",
+    "input": "home cooking videos, 800 followers",
+    "input_word": "paste",
+    "process": "Reading your account",
+    "process_word": "describe",
+    "outputs": []
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "AI Income Finder",
+   "url": "https://subcreatorpaid.com/#finder"
+  }
+ ],
+ "thumb": {
+  "headline": "Meet the\n*AI Income Finder*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.5,
+  "sticker": "Free",
+  "sticker_color": "green",
+  "chip": "3 picks in seconds",
+  "size": 110
+ },
+ "finder_stream": null
+}

@@ -1,0 +1,379 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v077_fiverr_gig_setup",
+ "title": "Set up a Fiverr gig that gets found",
+ "type": "tool",
+ "format": "",
+ "beats": [
+  {
+   "say": "Made a Fiverr gig, and no orders? The setup matters more than you think.",
+   "show": {
+    "type": "talk",
+    "mood": 0.7,
+    "hold": "laptop",
+    "chips": [
+     [
+      "gig",
+      "Fiverr gig",
+      null
+     ],
+     [
+      "orders",
+      "No orders",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "orders",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Title: say exactly what buyers type. I will edit your TikTok videos, not creative video wizard.",
+   "show": {
+    "type": "compare",
+    "title": "Gig title",
+    "cols": [
+     "Gets found",
+     "Gets lost"
+    ],
+    "rows": [
+     [
+      "title",
+      "Title",
+      [
+       "I will edit your TikTok videos",
+       "Creative video wizard"
+      ],
+      [
+       1
+      ]
+     ]
+    ],
+    "best": 0,
+    "best_word": "wizard"
+   },
+   "sfx": [
+    [
+     "title",
+     "pop"
+    ],
+    [
+     "wizard",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Gallery: show a before and after in the first image.",
+   "show": {
+    "type": "tool_demo",
+    "app": "Fiverr",
+    "input": "gig-gallery.png",
+    "input_word": "gallery",
+    "process": "Uploading gallery",
+    "process_word": "show",
+    "outputs": [
+     [
+      "before",
+      "Before"
+     ],
+     [
+      "after",
+      "After"
+     ],
+     [
+      "image",
+      "Sample video"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "gallery",
+     "drop"
+    ],
+    [
+     "before",
+     "pop"
+    ],
+    [
+     "after",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Price after the fee: Fiverr keeps twenty percent, so a fifty dollar gig pays you forty.",
+   "show": {
+    "type": "fee_split",
+    "label": "$50 order",
+    "mark": "Fv",
+    "dec": 0,
+    "parts": [
+     [
+      "twenty",
+      "Fiverr 20%",
+      10,
+      "fee"
+     ],
+     [
+      "forty",
+      "You keep",
+      40,
+      "keep"
+     ]
+    ],
+    "source": "Wise, Fiverr payments guide"
+   },
+   "sfx": [
+    [
+     "twenty",
+     "card"
+    ],
+    [
+     "forty",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "And Fiverr's affiliate program pays twenty-five percent of a new buyer's first order, plus ten percent for twelve months.",
+   "show": {
+    "type": "stat_cards",
+    "title": "FIVERR AFFILIATES",
+    "green": [
+     "twenty-five"
+    ],
+    "cards": [
+     [
+      "twenty-five",
+      "25%",
+      "first order",
+      true
+     ],
+     [
+      "ten",
+      "10%",
+      "for 12 months"
+     ]
+    ],
+    "source": "Fiverr affiliates"
+   },
+   "sfx": [
+    [
+     "twenty-five",
+     "card"
+    ],
+    [
+     "ten",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: new gigs get few orders until the first reviews come in, so price the basic package to win them.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "reviews",
+      "Reviews come first",
+      true
+     ],
+     [
+      "basic",
+      "Basic package wins them",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "reviews",
+     "whip"
+    ],
+    [
+     "basic",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [GIG|gig] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Fiverr is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Fiverr gig setup",
+    "keyword": "GIG",
+    "tool": "Fiverr"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$50|Fifty dollars] in, [$40|forty] to you. Price your Fiverr gig for that.",
+   "show": {
+    "type": "fee_split",
+    "label": "$50 order",
+    "mark": "Fv",
+    "dec": 0,
+    "parts": [
+     [
+      "twenty",
+      "Fiverr 20%",
+      10,
+      "fee"
+     ],
+     [
+      "forty",
+      "You keep",
+      40,
+      "keep"
+     ]
+    ],
+    "source": "Wise, Fiverr payments guide"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Made a Fiverr gig, and no orders came?",
+   "show": {
+    "type": "talk",
+    "mood": 0.7,
+    "hold": "laptop",
+    "chips": [
+     [
+      "gig",
+      "Fiverr gig",
+      null
+     ],
+     [
+      "orders",
+      "No orders",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do you set up a Fiverr gig that gets found?",
+   "show": {
+    "type": "compare",
+    "title": "Gig title",
+    "cols": [
+     "Gets found",
+     "Gets lost"
+    ],
+    "rows": [
+     [
+      "title",
+      "Title",
+      [
+       "I will edit your TikTok videos",
+       "Creative video wizard"
+      ],
+      [
+       1
+      ]
+     ]
+    ],
+    "best": 0,
+    "best_word": "wizard"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Wise: how to get paid on Fiverr (20% fee, clearance)",
+   "url": "https://wise.com/us/blog/how-to-get-paid-on-fiverr"
+  },
+  {
+   "title": "Fiverr affiliates",
+   "url": "https://affiliates.fiverr.com"
+  }
+ ],
+ "thumb": {
+  "headline": "Fiverr gig\nthat *gets found*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.3,
+  "sticker": "Title · gallery · price",
+  "chip": "Gig setup",
+  "size": 120
+ },
+ "finder_stream": null
+}

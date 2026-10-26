@@ -1,0 +1,865 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "t1_finder_tutorial",
+ "title": "How to use the AI Income Finder (step by step)",
+ "type": "tutorial",
+ "format": "",
+ "beats": [
+  {
+   "say": "Let's run the free AI income finder together, step by step, on a real account idea.",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "free",
+      "Free",
+      "green"
+     ],
+     [
+      "step",
+      "Step by step",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "free",
+     "ding"
+    ],
+    [
+     "step",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Open [subcreatorpaid.com|sub creator paid dot com] on your phone or laptop. No sign-up needed.",
+   "show": {
+    "type": "official",
+    "n": 1,
+    "name": "AI Income Finder",
+    "images": [
+     "assets/finder_1_home.png"
+    ],
+    "phone": true,
+    "big": true,
+    "key_word": "sign-up",
+    "call": "No sign-up",
+    "call_green": true
+   },
+   "sfx": [
+    [
+     "open",
+     "pop"
+    ],
+    [
+     "sign-up",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Scroll down to the AI income finder, or tap AI finder in the menu.",
+   "show": {
+    "type": "official",
+    "n": 2,
+    "name": "AI Income Finder",
+    "images": [
+     "assets/finder_2_section.png"
+    ],
+    "phone": true,
+    "big": true,
+    "key_word": "scroll",
+    "call": "Scroll to the finder",
+    "call_green": false
+   },
+   "sfx": [
+    [
+     "scroll",
+     "whoosh"
+    ],
+    [
+     "menu",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "In the box, paste your profile link, or describe your account. We'll type: home cooking videos, eight hundred followers.",
+   "show": {
+    "type": "official",
+    "n": 3,
+    "name": "AI Income Finder",
+    "images": [
+     "assets/finder_3_typed.png"
+    ],
+    "phone": true,
+    "big": true,
+    "key_word": "type",
+    "call": "Describe your account",
+    "call_green": false
+   },
+   "sfx": [
+    [
+     "paste",
+     "key"
+    ],
+    [
+     "type",
+     "key"
+    ]
+   ]
+  },
+  {
+   "say": "Tip: say your niche and your follower count. The more specific, the better the matches.",
+   "show": {
+    "type": "checklist",
+    "title": "Good descriptions",
+    "items": [
+     [
+      "niche",
+      "Your niche"
+     ],
+     [
+      "count",
+      "Your follower count"
+     ],
+     [
+      "specific",
+      "Be specific"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "niche",
+     "click"
+    ],
+    [
+     "count",
+     "click"
+    ],
+    [
+     "specific",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Now pick your followers today, your main platform, and what you enjoy. We'll pick zero to one thousand, TikTok, and filming products.",
+   "show": {
+    "type": "official",
+    "n": 4,
+    "name": "AI Income Finder",
+    "images": [
+     "assets/finder_4_picked.png"
+    ],
+    "phone": true,
+    "big": true,
+    "key_word": "filming",
+    "call": "0-1k · TikTok · Filming",
+    "call_green": false
+   },
+   "sfx": [
+    [
+     "followers",
+     "click"
+    ],
+    [
+     "platform",
+     "click"
+    ],
+    [
+     "filming",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Tap find my income streams. It reads your account, checks our verified streams, and writes your first steps.",
+   "show": {
+    "type": "official",
+    "n": 5,
+    "name": "AI Income Finder",
+    "images": [
+     "assets/finder_5_thinking.png"
+    ],
+    "phone": true,
+    "big": true,
+    "key_word": "checks",
+    "call": "Checking verified streams",
+    "call_green": false
+   },
+   "sfx": [
+    [
+     "tap",
+     "click"
+    ],
+    [
+     "checks",
+     "whoosh"
+    ],
+    [
+     "writes",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Here are the matches. Each one shows a match score, why it fits, and what it typically pays.",
+   "show": {
+    "type": "official",
+    "n": 6,
+    "name": "AI Income Finder",
+    "images": [
+     "assets/finder_6_results.png"
+    ],
+    "phone": true,
+    "big": true,
+    "key_word": "matches",
+    "call": "Your 3 matches",
+    "call_green": true
+   },
+   "sfx": [
+    [
+     "matches",
+     "ding"
+    ],
+    [
+     "score",
+     "pop"
+    ],
+    [
+     "pays",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Read the first step on each card. It's written for your account, not a general tip.",
+   "show": {
+    "type": "official",
+    "n": 7,
+    "name": "AI Income Finder",
+    "images": [
+     "assets/finder_7_match2.png"
+    ],
+    "phone": true,
+    "big": true,
+    "key_word": "step",
+    "call": "Your first step",
+    "call_green": true
+   },
+   "sfx": [
+    [
+     "step",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Not happy with the picks? Change what you enjoy, or your platform, and run it again. It only takes seconds.",
+   "show": {
+    "type": "talk",
+    "mood": 0.1,
+    "hold": "laptop",
+    "chips": [
+     [
+      "change",
+      "Change an answer",
+      null
+     ],
+     [
+      "again",
+      "Run it again",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "change",
+     "pop"
+    ],
+    [
+     "again",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Pay figures come only from our checked data. The AI never makes up a number.",
+   "show": {
+    "type": "myth",
+    "myth": "AI invents the pay",
+    "myth_word": "never",
+    "fact": "Pay from checked data",
+    "fact_word": "checked"
+   },
+   "sfx": [
+    [
+     "checked",
+     "swipe"
+    ],
+    [
+     "never",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Tap a match to open its page: followers needed, what it pays, the catch, and the sources.",
+   "show": {
+    "type": "official",
+    "n": 8,
+    "name": "AI Income Finder",
+    "images": [
+     "assets/finder_8_stream.png"
+    ],
+    "phone": true,
+    "big": true,
+    "key_word": "catch",
+    "call": "Pay · catch · sources",
+    "call_green": true
+   },
+   "sfx": [
+    [
+     "tap",
+     "click"
+    ],
+    [
+     "catch",
+     "pop"
+    ],
+    [
+     "sources",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Scroll to how to start, and do step one today.",
+   "show": {
+    "type": "official",
+    "n": 9,
+    "name": "AI Income Finder",
+    "images": [
+     "assets/finder_9_steps.png"
+    ],
+    "phone": true,
+    "big": true,
+    "key_word": "today",
+    "call": "Step 1 today",
+    "call_green": true
+   },
+   "sfx": [
+    [
+     "start",
+     "pop"
+    ],
+    [
+     "today",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Bookmark that page. We re-check every stream, and the last checked date is right at the top.",
+   "show": {
+    "type": "checklist",
+    "title": "Stream page",
+    "items": [
+     [
+      "bookmark",
+      "Bookmark it"
+     ],
+     [
+      "re-check",
+      "We re-check it"
+     ],
+     [
+      "date",
+      "Last checked date on top"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "bookmark",
+     "click"
+    ],
+    [
+     "re-check",
+     "click"
+    ],
+    [
+     "date",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Stuck on a step? Ask in the comments box at the bottom of the page, and we'll answer.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "stuck",
+      "Stuck?",
+      "laptop",
+      0.4
+     ],
+     [
+      "comments",
+      "Ask in the comments",
+      "phone0",
+      -0.2
+     ],
+     [
+      "answer",
+      "We answer",
+      "call",
+      -0.8
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "stuck",
+     "pop"
+    ],
+    [
+     "comments",
+     "pop"
+    ],
+    [
+     "answer",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Want it in your inbox? Tap email me my full plan, under the matches.",
+   "show": {
+    "type": "talk",
+    "mood": -0.6,
+    "hold": "laptop",
+    "chips": [
+     [
+      "inbox",
+      "In your inbox",
+      null
+     ],
+     [
+      "plan",
+      "Email me my full plan",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "inbox",
+     "pop"
+    ],
+    [
+     "plan",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: the finder is a starting point, not a promise. Pick your top match and test it for thirty days.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "starting",
+      "A starting point",
+      false
+     ],
+     [
+      "thirty",
+      "Test for 30 days",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "starting",
+     "whip"
+    ],
+    [
+     "thirty",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [FINDER|finder] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Tools I use are in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "AI Income Finder tutorial",
+    "keyword": "FINDER",
+    "tool": null
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "tools",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[3|Three] income streams matched to your account. Here's how.",
+   "show": {
+    "type": "official",
+    "n": 6,
+    "name": "AI Income Finder",
+    "images": [
+     "assets/finder_6_results.png"
+    ],
+    "phone": true,
+    "big": true,
+    "key_word": "matches",
+    "call": "Your 3 matches",
+    "call_green": true
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "No idea which way to earn fits your account?",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "free",
+      "Free",
+      "green"
+     ],
+     [
+      "step",
+      "Step by step",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do you use the free AI Income Finder?",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "free",
+      "Free",
+      "green"
+     ],
+     [
+      "step",
+      "Step by step",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "AI Income Finder",
+   "url": "https://subcreatorpaid.com/#finder"
+  }
+ ],
+ "thumb": {
+  "headline": "AI Income Finder:\n*step by step*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.5,
+  "sticker": "Free tutorial",
+  "sticker_color": "green",
+  "chip": "Real walkthrough",
+  "size": 110
+ },
+ "finder_stream": null,
+ "snaps": [
+  {
+   "file": "assets/finder_1_home.png",
+   "url": "https://subcreatorpaid.com/",
+   "width": 390,
+   "height": 642,
+   "zoom": 2
+  },
+  {
+   "file": "assets/finder_2_section.png",
+   "url": "https://subcreatorpaid.com/",
+   "actions": [
+    {
+     "scroll_to": "#finder .badge"
+    }
+   ],
+   "width": 390,
+   "height": 642,
+   "zoom": 2
+  },
+  {
+   "file": "assets/finder_3_typed.png",
+   "url": "https://subcreatorpaid.com/",
+   "actions": [
+    {
+     "scroll_to": "#finder"
+    },
+    {
+     "fill": [
+      "#prof",
+      "home cooking videos, 800 followers"
+     ]
+    },
+    {
+     "scroll_to": "#prof"
+    }
+   ],
+   "width": 390,
+   "height": 642,
+   "zoom": 2
+  },
+  {
+   "file": "assets/finder_4_picked.png",
+   "url": "https://subcreatorpaid.com/",
+   "actions": [
+    {
+     "scroll_to": "#finder"
+    },
+    {
+     "fill": [
+      "#prof",
+      "home cooking videos, 800 followers"
+     ]
+    },
+    {
+     "click": "#aif .pills[data-k='f'] button[data-v='0']"
+    },
+    {
+     "click": "#aif .pills[data-k='p'] button[data-v='tt']"
+    },
+    {
+     "click": "#aif .pills[data-k='e'] button[data-v='film']"
+    },
+    {
+     "scroll_to": "#aif .pills[data-k='p']"
+    }
+   ],
+   "width": 390,
+   "height": 642,
+   "zoom": 2
+  },
+  {
+   "file": "assets/finder_5_thinking.png",
+   "url": "https://subcreatorpaid.com/",
+   "actions": [
+    {
+     "scroll_to": "#finder"
+    },
+    {
+     "fill": [
+      "#prof",
+      "home cooking videos, 800 followers"
+     ]
+    },
+    {
+     "click": "#aif .pills[data-k='f'] button[data-v='0']"
+    },
+    {
+     "click": "#aif .pills[data-k='p'] button[data-v='tt']"
+    },
+    {
+     "click": "#aif .pills[data-k='e'] button[data-v='film']"
+    },
+    {
+     "click": "#aigo"
+    },
+    {
+     "wait": 1200
+    },
+    {
+     "scroll_to": "#aiout"
+    }
+   ],
+   "width": 390,
+   "height": 642,
+   "zoom": 2
+  },
+  {
+   "file": "assets/finder_6_results.png",
+   "url": "https://subcreatorpaid.com/",
+   "actions": [
+    {
+     "scroll_to": "#finder"
+    },
+    {
+     "fill": [
+      "#prof",
+      "home cooking videos, 800 followers"
+     ]
+    },
+    {
+     "click": "#aif .pills[data-k='f'] button[data-v='0']"
+    },
+    {
+     "click": "#aif .pills[data-k='p'] button[data-v='tt']"
+    },
+    {
+     "click": "#aif .pills[data-k='e'] button[data-v='film']"
+    },
+    {
+     "click": "#aigo"
+    },
+    {
+     "wait_for": "#aiout .rc"
+    },
+    {
+     "wait": 800
+    },
+    {
+     "scroll_to": "#aiout .rc"
+    }
+   ],
+   "width": 390,
+   "height": 642,
+   "zoom": 2
+  },
+  {
+   "file": "assets/finder_7_match2.png",
+   "url": "https://subcreatorpaid.com/",
+   "actions": [
+    {
+     "scroll_to": "#finder"
+    },
+    {
+     "fill": [
+      "#prof",
+      "home cooking videos, 800 followers"
+     ]
+    },
+    {
+     "click": "#aif .pills[data-k='f'] button[data-v='0']"
+    },
+    {
+     "click": "#aif .pills[data-k='p'] button[data-v='tt']"
+    },
+    {
+     "click": "#aif .pills[data-k='e'] button[data-v='film']"
+    },
+    {
+     "click": "#aigo"
+    },
+    {
+     "wait_for": "#aiout .rc"
+    },
+    {
+     "wait": 800
+    },
+    {
+     "scroll_to": "#aiout .rc:nth-child(3)"
+    }
+   ],
+   "width": 390,
+   "height": 642,
+   "zoom": 2
+  },
+  {
+   "file": "assets/finder_8_stream.png",
+   "url": "https://subcreatorpaid.com/streams/ugc/",
+   "width": 390,
+   "height": 642,
+   "zoom": 2
+  },
+  {
+   "file": "assets/finder_9_steps.png",
+   "url": "https://subcreatorpaid.com/streams/ugc/",
+   "actions": [
+    {
+     "scroll_to": "#rail"
+    }
+   ],
+   "width": 390,
+   "height": 642,
+   "zoom": 2
+  }
+ ]
+}

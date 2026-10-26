@@ -1,0 +1,46 @@
+{
+ "title": "Weekly creator tracker",
+ "subtitle": "The columns and how to read them",
+ "sections": [
+  [
+   "Columns",
+   [
+    "Date",
+    "Followers per app",
+    "Views this week",
+    "Email sign-ups",
+    "Link clicks",
+    "Money in (by source)",
+    "Best video of the week"
+   ]
+  ],
+  [
+   "Read it",
+   [
+    "Which videos bring sign-ups?",
+    "Which source brings money?",
+    "Do more of those."
+   ]
+  ]
+ ],
+ "steps": [
+  "Copy the columns into a sheet.",
+  "Fill in this week.",
+  "Set a Sunday reminder."
+ ],
+ "keyword": "TRACK",
+ "sources": [
+  [
+   "Email Vendor Selection: Kit pricing (Aug 2026)",
+   "https://www.emailvendorselection.com/kit-pricing/"
+  ]
+ ],
+ "video": "Track your creator money in one sheet",
+ "tool": {
+  "id": "kit",
+  "name": "Kit",
+  "earns": "50% of their first 12 months",
+  "signup": "https://kit.com/affiliate",
+  "status": "to join"
+ }
+}

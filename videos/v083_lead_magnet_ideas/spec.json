@@ -1,0 +1,360 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v083_lead_magnet_ideas",
+ "title": "5 freebies that grow your email list",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "People won't join your email list for nothing. Here are five freebies small creators can make in a day.",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "nothing",
+      "For nothing? No.",
+      "red"
+     ],
+     [
+      "five",
+      "5 freebies",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "nothing",
+     "thud"
+    ],
+    [
+     "five",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "One: a checklist. Two: a template they can copy.",
+   "show": {
+    "type": "checklist",
+    "title": "Freebies 1–2",
+    "items": [
+     [
+      "checklist",
+      "A checklist"
+     ],
+     [
+      "template",
+      "A copy-paste template"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "checklist",
+     "click"
+    ],
+    [
+     "template",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Three: a resource list of the tools you use. Four: a mini guide, three to five pages.",
+   "show": {
+    "type": "checklist",
+    "title": "Freebies 3–4",
+    "items": [
+     [
+      "resource",
+      "Your tool list"
+     ],
+     [
+      "mini",
+      "A 3-5 page mini guide"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "resource",
+     "click"
+    ],
+    [
+     "mini",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Five: a short email course, one lesson a day for five days.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "short",
+      "Day 1",
+      "lesson 1"
+     ],
+     [
+      "lesson",
+      "Day 3",
+      "lesson 3"
+     ],
+     [
+      "days",
+      "Day 5",
+      "lesson 5",
+      "green"
+     ]
+    ],
+    "hold": "laptop"
+   },
+   "sfx": [
+    [
+     "short",
+     "pop"
+    ],
+    [
+     "lesson",
+     "pop"
+    ],
+    [
+     "days",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The best freebie solves one small problem fast. Then you mention it at the end of every video.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "one",
+      "Solve one problem",
+      "laptop",
+      0
+     ],
+     [
+      "fast",
+      "Fast to use",
+      "phone0",
+      -0.3
+     ],
+     [
+      "every",
+      "Mention it every video",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "one",
+     "pop"
+    ],
+    [
+     "fast",
+     "pop"
+    ],
+    [
+     "every",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: a freebie that's too long doesn't get read. Short and useful beats big and impressive.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "long",
+      "Too long = unread",
+      true
+     ],
+     [
+      "short",
+      "Short + useful",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "long",
+     "whip"
+    ],
+    [
+     "short",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [FREEBIE|freebie] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Kit is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Freebie ideas",
+    "keyword": "FREEBIE",
+    "tool": "Kit"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[5|Five] freebies you can make in one day.",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "nothing",
+      "For nothing? No.",
+      "red"
+     ],
+     [
+      "five",
+      "5 freebies",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Nobody signs up for your newsletter?",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "nothing",
+      "For nothing? No.",
+      "red"
+     ],
+     [
+      "five",
+      "5 freebies",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What freebie makes people join your email list?",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "nothing",
+      "For nothing? No.",
+      "red"
+     ],
+     [
+      "five",
+      "5 freebies",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Email Vendor Selection: Kit pricing (Aug 2026)",
+   "url": "https://www.emailvendorselection.com/kit-pricing/"
+  }
+ ],
+ "thumb": {
+  "headline": "*5 freebies*\nthat grow lists",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.3,
+  "sticker": "Make in a day",
+  "chip": "Lead magnet ideas",
+  "size": 130
+ },
+ "finder_stream": null
+}

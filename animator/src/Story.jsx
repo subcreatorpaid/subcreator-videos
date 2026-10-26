@@ -404,6 +404,7 @@ const ProofIntro = ({f, w}) => {
 
 // An official page (summary card or phone snap) tilted in 3D, the key line called out, the face reacting.
 const Official = ({f, w, s}) => {
+  if (!s.images || !s.images.length) return <Catch f={f} w={w} s={{type: 'catch', items: s.call ? [[s.key_word || 'starts', s.call.replace('\n', ' '), !s.call_green]] : []}} />;  // screenshot missing: show the key line instead of crashing
   const p = ease(f - 2, 16);
   const call = ease(f - w(s.key_word || 'starts') + 4, 12);
   return (<>
@@ -413,7 +414,9 @@ const Official = ({f, w, s}) => {
         {s.logo ? <Logo name={s.logo} size={72} /> : null}<div style={{fontWeight: 900, fontSize: 56}}>{s.name}</div>
       </div>
     </PopIn>
-    {s.phone ? (
+    {s.phone && s.big ? (  // tutorial: a bigger phone so the real screen is readable
+      <Phone w={640} h={1054} style={{left: 400, top: 250, opacity: p, transform: `perspective(2200px) rotateY(${-10 + (1 - p) * -40}deg)`}}><Snap src={s.images[0].replace('assets/', 'a_')} /></Phone>
+    ) : s.phone ? (
       <Phone w={480} h={790} style={{left: 520, top: 280, opacity: p, transform: `perspective(2200px) rotateY(${-14 + (1 - p) * -40}deg)`}}><Snap src={s.images[0].replace('assets/', 'a_')} /></Phone>
     ) : (
       <div style={{position: 'absolute', left: 130, top: 280, width: 820, borderRadius: 30, overflow: 'hidden', opacity: p, boxShadow: glow('0,0,0', 0.18, 80),
@@ -421,10 +424,10 @@ const Official = ({f, w, s}) => {
         <Img src={staticFile(s.images[0].replace('assets/', 'a_'))} style={{width: '100%', display: 'block'}} />
       </div>
     )}
-    <div style={{position: 'absolute', left: s.phone ? 60 : 70, top: s.phone ? 560 : 1080, opacity: call, transform: `scale(${pop(f - w(s.key_word || 'starts') + 4)})`}}>
+    <div style={{position: 'absolute', left: s.phone ? (s.big ? 40 : 60) : 70, top: s.phone ? (s.big ? 420 : 560) : 1080, maxWidth: s.big ? 420 : undefined, opacity: call, transform: `scale(${pop(f - w(s.key_word || 'starts') + 4)})`}}>
       <div style={{background: s.call_green ? C.acc : C.ink, color: '#fff', fontWeight: 900, fontSize: 52, padding: '18px 34px', borderRadius: 26, boxShadow: s.call_green ? '0 0 60px rgba(46,125,79,0.45)' : glow('0,0,0', 0.2, 50), whiteSpace: 'pre-line', maxWidth: 520}}>{s.call}</div>
     </div>
-    <div style={{position: 'absolute', left: s.phone ? 40 : 700, top: s.phone ? 860 : 1040, transform: 'scale(0.4)', transformOrigin: 'left top', opacity: ease(f - 6, 10)}}><Face mood={-0.7} f={f} size={700} hold="laptop" /></div>
+    <div style={{position: 'absolute', left: s.phone ? 40 : 700, top: s.phone ? (s.big ? 900 : 860) : 1040, transform: `scale(${s.big ? 0.32 : 0.4})`, transformOrigin: 'left top', opacity: ease(f - 6, 10)}}><Face mood={-0.7} f={f} size={700} hold="laptop" /></div>
   </>);
 };
 

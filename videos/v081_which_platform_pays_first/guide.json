@@ -1,0 +1,54 @@
+{
+ "title": "Who pays first",
+ "subtitle": "Payout bars side by side",
+ "sections": [
+  [
+   "Twitch Affiliate",
+   [
+    "50 followers, 500 minutes, 7 days, average 3 viewers (30 days)."
+   ]
+  ],
+  [
+   "YouTube",
+   [
+    "500 subs + 3 uploads + 3,000 hours or 3M Shorts views: fan funding.",
+    "1,000 subs + 4,000 hours or 10M Shorts views: ad revenue."
+   ]
+  ],
+  [
+   "TikTok",
+   [
+    "Shop affiliate: reported 1,000 followers.",
+    "Creator Rewards: 10,000 followers + 100,000 views, 1-min+ videos."
+   ]
+  ]
+ ],
+ "steps": [
+  "Pick the app your viewers use most.",
+  "Write your gap to its bar.",
+  "Plan 4 weeks to close it."
+ ],
+ "keyword": "FIRST",
+ "sources": [
+  [
+   "Tom's Guide: Twitch Affiliate requirements",
+   "https://www.tomsguide.com/us/how-to-become-twitch-affiliate-requirements,news-30486.html"
+  ],
+  [
+   "YouTube Help: expanded YouTube Partner Program",
+   "https://support.google.com/youtube/answer/13429240?hl=en"
+  ],
+  [
+   "Stack Influence: 5 TikTok monetization paths (Jun 2026)",
+   "https://stackinfluence.com/blog/5-tiktok-monetization-paths-that-pay-creators-in-2026"
+  ]
+ ],
+ "video": "YouTube vs TikTok vs Twitch: which pays first",
+ "tool": {
+  "id": "vidiq",
+  "name": "vidIQ",
+  "earns": "15-25% lifetime recurring (by sales tier)",
+  "signup": "https://support.vidiq.com/en/articles/7866006",
+  "status": "to join"
+ }
+}

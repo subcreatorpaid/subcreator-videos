@@ -1,0 +1,54 @@
+{
+ "title": "Official payout totals",
+ "subtitle": "The numbers, the sources, the honest part",
+ "sections": [
+  [
+   "Totals",
+   [
+    "YouTube: $100B+ since 2021 (creators, artists, media companies).",
+    "Patreon: $10B+ since 2013.",
+    "ElevenLabs: $22M+ to 10,400+ voice creators.",
+    "beehiiv: $25,000 from Boosts for one newsletter (31,000 subscribers)."
+   ]
+  ],
+  [
+   "Honest part",
+   [
+    "Totals across many creators.",
+    "Most goes to the biggest earners."
+   ]
+  ]
+ ],
+ "steps": [
+  "Pick one stream.",
+  "Test it for 30 days.",
+  "Track it in your weekly sheet."
+ ],
+ "keyword": "PROOF",
+ "sources": [
+  [
+   "Shacknews: YouTube paid $100B+ since 2021 (Made on YouTube, Sep 2025)",
+   "https://www.shacknews.com/article/145986/youtube-claim-100-billion-dollar-pay-out"
+  ],
+  [
+   "Axios: Patreon crosses $10 billion in creator payments (Aug 2025)",
+   "https://www.axios.com/2025/08/05/patreon-10-billion-creator-economy-ai"
+  ],
+  [
+   "ElevenLabs: $22 million earned by voice creators (May 2026)",
+   "https://elevenlabs.io/blog/22-million-earned-by-voice-creators-on-elevenlabs"
+  ],
+  [
+   "beehiiv case study: $25,000 from Boosts (Apr 2025)",
+   "https://www.beehiiv.com/blog/case-study-geekout-newsletter"
+  ]
+ ],
+ "video": "Proof: 4 official payout totals",
+ "tool": {
+  "id": "beehiiv",
+  "name": "beehiiv",
+  "earns": "50-60% of what they pay for 12 months",
+  "signup": "https://www.beehiiv.com/partners",
+  "status": "joined"
+ }
+}

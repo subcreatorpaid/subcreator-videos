@@ -1,0 +1,48 @@
+{
+ "title": "Commissions on Ko-fi",
+ "subtitle": "Set up, price and promote",
+ "sections": [
+  [
+   "Setup",
+   [
+    "Turn on Commissions on your Ko-fi page.",
+    "List each offer with an example image.",
+    "Set open slots (start with 3)."
+   ]
+  ],
+  [
+   "Fees",
+   [
+    "Free plan: 5%. Gold ($12/month): 0%.",
+    "Payment processing applies on both."
+   ]
+  ],
+  [
+   "Promote",
+   [
+    "Post finished work (with permission).",
+    "Say how many slots are open."
+   ]
+  ]
+ ],
+ "steps": [
+  "Write 2 offers.",
+  "Set 3 slots.",
+  "Post your best piece with the link."
+ ],
+ "keyword": "ART",
+ "sources": [
+  [
+   "SchoolMaker: Ko-fi pricing (Sep 2026)",
+   "https://schoolmaker.com/blog/ko-fi-pricing"
+  ]
+ ],
+ "video": "Artists: take commissions on Ko-fi",
+ "tool": {
+  "id": "beehiiv",
+  "name": "beehiiv",
+  "earns": "50-60% of what they pay for 12 months",
+  "signup": "https://www.beehiiv.com/partners",
+  "status": "joined"
+ }
+}

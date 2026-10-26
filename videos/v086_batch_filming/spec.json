@@ -1,0 +1,365 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v086_batch_filming",
+ "title": "Film a week of videos in 2 hours",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Ten posts a week sounds impossible. Batch filming makes it a two hour job.",
+   "show": {
+    "type": "talk",
+    "mood": 0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "ten",
+      "10 posts/week",
+      "red"
+     ],
+     [
+      "two",
+      "2 hours",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "ten",
+     "thud"
+    ],
+    [
+     "two",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Sunday: write every hook and three bullet points per video. No full scripts.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "sunday",
+      "Sun",
+      "write hooks"
+     ],
+     [
+      "bullet",
+      "",
+      "3 bullets each"
+     ]
+    ],
+    "hold": "laptop"
+   },
+   "sfx": [
+    [
+     "sunday",
+     "pop"
+    ],
+    [
+     "bullet",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Monday: film them all in one sitting, same light, same spot. Change your shirt between groups.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "film",
+      "Film all in one go",
+      "phone0",
+      0
+     ],
+     [
+      "light",
+      "Same light + spot",
+      "laptop",
+      -0.3
+     ],
+     [
+      "shirt",
+      "Change shirt",
+      "film",
+      -0.6
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "film",
+     "pop"
+    ],
+    [
+     "light",
+     "pop"
+    ],
+    [
+     "shirt",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Then edit in one block, or let a clipping tool cut a long video into short ones.",
+   "show": {
+    "type": "tool_demo",
+    "app": "OpusClip",
+    "input": "long-video.mp4",
+    "input_word": "edit",
+    "process": "Finding the best parts",
+    "process_word": "clipping",
+    "outputs": [
+     [
+      "short",
+      "Clip 1"
+     ],
+     [
+      "short",
+      "Clip 2"
+     ],
+     [
+      "ones",
+      "Clip 3"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "edit",
+     "drop"
+    ],
+    [
+     "clipping",
+     "whoosh"
+    ],
+    [
+     "ones",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Schedule them for the week, and you only have to reply to comments.",
+   "show": {
+    "type": "talk",
+    "mood": -0.7,
+    "hold": "phone0",
+    "chips": [
+     [
+      "schedule",
+      "Scheduled",
+      "green"
+     ],
+     [
+      "comments",
+      "Just reply",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "schedule",
+     "ding"
+    ],
+    [
+     "comments",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: batching only works if you plan. A missed Sunday means a scramble all week.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "plan",
+      "Plan first",
+      true
+     ],
+     [
+      "scramble",
+      "Or scramble",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "plan",
+     "whip"
+    ],
+    [
+     "scramble",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [BATCH|batch] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. OpusClip is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Batch filming plan",
+    "keyword": "BATCH",
+    "tool": "OpusClip"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[2|Two] hours for a whole week of videos.",
+   "show": {
+    "type": "talk",
+    "mood": 0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "ten",
+      "10 posts/week",
+      "red"
+     ],
+     [
+      "two",
+      "2 hours",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Filming every single day, and burning out?",
+   "show": {
+    "type": "talk",
+    "mood": 0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "ten",
+      "10 posts/week",
+      "red"
+     ],
+     [
+      "two",
+      "2 hours",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do creators post ten times a week?",
+   "show": {
+    "type": "talk",
+    "mood": 0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "ten",
+      "10 posts/week",
+      "red"
+     ],
+     [
+      "two",
+      "2 hours",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "OpusClip affiliate program",
+   "url": "https://www.opus.pro/affiliate"
+  }
+ ],
+ "thumb": {
+  "headline": "A week of videos\nin *2 hours*",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": -0.4,
+  "sticker": "Batch filming",
+  "chip": "Write · film · edit · schedule",
+  "size": 110
+ },
+ "finder_stream": null
+}

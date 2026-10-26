@@ -1,0 +1,381 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v089_30_day_test",
+ "title": "Test any income stream in 30 days",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Not sure which income stream is right for you? Test one for thirty days, not ten at once.",
+   "show": {
+    "type": "talk",
+    "mood": 0.1,
+    "hold": "laptop",
+    "chips": [
+     [
+      "one",
+      "Test one",
+      "green"
+     ],
+     [
+      "ten",
+      "Not ten",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "one",
+     "ding"
+    ],
+    [
+     "ten",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Week one: set it up and make your first offer, link or product.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "one",
+      "Week 1",
+      "set up"
+     ],
+     [
+      "_2",
+      "Week 2",
+      ""
+     ],
+     [
+      "_3",
+      "Week 3",
+      ""
+     ],
+     [
+      "_4",
+      "Week 4",
+      ""
+     ]
+    ],
+    "hold": "laptop"
+   },
+   "sfx": [
+    [
+     "one",
+     "pop"
+    ],
+    [
+     "offer",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Weeks two and three: mention it in every video and track clicks.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "_1",
+      "Week 1",
+      "set up"
+     ],
+     [
+      "two",
+      "Week 2",
+      "mention it"
+     ],
+     [
+      "three",
+      "Week 3",
+      "track clicks"
+     ],
+     [
+      "_4",
+      "Week 4",
+      ""
+     ]
+    ],
+    "hold": "laptop"
+   },
+   "sfx": [
+    [
+     "two",
+     "pop"
+    ],
+    [
+     "three",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Week four: look at the numbers. Clicks, sign-ups, and money in.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "_1",
+      "Week 1",
+      "set up"
+     ],
+     [
+      "_2",
+      "Week 2",
+      "mention it"
+     ],
+     [
+      "_3",
+      "Week 3",
+      "track clicks"
+     ],
+     [
+      "four",
+      "Week 4",
+      "review",
+      "green"
+     ]
+    ],
+    "hold": "laptop"
+   },
+   "sfx": [
+    [
+     "four",
+     "ding"
+    ],
+    [
+     "money",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Then decide: keep it, fix one thing, or drop it and test the next one.",
+   "show": {
+    "type": "compare",
+    "title": "Day 30",
+    "cols": [
+     "Keep",
+     "Fix",
+     "Drop"
+    ],
+    "rows": [
+     [
+      "keep",
+      "If",
+      [
+       "Clicks + money",
+       "Clicks, no money",
+       "No clicks"
+      ]
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "keep",
+     "pop"
+    ],
+    [
+     "fix",
+     "pop"
+    ],
+    [
+     "drop",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: thirty days shows interest, not your ceiling. Some streams, like YouTube Shopping, pay months later.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "interest",
+      "Shows interest",
+      false
+     ],
+     [
+      "months",
+      "Some pay months later",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "interest",
+     "whip"
+    ],
+    [
+     "months",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [TEST|test] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. vidIQ is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "30-day stream test",
+    "keyword": "TEST",
+    "tool": "vidIQ"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[30|Thirty] days to know if an income stream works for you.",
+   "show": {
+    "type": "talk",
+    "mood": 0.1,
+    "hold": "laptop",
+    "chips": [
+     [
+      "one",
+      "Test one",
+      "green"
+     ],
+     [
+      "ten",
+      "Not ten",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Trying ten side hustles at once, and none are working?",
+   "show": {
+    "type": "talk",
+    "mood": 0.1,
+    "hold": "laptop",
+    "chips": [
+     [
+      "one",
+      "Test one",
+      "green"
+     ],
+     [
+      "ten",
+      "Not ten",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do you know which income stream is right for you?",
+   "show": {
+    "type": "talk",
+    "mood": 0.1,
+    "hold": "laptop",
+    "chips": [
+     [
+      "one",
+      "Test one",
+      "green"
+     ],
+     [
+      "ten",
+      "Not ten",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "PPC Land: YouTube Shopping opens to 500 subscribers (Mar 2026)",
+   "url": "https://ppc.land/youtube-opens-shopping-affiliate-program-to-creators-with-500-subscribers/"
+  }
+ ],
+ "thumb": {
+  "headline": "The *30-day*\ntest",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.3,
+  "sticker": "Keep · fix · drop",
+  "chip": "Test one stream",
+  "size": 140
+ },
+ "finder_stream": null
+}

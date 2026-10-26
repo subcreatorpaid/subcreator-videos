@@ -1,0 +1,52 @@
+{
+ "title": "Brand deal terms",
+ "subtitle": "A 5-term checklist + email template",
+ "sections": [
+  [
+   "The 5 terms",
+   [
+    "Price and what's included",
+    "Usage rights: where and how long",
+    "Deadline",
+    "Revisions (e.g. 1 round)",
+    "Payment date and method"
+   ]
+  ],
+  [
+   "Disclosure",
+   [
+    "Agree how the post will be labelled (ad / sponsored, in the video)."
+   ]
+  ],
+  [
+   "Email template",
+   [
+    "'Before I start, can you confirm: price $__, usage __ for __, deadline __, __ revision(s), payment by __ via __?'"
+   ]
+  ]
+ ],
+ "steps": [
+  "Save the email template.",
+  "Send it before every deal.",
+  "Keep replies in one folder."
+ ],
+ "keyword": "DEAL",
+ "sources": [
+  [
+   "FTC: Disclosures 101 for social media influencers",
+   "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+  ],
+  [
+   "Insense: UGC creator rates (Sep 2026)",
+   "https://insense.pro/blog/ugc-creator-rates"
+  ]
+ ],
+ "video": "5 terms to check before a brand deal",
+ "tool": {
+  "id": "kit",
+  "name": "Kit",
+  "earns": "50% of their first 12 months",
+  "signup": "https://kit.com/affiliate",
+  "status": "to join"
+ }
+}

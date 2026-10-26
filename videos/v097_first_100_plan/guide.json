@@ -1,0 +1,55 @@
+{
+ "title": "First $100 plan",
+ "subtitle": "Three paths, one to start",
+ "sections": [
+  [
+   "Service",
+   [
+    "UGC video, editing, thumbnails.",
+    "Beginner UGC: often $50-$400 per video."
+   ]
+  ],
+  [
+   "Product",
+   [
+    "Template, checklist or mini guide."
+   ]
+  ],
+  [
+   "Affiliate",
+   [
+    "Tools you use; disclose in the video."
+   ]
+  ],
+  [
+   "Honest part",
+   [
+    "Ranges, not promises. Expect many pitches."
+   ]
+  ]
+ ],
+ "steps": [
+  "Pick one path.",
+  "Make 3 samples or 1 product.",
+  "Pitch or post 10 times this week."
+ ],
+ "keyword": "FIRST100",
+ "sources": [
+  [
+   "Insense: UGC creator rates (Sep 2026)",
+   "https://insense.pro/blog/ugc-creator-rates"
+  ],
+  [
+   "Wise: how to get paid on Fiverr (20% fee, clearance)",
+   "https://wise.com/us/blog/how-to-get-paid-on-fiverr"
+  ]
+ ],
+ "video": "A plan for your first $100 online",
+ "tool": {
+  "id": "fiverr",
+  "name": "Fiverr",
+  "earns": "25% of a new buyer's first order + 10% for 12 months",
+  "signup": "https://affiliates.fiverr.com",
+  "status": "waiting for owner login"
+ }
+}

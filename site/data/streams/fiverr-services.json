@@ -1,0 +1,52 @@
+{
+  "slug": "fiverr-services",
+  "title": "Fiverr services",
+  "one_liner": "Sell a service like editing, thumbnails or UGC videos as a Fiverr gig.",
+  "followers": "None.",
+  "pay": "You set the price; Fiverr keeps 20% of each order (incl. tips). Money clears after 14 days (7 for Top Rated/Pro). Check Fiverr's page.",
+  "pay_source": "https://wise.com/us/blog/how-to-get-paid-on-fiverr",
+  "steps": [
+    "Pick one service you can deliver well.",
+    "Write a title with buyers' words.",
+    "Add a before/after first image.",
+    "Price the basic package to win first reviews."
+  ],
+  "catch": "New gigs get few orders until reviews come in, and the 20% fee comes off every order.",
+  "great_for": [
+    "Editing",
+    "Design",
+    "UGC"
+  ],
+  "tools": [
+    "fiverr"
+  ],
+  "sources": [
+    [
+      "Wise: how to get paid on Fiverr",
+      "https://wise.com/us/blog/how-to-get-paid-on-fiverr"
+    ]
+  ],
+  "video": "",
+  "checked": "2026-10-26",
+  "category": "Services",
+  "cat": "svc",
+  "pay_short": "20%",
+  "pay_unit": "Fiverr fee",
+  "start": "One gig",
+  "letter": "F",
+  "match": {
+    "enjoy": [
+      "make",
+      "film"
+    ],
+    "platform_bonus": [],
+    "min_followers": 0,
+    "first_step": "Write your gig title as 'I will [service] for [who]'."
+  },
+  "step_labels": [
+    "Service",
+    "Title",
+    "Gallery",
+    "Price"
+  ]
+}

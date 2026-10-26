@@ -1,0 +1,53 @@
+{
+  "slug": "ko-fi",
+  "title": "Ko-fi (tips, commissions, shop)",
+  "one_liner": "Fans tip you, buy custom work or digital items from one simple page.",
+  "followers": "None.",
+  "pay": "You set the price. Ko-fi takes 0% on donations, 5% on shop, memberships and commissions on the free plan, 0% on Gold ($12/month); Stripe/PayPal fees apply.",
+  "pay_source": "https://schoolmaker.com/blog/ko-fi-pricing",
+  "steps": [
+    "Make a free Ko-fi page.",
+    "Turn on commissions or add one digital item.",
+    "Set a small number of open slots and a clear price.",
+    "Post finished work (with permission) and say slots are open."
+  ],
+  "catch": "Payment fees still apply, and custom work takes time, so price your hours honestly.",
+  "great_for": [
+    "Art",
+    "Design",
+    "Editing"
+  ],
+  "tools": [
+    "stan"
+  ],
+  "sources": [
+    [
+      "SchoolMaker: Ko-fi pricing (Sep 2026)",
+      "https://schoolmaker.com/blog/ko-fi-pricing"
+    ]
+  ],
+  "video": "",
+  "checked": "2026-10-26",
+  "category": "Fan support",
+  "cat": "fans",
+  "pay_short": "0–5%",
+  "pay_unit": "Ko-fi fee",
+  "start": "A free page",
+  "letter": "K",
+  "match": {
+    "enjoy": [
+      "make"
+    ],
+    "platform_bonus": [
+      "ig"
+    ],
+    "min_followers": 0,
+    "first_step": "Set up Ko-fi commissions with 3 open slots and one example."
+  },
+  "step_labels": [
+    "Page",
+    "Offer",
+    "Slots",
+    "Post"
+  ]
+}

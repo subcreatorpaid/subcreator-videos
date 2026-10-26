@@ -1,0 +1,48 @@
+{
+ "title": "Amazon storefront setup",
+ "subtitle": "Apply, build lists, stay honest",
+ "sections": [
+  [
+   "Apply",
+   [
+    "Link your social account; Amazon reviews your content."
+   ]
+  ],
+  [
+   "Build",
+   [
+    "3 lists by topic.",
+    "Only products you've used.",
+    "One line on why for each."
+   ]
+  ],
+  [
+   "Know",
+   [
+    "Commission by category.",
+    "Onsite videos: exact product only (since 14 Apr 2026).",
+    "US bank + tax info."
+   ]
+  ]
+ ],
+ "steps": [
+  "List 10 things you use daily.",
+  "Group them into 3 lists.",
+  "Apply this week."
+ ],
+ "keyword": "STOREFRONT",
+ "sources": [
+  [
+   "Make Influence: Amazon Associates vs Amazon Influencer Program",
+   "https://www.makeinfluence.com/en/academy/amazon-associates-vs-amazon-influencer-program-whats-actually-different"
+  ]
+ ],
+ "video": "Set up your Amazon Influencer storefront",
+ "tool": {
+  "id": "amazon",
+  "name": "Amazon Associates",
+  "earns": "category rates (most about 3-4.5%)",
+  "signup": "https://affiliate-program.amazon.com",
+  "status": "to join"
+ }
+}

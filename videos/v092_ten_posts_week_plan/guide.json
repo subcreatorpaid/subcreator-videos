@@ -1,0 +1,51 @@
+{
+ "title": "Weekly content plan",
+ "subtitle": "6 teach · 3 tools · 1 proof",
+ "sections": [
+  [
+   "Teach (6)",
+   [
+    "One viewer question per post."
+   ]
+  ],
+  [
+   "Tools (3)",
+   [
+    "Show it working; result on screen; disclose affiliate links."
+   ]
+  ],
+  [
+   "Proof (1)",
+   [
+    "Official numbers or your honest results."
+   ]
+  ],
+  [
+   "Workflow",
+   [
+    "2 filming batches.",
+    "1 long video → 3 shorts."
+   ]
+  ]
+ ],
+ "steps": [
+  "Write 6 viewer questions.",
+  "Pick 3 tools you use.",
+  "Find 1 official number."
+ ],
+ "keyword": "PLAN",
+ "sources": [
+  [
+   "OpusClip affiliate program",
+   "https://www.opus.pro/affiliate"
+  ]
+ ],
+ "video": "The 10-posts-a-week plan",
+ "tool": {
+  "id": "opusclip",
+  "name": "OpusClip",
+  "earns": "25% of their payments (at least year one)",
+  "signup": "https://www.opus.pro/affiliate",
+  "status": "joined"
+ }
+}

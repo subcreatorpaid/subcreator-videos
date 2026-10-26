@@ -3,7 +3,9 @@
 
 spec.json may list:
   "snaps": [{"url": "https://...", "file": "assets/name.png",
-             "find": "text to scroll to (optional)", "width": 1280, "height": 1500, "zoom": 1.0}]
+             "find": "text to scroll to (optional)", "width": 1280, "height": 1500, "zoom": 1.0,
+             "actions": [{"scroll_to": "#finder"}, {"fill": ["#prof", "text"]}, {"click": "button"}, {"wait_for": "#aiout .x"}, {"wait": 1500}]}]
+"actions" (optional) run in order before the screenshot, so a video can show our own site's tools in use (e.g. the AI finder).
 Rules: public pages only, no cookie consent is given (banners are hidden, never accepted), existing files are kept
 unless --force. Usage: python renderer/snap.py videos/<slug>/spec.json [--force]
 """
@@ -57,6 +59,15 @@ def main():
                 pg.goto(s["url"], wait_until="domcontentloaded", timeout=45000)
                 pg.wait_for_timeout(3500)
                 hid = pg.evaluate(HIDE_JS)
+                for a in s.get("actions", []):
+                    try:
+                        if "scroll_to" in a: pg.locator(a["scroll_to"]).first.scroll_into_view_if_needed(timeout=8000); pg.evaluate("window.scrollBy(0, -80)")
+                        elif "fill" in a: pg.locator(a["fill"][0]).first.fill(a["fill"][1], timeout=8000)
+                        elif "click" in a: pg.locator(a["click"]).first.click(timeout=8000)
+                        elif "wait_for" in a: pg.locator(a["wait_for"]).first.wait_for(timeout=a.get("timeout", 30000))
+                        elif "wait" in a: pg.wait_for_timeout(a["wait"])
+                    except Exception as e:  # noqa: BLE001
+                        print(f"snap: action {a} failed on {s['url']} ({e.__class__.__name__})")
                 if s.get("find"):
                     try:
                         loc = pg.get_by_text(s["find"], exact=False).first

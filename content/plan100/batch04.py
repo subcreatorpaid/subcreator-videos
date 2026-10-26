@@ -300,7 +300,7 @@ V.append(dict(n=53, slug="v053_affiliate_disclose_link", title="Affiliate links:
       {"type": "checklist", "title": "Hard to miss", "items": [["post", "In the post itself"], ["profile", "Not only in profile", True], ["more", "Not behind \"more\"", True]]},
       [["post", "click"], ["profile", "thud"], ["more", "thud"]]),
     B("So in a caption, put it before the link: I earn a commission if you buy through this link.",
-      {"type": "chat", "name": "Your caption", "mark": "@", "msgs": [["caption", "Tools I use 👇", True], ["commission", "I earn a commission if you buy through this link.", True], ["link", "subcreatorpaid.com/go/tool", True]], "hold": "phone0", "mood": -0.3},
+      {"type": "chat", "name": "Your caption", "mark": "@", "msgs": [["caption", "Tools I use: link below", True], ["commission", "I earn a commission if you buy through this link.", True], ["link", "subcreatorpaid.com/go/tool", True]], "hold": "phone0", "mood": -0.3},
       [["caption", "pop"], ["commission", "ding"], ["link", "pop"]]),
     B("In a video, say it out loud when you mention the product, and show it on screen.",
       {"type": "checklist", "title": "In a video", "items": [["say", "Say it out loud"], ["show", "Show it on screen"]]},

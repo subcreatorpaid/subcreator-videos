@@ -1,0 +1,47 @@
+{
+ "title": "Small streamer plan",
+ "subtitle": "Make zero-viewer streams count",
+ "sections": [
+  [
+   "During",
+   [
+    "Talk as if 10 people are watching.",
+    "Keep a running topic so late joiners land in something good."
+   ]
+  ],
+  [
+   "After",
+   [
+    "Record every stream.",
+    "Cut the best minute into a Short/TikTok."
+   ]
+  ],
+  [
+   "Schedule",
+   [
+    "Same days and times every week.",
+    "Twitch Affiliate counts minutes (500) and days (7) in 30 days, plus average 3 viewers."
+   ]
+  ]
+ ],
+ "steps": [
+  "Set 3 fixed stream times.",
+  "Record your next stream.",
+  "Post one clip within 24 hours."
+ ],
+ "keyword": "STREAM",
+ "sources": [
+  [
+   "Tom's Guide: Twitch Affiliate requirements",
+   "https://www.tomsguide.com/us/how-to-become-twitch-affiliate-requirements,news-30486.html"
+  ]
+ ],
+ "video": "Streaming to 0 viewers? Do this",
+ "tool": {
+  "id": "riverside",
+  "name": "Riverside",
+  "earns": "up to 20% per subscription",
+  "signup": "https://riverside.com/affiliate-program",
+  "status": "to join"
+ }
+}

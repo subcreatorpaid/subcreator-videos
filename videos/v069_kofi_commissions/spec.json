@@ -1,0 +1,391 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v069_kofi_commissions",
+ "title": "Artists: take commissions on Ko-fi",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "You draw, design or edit? People will pay you to make something just for them. Here's how on Ko-fi.",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "draw",
+      "Draw · design · edit",
+      null
+     ],
+     [
+      "pay",
+      "Paid custom work",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "draw",
+     "pop"
+    ],
+    [
+     "pay",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Ko-fi has a commissions feature. You list what you offer, your price, and how many slots are open.",
+   "show": {
+    "type": "page_card",
+    "url": "ko-fi.com/yourname/commissions",
+    "mark": "Kf",
+    "title": "Commissions",
+    "checked": "Your Ko-fi page",
+    "bullets": [
+     [
+      "offer",
+      "What you offer"
+     ],
+     [
+      "price",
+      "Your price",
+      true
+     ],
+     [
+      "slots",
+      "Open slots"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "offer",
+     "pop"
+    ],
+    [
+     "price",
+     "ding"
+    ],
+    [
+     "slots",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "On the free plan, Ko-fi takes five percent of commissions. On Gold, twelve dollars a month, it takes zero.",
+   "show": {
+    "type": "compare",
+    "title": "Ko-fi fee on commissions",
+    "cols": [
+     "Free",
+     "Gold"
+    ],
+    "rows": [
+     [
+      "five",
+      "Fee",
+      [
+       "5%",
+       "0%"
+      ],
+      [
+       0
+      ]
+     ],
+     [
+      "twelve",
+      "Plan",
+      [
+       "$0",
+       "$12/mo"
+      ]
+     ]
+    ],
+    "source": "SchoolMaker, Sep 2026"
+   },
+   "sfx": [
+    [
+     "five",
+     "pop"
+    ],
+    [
+     "twelve",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Limit your slots. Three open slots looks busy and in demand. Twenty looks like nobody's buying.",
+   "show": {
+    "type": "compare",
+    "title": "Slots",
+    "cols": [
+     "3 open",
+     "20 open"
+    ],
+    "rows": [
+     [
+      "three",
+      "Looks",
+      [
+       "In demand",
+       "Empty"
+      ],
+      [
+       1
+      ]
+     ]
+    ],
+    "best": 0,
+    "best_word": "buying"
+   },
+   "sfx": [
+    [
+     "three",
+     "pop"
+    ],
+    [
+     "twenty",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Post the work you finish, with the buyer's permission, and say slots are open.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "finish",
+      "Finish the work",
+      "laptop",
+      0
+     ],
+     [
+      "permission",
+      "Ask permission",
+      "call",
+      -0.3
+     ],
+     [
+      "open",
+      "Post: slots open",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "finish",
+     "pop"
+    ],
+    [
+     "permission",
+     "pop"
+    ],
+    [
+     "open",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: payment fees still apply, and custom work takes time, so price your hours honestly.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "fees",
+      "Payment fees apply",
+      true
+     ],
+     [
+      "hours",
+      "Price your hours",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "fees",
+     "whip"
+    ],
+    [
+     "hours",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [ART|art] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. beehiiv is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Commissions on Ko-fi",
+    "keyword": "ART",
+    "tool": "beehiiv"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[3|Three] open slots. That's the trick for Ko-fi commissions.",
+   "show": {
+    "type": "compare",
+    "title": "Slots",
+    "cols": [
+     "3 open",
+     "20 open"
+    ],
+    "rows": [
+     [
+      "three",
+      "Looks",
+      [
+       "In demand",
+       "Empty"
+      ],
+      [
+       1
+      ]
+     ]
+    ],
+    "best": 0,
+    "best_word": "buying"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "People love your art, but nobody's paying for it?",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "draw",
+      "Draw · design · edit",
+      null
+     ],
+     [
+      "pay",
+      "Paid custom work",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do artists take paid commissions online?",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "draw",
+      "Draw · design · edit",
+      null
+     ],
+     [
+      "pay",
+      "Paid custom work",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "SchoolMaker: Ko-fi pricing (Sep 2026)",
+   "url": "https://schoolmaker.com/blog/ko-fi-pricing"
+  }
+ ],
+ "thumb": {
+  "headline": "Get paid for\n*custom art*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.4,
+  "sticker": "Ko-fi commissions",
+  "chip": "Slots + pricing",
+  "size": 130
+ },
+ "finder_stream": "ko-fi"
+}

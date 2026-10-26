@@ -1,0 +1,377 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v076_invoice_basics",
+ "title": "Your first invoice: 6 things it needs",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "A brand asks for an invoice, and you've never made one. It only needs six things.",
+   "show": {
+    "type": "talk",
+    "mood": 0.5,
+    "hold": "laptop",
+    "chips": [
+     [
+      "invoice",
+      "An invoice?",
+      null
+     ],
+     [
+      "six",
+      "6 things",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "invoice",
+     "pop"
+    ],
+    [
+     "six",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Your name and contact. Their company name. An invoice number and date.",
+   "show": {
+    "type": "page_card",
+    "url": "Invoice #001",
+    "mark": "$",
+    "title": "Top of the invoice",
+    "checked": "Example layout",
+    "bullets": [
+     [
+      "name",
+      "Your name + contact"
+     ],
+     [
+      "company",
+      "Their company name"
+     ],
+     [
+      "number",
+      "Invoice number + date"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "name",
+     "pop"
+    ],
+    [
+     "company",
+     "pop"
+    ],
+    [
+     "number",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "What you delivered, the price, and when it's due.",
+   "show": {
+    "type": "page_card",
+    "url": "Invoice #001",
+    "mark": "$",
+    "title": "The middle",
+    "checked": "Example layout",
+    "bullets": [
+     [
+      "delivered",
+      "What you delivered"
+     ],
+     [
+      "price",
+      "The price",
+      true
+     ],
+     [
+      "due",
+      "Due date"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "delivered",
+     "pop"
+    ],
+    [
+     "price",
+     "ding"
+    ],
+    [
+     "due",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Add how to pay you: the payment method you agreed, like PayPal or a bank transfer.",
+   "show": {
+    "type": "checklist",
+    "title": "How to pay",
+    "items": [
+     [
+      "paypal",
+      "PayPal"
+     ],
+     [
+      "bank",
+      "Bank transfer"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "paypal",
+     "click"
+    ],
+    [
+     "bank",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Number every invoice in order, and keep a copy. It makes taxes much easier later.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "number",
+      "#001",
+      "first brand"
+     ],
+     [
+      "order",
+      "#002",
+      "next"
+     ],
+     [
+      "taxes",
+      "Tax time",
+      "all in one folder",
+      "green"
+     ]
+    ],
+    "hold": "laptop"
+   },
+   "sfx": [
+    [
+     "number",
+     "pop"
+    ],
+    [
+     "order",
+     "pop"
+    ],
+    [
+     "taxes",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: tax rules depend on your country, so check what your local tax office needs.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "country",
+      "Depends on your country",
+      true
+     ],
+     [
+      "local",
+      "Check locally",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "country",
+     "whip"
+    ],
+    [
+     "local",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [INVOICE|invoice] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Kit is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Creator invoice template",
+    "keyword": "INVOICE",
+    "tool": "Kit"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[6|Six] things. That's all an invoice needs.",
+   "show": {
+    "type": "page_card",
+    "url": "Invoice #001",
+    "mark": "$",
+    "title": "Top of the invoice",
+    "checked": "Example layout",
+    "bullets": [
+     [
+      "name",
+      "Your name + contact"
+     ],
+     [
+      "company",
+      "Their company name"
+     ],
+     [
+      "number",
+      "Invoice number + date"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "A brand asked for an invoice, and you froze?",
+   "show": {
+    "type": "talk",
+    "mood": 0.5,
+    "hold": "laptop",
+    "chips": [
+     [
+      "invoice",
+      "An invoice?",
+      null
+     ],
+     [
+      "six",
+      "6 things",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What goes on a creator invoice?",
+   "show": {
+    "type": "page_card",
+    "url": "Invoice #001",
+    "mark": "$",
+    "title": "Top of the invoice",
+    "checked": "Example layout",
+    "bullets": [
+     [
+      "name",
+      "Your name + contact"
+     ],
+     [
+      "company",
+      "Their company name"
+     ],
+     [
+      "number",
+      "Invoice number + date"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "FTC: Disclosures 101 for social media influencers",
+   "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+  }
+ ],
+ "thumb": {
+  "headline": "First invoice:\n*6 things*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": 0.2,
+  "sticker": "Template",
+  "chip": "Creator invoice basics",
+  "size": 130
+ },
+ "finder_stream": null
+}

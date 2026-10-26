@@ -1,0 +1,350 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v096_tax_forms_basics",
+ "title": "The tax form every creator platform asks for",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Signing up for creator payouts and suddenly there's a tax form? Here's what it is.",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "laptop",
+    "chips": [
+     [
+      "payouts",
+      "Payouts",
+      "green"
+     ],
+     [
+      "tax",
+      "A tax form?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "payouts",
+     "ding"
+    ],
+    [
+     "tax",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "US platforms ask for a W-9 if you're in the US, or a W-8 if you're not.",
+   "show": {
+    "type": "compare",
+    "title": "Which form",
+    "cols": [
+     "In the US",
+     "Outside the US"
+    ],
+    "rows": [
+     [
+      "w-9",
+      "Form",
+      [
+       "W-9",
+       "W-8"
+      ]
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "w-9",
+     "pop"
+    ],
+    [
+     "w-8",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "ElevenLabs asks for it before voice payouts. Amazon asks for tax info too.",
+   "show": {
+    "type": "checklist",
+    "title": "Who asks",
+    "items": [
+     [
+      "elevenlabs",
+      "ElevenLabs"
+     ],
+     [
+      "amazon",
+      "Amazon"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "elevenlabs",
+     "click"
+    ],
+    [
+     "amazon",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Fill it with your legal name, exactly as on your ID, and your own country's tax number if you have one.",
+   "show": {
+    "type": "page_card",
+    "url": "Tax form",
+    "mark": "§",
+    "title": "Tax info",
+    "checked": "What you fill",
+    "bullets": [
+     [
+      "legal",
+      "Legal name, as on ID",
+      true
+     ],
+     [
+      "tax",
+      "Your tax number"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "legal",
+     "ding"
+    ],
+    [
+     "tax",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Without it, payouts can be paused or held.",
+   "show": {
+    "type": "talk",
+    "mood": 0.8,
+    "hold": "laptop",
+    "chips": [
+     [
+      "without",
+      "No form",
+      "red"
+     ],
+     [
+      "paused",
+      "Payouts paused",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "without",
+     "thud"
+    ],
+    [
+     "paused",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: I can't give tax advice. Rules depend on your country, so ask a local tax professional.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "advice",
+      "Not tax advice",
+      true
+     ],
+     [
+      "local",
+      "Ask a local pro",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "advice",
+     "whip"
+    ],
+    [
+     "local",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [TAX|tax] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Kit is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Payout tax forms",
+    "keyword": "TAX",
+    "tool": "Kit"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[1|One] form stands between you and your first creator payout.",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "laptop",
+    "chips": [
+     [
+      "payouts",
+      "Payouts",
+      "green"
+     ],
+     [
+      "tax",
+      "A tax form?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Signed up for payouts, then got stuck on a tax form?",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "laptop",
+    "chips": [
+     [
+      "payouts",
+      "Payouts",
+      "green"
+     ],
+     [
+      "tax",
+      "A tax form?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What's the W-8 or W-9 form creator platforms ask for?",
+   "show": {
+    "type": "compare",
+    "title": "Which form",
+    "cols": [
+     "In the US",
+     "Outside the US"
+    ],
+    "rows": [
+     [
+      "w-9",
+      "Form",
+      [
+       "W-9",
+       "W-8"
+      ]
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "ElevenLabs docs: Voice Library payouts",
+   "url": "https://elevenlabs.io/docs/eleven-creative/voices/payouts"
+  },
+  {
+   "title": "Make Influence: Amazon Associates vs Amazon Influencer Program",
+   "url": "https://www.makeinfluence.com/en/academy/amazon-associates-vs-amazon-influencer-program-whats-actually-different"
+  }
+ ],
+ "thumb": {
+  "headline": "W-8 or *W-9?*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": 0.5,
+  "sticker": "Not tax advice",
+  "chip": "Creator payout basics",
+  "size": 150
+ },
+ "finder_stream": null
+}

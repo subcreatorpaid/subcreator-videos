@@ -1,0 +1,372 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v092_ten_posts_week_plan",
+ "title": "The 10-posts-a-week plan",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Here's a ten-posts-a-week plan that doesn't burn you out: six teach, three show tools, one shows proof.",
+   "show": {
+    "type": "stat_cards",
+    "title": "10 POSTS A WEEK",
+    "cards": [
+     [
+      "six",
+      "6",
+      "teach"
+     ],
+     [
+      "three",
+      "3",
+      "tools"
+     ],
+     [
+      "one",
+      "1",
+      "proof"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "six",
+     "card"
+    ],
+    [
+     "three",
+     "card"
+    ],
+    [
+     "one",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "Teach posts answer one question your viewers have. That's what gets saved and shared.",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "laptop",
+    "chips": [
+     [
+      "question",
+      "One question",
+      null
+     ],
+     [
+      "saved",
+      "Saved + shared",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "question",
+     "pop"
+    ],
+    [
+     "saved",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Tool posts show something you use, with the result on screen.",
+   "show": {
+    "type": "tool_demo",
+    "app": "Your tool",
+    "input": "Before",
+    "input_word": "tool",
+    "process": "Using it",
+    "process_word": "use",
+    "outputs": [
+     [
+      "result",
+      "Result"
+     ],
+     [
+      "screen",
+      "On screen"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "tool",
+     "drop"
+    ],
+    [
+     "result",
+     "pop"
+    ],
+    [
+     "screen",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Proof posts show official numbers or your own honest results, never fake screenshots.",
+   "show": {
+    "type": "myth",
+    "myth": "Screenshots of big payouts",
+    "myth_word": "fake",
+    "fact": "Official numbers, honest results",
+    "fact_word": "official"
+   },
+   "sfx": [
+    [
+     "official",
+     "swipe"
+    ],
+    [
+     "fake",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Film them in two batches a week, and reuse one long video as three shorts.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "two",
+      "2 batches a week",
+      "phone0",
+      0
+     ],
+     [
+      "reuse",
+      "Reuse 1 long video",
+      "film",
+      -0.3
+     ],
+     [
+      "shorts",
+      "= 3 shorts",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "two",
+     "pop"
+    ],
+    [
+     "reuse",
+     "pop"
+    ],
+    [
+     "shorts",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: ten weak posts lose to five good ones. If you're rushing, post less, not worse.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "weak",
+      "10 weak < 5 good",
+      true
+     ],
+     [
+      "less",
+      "Less, not worse",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "weak",
+     "whip"
+    ],
+    [
+     "less",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [PLAN|plan] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. OpusClip is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Weekly content plan",
+    "keyword": "PLAN",
+    "tool": "OpusClip"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[6|Six] teach, [3|three] tools, [1|one] proof. That's the week.",
+   "show": {
+    "type": "stat_cards",
+    "title": "10 POSTS A WEEK",
+    "cards": [
+     [
+      "six",
+      "6",
+      "teach"
+     ],
+     [
+      "three",
+      "3",
+      "tools"
+     ],
+     [
+      "one",
+      "1",
+      "proof"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "No idea what to post this week, again?",
+   "show": {
+    "type": "stat_cards",
+    "title": "10 POSTS A WEEK",
+    "cards": [
+     [
+      "six",
+      "6",
+      "teach"
+     ],
+     [
+      "three",
+      "3",
+      "tools"
+     ],
+     [
+      "one",
+      "1",
+      "proof"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do you plan ten posts a week without burning out?",
+   "show": {
+    "type": "stat_cards",
+    "title": "10 POSTS A WEEK",
+    "cards": [
+     [
+      "six",
+      "6",
+      "teach"
+     ],
+     [
+      "three",
+      "3",
+      "tools"
+     ],
+     [
+      "one",
+      "1",
+      "proof"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "OpusClip affiliate program",
+   "url": "https://www.opus.pro/affiliate"
+  }
+ ],
+ "thumb": {
+  "headline": "*10 posts*\na week plan",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.3,
+  "sticker": "6 · 3 · 1",
+  "chip": "Teach · tools · proof",
+  "size": 140
+ },
+ "finder_stream": null
+}

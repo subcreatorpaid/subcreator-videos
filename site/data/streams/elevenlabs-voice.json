@@ -1,0 +1,55 @@
+{
+  "slug": "elevenlabs-voice",
+  "title": "ElevenLabs Voice Library",
+  "one_liner": "Share a professional clone of your voice and earn when paid users use it.",
+  "followers": "None. Needs a Professional Voice Clone (Creator plan or higher).",
+  "pay": "Paid only when paid users use your voice; Stripe payout, usually from $10; about 60 countries; W-8/W-9 needed.",
+  "pay_source": "https://elevenlabs.io/docs/eleven-creative/voices/payouts",
+  "steps": [
+    "Get the Creator plan.",
+    "Record clean audio and make a Professional Voice Clone.",
+    "Share it in the Voice Library with a clear description.",
+    "Connect Stripe and fill the tax form."
+  ],
+  "catch": "A paid plan comes first, and most voices earn little; only clone your own voice.",
+  "great_for": [
+    "Clear speakers",
+    "Narrators",
+    "Accents"
+  ],
+  "tools": [
+    "elevenlabs"
+  ],
+  "sources": [
+    [
+      "ElevenLabs docs: Voice Library payouts",
+      "https://elevenlabs.io/docs/eleven-creative/voices/payouts"
+    ],
+    [
+      "ElevenLabs: $22M earned by voice creators (May 2026)",
+      "https://elevenlabs.io/blog/22-million-earned-by-voice-creators-on-elevenlabs"
+    ]
+  ],
+  "video": "",
+  "checked": "2026-10-26",
+  "category": "Digital products",
+  "cat": "prod",
+  "pay_short": "$10",
+  "pay_unit": "usual payout minimum",
+  "start": "Your own voice",
+  "letter": "V",
+  "match": {
+    "enjoy": [
+      "rec"
+    ],
+    "platform_bonus": [],
+    "min_followers": 0,
+    "first_step": "Record 30 minutes of clean audio in a quiet room."
+  },
+  "step_labels": [
+    "Plan",
+    "Clone",
+    "Share",
+    "Payout"
+  ]
+}

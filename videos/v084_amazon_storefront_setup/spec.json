@@ -1,0 +1,348 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v084_amazon_storefront_setup",
+ "title": "Set up your Amazon Influencer storefront",
+ "type": "tool",
+ "format": "",
+ "beats": [
+  {
+   "say": "Amazon has no published follower minimum for its Influencer Program. Here's how to set up the storefront.",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "minimum",
+      "No published minimum",
+      "green"
+     ],
+     [
+      "storefront",
+      "Your storefront",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "minimum",
+     "ding"
+    ],
+    [
+     "storefront",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Apply with your social account. Amazon reviews your content, not just your follower count.",
+   "show": {
+    "type": "page_card",
+    "url": "affiliate-program.amazon.com/influencers",
+    "mark": "a",
+    "title": "Apply",
+    "checked": "Influencer Program",
+    "bullets": [
+     [
+      "apply",
+      "Link your social account"
+     ],
+     [
+      "reviews",
+      "They review your content",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "apply",
+     "pop"
+    ],
+    [
+     "reviews",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Once you're in, build lists by topic: desk setup, travel bag, kitchen basics.",
+   "show": {
+    "type": "tool_demo",
+    "app": "Storefront",
+    "input": "New list",
+    "input_word": "build",
+    "process": "Adding products",
+    "process_word": "topic",
+    "outputs": [
+     [
+      "desk",
+      "Desk setup"
+     ],
+     [
+      "travel",
+      "Travel bag"
+     ],
+     [
+      "kitchen",
+      "Kitchen"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "build",
+     "drop"
+    ],
+    [
+     "desk",
+     "pop"
+    ],
+    [
+     "kitchen",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Add only things you've actually used, and say one line about why for each.",
+   "show": {
+    "type": "checklist",
+    "title": "Each product",
+    "items": [
+     [
+      "used",
+      "You've used it"
+     ],
+     [
+      "why",
+      "One line: why"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "used",
+     "click"
+    ],
+    [
+     "why",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Commission depends on the category. And since April, onsite videos only earn on the exact product promoted.",
+   "show": {
+    "type": "myth",
+    "myth": "Any sale after your video pays",
+    "myth_word": "commission",
+    "fact": "Only the exact product",
+    "fact_word": "exact"
+   },
+   "sfx": [
+    [
+     "commission",
+     "thud"
+    ],
+    [
+     "exact",
+     "swipe"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: payouts need a US bank and tax details, so check your country before you start.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "bank",
+      "US bank + tax info",
+      true
+     ],
+     [
+      "country",
+      "Check your country",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "bank",
+     "whip"
+    ],
+    [
+     "country",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [STOREFRONT|store front] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Amazon Associates is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Amazon storefront setup",
+    "keyword": "STOREFRONT",
+    "tool": "Amazon Associates"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[0|Zero] published follower minimum. That's Amazon's Influencer Program.",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "minimum",
+      "No published minimum",
+      "green"
+     ],
+     [
+      "storefront",
+      "Your storefront",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "People keep asking what you use, and you earn nothing from it?",
+   "show": {
+    "type": "tool_demo",
+    "app": "Storefront",
+    "input": "New list",
+    "input_word": "build",
+    "process": "Adding products",
+    "process_word": "topic",
+    "outputs": [
+     [
+      "desk",
+      "Desk setup"
+     ],
+     [
+      "travel",
+      "Travel bag"
+     ],
+     [
+      "kitchen",
+      "Kitchen"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do you set up an Amazon Influencer storefront?",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "minimum",
+      "No published minimum",
+      "green"
+     ],
+     [
+      "storefront",
+      "Your storefront",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Make Influence: Amazon Associates vs Amazon Influencer Program",
+   "url": "https://www.makeinfluence.com/en/academy/amazon-associates-vs-amazon-influencer-program-whats-actually-different"
+  }
+ ],
+ "thumb": {
+  "headline": "Amazon\n*storefront* setup",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.4,
+  "sticker": "No published minimum",
+  "chip": "Lists by topic",
+  "size": 120
+ },
+ "finder_stream": "amazon-associates"
+}

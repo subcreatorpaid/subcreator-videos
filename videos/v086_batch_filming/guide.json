@@ -1,0 +1,47 @@
+{
+ "title": "Batch filming plan",
+ "subtitle": "One week of videos in 2 hours",
+ "sections": [
+  [
+   "Sunday (40 min)",
+   [
+    "Write all hooks.",
+    "3 bullets per video."
+   ]
+  ],
+  [
+   "Monday (60 min)",
+   [
+    "Same light and spot.",
+    "Film in groups; change shirt between groups."
+   ]
+  ],
+  [
+   "Edit + schedule (20 min+)",
+   [
+    "Edit in one block or use a clipping tool.",
+    "Schedule the week."
+   ]
+  ]
+ ],
+ "steps": [
+  "Block 2 hours this week.",
+  "Write 5 hooks.",
+  "Film all 5 in one go."
+ ],
+ "keyword": "BATCH",
+ "sources": [
+  [
+   "OpusClip affiliate program",
+   "https://www.opus.pro/affiliate"
+  ]
+ ],
+ "video": "Film a week of videos in 2 hours",
+ "tool": {
+  "id": "opusclip",
+  "name": "OpusClip",
+  "earns": "25% of their payments (at least year one)",
+  "signup": "https://www.opus.pro/affiliate",
+  "status": "joined"
+ }
+}

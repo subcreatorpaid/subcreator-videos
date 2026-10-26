@@ -1,0 +1,27 @@
+[
+ {
+  "n": "B1",
+  "slug": "b1_who_we_are",
+  "group": "bio"
+ },
+ {
+  "n": "B2",
+  "slug": "b2_the_website",
+  "group": "bio"
+ },
+ {
+  "n": "B3",
+  "slug": "b3_ai_income_finder",
+  "group": "bio"
+ },
+ {
+  "n": "B4",
+  "slug": "b4_what_to_expect",
+  "group": "bio"
+ },
+ {
+  "n": "T1",
+  "slug": "t1_finder_tutorial",
+  "group": "tutorial"
+ }
+]

@@ -122,7 +122,7 @@ V.append(dict(n=35, slug="v035_ugc_usage_rights", title="UGC: charge more when b
 V.append(dict(n=36, slug="v036_ambassador_scam_urls", title="Fake brand ambassador DMs: check the link", type="value", keyword="SAFE", tool="beehiiv", stream=None,
   beats=[
     B("A brand ambassador DM says you've been selected. Check the link before you click anything.",
-      {"type": "chat", "name": "brand.ambassadors", "mark": "?", "msgs": [["selected", "Congrats! You've been selected 🎉", False], ["link", "Sign up here: brand-partners.co", False]], "mood": 0.2, "hold": "phone0"},
+      {"type": "chat", "name": "brand.ambassadors", "mark": "?", "msgs": [["selected", "Congrats! You've been selected!!", False], ["link", "Sign up here: brand-partners.co", False]], "mood": 0.2, "hold": "phone0"},
       [[0, "whip"], ["selected", "pop"], ["link", "thud"]]),
     B("The FTC warns that fake managers message out of nowhere, flatter you, and name-drop big brands.",
       {"type": "checklist", "title": "FTC warning signs", "items": [["nowhere", "Out of nowhere", True], ["flatter", "Lots of flattery", True], ["name-drop", "Name-drops big brands", True]]},

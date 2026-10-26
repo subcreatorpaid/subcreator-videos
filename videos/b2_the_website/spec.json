@@ -1,0 +1,488 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "b2_the_website",
+ "title": "The free website: subcreatorpaid.com",
+ "type": "bio",
+ "format": "",
+ "beats": [
+  {
+   "say": "Everything from our videos lives on one free website: [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "page_card",
+    "url": "subcreatorpaid.com",
+    "mark": "S",
+    "title": "Sub-Creator Paid",
+    "checked": "Free website",
+    "bullets": [
+     [
+      "videos",
+      "Everything from the videos"
+     ],
+     [
+      "free",
+      "Free",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "videos",
+     "pop"
+    ],
+    [
+     "free",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Income streams: one page each, with the followers needed, what it pays, the catch, and the first steps.",
+   "show": {
+    "type": "page_card",
+    "url": "subcreatorpaid.com/streams",
+    "mark": "S",
+    "title": "One page per stream",
+    "checked": "Income streams",
+    "bullets": [
+     [
+      "followers",
+      "Followers needed"
+     ],
+     [
+      "pays",
+      "What it pays",
+      true
+     ],
+     [
+      "catch",
+      "The catch"
+     ],
+     [
+      "steps",
+      "First steps"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "followers",
+     "pop"
+    ],
+    [
+     "pays",
+     "ding"
+    ],
+    [
+     "catch",
+     "pop"
+    ],
+    [
+     "steps",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Every page lists its sources, and the date we last checked it.",
+   "show": {
+    "type": "checklist",
+    "title": "On every page",
+    "items": [
+     [
+      "sources",
+      "Sources"
+     ],
+     [
+      "date",
+      "Last checked date"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "sources",
+     "click"
+    ],
+    [
+     "date",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The AI income finder: tell it about your account, and it picks the streams that fit you.",
+   "show": {
+    "type": "tool_demo",
+    "app": "AI Income Finder",
+    "input": "cooking videos, 800 followers",
+    "input_word": "tell",
+    "process": "Matching streams",
+    "process_word": "picks",
+    "outputs": [
+     [
+      "fit",
+      "Match 1"
+     ],
+     [
+      "fit",
+      "Match 2"
+     ],
+     [
+      "you",
+      "Match 3"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "tell",
+     "key"
+    ],
+    [
+     "picks",
+     "whoosh"
+    ],
+    [
+     "fit",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The income tracker, to see what you earn each week from each stream.",
+   "show": {
+    "type": "compare",
+    "title": "Income tracker",
+    "cols": [
+     "Stream",
+     "This week"
+    ],
+    "rows": [
+     [
+      "tracker",
+      "Example",
+      [
+       "UGC",
+       "$__"
+      ]
+     ],
+     [
+      "week",
+      "Example",
+      [
+       "Affiliate",
+       "$__"
+      ]
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "tracker",
+     "pop"
+    ],
+    [
+     "week",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Free guides: comment the keyword under any video, or download them on the site.",
+   "show": {
+    "type": "talk",
+    "mood": -0.6,
+    "hold": "laptop",
+    "chips": [
+     [
+      "keyword",
+      "Comment the keyword",
+      null
+     ],
+     [
+      "download",
+      "Or download",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "keyword",
+     "pop"
+    ],
+    [
+     "download",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "And the tools page, with the creator tools we use. Some are affiliate links, and we always say so.",
+   "show": {
+    "type": "checklist",
+    "title": "Tools page",
+    "items": [
+     [
+      "tools",
+      "Tools we use"
+     ],
+     [
+      "affiliate",
+      "Affiliate links labelled"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "tools",
+     "click"
+    ],
+    [
+     "affiliate",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Each stream page also has a comments box. Ask your question there, and we answer it.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "comments",
+      "Comments box",
+      "laptop",
+      0
+     ],
+     [
+      "ask",
+      "Ask your question",
+      "phone0",
+      -0.3
+     ],
+     [
+      "answer",
+      "We answer",
+      "call",
+      -0.8
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "comments",
+     "pop"
+    ],
+    [
+     "ask",
+     "pop"
+    ],
+    [
+     "answer",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: rules change. We re-check pages, but confirm on the official site before you rely on a number.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "change",
+      "Rules change",
+      true
+     ],
+     [
+      "confirm",
+      "Confirm on the official site",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "change",
+     "whip"
+    ],
+    [
+     "confirm",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [GUIDE|guide] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Tools I use are in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Website tour",
+    "keyword": "GUIDE",
+    "tool": null
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "tools",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$0|Zero dollars]. Every tool on our website is free.",
+   "show": {
+    "type": "page_card",
+    "url": "subcreatorpaid.com",
+    "mark": "S",
+    "title": "Sub-Creator Paid",
+    "checked": "Free website",
+    "bullets": [
+     [
+      "videos",
+      "Everything from the videos"
+     ],
+     [
+      "free",
+      "Free",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Lost in creator money advice with no sources?",
+   "show": {
+    "type": "checklist",
+    "title": "On every page",
+    "items": [
+     [
+      "sources",
+      "Sources"
+     ],
+     [
+      "date",
+      "Last checked date"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Where can you check what each income stream really pays?",
+   "show": {
+    "type": "page_card",
+    "url": "subcreatorpaid.com/streams",
+    "mark": "S",
+    "title": "One page per stream",
+    "checked": "Income streams",
+    "bullets": [
+     [
+      "followers",
+      "Followers needed"
+     ],
+     [
+      "pays",
+      "What it pays",
+      true
+     ],
+     [
+      "catch",
+      "The catch"
+     ],
+     [
+      "steps",
+      "First steps"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Sub-Creator Paid website",
+   "url": "https://subcreatorpaid.com/"
+  },
+  {
+   "title": "AI Income Finder",
+   "url": "https://subcreatorpaid.com/#finder"
+  }
+ ],
+ "thumb": {
+  "headline": "The *free* website",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.5,
+  "sticker": "subcreatorpaid.com",
+  "chip": "Streams · finder · tracker",
+  "size": 130
+ },
+ "finder_stream": null
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "patreon",
+  "title": "Patreon memberships",
+  "one_liner": "Fans pay monthly for extras: bonus posts, early videos, behind the scenes.",
+  "followers": "None, but you need fans who want more from you.",
+  "pay": "You set tier prices. New creators since 4 Aug 2025 pay a 10% platform fee plus processing (US card 2.9% + $0.30).",
+  "pay_source": "https://support.patreon.com/hc/en-us/articles/36426991446797",
+  "steps": [
+    "Pick one extra fans already ask for.",
+    "Make one tier at a simple price.",
+    "Prepare 4 posts before launch.",
+    "Announce it in your next 3 videos."
+  ],
+  "catch": "Most creators start with a handful of members; it grows slowly and needs regular posts.",
+  "great_for": [
+    "Art",
+    "Podcasts",
+    "Education"
+  ],
+  "tools": [
+    "stan"
+  ],
+  "sources": [
+    [
+      "Patreon: platform fee for new creators",
+      "https://support.patreon.com/hc/en-us/articles/36426991446797"
+    ],
+    [
+      "Axios: Patreon crosses $10 billion (Aug 2025)",
+      "https://www.axios.com/2025/08/05/patreon-10-billion-creator-economy-ai"
+    ]
+  ],
+  "video": "",
+  "checked": "2026-10-26",
+  "category": "Fan support",
+  "cat": "fans",
+  "pay_short": "10%",
+  "pay_unit": "platform fee",
+  "start": "One tier",
+  "letter": "P",
+  "match": {
+    "enjoy": [
+      "make",
+      "write"
+    ],
+    "platform_bonus": [
+      "yt"
+    ],
+    "min_followers": 0,
+    "first_step": "Write down one extra your fans ask for and plan 4 posts of it."
+  },
+  "step_labels": [
+    "Extra",
+    "Tier",
+    "4 posts",
+    "Announce"
+  ]
+}

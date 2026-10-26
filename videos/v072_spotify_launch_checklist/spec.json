@@ -1,0 +1,357 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v072_spotify_launch_checklist",
+ "title": "Launch Spotify Memberships: checklist",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Your podcast qualifies for Spotify Memberships. Here's how to launch it so people actually join.",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "call",
+    "chips": [
+     [
+      "qualifies",
+      "You qualify",
+      "green"
+     ],
+     [
+      "join",
+      "Make them join",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "qualifies",
+     "ding"
+    ],
+    [
+     "join",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "First, check the bar: a hundred listeners and a hundred hours listened in the last thirty days.",
+   "show": {
+    "type": "progress",
+    "mark": "spotify",
+    "bars": [
+     [
+      "listeners",
+      "Listeners, 30 days",
+      100,
+      100
+     ],
+     [
+      "hours",
+      "Hours, 30 days",
+      100,
+      100
+     ]
+    ],
+    "hold": "call"
+   },
+   "sfx": [
+    [
+     "listeners",
+     "count"
+    ],
+    [
+     "hours",
+     "count"
+    ]
+   ]
+  },
+  {
+   "say": "Plan four bonus episodes before launch, so new members get something right away.",
+   "show": {
+    "type": "checklist",
+    "title": "Before launch",
+    "items": [
+     [
+      "four",
+      "4 bonus episodes ready"
+     ],
+     [
+      "away",
+      "Something to get on day 1"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "four",
+     "click"
+    ],
+    [
+     "away",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Keep it simple: one tier and one price. You keep ninety percent.",
+   "show": {
+    "type": "fee_split",
+    "label": "Example: $5 tier",
+    "mark": "spotify",
+    "parts": [
+     [
+      "one",
+      "Spotify 10%",
+      0.5,
+      "fee"
+     ],
+     [
+      "ninety",
+      "You keep 90%",
+      4.5,
+      "keep"
+     ]
+    ],
+    "source": "Spotify newsroom, Oct 2026"
+   },
+   "sfx": [
+    [
+     "one",
+     "card"
+    ],
+    [
+     "ninety",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Announce it in your next three episodes, and say exactly what members get.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "announce",
+      "Announce it",
+      "call",
+      0
+     ],
+     [
+      "three",
+      "3 episodes in a row",
+      "call",
+      -0.3
+     ],
+     [
+      "exactly",
+      "Say what members get",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "announce",
+     "pop"
+    ],
+    [
+     "three",
+     "pop"
+    ],
+    [
+     "exactly",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: it's live in thirty-four markets, and you only get contact details from fans who opt in.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "call",
+    "items": [
+     [
+      "thirty-four",
+      "34 markets",
+      true
+     ],
+     [
+      "opt",
+      "Contacts only if opted in",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "thirty-four",
+     "whip"
+    ],
+    [
+     "opt",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [LAUNCH|launch] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Riverside is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Spotify Memberships launch",
+    "keyword": "LAUNCH",
+    "tool": "Riverside"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[4|Four] bonus episodes. Have them ready before you launch.",
+   "show": {
+    "type": "checklist",
+    "title": "Before launch",
+    "items": [
+     [
+      "four",
+      "4 bonus episodes ready"
+     ],
+     [
+      "away",
+      "Something to get on day 1"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Turned on memberships, and nobody joined?",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "call",
+    "chips": [
+     [
+      "qualifies",
+      "You qualify",
+      "green"
+     ],
+     [
+      "join",
+      "Make them join",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do you launch podcast memberships on Spotify?",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "call",
+    "chips": [
+     [
+      "qualifies",
+      "You qualify",
+      "green"
+     ],
+     [
+      "join",
+      "Make them join",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Spotify newsroom: Memberships for creators (20 Oct 2026)",
+   "url": "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/"
+  }
+ ],
+ "thumb": {
+  "headline": "Spotify members:\n*launch plan*",
+  "hero": "face",
+  "hold": "call",
+  "mood": -0.4,
+  "sticker": "Keep 90%",
+  "sticker_color": "green",
+  "chip": "Checklist",
+  "size": 110
+ },
+ "finder_stream": "spotify-memberships"
+}

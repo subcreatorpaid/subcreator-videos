@@ -1,0 +1,378 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v099_money_mistakes",
+ "title": "5 money mistakes small creators make",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Five money mistakes small creators make, and the fix for each.",
+   "show": {
+    "type": "talk",
+    "mood": 0.5,
+    "hold": "money",
+    "chips": [
+     [
+      "five",
+      "5 mistakes",
+      "red"
+     ],
+     [
+      "fix",
+      "5 fixes",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "five",
+     "thud"
+    ],
+    [
+     "fix",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "One: waiting for views to pay. Fix: start one direct stream now.",
+   "show": {
+    "type": "myth",
+    "myth": "Wait for views to pay",
+    "myth_word": "waiting",
+    "fact": "Start one direct stream",
+    "fact_word": "direct"
+   },
+   "sfx": [
+    [
+     "waiting",
+     "thud"
+    ],
+    [
+     "direct",
+     "swipe"
+    ]
+   ]
+  },
+  {
+   "say": "Two: paying to join brand programs. Fix: real deals pay you. Three: no email list. Fix: start a free one today.",
+   "show": {
+    "type": "compare",
+    "title": "Mistake → fix",
+    "cols": [
+     "Mistake",
+     "Fix"
+    ],
+    "rows": [
+     [
+      "paying",
+      "2",
+      [
+       "Paying to join",
+       "Real deals pay you"
+      ],
+      [
+       0
+      ]
+     ],
+     [
+      "email",
+      "3",
+      [
+       "No email list",
+       "Start a free one"
+      ],
+      [
+       0
+      ]
+     ]
+    ],
+    "best": 1,
+    "best_word": "today"
+   },
+   "sfx": [
+    [
+     "paying",
+     "pop"
+    ],
+    [
+     "email",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Four: not disclosing affiliate links. Fix: say it in the video. Five: not tracking. Fix: ten minutes every Sunday.",
+   "show": {
+    "type": "compare",
+    "title": "Mistake → fix",
+    "cols": [
+     "Mistake",
+     "Fix"
+    ],
+    "rows": [
+     [
+      "disclosing",
+      "4",
+      [
+       "No disclosure",
+       "Say it in the video"
+      ],
+      [
+       0
+      ]
+     ],
+     [
+      "tracking",
+      "5",
+      [
+       "No tracking",
+       "10 min on Sunday"
+      ],
+      [
+       0
+      ]
+     ]
+    ],
+    "best": 1,
+    "best_word": "sunday"
+   },
+   "sfx": [
+    [
+     "disclosing",
+     "pop"
+    ],
+    [
+     "tracking",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Pick the one you're making right now, and fix just that this week.",
+   "show": {
+    "type": "talk",
+    "mood": -0.6,
+    "hold": "money",
+    "chips": [
+     [
+      "one",
+      "Pick one",
+      null
+     ],
+     [
+      "week",
+      "Fix it this week",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "one",
+     "pop"
+    ],
+    [
+     "week",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: fixing mistakes stops losses, it doesn't create income by itself. Pair it with one stream to test.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "money",
+    "items": [
+     [
+      "losses",
+      "Stops losses",
+      false
+     ],
+     [
+      "pair",
+      "Pair with a stream",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "losses",
+     "whip"
+    ],
+    [
+     "pair",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [MISTAKES|mistakes] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Kit is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "5 money mistakes",
+    "keyword": "MISTAKES",
+    "tool": "Kit"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[5|Five] money mistakes, and one fix each.",
+   "show": {
+    "type": "talk",
+    "mood": 0.5,
+    "hold": "money",
+    "chips": [
+     [
+      "five",
+      "5 mistakes",
+      "red"
+     ],
+     [
+      "fix",
+      "5 fixes",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Working hard as a creator, and still not earning?",
+   "show": {
+    "type": "talk",
+    "mood": 0.5,
+    "hold": "money",
+    "chips": [
+     [
+      "five",
+      "5 mistakes",
+      "red"
+     ],
+     [
+      "fix",
+      "5 fixes",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What money mistakes do small creators make?",
+   "show": {
+    "type": "talk",
+    "mood": 0.5,
+    "hold": "money",
+    "chips": [
+     [
+      "five",
+      "5 mistakes",
+      "red"
+     ],
+     [
+      "fix",
+      "5 fixes",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "FTC: Disclosures 101 for social media influencers",
+   "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+  },
+  {
+   "title": "FTC: bogus brand ambassador managers scam (Oct 2023)",
+   "url": "https://www.ftc.gov/business-guidance/blog/2023/10/influence-peddling-bogus-brand-ambassador-managers-scam-prospective-influencers"
+  },
+  {
+   "title": "Email Vendor Selection: Kit pricing (Aug 2026)",
+   "url": "https://www.emailvendorselection.com/kit-pricing/"
+  }
+ ],
+ "thumb": {
+  "headline": "5 money\n*mistakes*",
+  "hero": "face",
+  "hold": "money",
+  "mood": 0.6,
+  "sticker": "+ the fix",
+  "chip": "Small creator money",
+  "size": 140
+ },
+ "finder_stream": null
+}

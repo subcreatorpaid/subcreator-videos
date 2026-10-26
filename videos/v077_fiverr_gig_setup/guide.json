@@ -1,0 +1,56 @@
+{
+ "title": "Fiverr gig setup",
+ "subtitle": "Title, gallery, packages",
+ "sections": [
+  [
+   "Title",
+   [
+    "'I will [service] for [who]' using buyers' words."
+   ]
+  ],
+  [
+   "Gallery",
+   [
+    "First image: before/after.",
+    "One short sample video."
+   ]
+  ],
+  [
+   "Price",
+   [
+    "Fiverr keeps 20%: price = what you want ÷ 0.8.",
+    "Basic package priced to win first reviews."
+   ]
+  ],
+  [
+   "Affiliate",
+   [
+    "25% of a new buyer's first order + 10% for 12 months."
+   ]
+  ]
+ ],
+ "steps": [
+  "Rewrite your gig title.",
+  "Make a before/after image.",
+  "Set 3 packages."
+ ],
+ "keyword": "GIG",
+ "sources": [
+  [
+   "Wise: how to get paid on Fiverr (20% fee, clearance)",
+   "https://wise.com/us/blog/how-to-get-paid-on-fiverr"
+  ],
+  [
+   "Fiverr affiliates",
+   "https://affiliates.fiverr.com"
+  ]
+ ],
+ "video": "Set up a Fiverr gig that gets found",
+ "tool": {
+  "id": "fiverr",
+  "name": "Fiverr",
+  "earns": "25% of a new buyer's first order + 10% for 12 months",
+  "signup": "https://affiliates.fiverr.com",
+  "status": "waiting for owner login"
+ }
+}

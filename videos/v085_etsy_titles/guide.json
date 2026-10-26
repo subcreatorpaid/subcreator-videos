@@ -1,0 +1,44 @@
+{
+ "title": "Etsy title formula",
+ "subtitle": "What it is + who + format",
+ "sections": [
+  [
+   "Formula",
+   [
+    "[What it is] for [who], [format], [size]"
+   ]
+  ],
+  [
+   "Tags",
+   [
+    "Other ways people search: synonyms, uses, occasions."
+   ]
+  ],
+  [
+   "Fees",
+   [
+    "$0.20 per listing + transaction fee per sale (see Etsy's fees page)."
+   ]
+  ]
+ ],
+ "steps": [
+  "Search your product on Etsy; note the words.",
+  "Rewrite 1 title.",
+  "Check views after 2 weeks."
+ ],
+ "keyword": "ETSY",
+ "sources": [
+  [
+   "Checkout Page: Etsy fees explained",
+   "https://checkoutpage.com/blog/etsy-fees"
+  ]
+ ],
+ "video": "Etsy titles that get found",
+ "tool": {
+  "id": "printify",
+  "name": "Printify",
+  "earns": "5% of product price for 12 months",
+  "signup": "https://help.printify.com/hc/en-us/articles/4483629612817",
+  "status": "to join"
+ }
+}

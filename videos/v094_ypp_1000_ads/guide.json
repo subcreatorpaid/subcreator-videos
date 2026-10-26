@@ -1,0 +1,51 @@
+{
+ "title": "YouTube ad revenue bar",
+ "subtitle": "What you need, step by step",
+ "sections": [
+  [
+   "Bar",
+   [
+    "1,000 subscribers.",
+    "4,000 public watch hours (12 months) or 10M Shorts views (90 days)."
+   ]
+  ],
+  [
+   "Earlier",
+   [
+    "500 subs: memberships, Super Thanks, Shopping (with 3 uploads + 3,000 hours or 3M Shorts views)."
+   ]
+  ],
+  [
+   "Setup",
+   [
+    "2-step verification.",
+    "One AdSense account.",
+    "Review ~1 month."
+   ]
+  ]
+ ],
+ "steps": [
+  "Check YouTube Studio → Earn.",
+  "Note your watch hours.",
+  "Plan 2 longer videos a week."
+ ],
+ "keyword": "ADS",
+ "sources": [
+  [
+   "YouTube Help: expanded YouTube Partner Program",
+   "https://support.google.com/youtube/answer/13429240?hl=en"
+  ],
+  [
+   "Engadget: YouTube Shorts revenue sharing (Sep 2022)",
+   "https://www.engadget.com/youtube-revenue-sharing-shorts-creators-170137275.html"
+  ]
+ ],
+ "video": "YouTube ad money: the 1,000 subscriber bar",
+ "tool": {
+  "id": "vidiq",
+  "name": "vidIQ",
+  "earns": "15-25% lifetime recurring (by sales tier)",
+  "signup": "https://support.vidiq.com/en/articles/7866006",
+  "status": "to join"
+ }
+}
