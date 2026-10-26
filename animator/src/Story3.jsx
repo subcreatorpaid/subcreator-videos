@@ -6,7 +6,7 @@ import {interpolate, Easing} from 'remotion';
 import {C, FONT} from './Short';
 import {RED, ease, pop, glow, FromSide, PopIn, Logo, Face, Phone, Cursor, Stamp, DrawLine, XMark, BlackChip, Chip} from './graphics';
 
-const lerp = (f, a, b, x, y) => interpolate(f, [a, b], [x, y], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+const lerp = (f, a, b, x, y) => interpolate(f, [a, Math.max(b, a + 1)], [x, y], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});  // b <= a happens in hook clips, where the timing words aren't spoken
 const MUTED = '#5F5E58';
 const GREEN_GLOW = '0 0 60px rgba(46,125,79,0.45)';
 const RED_GLOW = '0 18px 60px rgba(217,58,58,0.3)';
@@ -250,7 +250,8 @@ const Timeline = ({f, w, s}) => {
   const n = pts.length;
   const X = (i) => 120 + (n === 1 ? 420 : (i * 840) / (n - 1));
   const lastAt = pts.length ? w(pts[n - 1][0]) : 30;
-  const dot = interpolate(f, pts.map((p) => w(p[0])).concat(n === 1 ? [w(pts[0][0]) + 1] : []), pts.map((_, i) => X(i)).concat(n === 1 ? [X(0)] : []), {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const ins = pts.map((p) => w(p[0])).concat(n === 1 ? [w(pts[0][0]) + 1] : []); for (let i = 1; i < ins.length; i++) ins[i] = Math.max(ins[i], ins[i - 1] + 1);  // strictly increasing, even when words repeat or aren't spoken
+  const dot = interpolate(f, ins, pts.map((_, i) => X(i)).concat(n === 1 ? [X(0)] : []), {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (<>
     <Title f={f} text={s.title} />
     <div style={{position: 'absolute', left: 100, top: 640, width: 880, height: 12, borderRadius: 6, background: C.line}} />

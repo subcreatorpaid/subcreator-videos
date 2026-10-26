@@ -10,7 +10,7 @@ import {SCENES3} from './Story3';
 
 const OV = 8; // overlap between scenes (frames)
 const clean = (s) => String(s).replace(/[^\w$%'-]/g, '').toLowerCase();
-const lerp = (f, a, b, x, y) => interpolate(f, [a, b], [x, y], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+const lerp = (f, a, b, x, y) => interpolate(f, [a, Math.max(b, a + 1)], [x, y], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});  // b <= a happens in hook clips, where the timing words aren't spoken
 
 // ---------- shared bits
 const AdScreen = ({f}) => (

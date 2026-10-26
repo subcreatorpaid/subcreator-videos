@@ -7,7 +7,7 @@ import {interpolate} from 'remotion';
 import {C, FONT} from './Short';
 import {RED, ease, pop, glow, FromSide, PopIn, Logo, Face, Phone, Cursor, Stamp, DrawLine, XMark, BlackChip, Payout} from './graphics';
 
-const lerp = (f, a, b, x, y) => interpolate(f, [a, b], [x, y], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+const lerp = (f, a, b, x, y) => interpolate(f, [a, Math.max(b, a + 1)], [x, y], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});  // b <= a happens in hook clips, where the timing words aren't spoken
 const MUTED = '#5F5E58';
 
 // The creator, placed and scaled (Face size 700 = 933 x 875 px before scaling).
