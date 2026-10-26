@@ -51,3 +51,22 @@ by its number ("break M3 at 0:12"). Frames are at 30 fps. **Enforced** says wher
 - W4. On a change, check only the changed beats with stills, never a whole new render.
 - W5. Every owner note becomes a numbered rule here. Never "make it better": say what and by how much.
 - W6. Deliver: the MP4, the 3 hook clips, the contact sheet, the cue sheet (`<slug>_cue.md`) and every choice made without asking.
+
+## C - Cover / thumbnail (owner rule, 26 Oct 2026)
+- C1. Every video ships with a cover: the `Thumb` composition, set by `"thumb"` in the spec (headline, hero: phone | dashboard | strike, chip). Both workflow modes render it as `<slug>_thumbnail.png`.
+- C2. Headline 2-5 words at 120 px or more, one green focal word, plus one hero visual and one short chip. Everything that matters sits inside the centre 4:5 crop (y 285-1635) so the Instagram grid shows it.
+- C3. Same off-white grid, ink, one green as the videos, so the profile grid looks like one brand. Invented numbers carry "example".
+- C4. Review: check it at phone-grid size (about 360 px wide) for readability, then score it with vidIQ `vidiq_score_thumbnail` when the credit budget allows (10 or more credits).
+
+## S - Style by topic type (owner rule, 26 Oct 2026)
+Pick the beat types from the topic type, keep every rule above. Tag each idea with its type in the beat table.
+| Topic type | Main beat types | Feel |
+|---|---|---|
+| Income stream | phone_ad, rate, platforms, samples | steady, confident |
+| Myth-buster | dashboard ($0), statement + strike, versus, stat | punchy flip, one riser into the big reveal |
+| How-to | flow, samples, features | calmer, more holds, built for saves |
+| Tool video | shot / phone_ad of the tool, features (one real limit), stack (free vs paid) | demo pace, "Affiliate link" on screen |
+| Warning | features (x rows), stamp | serious, quieter music |
+| Comparison | versus, stack | quick alternation between the two sides |
+| Proof | shot with real public-page screenshots + step tracker | slower so people can read |
+Every week, compare saves and shares per topic type and shift the mix toward what works.

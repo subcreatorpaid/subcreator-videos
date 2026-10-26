@@ -1,0 +1,209 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "af_heart",
+  "speed": 0.95
+ },
+ "gap": 0.4,
+ "slug": "20261027_views_wont_pay",
+ "format": "myth-buster: dashboard $0, strike, stat, stacked cards, versus (animator rules v4)",
+ "beats": [
+  {
+   "say": "Your video went viral. So why is it still zero dollars?",
+   "punch": [
+    "zero"
+   ],
+   "show": {
+    "type": "dashboard",
+    "feed": true,
+    "followers": 847,
+    "posts": "1 viral video",
+    "posts_word": "viral",
+    "zero_word": "zero",
+    "earnings": "$0.00",
+    "hook_text": "Went viral. Still *$0*?"
+   }
+  },
+  {
+   "say": "Because views aren't what pays you first. Fans are.",
+   "punch": [
+    "Fans"
+   ],
+   "hold": 1.0,
+   "show": {
+    "type": "statement",
+    "feed": 0.2,
+    "strike_pre": "Not",
+    "strike": "views",
+    "strike_word": "views",
+    "text": "*FANS*",
+    "text_word": "Fans",
+    "size": 90,
+    "acc_scale": 1.9
+   }
+  },
+  {
+   "say": "YouTube Shorts ad money needs one thousand subscribers and [10,000,000|ten million] Shorts views in ninety days.",
+   "key": [
+    "thousand"
+   ],
+   "show": {
+    "type": "stat",
+    "top": "Shorts ad money needs",
+    "big": "10,000,000",
+    "caption": "Shorts views in 90 days + *1,000 subscribers*"
+   }
+  },
+  {
+   "say": "Fan money starts much earlier. YouTube fan funding opens at five hundred subscribers. Spotify Memberships, at one hundred listeners.",
+   "hold": 0.8,
+   "show": {
+    "type": "stack",
+    "cards": [
+     {
+      "node": "Ads",
+      "title": "Shorts ad share",
+      "big": "10M views",
+      "sub": "+ 1,000 subscribers"
+     },
+     {
+      "node": "Fans",
+      "title": "YouTube fan funding",
+      "big": "500 subs",
+      "sub": "+ uploads and watch time"
+     },
+     {
+      "node": "Fans",
+      "title": "Spotify Memberships",
+      "big": "100",
+      "sub": "listeners + 100 hours in 30 days"
+     }
+    ]
+   }
+  },
+  {
+   "say": "So build a small group who would pay, not a big crowd that scrolls.",
+   "riser": true,
+   "punch": [
+    "pay,"
+   ],
+   "hold": 1.0,
+   "show": {
+    "type": "versus",
+    "left": "Views",
+    "left_word": "crowd",
+    "right": "Fans",
+    "right_word": "group",
+    "left_sub": "a crowd that scrolls",
+    "right_sub": "a group that pays",
+    "bottom_pre": "Build a group that",
+    "bottom_word": "pays"
+   }
+  },
+  {
+   "say": "The catch: fans need a reason to pay, like bonus episodes or live chats, and each program has its own country and review rules.",
+   "show": {
+    "type": "features",
+    "heading": "*THE CATCH*",
+    "items": [
+     [
+      "x",
+      "Needs a reason to pay"
+     ],
+     [
+      "clock",
+      "Needs regular posting"
+     ],
+     [
+      "alert",
+      "Country + review rules"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Comment GUIDE, or get it free on [subcreatorpaid.com|sub creator paid dot com]. My tools are in my bio. Follow for more.",
+   "show": {
+    "type": "end_cta",
+    "keyword": "GUIDE",
+    "comment_sub": "free guide, or get it on the site"
+   }
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[10,000,000|Ten million] Shorts views. That's what YouTube ad money asks for.",
+   "punch": [
+    "million]"
+   ],
+   "show": {
+    "type": "stat",
+    "top": "YouTube Shorts ad money needs",
+    "big": "10,000,000",
+    "caption": "views in 90 days",
+    "hook_text": "*10,000,000* views to get paid?"
+   }
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Your video went viral. So why is it still zero dollars?",
+   "punch": [
+    "zero"
+   ],
+   "show": {
+    "type": "dashboard",
+    "feed": true,
+    "followers": 847,
+    "posts": "1 viral video",
+    "posts_word": "viral",
+    "zero_word": "zero",
+    "earnings": "$0.00",
+    "hook_text": "Went viral. Still *$0*?"
+   }
+  },
+  {
+   "label": "C: the question",
+   "say": "Why doesn't going viral pay you?",
+   "show": {
+    "type": "hook",
+    "lines": [
+     "Going viral",
+     "*WON'T PAY*",
+     "you yet. Why?"
+    ]
+   }
+  }
+ ],
+ "sources": [
+  {
+   "title": "YouTube Help: YouTube Partner Program overview & eligibility",
+   "url": "https://support.google.com/youtube/answer/13429240?hl=en"
+  },
+  {
+   "title": "Spotify newsroom: Memberships for creators (20 Oct 2026)",
+   "url": "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/"
+  }
+ ],
+ "main_punch": "fans",
+ "thumb": {
+  "headline": "Viral.\nStill *$0*?",
+  "hero": "dashboard",
+  "rows": [
+   [
+    "Views",
+    "2.4M"
+   ],
+   [
+    "Followers",
+    "847"
+   ]
+  ],
+  "earned": "$0.00",
+  "chip": "Why views don't pay yet",
+  "top": 360
+ }
+}

@@ -1,0 +1,245 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "af_heart",
+  "speed": 0.95
+ },
+ "gap": 0.4,
+ "slug": "20261027_ugc_brands_pay",
+ "format": "income stream: phone ad, versus, price tag, platform cards (animator rules v4)",
+ "beats": [
+  {
+   "say": "Hundreds of followers, posting every week, and still zero dollars?",
+   "punch": [
+    "zero"
+   ],
+   "show": {
+    "type": "dashboard",
+    "feed": true,
+    "followers": 847,
+    "posts": "Every week",
+    "posts_word": "posting",
+    "zero_word": "zero",
+    "earnings": "$0.00",
+    "hook_text": "Hundreds of followers and still *$0*?"
+   }
+  },
+  {
+   "say": "That's not a follower problem.",
+   "punch": [
+    "problem."
+   ],
+   "hold": 1.0,
+   "show": {
+    "type": "statement",
+    "feed": 0.22,
+    "strike_pre": "Not a",
+    "strike": "follower",
+    "strike_word": "follower",
+    "text": "*problem*",
+    "text_word": "problem.",
+    "size": 90,
+    "acc_scale": 1.9
+   }
+  },
+  {
+   "say": "Brands don't pay for followers. They pay for videos.",
+   "punch": [
+    "videos."
+   ],
+   "hold": 1.4,
+   "show": {
+    "type": "versus",
+    "left": "Followers",
+    "left_word": "followers.",
+    "right": "Videos",
+    "right_word": "videos.",
+    "left_sub": "doesn't pay",
+    "right_sub": "what brands pay for"
+   },
+   "riser": true
+  },
+  {
+   "say": "It's called UGC. Short videos you film, that brands run as their own ads. Zero followers needed.",
+   "punch": [
+    "UGC."
+   ],
+   "show": {
+    "type": "phone_ad",
+    "clip": "unbox",
+    "label": "UGC",
+    "label_word": "UGC.",
+    "sticker": "0 followers needed",
+    "sticker_word": "zero"
+   }
+  },
+  {
+   "say": "Beginners usually charge [$50|fifty] to [$400|four hundred dollars] a video.",
+   "hold": 0.8,
+   "show": {
+    "type": "rate",
+    "low": 50,
+    "high": 400,
+    "low_word": "$50",
+    "high_word": "$400",
+    "unit": "per video, beginners",
+    "src": "Insense, Sep 2026"
+   }
+  },
+  {
+   "say": "Where do you find the work? Billo has no follower minimum. [JoinBrands|Join Brands] is free to join. Or sell UGC as a [Fiverr|Fiver] gig.",
+   "show": {
+    "type": "platforms",
+    "heading": "Where to find UGC work",
+    "items": [
+     {
+      "name": "Billo",
+      "domain": "billo.app",
+      "fact": "No follower minimum (US, UK, Canada)",
+      "word": "Billo"
+     },
+     {
+      "name": "JoinBrands",
+      "domain": "joinbrands.com",
+      "fact": "Free to join",
+      "word": "JoinBrands"
+     },
+     {
+      "name": "Fiverr",
+      "domain": "fiverr.com",
+      "fact": "Sell a UGC gig",
+      "word": "Fiverr"
+     }
+    ],
+    "note": "Insense opens up at 1,000+ Instagram followers",
+    "note_word": "gig."
+   }
+  },
+  {
+   "say": "To get hired, you need three samples, all filmed on your phone.",
+   "show": {
+    "type": "samples",
+    "items": [
+     "Sample 1",
+     "Sample 2",
+     "Sample 3"
+    ],
+    "word": "need",
+    "phone_word": "phone.",
+    "chip": "All filmed on your phone"
+   }
+  },
+  {
+   "say": "One rule: label them not sponsored, and never imply a brand hired you.",
+   "show": {
+    "type": "stamp",
+    "clip": "fix",
+    "text": "NOT SPONSORED",
+    "word": "sponsored,",
+    "sub": "Never imply a brand hired you",
+    "sub_word": "never"
+   }
+  },
+  {
+   "say": "The catch: no brand says yes until it sees your samples, and rates vary by niche.",
+   "show": {
+    "type": "features",
+    "heading": "*THE CATCH*",
+    "items": [
+     [
+      "x",
+      "No samples, no yes"
+     ],
+     [
+      "alert",
+      "Rates vary by niche"
+     ],
+     [
+      "check",
+      "So film samples first"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Comment GUIDE, or get it free on [subcreatorpaid.com|sub creator paid dot com]. My tools are in my bio. Follow for more.",
+   "show": {
+    "type": "end_cta",
+    "keyword": "GUIDE",
+    "comment_sub": "free guide, or get it on the site",
+    "tools_word": "tools"
+   }
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "Brands pay beginners [$50|fifty] to [$400|four hundred dollars] a video. Zero followers needed.",
+   "punch": [
+    "zero"
+   ],
+   "show": {
+    "type": "rate",
+    "low": 50,
+    "high": 400,
+    "low_word": "$50",
+    "high_word": "$400",
+    "unit": "per video, beginners",
+    "src": "Insense, Sep 2026",
+    "hook_text": "*$50-$400* a video, *0* followers"
+   }
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Hundreds of followers, posting every week, and still zero dollars?",
+   "punch": [
+    "zero"
+   ],
+   "show": {
+    "type": "dashboard",
+    "feed": true,
+    "followers": 847,
+    "posts": "Every week",
+    "posts_word": "posting",
+    "zero_word": "zero",
+    "earnings": "$0.00",
+    "hook_text": "Hundreds of followers and still *$0*?"
+   }
+  },
+  {
+   "label": "C: the question",
+   "say": "Why do accounts with hundreds of followers still earn zero?",
+   "punch": [
+    "zero?"
+   ],
+   "show": {
+    "type": "dashboard",
+    "feed": true,
+    "followers": 847,
+    "posts": "Every week",
+    "posts_word": "posting",
+    "zero_word": "zero",
+    "earnings": "$0.00",
+    "hook_text": "Hundreds of followers. Why still *$0*?"
+   }
+  }
+ ],
+ "sources": [
+  {
+   "title": "UGC facts library (Billo, JoinBrands, Fiverr, Insense rates)",
+   "url": "site/data/streams/ugc.json"
+  }
+ ],
+ "main_punch": "videos.",
+ "thumb": {
+  "headline": "Brands pay for\n*videos*",
+  "hero": "phone",
+  "sticker": "0 followers",
+  "chip": "Not followers. Here's how.",
+  "size": 128,
+  "top": 330
+ }
+}

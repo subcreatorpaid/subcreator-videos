@@ -2,8 +2,8 @@ import React from 'react';
 import {AbsoluteFill, Audio, Easing, Img, Sequence, interpolate, staticFile, useCurrentFrame} from 'remotion';
 
 // Brand tokens (brain/brand.md)
-const C = {bg: '#F6F5F1', ink: '#151515', muted: '#A9A79F', acc: '#2E7D4F', accSoft: '#E3F0E7', card: '#FFFFFF', line: '#E2DFD7', gold: '#E9C46A'};
-const FONT = '"InterX", Inter, Arial, sans-serif';
+export const C = {bg: '#F6F5F1', ink: '#151515', muted: '#A9A79F', acc: '#2E7D4F', accSoft: '#E3F0E7', card: '#FFFFFF', line: '#E2DFD7', gold: '#E9C46A'};
+export const FONT = '"InterX", Inter, Arial, sans-serif';
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'};
 // Animator rules v4 (docs/animator-rules.md). M2: ease-in-out cubic, no bounce or overshoot.
 // M3: cards and big moves 12 frames (default), small reveals 8.
@@ -16,7 +16,7 @@ const ExampleTag = ({text = 'example', style = {}}) => (
     borderRadius: 8, padding: '2px 10px', ...style}}>{text}</div>
 );
 
-const Fonts = () => (
+export const Fonts = () => (
   <style>{`
     @font-face{font-family:InterX;font-weight:500;src:url(${staticFile('Inter-Medium.otf')})}
     @font-face{font-family:InterX;font-weight:700;src:url(${staticFile('Inter-Bold.otf')})}
@@ -81,7 +81,7 @@ const Icon = ({kind = 'x', size = 54}) => {
 const Steps = ({step, labels = []}) => {
   if (!step) return null;
   return (
-    <div style={{position: 'absolute', top: 110, left: 0, right: 0, display: 'flex', justifyContent: 'center', gap: 14}}>
+    <div style={{position: 'absolute', top: 190, left: 0, right: 0, display: 'flex', justifyContent: 'center', gap: 14}}>
       {labels.map((l, i) => (
         <div key={i} style={{border: `3px solid ${C.ink}`, borderRadius: 10, padding: '8px 16px', fontFamily: FONT, fontWeight: 800, fontSize: 26,
           background: i + 1 === step[0] ? C.acc : i + 1 < step[0] ? C.ink : C.card, color: i + 1 <= step[0] ? '#fff' : C.ink,
@@ -407,7 +407,7 @@ const Versus = ({s, b}) => {
         return k > 0 && k < 1 ? <div key={i} style={{position: 'absolute', left: 740 + i * 30, top: 120 + k * 420, width: 90, height: 90, borderRadius: '50%', background: C.gold,
           border: `4px solid ${C.ink}`, display: 'grid', placeItems: 'center', fontFamily: FONT, fontWeight: 900, fontSize: 48, color: C.ink, transform: `rotate(${k * 200}deg)`}}>$</div> : null; })}
       {f > rf + 22 && <div style={{position: 'absolute', top: 960, left: 0, right: 0, textAlign: 'center', fontFamily: FONT, fontWeight: 900, fontSize: 74, color: C.ink,
-        transform: `scale(${ease(f - rf - 22)})`}}>Brands pay for <span style={{background: C.ink, color: '#fff', borderRadius: 14, padding: '0 18px'}}>videos</span></div>}
+        transform: `scale(${ease(f - rf - 22)})`}}>{s.bottom_pre ?? 'Brands pay for'} <span style={{background: C.ink, color: '#fff', borderRadius: 14, padding: '0 18px'}}>{s.bottom_word ?? 'videos'}</span></div>}
     </AbsoluteFill>
   );
 };
@@ -641,7 +641,38 @@ const Platforms = ({s, b, en = 2}) => {
   );
 };
 
-const VIEWS = {platforms: Platforms, dashboard: Dashboard, versus: Versus, phone_ad: PhoneAd, rate: Rate, samples: Samples, stamp: Stamp, caption_cta: CaptionCta, hook: Hook, flow: Flow, features: Features, statement: Statement, stat: Stat, stack: Stack, fanout: Fanout, orbit: Orbit,
+// The 4-part ending every video uses (brain/brand.md): comment for the guide, the website, the tools (affiliate), follow.
+// Each row is revealed on its spoken word (T2); only the comment keyword is green (V2).
+const EndCta = ({s, b}) => {
+  const f = useCurrentFrame();
+  const rows = [
+    {w: s.comment_word || 'comment', main: <>Comment <span style={{background: C.acc, color: '#fff', borderRadius: 12, padding: '2px 16px'}}>{s.keyword || 'GUIDE'}</span></>, sub: s.comment_sub || 'free guide'},
+    {w: s.site_word || 'subcreatorpaid', main: 'subcreatorpaid.com', sub: s.site_sub || 'everything in one place'},
+    {w: s.tools_word || 'tools', main: s.tools || 'Tools I use', sub: 'link in bio', tag: 'Affiliate links'},
+    {w: s.follow_word || 'follow', main: 'Follow @subcreatorpaid', sub: s.follow_sub || 'one income stream at a time'},
+  ];
+  return (
+    <AbsoluteFill style={{alignItems: 'center', paddingTop: 300, gap: 28}}>
+      {rows.map((r, i) => {
+        const k = ease(f - at(b, r.w, 8 + i * 30));
+        return (
+          <div key={i} style={{opacity: k, transform: `translateY(${(1 - k) * 40}px)`}}>
+            <Card style={{width: 820, padding: '26px 36px', display: 'flex', alignItems: 'center', gap: 26, position: 'relative'}}>
+              <div style={{width: 72, height: 72, borderRadius: 18, background: C.ink, color: '#fff', display: 'grid', placeItems: 'center', fontFamily: FONT, fontWeight: 900, fontSize: 38}}>{i + 1}</div>
+              <div style={{flex: 1}}>
+                <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 52, color: C.ink, letterSpacing: '-0.02em'}}>{r.main}</div>
+                <div style={{fontFamily: FONT, fontWeight: 700, fontSize: 32, color: MUTED}}>{r.sub}</div>
+              </div>
+              {r.tag && <ExampleTag text={r.tag} style={{right: 22, top: 18}} />}
+            </Card>
+          </div>
+        );
+      })}
+    </AbsoluteFill>
+  );
+};
+
+const VIEWS = {end_cta: EndCta, platforms: Platforms, dashboard: Dashboard, versus: Versus, phone_ad: PhoneAd, rate: Rate, samples: Samples, stamp: Stamp, caption_cta: CaptionCta, hook: Hook, flow: Flow, features: Features, statement: Statement, stat: Stat, stack: Stack, fanout: Fanout, orbit: Orbit,
   title_card: TitleCard, shot: Shot, save: Save, follow: Follow};
 
 const Beat = ({b, i}) => {

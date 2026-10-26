@@ -1,0 +1,192 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "af_heart",
+  "speed": 0.95
+ },
+ "gap": 0.4,
+ "slug": "20261027_no_10k_needed",
+ "format": "proof: three official pages with step tracker (animator rules v4)",
+ "beats": [
+  {
+   "say": "Still waiting for ten thousand followers before you earn?",
+   "show": {
+    "type": "hook",
+    "lines": [
+     "Waiting for",
+     "*10,000*",
+     "followers to earn?"
+    ]
+   }
+  },
+  {
+   "say": "You don't need them. Here are three official pages that prove it.",
+   "punch": [
+    "three"
+   ],
+   "hold": 0.8,
+   "show": {
+    "type": "statement",
+    "strike_pre": "You don't need",
+    "strike": "10,000",
+    "strike_word": "need",
+    "text": "*3* official pages",
+    "text_word": "three"
+   }
+  },
+  {
+   "say": "One: YouTube. Fan funding starts at five hundred subscribers, with upload and watch time rules.",
+   "key": [
+    "hundred"
+   ],
+   "show": {
+    "step_labels": [
+     "YouTube",
+     "Spotify",
+     "OpusClip"
+    ],
+    "type": "shot",
+    "image": "assets/yt_help.png",
+    "headline": "YouTube: fan funding from *500 subscribers*",
+    "sticker": "500 subs",
+    "step": [
+     1,
+     3
+    ]
+   }
+  },
+  {
+   "say": "Two: Spotify. Memberships need one hundred listeners and one hundred hours in thirty days.",
+   "key": [
+    "hundred"
+   ],
+   "show": {
+    "step_labels": [
+     "YouTube",
+     "Spotify",
+     "OpusClip"
+    ],
+    "type": "shot",
+    "image": "assets/spotify_news.png",
+    "headline": "Spotify Memberships: *100 listeners*",
+    "sticker": "100 listeners",
+    "step": [
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "say": "Three: OpusClip's affiliate program. Any creator can apply, with no follower minimum.",
+   "punch": [
+    "minimum."
+   ],
+   "hold": 1.0,
+   "show": {
+    "step_labels": [
+     "YouTube",
+     "Spotify",
+     "OpusClip"
+    ],
+    "type": "shot",
+    "image": "assets/opus_affiliate.png",
+    "headline": "OpusClip affiliates: *no follower minimum*",
+    "sticker": "any creator",
+    "step": [
+     3,
+     3
+    ]
+   }
+  },
+  {
+   "say": "The catch: each one still needs approval and real work.",
+   "show": {
+    "type": "statement",
+    "text": "The catch: each one needs",
+    "highlight": "approval + real work"
+   }
+  },
+  {
+   "say": "Comment GUIDE, or get it free on [subcreatorpaid.com|sub creator paid dot com]. My tools are in my bio. Follow for more.",
+   "show": {
+    "type": "end_cta",
+    "keyword": "GUIDE",
+    "comment_sub": "free guide, or get it on the site"
+   }
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[500|Five hundred] subscribers. That's where YouTube fan funding starts.",
+   "punch": [
+    "hundred]"
+   ],
+   "show": {
+    "type": "stat",
+    "top": "YouTube fan funding starts at",
+    "big": "500",
+    "caption": "subscribers, not 10,000",
+    "hook_text": "*500*, not 10,000"
+   }
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Still waiting for ten thousand followers before you earn?",
+   "show": {
+    "type": "hook",
+    "lines": [
+     "Waiting for",
+     "*10,000*",
+     "followers to earn?"
+    ]
+   }
+  },
+  {
+   "label": "C: the question",
+   "say": "Do you really need ten thousand followers to get paid?",
+   "show": {
+    "type": "hook",
+    "lines": [
+     "Do you need",
+     "*10,000*",
+     "followers to get paid?"
+    ]
+   }
+  }
+ ],
+ "sources": [
+  {
+   "title": "YouTube Help: YouTube Partner Program overview & eligibility",
+   "url": "https://support.google.com/youtube/answer/13429240?hl=en"
+  },
+  {
+   "title": "Spotify newsroom: Memberships for creators (20 Oct 2026)",
+   "url": "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/"
+  },
+  {
+   "title": "OpusClip affiliate program",
+   "url": "https://www.opus.pro/affiliate"
+  }
+ ],
+ "main_punch": "minimum.",
+ "snaps": [
+  {
+   "url": "https://www.opus.pro/affiliate",
+   "file": "assets/opus_affiliate.png",
+   "height": 1300
+  }
+ ],
+ "thumb": {
+  "headline": "You don't\nneed *10K*",
+  "hero": "strike",
+  "old": "10,000",
+  "real": "500",
+  "real_sub": "subscribers",
+  "chip": "3 official pages prove it",
+  "top": 470
+ }
+}

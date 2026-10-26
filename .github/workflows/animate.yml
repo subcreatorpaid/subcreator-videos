@@ -1,7 +1,10 @@
-name: Animate video (Remotion trial)
+name: Animate video (Remotion)
 
-# Renders one video spec with the Remotion animator (animator/) instead of the Python renderer.
-# Actions tab > "Animate video (Remotion trial)" > Run workflow > video folder name.
+# Renders one video spec with the Remotion animator (animator/), following docs/animator-rules.md.
+# Actions tab > "Animate video (Remotion)" > Run workflow > video folder name + mode.
+#   stills = one frame per beat for review (rule W2), about 3 min
+#   full   = the video split across 4 machines in parallel + 3 hook clips in parallel (rule H3),
+#            then joined, with the contact sheet and cue sheet (rule W6)
 on:
   workflow_dispatch:
     inputs:
@@ -21,34 +24,33 @@ concurrency:
   group: animate
   cancel-in-progress: false
 
+env:
+  V: ${{ github.event.inputs.video }}
+  MODE: ${{ github.event.inputs.mode || 'stills' }}
+  PARTS: 4
+
 jobs:
-  animate:
+  # 1. Voice, word timings, music/SFX for the video and each hook clip, done once and handed to the render machines.
+  prep:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
-    env:
-      V: ${{ github.event.inputs.video }}
-      MODE: ${{ github.event.inputs.mode || 'stills' }}
+    timeout-minutes: 30
+    outputs:
+      hooks: ${{ steps.p.outputs.hooks }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      - name: System packages (ffmpeg + headless Chrome libraries)
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg libnss3 libdbus-1-3 libatk1.0-0 libgbm-dev libasound2t64 libxrandr2 libxkbcommon-dev \
-            libxfixes3 libxcomposite1 libxdamage1 libatk-bridge2.0-0 libpango-1.0-0 libcairo2 libcups2
       - name: Python packages
-        run: pip install -r requirements.txt
-      - name: Cache the free voice model
+        run: pip install -r requirements.txt faster-whisper pyloudnorm
+      - name: Cache the free voice model and the word-timing model
         uses: actions/cache@v4
         with:
-          path: models
-          key: kokoro-v1.0
+          path: |
+            models
+            ~/.cache/huggingface
+          key: kokoro-v1.0-whisper
       - name: Download the free voice model (first run only)
         run: |
           mkdir -p models
@@ -62,44 +64,134 @@ jobs:
             python renderer/snap.py "videos/$V/spec.json"
           fi
       - name: Voice + word timings + music/SFX
+        id: p
         run: |
-          pip install -q faster-whisper || echo "faster-whisper unavailable: word times will be estimated"
           python animator/prep.py "videos/$V/spec.json"
-      - name: Install Remotion
+          mkdir -p bundle/main && cp -r animator/props.json animator/public animator/stills.txt animator/cue.md bundle/main/
+          n=0
+          if [ "$MODE" = full ] && python3 -c "import json,sys;sys.exit(0 if len(json.load(open('videos/$V/spec.json')).get('hooks',[]))>=3 else 1)"; then
+            for i in 0 1 2; do
+              python animator/prep.py "videos/$V/spec.json" --hook $i
+              mkdir -p bundle/hook_$((i+1)) && cp -r animator/props.json animator/public bundle/hook_$((i+1))/
+            done; n=3
+          elif [ "$MODE" = full ]; then
+            echo "No 3 hooks in the spec: hook clips skipped (rule H3 wants hooks A, B, C)" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "hooks=$n" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prep
+          path: bundle
+          retention-days: 3
+
+  # 2. Render pieces in parallel: stills, or 4 slices of the video + the 3 hook clips, each on its own machine.
+  render:
+    needs: prep
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: true
+      matrix:
+        part: [1, 2, 3, 4, hook_1, hook_2, hook_3]
+    steps:
+      - name: Skip what this mode doesn't need
+        id: skip
+        run: |
+          p="${{ matrix.part }}"; s=false
+          if [ "$MODE" = stills ] && [ "$p" != 1 ]; then s=true; fi
+          case "$p" in hook_*) [ "${{ needs.prep.outputs.hooks }}" = 3 ] || s=true;; esac
+          echo "skip=$s" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        if: steps.skip.outputs.skip == 'false'
+      - uses: actions/setup-node@v4
+        if: steps.skip.outputs.skip == 'false'
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: animator/package-lock.json
+      - name: Headless Chrome libraries
+        if: steps.skip.outputs.skip == 'false'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libnss3 libdbus-1-3 libatk1.0-0 libgbm-dev libasound2t64 libxrandr2 libxkbcommon-dev \
+            libxfixes3 libxcomposite1 libxdamage1 libatk-bridge2.0-0 libpango-1.0-0 libcairo2 libcups2
+      - name: Cache Remotion's browser
+        if: steps.skip.outputs.skip == 'false'
+        uses: actions/cache@v4
+        with:
+          path: animator/node_modules/.remotion
+          key: remotion-browser-${{ hashFiles('animator/package-lock.json') }}
+      - uses: actions/download-artifact@v4
+        if: steps.skip.outputs.skip == 'false'
+        with:
+          name: prep
+          path: bundle
+      - name: Install Remotion and bundle once
+        if: steps.skip.outputs.skip == 'false'
         working-directory: animator
-        run: npm install --no-audit --no-fund
-      - name: Stills, one per beat at its answer moment (rule W2)
+        run: |
+          npm ci --no-audit --no-fund
+          p="${{ matrix.part }}"; src=main; case "$p" in hook_*) src=$p;; esac
+          cp -r ../bundle/$src/props.json ../bundle/$src/public .
+          npx remotion bundle src/index.jsx --out-dir build
+      - name: Render this piece
+        if: steps.skip.outputs.skip == 'false'
         working-directory: animator
+        run: |
+          mkdir -p out; p="${{ matrix.part }}"
+          if [ "$p" = 1 ]; then  # cover / thumbnail (Thumb composition, "thumb" in the spec)
+            npx remotion still build Thumb "out/${V}_thumbnail.png" --props=props.json
+          fi
+          if [ "$MODE" = stills ]; then
+            i=1; for fr in $(cat ../bundle/main/stills.txt); do
+              npx remotion still build Short "out/${V}_still_$(printf %02d $i).png" --props=props.json --frame=$fr; i=$((i+1)); done
+          else
+            case "$p" in
+              hook_*) npx remotion render build Short "out/${V}_${p}.mp4" --props=props.json --codec=h264 --crf=20 --concurrency=100% ;;
+              *) total=$(python3 -c "import json;print(json.load(open('props.json'))['total'])")
+                 a=$(( (p - 1) * total / PARTS )); b=$(( p * total / PARTS - 1 ))
+                 npx remotion render build Short "out/part_${p}.mp4" --props=props.json --frames=$a-$b --muted --codec=h264 --crf=20 --concurrency=100% ;;
+            esac
+          fi
+      - uses: actions/upload-artifact@v4
+        if: steps.skip.outputs.skip == 'false'
+        with:
+          name: piece-${{ matrix.part }}
+          path: animator/out
+          retention-days: 3
+
+  # 3. Join the slices, add the sound, make the cover, contact sheet and cue sheet, publish on the Releases page.
+  finish:
+    needs: render
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: pieces
+      - name: Join and package
         run: |
           mkdir -p out
-          i=1; for fr in $(cat stills.txt); do
-            npx remotion still src/index.jsx Short "out/${V}_still_$(printf %02d $i).png" --props=props.json --frame=$fr; i=$((i+1)); done
-          cp cue.md "out/${V}_cue.md"
-      - name: Render with Remotion
-        if: env.MODE == 'full'
-        working-directory: animator
-        run: |
-          npx remotion render src/index.jsx Short "out/${V}_animated.mp4" --props=props.json --codec=h264 --crf=20 --concurrency=2
-          npx remotion still src/index.jsx Short "out/${V}_animated_cover.png" --props=props.json --frame=0
-          # W3/W6: contact sheet, one frame every 1.5 s
-          n=$(python3 -c "import json;print(-(-json.load(open('props.json'))['total']//45))")
-          ffmpeg -loglevel error -y -i "out/${V}_animated.mp4" -vf "fps=2/3,scale=270:-1,tile=6x$(( (n + 5) / 6 ))" -frames:v 1 "out/${V}_contact_sheet.png"
-      - name: Three 4 s hook clips (rule H3)
-        if: env.MODE == 'full'
-        run: |
-          if python3 -c "import json,sys;sys.exit(0 if len(json.load(open('videos/$V/spec.json')).get('hooks',[]))>=3 else 1)"; then
-            for n in 0 1 2; do
-              python animator/prep.py "videos/$V/spec.json" --hook $n
-              (cd animator && npx remotion render src/index.jsx Short "out/${V}_hook_$((n+1)).mp4" --props=props.json --codec=h264 --crf=20 --concurrency=2)
-            done
-          else
-            echo "No 3 hooks in the spec: skipped (rule H3 wants hooks A, B, C)" >> "$GITHUB_STEP_SUMMARY"
+          cp pieces/prep/main/cue.md "out/${V}_cue.md"
+          cp pieces/piece-1/*.png out/
+          if [ "$MODE" = full ]; then
+            sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+            for p in $(seq 1 $PARTS); do echo "file '$PWD/pieces/piece-$p/part_$p.mp4'"; done > list.txt
+            total=$(python3 -c "import json;print(json.load(open('pieces/prep/main/props.json'))['total'])")
+            ffmpeg -loglevel error -y -f concat -safe 0 -i list.txt -i pieces/prep/main/public/voice.wav -map 0:v -map 1:a \
+              -c:v copy -c:a aac -b:a 192k -t "$(python3 -c "print($total/30)")" -movflags +faststart "out/${V}_animated.mp4"
+            # W3/W6: contact sheet, one frame every 1.5 s
+            n=$(( (total + 44) / 45 ))
+            ffmpeg -loglevel error -y -i "out/${V}_animated.mp4" -vf "fps=2/3,scale=270:-1,tile=6x$(( (n + 5) / 6 ))" -frames:v 1 "out/${V}_contact_sheet.png"
+            cp pieces/piece-hook_*/*.mp4 out/ 2>/dev/null || true
           fi
+          ls -la out
       - name: Publish on the Releases page
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          tag="video-${V}-animated"
-          gh release view "$tag" >/dev/null 2>&1 || gh release create "$tag" --title "${V} (Remotion animator)" --notes "Remotion trial render."
-          gh release upload "$tag" animator/out/* --clobber
+          tag="video-${V}-animated"; [ "$MODE" = stills ] && tag="video-${V}-stills"
+          gh release view "$tag" >/dev/null 2>&1 || gh release create "$tag" --title "${V} (animator, $MODE)" --notes "Private review files. Not posted anywhere."
+          gh release upload "$tag" out/* --clobber
           echo "- Released: $tag" >> "$GITHUB_STEP_SUMMARY"
