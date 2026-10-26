@@ -3,7 +3,7 @@ name: Render videos
 # Runs when you add or change anything inside videos/  (or press "Run workflow" on the Actions tab).
 on:
   push:
-    paths: ["videos/**/spec.json", "videos/**/assets/**"]   # caption-only edits do not re-render
+    paths: ["videos/**/spec.json", "videos/**/sync.json", "videos/**/assets/**"]   # caption-only edits do not re-render
   workflow_dispatch:
     inputs:
       videos:
@@ -63,7 +63,7 @@ jobs:
           elif [ "$EVENT" = "workflow_dispatch" ] || [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
             LIST=$(ls videos)
           else
-            LIST=$(git diff --name-only "$BEFORE" "$SHA" | grep -E '^videos/[^/]+/(spec\.json|assets/)' | cut -d/ -f2 | sort -u)
+            LIST=$(git diff --name-only "$BEFORE" "$SHA" | grep -E '^videos/[^/]+/(spec\.json|sync\.json|assets/)' | cut -d/ -f2 | sort -u)
           fi
           echo "list=$(echo $LIST)" >> "$GITHUB_OUTPUT"
           echo "Videos to render: $LIST"
@@ -84,6 +84,12 @@ jobs:
           mkdir -p out
           for v in ${{ steps.pick.outputs.list }}; do
             case "$v" in _*) continue;; esac
+            if [ -f "videos/$v/sync.json" ]; then   # word-synced text-sync format (needs faster-whisper for word times)
+              pip install -q faster-whisper || true
+              echo "::group::$v (sync)"; python renderer/render_sync.py "videos/$v/sync.json" "out/$v"; echo "::endgroup::"
+              echo "- **$v**: $(python -c "import json,glob;d=json.load(open(glob.glob('out/$v/*_render.json')[0]));print(round(d['duration'],1),'s', d['alignment'][0])")" >> "$GITHUB_STEP_SUMMARY"
+              continue
+            fi
             [ -f "videos/$v/spec.json" ] || continue
             echo "::group::$v"
             python renderer/render_list.py "videos/$v/spec.json" "out/$v"
@@ -111,5 +117,5 @@ jobs:
             [ -d "$d" ] || continue
             v=$(basename "$d"); tag="video-$v"
             gh release view "$tag" >/dev/null 2>&1 || gh release create "$tag" --title "$v" --notes "Rendered automatically. Download the MP4 below."
-            gh release upload "$tag" "$d"*.mp4 "$d"*_cover.png --clobber
+            gh release upload "$tag" "$d"*.mp4 "$d"*_cover.png $(ls "$d"*_timings.json 2>/dev/null) --clobber
           done

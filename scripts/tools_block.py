@@ -29,16 +29,15 @@ def apply_to(path):
     t = path.read_text()
     m = re.search(r"subcreatorpaid\.com/go/([a-z0-9-]+)", t) if "_tool_" in path.parent.name else None
     b = block(m.group(1) if m else None)
-    out, sec = [], None
-    for line in t.splitlines():
-        if line.startswith("## "):
-            sec = line[3:].strip()
-        elif sec in ("Instagram", "TikTok", "YouTube Shorts") and line.strip():
-            line = re.sub(r"\s*" + re.escape(MARK) + r".*?subcreatorpaid\.com/links", "", line)  # refresh
-            tags = re.search(r"(\s+#\w+)+\s*$", line)
-            line = (line[:tags.start()] + " " + b + line[tags.start():]) if tags else (line.rstrip() + " " + b)
-        out.append(line)
-    path.write_text("\n".join(out) + "\n")
+    lines = [re.sub(r"\s*" + re.escape(MARK) + r".*?subcreatorpaid\.com/links", "", l) for l in t.splitlines()]  # strip old block
+    secs, sec = {}, None
+    for i, line in enumerate(lines):  # last non-empty line of each target section gets the block (once)
+        if line.startswith("## "): sec = line[3:].strip()
+        elif sec in ("Instagram", "TikTok", "YouTube Shorts") and line.strip(): secs[sec] = i
+    for i in secs.values():
+        line = lines[i]; tags = re.search(r"(\s+#\w+)+\s*$", line)
+        lines[i] = (line[:tags.start()] + " " + b + line[tags.start():]) if tags else (line.rstrip() + " " + b)
+    path.write_text("\n".join(lines) + "\n")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,20 @@
+{
+ "slug": "20261026_sample_textsync_ugc",
+ "format": "text-sync loop (reference sample, not scheduled)",
+ "handle": "@subcreatorpaid",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {"section": "hook", "say": "You're / *reading* / each word / the moment / I say / it.", "card": null, "gap": 0.18},
+  {"section": "shift", "say": "Now / read this.", "card": {"type": "stat", "label": "Followers needed", "big": "0", "sub": "for this income stream"}, "gap": 0.08},
+  {"section": "shift", "say": "Brands pay / creators / with *zero* / followers.", "gap": 0.08},
+  {"section": "shift", "say": "It's called / *UGC.*", "gap": 0.14},
+  {"section": "value", "say": "You film / short videos / brands post / on their / own pages / and ads.", "card": {"type": "stat", "label": "What it is", "big": "UGC", "sub": "short videos brands post as their own"}, "gap": 0.1},
+  {"section": "value", "say": "They judge / your *samples,* / not your / follower count.", "card": {"type": "stat", "label": "Brands judge", "big": "Samples", "sub": "not your follower count"}, "gap": 0.1},
+  {"section": "value", "say": "Beginners / usually charge / [$50|fifty] to / [$400|four hundred dollars] / a video.", "card": {"type": "stat", "label": "Beginner rates", "big": "$50-$400", "sub": "per video (Insense, Sep 2026)"}, "gap": 0.1},
+  {"section": "value", "say": "The *catch:* / no brand / says yes / until it / sees your / samples.", "card": {"type": "stat", "label": "The catch", "big": "Samples first", "sub": "and rates vary by niche and usage rights", "tone": "catch"}, "gap": 0.14},
+  {"section": "payoff", "say": "The three / samples / to film / first, / and where / brands post / paid briefs, / are in / the *caption.*", "card": {"type": "hidden", "title": "In the caption", "rows": ["3 samples to film", "Where to find briefs", "Your first pitch"]}, "gap": 0.08},
+  {"section": "payoff", "say": "Read it / now.", "gap": 0.08},
+  {"section": "payoff", "say": "Because / right now,", "card": null, "gap": 0.04}
+ ]
+}
