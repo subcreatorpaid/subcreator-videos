@@ -36,7 +36,7 @@ export async function onRequestPost({ request, env }) {
       if (!synced) return json({ ok: false, message: "Something went wrong. Please try again in a minute." }, 500);
     }
   }
-  return json({ ok: true, message: synced ? "Check your inbox to confirm, then the guide is on its way."
-                                          : "You're on the list. We'll email you the free guide and one verified income stream each week." });
+  return json({ ok: true, guide_url: "/files/small-creator-income-guide.pdf",
+                 message: "You're on the list. Your free guide is ready to download, and one verified income stream arrives by email each week." });
 }
 export const onRequest = () => json({ ok: false, message: "Use POST" }, 405);

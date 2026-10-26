@@ -40,6 +40,8 @@ Hand-offs always go through files in `brain/` (never "remember it"): researcher 
 | Run log (one line per run) | `brain/log.md` |
 | Accounts and tools (no passwords ever) | `brain/accounts.md` |
 | Verified income streams (facts library) | `site/data/streams/*.json` |
+| Free guide (PDF lead magnet) | `scripts/make_guide.py` -> `site/files/small-creator-income-guide.pdf` (rebuild after fact changes; monthly run) |
+| Link-in-bio page (all profiles) | https://subcreatorpaid.com/links/ (built by `site/build.py`) |
 | Affiliate programs + referral links | `site/data/links.json` |
 | Videos (spec + assets; pushing renders them) | `videos/<slug>/spec.json`; renderer in `renderer/`; workflow `.github/workflows/render.yml` |
 | Website (Cloudflare Pages, builds on every push to main) | `site/build.py`, `functions/api/*` (finder, subscribe, comments on D1) |

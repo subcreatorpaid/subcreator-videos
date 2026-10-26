@@ -206,7 +206,7 @@ section.s{padding-block:84px 10px}
 .side{display:flex;flex-direction:column;gap:18px;align-self:start;position:sticky;top:calc(84px + env(safe-area-inset-top,0px))}.side .card{padding:18px}
 .toolli{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:10px}.toolli a{font-weight:800}
 .tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:15px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-.prose{max-width:70ch}.prose p,.prose li{margin:12px 0;color:#2B2B28}.prose h2{font-size:28px;margin:30px 0 8px;font-weight:900}
+.lbw{max-width:560px;margin:0 auto}.lbhead{text-align:center;margin-bottom:22px}.lbhead .dot{width:56px;height:56px;font-size:28px;margin:0 auto 12px;display:grid;place-items:center;border-radius:50%;background:var(--acc);color:#fff;font-weight:900}.lbbig{width:100%;padding:18px}.card.lb{display:block;padding:16px 18px;margin-top:10px;text-decoration:none;color:var(--ink)}.card.lb b{display:block;font-size:17px}.card.lb span{font-size:14px;color:var(--muted)}.prose{max-width:70ch}.prose p,.prose li{margin:12px 0;color:#2B2B28}.prose h2{font-size:28px;margin:30px 0 8px;font-weight:900}
 .trow{display:grid;grid-template-columns:2fr 1.2fr 1fr auto;gap:8px;align-items:center;margin:6px 0}@media(max-width:600px){.trow{grid-template-columns:1fr 1fr}}
 .cm-box{padding:20px;margin-top:30px}.cm-list{margin:14px 0 6px}.cm-item{border-top:1px solid var(--line);padding:14px 0}.cm-item b{font-size:15px}.cm-item time{color:var(--muted);font-size:13px;margin-left:8px}.cm-item p{margin-top:6px;white-space:pre-wrap}.cm-reply{margin:10px 0 0 14px;padding-left:12px;border-left:3px solid var(--acc)}.cm-form{display:grid;gap:8px;margin-top:10px}.cm-form textarea{resize:vertical;font:500 16px var(--sans)}.lbl{font-weight:700;font-size:14px}.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 footer{margin-top:90px;border-top:1px solid var(--line);background:var(--paper)}
@@ -269,7 +269,7 @@ MODAL = ('<div class="modal" id="modal" hidden role="dialog" aria-modal="true" a
          '<label class="sr" for="em">Email</label><input class="inp" id="em" type="email" placeholder="you@example.com" autocomplete="email">'
          '<p class="err" id="jerr" aria-live="polite"></p><button class="btn primary" type="submit" id="jgo">Send me the guide</button>'
          '<p class="hint">By joining you agree to get our emails. Unsubscribe in one click. See <a href="/privacy/">Privacy</a>.</p></form></div>'
-         '<div class="done" id="mdone" hidden><b>You\'re in.</b><p id="mdmsg">Check your inbox to confirm, then the guide is on its way.</p></div></div></div>')
+         '<div class="done" id="mdone" hidden><b>You\'re in.</b><p id="mdmsg">You\'re on the list.</p><p style="margin-top:14px"><a class="btn primary" id="mdl" href="/files/small-creator-income-guide.pdf" target="_blank" rel="noopener">Download the free guide (PDF)</a></p></div></div></div>')
 
 def write(rel, s):
     p = os.path.join(OUT, rel); os.makedirs(os.path.dirname(p), exist_ok=True); open(p, "w").write(s)
@@ -454,9 +454,26 @@ def build():
     for slug, (t, d, top, body) in simple.items():
         write(f"{slug}/index.html", page(f"/{slug}/", t, d, f'<section class="wrap page">{top}</section><section class="wrap">{body}</section>'))
     write("guide/index.html", page("/guide/", "Free Small Creator Income Guide", "Every way to get paid with under 10k followers.",
-          f'<section class="wrap page"><h1>The Small Creator <em class="s">Income Guide.</em></h1><p class="lead">Every way to get paid with under 10k followers: what each stream pays, what it needs, the catch, and the tools to start.</p>'
-          f'<p style="margin-top:24px"><button class="btn primary js-join" type="button">Send me the guide</button></p></section>'))
+          f'<section class="wrap page"><h1>The Small Creator <em class="s">Income Guide.</em></h1><p class="lead">Every way to get paid with under 10k followers: what each stream pays, what it needs, the catch, and the tools to start. Free PDF, {len(streams)} verified streams, facts checked {e(max(x["checked"] for x in streams))}.</p>'
+          f'<p style="margin-top:24px"><button class="btn primary js-join" type="button">Send me the guide</button></p>'
+          f'<p class="hint" style="margin-top:14px">Join the free list and the download opens straight away. Already joined? <a href="/files/small-creator-income-guide.pdf">Download the PDF</a>.</p></section>'))
+    # ---------- link-in-bio page (used in Instagram, TikTok and YouTube bios)
+    latest = sorted(streams, key=lambda x: x["checked"], reverse=True)[:5]
+    lnk = lambda href, title, sub, extra="": f'<a class="card lb" href="{href}"{extra}><b>{title}</b><span>{sub}</span></a>'
+    tools_live = [p for p in progs.values() if p.get("referral_url")]
+    write("links/index.html", page("/links/", "Sub-Creator Paid links", "The free guide, this week's income streams and the tools from the videos.",
+          '<section class="wrap page lbw"><div class="lbhead"><span class="dot">$</span><h1 style="font-size:34px">Sub-Creator Paid</h1><p class="lead" style="font-size:17px">Verified income streams for creators under 10k.</p></div>'
+          '<button class="btn primary js-join lbbig" type="button">Get the free Small Creator Income Guide</button>'
+          '<p class="eyebrow" style="margin-top:28px">From the videos</p>'
+          + "".join(lnk(f"/streams/{x['slug']}/", e(x["title"]), e(x["one_liner"])) for x in latest)
+          + '<p class="eyebrow" style="margin-top:28px">Tools from the videos</p>'
+          + "".join(lnk(f"/go/{p['id']}/", e(p["name"]) + ' <span class="tag">affiliate</span>', e(p["for"]), ' rel="sponsored noopener"') for p in tools_live)
+          + '<p class="hint" style="margin-top:8px">Links marked affiliate may earn us a commission at no cost to you. <a href="/disclosure/">Disclosure</a></p>'
+          + '<p class="eyebrow" style="margin-top:28px">More</p>' + lnk("/", "Website", "All income streams, the AI income finder and the tracker") + lnk(e(cfg.get("telegram", "/")), "Telegram", "One income stream a day")
+          + '</section>'))
     write("404.html", page("/404", "Page not found", "Page not found.", '<section class="wrap page"><h1>Page not <em class="s">found.</em></h1><p class="lead"><a href="/">Go to the home page</a> or <a href="/streams/">browse income streams</a>.</p></section>'))
+    # ---------- downloadable files (free guide)
+    if os.path.isdir(os.path.join(HERE, "files")): shutil.copytree(os.path.join(HERE, "files"), os.path.join(OUT, "files"), dirs_exist_ok=True)
     # ---------- redirects, headers, sitemap, robots
     redir = "".join(f"/go/{p['id']}/ {p['referral_url'] or p['official_url']} 302\n/go/{p['id']} {p['referral_url'] or p['official_url']} 302\n" for p in progs.values())
     write("_redirects", redir)
@@ -464,7 +481,7 @@ def build():
           "  Strict-Transport-Security: max-age=31536000; includeSubDomains\n"
           "  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cusdis.com https://static.cloudflareinsights.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cusdis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://cusdis.com https://challenges.cloudflare.com; connect-src 'self' https://cusdis.com https://cloudflareinsights.com; base-uri 'self'; form-action 'self'\n"
           "/static/*\n  Cache-Control: public, max-age=86400\n")
-    urls = ["/", "/streams/", "/tools/", "/tracker/", "/blog/", "/guide/", "/about/", "/work-with-us/", "/disclosure/", "/privacy/", "/terms/"] + [f"/streams/{s['slug']}/" for s in streams] + [f"/blog/{p['slug']}/" for p in posts]
+    urls = ["/", "/streams/", "/tools/", "/tracker/", "/blog/", "/guide/", "/links/", "/about/", "/work-with-us/", "/disclosure/", "/privacy/", "/terms/"] + [f"/streams/{s['slug']}/" for s in streams] + [f"/blog/{p['slug']}/" for p in posts]
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>{SITE}{u}</loc><lastmod>{TODAY}</lastmod></url>" for u in urls) + "</urlset>")
     if cfg.get("indexnow_key"): write(f"{cfg['indexnow_key']}.txt", cfg["indexnow_key"])
     write("robots.txt", f"User-agent: *\nAllow: /\nDisallow: /go/\nSitemap: {SITE}/sitemap.xml\n")
