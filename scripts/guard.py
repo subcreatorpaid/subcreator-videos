@@ -130,6 +130,8 @@ def check_videos(links):
                 err(f"videos/{rel}: raw affiliate URL; use subcreatorpaid.com/go/<id>")
         if "/go/" in low and "affiliate" not in low:
             err(f"videos/{rel}: affiliate CTA without an 'affiliate' disclosure")
+        if s.get("renderer") == "animator":
+            check_animator_rules(s, rel)
         cap = spec.parent / "captions.md"
         if cap.exists():
             ct = cap.read_text()
@@ -143,6 +145,23 @@ def check_videos(links):
                     warn(f"videos/{rel}/captions.md: {name} has no 'Tools I use' block (python3 scripts/tools_block.py --apply)")
                 if "/go/" in sec and "commission" not in sec.lower():
                     err(f"videos/{rel}/captions.md: {name} has a /go/ link without a disclosure")
+
+
+def check_animator_rules(s, rel):
+    """docs/animator-rules.md: the parts of rules v4 a spec can break."""
+    beats = s.get("beats", [])
+    punches = sum(len(b.get("punch", [])) for b in beats)
+    if punches > 4:
+        warn(f"videos/{rel}: {punches} punch words (M4: 3-4 per video)")
+    holds = sum(1 for b in beats if b.get("hold"))
+    if holds > 3:
+        warn(f"videos/{rel}: {holds} beats with a hold (P2: only the 2-3 key lines)")
+    if sum(1 for b in beats if b.get("riser")) > 1:
+        warn(f"videos/{rel}: more than one riser (A4)")
+    if (s.get("audio") or {}).get("speed", 0.95) > 1.05:
+        warn(f"videos/{rel}: voice speed above 1.05 (P5)")
+    if len(s.get("hooks", [])) < 3:
+        warn(f"videos/{rel}: fewer than 3 hook variants in 'hooks' (H3)")
 
 
 def check_virality():

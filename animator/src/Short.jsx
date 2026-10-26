@@ -1,10 +1,20 @@
 import React from 'react';
-import {AbsoluteFill, Audio, Img, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Audio, Easing, Img, Sequence, interpolate, staticFile, useCurrentFrame} from 'remotion';
 
 // Brand tokens (brain/brand.md)
 const C = {bg: '#F6F5F1', ink: '#151515', muted: '#A9A79F', acc: '#2E7D4F', accSoft: '#E3F0E7', card: '#FFFFFF', line: '#E2DFD7', gold: '#E9C46A'};
 const FONT = '"InterX", Inter, Arial, sans-serif';
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'};
+// Animator rules v4 (docs/animator-rules.md). M2: ease-in-out cubic, no bounce or overshoot.
+// M3: cards and big moves 12 frames (default), small reveals 8.
+const ease = (t, d = 12) => interpolate(t, [0, d], [0, 1], {...clamp, easing: Easing.inOut(Easing.cubic)});
+const LEADF = 7; // T2: an element tied to a word starts entering 7 frames before the word
+const MUTED = '#5F5E58';
+// V6: invented numbers and names carry a small "example" label
+const ExampleTag = ({text = 'example', style = {}}) => (
+  <div style={{position: 'absolute', fontFamily: FONT, fontWeight: 700, fontSize: 24, color: MUTED, background: C.bg, border: `2px solid ${C.line}`,
+    borderRadius: 8, padding: '2px 10px', ...style}}>{text}</div>
+);
 
 const Fonts = () => (
   <style>{`
@@ -26,10 +36,7 @@ const parse = (s = '') => {
   return out;
 };
 
-const useSpr = (delay = 0, cfg = {damping: 14, mass: 0.7}) => {
-  const f = useCurrentFrame(); const {fps} = useVideoConfig();
-  return spring({frame: f - delay, fps, config: cfg});
-};
+const useSpr = (delay = 0, d = 12) => ease(useCurrentFrame() - delay, typeof d === 'number' ? d : 12);
 
 // Words rise in grey and darken as they are spoken; accent words are green, uppercase and bigger.
 const Words = ({text, start = 0, per = 4, size = 64, weight = 800, align = 'center', accScale = 1.35, color = C.ink, maxWidth = 940}) => {
@@ -71,17 +78,6 @@ const Icon = ({kind = 'x', size = 54}) => {
     fontFamily: FONT, fontWeight: 900, fontSize: size * 0.5, flex: 'none'}}>{g}</div>;
 };
 
-const Sunburst = ({x, y, s = 160, rot = 0}) => {
-  const f = useCurrentFrame();
-  return (
-    <svg width={s} height={s} viewBox="-50 -50 100 100" style={{position: 'absolute', left: x, top: y, transform: `rotate(${rot + f * 0.4}deg)`}}>
-      <g stroke={C.acc} strokeWidth="8" strokeLinecap="round">
-        {[...Array(12)].map((_, i) => { const a = (i * Math.PI) / 6; return <line key={i} x1={Math.cos(a) * 9} y1={Math.sin(a) * 9} x2={Math.cos(a) * 46} y2={Math.sin(a) * 46} />; })}
-      </g><circle r="10" fill={C.acc} />
-    </svg>
-  );
-};
-
 const Steps = ({step, labels = []}) => {
   if (!step) return null;
   return (
@@ -102,7 +98,6 @@ const Hook = ({s, sp}) => {
   const last = lines.length > 1 ? lines[lines.length - 1] : null;
   return (
     <AbsoluteFill style={{justifyContent: 'center', alignItems: 'center', gap: 34, padding: '0 70px'}}>
-      <Sunburst x={-60} y={150} s={260} /><Sunburst x={800} y={1380} s={300} rot={20} />
       {head.map((l, i) => <Words key={i} text={l} start={sp + i * 10} per={3} size={parse(l).some((w) => w.acc) ? 92 : 76} accScale={1.7} weight={800} />)}
       {last && <div style={{marginTop: 18}}><HiBox text={last} delay={sp + head.length * 10 + 14} size={64} /></div>}
     </AbsoluteFill>
@@ -123,7 +118,7 @@ const Flow = ({s, sp, per}) => {
           style={{strokeDasharray: '0.012 0.02', strokeDashoffset: 0, opacity: 1 - draw * 0.9}} />
       </svg>
       {steps.map((t, i) => {
-        const k = spring({frame: f - sp - i * gap, fps: 30, config: {damping: 13}});
+        const k = ease(f - sp - i * gap);
         return (
           <div key={i} style={{position: 'absolute', left: xs[i] - 230, top: ys[i] - 60, width: 460, transform: `scale(${0.6 + 0.4 * k})`, opacity: k}}>
             <div style={{width: 36, height: 36, borderRadius: '50%', background: C.acc, border: `5px solid ${C.ink}`, margin: '0 auto 14px'}} />
@@ -143,7 +138,7 @@ const Features = ({s, sp, per}) => {
       {s.heading && <Words text={s.heading} start={sp} per={2} size={74} weight={900} accScale={1.1} />}
       <div style={{display: 'flex', flexDirection: 'column', gap: 30, marginTop: 20}}>
         {items.map(([ic, t], i) => {
-          const k = spring({frame: f - sp - 8 - i * gap, fps: 30, config: {damping: 15}});
+          const k = ease(f - sp - 8 - i * gap);
           return (
             <div key={i} style={{display: 'flex', alignItems: 'center', gap: 26, transform: `translateX(${(1 - k) * -700}px)`, opacity: Math.min(1, k * 1.4),
               background: C.card, border: `3px solid ${C.ink}`, borderRadius: 18, padding: '22px 28px', boxShadow: `8px 8px 0 ${C.ink}`}}>
@@ -163,12 +158,11 @@ const Statement = ({s, sp, fr, b}) => {
   const n = parse(s.text).length;
   return (
     <AbsoluteFill style={{justifyContent: 'center', alignItems: 'center', gap: 40, padding: '0 80px'}}>
-      <Sunburst x={850} y={1350} s={180} />
       {s.strike && (
         <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 92, color: C.ink, position: 'relative'}}>
           {s.strike_pre || 'Not'}{' '}
           <span style={{position: 'relative', color: C.muted}}>{s.strike}
-            <span style={{position: 'absolute', left: 0, top: '52%', height: 9, background: C.acc, width: `${strikeK * 100}%`, borderRadius: 5}} /></span>
+            <span style={{position: 'absolute', left: 0, top: '52%', height: 9, background: C.ink, width: `${strikeK * 100}%`, borderRadius: 5}} /></span>
         </div>
       )}
       <Words text={s.text} start={s.text_word && b ? at(b, s.text_word) : sp + (s.strike ? 26 : 0)} per={3} size={s.size || 70} accScale={s.acc_scale || 1.45} />
@@ -208,7 +202,7 @@ const Stack = ({s, sp, per}) => {
     <AbsoluteFill>
       <div style={{position: 'absolute', top: 300, left: 0, right: 0, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         {cards.map((c, i) => {
-          const k = spring({frame: f - sp - i * gap, fps: 30, config: {damping: 12}});
+          const k = ease(f - sp - i * gap);
           return (
             <React.Fragment key={i}>
               {i > 0 && <div style={{width: 120 * k, height: 5, background: C.ink}} />}
@@ -222,9 +216,9 @@ const Stack = ({s, sp, per}) => {
         })}
       </div>
       {cards.map((c, i) => {
-        const k = spring({frame: f - sp - i * gap, fps: 30, config: {damping: 11, mass: 0.8}});
+        const k = ease(f - sp - i * gap);
         return (
-          <div key={i} style={{position: 'absolute', left: 150 + i * 24, top: 520 + i * Math.min(300, 1050 / Math.max(1, cards.length)), width: 780, padding: '28px 40px', background: C.card,
+          <div key={i} style={{position: 'absolute', left: 120 + i * 20, top: 520 + i * Math.min(300, 1050 / Math.max(1, cards.length)), width: 740, padding: '28px 40px', background: C.card,
             border: `3px solid ${C.ink}`, borderRadius: 26, boxShadow: `12px 12px 0 ${C.ink}`, transform: `translateY(${(1 - k) * -900}px) rotate(${(i - 1) * 2.2}deg)`}}>
             <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 36, color: C.ink}}>{c.title}</div>
             <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 80, color: i === cards.length - 1 ? C.acc : C.ink, letterSpacing: '-0.03em'}}>{c.big}</div>
@@ -248,7 +242,7 @@ const Fanout = ({s, sp, per}) => {
         {to.map((_, i) => { const k = interpolate(f, [sp + 10 + i * gap, sp + 24 + i * gap], [0, 1], clamp);
           return <line key={i} x1={540} y1={740} x2={540 + (xs[i] - 540) * k} y2={740 + 360 * k} stroke={C.ink} strokeWidth="6" />; })}
       </svg>
-      {to.map((t, i) => { const k = spring({frame: f - sp - 22 - i * gap, fps: 30, config: {damping: 12}});
+      {to.map((t, i) => { const k = ease(f - sp - 22 - i * gap);
         return <div key={i} style={{position: 'absolute', left: xs[i] - 120, top: 1110, width: 240, textAlign: 'center', transform: `scale(${k})`, background: C.card,
           border: `3px solid ${C.ink}`, borderRadius: 18, padding: '18px 8px', fontFamily: FONT, fontWeight: 800, fontSize: 32, boxShadow: `6px 6px 0 ${C.ink}`}}>{t}</div>; })}
       {s.text && <div style={{position: 'absolute', top: 1340, left: 70, right: 70}}><Words text={s.text} start={sp + 40} per={3} size={64} /></div>}
@@ -261,8 +255,8 @@ const Orbit = ({s, sp}) => {
   return (
     <AbsoluteFill>
       <div style={{position: 'absolute', left: 390, top: 560, width: 300, height: 300, borderRadius: '50%', background: C.acc, color: '#fff', display: 'grid',
-        placeItems: 'center', textAlign: 'center', fontFamily: FONT, fontWeight: 900, fontSize: 44, transform: `scale(${spring({frame: f - sp, fps: 30, config: {damping: 12}})})`}}>{s.center}</div>
-      {items.map((t, i) => { const a = (i / items.length) * Math.PI * 2 + f * 0.012; const k = spring({frame: f - sp - 6 - i * 4, fps: 30, config: {damping: 12}});
+        placeItems: 'center', textAlign: 'center', fontFamily: FONT, fontWeight: 900, fontSize: 44, transform: `scale(${ease(f - sp)})`}}>{s.center}</div>
+      {items.map((t, i) => { const a = (i / items.length) * Math.PI * 2 + f * 0.012; const k = ease(f - sp - 6 - i * 4);
         return <div key={i} style={{position: 'absolute', left: 540 + Math.cos(a) * 380 * k - 110, top: 710 + Math.sin(a) * 380 * k - 36, width: 220, textAlign: 'center',
           background: C.card, border: `3px solid ${C.ink}`, borderRadius: 999, padding: '16px 0', fontFamily: FONT, fontWeight: 800, fontSize: 32}}>{t}</div>; })}
       {s.text && <div style={{position: 'absolute', top: 1260, left: 70, right: 70}}><Words text={s.text} start={sp + 20} per={3} size={66} /></div>}
@@ -324,7 +318,7 @@ const Follow = ({s, sp}) => {
       <Words text="make sure you *Follow*" start={sp} per={3} size={56} weight={700} accScale={1} />
       <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 92, color: C.ink, letterSpacing: '-0.03em', textAlign: 'center'}}>Sub-Creator Paid</div>
       <div style={{width: 230, height: 230, borderRadius: '50%', background: C.acc, color: '#fff', display: 'grid', placeItems: 'center', fontFamily: FONT,
-        fontWeight: 900, fontSize: 140, transform: `scale(${k}) translateY(${Math.sin(f / 6) * 6}px)`, boxShadow: '0 24px 40px rgba(46,125,79,.35)'}}>$</div>
+        fontWeight: 900, fontSize: 140, transform: `scale(${k})`, boxShadow: '0 24px 40px rgba(46,125,79,.35)'}}>$</div>
       {s.text && <Words text={s.text} start={sp + 18} per={3} size={56} weight={700} accScale={1.5} />}
     </AbsoluteFill>
   );
@@ -335,7 +329,7 @@ const Follow = ({s, sp}) => {
 const clean = (w) => String(w).toLowerCase().replace(/[^a-z0-9$%'-]/g, '');
 const at = (b, key, fb = 0) => { // local frame where a word starting with `key` is spoken
   const w = (b.words || []).find((x) => clean(x.w).startsWith(clean(key)));
-  return w ? w.f - b.from : (b.speakFrom - b.from) + fb;
+  return w ? w.f - b.from - LEADF : (b.speakFrom - b.from) + fb;
 };
 const Card = ({children, style = {}}) => (
   <div style={{background: C.card, border: `4px solid ${C.ink}`, borderRadius: 28, boxShadow: `12px 12px 0 ${C.ink}`, ...style}}>{children}</div>
@@ -354,24 +348,22 @@ const Lock = ({size = 60}) => (
 );
 const Blur = ({w = 300}) => <div style={{height: 22, width: w, borderRadius: 11, background: '#C9C6BE', filter: 'blur(5px)', marginTop: 10}} />;
 
-const Dashboard = ({s, b, sp}) => {
+const Dashboard = ({s, b, sp, en = 2}) => {
   const f = useCurrentFrame();
   const fz = s.freeze ? 0 : 1;
-  const kin = spring({frame: f - 2, fps: 30, config: {damping: 14}});
-  const cnt = fz * interpolate(f, [sp, sp + 34], [0, 1], {...clamp, easing: (x) => 1 - Math.pow(1 - x, 3)});
+  const kin = ease(f - en);
+  const cnt = en < 0 ? 1 : fz * interpolate(f, [sp, sp + 34], [0, 1], {...clamp, easing: (x) => 1 - Math.pow(1 - x, 3)});
   const fol = Math.round((s.followers || 847) * cnt);
   const pf = at(b, s.posts_word || 'post', 20); const zf = at(b, s.zero_word || 'zero', 40);
-  const kp = fz * spring({frame: f - pf, fps: 30, config: {damping: 13}});
-  const kz = fz * spring({frame: f - zf, fps: 30, config: {damping: 8, mass: 0.7}});
-  const shake = f > zf && f < zf + 10 ? Math.sin(f * 2.3) * 14 * (1 - (f - zf) / 10) : 0;
-  const bubbles = fz ? [0, 1, 2, 3, 4].map((i) => {
-    const t0 = sp + 4 + i * 6; const k = interpolate(f, [t0, t0 + 26], [0, 1], clamp);
-    return k > 0 && k < 1 ? <div key={i} style={{position: 'absolute', right: 110 + (i % 2) * 150, top: 380 - k * 160, opacity: 1 - k, fontFamily: FONT, fontWeight: 800,
-      fontSize: 34, color: C.acc}}>+{[12, 30, 7, 21, 15][i]} followers</div> : null; }) : null;
+  const inst = en < 0; // hook beat: the full dashboard is readable on frame 0 (H1)
+  const kp = inst ? 1 : fz * ease(f - pf);
+  const kz = inst ? 1 : fz * ease(f - zf);
+  const shake = 0; // M2: no shake
+  const bubbles = null; // M1: no extra movers next to the card
   return (
     <AbsoluteFill style={{alignItems: 'center', paddingTop: 440}}>
-      <Sunburst x={-70} y={300} s={220} />
-      <Card style={{width: 860, padding: '40px 50px', transform: `translateY(${(1 - kin) * 300}px)`, opacity: kin}}>
+      <Card style={{width: 860, padding: '40px 50px', position: 'relative', transform: `translateY(${(1 - kin) * 300}px)`, opacity: kin}}>
+        {s.example !== false && <ExampleTag style={{right: 24, top: 22}} />}
         <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 30, letterSpacing: '.14em', color: '#5F5E58'}}>YOUR CREATOR DASHBOARD</div>
         <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: 26}}>
           <span style={{fontFamily: FONT, fontWeight: 700, fontSize: 44, color: C.ink}}>Followers</span>
@@ -397,7 +389,7 @@ const Dashboard = ({s, b, sp}) => {
 const Versus = ({s, b}) => {
   const f = useCurrentFrame();
   const lf = at(b, s.left_word || s.left, 10); const rf = at(b, s.right_word || s.right, 30);
-  const kl = spring({frame: f - lf, fps: 30, config: {damping: 12}}); const kr = spring({frame: f - rf, fps: 30, config: {damping: 10}});
+  const kl = ease(f - lf); const kr = ease(f - rf);
   const strike = interpolate(f, [lf + 8, lf + 16], [0, 1], clamp);
   const side = (label, k, ok, extra) => (
     <Card style={{width: 430, height: 500, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 30,
@@ -415,24 +407,24 @@ const Versus = ({s, b}) => {
         return k > 0 && k < 1 ? <div key={i} style={{position: 'absolute', left: 740 + i * 30, top: 120 + k * 420, width: 90, height: 90, borderRadius: '50%', background: C.gold,
           border: `4px solid ${C.ink}`, display: 'grid', placeItems: 'center', fontFamily: FONT, fontWeight: 900, fontSize: 48, color: C.ink, transform: `rotate(${k * 200}deg)`}}>$</div> : null; })}
       {f > rf + 22 && <div style={{position: 'absolute', top: 960, left: 0, right: 0, textAlign: 'center', fontFamily: FONT, fontWeight: 900, fontSize: 74, color: C.ink,
-        transform: `scale(${spring({frame: f - rf - 22, fps: 30, config: {damping: 10}})})`}}>Brands pay for <span style={{background: C.acc, color: '#fff', borderRadius: 14, padding: '0 18px'}}>videos</span></div>}
+        transform: `scale(${ease(f - rf - 22)})`}}>Brands pay for <span style={{background: C.ink, color: '#fff', borderRadius: 14, padding: '0 18px'}}>videos</span></div>}
     </AbsoluteFill>
   );
 };
 
-const PhoneAd = ({s, b, sp}) => {
+const PhoneAd = ({s, b, sp, en = 2}) => {
   const f = useCurrentFrame();
-  const kp = spring({frame: f - 2, fps: 30, config: {damping: 14}});
+  const kp = ease(f - en);
   const lf = at(b, s.label_word || s.label, 6); const st = at(b, s.sticker_word || 'zero', 50);
   const prog = interpolate(f, [sp, sp + 120], [0, 1], clamp);
-  const ks = spring({frame: f - st, fps: 30, config: {damping: 8}});
+  const ks = ease(f - st);
   return (
     <AbsoluteFill style={{alignItems: 'center', paddingTop: 250}}>
       <div style={{transform: `translateY(${(1 - kp) * 900}px) rotate(-3deg)`, position: 'relative'}}>
         <Phone w={500} h={860}>
           <UgcClip kind={s.clip || 'unbox'} w={468} h={828} />
         </Phone>
-        <div style={{position: 'absolute', right: -150, top: 110, transform: `rotate(10deg) scale(${ks})`, background: C.acc, color: '#fff', border: `4px solid ${C.ink}`,
+        <div style={{position: 'absolute', right: -100, top: 110, transform: `rotate(10deg) scale(${ks})`, background: C.acc, color: '#fff', border: `4px solid ${C.ink}`,
           borderRadius: 18, padding: '16px 24px', fontFamily: FONT, fontWeight: 900, fontSize: 44, boxShadow: `6px 6px 0 ${C.ink}`}}>{s.sticker || '0 followers needed'}</div>
         <div style={{position: 'absolute', left: -110, bottom: 60}}><HiBox text={s.label} delay={lf} size={90} /></div>
       </div>
@@ -440,22 +432,21 @@ const PhoneAd = ({s, b, sp}) => {
   );
 };
 
-const Rate = ({s, b}) => {
+const Rate = ({s, b, en = 2}) => {
   const f = useCurrentFrame();
   const lo = at(b, s.low_word || '$' + s.low, 10); const hi = at(b, s.high_word || '$' + s.high, 30);
-  const k = spring({frame: f - 2, fps: 30, config: {damping: 10}});
-  const swing = Math.sin(f / 7) * 7 * Math.exp(-f / 50);
+  const k = ease(f - en);
+  const swing = 0; // M2: no swing
   const vlo = Math.round(s.low * interpolate(f, [lo, lo + 14], [0, 1], clamp));
   const vhi = Math.round(s.high * interpolate(f, [hi, hi + 18], [0, 1], {...clamp, easing: (x) => 1 - Math.pow(1 - x, 3)}));
   return (
     <AbsoluteFill style={{alignItems: 'center', paddingTop: 300}}>
-      <Sunburst x={780} y={240} s={200} />
       <div style={{width: 6, height: 120, background: C.ink, transform: `scaleY(${k})`, transformOrigin: 'top'}} />
       <div style={{transform: `rotate(${swing}deg) scale(${k})`, transformOrigin: 'top center', position: 'relative'}}>
         <Card style={{width: 820, padding: '70px 40px 50px', textAlign: 'center', borderRadius: 40}}>
           <div style={{position: 'absolute', top: 26, left: '50%', marginLeft: -22, width: 44, height: 44, borderRadius: '50%', border: `6px solid ${C.ink}`, background: C.bg}} />
-          <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 36, letterSpacing: '.14em', color: C.acc}}>{s.label || 'BEGINNER RATES'}</div>
-          <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 170, color: C.ink, letterSpacing: '-0.04em', fontVariantNumeric: 'tabular-nums', lineHeight: 1.1}}>
+          <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 36, letterSpacing: '.14em', color: MUTED}}>{s.label || 'BEGINNER RATES'}</div>
+          <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 140, color: C.ink, letterSpacing: '-0.04em', fontVariantNumeric: 'tabular-nums', lineHeight: 1.1, whiteSpace: 'nowrap'}}>
             ${vlo}<span style={{color: f >= hi ? C.acc : C.line}}>–${vhi}</span></div>
           <div style={{fontFamily: FONT, fontWeight: 700, fontSize: 44, color: C.ink}}>{s.unit || 'per video'}</div>
         </Card>
@@ -468,12 +459,12 @@ const Rate = ({s, b}) => {
 const Samples = ({s, b}) => {
   const f = useCurrentFrame(); const items = s.items || ['Sample 1', 'Sample 2', 'Sample 3'];
   const t0 = at(b, s.word || 'three', 8); const pf = at(b, s.phone_word || 'phone', 50);
-  const kc = spring({frame: f - pf, fps: 30, config: {damping: 9}});
+  const kc = ease(f - pf);
   return (
     <AbsoluteFill style={{alignItems: 'center', paddingTop: 330}}>
       <div style={{display: 'flex', gap: 34}}>
         {items.map((it, i) => {
-          const k = spring({frame: f - t0 - i * 5, fps: 30, config: {damping: 11, mass: 0.8}});
+          const k = ease(f - t0 - i * 5);
           return (
             <div key={i} style={{transform: `translateY(${(1 - k) * -1000}px) rotate(${(i - 1) * 4}deg)`}}>
               <Card style={{width: 270, height: 480, borderRadius: 36, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 20,
@@ -494,12 +485,12 @@ const Samples = ({s, b}) => {
   );
 };
 
-const Stamp = ({s, b}) => {
+const Stamp = ({s, b, en = 2}) => {
   const f = useCurrentFrame();
   const sf = at(b, s.word || 'sponsored', 20);
-  const kc = spring({frame: f - 2, fps: 30, config: {damping: 14}});
+  const kc = ease(f - en);
   const ks = interpolate(f, [sf - 2, sf + 4], [0, 1], {...clamp, easing: (x) => x * x});
-  const shake = f > sf + 3 && f < sf + 12 ? Math.sin(f * 3) * 10 * (1 - (f - sf - 3) / 9) : 0;
+  const shake = 0; // M2: no shake
   const ws = at(b, s.sub_word || 'never', 50);
   return (
     <AbsoluteFill style={{alignItems: 'center', paddingTop: 300}}>
@@ -507,21 +498,21 @@ const Stamp = ({s, b}) => {
         <Card style={{width: 560, height: 700, borderRadius: 40, overflow: 'hidden', position: 'relative', background: `linear-gradient(170deg, ${C.accSoft}, #fff)`}}>
           <UgcClip kind={s.clip || 'fix'} w={552} h={692} />
         </Card>
-        <div style={{position: 'absolute', left: -60, top: 260, transform: `rotate(-14deg) scale(${2.4 - 1.4 * ks})`, opacity: ks, border: `10px solid ${C.acc}`, borderRadius: 18,
-          padding: '14px 34px', fontFamily: FONT, fontWeight: 900, fontSize: 82, color: C.acc, background: 'rgba(255,255,255,.88)', letterSpacing: '.02em', whiteSpace: 'nowrap'}}>{s.text || 'NOT SPONSORED'}</div>
+        <div style={{position: 'absolute', left: -30, top: 260, transform: `rotate(-14deg) scale(${2.4 - 1.4 * ks})`, opacity: ks, border: `10px solid ${C.acc}`, borderRadius: 18,
+          padding: '12px 28px', fontFamily: FONT, fontWeight: 900, fontSize: 64, color: C.acc, background: 'rgba(255,255,255,.88)', letterSpacing: '.02em', whiteSpace: 'nowrap'}}>{s.text || 'NOT SPONSORED'}</div>
       </div>
       <div style={{marginTop: 50, opacity: interpolate(f, [ws, ws + 8], [0, 1], clamp), fontFamily: FONT, fontWeight: 800, fontSize: 46, color: C.ink}}>{s.sub}</div>
     </AbsoluteFill>
   );
 };
 
-const CaptionCta = ({s, b, sp, fr}) => {
+const CaptionCta = ({s, b, sp, fr, en = 2}) => {
   const f = useCurrentFrame();
-  const kp = spring({frame: f - 2, fps: 30, config: {damping: 14}});
+  const kp = ease(f - en);
   const cf = at(b, s.word || 'caption', 40); const svf = at(b, s.save_word || 'save', 80);
   const scroll = interpolate(f, [cf - 10, cf + 14], [0, 1], {...clamp, easing: (x) => 1 - Math.pow(1 - x, 3)});
   const saved = f >= svf;
-  const ks = spring({frame: f - svf, fps: 30, config: {damping: 8}});
+  const ks = ease(f - svf);
   return (
     <AbsoluteFill style={{alignItems: 'center', paddingTop: 230}}>
       <div style={{transform: `translateY(${(1 - kp) * 900}px)`, position: 'relative'}}>
@@ -537,14 +528,14 @@ const CaptionCta = ({s, b, sp, fr}) => {
             <div style={{padding: '0 30px'}}>
               <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 30, color: C.ink}}>@subcreatorpaid <span style={{fontWeight: 600}}>{s.first || 'The list from the video:'}</span></div>
               {(s.rows || []).map((r, i) => {
-                const k = spring({frame: f - cf - 4 - i * 5, fps: 30, config: {damping: 14}});
+                const k = ease(f - cf - 4 - i * 5);
                 return <div key={i} style={{marginTop: 22, opacity: k, transform: `translateX(${(1 - k) * 60}px)`}}>
                   <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 32, color: C.ink}}>{r}</div><Blur w={380 - (i % 2) * 70} /></div>;
               })}
             </div>
           </div>
         </Phone>
-        <div style={{position: 'absolute', right: -120, top: 560, transform: `translateY(${Math.sin(f / 4) * 14}px)`, opacity: scroll}}>
+        <div style={{position: 'absolute', right: -120, top: 560, opacity: scroll}}>
           <svg width="120" height="160" viewBox="0 0 60 80"><path d="M30 4v58M10 44l20 22 20-22" fill="none" stroke={C.acc} strokeWidth="9" strokeLinecap="round" strokeLinejoin="round" /></svg></div>
       </div>
     </AbsoluteFill>
@@ -591,12 +582,12 @@ const UgcClip = ({kind = 'unbox', w = 468, h = 828, t0 = 0}) => {
   return (
     <div style={{position: 'absolute', inset: 0, background: bg}}>
       <div style={{position: 'absolute', top: 70, left: 24, right: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-        <span style={{background: C.ink, color: '#fff', fontFamily: FONT, fontWeight: 800, fontSize: 22, borderRadius: 8, padding: '4px 12px'}}>Ad</span>
-        <span style={{fontFamily: FONT, fontWeight: 700, fontSize: 20, color: '#5F5E58'}}>example UGC</span></div>
+        <span style={{background: C.ink, color: '#fff', fontFamily: FONT, fontWeight: 800, fontSize: 26, borderRadius: 8, padding: '4px 12px'}}>Ad</span>
+        <span style={{fontFamily: FONT, fontWeight: 700, fontSize: 26, color: '#5F5E58'}}>example UGC</span></div>
       <div style={{position: 'absolute', top: 130, left: 24, right: 24, textAlign: 'center'}}>
         <span style={{background: '#fff', fontFamily: FONT, fontWeight: 800, fontSize: 30, color: C.ink, borderRadius: 10, padding: '6px 14px', boxShadow: '0 4px 14px rgba(0,0,0,.08)'}}>{cap}</span></div>
       <div style={{position: 'absolute', top: h * 0.22, left: 0, right: 0, display: 'flex', justifyContent: 'center'}}>{scene}</div>
-      <div style={{position: 'absolute', bottom: 70, left: 30, right: 30, background: C.acc, color: '#fff', textAlign: 'center', fontFamily: FONT, fontWeight: 800, fontSize: 28, borderRadius: 14, padding: '14px 0'}}>Shop now</div>
+      <div style={{position: 'absolute', bottom: 70, left: 30, right: 30, background: C.ink, color: '#fff', textAlign: 'center', fontFamily: FONT, fontWeight: 800, fontSize: 28, borderRadius: 14, padding: '14px 0'}}>Shop now</div>
       <div style={{position: 'absolute', bottom: 40, left: 30, right: 30, height: 6, borderRadius: 3, background: 'rgba(21,21,21,.12)'}}>
         <div style={{width: `${p * 100}%`, height: '100%', borderRadius: 3, background: C.ink}} /></div>
     </div>
@@ -605,11 +596,12 @@ const UgcClip = ({kind = 'unbox', w = 468, h = 828, t0 = 0}) => {
 
 const CHANNELS = [['Baking channel', 'B', '847'], ['Plant care', 'P', '1,204'], ['Study vlogs', 'S', '512'], ['Gaming clips', 'G', '2,309'], ['Thrift flips', 'T', '936'],
   ['Home cafe', 'H', '318'], ['Fitness at 40', 'F', '1,577'], ['Guitar covers', 'G', '689'], ['Budget travel', 'B', '2,041'], ['Pet tricks', 'P', '455'], ['Makeup basics', 'M', '1,330'], ['Coding tips', 'C', '774']];
-const Feed = ({f, o = 0.55}) => {
+const Feed = ({f, o = 0.22}) => {
+  o = Math.min(0.25, o);
   const rowH = 150; const off = (f * 2.2) % (rowH * CHANNELS.length);
   const rows = [...CHANNELS, ...CHANNELS, ...CHANNELS];
   return (
-    <AbsoluteFill style={{overflow: 'hidden', opacity: o, filter: o < 0.4 ? 'blur(4px)' : 'none', WebkitMaskImage: 'linear-gradient(transparent 4%, black 18%, black 78%, transparent 92%)', maskImage: 'linear-gradient(transparent 4%, black 18%, black 78%, transparent 92%)'}}>
+    <AbsoluteFill style={{overflow: 'hidden', opacity: o, filter: 'blur(4px)', WebkitMaskImage: 'linear-gradient(transparent 4%, black 18%, black 78%, transparent 92%)', maskImage: 'linear-gradient(transparent 4%, black 18%, black 78%, transparent 92%)'}}>
       <div style={{position: 'absolute', left: 60, right: 60, top: -off}}>
         {rows.map(([n, l, fol], i) => (
           <div key={i} style={{height: rowH - 22, marginBottom: 22, display: 'flex', alignItems: 'center', gap: 24, background: C.card, border: `3px solid ${C.line}`, borderRadius: 24, padding: '0 28px'}}>
@@ -624,13 +616,13 @@ const Feed = ({f, o = 0.55}) => {
   );
 };
 
-const Platforms = ({s, b}) => {
+const Platforms = ({s, b, en = 2}) => {
   const f = useCurrentFrame(); const items = s.items || [];
   return (
     <AbsoluteFill style={{alignItems: 'center', paddingTop: 300, gap: 34}}>
-      {s.heading && <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 64, color: C.ink, opacity: spring({frame: f - 2, fps: 30, config: {damping: 14}})}}>{s.heading}</div>}
+      {s.heading && <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 64, color: C.ink, opacity: ease(f - en)}}>{s.heading}</div>}
       {items.map((it, i) => {
-        const k = spring({frame: f - at(b, it.word || it.name, 10 + i * 25), fps: 30, config: {damping: 12}});
+        const k = ease(f - at(b, it.word || it.name, 10 + i * 25));
         return (
           <div key={i} style={{transform: `translateX(${(1 - k) * (i % 2 ? 1100 : -1100)}px) rotate(${(i - 1) * 1.5}deg)`}}>
             <Card style={{width: 860, padding: '26px 36px', display: 'flex', alignItems: 'center', gap: 28, background: i === 0 ? C.accSoft : C.card}}>
@@ -639,12 +631,12 @@ const Platforms = ({s, b}) => {
                 <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 54, color: C.ink, letterSpacing: '-0.02em'}}>{it.name}</div>
                 <div style={{fontFamily: FONT, fontWeight: 700, fontSize: 32, color: '#5F5E58'}}>{it.domain}</div>
               </div>
-              <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 28, color: '#fff', background: C.acc, borderRadius: 999, padding: '10px 20px', maxWidth: 300, textAlign: 'center', lineHeight: 1.15}}>{it.fact}</div>
+              <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 28, color: '#fff', background: i === 0 ? C.acc : C.ink, borderRadius: 999, padding: '10px 20px', maxWidth: 300, textAlign: 'center', lineHeight: 1.15}}>{it.fact}</div>
             </Card>
           </div>
         );
       })}
-      {s.note && <div style={{marginTop: 10, fontFamily: FONT, fontWeight: 700, fontSize: 30, color: '#5F5E58', opacity: interpolate(f, [at(b, s.note_word || 'insense', 90), at(b, s.note_word || 'insense', 90) + 8], [0, 1], clamp)}}>{s.note}</div>}
+      {s.note && <div style={{marginTop: 10, fontFamily: FONT, fontWeight: 700, fontSize: 34, color: C.ink, opacity: interpolate(f, [at(b, s.note_word || 'insense', 90), at(b, s.note_word || 'insense', 90) + 8], [0, 1], clamp)}}>{s.note}</div>}
     </AbsoluteFill>
   );
 };
@@ -653,28 +645,46 @@ const VIEWS = {platforms: Platforms, dashboard: Dashboard, versus: Versus, phone
   title_card: TitleCard, shot: Shot, save: Save, follow: Follow};
 
 const Beat = ({b, i}) => {
-  const f = useCurrentFrame(); const {fps} = useVideoConfig();
-  const sp = b.speakFrom - b.from; // local frame where the voice starts
+  const f = useCurrentFrame();
+  const inst = i === 0 && b.show.instant !== false; // H1: the hook graphic is complete and readable on frame 0
+  const sp = inst ? -60 : b.speakFrom - b.from; // local frame where the voice starts
+  const en = inst ? -60 : 2; // local frame where the beat's main element starts entering
   const words = Math.max(1, (b.say || '').split(/\s+/).length);
   const per = (b.speakFrames * 0.8) / Math.max(1, (b.show.items || b.show.steps || b.show.cards || b.show.to || [1]).length);
   const V = VIEWS[b.show.type] || Statement;
-  // camera: whip in from alternating sides, slow push, punch on "punch" words
+  // M5: whip only between beats, alternating direction, 8 frames
   const dir = i % 2 ? -1 : 1;
-  const whip = i === 0 ? 0 : 1 - interpolate(f, [0, 7], [0, 1], {...clamp, easing: (x) => 1 - Math.pow(1 - x, 3)});
-  const push = 1 + 0.04 * interpolate(f, [0, Math.max(1, b.frames)], [0, 1], clamp);
-  let punch = 0, shakeX = 0;
-  (b.words || []).filter((w) => w.p).forEach((w) => { const d = f - (w.f - b.from); if (d >= 0 && d < 14) { punch += 0.07 * Math.exp(-d / 4); if (d < 7) shakeX += Math.sin(d * 2.7) * 9 * (1 - d / 7); } });
+  const whip = i === 0 ? 0 : 1 - ease(f, 8);
+  // M1 + M4: one slow drift (max 3%) that starts after the entrance and is still for the last 18 frames (P3)
+  const push = 1 + 0.03 * interpolate(f, [14, Math.max(15, b.frames - 18)], [0, 1], {...clamp, easing: Easing.inOut(Easing.cubic)});
+  // M4: punch-in only on the video's 3-4 punch words (prep.py caps them): +5% over 12 frames, no shake
+  let punch = 0;
+  (b.words || []).filter((w) => w.p).forEach((w) => { const d = f - (w.f - b.from); if (d >= 0 && d < 12) punch += 0.05 * Math.sin((Math.PI * d) / 12); });
   return (
-    <AbsoluteFill style={{transform: `translateX(${whip * dir * 260 + shakeX}px) scale(${push + punch})`, filter: whip > 0.02 ? `blur(${whip * 14}px)` : 'none',
+    <AbsoluteFill style={{transform: `translateX(${whip * dir * 260}px) scale(${push + punch})`, filter: whip > 0.02 ? `blur(${whip * 14}px)` : 'none',
       opacity: i === 0 ? 1 : interpolate(f, [0, 4], [0.3, 1], clamp), transformOrigin: '50% 42%'}}>
-      {b.show.feed && <Feed f={f + b.from} o={typeof b.show.feed === 'number' ? b.show.feed : 0.55} />}
+      {/* V5: the feed is still while the hero element enters */}
+      {b.show.feed && <Feed f={b.from + Math.max(0, f - 14)} o={typeof b.show.feed === 'number' ? b.show.feed : 0.22} />}
+      {b.show.feed && <ExampleTag text="example channels" style={{left: 60, top: 1290}} />}
       <Steps step={b.show.step} labels={b.show.step_labels} />
-      <V s={b.show} b={b} sp={sp} per={per} fr={b.frames} words={words} />
+      {inst && b.show.type !== 'hook' && b.show.hook_text !== false && <HookLine text={b.show.hook_text || b.say} />}
+      <V s={b.show} b={b} sp={sp} en={en} per={per} fr={b.frames} words={words} />
     </AbsoluteFill>
   );
 };
 
-// Small word-synced captions in the lower third: up to 3 words per line, the spoken word pops in a green pill.
+// H1/H2: the hook line as on-screen text, readable on frame 0 and on mute. *Key* words get an ink box (green stays on the hero).
+const HookLine = ({text}) => (
+  <div style={{position: 'absolute', top: 215, left: 80, right: 130, display: 'flex', flexWrap: 'wrap', gap: '6px 14px', justifyContent: 'center'}}>
+    {parse(text).map((w, i) => (
+      <span key={i} style={{fontFamily: FONT, fontWeight: 900, fontSize: 64, lineHeight: 1.1, letterSpacing: '-0.02em', color: w.acc ? '#fff' : C.ink,
+        background: w.acc ? C.ink : 'transparent', borderRadius: 8, padding: w.acc ? '0 12px 4px' : 0}}>{w.t}</span>
+    ))}
+  </div>
+);
+
+// T1: word-synced captions, 2-4 words, one style, one position (top edge y = 1380), ink on a soft backing.
+// Only key words (punch words, numbers, prices; prep.py sets `k`) turn green. No pill on every word.
 const Captions = ({beats}) => {
   const f = useCurrentFrame();
   const all = []; beats.forEach((b, bi) => (b.words || []).forEach((w) => all.push({...w, bi})));
@@ -682,7 +692,7 @@ const Captions = ({beats}) => {
   const chunks = []; let cur = [];
   all.forEach((w, i) => {
     const prev = all[i - 1];
-    if (cur.length && (cur.length >= 3 || w.bi !== prev.bi || w.f - prev.f > 14 || /[.,:;?!]$/.test(prev.w))) { chunks.push(cur); cur = []; }
+    if (cur.length && (cur.length >= 4 || (cur.length >= 2 && /[.,:;?!]$/.test(prev.w)) || w.bi !== prev.bi || w.f - prev.f > 14)) { chunks.push(cur); cur = []; }
     cur.push(w);
   });
   if (cur.length) chunks.push(cur);
@@ -691,18 +701,13 @@ const Captions = ({beats}) => {
   const ch = chunks[ci]; const next = chunks[ci + 1];
   const last = ch[ch.length - 1]; const endF = next ? next[0].f : last.f + 30;
   if (f > Math.min(endF, last.f + 30)) return null;
-  const kin = spring({frame: f - ch[0].f, fps: 30, config: {damping: 15, mass: 0.5}});
+  const kin = ease(f - ch[0].f, 6);
   return (
-    <div style={{position: 'absolute', left: 0, right: 0, top: 1385, display: 'flex', justifyContent: 'center', transform: `translateY(${(1 - kin) * 16}px)`, opacity: Math.min(1, kin * 1.4)}}>
-     <div style={{display: 'flex', gap: 12, background: 'rgba(246,245,241,.94)', borderRadius: 22, padding: '8px 12px', boxShadow: '0 6px 24px rgba(21,21,21,.08)'}}>
-      {ch.map((w, i) => {
-        const on = f >= w.f && (i === ch.length - 1 || f < ch[i + 1].f);
-        const k = spring({frame: f - w.f, fps: 30, config: {damping: 12, mass: 0.4}});
-        const said = f >= w.f;
-        return <span key={i} style={{fontFamily: FONT, fontWeight: 800, fontSize: 56, lineHeight: 1, padding: '10px 16px 14px', borderRadius: 14,
-          background: on ? C.acc : 'transparent', color: on ? '#fff' : said ? C.ink : '#B9B6AE', transform: `scale(${on ? 1 + 0.08 * (1 - Math.min(1, k)) + 0.04 : 1})`,
-          textShadow: on ? 'none' : '0 2px 0 rgba(255,255,255,.8)'}}>{String(w.w).replace(/\*/g, '')}</span>;
-      })}
+    <div style={{position: 'absolute', left: 0, right: 0, top: 1380, display: 'flex', justifyContent: 'center', opacity: kin, transform: `translateY(${(1 - kin) * 10}px)`}}>
+     <div style={{display: 'flex', gap: 16, background: 'rgba(246,245,241,.94)', borderRadius: 18, padding: '14px 26px', boxShadow: '0 6px 24px rgba(21,21,21,.08)', maxWidth: 860}}>
+      {ch.map((w, i) => (
+        <span key={i} style={{fontFamily: FONT, fontWeight: 800, fontSize: 56, lineHeight: 1.05, color: w.k ? C.acc : C.ink}}>{String(w.w).replace(/\*/g, '')}</span>
+      ))}
      </div>
     </div>
   );
@@ -714,13 +719,12 @@ export const Short = ({beats = [], handle, captions, total}) => {
     <AbsoluteFill style={{background: C.bg}}>
       <Fonts />
       <AbsoluteFill style={{backgroundImage: `linear-gradient(${C.line} 2px, transparent 2px), linear-gradient(90deg, ${C.line} 2px, transparent 2px)`,
-        backgroundSize: '72px 72px', backgroundPosition: `0 ${-f * 0.6}px`,
+        backgroundSize: '72px 72px', // V5: the grid stays still
         WebkitMaskImage: 'radial-gradient(ellipse 80% 70% at 50% 45%, transparent 30%, black 95%)', maskImage: 'radial-gradient(ellipse 80% 70% at 50% 45%, transparent 30%, black 95%)'}} />
       {beats.map((b, i) => (
         <Sequence key={i} from={b.from} durationInFrames={Math.max(1, b.frames)}><Beat b={b} i={i} /></Sequence>
       ))}
       {captions !== false && <Captions beats={beats} />}
-      <div style={{position: 'absolute', top: 0, left: 0, height: 10, width: `${(f / Math.max(1, total)) * 100}%`, background: C.acc}} />
       <div style={{position: 'absolute', top: 150, left: 0, right: 0, textAlign: 'center', fontFamily: FONT, fontWeight: 700, fontSize: 30, color: '#C9C6BE'}}>{handle}</div>
       <Audio src={staticFile('voice.wav')} />
     </AbsoluteFill>

@@ -5,7 +5,7 @@ description: Sub-Creator Paid Strategist role - turns research into the week's 1
 
 # Strategist
 
-Input: `brain/research/<latest>-weekly.md`, `brain/ideas.json`, `brain/learnings.md`, `brain/goals.json`, the "100 Video Ideas" doc.
+Input: `brain/research/<latest>-weekly.md`, `brain/ideas.json`, `brain/learnings.md`, `brain/goals.json`, the "20 Best Video Ideas" doc.
 Output: `brain/week-plan.json` (next Monday's week) and, on the 1st, `brain/research/<YYYY-MM>-plan.md`.
 Uses: goal-lock, weekly-batch (stages 1-2), stream-scriptor (hooks).
 

@@ -8,6 +8,11 @@ on:
       video:
         description: "Video folder name under videos/"
         required: true
+      mode:
+        description: "stills = one frame per beat for review (W2, ~3 min); full = video + 3 hook clips + contact sheet + cue sheet"
+        type: choice
+        options: [stills, full]
+        default: stills
 
 permissions:
   contents: write
@@ -22,6 +27,7 @@ jobs:
     timeout-minutes: 60
     env:
       V: ${{ github.event.inputs.video }}
+      MODE: ${{ github.event.inputs.mode || 'stills' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -62,17 +68,38 @@ jobs:
       - name: Install Remotion
         working-directory: animator
         run: npm install --no-audit --no-fund
-      - name: Render with Remotion
+      - name: Stills, one per beat at its answer moment (rule W2)
         working-directory: animator
         run: |
           mkdir -p out
+          i=1; for fr in $(cat stills.txt); do
+            npx remotion still src/index.jsx Short "out/${V}_still_$(printf %02d $i).png" --props=props.json --frame=$fr; i=$((i+1)); done
+          cp cue.md "out/${V}_cue.md"
+      - name: Render with Remotion
+        if: env.MODE == 'full'
+        working-directory: animator
+        run: |
           npx remotion render src/index.jsx Short "out/${V}_animated.mp4" --props=props.json --codec=h264 --crf=20 --concurrency=2
-          npx remotion still src/index.jsx Short "out/${V}_animated_cover.png" --props=props.json --frame=45
+          npx remotion still src/index.jsx Short "out/${V}_animated_cover.png" --props=props.json --frame=0
+          # W3/W6: contact sheet, one frame every 1.5 s
+          n=$(python3 -c "import json;print(-(-json.load(open('props.json'))['total']//45))")
+          ffmpeg -loglevel error -y -i "out/${V}_animated.mp4" -vf "fps=2/3,scale=270:-1,tile=6x$(( (n + 5) / 6 ))" -frames:v 1 "out/${V}_contact_sheet.png"
+      - name: Three 4 s hook clips (rule H3)
+        if: env.MODE == 'full'
+        run: |
+          if python3 -c "import json,sys;sys.exit(0 if len(json.load(open('videos/$V/spec.json')).get('hooks',[]))>=3 else 1)"; then
+            for n in 0 1 2; do
+              python animator/prep.py "videos/$V/spec.json" --hook $n
+              (cd animator && npx remotion render src/index.jsx Short "out/${V}_hook_$((n+1)).mp4" --props=props.json --codec=h264 --crf=20 --concurrency=2)
+            done
+          else
+            echo "No 3 hooks in the spec: skipped (rule H3 wants hooks A, B, C)" >> "$GITHUB_STEP_SUMMARY"
+          fi
       - name: Publish on the Releases page
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           tag="video-${V}-animated"
           gh release view "$tag" >/dev/null 2>&1 || gh release create "$tag" --title "${V} (Remotion animator)" --notes "Remotion trial render."
-          gh release upload "$tag" animator/out/*.mp4 animator/out/*.png --clobber
+          gh release upload "$tag" animator/out/* --clobber
           echo "- Released: $tag" >> "$GITHUB_STEP_SUMMARY"

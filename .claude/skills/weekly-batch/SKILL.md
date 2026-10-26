@@ -17,7 +17,7 @@ Uses: subcreator-brain, goal-lock, opportunity-check, stream-scriptor, render-re
 | 6 | **Value** - income streams, myths, how-tos (grow followers). Continue the Stream #NN numbering from the Opportunity Sheet. |
 | 3 | **Tool videos** - a tool small creators need, shown working, with an honest limit and a free alternative; CTA = short link `<site>/go/<id>` (affiliate-hub). Prefer programs the owner has joined (referral_url set). |
 | 1 | **Proof** - the owner's own numbers, an experiment, a viewer win, or a comment reply. |
-Pick from the "100 Video Ideas" doc first (its "Ideas that pay you when creators sign up" section for tool videos), then new finds.
+Pick from the "20 Best Video Ideas" doc first, in its order (its "Earns us" column marks the tool videos with an affiliate), then new finds. Keep that list at 20: when an idea is made or dropped, replace it with the best new trending find.
 
 ## Stages - stop for approval after each (unless running unattended)
 1. **Learn** - read the "What works" doc (insights-review) and last week's tracker numbers (affiliate-hub). Check `vidiq_balance` only if a vidIQ voice is planned.

@@ -1,7 +1,7 @@
 {
  "renderer": "animator",
  "slug": "20261029_ugc_animated",
- "format": "animated (Remotion v3) - text-sync structure: pain hook, flip, value, platforms, caption payoff, loop",
+ "format": "animated (animator rules v4) - pain hook, flip, value, platforms, caption payoff, loop",
  "brand": "SUB-CREATOR PAID",
  "handle": "@subcreatorpaid",
  "audio": {
@@ -16,7 +16,6 @@
    "punch": [
     "zero"
    ],
-   "hold": 0.4,
    "show": {
     "type": "dashboard",
     "feed": true,
@@ -24,7 +23,8 @@
     "posts": "Every week",
     "posts_word": "posting",
     "zero_word": "zero",
-    "earnings": "$0.00"
+    "earnings": "$0.00",
+    "hook_text": "Hundreds of followers and still *$0*?"
    }
   },
   {
@@ -59,14 +59,14 @@
     "right_word": "videos.",
     "left_sub": "doesn't pay",
     "right_sub": "what brands pay for"
-   }
+   },
+   "riser": true
   },
   {
    "say": "It's called UGC. Short videos you film, that brands run as their own ads. Zero followers needed.",
    "punch": [
     "UGC."
    ],
-   "hold": 0.4,
    "show": {
     "type": "phone_ad",
     "clip": "unbox",
@@ -78,7 +78,7 @@
   },
   {
    "say": "Beginners usually charge [$50|fifty] to [$400|four hundred dollars] a video.",
-   "hold": 0.5,
+   "hold": 0.8,
    "show": {
     "type": "rate",
     "low": 50,
@@ -91,7 +91,6 @@
   },
   {
    "say": "Where do you find the work? Billo has no follower minimum. [JoinBrands|Join Brands] is free to join. Or sell UGC as a [Fiverr|Fiver] gig.",
-   "hold": 0.5,
    "show": {
     "type": "platforms",
     "heading": "Where to find UGC work",
@@ -121,10 +120,6 @@
   },
   {
    "say": "To get hired, you need three samples, all filmed on your phone.",
-   "punch": [
-    "three"
-   ],
-   "hold": 0.3,
    "show": {
     "type": "samples",
     "items": [
@@ -139,10 +134,6 @@
   },
   {
    "say": "One rule: label them not sponsored, and never imply a brand hired you.",
-   "punch": [
-    "sponsored,"
-   ],
-   "hold": 0.3,
    "show": {
     "type": "stamp",
     "clip": "fix",
@@ -154,7 +145,6 @@
   },
   {
    "say": "The catch: no brand says yes until it sees your samples, and rates vary by niche.",
-   "hold": 0.3,
    "show": {
     "type": "features",
     "heading": "*THE CATCH*",
@@ -176,9 +166,6 @@
   },
   {
    "say": "Which three samples, and how to film each one, are in the caption. Save it,",
-   "punch": [
-    "caption."
-   ],
    "show": {
     "type": "caption_cta",
     "clip": "review",
@@ -201,6 +188,60 @@
     "freeze": true,
     "followers": 847,
     "earnings": "$0.00"
+   }
+  }
+ ],
+ "main_punch": "videos.",
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "Brands pay beginners [$50|fifty] to [$400|four hundred dollars] a video. Zero followers needed.",
+   "punch": [
+    "zero"
+   ],
+   "show": {
+    "type": "rate",
+    "low": 50,
+    "high": 400,
+    "low_word": "$50",
+    "high_word": "$400",
+    "unit": "per video, beginners",
+    "src": "Insense, Sep 2026",
+    "hook_text": "*$50-$400* a video, *0* followers"
+   }
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Hundreds of followers, posting every week, and still zero dollars?",
+   "punch": [
+    "zero"
+   ],
+   "show": {
+    "type": "dashboard",
+    "feed": true,
+    "followers": 847,
+    "posts": "Every week",
+    "posts_word": "posting",
+    "zero_word": "zero",
+    "earnings": "$0.00",
+    "hook_text": "Hundreds of followers and still *$0*?"
+   }
+  },
+  {
+   "label": "C: the question",
+   "say": "Why do accounts with hundreds of followers still earn zero?",
+   "punch": [
+    "zero?"
+   ],
+   "show": {
+    "type": "dashboard",
+    "feed": true,
+    "followers": 847,
+    "posts": "Every week",
+    "posts_word": "posting",
+    "zero_word": "zero",
+    "earnings": "$0.00",
+    "hook_text": "Hundreds of followers. Why still *$0*?"
    }
   }
  ]

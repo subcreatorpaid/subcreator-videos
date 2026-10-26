@@ -34,7 +34,7 @@ Hand-offs always go through files in `brain/` (never "remember it"): researcher 
 | Approvals, safety, compliance rules | `brain/rules.md` |
 | Goal + latest numbers | `brain/goals.json` |
 | This week's plan and status of each post | `brain/week-plan.json` |
-| Idea queue (from comments, research, outliers) | `brain/ideas.json` (+ Claude Docs "100 Video Ideas": https://claude.ai/artifact/SvJ9VwDfNZFKjpde1LyeqQ) |
+| Idea queue (from comments, research, outliers) | `brain/ideas.json` (+ Claude Docs "20 Best Video Ideas" (top 20 trending, in make order): https://claude.ai/artifact/SvJ9VwDfNZFKjpde1LyeqQ) |
 | What works (learned rules) | `brain/learnings.md` |
 | Dashboard data, to-dos, approvals queue | `brain/status.json` -> rendered by `dashboard/build.py` -> Control Room artifact https://claude.ai/artifact/2LBTT8WvBgQ4pf3iYLZ55v |
 | Run log (one line per run) | `brain/log.md` |
@@ -44,6 +44,7 @@ Hand-offs always go through files in `brain/` (never "remember it"): researcher 
 | Link-in-bio page (all profiles) | https://subcreatorpaid.com/links/ (built by `site/build.py`) |
 | Affiliate programs + referral links | `site/data/links.json` |
 | Videos (spec + assets; pushing renders them) | `videos/<slug>/spec.json`; renderer in `renderer/`; workflow `.github/workflows/render.yml` |
+| New videos (animator) and its rules | `animator/` + `docs/animator-rules.md` (rules v4); workflow `.github/workflows/animate.yml` (mode stills or full) |
 | Website (Cloudflare Pages, builds on every push to main) | `site/build.py`, `functions/api/*` (finder, subscribe, comments on D1) |
 | Checks | `scripts/guard.py` (local) and `.github/workflows/guard.yml` (daily live check) |
 | Project history | Claude Docs "Project Summary": https://claude.ai/artifact/LJVKULTZrQCh2xTWuVdfh6 |
@@ -62,4 +63,4 @@ Hand-offs always go through files in `brain/` (never "remember it"): researcher 
 - Website live on subcreatorpaid.com (AI finder on Workers AI, email list + comments on D1 `subcreator-site`, IndexNow done, Search Console verified).
 - Affiliates live: beehiiv, OpusClip, ElevenLabs, Skool. Kit in review. Fiverr waiting for owner login/approval. Stan later.
 - No AI host (owner decision 25 Oct). Videos = kinetic text, Kokoro voice, editor v4.
-- Week of 26 Oct CANCELLED by owner (26 Oct): do not post, schedule or re-render those videos. Everything is remade with animator v3 (`animator/`, base sample `videos/20261029_ugc_animated`). WAIT for the owner's next instruction before making new videos.
+- Week of 26 Oct CANCELLED by owner (26 Oct): do not post, schedule or re-render those videos. Everything is remade with the animator (`animator/`, base sample `videos/20261029_ugc_animated`), following `docs/animator-rules.md` (applied 26 Oct). WAIT for the owner's next instruction before making new videos.

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26 08:00",
+  "updated": "2026-10-26 08:40",
   "updated_by": "secretary",
   "today": [
     {
@@ -8,14 +8,14 @@
       "mins": 2
     },
     {
-      "task": "Read the editing teardown, then say \"apply the rules\" (or what to change)",
-      "link": "https://claude.ai/artifact/XSYVXuCCbfTWsVeFcDuQW4",
-      "mins": 10
-    },
-    {
-      "task": "Tell me the first topics to remake with the animator (pick from 100 Video Ideas)",
+      "task": "Pick the first videos to remake: say \"go\" on ideas 1-10 or swap any",
       "link": "https://claude.ai/artifact/SvJ9VwDfNZFKjpde1LyeqQ",
       "mins": 5
+    },
+    {
+      "task": "Log in to Fiverr Affiliates and paste your link",
+      "link": "https://fiverraffiliates.com/v2/login/",
+      "mins": 2
     }
   ],
   "approvals": [],
