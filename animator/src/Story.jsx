@@ -372,7 +372,75 @@ const SmallGroup = ({f, w}) => {
   </>);
 };
 
-const SCENES = {viral: Viral, views_fans: ViewsFans, ypp: Ypp, fan_ladder: FanLadder, small_group: SmallGroup, counters: Counters, face_strike: FaceStrike, phone_fly: PhoneFly, ugc_explain: UgcExplain, rate3d: Rate, apps: Apps, wall: Wall, stamp_wall: StampScene, catch: Catch, journey: Journey, end_rows: EndCta};
+// ---------- video 3 scenes (you don't need 10K)
+const Wait10k = ({f, w}) => {
+  const p = ease(f - 4, 30);
+  return (<>
+    <FromSide f={f} side="left" style={{left: 70, right: 70, top: 200}}>
+      <div style={{background: '#fff', borderRadius: 40, padding: '36px 44px 44px', boxShadow: glow('0,0,0', 0.12, 70)}}>
+        <div style={{display: 'flex', gap: 16}}><Logo name="instagram" size={64} /><Logo name="tiktok" size={64} /><Logo name="youtube" size={64} /></div>
+        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: 24}}>
+          <div style={{fontWeight: 900, fontSize: 96}}><CountUp f={f - 4} from={0} to={847} d={30} /></div>
+          <div style={{fontWeight: 800, fontSize: 48, color: '#5F5E58'}}>/ 10,000</div>
+        </div>
+        <div style={{height: 34, borderRadius: 17, background: C.line, marginTop: 16, overflow: 'hidden'}}><div style={{width: `${8.5 * p}%`, height: '100%', background: RED, borderRadius: 17}} /></div>
+        <div style={{fontWeight: 700, fontSize: 36, color: '#5F5E58', marginTop: 16}}>followers before you earn?</div>
+      </div>
+    </FromSide>
+    <div style={{position: 'absolute', left: 230, top: 680}}><Face mood={lerp(f, 0, w('earn'), 0.3, 0.9)} f={f} size={520} hold="phone0" /></div>
+  </>);
+};
+
+const ProofIntro = ({f, w}) => {
+  const strike = ease(f - w("don't") + 2, 10);
+  const cards = [['youtube', 'YouTube'], ['spotify', 'Spotify'], [null, 'OpusClip']];
+  return (<>
+    <div style={{position: 'absolute', left: 0, right: 0, top: 170, textAlign: 'center', fontWeight: 900, fontSize: 170, color: strike > 0 ? '#A9A79F' : C.ink}}>
+      <span style={{position: 'relative'}}>10,000<span style={{position: 'absolute', left: -10, top: '50%', height: 22, width: `${strike * 106}%`, background: RED, borderRadius: 11}} /></span>
+    </div>
+    {cards.map(([lg, t], i) => {
+      const p = ease(f - w('three') - i * 4 + 4, 14);
+      return (
+        <div key={t} style={{position: 'absolute', left: 90 + i * 300, top: 470, width: 300, height: 400, opacity: p, borderRadius: 30, background: '#fff', boxShadow: glow('0,0,0', 0.16, 60),
+          transform: `perspective(1600px) translateY(${(1 - p) * 200}px) rotateY(${(i - 1) * -22}deg) rotateZ(${(i - 1) * 4}deg)`, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 22}}>
+          <div style={{position: 'absolute', left: 22, top: 22, width: 54, height: 54, borderRadius: 27, background: C.ink, color: '#fff', fontWeight: 900, fontSize: 30, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>{i + 1}</div>
+          {lg ? <Logo name={lg} size={110} /> : <div style={{width: 110, height: 110, borderRadius: 26, background: C.ink, color: '#fff', fontWeight: 900, fontSize: 50, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Op</div>}
+          <div style={{fontWeight: 900, fontSize: 44}}>{t}</div>
+          <div style={{fontWeight: 700, fontSize: 26, color: '#5F5E58'}}>official page</div>
+        </div>
+      );
+    })}
+    <div style={{position: 'absolute', left: 340, top: 900, transform: 'scale(0.5)', transformOrigin: 'left top'}}><Face mood={-0.6} f={f} size={700} hold={null} /></div>
+  </>);
+};
+
+// An official page (summary card or phone snap) tilted in 3D, the key line called out, the face reacting.
+const Official = ({f, w, s}) => {
+  const p = ease(f - 2, 16);
+  const call = ease(f - w(s.key_word || 'starts') + 4, 12);
+  return (<>
+    <PopIn f={f - 2} style={{left: 70, top: 150}}>
+      <div style={{display: 'flex', alignItems: 'center', gap: 18}}>
+        <div style={{width: 64, height: 64, borderRadius: 32, background: C.ink, color: '#fff', fontWeight: 900, fontSize: 36, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>{s.n}</div>
+        {s.logo ? <Logo name={s.logo} size={72} /> : null}<div style={{fontWeight: 900, fontSize: 56}}>{s.name}</div>
+      </div>
+    </PopIn>
+    {s.phone ? (
+      <Phone w={480} h={790} style={{left: 520, top: 280, opacity: p, transform: `perspective(2200px) rotateY(${-14 + (1 - p) * -40}deg)`}}><Snap src={s.images[0].replace('assets/', 'a_')} /></Phone>
+    ) : (
+      <div style={{position: 'absolute', left: 130, top: 280, width: 820, borderRadius: 30, overflow: 'hidden', opacity: p, boxShadow: glow('0,0,0', 0.18, 80),
+        transform: `perspective(2200px) rotateY(${(1 - p) * 40 - 8}deg) rotateX(6deg) translateX(${(1 - p) * 300}px)`}}>
+        <Img src={staticFile(s.images[0].replace('assets/', 'a_'))} style={{width: '100%', display: 'block'}} />
+      </div>
+    )}
+    <div style={{position: 'absolute', left: s.phone ? 60 : 70, top: s.phone ? 560 : 1080, opacity: call, transform: `scale(${pop(f - w(s.key_word || 'starts') + 4)})`}}>
+      <div style={{background: s.call_green ? C.acc : C.ink, color: '#fff', fontWeight: 900, fontSize: 52, padding: '18px 34px', borderRadius: 26, boxShadow: s.call_green ? '0 0 60px rgba(46,125,79,0.45)' : glow('0,0,0', 0.2, 50), whiteSpace: 'pre-line', maxWidth: 520}}>{s.call}</div>
+    </div>
+    <div style={{position: 'absolute', left: s.phone ? 40 : 700, top: s.phone ? 860 : 1040, transform: 'scale(0.4)', transformOrigin: 'left top', opacity: ease(f - 6, 10)}}><Face mood={-0.7} f={f} size={700} hold="laptop" /></div>
+  </>);
+};
+
+const SCENES = {wait10k: Wait10k, proof_intro: ProofIntro, official: Official, viral: Viral, views_fans: ViewsFans, ypp: Ypp, fan_ladder: FanLadder, small_group: SmallGroup, counters: Counters, face_strike: FaceStrike, phone_fly: PhoneFly, ugc_explain: UgcExplain, rate3d: Rate, apps: Apps, wall: Wall, stamp_wall: StampScene, catch: Catch, journey: Journey, end_rows: EndCta};
 
 const Scene = ({b, i, start, len, last}) => {
   const lf = useCurrentFrame();
