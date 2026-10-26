@@ -176,7 +176,8 @@ jobs:
           cp pieces/prep/main/cue.md "out/${V}_cue.md"
           cp pieces/piece-1/*.png out/
           if [ "$MODE" = full ]; then
-            sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+            # apt mirrors sometimes hang: cap each try at 4 min and retry
+            for i in 1 2 3; do timeout 240 sh -c 'sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg' && break; echo "apt try $i failed"; done
             for p in $(seq 1 $PARTS); do echo "file '$PWD/pieces/piece-$p/part_$p.mp4'"; done > list.txt
             total=$(python3 -c "import json;print(json.load(open('pieces/prep/main/props.json'))['total'])")
             ffmpeg -loglevel error -y -f concat -safe 0 -i list.txt -i pieces/prep/main/public/voice.wav -map 0:v -map 1:a \
