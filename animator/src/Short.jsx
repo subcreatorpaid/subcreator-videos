@@ -156,9 +156,10 @@ const Features = ({s, sp, per}) => {
   );
 };
 
-const Statement = ({s, sp, fr}) => {
+const Statement = ({s, sp, fr, b}) => {
   const f = useCurrentFrame();
-  const strikeK = interpolate(f, [sp + 10, sp + 22], [0, 1], clamp);
+  const st0 = s.strike_word && b ? at(b, s.strike_word) + 4 : sp + 10;
+  const strikeK = interpolate(f, [st0, st0 + 12], [0, 1], clamp);
   const n = parse(s.text).length;
   return (
     <AbsoluteFill style={{justifyContent: 'center', alignItems: 'center', gap: 40, padding: '0 80px'}}>
@@ -170,7 +171,7 @@ const Statement = ({s, sp, fr}) => {
             <span style={{position: 'absolute', left: 0, top: '52%', height: 9, background: C.acc, width: `${strikeK * 100}%`, borderRadius: 5}} /></span>
         </div>
       )}
-      <Words text={s.text} start={sp + (s.strike ? 26 : 0)} per={3} size={70} accScale={1.45} />
+      <Words text={s.text} start={s.text_word && b ? at(b, s.text_word) : sp + (s.strike ? 26 : 0)} per={3} size={s.size || 70} accScale={s.acc_scale || 1.45} />
       {s.highlight && <HiBox text={s.highlight} delay={sp + (s.strike ? 26 : 0) + n * 3 + 10} size={66} />}
     </AbsoluteFill>
   );
@@ -399,7 +400,7 @@ const Versus = ({s, b}) => {
   const kl = spring({frame: f - lf, fps: 30, config: {damping: 12}}); const kr = spring({frame: f - rf, fps: 30, config: {damping: 10}});
   const strike = interpolate(f, [lf + 8, lf + 16], [0, 1], clamp);
   const side = (label, k, ok, extra) => (
-    <Card style={{width: 400, height: 520, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 30,
+    <Card style={{width: 430, height: 500, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 30,
       background: ok ? C.accSoft : C.card, transform: `scale(${0.4 + 0.6 * k}) rotate(${ok ? 3 : -3}deg)`, opacity: Math.min(1, k * 1.5), ...extra}}>
       <Icon kind={ok ? 'check' : 'x'} size={120} />
       <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 64, color: ok ? C.acc : C.ink, position: 'relative'}}>{label}
@@ -408,8 +409,13 @@ const Versus = ({s, b}) => {
     </Card>
   );
   return (
-    <AbsoluteFill style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start', paddingTop: 400, gap: 40}}>
+    <AbsoluteFill style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start', paddingTop: 380, gap: 40}}>
       {side(s.left, kl, false)}{side(s.right, kr, true, {boxShadow: `12px 12px 0 ${C.ink}, 0 0 80px rgba(46,125,79,${0.45 * kr})`})}
+      {[0, 1, 2].map((i) => { const c0 = rf + 6 + i * 5; const k = interpolate(f, [c0, c0 + 14], [0, 1], {...clamp, easing: (x) => x * x});
+        return k > 0 && k < 1 ? <div key={i} style={{position: 'absolute', left: 740 + i * 30, top: 120 + k * 420, width: 90, height: 90, borderRadius: '50%', background: C.gold,
+          border: `4px solid ${C.ink}`, display: 'grid', placeItems: 'center', fontFamily: FONT, fontWeight: 900, fontSize: 48, color: C.ink, transform: `rotate(${k * 200}deg)`}}>$</div> : null; })}
+      {f > rf + 22 && <div style={{position: 'absolute', top: 960, left: 0, right: 0, textAlign: 'center', fontFamily: FONT, fontWeight: 900, fontSize: 74, color: C.ink,
+        transform: `scale(${spring({frame: f - rf - 22, fps: 30, config: {damping: 10}})})`}}>Brands pay for <span style={{background: C.acc, color: '#fff', borderRadius: 14, padding: '0 18px'}}>videos</span></div>}
     </AbsoluteFill>
   );
 };
@@ -424,13 +430,7 @@ const PhoneAd = ({s, b, sp}) => {
     <AbsoluteFill style={{alignItems: 'center', paddingTop: 250}}>
       <div style={{transform: `translateY(${(1 - kp) * 900}px) rotate(-3deg)`, position: 'relative'}}>
         <Phone w={500} h={860}>
-          <div style={{position: 'absolute', inset: 0, background: `linear-gradient(160deg, ${C.accSoft}, #fff)`}} />
-          <div style={{position: 'absolute', top: 80, left: 30, background: C.ink, color: '#fff', fontFamily: FONT, fontWeight: 800, fontSize: 26, borderRadius: 10, padding: '6px 14px'}}>Ad</div>
-          <div style={{position: 'absolute', top: 300, left: '50%', marginLeft: -70, width: 140, height: 140, borderRadius: '50%', background: C.ink, display: 'grid', placeItems: 'center'}}>
-            <div style={{width: 0, height: 0, borderTop: '30px solid transparent', borderBottom: '30px solid transparent', borderLeft: `48px solid #fff`, marginLeft: 12}} /></div>
-          <div style={{position: 'absolute', top: 500, left: 40, right: 40, fontFamily: FONT, fontWeight: 800, fontSize: 34, color: C.ink, textAlign: 'center'}}>{s.phone_text || 'filmed by you, run by the brand'}</div>
-          <div style={{position: 'absolute', bottom: 40, left: 40, right: 40, height: 8, borderRadius: 4, background: C.line}}>
-            <div style={{width: `${prog * 100}%`, height: '100%', borderRadius: 4, background: C.acc}} /></div>
+          <UgcClip kind={s.clip || 'unbox'} w={468} h={828} />
         </Phone>
         <div style={{position: 'absolute', right: -150, top: 110, transform: `rotate(10deg) scale(${ks})`, background: C.acc, color: '#fff', border: `4px solid ${C.ink}`,
           borderRadius: 18, padding: '16px 24px', fontFamily: FONT, fontWeight: 900, fontSize: 44, boxShadow: `6px 6px 0 ${C.ink}`}}>{s.sticker || '0 followers needed'}</div>
@@ -505,9 +505,7 @@ const Stamp = ({s, b}) => {
     <AbsoluteFill style={{alignItems: 'center', paddingTop: 300}}>
       <div style={{position: 'relative', transform: `translateX(${shake}px) translateY(${(1 - kc) * 600}px)`}}>
         <Card style={{width: 560, height: 700, borderRadius: 40, overflow: 'hidden', position: 'relative', background: `linear-gradient(170deg, ${C.accSoft}, #fff)`}}>
-          <div style={{position: 'absolute', top: 230, left: '50%', marginLeft: -80, width: 160, height: 160, borderRadius: '50%', background: C.ink, display: 'grid', placeItems: 'center'}}>
-            <div style={{width: 0, height: 0, borderTop: '34px solid transparent', borderBottom: '34px solid transparent', borderLeft: '56px solid #fff', marginLeft: 14}} /></div>
-          <div style={{position: 'absolute', bottom: 60, left: 0, right: 0, textAlign: 'center', fontFamily: FONT, fontWeight: 800, fontSize: 38, color: C.ink}}>{s.tile || 'Your sample'}</div>
+          <UgcClip kind={s.clip || 'fix'} w={552} h={692} />
         </Card>
         <div style={{position: 'absolute', left: -60, top: 260, transform: `rotate(-14deg) scale(${2.4 - 1.4 * ks})`, opacity: ks, border: `10px solid ${C.acc}`, borderRadius: 18,
           padding: '14px 34px', fontFamily: FONT, fontWeight: 900, fontSize: 82, color: C.acc, background: 'rgba(255,255,255,.88)', letterSpacing: '.02em', whiteSpace: 'nowrap'}}>{s.text || 'NOT SPONSORED'}</div>
@@ -529,8 +527,7 @@ const CaptionCta = ({s, b, sp, fr}) => {
       <div style={{transform: `translateY(${(1 - kp) * 900}px)`, position: 'relative'}}>
         <Phone w={560} h={1000}>
           <div style={{position: 'absolute', left: 0, right: 0, top: 0, transform: `translateY(${-scroll * 420}px)`}}>
-            <div style={{height: 560, background: `linear-gradient(160deg, ${C.accSoft}, #fff)`, display: 'grid', placeItems: 'center'}}>
-              <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 52, color: C.ink, textAlign: 'center', padding: '0 40px'}}>{s.post || 'This video'}</div></div>
+            <div style={{height: 560, position: 'relative', overflow: 'hidden'}}><UgcClip kind={s.clip || 'review'} w={528} h={700} /></div>
             <div style={{display: 'flex', gap: 26, padding: '22px 30px', alignItems: 'center'}}>
               <svg width="44" height="44" viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6-8 11-8 11z" fill="none" stroke={C.ink} strokeWidth="2" /></svg>
               <svg width="44" height="44" viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z" fill="none" stroke={C.ink} strokeWidth="2" /></svg>
@@ -554,7 +551,105 @@ const CaptionCta = ({s, b, sp, fr}) => {
   );
 };
 
-const VIEWS = {dashboard: Dashboard, versus: Versus, phone_ad: PhoneAd, rate: Rate, samples: Samples, stamp: Stamp, caption_cta: CaptionCta, hook: Hook, flow: Flow, features: Features, statement: Statement, stat: Stat, stack: Stack, fanout: Fanout, orbit: Orbit,
+
+// ---------- v3: invented UGC ad clips (drawn, no real brands or people), channel feed, platforms
+const UgcClip = ({kind = 'unbox', w = 468, h = 828, t0 = 0}) => {
+  const f = useCurrentFrame(); const L = 75; const lf = ((f - t0) % L + L) % L; const p = lf / L;
+  const cap = {unbox: 'ok I was NOT expecting this', fix: 'this fixed my messy desk', review: 'honest review after 2 weeks'}[kind];
+  const bg = {unbox: 'linear-gradient(170deg,#F3E9DC,#FBF7F1)', fix: 'linear-gradient(170deg,#E3ECF3,#F6F9FB)', review: 'linear-gradient(170deg,#E3F0E7,#F8FBF8)'}[kind];
+  const ease3 = (x) => 1 - Math.pow(1 - Math.max(0, Math.min(1, x)), 3);
+  let scene = null;
+  if (kind === 'unbox') {
+    const open = ease3((p - 0.15) / 0.25); const rise = ease3((p - 0.35) / 0.3);
+    scene = (<svg width={w} height={h * 0.62} viewBox="0 0 300 330">
+      <g transform={`translate(150 ${250 - rise * 120})`}><rect x="-26" y="-70" width="52" height="96" rx="14" fill="#2E7D4F" /><rect x="-14" y="-92" width="28" height="26" rx="6" fill="#151515" />
+        <rect x="-18" y="-40" width="36" height="22" rx="4" fill="#fff" opacity=".9" /></g>
+      {[0, 1, 2, 3].map((i) => <circle key={i} cx={150 + Math.cos(i * 1.6 + p * 6) * (50 + rise * 40)} cy={150 + Math.sin(i * 1.6 + p * 6) * 40} r={rise * 6} fill="#E9C46A" />)}
+      <rect x="70" y="240" width="160" height="80" rx="8" fill="#C79A6B" stroke="#151515" strokeWidth="4" />
+      <g transform={`rotate(${-open * 110} 70 240)`}><rect x="70" y="222" width="160" height="22" rx="6" fill="#B5875A" stroke="#151515" strokeWidth="4" /></g>
+      <rect x="140" y="240" width="20" height="80" fill="#2E7D4F" opacity=".7" /></svg>);
+  } else if (kind === 'fix') {
+    const sw = ease3((p - 0.4) / 0.2);
+    scene = (<svg width={w} height={h * 0.62} viewBox="0 0 300 330">
+      <rect x="20" y="230" width="260" height="14" rx="7" fill="#151515" />
+      <g opacity={1 - sw}><path d="M40 220 C 80 120, 120 260, 150 170 S 220 120, 260 215" fill="none" stroke="#5F5E58" strokeWidth="6" />
+        <path d="M60 222 C 110 150, 140 250, 190 160 S 240 200, 250 220" fill="none" stroke="#A9A79F" strokeWidth="6" />
+        <text x="150" y="80" textAnchor="middle" fontFamily="InterX" fontWeight="900" fontSize="30" fill="#151515">before</text></g>
+      <g opacity={sw}><rect x="70" y="150" width="160" height="80" rx="14" fill="#2E7D4F" stroke="#151515" strokeWidth="4" />
+        {[0, 1, 2].map((i) => <line key={i} x1={95 + i * 55} y1="165" x2={95 + i * 55} y2="215" stroke="#fff" strokeWidth="8" strokeLinecap="round" />)}
+        <text x="150" y="80" textAnchor="middle" fontFamily="InterX" fontWeight="900" fontSize="30" fill="#2E7D4F">after</text></g>
+      <rect x={-40 + sw * 380} y="20" width="30" height="300" fill="#fff" opacity={sw > 0 && sw < 1 ? 0.8 : 0} /></svg>);
+  } else {
+    const st = Math.floor(ease3(p / 0.5) * 4.0);
+    scene = (<svg width={w} height={h * 0.62} viewBox="0 0 300 330">
+      <g transform={`translate(150 170) rotate(${Math.sin(p * 6.28) * 4})`}><rect x="-50" y="-60" width="100" height="120" rx="16" fill="#fff" stroke="#151515" strokeWidth="5" />
+        <path d="M50 -30 h22 a18 18 0 0 1 0 50 h-22" fill="none" stroke="#151515" strokeWidth="6" /><rect x="-50" y="-60" width="100" height="30" rx="14" fill="#2E7D4F" /></g>
+      {[0, 1, 2, 3, 4].map((i) => <text key={i} x={70 + i * 40} y="290" textAnchor="middle" fontSize="38" fill={i < st ? '#E9C46A' : '#D8D5CC'}>★</text>)}
+      <g opacity={p > 0.55 ? 1 : 0}><rect x="168" y="60" width="118" height="34" rx="17" fill="#151515" /><text x="227" y="83" textAnchor="middle" fontFamily="InterX" fontWeight="800" fontSize="16" fill="#fff">+ keeps it hot</text></g>
+      <g opacity={p > 0.75 ? 1 : 0}><rect x="12" y="92" width="100" height="34" rx="17" fill="#fff" stroke="#151515" strokeWidth="3" /><text x="62" y="115" textAnchor="middle" fontFamily="InterX" fontWeight="800" fontSize="16" fill="#151515">– pricey</text></g></svg>);
+  }
+  return (
+    <div style={{position: 'absolute', inset: 0, background: bg}}>
+      <div style={{position: 'absolute', top: 70, left: 24, right: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+        <span style={{background: C.ink, color: '#fff', fontFamily: FONT, fontWeight: 800, fontSize: 22, borderRadius: 8, padding: '4px 12px'}}>Ad</span>
+        <span style={{fontFamily: FONT, fontWeight: 700, fontSize: 20, color: '#5F5E58'}}>example UGC</span></div>
+      <div style={{position: 'absolute', top: 130, left: 24, right: 24, textAlign: 'center'}}>
+        <span style={{background: '#fff', fontFamily: FONT, fontWeight: 800, fontSize: 30, color: C.ink, borderRadius: 10, padding: '6px 14px', boxShadow: '0 4px 14px rgba(0,0,0,.08)'}}>{cap}</span></div>
+      <div style={{position: 'absolute', top: h * 0.22, left: 0, right: 0, display: 'flex', justifyContent: 'center'}}>{scene}</div>
+      <div style={{position: 'absolute', bottom: 70, left: 30, right: 30, background: C.acc, color: '#fff', textAlign: 'center', fontFamily: FONT, fontWeight: 800, fontSize: 28, borderRadius: 14, padding: '14px 0'}}>Shop now</div>
+      <div style={{position: 'absolute', bottom: 40, left: 30, right: 30, height: 6, borderRadius: 3, background: 'rgba(21,21,21,.12)'}}>
+        <div style={{width: `${p * 100}%`, height: '100%', borderRadius: 3, background: C.ink}} /></div>
+    </div>
+  );
+};
+
+const CHANNELS = [['Baking channel', 'B', '847'], ['Plant care', 'P', '1,204'], ['Study vlogs', 'S', '512'], ['Gaming clips', 'G', '2,309'], ['Thrift flips', 'T', '936'],
+  ['Home cafe', 'H', '318'], ['Fitness at 40', 'F', '1,577'], ['Guitar covers', 'G', '689'], ['Budget travel', 'B', '2,041'], ['Pet tricks', 'P', '455'], ['Makeup basics', 'M', '1,330'], ['Coding tips', 'C', '774']];
+const Feed = ({f, o = 0.55}) => {
+  const rowH = 150; const off = (f * 2.2) % (rowH * CHANNELS.length);
+  const rows = [...CHANNELS, ...CHANNELS, ...CHANNELS];
+  return (
+    <AbsoluteFill style={{overflow: 'hidden', opacity: o, filter: o < 0.4 ? 'blur(4px)' : 'none', WebkitMaskImage: 'linear-gradient(transparent 4%, black 18%, black 78%, transparent 92%)', maskImage: 'linear-gradient(transparent 4%, black 18%, black 78%, transparent 92%)'}}>
+      <div style={{position: 'absolute', left: 60, right: 60, top: -off}}>
+        {rows.map(([n, l, fol], i) => (
+          <div key={i} style={{height: rowH - 22, marginBottom: 22, display: 'flex', alignItems: 'center', gap: 24, background: C.card, border: `3px solid ${C.line}`, borderRadius: 24, padding: '0 28px'}}>
+            <div style={{width: 84, height: 84, borderRadius: '50%', background: i % 3 === 0 ? C.accSoft : '#ECEAE4', display: 'grid', placeItems: 'center', fontFamily: FONT, fontWeight: 900, fontSize: 38, color: C.ink}}>{l}</div>
+            <div style={{flex: 1}}><div style={{fontFamily: FONT, fontWeight: 800, fontSize: 36, color: C.ink}}>{n}</div>
+              <div style={{fontFamily: FONT, fontWeight: 600, fontSize: 28, color: '#5F5E58'}}>{fol} followers</div></div>
+            <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 34, color: C.ink, background: '#ECEAE4', borderRadius: 12, padding: '8px 16px'}}>$0</div>
+          </div>
+        ))}
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+const Platforms = ({s, b}) => {
+  const f = useCurrentFrame(); const items = s.items || [];
+  return (
+    <AbsoluteFill style={{alignItems: 'center', paddingTop: 300, gap: 34}}>
+      {s.heading && <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 64, color: C.ink, opacity: spring({frame: f - 2, fps: 30, config: {damping: 14}})}}>{s.heading}</div>}
+      {items.map((it, i) => {
+        const k = spring({frame: f - at(b, it.word || it.name, 10 + i * 25), fps: 30, config: {damping: 12}});
+        return (
+          <div key={i} style={{transform: `translateX(${(1 - k) * (i % 2 ? 1100 : -1100)}px) rotate(${(i - 1) * 1.5}deg)`}}>
+            <Card style={{width: 860, padding: '26px 36px', display: 'flex', alignItems: 'center', gap: 28, background: i === 0 ? C.accSoft : C.card}}>
+              <div style={{width: 96, height: 96, borderRadius: 22, background: C.ink, color: '#fff', display: 'grid', placeItems: 'center', fontFamily: FONT, fontWeight: 900, fontSize: 50}}>{it.name[0]}</div>
+              <div style={{flex: 1}}>
+                <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 54, color: C.ink, letterSpacing: '-0.02em'}}>{it.name}</div>
+                <div style={{fontFamily: FONT, fontWeight: 700, fontSize: 32, color: '#5F5E58'}}>{it.domain}</div>
+              </div>
+              <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 28, color: '#fff', background: C.acc, borderRadius: 999, padding: '10px 20px', maxWidth: 300, textAlign: 'center', lineHeight: 1.15}}>{it.fact}</div>
+            </Card>
+          </div>
+        );
+      })}
+      {s.note && <div style={{marginTop: 10, fontFamily: FONT, fontWeight: 700, fontSize: 30, color: '#5F5E58', opacity: interpolate(f, [at(b, s.note_word || 'insense', 90), at(b, s.note_word || 'insense', 90) + 8], [0, 1], clamp)}}>{s.note}</div>}
+    </AbsoluteFill>
+  );
+};
+
+const VIEWS = {platforms: Platforms, dashboard: Dashboard, versus: Versus, phone_ad: PhoneAd, rate: Rate, samples: Samples, stamp: Stamp, caption_cta: CaptionCta, hook: Hook, flow: Flow, features: Features, statement: Statement, stat: Stat, stack: Stack, fanout: Fanout, orbit: Orbit,
   title_card: TitleCard, shot: Shot, save: Save, follow: Follow};
 
 const Beat = ({b, i}) => {
@@ -572,6 +667,7 @@ const Beat = ({b, i}) => {
   return (
     <AbsoluteFill style={{transform: `translateX(${whip * dir * 260 + shakeX}px) scale(${push + punch})`, filter: whip > 0.02 ? `blur(${whip * 14}px)` : 'none',
       opacity: i === 0 ? 1 : interpolate(f, [0, 4], [0.3, 1], clamp), transformOrigin: '50% 42%'}}>
+      {b.show.feed && <Feed f={f + b.from} o={typeof b.show.feed === 'number' ? b.show.feed : 0.55} />}
       <Steps step={b.show.step} labels={b.show.step_labels} />
       <V s={b.show} b={b} sp={sp} per={per} fr={b.frames} words={words} />
     </AbsoluteFill>
@@ -597,7 +693,8 @@ const Captions = ({beats}) => {
   if (f > Math.min(endF, last.f + 30)) return null;
   const kin = spring({frame: f - ch[0].f, fps: 30, config: {damping: 15, mass: 0.5}});
   return (
-    <div style={{position: 'absolute', left: 0, right: 0, top: 1395, display: 'flex', justifyContent: 'center', gap: 14, transform: `translateY(${(1 - kin) * 16}px)`, opacity: Math.min(1, kin * 1.4)}}>
+    <div style={{position: 'absolute', left: 0, right: 0, top: 1385, display: 'flex', justifyContent: 'center', transform: `translateY(${(1 - kin) * 16}px)`, opacity: Math.min(1, kin * 1.4)}}>
+     <div style={{display: 'flex', gap: 12, background: 'rgba(246,245,241,.94)', borderRadius: 22, padding: '8px 12px', boxShadow: '0 6px 24px rgba(21,21,21,.08)'}}>
       {ch.map((w, i) => {
         const on = f >= w.f && (i === ch.length - 1 || f < ch[i + 1].f);
         const k = spring({frame: f - w.f, fps: 30, config: {damping: 12, mass: 0.4}});
@@ -606,6 +703,7 @@ const Captions = ({beats}) => {
           background: on ? C.acc : 'transparent', color: on ? '#fff' : said ? C.ink : '#B9B6AE', transform: `scale(${on ? 1 + 0.08 * (1 - Math.min(1, k)) + 0.04 : 1})`,
           textShadow: on ? 'none' : '0 2px 0 rgba(255,255,255,.8)'}}>{String(w.w).replace(/\*/g, '')}</span>;
       })}
+     </div>
     </div>
   );
 };

@@ -13,7 +13,8 @@ HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "renderer"))
 from tts import kokoro_lines, SR  # noqa: E402
 
-FPS, LEAD, GAP, TAIL = 30, 0.25, 0.22, 0.15
+FPS, LEAD, TAIL = 30, 0.25, 0.15
+GAP = 0.4  # pause between beats; a beat can add "hold": seconds of extra pause after it (lets a point sink in)
 TOK = re.compile(r"\[([^|\]]+)\|([^\]]+)\]|(\S+)")
 
 
@@ -63,10 +64,11 @@ for b, c, tk in zip(spec["beats"], clips, toks):
     for disp, ws in tk:
         clean = re.sub(r"[^\w$%'-]", "", disp).lower()
         caps.append({"w": disp, "f": round((t + wt[i]) * FPS), "p": clean in punch}); i += len(ws)
-    beats.append({"say": b["say"], "show": show, "from": round((t - (LEAD if not beats else GAP / 2)) * FPS),
+    beats.append({"say": b["say"], "show": show, "from": round((t - (LEAD if not beats else 0.12)) * FPS),
                   "speakFrom": round(t * FPS), "speakFrames": round(dur * FPS), "words": caps})
-    parts += [c.astype(np.float32), np.zeros(int(GAP * SR), np.float32)]
-    t += dur + GAP
+    g = spec.get("gap", GAP) + b.get("hold", 0)
+    parts += [c.astype(np.float32), np.zeros(int(g * SR), np.float32)]
+    t += dur + g
 parts.append(np.zeros(int(TAIL * SR), np.float32))
 voice = np.concatenate(parts); N = len(voice)
 total = round(N / SR * FPS)

@@ -1,22 +1,25 @@
 {
  "renderer": "animator",
  "slug": "20261029_ugc_animated",
- "format": "animated (Remotion v2) - text-sync structure: pain hook, flip, value, caption payoff, loop",
+ "format": "animated (Remotion v3) - text-sync structure: pain hook, flip, value, platforms, caption payoff, loop",
  "brand": "SUB-CREATOR PAID",
  "handle": "@subcreatorpaid",
  "audio": {
   "engine": "kokoro",
   "kokoro_voice": "af_heart",
-  "speed": 1.05
+  "speed": 0.95
  },
+ "gap": 0.42,
  "beats": [
   {
    "say": "Hundreds of followers, posting every week, and still zero dollars?",
    "punch": [
     "zero"
    ],
+   "hold": 0.4,
    "show": {
     "type": "dashboard",
+    "feed": true,
     "followers": 847,
     "posts": "Every week",
     "posts_word": "posting",
@@ -25,14 +28,33 @@
    }
   },
   {
-   "say": "That's not a follower problem. Brands don't pay for followers. They pay for videos.",
+   "say": "That's not a follower problem.",
+   "punch": [
+    "problem."
+   ],
+   "hold": 1.0,
+   "show": {
+    "type": "statement",
+    "feed": 0.22,
+    "strike_pre": "Not a",
+    "strike": "follower",
+    "strike_word": "follower",
+    "text": "*problem*",
+    "text_word": "problem.",
+    "size": 90,
+    "acc_scale": 1.9
+   }
+  },
+  {
+   "say": "Brands don't pay for followers. They pay for videos.",
    "punch": [
     "videos."
    ],
+   "hold": 1.4,
    "show": {
     "type": "versus",
     "left": "Followers",
-    "left_word": "follower",
+    "left_word": "followers.",
     "right": "Videos",
     "right_word": "videos.",
     "left_sub": "doesn't pay",
@@ -44,17 +66,19 @@
    "punch": [
     "UGC."
    ],
+   "hold": 0.4,
    "show": {
     "type": "phone_ad",
+    "clip": "unbox",
     "label": "UGC",
     "label_word": "UGC.",
     "sticker": "0 followers needed",
-    "sticker_word": "zero",
-    "phone_text": "filmed by you, run by the brand"
+    "sticker_word": "zero"
    }
   },
   {
    "say": "Beginners usually charge [$50|fifty] to [$400|four hundred dollars] a video.",
+   "hold": 0.5,
    "show": {
     "type": "rate",
     "low": 50,
@@ -66,10 +90,41 @@
    }
   },
   {
+   "say": "Where do you find the work? Billo has no follower minimum. [JoinBrands|Join Brands] is free to join. Or sell UGC as a [Fiverr|Fiver] gig.",
+   "hold": 0.5,
+   "show": {
+    "type": "platforms",
+    "heading": "Where to find UGC work",
+    "items": [
+     {
+      "name": "Billo",
+      "domain": "billo.app",
+      "fact": "No follower minimum (US, UK, Canada)",
+      "word": "Billo"
+     },
+     {
+      "name": "JoinBrands",
+      "domain": "joinbrands.com",
+      "fact": "Free to join",
+      "word": "JoinBrands"
+     },
+     {
+      "name": "Fiverr",
+      "domain": "fiverr.com",
+      "fact": "Sell a UGC gig",
+      "word": "Fiverr"
+     }
+    ],
+    "note": "Insense opens up at 1,000+ Instagram followers",
+    "note_word": "gig."
+   }
+  },
+  {
    "say": "To get hired, you need three samples, all filmed on your phone.",
    "punch": [
     "three"
    ],
+   "hold": 0.3,
    "show": {
     "type": "samples",
     "items": [
@@ -87,17 +142,19 @@
    "punch": [
     "sponsored,"
    ],
+   "hold": 0.3,
    "show": {
     "type": "stamp",
+    "clip": "fix",
     "text": "NOT SPONSORED",
     "word": "sponsored,",
     "sub": "Never imply a brand hired you",
-    "sub_word": "never",
-    "tile": "Your sample"
+    "sub_word": "never"
    }
   },
   {
    "say": "The catch: no brand says yes until it sees your samples, and rates vary by niche.",
+   "hold": 0.3,
    "show": {
     "type": "features",
     "heading": "*THE CATCH*",
@@ -124,9 +181,9 @@
    ],
    "show": {
     "type": "caption_cta",
+    "clip": "review",
     "word": "caption.",
     "save_word": "save",
-    "post": "3 samples, zero followers",
     "first": "The 3 samples from the video:",
     "rows": [
      "Sample 1: the unboxing",
@@ -137,8 +194,10 @@
   },
   {
    "say": "and send it to a creator with",
+   "gap_override": 0,
    "show": {
     "type": "dashboard",
+    "feed": true,
     "freeze": true,
     "followers": 847,
     "earnings": "$0.00"

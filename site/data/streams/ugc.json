@@ -8,7 +8,7 @@
   "steps": [
     "Make 3 sample videos with your phone (unboxing, review, how-to).",
     "Put them in a simple portfolio or link-in-bio page.",
-    "Pitch brands directly or apply to briefs on UGC marketplaces.",
+    "Apply to briefs on UGC marketplaces with no follower minimum (Billo in the US, UK and Canada; JoinBrands), sell UGC as a Fiverr gig, or pitch brands directly. Insense opens up at 1,000+ Instagram followers.",
     "Agree price, usage rights and deadlines in writing, then deliver."
   ],
   "catch": "Brands want to see samples before they say yes, and rates vary a lot by niche and usage rights.",
@@ -18,21 +18,34 @@
     "Tech"
   ],
   "tools": [
-    "insense",
-    "stan",
-    "fiverr"
+    "billo",
+    "joinbrands",
+    "fiverr",
+    "insense"
   ],
   "sources": [
     [
       "Insense: UGC creator rates (Sep 2026)",
       "https://insense.pro/blog/ugc-creator-rates"
+    ],
+    [
+      "Billo: UGC creator jobs (no follower requirement)",
+      "https://billo.app/blog/ugc-creator-jobs/"
+    ],
+    [
+      "JoinBrands: creator getting started guide",
+      "https://help.joinbrands.com/en/articles/6462008-creator-getting-started-guide"
+    ],
+    [
+      "Insense: for creators (follower requirements)",
+      "https://insense.pro/for-creators/en"
     ]
   ],
   "video": "stream01_ugc",
-  "checked": "2026-10-25",
+  "checked": "2026-10-26",
   "category": "Brand deals",
   "cat": "brand",
-  "pay_short": "$50\u2013$400",
+  "pay_short": "$50–$400",
   "pay_unit": "per video (beginners)",
   "start": "3 sample videos",
   "letter": "U",

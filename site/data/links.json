@@ -156,12 +156,13 @@
       "category": "UGC marketplace",
       "official_url": "https://insense.pro",
       "earns": "",
-      "source": "https://insense.pro",
+      "source": "https://insense.pro/for-creators/en",
       "free_plan": true,
-      "for": "Find paid UGC briefs from brands",
+      "for": "Paid UGC briefs from brands (needs 1,000+ Instagram followers)",
       "referral_url": "",
-      "checked": "2026-10-25",
-      "pays_you": false
+      "checked": "2026-10-26",
+      "pays_you": false,
+      "requires": "1,000+ Instagram followers, 500 median TikTok views, 1%+ engagement, a UGC portfolio"
     },
     {
       "id": "etsy",
@@ -175,6 +176,34 @@
       "referral_url": "",
       "checked": "2026-10-25",
       "pays_you": false
+    },
+    {
+      "id": "billo",
+      "name": "Billo",
+      "category": "UGC marketplace",
+      "official_url": "https://billo.app",
+      "earns": "",
+      "source": "https://billo.app/blog/ugc-creator-jobs/",
+      "free_plan": true,
+      "for": "Paid UGC videos for brands, no follower minimum (US, UK, Canada)",
+      "referral_url": "",
+      "checked": "2026-10-26",
+      "pays_you": false,
+      "requires": "No follower minimum; creators in the US, UK or Canada; paid every two weeks via PayPal"
+    },
+    {
+      "id": "joinbrands",
+      "name": "JoinBrands",
+      "category": "UGC marketplace",
+      "official_url": "https://joinbrands.com",
+      "earns": "",
+      "source": "https://help.joinbrands.com/en/articles/6462008-creator-getting-started-guide",
+      "free_plan": true,
+      "for": "Browse paid UGC jobs from brands, free to join",
+      "referral_url": "",
+      "checked": "2026-10-26",
+      "pays_you": false,
+      "requires": "Free sign-up; brands review your profile and portfolio; optional paid Creator PRO"
     }
   ]
 }
