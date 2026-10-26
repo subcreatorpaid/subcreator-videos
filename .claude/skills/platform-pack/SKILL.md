@@ -42,6 +42,12 @@ The final script (or spec.json) and the verified sources for one video.
 - Caption line before the link: "Affiliate link - I may earn a commission at no cost to you." Amazon links: "As an Amazon Associate I earn from qualifying purchases."
 - Use short links (<site>/go/<id>) from affiliate-hub, never raw affiliate URLs.
 
+**Tools I use block** (EVERY video, owner rule 26 Oct 2026)
+- Instagram caption, TikTok caption and YouTube Shorts description all end with the standard block (before hashtags):
+  "Tools I use (affiliate links, I may earn a commission at no cost to you): OpusClip subcreatorpaid.com/go/opusclip · ... All tools + free guide: subcreatorpaid.com/links"
+- Never type it by hand: write captions.md, then run `python3 scripts/tools_block.py --apply` (built from links.json, so newly approved programs like Kit or Fiverr appear automatically; a tool video's own tool is left out of the list because its link is already in the caption). Guard warns if a caption is missing it.
+- Links in Shorts descriptions and IG/TikTok captions are not clickable, so keep them short and typable; the clickable route is subcreatorpaid.com/links in each bio and the YouTube channel links.
+
 **Labels checklist** (state yes/no for this video)
 - AI label needed (Nora appears)?  #ad / paid-partnership label needed (affiliate link, sponsor, gift)?
 

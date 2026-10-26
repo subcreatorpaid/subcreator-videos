@@ -3,13 +3,13 @@
 Approved 25 Oct 2026 (week of 26 Oct). Short links only; disclosure line kept on tool videos.
 
 ## Instagram
-YouTube's lower Partner tier starts at 500 subscribers. Add 3 public uploads in 90 days, plus 3,000 watch hours in 12 months or 3M Shorts views in 90 days. It unlocks memberships, Super Thanks, Super Chat and Shopping. Ad revenue still needs 1,000 subs. Send this to a YouTube friend. #youtubetips #smallyoutuber #creatoreconomy
+YouTube's lower Partner tier starts at 500 subscribers. Add 3 public uploads in 90 days, plus 3,000 watch hours in 12 months or 3M Shorts views in 90 days. It unlocks memberships, Super Thanks, Super Chat and Shopping. Ad revenue still needs 1,000 subs. Send this to a YouTube friend. Tools I use (affiliate links, I may earn a commission at no cost to you): OpusClip subcreatorpaid.com/go/opusclip · ElevenLabs subcreatorpaid.com/go/elevenlabs · beehiiv subcreatorpaid.com/go/beehiiv · Skool subcreatorpaid.com/go/skool. All tools + free guide: subcreatorpaid.com/links #youtubetips #smallyoutuber #creatoreconomy
 
 ## TikTok
-YouTube pays from 500 subscribers (fan funding, not ads). Here's the full bar. #smallyoutuber #youtubetips
+YouTube pays from 500 subscribers (fan funding, not ads). Here's the full bar. Tools I use (affiliate links, I may earn a commission at no cost to you): OpusClip subcreatorpaid.com/go/opusclip · ElevenLabs subcreatorpaid.com/go/elevenlabs · beehiiv subcreatorpaid.com/go/beehiiv · Skool subcreatorpaid.com/go/skool. All tools + free guide: subcreatorpaid.com/links #smallyoutuber #youtubetips
 
 ## YouTube Shorts
-Title: You don't need 1,000 subs to get paid. Description: Expanded YPP: 500 subscribers, 3 uploads in 90 days, 3,000 watch hours or 3M Shorts views. Source: YouTube Help, checked 25 Oct 2026.
+Title: You don't need 1,000 subs to get paid. Description: Expanded YPP: 500 subscribers, 3 uploads in 90 days, 3,000 watch hours or 3M Shorts views. Source: YouTube Help, checked 25 Oct 2026. Tools I use (affiliate links, I may earn a commission at no cost to you): OpusClip subcreatorpaid.com/go/opusclip · ElevenLabs subcreatorpaid.com/go/elevenlabs · beehiiv subcreatorpaid.com/go/beehiiv · Skool subcreatorpaid.com/go/skool. All tools + free guide: subcreatorpaid.com/links
 
 ## Facebook
 A lot of small YouTubers think 1,000 subscribers is the first paycheck. YouTube's own help page says 500 can unlock memberships, Super Thanks and Shopping, if you meet the upload and watch-time rules. Ads come later.

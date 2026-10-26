@@ -13,7 +13,7 @@ For each post in week-plan (status "drafted"):
 1. Script: 3 hooks (from strategist) + spoken lines (`say`), 35-60 s, one idea per line, the catch stated, CTA per brand.md. Tool videos: what it does for a small creator, one real limit, a free alternative, "link in bio / subcreatorpaid.com/go/<id>", "Affiliate link" on screen.
 2. Render plan (score it with `python3 scripts/virality.py videos/<slug>`; aim 75+): list-video spec (`audio: {"engine": "kokoro"}`), best-fit beat types from the playbook, v4 styles where they help. Slug `YYYYMMDD_<short-name>`.
 3. Website data for income-stream posts: `site/data/streams/<slug>.json` draft (what, followers, pay, steps, catch, great_for, tools, sources, checked).
-4. Captions per platform (Instagram, TikTok, YouTube Shorts title+description, LinkedIn/Facebook optional) with the disclosure line on tool videos and short links only.
+4. Captions per platform (Instagram, TikTok, YouTube Shorts title+description, LinkedIn/Facebook optional) with the disclosure line on tool videos and short links only. Every video gets the "Tools I use" affiliate block in IG, TikTok and YouTube: run `python3 scripts/tools_block.py --apply` after writing captions.md (see platform-pack).
 5. Put everything into ONE Claude Docs doc "Week of <date> - review" (summary first, then the 10-post table, then each post). Save its link in `week-plan.json -> review_doc`; set status "drafted". Do NOT commit specs or render yet.
 
 ## Stage B - after the owner says "approve the week" (or approves single posts)

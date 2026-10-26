@@ -3,13 +3,13 @@
 Approved 25 Oct 2026 (week of 26 Oct). Short links only; disclosure line kept on tool videos.
 
 ## Instagram
-How to turn one long video into Shorts with OpusClip: upload, let it pick and caption the moments, then choose the ones worth posting. Honest limit: the free plan is 60 credits a month, watermarked, and clips export for 3 days only. Free alternative: clip by hand in any editor. Try it: subcreatorpaid.com/go/opusclip. Disclosure: this is my referral link. If you sign up, I may earn a commission. #contentcreator #shortsvideo #smallcreator
+How to turn one long video into Shorts with OpusClip: upload, let it pick and caption the moments, then choose the ones worth posting. Honest limit: the free plan is 60 credits a month, watermarked, and clips export for 3 days only. Free alternative: clip by hand in any editor. Try it: subcreatorpaid.com/go/opusclip. Disclosure: this is my referral link. If you sign up, I may earn a commission. Tools I use (affiliate links, I may earn a commission at no cost to you): ElevenLabs subcreatorpaid.com/go/elevenlabs · beehiiv subcreatorpaid.com/go/beehiiv · Skool subcreatorpaid.com/go/skool. All tools + free guide: subcreatorpaid.com/links #contentcreator #shortsvideo #smallcreator
 
 ## TikTok
-One long video into Shorts with OpusClip. Free plan limits in the video. subcreatorpaid.com/go/opusclip. Disclosure: this is my referral link. If you sign up, I may earn a commission. #creatortools #smallcreator
+One long video into Shorts with OpusClip. Free plan limits in the video. subcreatorpaid.com/go/opusclip. Disclosure: this is my referral link. If you sign up, I may earn a commission. Tools I use (affiliate links, I may earn a commission at no cost to you): ElevenLabs subcreatorpaid.com/go/elevenlabs · beehiiv subcreatorpaid.com/go/beehiiv · Skool subcreatorpaid.com/go/skool. All tools + free guide: subcreatorpaid.com/links #creatortools #smallcreator
 
 ## YouTube Shorts
-Title: One long video into Shorts (OpusClip test). Description: Free plan: 60 credits/month, watermark, 3-day export. Starter $15/month. subcreatorpaid.com/go/opusclip. Disclosure: this is my referral link. If you sign up, I may earn a commission.
+Title: One long video into Shorts (OpusClip test). Description: Free plan: 60 credits/month, watermark, 3-day export. Starter $15/month. subcreatorpaid.com/go/opusclip. Disclosure: this is my referral link. If you sign up, I may earn a commission. Tools I use (affiliate links, I may earn a commission at no cost to you): ElevenLabs subcreatorpaid.com/go/elevenlabs · beehiiv subcreatorpaid.com/go/beehiiv · Skool subcreatorpaid.com/go/skool. All tools + free guide: subcreatorpaid.com/links
 
 ## Facebook
 If you record podcasts or long videos, OpusClip can find clip-worthy moments and caption them. The free plan is limited (60 credits, watermark, 3-day export), so test it before paying. subcreatorpaid.com/go/opusclip. Disclosure: this is my referral link. If you sign up, I may earn a commission.

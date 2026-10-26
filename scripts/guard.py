@@ -130,6 +130,19 @@ def check_videos(links):
                 err(f"videos/{rel}: raw affiliate URL; use subcreatorpaid.com/go/<id>")
         if "/go/" in low and "affiliate" not in low:
             err(f"videos/{rel}: affiliate CTA without an 'affiliate' disclosure")
+        cap = spec.parent / "captions.md"
+        if cap.exists():
+            ct = cap.read_text()
+            for r in raw_refs:
+                if r and r in ct:
+                    err(f"videos/{rel}/captions.md: raw affiliate URL; use subcreatorpaid.com/go/<id>")
+            secs = re.split(r"^## ", ct, flags=re.M)
+            for sec in secs:
+                name = sec.split("\n", 1)[0].strip()
+                if name in ("Instagram", "TikTok", "YouTube Shorts") and "Tools I use (affiliate links" not in sec:
+                    warn(f"videos/{rel}/captions.md: {name} has no 'Tools I use' block (python3 scripts/tools_block.py --apply)")
+                if "/go/" in sec and "commission" not in sec.lower():
+                    err(f"videos/{rel}/captions.md: {name} has a /go/ link without a disclosure")
 
 
 def check_virality():
