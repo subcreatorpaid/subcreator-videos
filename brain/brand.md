@@ -39,6 +39,9 @@ Four parts, 6-8 s in total, in this order:
 3. **The related affiliate tool:** "The tool I'd start with is linked in my bio" + "Affiliate link" on screen, and the "Tools I use" block
    with the disclosure in the caption. Pick the tool that fits the video's topic (UGC -> Fiverr/OpusClip, email -> beehiiv/Kit, voice -> ElevenLabs, community -> Skool).
 4. **Follow.**
+**Cross-platform links (owner question, 26 Oct 2026):** the hub is subcreatorpaid.com/links (all profiles, guide, tools). Instagram + YouTube bios link to it;
+   TikTok bio shows "subcreatorpaid.com" as text until the 1,000-follower link unlock. Every caption ends with one line pointing to the other platforms
+   (TikTok: "More on IG + YouTube: @subcreatorpaid"; Instagram: "Also on TikTok + YouTube: @subcreatorpaid"; YouTube: "Instagram + TikTok: @subcreatorpaid").
 **Every DM goes to the website, and we ask for the email first (owner rule, 26 Oct 2026).** When comment-to-DM is set up:
    1) the auto-DM thanks them and asks "What email should I send the <topic> guide to?" (with "you'll also get one verified income stream a week, unsubscribe anytime");
    2) the email goes to our list (D1 via /api/subscribe), never only into the DM tool;
