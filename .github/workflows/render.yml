@@ -3,7 +3,7 @@ name: Render videos
 # Runs when you add or change anything inside videos/  (or press "Run workflow" on the Actions tab).
 on:
   push:
-    paths: ["videos/**"]
+    paths: ["videos/**/spec.json", "videos/**/assets/**"]   # caption-only edits do not re-render
   workflow_dispatch:
     inputs:
       videos:
@@ -63,7 +63,7 @@ jobs:
           elif [ "$EVENT" = "workflow_dispatch" ] || [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
             LIST=$(ls videos)
           else
-            LIST=$(git diff --name-only "$BEFORE" "$SHA" | grep '^videos/' | cut -d/ -f2 | sort -u)
+            LIST=$(git diff --name-only "$BEFORE" "$SHA" | grep -E '^videos/[^/]+/(spec\.json|assets/)' | cut -d/ -f2 | sort -u)
           fi
           echo "list=$(echo $LIST)" >> "$GITHUB_OUTPUT"
           echo "Videos to render: $LIST"
