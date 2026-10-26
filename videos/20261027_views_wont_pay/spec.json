@@ -7,175 +7,319 @@
   "kokoro_voice": "af_heart",
   "speed": 0.95
  },
- "gap": 0.4,
+ "gap": 0.25,
  "slug": "20261027_views_wont_pay",
- "format": "myth-buster: dashboard $0, strike, stat, stacked cards, versus (animator rules v4)",
+ "format": "story style: viral views counter, views vs fans, YPP bars, fan-money ladder, small group vs crowd",
  "beats": [
   {
    "say": "Your video went viral. So why is it still zero dollars?",
-   "punch": [
-    "zero"
-   ],
    "show": {
-    "type": "dashboard",
-    "feed": true,
-    "followers": 847,
-    "posts": "1 viral video",
-    "posts_word": "viral",
-    "zero_word": "zero",
-    "earnings": "$0.00",
-    "hook_text": "Went viral. Still *$0*?"
-   }
+    "type": "viral",
+    "red": [
+     "zero",
+     "dollars"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.1,
+     "key"
+    ],
+    [
+     0.2,
+     "key"
+    ],
+    [
+     0.30000000000000004,
+     "key"
+    ],
+    [
+     0.4,
+     "key"
+    ],
+    [
+     0.5,
+     "key"
+    ],
+    [
+     0.6,
+     "key"
+    ],
+    [
+     0.7000000000000001,
+     "key"
+    ],
+    [
+     0.8,
+     "key"
+    ],
+    [
+     0.9,
+     "key"
+    ],
+    [
+     1.0,
+     "key"
+    ],
+    [
+     1.1,
+     "key"
+    ],
+    [
+     1.2000000000000002,
+     "key"
+    ],
+    [
+     "zero",
+     "thud"
+    ],
+    [
+     "why",
+     "whip"
+    ]
+   ]
   },
   {
    "say": "Because views aren't what pays you first. Fans are.",
-   "punch": [
-    "Fans"
-   ],
-   "hold": 1.0,
    "show": {
-    "type": "statement",
-    "feed": 0.2,
-    "strike_pre": "Not",
-    "strike": "views",
-    "strike_word": "views",
-    "text": "*FANS*",
-    "text_word": "Fans",
-    "size": 90,
-    "acc_scale": 1.9
-   }
+    "type": "views_fans",
+    "red": [
+     "aren't"
+    ],
+    "green": [
+     "fans"
+    ]
+   },
+   "sfx": [
+    [
+     "views",
+     "pop"
+    ],
+    [
+     "fans",
+     "whoosh"
+    ],
+    [
+     "fans",
+     "ding"
+    ]
+   ]
   },
   {
    "say": "YouTube Shorts ad money needs one thousand subscribers and [10,000,000|ten million] Shorts views in ninety days.",
-   "key": [
-    "thousand"
-   ],
    "show": {
-    "type": "stat",
-    "top": "Shorts ad money needs",
-    "big": "10,000,000",
-    "caption": "Shorts views in 90 days + *1,000 subscribers*"
-   }
+    "type": "ypp",
+    "red": [
+     "10,000,000"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "one",
+     "count"
+    ],
+    [
+     "10",
+     "count"
+    ],
+    [
+     "10",
+     "thud"
+    ]
+   ]
   },
   {
    "say": "Fan money starts much earlier. YouTube fan funding opens at five hundred subscribers. Spotify Memberships, at one hundred listeners.",
-   "hold": 0.8,
    "show": {
-    "type": "stack",
-    "cards": [
-     {
-      "node": "Ads",
-      "title": "Shorts ad share",
-      "big": "10M views",
-      "sub": "+ 1,000 subscribers"
-     },
-     {
-      "node": "Fans",
-      "title": "YouTube fan funding",
-      "big": "500 subs",
-      "sub": "+ uploads and watch time"
-     },
-     {
-      "node": "Fans",
-      "title": "Spotify Memberships",
-      "big": "100",
-      "sub": "listeners + 100 hours in 30 days"
-     }
+    "type": "fan_ladder",
+    "green": [
+     "earlier",
+     "five",
+     "hundred",
+     "one"
     ]
-   }
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "five",
+     "card"
+    ],
+    [
+     "five",
+     "ding"
+    ],
+    [
+     "spotify",
+     "card"
+    ],
+    [
+     "spotify",
+     "ding"
+    ]
+   ]
   },
   {
    "say": "So build a small group who would pay, not a big crowd that scrolls.",
-   "riser": true,
-   "punch": [
-    "pay,"
-   ],
-   "hold": 1.0,
    "show": {
-    "type": "versus",
-    "left": "Views",
-    "left_word": "crowd",
-    "right": "Fans",
-    "right_word": "group",
-    "left_sub": "a crowd that scrolls",
-    "right_sub": "a group that pays",
-    "bottom_pre": "Build a group that",
-    "bottom_word": "pays"
-   }
+    "type": "small_group",
+    "green": [
+     "pay"
+    ],
+    "red": [
+     "scrolls"
+    ]
+   },
+   "sfx": [
+    [
+     "small",
+     "pop"
+    ],
+    [
+     "crowd",
+     "whip"
+    ],
+    [
+     "scrolls",
+     "thud"
+    ]
+   ]
   },
   {
    "say": "The catch: fans need a reason to pay, like bonus episodes or live chats, and each program has its own country and review rules.",
    "show": {
-    "type": "features",
-    "heading": "*THE CATCH*",
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": null,
     "items": [
      [
-      "x",
-      "Needs a reason to pay"
+      "bonus",
+      "Bonus episodes",
+      false
      ],
      [
-      "clock",
-      "Needs regular posting"
+      "live",
+      "Live chats",
+      false
      ],
      [
-      "alert",
-      "Country + review rules"
+      "country",
+      "Country + review rules",
+      true
      ]
     ]
-   }
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "bonus",
+     "whip"
+    ],
+    [
+     "live",
+     "whip"
+    ],
+    [
+     "country",
+     "whip"
+    ]
+   ]
   },
   {
-   "say": "Comment GUIDE, or get it free on [subcreatorpaid.com|sub creator paid dot com]. My tools are in my bio. Follow for more.",
+   "say": "Comment GUIDE, or get it free on [subcreatorpaid.com|sub creator paid dot com]. Tools I use are in my bio. Follow for more.",
    "show": {
-    "type": "end_cta",
-    "keyword": "GUIDE",
-    "comment_sub": "free guide, or get it on the site"
-   }
+    "type": "end_rows",
+    "guide": "Fan money before ad money"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "tools",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
   }
  ],
  "hooks": [
   {
    "label": "A: the big number",
    "say": "[10,000,000|Ten million] Shorts views. That's what YouTube ad money asks for.",
-   "punch": [
-    "million]"
-   ],
    "show": {
-    "type": "stat",
-    "top": "YouTube Shorts ad money needs",
-    "big": "10,000,000",
-    "caption": "views in 90 days",
-    "hook_text": "*10,000,000* views to get paid?"
-   }
+    "type": "ypp",
+    "red": [
+     "10,000,000"
+    ]
+   },
+   "sfx": [
+    [
+     "10",
+     "thud"
+    ]
+   ]
   },
   {
    "label": "B: the pain line",
    "say": "Your video went viral. So why is it still zero dollars?",
-   "punch": [
-    "zero"
-   ],
    "show": {
-    "type": "dashboard",
-    "feed": true,
-    "followers": 847,
-    "posts": "1 viral video",
-    "posts_word": "viral",
-    "zero_word": "zero",
-    "earnings": "$0.00",
-    "hook_text": "Went viral. Still *$0*?"
-   }
+    "type": "viral",
+    "red": [
+     "zero",
+     "dollars"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "zero",
+     "thud"
+    ]
+   ]
   },
   {
    "label": "C: the question",
    "say": "Why doesn't going viral pay you?",
    "show": {
-    "type": "hook",
-    "lines": [
-     "Going viral",
-     "*WON'T PAY*",
-     "you yet. Why?"
+    "type": "viral",
+    "red": [
+     "doesn't"
     ]
-   }
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ]
+   ]
   }
  ],
  "sources": [
@@ -188,7 +332,6 @@
    "url": "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/"
   }
  ],
- "main_punch": "fans",
  "thumb": {
   "headline": "Viral.\nStill *$0*?",
   "hero": "dashboard",
@@ -205,5 +348,6 @@
   "earned": "$0.00",
   "chip": "Why views don't pay yet",
   "top": 360
- }
+ },
+ "style": "story"
 }

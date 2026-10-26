@@ -39,6 +39,7 @@ export const RedPill = ({children, size = 64, style = {}}) => (
 
 // Real platform logos (simple-icons paths, official colours).
 export const Logo = ({name, size = 90}) => {
+  if (name === 'spotify') return <svg width={size} height={size} viewBox="0 0 24 24"><path d={LOGO.spotify} fill="#1DB954" /></svg>;
   if (name === 'youtube') return <svg width={size} height={size} viewBox="0 0 24 24"><path d={LOGO.youtube} fill="#FF0000" /></svg>;
   if (name === 'instagram') return (
     <svg width={size} height={size} viewBox="0 0 24 24">
@@ -52,7 +53,7 @@ export const Logo = ({name, size = 90}) => {
       <g transform="translate(5 4.6) scale(0.6)"><path d={LOGO.tiktok} fill="#25F4EE" transform="translate(-0.9 -0.7)" /><path d={LOGO.tiktok} fill="#FE2C55" transform="translate(0.9 0.7)" /><path d={LOGO.tiktok} fill="#fff" /></g>
     </svg>);
 };
-export const BRAND_GLOW = {instagram: '214,36,159', tiktok: '37,244,238', youtube: '255,0,0'};
+export const BRAND_GLOW = {instagram: '214,36,159', tiktok: '37,244,238', youtube: '255,0,0', spotify: '29,185,84'};
 
 export const GlowCard = ({children, style = {}, tint = '46,125,79'}) => (
   <div style={{background: C.card, borderRadius: 40, boxShadow: glow(tint, 0.2, 70), fontFamily: FONT, color: C.ink, ...style}}>{children}</div>

@@ -176,12 +176,16 @@ const StampScene = ({f, w, gf}) => (<>
   <div style={{position: 'absolute', left: 0, right: 0, top: 1300, height: 620, background: `linear-gradient(180deg, rgba(246,245,241,0), ${C.bg} 30%)`}} />
 </>);
 
-const Catch = ({f, w}) => (<>
-  <PopIn f={f - 2} style={{left: 0, right: 0, top: 170, textAlign: 'center'}}><div style={{display: 'inline-block', color: RED, fontWeight: 900, fontSize: 110, letterSpacing: 2}}>THE CATCH</div></PopIn>
-  <div style={{position: 'absolute', left: 260, top: 330}}><Face mood={lerp(f, 0, w('rates'), 0.2, 0.8)} f={f} size={450} hold="laptop" /></div>
-  <FromSide f={f - w('samples') + 4} side="left" style={{left: 70, top: 1000}}><BlackChip x>No samples, no yes</BlackChip></FromSide>
-  <FromSide f={f - w('rates') + 4} side="right" style={{left: 300, top: 1150}}><BlackChip x>Rates vary by niche</BlackChip></FromSide>
-</>);
+const Catch = ({f, w, s}) => {
+  const items = s.items || [['samples', 'No samples, no yes', true], ['rates', 'Rates vary by niche', true]];
+  return (<>
+    <PopIn f={f - 2} style={{left: 0, right: 0, top: 170, textAlign: 'center'}}><div style={{display: 'inline-block', color: RED, fontWeight: 900, fontSize: 110, letterSpacing: 2}}>THE CATCH</div></PopIn>
+    <div style={{position: 'absolute', left: 260, top: 330}}><Face mood={lerp(f, 0, w(items[items.length - 1][0]), 0.2, 0.8)} f={f} size={450} hold={s.hold || 'laptop'} /></div>
+    {items.map(([k, t, x], i) => (
+      <FromSide key={k} f={f - w(k) + 4} side={i % 2 ? 'right' : 'left'} style={{left: i % 2 ? 300 : 70, top: 960 + i * 140}}><BlackChip x={x}>{t}</BlackChip></FromSide>
+    ))}
+  </>);
+};
 
 const JSTEPS = [
   {k: 'samples', t: 'Film 3 samples', hold: 'film', mood: 0},
@@ -226,11 +230,11 @@ const EndRows = [
   ['tools', 'Tools I use', 'affiliate links in bio'],
   ['follow', 'Follow @subcreatorpaid', 'one income stream at a time'],
 ];
-const EndCta = ({f, w}) => (<>
+const EndCta = ({f, w, s}) => (<>
   <div style={{position: 'absolute', left: 60, top: 160, width: 330, height: 440, transform: 'perspective(1600px) rotateY(18deg) rotateX(4deg)', opacity: ease(f, 12)}}>
     <div style={{position: 'absolute', inset: 0, borderRadius: '10px 24px 24px 10px', background: `linear-gradient(150deg, ${C.ink}, #2B2B2B)`, boxShadow: '0 30px 80px rgba(46,125,79,0.3)', padding: 34, boxSizing: 'border-box', color: '#fff'}}>
       <div style={{fontSize: 22, fontWeight: 800, letterSpacing: 3, color: '#7BE0A0'}}>FREE GUIDE</div>
-      <div style={{fontSize: 50, fontWeight: 900, lineHeight: 1.05, marginTop: 14}}>UGC: your first paid video</div>
+      <div style={{fontSize: 50, fontWeight: 900, lineHeight: 1.05, marginTop: 14}}>{s.guide || 'UGC: your first paid video'}</div>
     </div>
   </div>
   <div style={{position: 'absolute', left: 520, top: 180, transform: 'scale(0.62)', transformOrigin: 'left top'}}><Face mood={-1} f={f} size={700} hold="money" /></div>
@@ -245,7 +249,130 @@ const EndCta = ({f, w}) => (<>
   ))}
 </>);
 
-const SCENES = {counters: Counters, face_strike: FaceStrike, phone_fly: PhoneFly, ugc_explain: UgcExplain, rate3d: Rate, apps: Apps, wall: Wall, stamp_wall: StampScene, catch: Catch, journey: Journey, end_rows: EndCta};
+
+// ---------- video 2 scenes (views won't pay)
+const fmtM = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : Math.round(n).toLocaleString('en-US'));
+const Viral = ({f, w}) => {
+  const g = ease(f - 4, 40);
+  const pts = Array.from({length: 12}, (_, i) => [80 + i * 76, 560 - Math.pow(i / 11, 2.6) * 380]);
+  const d = 'M' + pts.map((p) => p.join(' ')).join(' L');
+  return (<>
+    <FromSide f={f} side="left" style={{left: 70, right: 70, top: 170}}>
+      <div style={{background: '#fff', borderRadius: 40, padding: '30px 40px', boxShadow: '0 18px 70px rgba(255,0,0,0.18), 0 0 0 3px rgba(255,0,0,0.12)', position: 'relative', height: 560}}>
+        <div style={{display: 'flex', alignItems: 'center', gap: 20}}><Logo name="youtube" size={80} /><div style={{fontWeight: 800, fontSize: 44}}>Your Short</div></div>
+        <div style={{fontWeight: 900, fontSize: 120, marginTop: 10}}>{fmtM(interpolate(g, [0, 1], [0, 2400000]))}</div>
+        <div style={{fontWeight: 700, fontSize: 36, color: '#5F5E58', marginTop: -10}}>views</div>
+        <svg width="940" height="600" style={{position: 'absolute', left: 0, top: 0}} fill="none"><path d={d} stroke={C.ink} strokeWidth="10" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="1600" strokeDashoffset={1600 * (1 - g)} /></svg>
+      </div>
+    </FromSide>
+    <FromSide f={f - w('zero') + 8} side="right" style={{left: 70, right: 70, top: 780}}>
+      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '34px 44px', background: C.ink, color: '#fff', borderRadius: 40,
+        boxShadow: '0 20px 80px rgba(217,58,58,0.45), 0 0 0 3px rgba(217,58,58,0.5)'}}>
+        <div style={{fontWeight: 800, fontSize: 54}}>Earned</div><RedPill size={96}>$0.00</RedPill>
+      </div>
+    </FromSide>
+    <div style={{position: 'absolute', left: 620, top: 990, transform: `translateX(${(1 - ease(f - w('why'), 12)) * 600}px) scale(0.5)`, transformOrigin: 'left top'}}><Face mood={0.9} f={f} size={700} /></div>
+  </>);
+};
+
+const Avatar = ({x, y, s = 1, col = '#F2C9A5', o = 1}) => (
+  <div style={{position: 'absolute', left: x, top: y, width: 70 * s, height: 70 * s, borderRadius: 35 * s, background: col, border: `${4 * s}px solid ${C.ink}`, opacity: o, boxSizing: 'border-box'}}>
+    <div style={{position: 'absolute', left: '28%', top: '40%', width: 8 * s, height: 8 * s, borderRadius: 4 * s, background: C.ink}} />
+    <div style={{position: 'absolute', right: '28%', top: '40%', width: 8 * s, height: 8 * s, borderRadius: 4 * s, background: C.ink}} />
+  </div>
+);
+const ViewsFans = ({f, w}) => {
+  const gone = ease(f - w('fans') + 6, 12);
+  const ring = Array.from({length: 10}, (_, i) => [Math.cos(i / 10 * 2 * Math.PI) * 330, Math.sin(i / 10 * 2 * Math.PI) * 300]);
+  return (<>
+    <div style={{position: 'absolute', left: 0, right: 0, top: 230, display: 'flex', justifyContent: 'center', opacity: 1 - gone, transform: `translateX(${-gone * 600}px)`}}>
+      <PopIn f={f - w('views') + 4} style={{position: 'relative'}}><BlackChip x style={{fontSize: 70, padding: '30px 50px'}}>Views</BlackChip></PopIn>
+    </div>
+    <div style={{position: 'absolute', left: 300, top: 420}}><Face mood={gone > 0.5 ? -0.8 : 0.5} f={f} size={480} hold={gone > 0.5 ? 'money' : null} /></div>
+    {ring.map(([x, y], i) => {
+      const p = ease(f - w('fans') - i * 2, 10);
+      return <Avatar key={i} x={540 + x * p - 35} y={720 + y * p - 35} o={p} />;
+    })}
+    <PopIn f={f - w('fans') - 10} style={{left: 0, right: 0, top: 1190, textAlign: 'center'}}>
+      <div style={{display: 'inline-block', background: C.acc, color: '#fff', fontWeight: 900, fontSize: 60, padding: '12px 40px', borderRadius: 26, boxShadow: '0 0 60px rgba(46,125,79,0.45)'}}>Fans pay</div>
+    </PopIn>
+  </>);
+};
+
+const Bar = ({label, val, max, p, fmt, red}) => (
+  <div style={{marginTop: 34}}>
+    <div style={{display: 'flex', justifyContent: 'space-between', fontWeight: 800, fontSize: 44}}><span>{label}</span><span>{fmt(val * p)} / {fmt(max)}</span></div>
+    <div style={{height: 34, borderRadius: 17, background: C.line, marginTop: 14, overflow: 'hidden'}}>
+      <div style={{width: `${Math.min(1, val / max) * p * 100}%`, height: '100%', background: red ? RED : C.ink, borderRadius: 17}} />
+    </div>
+  </div>
+);
+const Ypp = ({f, w}) => {
+  const p1 = ease(f - w('one') + 4, 24); const p2 = ease(f - w('10') + 4, 24);
+  return (<>
+    <FromSide f={f} side="right" style={{left: 70, right: 70, top: 170}}>
+      <div style={{background: '#fff', borderRadius: 40, padding: '36px 44px 46px', boxShadow: '0 18px 70px rgba(255,0,0,0.16), 0 0 0 3px rgba(255,0,0,0.12)'}}>
+        <div style={{display: 'flex', alignItems: 'center', gap: 20}}><Logo name="youtube" size={80} /><div style={{fontWeight: 900, fontSize: 50}}>Shorts ad money</div></div>
+        <Bar label="Subscribers" val={847} max={1000} p={p1} fmt={(n) => Math.round(n).toLocaleString('en-US')} />
+        <Bar label="Views / 90 days" val={2400000} max={10000000} p={p2} fmt={fmtM} red />
+      </div>
+    </FromSide>
+    <PopIn f={f - w('10') - 6} style={{left: 0, right: 0, top: 760, textAlign: 'center'}}><div style={{display: 'inline-block', fontWeight: 900, fontSize: 150, color: RED}}>10,000,000</div></PopIn>
+    <div style={{position: 'absolute', left: 340, top: 900, transform: 'scale(0.5)', transformOrigin: 'left top'}}><Face mood={lerp(f, 0, w('ninety'), 0.3, 1)} f={f} size={700} hold="phone0" /></div>
+  </>);
+};
+
+const FanLadder = ({f, w}) => {
+  const steps = [
+    {k: 'spotify', logo: 'spotify', t: 'Spotify Memberships', v: '100 listeners', x: 50, y: 900, green: true},
+    {k: 'five', logo: 'youtube', t: 'YouTube fan funding', v: '500 subscribers', x: 220, y: 640, green: true},
+    {k: 'ads', logo: 'youtube', t: 'Shorts ad money', v: '1,000 subs + 10M views', x: 390, y: 380, green: false},
+  ];
+  const at = [w('spotify'), w('five'), Math.min(4, w('fan'))];
+  const climb = f >= w('spotify') ? 0 : f >= w('five') ? 1 : 2;
+  return (<>
+    {steps.map((s, i) => {
+      const p = ease(f - at[i] + 6, 14);
+      return (
+        <div key={i} style={{position: 'absolute', left: s.x, top: s.y, width: 560, opacity: i === 2 ? 0.55 + 0.45 * p : p,
+          transform: `perspective(1800px) rotateX(18deg) rotateZ(-4deg) translateY(${(1 - p) * 80}px)`}}>
+          <div style={{background: i === 2 ? '#fff' : C.ink, color: i === 2 ? C.ink : '#fff', borderRadius: 30, padding: '24px 30px', border: i === 2 ? `3px dashed ${C.muted}` : 'none',
+            boxShadow: s.green ? '0 20px 70px rgba(46,125,79,0.4)' : glow('0,0,0', 0.1, 50), display: 'flex', alignItems: 'center', gap: 20}}>
+            <Logo name={s.logo} size={70} />
+            <div><div style={{fontWeight: 700, fontSize: 32, opacity: 0.75}}>{s.t}</div><div style={{fontWeight: 900, fontSize: 48, color: s.green ? '#7BE0A0' : C.ink}}>{s.v}</div></div>
+          </div>
+        </div>
+      );
+    })}
+    <PopIn f={f - 4} style={{left: 60, top: 200}}><div style={{fontWeight: 900, fontSize: 70, lineHeight: 1.05}}>Fan money starts<br /><span style={{color: C.acc}}>much earlier</span></div></PopIn>
+    <div style={{position: 'absolute', left: [700, 760, 820][climb], top: [1000, 760, 520][climb], transform: 'scale(0.42)', transformOrigin: 'left top'}}>
+      <Face mood={climb < 2 ? -0.9 : 0.3} f={f} size={700} hold={climb < 2 ? 'money' : null} />
+    </div>
+  </>);
+};
+
+const SmallGroup = ({f, w}) => {
+  const g = ease(f - 2, 14); const c = ease(f - w('crowd') + 4, 14); const x = ease(f - w('scrolls') + 2, 10);
+  const small = Array.from({length: 8}, (_, i) => [Math.cos(i / 8 * 2 * Math.PI) * 150, Math.sin(i / 8 * 2 * Math.PI) * 150]);
+  return (<>
+    <div style={{position: 'absolute', left: 60, top: 160, width: 460, height: 760, borderRadius: 40, background: '#fff', boxShadow: '0 20px 80px rgba(46,125,79,0.35)', opacity: g}}>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 40, textAlign: 'center', fontWeight: 900, fontSize: 48}}>Small group</div>
+      {small.map(([a, b], i) => <Avatar key={i} x={230 + a * g - 35} y={380 + b * g - 35} />)}
+      <div style={{position: 'absolute', left: 175, top: 325, width: 110, height: 110, borderRadius: 55, background: C.acc, color: '#fff', fontWeight: 900, fontSize: 64, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>$</div>
+      <div style={{position: 'absolute', left: 0, right: 0, bottom: 50, textAlign: 'center', fontWeight: 900, fontSize: 52, color: C.acc}}>pays</div>
+    </div>
+    <div style={{position: 'absolute', left: 560, top: 160, width: 460, height: 760, borderRadius: 40, background: '#fff', overflow: 'hidden', boxShadow: '0 20px 80px rgba(217,58,58,0.25)', opacity: c}}>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 40, textAlign: 'center', fontWeight: 900, fontSize: 48, zIndex: 2}}>Big crowd</div>
+      {Array.from({length: 40}, (_, i) => <Avatar key={i} x={20 + (i % 5) * 86} y={130 + Math.floor(i / 5) * 86 - ((f * 6) % 86)} s={0.9} col="#D6D2C4" o={0.8} />)}
+      <div style={{position: 'absolute', left: 0, right: 0, bottom: 0, height: 140, background: '#fff'}} />
+      <div style={{position: 'absolute', left: 0, right: 0, bottom: 50, textAlign: 'center', fontWeight: 900, fontSize: 52, color: RED}}>scrolls</div>
+    </div>
+    {x > 0 && <div style={{position: 'absolute', left: 730, top: 440, transform: `scale(${pop(f - w('scrolls') + 2)})`}}><XMark size={130} /></div>}
+    <div style={{position: 'absolute', left: 120, top: 960, transform: 'scale(0.48)', transformOrigin: 'left top'}}><Face mood={-0.8} f={f} size={700} hold="money" /></div>
+  </>);
+};
+
+const SCENES = {viral: Viral, views_fans: ViewsFans, ypp: Ypp, fan_ladder: FanLadder, small_group: SmallGroup, counters: Counters, face_strike: FaceStrike, phone_fly: PhoneFly, ugc_explain: UgcExplain, rate3d: Rate, apps: Apps, wall: Wall, stamp_wall: StampScene, catch: Catch, journey: Journey, end_rows: EndCta};
 
 const Scene = ({b, i, start, len, last}) => {
   const lf = useCurrentFrame();
