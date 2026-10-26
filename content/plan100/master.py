@@ -1,6 +1,6 @@
 """Master video folder: one numbered subfolder per video with everything needed to review and render it.
 
-  python3 content/plan100/master.py [OUT]     (default OUT = /mnt/project-files/videos-master)
+  python3 content/plan100/master.py [OUT]     (default OUT = /mnt/project-files/02-videos)
 
 Writes content/plan100/registry.json (number -> slug, used by the Render Room page too) and, per video,
 OUT/NNN_slug/: spec.json, script.md, captions.md, guide.json, guide.pdf, affiliate.md, RENDER.md, thumbnail.png
@@ -9,7 +9,7 @@ OUT/NNN_slug/: spec.json, script.md, captions.md, guide.json, guide.pdf, affilia
 import json, pathlib, re, shutil, subprocess, sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-OUT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "/mnt/project-files/videos-master")
+OUT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "/mnt/project-files/02-videos")
 THUMBS = pathlib.Path(__file__).parent / "thumbs"  # local stills of not-yet-rendered videos (not committed)
 REPO = "subcreatorpaid/subcreator-videos"
 ROOM = "https://claude.ai/artifact/5RpYRzaySkv1cMp3xQtcok"
