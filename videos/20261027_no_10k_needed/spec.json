@@ -4,8 +4,8 @@
  "handle": "@subcreatorpaid",
  "audio": {
   "engine": "kokoro",
-  "kokoro_voice": "am_michael",
-  "speed": 0.95
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
  },
  "gap": 0.25,
  "slug": "20261027_no_10k_needed",

@@ -47,7 +47,8 @@ if hook_n is not None:  # H3: one hook variant as a 4 s clip
 pub = HERE / "public"; pub.mkdir(exist_ok=True)
 a = spec.get("audio", {})
 speed = a.get("speed", 0.95)
-if speed > 1.05: warn(f"voice speed {speed} above 1.05 (P5); using 1.05"); speed = 1.05
+cap = 1.12 if spec.get("style") == "story" else 1.05  # owner asked for an energetic voice (26 Oct 2026): story style allows up to 1.12
+if speed > cap: warn(f"voice speed {speed} above {cap} (P5); using {cap}"); speed = cap
 gap = min(0.45, max(0.25, spec.get("gap", GAP)))
 holds = []
 for b in spec["beats"]:

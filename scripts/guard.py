@@ -158,8 +158,9 @@ def check_animator_rules(s, rel):
         warn(f"videos/{rel}: {holds} beats with a hold (P2: only the 2-3 key lines)")
     if sum(1 for b in beats if b.get("riser")) > 1:
         warn(f"videos/{rel}: more than one riser (A4)")
-    if (s.get("audio") or {}).get("speed", 0.95) > 1.05:
-        warn(f"videos/{rel}: voice speed above 1.05 (P5)")
+    cap = 1.12 if s.get("style") == "story" else 1.05
+    if (s.get("audio") or {}).get("speed", 0.95) > cap:
+        warn(f"videos/{rel}: voice speed above {cap} (P5)")
     if len(s.get("hooks", [])) < 3:
         warn(f"videos/{rel}: fewer than 3 hook variants in 'hooks' (H3)")
 

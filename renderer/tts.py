@@ -33,6 +33,8 @@ def kokoro_lines(lines, voice="af_heart", speed=1.0, lang="en-us"):
     from kokoro_onnx import Kokoro
     from scipy.signal import resample_poly
     d = _model_dir(); k = Kokoro(os.path.join(d, "kokoro-v1.0.onnx"), os.path.join(d, "voices-v1.0.bin"))
+    if isinstance(voice, str) and "+" in voice:  # "am_michael+am_puck": an even blend of the voices' styles
+        names = voice.split("+"); voice = sum(k.get_voice_style(n) for n in names) / len(names)
     clips = []
     for s in lines:
         samples, sr = k.create(_say(s), voice=voice, speed=speed, lang=lang)
