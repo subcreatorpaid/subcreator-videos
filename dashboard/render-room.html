@@ -1,0 +1,227 @@
+<title>Render Room</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800;900&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: a production rundown, one row per video in make order, status stamp on the left, the render button on the right */
+:root {
+  --paper: #F6F5F1; --card: #FFFFFF; --ink: #151515; --muted: #6A6862; --line: #E2DFD7;
+  --money: #2E7D4F; --money-soft: #E3F0E7; --deny: #C73E3E; --deny-soft: #F8E4E2; --busy: #B7791F; --busy-soft: #F7EDD9;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #121311; --card: #1B1C1A; --ink: #F1F0EB; --muted: #9C9A93; --line: #2E2F2B;
+  --money: #5DBB86; --money-soft: #1D3226; --deny: #E57373; --deny-soft: #3A2120; --busy: #E0A84A; --busy-soft: #3A2F1A; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #121311; --card: #1B1C1A; --ink: #F1F0EB; --muted: #9C9A93; --line: #2E2F2B;
+  --money: #5DBB86; --money-soft: #1D3226; --deny: #E57373; --deny-soft: #3A2120; --busy: #E0A84A; --busy-soft: #3A2F1A; color-scheme: dark }
+body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 15px;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 32px 32px; background-attachment: fixed; }
+.wrap { max-width: 980px; margin: 0 auto; padding-block: 28px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 20px; }
+header { display: grid; gap: 10px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+.dot { width: 26px; height: 26px; border-radius: 50%; background: var(--money); color: var(--paper); display: grid; place-items: center; font-weight: 900; letter-spacing: 0; }
+h1 { margin: 0; font-size: clamp(34px, 7vw, 54px); font-weight: 900; letter-spacing: -.03em; line-height: 1; text-wrap: balance; }
+.lede { margin: 0; color: var(--muted); max-width: 62ch; line-height: 1.5; }
+.tally { display: flex; flex-wrap: wrap; gap: 10px; }
+.tally span { font-family: var(--mono); font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 999px; border: 2px solid var(--ink); background: var(--card); font-variant-numeric: tabular-nums; }
+.bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.seg { display: flex; border: 2px solid var(--ink); border-radius: 12px; overflow: hidden; background: var(--card); }
+.seg button { border: 0; background: none; color: var(--ink); font: 700 13px var(--sans); padding: 9px 14px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+#q { flex: 1 1 200px; min-width: 0; font: 600 14px var(--sans); padding: 10px 14px; border-radius: 12px; border: 2px solid var(--ink); background: var(--card); color: var(--ink); }
+.note { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.note b { color: var(--ink); }
+.group { font: 800 12px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
+.list { display: grid; gap: 10px; }
+.row { display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; gap: 14px; align-items: center; background: var(--card); border: 2px solid var(--ink); border-radius: 16px; padding: 12px 14px; box-shadow: 4px 4px 0 var(--ink); }
+.num { font: 700 22px var(--mono); text-align: center; font-variant-numeric: tabular-nums; }
+.info { min-width: 0; display: grid; gap: 6px; }
+.title { font-weight: 800; font-size: 16px; line-height: 1.25; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12px; color: var(--muted); }
+.pill { font: 700 11px var(--sans); letter-spacing: .06em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; border: 1.5px solid var(--line); color: var(--muted); }
+.st { border: 0; }
+.st.ready { background: var(--line); color: var(--ink); }
+.st.done { background: var(--money-soft); color: var(--money); }
+.st.busy { background: var(--busy-soft); color: var(--busy); }
+.st.fail { background: var(--deny-soft); color: var(--deny); }
+.links { display: flex; gap: 12px; flex-wrap: wrap; }
+.links a { color: var(--ink); font-weight: 700; font-size: 12px; }
+.act { display: grid; gap: 6px; justify-items: end; }
+.btn { font: 800 14px var(--sans); border-radius: 12px; padding: 10px 18px; cursor: pointer; border: 2px solid var(--ink); background: var(--ink); color: var(--paper); white-space: nowrap; }
+.btn.ghost { background: var(--card); color: var(--ink); font-size: 12px; padding: 6px 12px; }
+.btn.go { background: var(--money); border-color: var(--money); color: #fff; }
+.btn:disabled { opacity: .45; cursor: default; }
+.btn:focus-visible, .seg button:focus-visible, #q:focus-visible, .links a:focus-visible { outline: 3px solid var(--money); outline-offset: 2px; }
+.confirm { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: flex-end; font-size: 12px; font-weight: 700; }
+.msg { font-size: 12px; font-weight: 600; max-width: 240px; text-align: right; line-height: 1.35; }
+.msg.err { color: var(--deny); } .msg.ok { color: var(--money); }
+.empty { text-align: center; color: var(--muted); padding: 30px; }
+@media (max-width: 560px) {
+  .row { grid-template-columns: 44px minmax(0, 1fr); }
+  .num { font-size: 17px; }
+  .act { grid-column: 1 / -1; justify-items: stretch; }
+  .act .btn { width: 100%; }
+  .confirm { justify-content: stretch; } .confirm .btn { flex: 1; }
+  .msg { max-width: none; text-align: left; }
+}
+@media (prefers-reduced-motion: no-preference) { .row { transition: transform .12s, box-shadow .12s; } .row:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--ink); } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="brand"><span class="dot">$</span>Sub-Creator Paid</div>
+    <h1>Render Room</h1>
+    <p class="lede">Every video has its own Render button. Press it, confirm, and GitHub makes the video, 3 hook clips and the thumbnail in about 8 minutes. Nothing is posted anywhere.</p>
+    <div class="tally" id="tally"></div>
+  </header>
+  <div class="bar">
+    <div class="seg" role="group" aria-label="Show">
+      <button type="button" id="f-all" data-f="all" aria-pressed="true">All</button>
+      <button type="button" id="f-todo" data-f="todo" aria-pressed="false">Not rendered</button>
+      <button type="button" id="f-done" data-f="done" aria-pressed="false">Rendered</button>
+    </div>
+    <input id="q" type="search" placeholder="Search by number, title or tool" aria-label="Search videos">
+  </div>
+  <div class="note" id="conn">Connecting to GitHub to read live render status…</div>
+  <div id="list"></div>
+</div>
+
+<script>
+const DATA = [{"n": "001", "slug": "20261027_ugc_brands_pay", "title": "Brands pay for videos", "type": "value", "seconds": 53, "group": "earlier", "tool_name": null, "rendered": true}, {"n": "002", "slug": "20261027_views_wont_pay", "title": "Viral. Still $0?", "type": "value", "seconds": 39, "group": "earlier", "tool_name": null, "rendered": true}, {"n": "003", "slug": "20261027_no_10k_needed", "title": "You don't need 10K", "type": "value", "seconds": 32, "group": "earlier", "tool_name": null, "rendered": true}, {"n": "004", "slug": "20261028_ugc_samples_phone", "title": "3 UGC samples. Phone only.", "type": "value", "seconds": 42, "group": "earlier", "tool_name": null, "rendered": true}, {"n": "005", "slug": "20261028_price_first_ugc", "title": "What do I charge?", "type": "value", "seconds": 37, "group": "earlier", "tool_name": null, "rendered": true}, {"n": "006", "slug": "20261029_find_ugc_jobs", "title": "Where UGC jobs hide", "type": "value", "seconds": 35, "group": "earlier", "tool_name": null, "rendered": false}, {"n": "007", "slug": "20261029_spot_fake_deals", "title": "Fake brand deal?", "type": "value", "seconds": 39, "group": "earlier", "tool_name": null, "rendered": false}, {"n": "008", "slug": "20261030_disclose_right", "title": "Your bio isn't enough", "type": "value", "seconds": 37, "group": "earlier", "tool_name": null, "rendered": true}, {"n": "009", "slug": "v009_zero_follower_streams", "title": "5 income streams with 0 followers", "type": "value", "seconds": 51, "group": "plan", "tool_name": "Fiverr", "rendered": false}, {"n": "010", "slug": "v010_tiktok_rewards_rules", "title": "TikTok Creator Rewards: the real rules", "type": "value", "seconds": 52, "group": "plan", "tool_name": "OpusClip", "rendered": false}, {"n": "011", "slug": "v011_youtube_shopping_500", "title": "YouTube Shopping now opens at 500 subscribers", "type": "value", "seconds": 53, "group": "plan", "tool_name": "vidIQ", "rendered": false}, {"n": "012", "slug": "v012_patreon_fees", "title": "Patreon fees: what you keep from $10", "type": "value", "seconds": 47, "group": "plan", "tool_name": "beehiiv", "rendered": false}, {"n": "013", "slug": "v013_substack_fees", "title": "Paid newsletter on Substack: what you keep", "type": "value", "seconds": 48, "group": "plan", "tool_name": "beehiiv", "rendered": false}, {"n": "014", "slug": "v014_gumroad_fees", "title": "Gumroad fees: the one that triples", "type": "value", "seconds": 48, "group": "plan", "tool_name": "Stan Store", "rendered": false}, {"n": "015", "slug": "v015_kofi_fees", "title": "Ko-fi: when 0% fees are really 0%", "type": "value", "seconds": 50, "group": "plan", "tool_name": "beehiiv", "rendered": false}, {"n": "016", "slug": "v016_stan_store_price", "title": "Stan Store: the real price", "type": "tool", "seconds": 43, "group": "plan", "tool_name": "Stan Store", "rendered": false}, {"n": "017", "slug": "v017_kit_free_email", "title": "Start an email list free up to 10,000", "type": "tool", "seconds": 45, "group": "plan", "tool_name": "Kit", "rendered": false}, {"n": "018", "slug": "v018_spotify_memberships", "title": "Spotify Memberships: who qualifies, what you keep", "type": "value", "seconds": 39, "group": "plan", "tool_name": "Riverside", "rendered": false}, {"n": "019", "slug": "v019_elevenlabs_voice_pay", "title": "Get paid when people use your voice", "type": "value", "seconds": 45, "group": "plan", "tool_name": "ElevenLabs", "rendered": false}, {"n": "020", "slug": "v020_newsletter_boosts_proof", "title": "Proof: a newsletter earned $25,000 from Boosts", "type": "proof", "seconds": 44, "group": "plan", "tool_name": "beehiiv", "rendered": false}];
+const BUILT = "26 Oct 12:17 UTC";
+const OWNER = "subcreatorpaid", REPO = "subcreator-videos", GH = "github";
+const WF = `https://github.com/${OWNER}/${REPO}/actions/workflows/animate.yml`;
+const TYPE = {value: "Value", tool: "Tool", proof: "Proof", bio: "Bio", tutorial: "Tutorial"};
+const runs = {};            // slug -> latest run {status, conclusion, mode, url, at}
+const local = {};           // slug -> {phase: 'confirm'|'sending'|'sent'|'error', mode, msg}
+let mcp = null, filter = "all", q = "";
+try { filter = localStorage.getItem("rr-filter") || "all"; } catch (e) {}
+
+function state(v) {
+  const r = runs[v.slug];
+  if (r && r.mode === "full" && r.status !== "completed") return ["busy", "Rendering"];
+  if (r && r.mode === "stills" && r.status !== "completed") return ["busy", "Making stills"];
+  if (local[v.slug] && local[v.slug].phase === "sent") return ["busy", "Starting"];
+  if (r && r.mode === "full" && r.conclusion === "success") return ["done", "Rendered"];
+  if (v.rendered) return ["done", "Rendered"];
+  if (r && r.mode === "full" && r.conclusion && r.conclusion !== "success") return ["fail", "Last render failed"];
+  return ["ready", "Ready to render"];
+}
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+
+function row(v) {
+  const [cls, label] = state(v); const L = local[v.slug] || {};
+  const done = cls === "done", busy = cls === "busy";
+  let act;
+  if (L.phase === "confirm") {
+    act = `<div class="confirm"><span>${L.mode === "full" ? "Render the full video?" : "Make preview stills?"}</span>
+      <button class="btn go" data-do="send" data-slug="${v.slug}">Yes, ${L.mode === "full" ? "render" : "make stills"}</button>
+      <button class="btn ghost" data-do="cancel" data-slug="${v.slug}">Cancel</button></div>`;
+  } else {
+    act = `<button class="btn" data-do="ask" data-mode="full" data-slug="${v.slug}" ${busy || L.phase === "sending" ? "disabled" : ""}>${L.phase === "sending" ? "Sending…" : done ? "Render again" : "Render"}</button>
+      <button class="btn ghost" data-do="ask" data-mode="stills" data-slug="${v.slug}" ${busy || L.phase === "sending" ? "disabled" : ""}>Preview stills</button>`;
+  }
+  const msg = L.msg ? `<div class="msg ${L.phase === "error" ? "err" : "ok"}">${L.msg}</div>` : "";
+  const r = runs[v.slug];
+  return `<div class="row" id="v-${v.n}">
+    <div class="num">${esc(v.n)}</div>
+    <div class="info">
+      <div class="title">${esc(v.title)}</div>
+      <div class="meta"><span class="pill st ${cls}">${label}</span><span class="pill">${TYPE[v.type] || esc(v.type)}</span><span>~${v.seconds} s</span>${v.tool_name ? `<span>· ${esc(v.tool_name)}</span>` : ""}</div>
+      <div class="links">
+        <a href="https://github.com/${OWNER}/${REPO}/tree/main/videos/${v.slug}" target="_blank" rel="noopener">Files</a>
+        ${done ? `<a href="https://github.com/${OWNER}/${REPO}/releases/tag/video-${v.slug}-animated" target="_blank" rel="noopener">Download video</a>` : ""}
+        ${r ? `<a href="${esc(r.url)}" target="_blank" rel="noopener">Last run</a>` : ""}
+      </div>
+    </div>
+    <div class="act">${act}${msg}</div>
+  </div>`;
+}
+
+function render() {
+  const groups = [["earlier", "Made earlier"], ["plan", "The 100-video plan"], ["bio", "Bio videos"], ["tutorial", "AI Income Finder tutorial"]];
+  const qq = q.trim().toLowerCase();
+  const shown = DATA.filter((v) => {
+    const c = state(v)[0];
+    if (filter === "done" && c !== "done") return false;
+    if (filter === "todo" && c === "done") return false;
+    return !qq || `${v.n} ${v.title} ${v.tool_name || ""} ${v.slug}`.toLowerCase().includes(qq);
+  });
+  let html = "";
+  for (const [g, name] of groups) {
+    const vs = shown.filter((v) => (v.group || "plan") === g);
+    if (vs.length) html += `<div class="group">${name} · ${vs.length}</div><div class="list">${vs.map(row).join("")}</div>`;
+  }
+  document.getElementById("list").innerHTML = html || `<div class="empty">No videos match. Clear the search or pick All.</div>`;
+  const c = {done: 0, busy: 0, ready: 0, fail: 0}; DATA.forEach((v) => c[state(v)[0]]++);
+  document.getElementById("tally").innerHTML = `<span>${DATA.length} videos</span><span>${c.done} rendered</span><span>${c.busy} rendering</span><span>${c.ready + c.fail} to render</span>`;
+  document.querySelectorAll(".seg button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.f === filter)));
+}
+
+function noMcp(text) {
+  document.getElementById("conn").innerHTML = `${text} The buttons open GitHub instead: press <b>Run workflow</b>, paste the video name, pick <b>full</b>. <a href="${WF}" target="_blank" rel="noopener">Open GitHub</a>`;
+}
+
+async function send(slug, mode) {
+  const v = DATA.find((x) => x.slug === slug);
+  if (!mcp) { local[slug] = {phase: "error", msg: `Open GitHub > Run workflow > video: ${slug}, mode: ${mode}`}; render(); return; }
+  local[slug] = {phase: "sending", mode}; render();
+  try {
+    await mcp.callTool(GH, "actions_run_trigger", {method: "run_workflow", owner: OWNER, repo: REPO, workflow_id: "animate.yml", ref: "main", inputs: {video: slug, mode}});
+    local[slug] = {phase: "sent", mode, msg: mode === "full" ? `Render of ${v.n} started. About 8 minutes.` : `Stills for ${v.n} started. About 3 minutes.`};
+    setTimeout(() => mcp.invalidate(GH, "actions_list").catch(() => {}), 8000);
+  } catch (e) {
+    const m = {
+      needs_reauth: "GitHub sign-in expired. Reconnect GitHub in claude.ai Settings > Connectors, then press Render again.",
+      server_not_connected: "GitHub isn't connected for you. Add it in claude.ai Settings > Connectors.",
+      not_in_manifest: "GitHub access was declined for this page. Allow it in the page's connector settings.",
+      blocked_by_policy: "Your organization blocks this GitHub action.",
+      tool_error: `GitHub refused: ${e.message || "check the repository access"}.`,
+    }[e.code] || (e.retryable ? "GitHub didn't answer. Check Last run before pressing again, so it doesn't render twice." : `Couldn't start it (${e.code || "error"}).`);
+    local[slug] = {phase: "error", mode, msg: m};
+  }
+  render();
+}
+
+document.addEventListener("click", (ev) => {
+  const b = ev.target.closest("button"); if (!b) return;
+  if (b.dataset.f) { filter = b.dataset.f; try { localStorage.setItem("rr-filter", filter); } catch (e) {} render(); return; }
+  const slug = b.dataset.slug; if (!slug) return;
+  if (b.dataset.do === "ask") {
+    if (!mcp) { window.open(WF, "_blank", "noopener"); local[slug] = {phase: "error", msg: `On GitHub: Run workflow > video: ${slug}, mode: ${b.dataset.mode}`}; render(); return; }
+    local[slug] = {phase: "confirm", mode: b.dataset.mode}; render();
+  } else if (b.dataset.do === "cancel") { delete local[slug]; render(); }
+  else if (b.dataset.do === "send") send(slug, local[slug].mode);
+});
+document.getElementById("q").addEventListener("input", (e) => { q = e.target.value; render(); });
+
+render();
+
+(async () => {
+  try { mcp = window.claude && window.claude.use ? await window.claude.use("mcp") : null; } catch (e) { mcp = null; }
+  if (!mcp) { noMcp("Live status and one-tap rendering need the GitHub connector."); return; }
+  mcp.watchTool(GH, "actions_list", {method: "list_workflow_runs", owner: OWNER, repo: REPO, resource_id: "animate.yml", perPage: 100}, (ev) => {
+    if (ev.type === "error") {
+      const c = ev.error.code;
+      if (["needs_reauth", "server_not_connected", "not_in_manifest", "blocked_by_policy", "approval_required", "not_granted", "capability_disabled"].includes(c)) {
+        for (const k in runs) delete runs[k];
+        noMcp(c === "needs_reauth" ? "GitHub sign-in expired: reconnect it in claude.ai Settings > Connectors." : c === "server_not_connected" ? "Add GitHub in claude.ai Settings > Connectors for one-tap rendering." : "GitHub access isn't allowed for this page.");
+        render();
+      } else document.getElementById("conn").textContent = "Couldn't refresh render status just now; showing the last known status.";
+      return;
+    }
+    const p = ev.result.payload || {}; const list = p.workflow_runs || [];
+    for (const k in runs) delete runs[k];
+    for (const r of list) {
+      const m = /^Animate (\S+) \((stills|full)\)$/.exec(r.display_title || "");
+      if (!m || runs[m[1]]) continue;  // newest first: keep the latest run per video
+      runs[m[1]] = {status: r.status, conclusion: r.conclusion, mode: m[2], url: r.html_url, at: r.created_at};
+    }
+    for (const s in local) if (local[s].phase === "sent" && runs[s] && runs[s].mode === local[s].mode && Date.parse(runs[s].at) > Date.now() - 3600e3) delete local[s];
+    const at = ev.result.cache ? new Date(ev.result.cache.storedAt) : new Date();
+    document.getElementById("conn").innerHTML = `Live from GitHub · updated ${at.toLocaleTimeString([], {hour: "2-digit", minute: "2-digit"})}. Video list built ${BUILT}.`;
+    render();
+  }, {refetchInterval: 60000});
+})();
+</script>

@@ -1,0 +1,182 @@
+[
+ {
+  "n": "001",
+  "slug": "20261027_ugc_brands_pay",
+  "group": "earlier",
+  "title": "Brands pay for videos",
+  "type": "value",
+  "seconds": 53,
+  "tool": null
+ },
+ {
+  "n": "002",
+  "slug": "20261027_views_wont_pay",
+  "group": "earlier",
+  "title": "Viral. Still $0?",
+  "type": "value",
+  "seconds": 39,
+  "tool": null
+ },
+ {
+  "n": "003",
+  "slug": "20261027_no_10k_needed",
+  "group": "earlier",
+  "title": "You don't need 10K",
+  "type": "value",
+  "seconds": 32,
+  "tool": null
+ },
+ {
+  "n": "004",
+  "slug": "20261028_ugc_samples_phone",
+  "group": "earlier",
+  "title": "3 UGC samples. Phone only.",
+  "type": "value",
+  "seconds": 42,
+  "tool": null
+ },
+ {
+  "n": "005",
+  "slug": "20261028_price_first_ugc",
+  "group": "earlier",
+  "title": "What do I charge?",
+  "type": "value",
+  "seconds": 37,
+  "tool": null
+ },
+ {
+  "n": "006",
+  "slug": "20261029_find_ugc_jobs",
+  "group": "earlier",
+  "title": "Where UGC jobs hide",
+  "type": "value",
+  "seconds": 35,
+  "tool": null
+ },
+ {
+  "n": "007",
+  "slug": "20261029_spot_fake_deals",
+  "group": "earlier",
+  "title": "Fake brand deal?",
+  "type": "value",
+  "seconds": 39,
+  "tool": null
+ },
+ {
+  "n": "008",
+  "slug": "20261030_disclose_right",
+  "group": "earlier",
+  "title": "Your bio isn't enough",
+  "type": "value",
+  "seconds": 37,
+  "tool": null
+ },
+ {
+  "n": "009",
+  "slug": "v009_zero_follower_streams",
+  "group": "plan",
+  "title": "5 income streams with 0 followers",
+  "type": "value",
+  "seconds": 51,
+  "tool": "fiverr"
+ },
+ {
+  "n": "010",
+  "slug": "v010_tiktok_rewards_rules",
+  "group": "plan",
+  "title": "TikTok Creator Rewards: the real rules",
+  "type": "value",
+  "seconds": 52,
+  "tool": "opusclip"
+ },
+ {
+  "n": "011",
+  "slug": "v011_youtube_shopping_500",
+  "group": "plan",
+  "title": "YouTube Shopping now opens at 500 subscribers",
+  "type": "value",
+  "seconds": 53,
+  "tool": "vidiq"
+ },
+ {
+  "n": "012",
+  "slug": "v012_patreon_fees",
+  "group": "plan",
+  "title": "Patreon fees: what you keep from $10",
+  "type": "value",
+  "seconds": 47,
+  "tool": "beehiiv"
+ },
+ {
+  "n": "013",
+  "slug": "v013_substack_fees",
+  "group": "plan",
+  "title": "Paid newsletter on Substack: what you keep",
+  "type": "value",
+  "seconds": 48,
+  "tool": "beehiiv"
+ },
+ {
+  "n": "014",
+  "slug": "v014_gumroad_fees",
+  "group": "plan",
+  "title": "Gumroad fees: the one that triples",
+  "type": "value",
+  "seconds": 48,
+  "tool": "stan"
+ },
+ {
+  "n": "015",
+  "slug": "v015_kofi_fees",
+  "group": "plan",
+  "title": "Ko-fi: when 0% fees are really 0%",
+  "type": "value",
+  "seconds": 50,
+  "tool": "beehiiv"
+ },
+ {
+  "n": "016",
+  "slug": "v016_stan_store_price",
+  "group": "plan",
+  "title": "Stan Store: the real price",
+  "type": "tool",
+  "seconds": 43,
+  "tool": "stan"
+ },
+ {
+  "n": "017",
+  "slug": "v017_kit_free_email",
+  "group": "plan",
+  "title": "Start an email list free up to 10,000",
+  "type": "tool",
+  "seconds": 45,
+  "tool": "kit"
+ },
+ {
+  "n": "018",
+  "slug": "v018_spotify_memberships",
+  "group": "plan",
+  "title": "Spotify Memberships: who qualifies, what you keep",
+  "type": "value",
+  "seconds": 39,
+  "tool": "riverside"
+ },
+ {
+  "n": "019",
+  "slug": "v019_elevenlabs_voice_pay",
+  "group": "plan",
+  "title": "Get paid when people use your voice",
+  "type": "value",
+  "seconds": 45,
+  "tool": "elevenlabs"
+ },
+ {
+  "n": "020",
+  "slug": "v020_newsletter_boosts_proof",
+  "group": "plan",
+  "title": "Proof: a newsletter earned $25,000 from Boosts",
+  "type": "proof",
+  "seconds": 44,
+  "tool": "beehiiv"
+ }
+]

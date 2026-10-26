@@ -46,6 +46,7 @@ Hand-offs always go through files in `brain/` (never "remember it"): researcher 
 | Videos (spec + assets; pushing renders them) | `videos/<slug>/spec.json`; renderer in `renderer/`; workflow `.github/workflows/render.yml` |
 | New videos (animator) and its rules | `animator/` + `docs/animator-rules.md` (rules v4); workflow `.github/workflows/animate.yml` (mode stills or full) |
 | Website (Cloudflare Pages, builds on every push to main) | `site/build.py`, `functions/api/*` (finder, subscribe, comments on D1) |
+| 100-video plan + render buttons | `content/plan100/` (batch*.py -> make.py -> master.py -> render_room.py); master folder /mnt/project-files/videos-master/; Render Room (one Render button per video) https://claude.ai/artifact/5RpYRzaySkv1cMp3xQtcok |
 | Checks | `scripts/guard.py` (local) and `.github/workflows/guard.yml` (daily live check) |
 | Project history | Claude Docs "Project Summary": https://claude.ai/artifact/LJVKULTZrQCh2xTWuVdfh6 |
 
