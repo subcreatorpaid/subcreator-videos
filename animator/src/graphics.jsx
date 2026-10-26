@@ -4,6 +4,7 @@
 import React from 'react';
 import {interpolate, Easing} from 'remotion';
 import {C, FONT} from './Short';
+import {LOGO} from './logos';
 
 export const RED = '#D93A3A';
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'};
@@ -36,14 +37,22 @@ export const RedPill = ({children, size = 64, style = {}}) => (
     borderRadius: size * 0.22, boxShadow: `0 0 ${size * 0.8}px rgba(217,58,58,0.45)`, ...style}}>{children}</div>
 );
 
-const Ico = {
-  instagram: (c) => (<><rect x="3" y="3" width="18" height="18" rx="5" stroke={c} /><circle cx="12" cy="12" r="4" stroke={c} /><circle cx="17.5" cy="6.5" r="1" fill={c} /></>),
-  tiktok: (c) => (<><path d="M14 3v10.5a3.5 3.5 0 1 1-3.5-3.5" stroke={c} /><path d="M14 3c.5 2.5 2.5 4.5 5 5" stroke={c} /></>),
-  youtube: (c) => (<><rect x="2" y="5" width="20" height="14" rx="4" stroke={c} /><path d="M10 9l5 3-5 3z" fill={c} /></>),
+// Real platform logos (simple-icons paths, official colours).
+export const Logo = ({name, size = 90}) => {
+  if (name === 'youtube') return <svg width={size} height={size} viewBox="0 0 24 24"><path d={LOGO.youtube} fill="#FF0000" /></svg>;
+  if (name === 'instagram') return (
+    <svg width={size} height={size} viewBox="0 0 24 24">
+      <defs><radialGradient id="igg" cx="0.3" cy="1.07" r="1.3"><stop offset="0" stopColor="#FDF497" /><stop offset="0.05" stopColor="#FDF497" /><stop offset="0.45" stopColor="#FD5949" /><stop offset="0.6" stopColor="#D6249F" /><stop offset="0.9" stopColor="#285AEB" /></radialGradient></defs>
+      <rect x="0" y="0" width="24" height="24" rx="6" fill="url(#igg)" />
+      <g transform="translate(4.2 4.2) scale(0.65)"><path d={LOGO.instagram} fill="#fff" /></g>
+    </svg>);
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24">
+      <rect x="0" y="0" width="24" height="24" rx="6" fill="#000" />
+      <g transform="translate(5 4.6) scale(0.6)"><path d={LOGO.tiktok} fill="#25F4EE" transform="translate(-0.9 -0.7)" /><path d={LOGO.tiktok} fill="#FE2C55" transform="translate(0.9 0.7)" /><path d={LOGO.tiktok} fill="#fff" /></g>
+    </svg>);
 };
-export const PlatformIcon = ({name, size = 70, color = C.ink}) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">{Ico[name](color)}</svg>
-);
+export const BRAND_GLOW = {instagram: '214,36,159', tiktok: '37,244,238', youtube: '255,0,0'};
 
 export const GlowCard = ({children, style = {}, tint = '46,125,79'}) => (
   <div style={{background: C.card, borderRadius: 40, boxShadow: glow(tint, 0.2, 70), fontFamily: FONT, color: C.ink, ...style}}>{children}</div>
@@ -61,27 +70,65 @@ export const Handle = ({top = 1560}) => (
   <div style={{position: 'absolute', left: 0, right: 0, top, textAlign: 'center', fontFamily: FONT, fontWeight: 700, fontSize: 34, opacity: 0.6}}>@subcreatorpaid</div>
 );
 
-// A cartoon creator whose mood goes from 0 (hopeful) to 1 (frustrated).
-export const Face = ({mood = 0, f = 0, size = 620, phoneText = '$0'}) => {
+// The recurring creator (owner picked this face, 26 Oct 2026: keep it the same in every video).
+// mood: -1 = happy, 0 = neutral, 1 = frustrated. hold: what is in the hands.
+//   'phone0' phone showing red $0 | 'film' filming a sample | 'laptop' applying on a laptop | 'call' on a call with a brand
+//   'money' green payout on the phone | null nothing
+export const Face = ({mood = 0, f = 0, size = 620, hold = 'phone0', phoneText = '$0'}) => {
   const m = mood;
-  const brow = interpolate(m, [0, 1], [-6, 18]);
-  const mouth = interpolate(m, [0, 1], [16, -16]);
+  const brow = interpolate(m, [-1, 0, 1], [-10, 0, 18]);
+  const browY = interpolate(m, [-1, 0, 1], [-8, 0, 2]);
+  const mouth = interpolate(m, [-1, 0, 1], [26, 4, -16]);
   const sweat = interpolate(m, [0.6, 1], [0, 1], clamp);
+  const blush = interpolate(m, [-1, -0.4], [0.55, 0], clamp);
+  const happyEyes = m < -0.55;
   const shake = m > 0.9 ? Math.sin(f * 1.4) * 4 : 0;
+  const bob = Math.sin(f / 9) * 2;
   return (
-    <svg width={size} height={size * 1.25} viewBox="0 0 240 300" fill="none" style={{transform: `translateX(${shake}px)`}}>
+    <svg width={size * 4 / 3} height={size * 1.25} viewBox="-40 0 320 300" fill="none" style={{transform: `translate(${shake}px, ${bob}px)`, overflow: 'visible'}}>
       <path d="M50 300c4-64 32-96 70-96s66 32 70 96" fill={C.ink} />
       <circle cx="120" cy="104" r="72" fill="#F2C9A5" stroke={C.ink} strokeWidth="5" />
       <path d="M56 84c10-44 52-62 94-50 22 6 34 22 38 40-22-12-50-14-72-6-24 8-42 10-60 16z" fill={C.ink} />
-      <path d={`M80 ${96 - brow * 0.2}l28 ${brow * 0.5}`} stroke={C.ink} strokeWidth="7" strokeLinecap="round" />
-      <path d={`M160 ${96 - brow * 0.2}l-28 ${brow * 0.5}`} stroke={C.ink} strokeWidth="7" strokeLinecap="round" />
-      <circle cx="98" cy="118" r="7" fill={C.ink} /><circle cx="142" cy="118" r="7" fill={C.ink} />
-      <path d={`M96 ${156 - mouth * 0.3}q24 ${mouth} 48 0`} stroke={C.ink} strokeWidth="7" strokeLinecap="round" />
+      <path d={`M80 ${96 + browY - brow * 0.2}l28 ${brow * 0.5}`} stroke={C.ink} strokeWidth="7" strokeLinecap="round" />
+      <path d={`M160 ${96 + browY - brow * 0.2}l-28 ${brow * 0.5}`} stroke={C.ink} strokeWidth="7" strokeLinecap="round" />
+      {happyEyes ? (<>
+        <path d="M90 120q8-10 16 0" stroke={C.ink} strokeWidth="6" strokeLinecap="round" />
+        <path d="M134 120q8-10 16 0" stroke={C.ink} strokeWidth="6" strokeLinecap="round" />
+      </>) : (<><circle cx="98" cy="118" r="7" fill={C.ink} /><circle cx="142" cy="118" r="7" fill={C.ink} /></>)}
+      <circle cx="78" cy="140" r="11" fill={RED} opacity={blush * 0.5} /><circle cx="162" cy="140" r="11" fill={RED} opacity={blush * 0.5} />
+      <path d={`M96 ${154 - mouth * 0.3}q24 ${mouth} 48 0`} stroke={C.ink} strokeWidth="7" strokeLinecap="round" />
       <path d="M178 70c8 8 8 18 0 24" stroke="#4A90D9" strokeWidth="6" strokeLinecap="round" opacity={sweat} transform={`translate(0 ${sweat * 6})`} />
-      <g transform="rotate(-12 178 238)">
-        <rect x="148" y="186" width="60" height="100" rx="10" fill="#fff" stroke={C.ink} strokeWidth="5" />
-        <text x="178" y="246" textAnchor="middle" fontFamily="Inter, Arial" fontWeight="900" fontSize="24" fill={RED}>{phoneText}</text>
-      </g>
+      {hold === 'phone0' && (
+        <g transform="rotate(-12 178 238)">
+          <rect x="148" y="186" width="60" height="100" rx="10" fill="#fff" stroke={C.ink} strokeWidth="5" />
+          <text x="178" y="246" textAnchor="middle" fontFamily="Inter, Arial" fontWeight="900" fontSize="24" fill={RED}>{phoneText}</text>
+        </g>)}
+      {hold === 'money' && (
+        <g transform="rotate(-10 178 238)">
+          <rect x="146" y="184" width="64" height="104" rx="10" fill="#fff" stroke={C.ink} strokeWidth="5" />
+          <rect x="154" y="222" width="48" height="26" rx="6" fill={C.acc} />
+          <text x="178" y="241" textAnchor="middle" fontFamily="Inter, Arial" fontWeight="900" fontSize="17" fill="#fff">+$50</text>
+        </g>)}
+      {hold === 'film' && (
+        <g transform="rotate(8 190 200)">
+          <rect x="150" y="170" width="92" height="56" rx="10" fill={C.ink} />
+          <rect x="157" y="176" width="78" height="44" rx="6" fill="#9CC9B0" />
+          <circle cx="226" cy="186" r="5" fill={RED} opacity={Math.floor(f / 10) % 2 ? 1 : 0.2} />
+        </g>)}
+      {hold === 'call' && (
+        <g>
+          <rect x="176" y="82" width="34" height="62" rx="8" fill={C.ink} transform="rotate(14 193 113)" />
+          {[0, 1, 2].map((i) => (<path key={i} d={`M${222 + i * 12} ${96 - i * 4}q${8 + i * 4} 18 0 ${36 + i * 8}`} stroke={C.acc} strokeWidth="5" strokeLinecap="round" opacity={(Math.sin(f / 5 - i) + 1) / 2} />))}
+        </g>)}
+      {hold === 'laptop' && (
+        <g>
+          <rect x="30" y="196" width="180" height="104" rx="10" fill="#2A2A2A" stroke={C.ink} strokeWidth="5" />
+          <rect x="40" y="206" width="160" height="80" rx="4" fill="#fff" />
+          <rect x="52" y="218" width="80" height="8" rx="4" fill={C.line} />
+          <rect x="52" y="234" width={40 + ((f * 2) % 90)} height="8" rx="4" fill={C.ink} />
+          <rect x="52" y="254" width="56" height="18" rx="5" fill={C.acc} />
+          <circle cx="120" cy="250" r="3" fill="#fff" opacity="0.9" />
+        </g>)}
     </svg>
   );
 };
@@ -95,38 +142,51 @@ export const Phone = ({children, w = 560, h = 1120, tilt = 0, style = {}}) => (
 );
 
 export const Cursor = ({x, y, press = 0}) => (
-  <div style={{position: 'absolute', left: x, top: y, width: 70, height: 70, borderRadius: 35, background: 'rgba(21,21,21,0.18)', border: '5px solid rgba(21,21,21,0.7)',
-    transform: `translate(-50%,-50%) scale(${1 - press * 0.25})`}} />
+  <div style={{position: 'absolute', left: x, top: y, width: 34, height: 34, borderRadius: 17, background: 'rgba(255,255,255,0.75)', border: '3px solid rgba(21,21,21,0.35)',
+    boxShadow: `0 0 0 ${press * 16}px rgba(21,21,21,${0.12 * press})`, transform: `translate(-50%,-50%) scale(${1 - press * 0.2})`}} />
 );
 
-export const Chip = ({children, green = false, style = {}}) => (
+export const Chip = ({children, green = false, dark = false, style = {}}) => (
   <div style={{position: 'absolute', whiteSpace: 'nowrap', fontFamily: FONT, fontWeight: 800, fontSize: 44, padding: '18px 30px', borderRadius: 26,
-    background: green ? C.acc : '#fff', color: green ? '#fff' : C.ink, boxShadow: green ? `0 0 50px rgba(46,125,79,0.45)` : glow('0,0,0', 0.1, 50), ...style}}>{children}</div>
+    background: green ? C.acc : dark ? C.ink : '#fff', color: green || dark ? '#fff' : C.ink, border: dark || green ? 'none' : `3px solid ${C.ink}`,
+    boxShadow: green ? `0 0 50px rgba(46,125,79,0.45)` : glow('0,0,0', 0.14, 50), ...style}}>{children}</div>
 );
 
-// Tilted wall of sample "videos" scrolling like reels, columns at different speeds.
+// Tilted wall of YouTube-style video cards scrolling like a feed, columns at different speeds.
 const TILES = [
-  ['#E9C46A', '#C9962F', 'skincare unboxing'], ['#9CC9B0', '#2E7D4F', 'desk setup'], ['#C7B8E8', '#6E58B8', 'coffee review'],
-  ['#F4B6A6', '#D9644A', 'gym bottle'], ['#A9C8E8', '#3D6FA8', 'phone case'], ['#E8D9B8', '#B08C52', 'snack haul'],
-  ['#B8E0D2', '#3C8C78', 'plant care'], ['#F2C1D1', '#C0587A', 'lip tint'], ['#D6D2C4', '#6B6658', 'travel mug'],
+  ['#E9C46A', '#C9962F', 'I tried this serum for 7 days', 'GlowWithMia', '12K views', '0:42'],
+  ['#9CC9B0', '#2E7D4F', 'My $30 desk setup glow-up', 'DeskDiaries', '8.1K views', '0:58'],
+  ['#C7B8E8', '#6E58B8', 'Honest coffee maker review', 'BrewBen', '23K views', '1:12'],
+  ['#F4B6A6', '#D9644A', 'This bottle fixed my gym bag', 'FitByNoor', '5.4K views', '0:35'],
+  ['#A9C8E8', '#3D6FA8', 'Phone case drop test', 'TechTariq', '41K views', '0:49'],
+  ['#E8D9B8', '#B08C52', 'Healthy snack haul under $20', 'SnackSam', '9.7K views', '0:51'],
+  ['#B8E0D2', '#3C8C78', 'Plant care app, 30 days later', 'GreenAisha', '3.2K views', '0:44'],
+  ['#F2C1D1', '#C0587A', 'Lip tint wear test', 'BeautyByZara', '17K views', '0:38'],
+  ['#D6D2C4', '#6B6658', 'Travel mug: worth it?', 'CommuteKai', '6.6K views', '0:55'],
 ];
 const Tile = ({t, i, f}) => (
-  <div style={{height: 520, borderRadius: 36, background: `linear-gradient(180deg, ${t[0]}, ${t[1]})`, position: 'relative', overflow: 'hidden', boxShadow: glow('0,0,0', 0.16, 50)}}>
-    <div style={{position: 'absolute', left: '50%', top: '42%', width: 120, height: 120, borderRadius: 60, background: 'rgba(255,255,255,0.85)',
-      transform: `translate(-50%,-50%) scale(${1 + 0.05 * Math.sin((f + i * 9) / 8)})`}}>
-      <div style={{position: 'absolute', left: 48, top: 36, width: 0, height: 0, borderTop: '24px solid transparent', borderBottom: '24px solid transparent', borderLeft: `38px solid ${t[1]}`}} />
+  <div style={{borderRadius: 30, background: '#fff', overflow: 'hidden', boxShadow: glow('0,0,0', 0.16, 50), fontFamily: FONT}}>
+    <div style={{height: 300, background: `linear-gradient(135deg, ${t[0]}, ${t[1]})`, position: 'relative', overflow: 'hidden'}}>
+      <div style={{position: 'absolute', left: 24, top: 24, right: 120, color: '#fff', fontWeight: 900, fontSize: 40, lineHeight: 1.05, textShadow: '0 3px 12px rgba(0,0,0,0.35)'}}>{t[2].split(' ').slice(0, 3).join(' ').toUpperCase()}</div>
+      <div style={{position: 'absolute', right: 26, bottom: -20, width: 120, height: 190, borderRadius: '60px 60px 0 0', background: 'rgba(21,21,21,0.55)'}} />
+      <div style={{position: 'absolute', right: 52, bottom: 150, width: 70, height: 70, borderRadius: 35, background: 'rgba(21,21,21,0.55)'}} />
+      <div style={{position: 'absolute', right: 14, bottom: 14, background: 'rgba(0,0,0,0.8)', color: '#fff', fontWeight: 700, fontSize: 24, padding: '2px 10px', borderRadius: 8}}>{t[5]}</div>
+      <div style={{position: 'absolute', left: 0, bottom: 0, height: 7, width: `${((f * 1.1 + i * 23) % 100)}%`, background: '#FF0000'}} />
     </div>
-    <div style={{position: 'absolute', left: 24, bottom: 24, color: '#fff', fontFamily: FONT, fontWeight: 800, fontSize: 34}}>{t[2]}</div>
-    <div style={{position: 'absolute', left: 24, right: 24, bottom: 10, height: 6, borderRadius: 3, background: 'rgba(255,255,255,0.4)'}}>
-      <div style={{width: `${((f * 1.3 + i * 30) % 100)}%`, height: '100%', background: '#fff', borderRadius: 3}} />
+    <div style={{display: 'flex', gap: 16, padding: '18px 20px 22px'}}>
+      <div style={{width: 58, height: 58, borderRadius: 29, background: t[1], flexShrink: 0, color: '#fff', fontWeight: 900, fontSize: 28, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>{t[3][0]}</div>
+      <div style={{minWidth: 0}}>
+        <div style={{fontWeight: 800, fontSize: 28, lineHeight: 1.15, color: C.ink}}>{t[2]}</div>
+        <div style={{fontWeight: 500, fontSize: 23, color: '#606060', marginTop: 6}}>{t[3]} · {t[4]}</div>
+      </div>
     </div>
   </div>
 );
 export const ReelWall = ({f, speed = [3.2, 4.4, 2.6]}) => (
-  <div style={{position: 'absolute', left: -220, top: -300, width: 1520, height: 2600, transform: 'perspective(1800px) rotateX(22deg) rotateZ(-12deg)', display: 'flex', gap: 36}}>
+  <div style={{position: 'absolute', left: -240, top: -300, width: 1560, height: 2600, transform: 'perspective(1800px) rotateX(22deg) rotateZ(-12deg)', display: 'flex', gap: 34}}>
     {[0, 1, 2].map((c) => (
-      <div key={c} style={{flex: 1, display: 'flex', flexDirection: 'column', gap: 36, transform: `translateY(${-((f * speed[c]) % 556) - (c === 1 ? 260 : 0)}px)`}}>
-        {[0, 1, 2, 3, 4, 5].map((r) => { const i = (c * 3 + r) % TILES.length; return <Tile key={r} t={TILES[i]} i={i} f={f} />; })}
+      <div key={c} style={{flex: 1, display: 'flex', flexDirection: 'column', gap: 34, transform: `translateY(${-((f * speed[c]) % 474) - (c === 1 ? 220 : 0)}px)`}}>
+        {[0, 1, 2, 3, 4, 5, 6].map((r) => { const i = (c * 3 + r) % TILES.length; return <Tile key={r} t={TILES[i]} i={i} f={f} />; })}
       </div>
     ))}
   </div>
