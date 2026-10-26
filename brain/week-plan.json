@@ -1,7 +1,7 @@
 {
   "week_of": "2026-10-26",
   "review_doc": "https://claude.ai/artifact/CWL9pDUtA8VCvpQ5MYDZ4a",
-  "status": "approved",
+  "status": "cancelled_by_owner",
   "status_flow": "drafted -> approved -> rendered -> checked -> scheduled -> posted",
   "notes": [
     "Kit referral not approved yet: /go/kit falls back to kit.com until it is. Swap post 5 to beehiiv if Kit is still pending on render day.",
@@ -15,7 +15,7 @@
       "title": "Spotify now pays podcasts with 100 listeners",
       "affiliate": null,
       "slug": "20261026_spotify_memberships",
-      "status": "scheduled",
+      "status": "cancelled",
       "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261026_spotify_memberships",
       "buffer": "Buffer: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
       "slot": "12:00"
@@ -27,7 +27,7 @@
       "title": "OpusClip: one podcast into ten Shorts",
       "affiliate": "opusclip",
       "slug": "20261026_tool_opusclip",
-      "status": "checked",
+      "status": "cancelled",
       "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261026_tool_opusclip",
       "buffer": null,
       "slot": "18:00"
@@ -39,7 +39,7 @@
       "title": "5 signs a brand deal is fake",
       "affiliate": null,
       "slug": "20261027_fake_brand_deals",
-      "status": "scheduled",
+      "status": "cancelled",
       "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261027_fake_brand_deals",
       "buffer": "Buffer: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
       "slot": "18:00"
@@ -51,7 +51,7 @@
       "title": "YouTube pays from 500 subscribers",
       "affiliate": null,
       "slug": "20261028_youtube_500_subs",
-      "status": "scheduled",
+      "status": "cancelled",
       "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261028_youtube_500_subs",
       "buffer": "Buffer: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
       "slot": "12:00"
@@ -63,7 +63,7 @@
       "title": "Kit: start an email list for free",
       "affiliate": "kit",
       "slug": "20261028_tool_kit",
-      "status": "checked",
+      "status": "cancelled",
       "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261028_tool_kit",
       "buffer": null,
       "slot": "18:00"
@@ -75,7 +75,7 @@
       "title": "3 UGC samples with just your phone",
       "affiliate": null,
       "slug": "20261029_ugc_3_samples",
-      "status": "scheduled",
+      "status": "cancelled",
       "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261029_ugc_3_samples",
       "buffer": "Buffer: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
       "slot": "18:00"
@@ -87,7 +87,7 @@
       "title": "How to disclose a link the FTC way",
       "affiliate": null,
       "slug": "20261030_ftc_disclosure",
-      "status": "scheduled",
+      "status": "cancelled",
       "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261030_ftc_disclosure",
       "buffer": "Buffer: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
       "slot": "12:00"
@@ -99,7 +99,7 @@
       "title": "ElevenLabs: voiceover as a side service",
       "affiliate": "elevenlabs",
       "slug": "20261030_tool_elevenlabs",
-      "status": "checked",
+      "status": "cancelled",
       "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261030_tool_elevenlabs",
       "buffer": null,
       "slot": "18:00"
@@ -111,7 +111,7 @@
       "title": "Why views alone won't pay you yet",
       "affiliate": null,
       "slug": "20261031_views_wont_pay",
-      "status": "scheduled",
+      "status": "cancelled",
       "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261031_views_wont_pay",
       "buffer": "Buffer: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
       "slot": "12:00"
@@ -123,11 +123,12 @@
       "title": "3 official pages: no 10k needed",
       "affiliate": null,
       "slug": "20261101_proof_three_pages",
-      "status": "scheduled",
+      "status": "cancelled",
       "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261101_proof_three_pages",
       "buffer": "Buffer: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
       "slot": "12:00"
     }
   ],
-  "approved": "2026-10-25"
+  "approved": "2026-10-25",
+  "note": "26 Oct 07:27: owner does not like this week's videos. Do not post, schedule or re-render any of them. All videos will be remade from scratch with the animator v3 system (videos/20261029_ugc_animated as the approved base) after the owner's next instruction."
 }

@@ -1,25 +1,20 @@
 {
-  "updated": "2026-10-26 00:30",
-  "updated_by": "publisher",
+  "updated": "2026-10-26 07:30",
+  "updated_by": "secretary",
   "today": [
     {
-      "task": "Open Chrome (Buffer tab) and drag the 3 tool videos into the Claude chat: I add the 'Tools I use' links to the 7 scheduled posts and schedule the 3 tool videos",
-      "link": "https://publish.buffer.com/schedule",
-      "mins": 2
-    },
-    {
-      "task": "Bios: link subcreatorpaid.com/links on Instagram + YouTube (YouTube: also add it under channel Links, the only clickable spot for Shorts), or say 'update my bios'",
-      "link": "https://subcreatorpaid.com/links/",
-      "mins": 3
-    },
-    {
-      "task": "Log in to Fiverr Affiliates and paste your link (or tell me it's pending)",
-      "link": "https://fiverraffiliates.com/v2/login/",
+      "task": "Pause the Buffer queue on Instagram, TikTok and YouTube (or delete the 7 posts) so last week's videos don't go out",
+      "link": "https://publish.buffer.com",
       "mins": 2
     }
   ],
   "approvals": [],
-  "alerts": [],
+  "alerts": [
+    {
+      "level": "high",
+      "text": "Week of 26 Oct cancelled by owner: 7 posts still scheduled in Buffer until paused/deleted. Remake everything with animator v3; wait for owner's next instruction."
+    }
+  ],
   "pipeline": {
     "drafted": 0,
     "approved": 0,

@@ -62,4 +62,4 @@ Hand-offs always go through files in `brain/` (never "remember it"): researcher 
 - Website live on subcreatorpaid.com (AI finder on Workers AI, email list + comments on D1 `subcreator-site`, IndexNow done, Search Console verified).
 - Affiliates live: beehiiv, OpusClip, ElevenLabs, Skool. Kit in review. Fiverr waiting for owner login/approval. Stan later.
 - No AI host (owner decision 25 Oct). Videos = kinetic text, Kokoro voice, editor v4.
-- Week of 26 Oct approved; 7 posts scheduled in Buffer, 3 tool videos waiting. Every caption/description now carries the "Tools I use" affiliate block (`scripts/tools_block.py`); Buffer posts get it next time Chrome is open.
+- Week of 26 Oct CANCELLED by owner (26 Oct): do not post, schedule or re-render those videos. Everything is remade with animator v3 (`animator/`, base sample `videos/20261029_ugc_animated`). WAIT for the owner's next instruction before making new videos.
