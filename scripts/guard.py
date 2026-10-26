@@ -62,7 +62,7 @@ def check_brain():
     if len(st.get("today", [])) > 3:
         err("brain/status.json: more than 3 to-dos in 'today'")
     wp = load(ROOT / "brain/week-plan.json") or {}
-    flow = ["drafted", "approved", "rendered", "checked", "scheduled", "posted", "skipped"]
+    flow = ["drafted", "approved", "rendered", "checked", "scheduled", "posted", "skipped", "cancelled"]
     posts = wp.get("posts", [])
     for x in posts:
         if x.get("status") not in flow:
