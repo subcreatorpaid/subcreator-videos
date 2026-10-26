@@ -1,0 +1,52 @@
+name: Snap pages (phone view)
+
+# Takes phone-size screenshots of public pages (no logins, no cookies accepted) for use inside videos.
+# Actions tab > "Snap pages (phone view)" > Run workflow > space-separated URLs. Result: the "snaps" artifact.
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "Space-separated public URLs"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  snap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Screenshots
+        env:
+          URLS: ${{ github.event.inputs.urls }}
+        run: |
+          mkdir -p out && cd out && npm init -y >/dev/null && npm i -s playwright@1.48.2 >/dev/null && npx playwright install --with-deps chromium >/dev/null
+          cat > shot.js <<'E'
+          const {chromium, devices} = require('playwright');
+          (async () => {
+            const b = await chromium.launch(); let i = 0;
+            for (const url of process.env.URLS.split(/\s+/).filter(Boolean)) {
+              i++; const ctx = await b.newContext({...devices['iPhone 13']}); const pg = await ctx.newPage();
+              try { await pg.goto(url, {waitUntil: 'networkidle', timeout: 45000}); } catch (e) { console.log('warn', url, e.message.slice(0, 100)); }
+              await pg.waitForTimeout(3000);
+              await pg.evaluate(() => { for (const el of document.querySelectorAll('body *')) { const cs = getComputedStyle(el);
+                if ((cs.position === 'fixed' || cs.position === 'sticky') && /cookie|consent|accept|privacy/i.test(el.innerText || '')) el.style.display = 'none'; } });
+              const name = String(i).padStart(2, '0') + '_' + url.replace(/https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').slice(0, 60);
+              await pg.screenshot({path: name + '_top.png'}); await pg.screenshot({path: name + '_full.png', fullPage: true});
+              console.log(name, '->', pg.url(), '|', await pg.title()); await ctx.close();
+            }
+            await b.close();
+          })();
+          E
+          node shot.js | tee log.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: snaps
+          path: |
+            out/*.png
+            out/log.txt
+          retention-days: 7
