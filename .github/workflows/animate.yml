@@ -21,7 +21,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: animate
+  group: animate-${{ github.event.inputs.video }}  # one queue per video, so several videos can render at once
   cancel-in-progress: false
 
 env:
