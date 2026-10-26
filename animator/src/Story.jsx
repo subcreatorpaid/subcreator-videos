@@ -79,21 +79,19 @@ const FaceStrike = ({f, w}) => {
 };
 
 const PhoneFly = ({f, w}) => {
-  const fly = ease(f - w('they') + 4, 18);
-  const pay = ease(f - w('videos') - 6, 10);
+  const fly = ease(f - w('they') + 6, 18);
+  const pay = ease(f - w('videos') + 2, 10);
+  const shake = f > w('followers') && f < w('followers') + 10 ? Math.sin(f * 2.2) * 10 : 0;
   return (<>
-    <div style={{position: 'absolute', left: 0, right: 0, top: 420, display: 'flex', justifyContent: 'center', opacity: 1 - fly, transform: `perspective(1600px) rotateY(${fly * -50}deg) translateX(${-fly * 500}px)`}}>
+    <div style={{position: 'absolute', left: lerp(fly, 0, 1, 90, -10), top: lerp(fly, 0, 1, 330, 880), transform: `scale(${lerp(fly, 0, 1, 1, 0.55)})`, transformOrigin: 'left top'}}>
+      <Face mood={pay > 0.5 ? -1 : lerp(fly, 0, 1, 0.9, 0)} f={f} size={780} hold={fly > 0.05 ? (pay > 0.5 ? 'money' : null) : 'phone0'} />
+    </div>
+    <div style={{position: 'absolute', left: 0, right: 0, top: 190, display: 'flex', justifyContent: 'center', opacity: 1 - fly, transform: `translateX(${shake - fly * 500}px)`}}>
       <PopIn f={f - 4} style={{position: 'relative'}}><BlackChip x style={{fontSize: 70, padding: '30px 50px'}}>Followers</BlackChip></PopIn>
     </div>
-    <div style={{position: 'absolute', left: 140, top: 640, opacity: 1 - fly, transform: `translateX(${-fly * 500}px)`}}>
-      <div style={{fontWeight: 800, fontSize: 52, color: RED, textAlign: 'center', width: 800}}>don't pay</div>
-    </div>
-    <div style={{position: 'absolute', left: -10, top: 880, opacity: ease(f - w('videos') + 2, 10), transform: 'scale(0.55)', transformOrigin: 'left top'}}>
-      <Face mood={pay > 0.5 ? -1 : 0} f={f} size={780} hold={pay > 0.5 ? 'money' : null} />
-    </div>
     {fly > 0 && (
-      <Phone w={520} h={1040} style={{left: lerp(fly, 0, 1, 760, 400), top: lerp(fly, 0, 1, 900, 170),
-        transform: `perspective(2200px) rotateY(${lerp(fly, 0, 1, 70, -10)}deg) rotateX(${(1 - fly) * 20}deg) scale(${lerp(fly, 0, 1, 0.2, 1)})`, transformOrigin: 'center'}}>
+      <Phone w={520} h={1040} style={{left: lerp(fly, 0, 1, 640, 400), top: lerp(fly, 0, 1, 760, 170),
+        transform: `perspective(2200px) rotateY(${lerp(fly, 0, 1, 70, -10)}deg) rotateX(${(1 - fly) * 20}deg) scale(${lerp(fly, 0, 1, 0.15, 1)})`, transformOrigin: 'center'}}>
         <AdScreen f={f} />
       </Phone>
     )}
