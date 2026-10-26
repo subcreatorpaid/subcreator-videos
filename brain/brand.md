@@ -39,6 +39,11 @@ Four parts, 6-8 s in total, in this order:
 3. **The related affiliate tool:** "The tool I'd start with is linked in my bio" + "Affiliate link" on screen, and the "Tools I use" block
    with the disclosure in the caption. Pick the tool that fits the video's topic (UGC -> Fiverr/OpusClip, email -> beehiiv/Kit, voice -> ElevenLabs, community -> Skool).
 4. **Follow.**
+**Every DM goes to the website, and we ask for the email first (owner rule, 26 Oct 2026).** When comment-to-DM is set up:
+   1) the auto-DM thanks them and asks "What email should I send the <topic> guide to?" (with "you'll also get one verified income stream a week, unsubscribe anytime");
+   2) the email goes to our list (D1 via /api/subscribe), never only into the DM tool;
+   3) then one link to subcreatorpaid.com/guide/ (or the topic page), where the download sits behind the same email form, so anyone who skipped the email in the DM is asked again on the site.
+   No ebook file or affiliate link is sent straight in a DM. Replies to individual DMs in the owner's name still need his OK.
 Each ebook is a related free guide (PDF on the site, email sign-up to get it). Topic guides are drafted by the creator and need the owner's OK before going live.
 
 ## Before anything ships (creator + guard check)
