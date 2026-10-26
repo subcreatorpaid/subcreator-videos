@@ -1,7 +1,7 @@
 name: Snap pages (phone view)
 
 # Takes phone-size screenshots of public pages (no logins, no cookies accepted) for use inside videos.
-# Actions tab > "Snap pages (phone view)" > Run workflow > space-separated URLs. Result: the "snaps" artifact.
+# Actions tab > "Snap pages (phone view)" > Run workflow > space-separated URLs. Result: the "snaps-mobile" release (private repo).
 on:
   workflow_dispatch:
     inputs:
@@ -10,7 +10,7 @@ on:
         required: true
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   snap:
@@ -43,10 +43,10 @@ jobs:
           })();
           E
           node shot.js | tee log.txt
-      - uses: actions/upload-artifact@v4
-        with:
-          name: snaps
-          path: |
-            out/*.png
-            out/log.txt
-          retention-days: 7
+      - name: Publish on the Releases page
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh release view snaps-mobile >/dev/null 2>&1 || gh release create snaps-mobile --title "Phone-view page snaps" --notes "Screenshots of public pages for use inside videos. Not posted anywhere."
+          gh release upload snaps-mobile out/*.png out/log.txt --clobber
