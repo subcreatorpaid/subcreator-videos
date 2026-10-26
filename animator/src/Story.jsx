@@ -345,7 +345,7 @@ const FanLadder = ({f, w}) => {
       );
     })}
     <PopIn f={f - 4} style={{left: 60, top: 200}}><div style={{fontWeight: 900, fontSize: 70, lineHeight: 1.05}}>Fan money starts<br /><span style={{color: C.acc}}>much earlier</span></div></PopIn>
-    <div style={{position: 'absolute', left: [700, 760, 820][climb], top: [1000, 760, 520][climb], transform: 'scale(0.42)', transformOrigin: 'left top'}}>
+    <div style={{position: 'absolute', left: [690, 700, 20][climb], top: [1010, 720, 470][climb], transform: 'scale(0.36)', transformOrigin: 'left top'}}>
       <Face mood={climb < 2 ? -0.9 : 0.3} f={f} size={700} hold={climb < 2 ? 'money' : null} />
     </div>
   </>);
@@ -468,6 +468,7 @@ const Subs = ({beats, handle}) => {
     cur.push(w);
   });
   if (cur.length) chunks.push(cur);
+  for (let i = chunks.length - 1; i >= 0; i--) if (chunks[i].every((x) => !/\w/.test(x.w))) { if (i > 0) chunks[i - 1].push(...chunks[i]); chunks.splice(i, 1); }
   let ci = -1; chunks.forEach((c, i) => { if (f >= c[0].f - 2) ci = i; });
   const ch = ci >= 0 ? chunks[ci] : null;
   const kin = ch ? ease(f - ch[0].f + 2, 5) : 0;
