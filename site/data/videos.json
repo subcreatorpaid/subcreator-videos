@@ -1,0 +1,162 @@
+[
+ {
+  "n": "001",
+  "slug": "20261027_ugc_brands_pay",
+  "title": "Brands pay for videos",
+  "date": "2026-10-26",
+  "seconds": 53,
+  "about": "Brands pay for videos, not followers. It's called UGC: short videos you film that brands run as their own ads.",
+  "video": "/static/v/20261027_ugc_brands_pay.mp4",
+  "poster": "/static/v/20261027_ugc_brands_pay.jpg",
+  "guide": "/files/small-creator-income-guide.pdf",
+  "sources": [
+   {
+    "title": "UGC facts library (Billo, JoinBrands, Fiverr, Insense rates)",
+    "url": "site/data/streams/ugc.json"
+   }
+  ]
+ },
+ {
+  "n": "002",
+  "slug": "20261027_views_wont_pay",
+  "title": "Viral. Still $0?",
+  "date": "2026-10-27",
+  "seconds": 39,
+  "about": "Going viral won't pay you yet. YouTube Shorts ad money needs 1,000 subscribers and 10M Shorts views in 90 days (YouTube Help, checked 25 Oct 2026).",
+  "video": "/static/v/20261027_views_wont_pay.mp4",
+  "poster": "/static/v/20261027_views_wont_pay.jpg",
+  "guide": "/files/small-creator-income-guide.pdf",
+  "sources": [
+   {
+    "title": "YouTube Help: YouTube Partner Program overview & eligibility",
+    "url": "https://support.google.com/youtube/answer/13429240?hl=en"
+   },
+   {
+    "title": "Spotify newsroom: Memberships for creators (20 Oct 2026)",
+    "url": "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/"
+   }
+  ]
+ },
+ {
+  "n": "003",
+  "slug": "20261027_no_10k_needed",
+  "title": "You don't need 10K",
+  "date": "2026-10-28",
+  "seconds": 32,
+  "about": "You don't need 10,000 followers to earn. 3 official pages:\n1) YouTube Help: fan funding from 500 subscribers, with upload and watch-time rules\n2) Spotify newsroom (20 Oct 2026): Memberships from 100 listeners + 100 hours in 30 days (34 markets)\n3) OpusClip affiliate program: any creator can apply, no follower minimum listed",
+  "video": "/static/v/20261027_no_10k_needed.mp4",
+  "poster": "/static/v/20261027_no_10k_needed.jpg",
+  "guide": "/files/small-creator-income-guide.pdf",
+  "sources": [
+   {
+    "title": "YouTube Help: YouTube Partner Program overview & eligibility",
+    "url": "https://support.google.com/youtube/answer/13429240?hl=en"
+   },
+   {
+    "title": "Spotify newsroom: Memberships for creators (20 Oct 2026)",
+    "url": "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/"
+   },
+   {
+    "title": "OpusClip affiliate program",
+    "url": "https://www.opus.pro/affiliate"
+   }
+  ]
+ },
+ {
+  "n": "004",
+  "slug": "20261028_ugc_samples_phone",
+  "title": "3 UGC samples. Phone only.",
+  "date": "2026-10-29",
+  "seconds": 42,
+  "about": "No brand hires you without samples. Film these 3 today: 1) an unboxing of something you own (15-30 s, upright, window light), 2) a problem + fix demo, 3) a talking review with 3 honest points. Label every sample \"not sponsored\" and never imply a brand hired you. Put them on one link page and start applying: beginners usually charge $50-$400 a video (Insense, Sep 2026). The catch: samples don't promise work, and rates vary by niche.",
+  "video": "/static/v/20261028_ugc_samples_phone.mp4",
+  "poster": "/static/v/20261028_ugc_samples_phone.jpg",
+  "guide": "/files/small-creator-income-guide.pdf",
+  "sources": [
+   {
+    "title": "Insense: UGC creator rates (Sep 2026)",
+    "url": "https://insense.pro/blog/ugc-creator-rates"
+   },
+   {
+    "title": "Sub-Creator Paid: UGC stream (checked 26 Oct 2026)",
+    "url": "https://subcreatorpaid.com/streams/ugc/"
+   }
+  ]
+ },
+ {
+  "n": "005",
+  "slug": "20261028_price_first_ugc",
+  "title": "What do I charge?",
+  "date": "2026-10-30",
+  "seconds": 37,
+  "about": "Beginners usually charge $50-$400 per UGC video (Insense, Sep 2026). Brands pay for the work, not your follower count. Your base price covers a short, organic post; paid ads, more platforms or longer use cost more. Raw footage costs less than a finished, edited video. Get price, usage and deadline in writing before you film. The catch: rates swing a lot by niche, so read a few briefs before you quote.",
+  "video": "/static/v/20261028_price_first_ugc.mp4",
+  "poster": "/static/v/20261028_price_first_ugc.jpg",
+  "guide": "/files/small-creator-income-guide.pdf",
+  "sources": [
+   {
+    "title": "Insense: UGC creator rates (Sep 2026)",
+    "url": "https://insense.pro/blog/ugc-creator-rates"
+   }
+  ]
+ },
+ {
+  "n": "006",
+  "slug": "20261029_find_ugc_jobs",
+  "title": "Where UGC jobs hide",
+  "date": "2026-10-31",
+  "seconds": 35,
+  "about": "4 places to find paid UGC work: 1) Billo: no follower minimum, creators in the US, UK and Canada. 2) JoinBrands: brands post briefs, you apply with your samples. 3) Fiverr: list UGC as a gig so brands can find you. 4) Pitch brands directly: email a sample made with a product you already use. The catch: Insense needs 1,000+ Instagram followers, and every brand wants samples first.",
+  "video": "/static/v/20261029_find_ugc_jobs.mp4",
+  "poster": "/static/v/20261029_find_ugc_jobs.jpg",
+  "guide": "/files/small-creator-income-guide.pdf",
+  "sources": [
+   {
+    "title": "Billo: UGC creator jobs (no follower requirement; US, UK, Canada)",
+    "url": "https://billo.app/blog/ugc-creator-jobs/"
+   },
+   {
+    "title": "JoinBrands: creator getting started guide",
+    "url": "https://help.joinbrands.com/en/articles/6462008-creator-getting-started-guide"
+   },
+   {
+    "title": "Insense: for creators (follower requirements)",
+    "url": "https://insense.pro/for-creators/en"
+   }
+  ]
+ },
+ {
+  "n": "007",
+  "slug": "20261029_spot_fake_deals",
+  "title": "Fake brand deal?",
+  "date": "2026-11-01",
+  "seconds": 39,
+  "about": "The FTC's warning signs of a fake brand deal: 1) a \"brand ambassador manager\" messages you out of nowhere, 2) heavy flattery about your page or style, 3) they name-drop real people at the company, 4) they send links that only look official, 5) the big one: they ask for bank or personal details so payments can start. To check, contact the brand on a number you already know is real, never one they sent. Never share bank details in a DM. Report scams at reportfraud.ftc.gov.",
+  "video": "/static/v/20261029_spot_fake_deals.mp4",
+  "poster": "/static/v/20261029_spot_fake_deals.jpg",
+  "guide": "/files/small-creator-income-guide.pdf",
+  "sources": [
+   {
+    "title": "FTC: Bogus brand ambassador managers scam prospective influencers (Oct 2023)",
+    "url": "https://www.ftc.gov/business-guidance/blog/2023/10/influence-peddling-bogus-brand-ambassador-managers-scam-prospective-influencers"
+   }
+  ]
+ },
+ {
+  "n": "008",
+  "slug": "20261030_disclose_right",
+  "title": "Your bio isn't enough",
+  "date": "2026-11-02",
+  "seconds": 37,
+  "about": "The FTC says a disclosure in your bio isn't enough. Put it in the post itself, where it's hard to miss: not only at the end, not behind \"more\", not lost in hashtags. In a video, say it and show it on screen, because some people watch without sound. Use clear words like \"ad\" or \"sponsored\"; skip \"sp\", \"spon\" or \"collab\". The catch: a platform's disclosure tool alone may not be enough, and US rules can apply even if you post from abroad.",
+  "video": "/static/v/20261030_disclose_right.mp4",
+  "poster": "/static/v/20261030_disclose_right.jpg",
+  "guide": "/files/small-creator-income-guide.pdf",
+  "sources": [
+   {
+    "title": "FTC: Disclosures 101 for Social Media Influencers",
+    "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+   }
+  ]
+ }
+]

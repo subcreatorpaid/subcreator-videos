@@ -127,8 +127,88 @@
       "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261101_proof_three_pages",
       "buffer": "Buffer: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
       "slot": "12:00"
+    },
+    {
+      "day": "2026-10-26",
+      "slot": "18:00",
+      "time": null,
+      "slug": "20261027_ugc_brands_pay",
+      "title": "Brands pay for videos",
+      "status": "approved",
+      "buffer": null,
+      "note": "Owner OK 26 Oct 13:48 ('schedule them starting from today'); one a day 18:00 London; MP4 in /mnt/project-files/first-8-videos/"
+    },
+    {
+      "day": "2026-10-27",
+      "slot": "18:00",
+      "time": null,
+      "slug": "20261027_views_wont_pay",
+      "title": "Viral. Still $0?",
+      "status": "approved",
+      "buffer": null,
+      "note": "Owner OK 26 Oct 13:48 ('schedule them starting from today'); one a day 18:00 London; MP4 in /mnt/project-files/first-8-videos/"
+    },
+    {
+      "day": "2026-10-28",
+      "slot": "18:00",
+      "time": null,
+      "slug": "20261027_no_10k_needed",
+      "title": "You don't need 10K",
+      "status": "approved",
+      "buffer": null,
+      "note": "Owner OK 26 Oct 13:48 ('schedule them starting from today'); one a day 18:00 London; MP4 in /mnt/project-files/first-8-videos/"
+    },
+    {
+      "day": "2026-10-29",
+      "slot": "18:00",
+      "time": null,
+      "slug": "20261028_ugc_samples_phone",
+      "title": "3 UGC samples. Phone only.",
+      "status": "approved",
+      "buffer": null,
+      "note": "Owner OK 26 Oct 13:48 ('schedule them starting from today'); one a day 18:00 London; MP4 in /mnt/project-files/first-8-videos/"
+    },
+    {
+      "day": "2026-10-30",
+      "slot": "18:00",
+      "time": null,
+      "slug": "20261028_price_first_ugc",
+      "title": "What do I charge?",
+      "status": "approved",
+      "buffer": null,
+      "note": "Owner OK 26 Oct 13:48 ('schedule them starting from today'); one a day 18:00 London; MP4 in /mnt/project-files/first-8-videos/"
+    },
+    {
+      "day": "2026-10-31",
+      "slot": "18:00",
+      "time": null,
+      "slug": "20261029_find_ugc_jobs",
+      "title": "Where UGC jobs hide",
+      "status": "approved",
+      "buffer": null,
+      "note": "Owner OK 26 Oct 13:48 ('schedule them starting from today'); one a day 18:00 London; MP4 in /mnt/project-files/first-8-videos/"
+    },
+    {
+      "day": "2026-11-01",
+      "slot": "18:00",
+      "time": null,
+      "slug": "20261029_spot_fake_deals",
+      "title": "Fake brand deal?",
+      "status": "approved",
+      "buffer": null,
+      "note": "Owner OK 26 Oct 13:48 ('schedule them starting from today'); one a day 18:00 London; MP4 in /mnt/project-files/first-8-videos/"
+    },
+    {
+      "day": "2026-11-02",
+      "slot": "18:00",
+      "time": null,
+      "slug": "20261030_disclose_right",
+      "title": "Your bio isn't enough",
+      "status": "approved",
+      "buffer": null,
+      "note": "Owner OK 26 Oct 13:48 ('schedule them starting from today'); one a day 18:00 London; MP4 in /mnt/project-files/first-8-videos/"
     }
   ],
   "approved": "2026-10-25",
-  "note": "26 Oct 07:27: owner does not like this week's videos. Do not post, schedule or re-render any of them. All videos will be remade from scratch with the animator v3 system (videos/20261029_ugc_animated as the approved base) after the owner's next instruction."
+  "note": "26 Oct 07:27: owner does not like this week's videos. Do not post, schedule or re-render any of them. All videos will be remade from scratch with the animator v3 system (videos/20261029_ugc_animated as the approved base) after the owner's next instruction. | 26 Oct 13:48: owner approved the 8 animator videos (001-008) for one-a-day posting from 26 Oct; Buffer needs the owner's computer."
 }

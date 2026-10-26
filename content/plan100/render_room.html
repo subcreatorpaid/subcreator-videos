@@ -120,9 +120,9 @@ function row(v) {
     act = `<div class="confirm"><span>${L.mode === "full" ? "Render the full video?" : "Make preview stills?"}</span>
       <button class="btn go" data-do="send" data-slug="${v.slug}">Yes, ${L.mode === "full" ? "render" : "make stills"}</button>
       <button class="btn ghost" data-do="cancel" data-slug="${v.slug}">Cancel</button></div>`;
-  } else if (linkMode) {  // no live GitHub connection: real links (pop-ups are blocked in artifacts) + copy the video name
+  } else if (linkMode || L.phase === "fallback") {  // no live GitHub connection, or the one-tap call failed: real links (pop-ups are blocked in artifacts) + copy the video name
     act = `<a class="btn" href="${WF}" target="_blank" rel="noopener">Render on GitHub</a>
-      <button class="btn ghost" data-do="copy" data-slug="${v.slug}">${L.phase === "copied" ? "Copied" : "Copy video name"}</button>
+      <button class="btn ghost" data-do="copy" data-slug="${v.slug}">${L.copied ? "Copied" : "Copy video name"}</button>
       <div class="msg ok">Run workflow → video: <b class="sel">${esc(v.slug)}</b> → mode: full</div>`;
   } else {
     act = `<button class="btn" data-do="ask" data-mode="full" data-slug="${v.slug}" ${busy || L.phase === "sending" ? "disabled" : ""}>${L.phase === "sending" ? "Sending…" : done ? "Render again" : "Render"}</button>
@@ -189,8 +189,14 @@ async function send(slug, mode) {
       not_in_manifest: "GitHub access was declined for this page. Allow it in the page's connector settings.",
       blocked_by_policy: "Your organization blocks this GitHub action.",
       tool_error: `GitHub refused: ${e.message || "check the repository access"}.`,
-    }[e.code] || (e.retryable ? "GitHub didn't answer. Check Last run before pressing again, so it doesn't render twice." : `Couldn't start it (${e.code || "error"}).`);
-    local[slug] = {phase: "error", mode, msg: m};
+    }[e.code] || (e.retryable ? `GitHub didn't answer (${e.code || "timeout"}: ${esc(e.message || "")}). Check Last run before pressing again, so it doesn't render twice.` : `Couldn't start it (${e.code || "error"}: ${esc(e.message || "")}).`);
+    // The call may have reached GitHub even though the answer got lost: look for a new run before offering the link.
+    const t0 = Date.now() - 60e3; local[slug] = {phase: "sending", mode}; render();
+    await new Promise((r) => setTimeout(r, 12000));
+    try { await mcp.invalidate(GH, "actions_list"); } catch (x) {}
+    await new Promise((r) => setTimeout(r, 4000));
+    if (runs[slug] && runs[slug].mode === mode && Date.parse(runs[slug].at) > t0) { local[slug] = {phase: "sent", mode, msg: `Started on GitHub. About ${mode === "full" ? 8 : 3} minutes.`}; render(); return; }
+    local[slug] = {phase: "fallback", mode, msg: `${m} Use the GitHub link instead.`};
     if (["not_granted", "not_in_manifest", "server_not_connected", "capability_disabled", "bad_request"].includes(e.code)) { delete local[slug]; noMcp(m); }
   }
   render();
@@ -204,7 +210,7 @@ document.addEventListener("click", (ev) => {
     if (!mcp) { local[slug] = {phase: "error", msg: "Still connecting to GitHub. Try again in a few seconds."}; render(); return; }
     local[slug] = {phase: "confirm", mode: b.dataset.mode}; render();
   } else if (b.dataset.do === "copy") {
-    const ok = () => { local[slug] = {phase: "copied"}; render(); };
+    const ok = () => { local[slug] = {...(local[slug] || {}), copied: true}; render(); };
     try { navigator.clipboard.writeText(slug).then(ok, () => selectName(slug)); } catch (e) { selectName(slug); }
   } else if (b.dataset.do === "cancel") { delete local[slug]; render(); }
   else if (b.dataset.do === "send") send(slug, local[slug].mode);

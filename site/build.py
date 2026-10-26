@@ -17,6 +17,7 @@ D = lambda *p: os.path.join(HERE, "data", *p)
 cfg = json.load(open(D("config.json")))
 progs = {p["id"]: p for p in json.load(open(D("links.json")))["programs"]}
 streams = [json.load(open(f)) for f in sorted(glob.glob(D("streams", "*.json")))]
+videos = json.load(open(D("videos.json"))) if os.path.exists(D("videos.json")) else []  # finished videos (MP4 + poster in static/v)
 posts = sorted([json.load(open(f)) for f in glob.glob(D("posts", "*.json"))], key=lambda p: p["date"], reverse=True)
 e = html.escape
 SITE = cfg.get("site_url", "").rstrip("/")
@@ -156,6 +157,9 @@ section.s{padding-block:84px 10px}
 .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 @media(max-width:900px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.cards{grid-template-columns:minmax(0,1fr)}}
 .essay{display:flex;flex-direction:column;gap:10px;padding:24px;border-radius:20px;background:var(--paper);border:1px solid var(--line);box-shadow:var(--glow);text-decoration:none;transition:transform .15s,box-shadow .15s}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:20px;padding-bottom:40px}
+.vcard{display:flex;flex-direction:column;overflow:hidden;padding:0}.vcard video{width:100%;aspect-ratio:9/16;max-height:70vh;background:#111;display:block;object-fit:cover}
+.vbody{display:flex;flex-direction:column;gap:10px;padding:18px;min-width:0}.vbody h3{font-size:22px;font-weight:800;letter-spacing:-.02em}.vbody p{color:var(--muted)}.vbody details{font-size:14px;color:var(--muted)}.vbody details a{overflow-wrap:anywhere}
 .essay:hover{transform:translateY(-3px);box-shadow:var(--glow-lg)}.essay h3{font-size:24px;font-weight:800;letter-spacing:-.02em}.essay p{color:var(--muted)}
 .essay small{margin-top:auto;font:700 12px var(--mono);color:var(--acc)}
 .stream{padding:20px;display:flex;flex-direction:column;gap:12px;text-decoration:none;transition:transform .12s}
@@ -241,13 +245,13 @@ def header(cur=""):
     def l(href, label, key):
         return f'<a class="l" href="{href}"{" aria-current=page" if cur == key else ""}>{label}</a>'
     return (f'<header class="top"><div class="wrap nav"><a class="mark" href="/"><i>$</i>sub-creator paid</a>'
-            f'{l("/#watch", "Watch", "watch")}'
+            f'{l("/videos/", "Watch", "watch")}'
             f'<div class="dd"><button type="button" id="ddb" aria-expanded="false" aria-controls="ddm">Income streams ▾</button>'
             f'<div class="menu" id="ddm" hidden>{items}<a href="/streams/">All income streams<small>Filter by followers and type</small></a></div></div>'
             f'{l("/#finder", "AI finder", "finder")}{l("/tools/", "Tools", "tools")}{l("/blog/", "Blog", "blog")}'
             f'<button class="btn primary sm js-join" type="button">Join the free list</button>'
             f'<button class="mnav" type="button" id="mnb" aria-expanded="false" aria-controls="mnm">Menu</button></div>'
-            f'<div class="wrap mmenu" id="mnm" hidden><a href="/streams/">Income streams</a><a href="/#finder">AI finder</a><a href="/#watch">Watch</a>'
+            f'<div class="wrap mmenu" id="mnm" hidden><a href="/streams/">Income streams</a><a href="/#finder">AI finder</a><a href="/videos/">Watch</a>'
             f'<a href="/tools/">Tools</a><a href="/blog/">Blog</a><a href="/tracker/">Income tracker</a><a href="/about/">How it works</a></div></header>')
 
 def footer():
@@ -319,7 +323,8 @@ def build():
     mq2 = "".join(f"<span>{e(p['name'])}</span>" for p in reversed(pay_progs))
     s_eps = "".join(ep(s["category"], s["pay_short"], s["pay_unit"][:24], f'/streams/{s["slug"]}/', s["title"].split(" (")[0], s["category"]) for s in streams)
     t_eps = "".join(ep("Tool", p["name"], "affiliate" if p["pays_you"] else "free tool", "/tools/", p["name"], p["category"]) for p in pay_progs[:6])
-    w_eps = ep("Coming soon", "Your question", "answered", "/#finder", "First episode soon", "Ask in the comments", True)
+    w_eps = "".join(ep(f'Video {v["n"]}', v["title"][:22], f'{v["seconds"]} s', f'/videos/#v{v["n"]}', v["title"], "Watch + free guide") for v in videos[:6]) or \
+        ep("Coming soon", "Your question", "answered", "/#finder", "First episode soon", "Ask in the comments", True)
     hero_card = ""
     if latest:
         words = latest["title"].split(" (")[0]
@@ -341,7 +346,7 @@ def build():
             f'<section class="s wrap" id="watch"><div class="shead"><div><h2>Three series, <em class="s">one goal.</em></h2><p>Get your first income before your account is big. Each series answers a different question.</p></div></div>'
             f'<div class="series"><div><p class="eyebrow">Daily · 60 seconds</p><h3 style="margin-top:8px">Stream of the Day</h3><p>One verified way to get paid: the pay, the catch and the first steps.</p><a class="link" href="/streams/">All income streams →</a></div><div class="row">{s_eps}</div></div>'
             f'<div class="series"><div><p class="eyebrow">Weekly</p><h3 style="margin-top:8px">Tools That Pay</h3><p>Creator tools with fair referral programs, checked before we mention them.</p><a class="link" href="/tools/">All tools →</a></div><div class="row">{t_eps}</div></div>'
-            f'<div class="series"><div><p class="eyebrow">Fridays</p><h3 style="margin-top:8px">Small Account Wins</h3><p>Your questions answered, and real numbers from creators under 10k.</p><a class="link" href="{e(SOC.get("tiktok", "/"))}">Follow on TikTok →</a></div><div class="row">{w_eps}</div></div></section>'
+            f'<div class="series"><div><p class="eyebrow">Fridays</p><h3 style="margin-top:8px">Small Account Wins</h3><p>Your questions answered, and real numbers from creators under 10k.</p><a class="link" href="/videos/">All videos →</a></div><div class="row">{w_eps}</div></div></section>'
             f'<section class="metrics" aria-label="Site numbers"><div class="wrap"><div><b class="num">100%</b><span>of pay figures linked to the official page</span></div>'
             f'<div><b class="num">{len(streams)}</b><span>income stream guides, each with sources</span></div><div><b class="num">{len(progs)}</b><span>creator tools listed, free plans marked</span></div>'
             f'<div><b class="num">$0</b><span>to use the finder, tracker and guides</span></div></div></section>'
@@ -474,6 +479,18 @@ def build():
     write("404.html", page("/404", "Page not found", "Page not found.", '<section class="wrap page"><h1>Page not <em class="s">found.</em></h1><p class="lead"><a href="/">Go to the home page</a> or <a href="/streams/">browse income streams</a>.</p></section>'))
     # ---------- downloadable files (free guide)
     if os.path.isdir(os.path.join(HERE, "files")): shutil.copytree(os.path.join(HERE, "files"), os.path.join(OUT, "files"), dirs_exist_ok=True)
+    # ---------- videos
+    if videos:
+        def vcard(v):
+            src = "".join(f'<li><a href="{e(x["url"])}" rel="noopener" target="_blank">{e(x["title"])}</a></li>' for x in v["sources"])
+            return (f'<article class="card vcard" id="v{v["n"]}"><video controls preload="none" playsinline poster="{v["poster"]}" src="{v["video"]}"></video>'
+                    f'<div class="vbody"><p class="eyebrow">Video {e(v["n"])} · {v["seconds"]} s</p><h3>{e(v["title"])}</h3><p style="white-space:pre-line">{e(v["about"])}</p>'
+                    f'<p style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn primary" href="{v["guide"]}" target="_blank" rel="noopener">Free guide (PDF)</a><a class="btn" href="/#finder">Try the AI finder</a></p>'
+                    + (f'<details><summary>Sources</summary><ul>{src}</ul></details>' if src else "") + '</div></article>')
+        write("videos/index.html", page("/videos/", f'Videos: {cfg["site_name"]}', "Short videos on income streams that pay small creators, with the free guide and the sources for each.",
+              f'<section class="wrap page"><p class="eyebrow">Watch</p><h1>Short videos, <em class="s">real numbers.</em></h1>'
+              f'<p class="lead" style="max-width:56ch;color:var(--muted);margin-top:14px">Every video shows the number, the source and the catch. Grab the free guide under each one, or try the <a href="/#finder">AI finder</a>.</p></section>'
+              f'<section class="wrap"><div class="vgrid">{"".join(vcard(v) for v in videos)}</div></section>', "watch"))
     # ---------- redirects, headers, sitemap, robots
     redir = "".join(f"/go/{p['id']}/ {p['referral_url'] or p['official_url']} 302\n/go/{p['id']} {p['referral_url'] or p['official_url']} 302\n" for p in progs.values())
     write("_redirects", redir)
@@ -481,7 +498,7 @@ def build():
           "  Strict-Transport-Security: max-age=31536000; includeSubDomains\n"
           "  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cusdis.com https://static.cloudflareinsights.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cusdis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://cusdis.com https://challenges.cloudflare.com; connect-src 'self' https://cusdis.com https://cloudflareinsights.com; base-uri 'self'; form-action 'self'\n"
           "/static/*\n  Cache-Control: public, max-age=86400\n")
-    urls = ["/", "/streams/", "/tools/", "/tracker/", "/blog/", "/guide/", "/links/", "/about/", "/work-with-us/", "/disclosure/", "/privacy/", "/terms/"] + [f"/streams/{s['slug']}/" for s in streams] + [f"/blog/{p['slug']}/" for p in posts]
+    urls = ["/", "/streams/", "/tools/", "/tracker/", "/blog/", "/guide/", "/links/", "/about/", "/work-with-us/", "/disclosure/", "/privacy/", "/terms/"] + [f"/streams/{s['slug']}/" for s in streams] + [f"/blog/{p['slug']}/" for p in posts] + (["/videos/"] if videos else [])
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>{SITE}{u}</loc><lastmod>{TODAY}</lastmod></url>" for u in urls) + "</urlset>")
     if cfg.get("indexnow_key"): write(f"{cfg['indexnow_key']}.txt", cfg["indexnow_key"])
     write("robots.txt", f"User-agent: *\nAllow: /\nDisallow: /go/\nSitemap: {SITE}/sitemap.xml\n")
