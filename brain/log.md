@@ -7,3 +7,4 @@ One line per run: `YYYY-MM-DD HH:MM | role | what was done | needs owner`
 2026-10-25 15:15 | publisher | Scheduled 7 posts in Buffer (21 slots, IG/TT/YT, AI labels on TT+YT) | send 3 tool videos
 2026-10-26 00:30 | publisher | 'Tools I use' affiliate block added to all 10 captions (scripts/tools_block.py), guard check + skill rules; Chrome offline so Buffer edits queued | open Chrome, send 3 tool videos
 2026-10-26 04:05 | creator | Text-sync loop sample (UGC, word-synced bursts via renderer/render_sync.py + faster-whisper) rendering on GitHub; reference only, not scheduled | review sample
+2026-10-26 04:10 | creator | Text-sync version of the UGC 3-samples video (pain hook, caption payoff, loop) rendering | owner: swap into Thu slot?

@@ -1,0 +1,20 @@
+{
+ "slug": "20261029_ugc_3_samples_textsync",
+ "format": "text-sync loop (updated version of 20261029_ugc_3_samples)",
+ "handle": "@subcreatorpaid",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {"section": "hook", "say": "You're / reading this / with hundreds / of followers / and *zero* / dollars.", "card": null, "gap": 0.2},
+  {"section": "shift", "say": "That's not / a follower / *problem.*", "card": {"type": "stat", "label": "Followers needed", "big": "0", "sub": "to get paid for UGC"}, "gap": 0.1},
+  {"section": "shift", "say": "Brands / don't pay / for followers. / They pay / for *videos.*", "gap": 0.14},
+  {"section": "value", "say": "It's called / *UGC.* / You film / short videos / brands run / as their / own ads.", "card": {"type": "stat", "label": "What it is", "big": "UGC", "sub": "short videos brands run as their own ads"}, "gap": 0.1},
+  {"section": "value", "say": "Beginners / usually charge / [$50|fifty] to / [$400|four hundred dollars] / a video.", "card": {"type": "stat", "label": "Beginner rates", "big": "$50-$400", "sub": "per video (Insense, Sep 2026)"}, "gap": 0.1},
+  {"section": "value", "say": "To get / hired, / you need / *three* / samples, / all filmed / on your / phone.", "card": {"type": "stat", "label": "To get hired", "big": "3 samples", "sub": "all filmed on your phone"}, "gap": 0.1},
+  {"section": "value", "say": "One rule: / label them / *not sponsored,* / and never / imply / a brand / hired you.", "card": {"type": "stat", "label": "One rule", "big": "Not sponsored", "sub": "never imply a brand hired you"}, "gap": 0.1},
+  {"section": "value", "say": "The *catch:* / no brand / says yes / until it / sees them, / and rates / vary / by niche.", "card": {"type": "stat", "label": "The catch", "big": "Samples first", "sub": "and rates vary by niche and usage rights", "tone": "catch"}, "gap": 0.14},
+  {"section": "payoff", "say": "The three / samples, / and exactly / how to / film each, / are in / the *caption.*", "card": {"type": "hidden", "title": "In the caption", "rows": ["Sample 1: the unboxing", "Sample 2: problem + fix", "Sample 3: talking review"]}, "gap": 0.08},
+  {"section": "payoff", "say": "Read it, / save it, / film one / today.", "gap": 0.08},
+  {"section": "loop", "say": "Because / right now,", "card": null, "gap": 0.04}
+ ]
+}
