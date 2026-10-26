@@ -4,7 +4,7 @@
  "handle": "@subcreatorpaid",
  "audio": {
   "engine": "kokoro",
-  "kokoro_voice": "af_heart",
+  "kokoro_voice": "am_michael",
   "speed": 0.95
  },
  "gap": 0.25,
