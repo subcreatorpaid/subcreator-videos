@@ -1,0 +1,368 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "20261028_price_first_ugc",
+ "format": "story style: DM asks your rate (freeze), 3D rate cards, balance scale (work vs followers), printing quote, raw vs edited, contract signing",
+ "beats": [
+  {
+   "say": "A brand asks your rate, and you freeze. Here's how to price your first UGC video.",
+   "show": {
+    "type": "dm_freeze",
+    "red": [
+     "freeze"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "rate",
+     "pop"
+    ],
+    [
+     "freeze",
+     "glass"
+    ],
+    [
+     "price",
+     "swoosh"
+    ]
+   ]
+  },
+  {
+   "say": "Beginners usually charge [$50|fifty] to [$400|four hundred dollars] per video.",
+   "show": {
+    "type": "rate3d",
+    "green": [
+     "$50",
+     "$400"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "$50",
+     "card"
+    ],
+    [
+     "$50",
+     "card"
+    ],
+    [
+     "$400",
+     "card"
+    ],
+    [
+     "$400",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Brands pay for the work, not your follower count.",
+   "show": {
+    "type": "scale",
+    "red": [
+     "follower"
+    ]
+   },
+   "sfx": [
+    [
+     "work",
+     "drop"
+    ],
+    [
+     "work",
+     "thud"
+    ],
+    [
+     "follower",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Your base price covers a short, organic post. Paid ads, more platforms or longer use cost more.",
+   "show": {
+    "type": "receipt",
+    "green": [
+     "more"
+    ],
+    "lines": [
+     [
+      "base",
+      "Organic post, short use",
+      "base"
+     ],
+     [
+      "paid",
+      "Paid ads",
+      "up"
+     ],
+     [
+      "platforms",
+      "More platforms",
+      "up"
+     ],
+     [
+      "longer",
+      "Longer use",
+      "up"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "zip"
+    ],
+    [
+     "base",
+     "key"
+    ],
+    [
+     "paid",
+     "key"
+    ],
+    [
+     "platforms",
+     "key"
+    ],
+    [
+     "longer",
+     "key"
+    ],
+    [
+     "more",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Raw footage costs less than a finished, edited video.",
+   "show": {
+    "type": "versus",
+    "left": {
+     "t": "Raw footage",
+     "tag": "less",
+     "word": "raw"
+    },
+    "right": {
+     "t": "Edited video",
+     "tag": "more",
+     "word": "finished"
+    }
+   },
+   "sfx": [
+    [
+     "raw",
+     "whip"
+    ],
+    [
+     "finished",
+     "whip"
+    ],
+    [
+     "edited",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Before you film, get the price, usage and deadline in writing.",
+   "show": {
+    "type": "contract",
+    "items": [
+     [
+      "price",
+      "Price"
+     ],
+     [
+      "usage",
+      "Usage"
+     ],
+     [
+      "deadline",
+      "Deadline"
+     ]
+    ],
+    "sign": "writing"
+   },
+   "sfx": [
+    [
+     0,
+     "page"
+    ],
+    [
+     "price",
+     "click"
+    ],
+    [
+     "usage",
+     "click"
+    ],
+    [
+     "deadline",
+     "click"
+    ],
+    [
+     "writing",
+     "swoosh"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: rates swing a lot by niche, so read a few briefs before you quote.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "items": [
+     [
+      "niche",
+      "Rates vary by niche",
+      true
+     ],
+     [
+      "briefs",
+      "Read briefs first",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "niche",
+     "whip"
+    ],
+    [
+     "briefs",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment GUIDE, or get it free on [subcreatorpaid.com|sub creator paid dot com]. Tools I use are in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Price your first UGC video"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "tools",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "Beginners charge [$50|fifty] to [$400|four hundred dollars] for one UGC video.",
+   "show": {
+    "type": "rate3d",
+    "green": [
+     "$50",
+     "$400"
+    ]
+   },
+   "sfx": [
+    [
+     "$50",
+     "card"
+    ],
+    [
+     "$400",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "A brand asks your rate, and you freeze?",
+   "show": {
+    "type": "dm_freeze",
+    "red": [
+     "freeze"
+    ]
+   },
+   "sfx": [
+    [
+     "rate",
+     "pop"
+    ],
+    [
+     "freeze",
+     "glass"
+    ]
+   ]
+  },
+  {
+   "label": "C: the myth",
+   "say": "Brands don't pay for followers. They pay for the work.",
+   "show": {
+    "type": "scale",
+    "red": [
+     "followers"
+    ]
+   },
+   "sfx": [
+    [
+     "work",
+     "drop"
+    ],
+    [
+     "work",
+     "thud"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Insense: UGC creator rates (Sep 2026)",
+   "url": "https://insense.pro/blog/ugc-creator-rates"
+  }
+ ],
+ "thumb": {
+  "headline": "What do I\n*charge*?",
+  "hero": "face",
+  "hold": null,
+  "mood": 0.8,
+  "sticker": "$50 – $400",
+  "sticker_color": "green",
+  "chip": "Your first UGC price",
+  "top": 330,
+  "size": 140
+ },
+ "style": "story"
+}

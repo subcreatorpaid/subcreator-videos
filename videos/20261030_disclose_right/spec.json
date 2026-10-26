@@ -1,0 +1,330 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "20261030_disclose_right",
+ "format": "story style: profile bio struck out, Ad label slams into the caption, say-it + show-it on a muted video, words sorted into Clear vs Vague bins",
+ "beats": [
+  {
+   "say": "Got a paid link in your post? A disclosure in your bio isn't enough.",
+   "show": {
+    "type": "bio_fail",
+    "red": [
+     "isn't"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "isn't",
+     "thud"
+    ],
+    [
+     "enough",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Put it in the post itself, where it's hard to miss. Not at the end, and not behind more.",
+   "show": {
+    "type": "post_place",
+    "red": [
+     "not"
+    ]
+   },
+   "sfx": [
+    [
+     "post",
+     "thud"
+    ],
+    [
+     "hard",
+     "pop"
+    ],
+    [
+     "end",
+     "whip"
+    ],
+    [
+     "more",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "In a video, say it and show it on screen, because some people watch without sound.",
+   "show": {
+    "type": "mute_show",
+    "red": [
+     "without"
+    ]
+   },
+   "sfx": [
+    [
+     "say",
+     "pop"
+    ],
+    [
+     "show",
+     "thud"
+    ],
+    [
+     "without",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Use clear words like ad or sponsored. Skip vague ones like [sp|S P], spon or collab.",
+   "show": {
+    "type": "word_sort",
+    "red": [
+     "sp",
+     "spon",
+     "collab"
+    ],
+    "words": [
+     [
+      "ad",
+      "ad",
+      true
+     ],
+     [
+      "sponsored",
+      "sponsored",
+      true
+     ],
+     [
+      "sp",
+      "sp",
+      false
+     ],
+     [
+      "spon",
+      "spon",
+      false
+     ],
+     [
+      "collab",
+      "collab",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "ad",
+     "pop"
+    ],
+    [
+     "sponsored",
+     "pop"
+    ],
+    [
+     "sp",
+     "pop"
+    ],
+    [
+     "spon",
+     "pop"
+    ],
+    [
+     "collab",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: the platform's tool alone may not be enough, and US rules can apply even if you post from abroad.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": null,
+    "items": [
+     [
+      "tool",
+      "Platform tool alone: not enough",
+      true
+     ],
+     [
+      "abroad",
+      "US rules can still apply",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "tool",
+     "whip"
+    ],
+    [
+     "abroad",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment GUIDE, or get it free on [subcreatorpaid.com|sub creator paid dot com]. Tools I use are in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Disclose links the right way"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "tools",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the myth",
+   "say": "Your bio disclosure isn't enough. Here's where it goes.",
+   "show": {
+    "type": "bio_fail",
+    "red": [
+     "isn't"
+    ]
+   },
+   "sfx": [
+    [
+     "isn't",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "label": "B: the rule",
+   "say": "Some people watch without sound. So say the ad, and show it.",
+   "show": {
+    "type": "mute_show",
+    "red": [
+     "without"
+    ]
+   },
+   "sfx": [
+    [
+     "without",
+     "click"
+    ],
+    [
+     "say",
+     "pop"
+    ],
+    [
+     "show",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "label": "C: the words",
+   "say": "Spon, [sp|S P] and collab aren't clear. Use ad or sponsored.",
+   "show": {
+    "type": "word_sort",
+    "red": [
+     "sp",
+     "spon",
+     "collab"
+    ],
+    "words": [
+     [
+      "spon",
+      "spon",
+      false
+     ],
+     [
+      "sp",
+      "sp",
+      false
+     ],
+     [
+      "collab",
+      "collab",
+      false
+     ],
+     [
+      "ad",
+      "ad",
+      true
+     ],
+     [
+      "sponsored",
+      "sponsored",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "spon",
+     "pop"
+    ],
+    [
+     "sp",
+     "pop"
+    ],
+    [
+     "collab",
+     "pop"
+    ],
+    [
+     "ad",
+     "pop"
+    ],
+    [
+     "sponsored",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "FTC: Disclosures 101 for Social Media Influencers",
+   "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+  }
+ ],
+ "thumb": {
+  "headline": "Your bio\n~isn't enough~",
+  "hero": "face",
+  "hold": null,
+  "mood": 0.8,
+  "sticker": "#ad",
+  "sticker_color": "red",
+  "chip": "Disclose links the right way",
+  "top": 330,
+  "size": 130
+ },
+ "style": "story"
+}

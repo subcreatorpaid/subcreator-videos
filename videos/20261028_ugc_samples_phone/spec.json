@@ -1,0 +1,377 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "20261028_ugc_samples_phone",
+ "format": "story style: empty sample folder, camera viewfinder x3 (unbox, problem/fix, talking review), not-sponsored stamp, link page + payout",
+ "beats": [
+  {
+   "say": "No brand will hire you without samples. Here are three you can film today, with just your phone.",
+   "show": {
+    "type": "no_samples",
+    "red": [
+     "without"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "without",
+     "thud"
+    ],
+    [
+     "three",
+     "card"
+    ],
+    [
+     "three",
+     "card"
+    ],
+    [
+     "phone",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Sample one: unbox something you already own. Fifteen to thirty seconds, upright, by a window.",
+   "show": {
+    "type": "viewfinder",
+    "n": 1,
+    "title": "Unboxing",
+    "prop": "box",
+    "open": "unbox",
+    "secs": 30,
+    "chips": [
+     [
+      "fifteen",
+      "15–30 sec"
+     ],
+     [
+      "upright",
+      "Upright"
+     ],
+     [
+      "window",
+      "Window light"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "unbox",
+     "page"
+    ],
+    [
+     "fifteen",
+     "pop"
+    ],
+    [
+     "upright",
+     "pop"
+    ],
+    [
+     "window",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Sample two: a problem, then the fix. Show the annoying part, then the product solving it.",
+   "show": {
+    "type": "viewfinder",
+    "n": 2,
+    "title": "Problem + fix",
+    "prop": "fix",
+    "fix": "fix",
+    "secs": 30,
+    "red": [
+     "problem"
+    ],
+    "chips": [
+     [
+      "annoying",
+      "Show the pain"
+     ],
+     [
+      "solving",
+      "Product fixes it"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "fix",
+     "swipe"
+    ],
+    [
+     "annoying",
+     "pop"
+    ],
+    [
+     "solving",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Sample three: a talking review. Three honest points, straight to camera.",
+   "show": {
+    "type": "viewfinder",
+    "n": 3,
+    "title": "Talking review",
+    "prop": "talk",
+    "secs": 45,
+    "points": [
+     [
+      "honest",
+      "What it does"
+     ],
+     [
+      "points",
+      "What I liked"
+     ],
+     [
+      "straight",
+      "What could be better"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "honest",
+     "pop"
+    ],
+    [
+     "points",
+     "pop"
+    ],
+    [
+     "straight",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Label every sample not sponsored, and never imply a brand hired you.",
+   "show": {
+    "type": "stamp_wall",
+    "red": [
+     "not",
+     "never"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "not",
+     "thud"
+    ],
+    [
+     "never",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Put all three on one link page, and start applying. Beginners get [$50|fifty] to [$400|four hundred dollars] a video.",
+   "show": {
+    "type": "portfolio",
+    "green": [
+     "$50",
+     "$400"
+    ]
+   },
+   "sfx": [
+    [
+     "link",
+     "whoosh"
+    ],
+    [
+     "link",
+     "card"
+    ],
+    [
+     "applying",
+     "click"
+    ],
+    [
+     "$50",
+     "ding"
+    ],
+    [
+     "$400",
+     "bank"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: samples don't promise work, and rates vary a lot by niche.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "film",
+    "items": [
+     [
+      "promise",
+      "No promise of work",
+      true
+     ],
+     [
+      "niche",
+      "Rates vary by niche",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "promise",
+     "whip"
+    ],
+    [
+     "niche",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment GUIDE, or get it free on [subcreatorpaid.com|sub creator paid dot com]. Tools I use are in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "3 UGC samples, phone only"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "tools",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the pain line",
+   "say": "No brand will hire you without samples. Here are three you can film today.",
+   "show": {
+    "type": "no_samples",
+    "red": [
+     "without"
+    ]
+   },
+   "sfx": [
+    [
+     "without",
+     "thud"
+    ],
+    [
+     "three",
+     "card"
+    ]
+   ]
+  },
+  {
+   "label": "B: the promise",
+   "say": "Want UGC work? Film these three samples first, with just your phone.",
+   "show": {
+    "type": "no_samples"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "three",
+     "card"
+    ]
+   ]
+  },
+  {
+   "label": "C: the first step",
+   "say": "Your phone is enough to make three UGC samples. Here's what to film.",
+   "show": {
+    "type": "viewfinder",
+    "n": 1,
+    "title": "Unboxing",
+    "prop": "box",
+    "open": "three",
+    "secs": 30,
+    "chips": []
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "three",
+     "page"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Insense: UGC creator rates (Sep 2026)",
+   "url": "https://insense.pro/blog/ugc-creator-rates"
+  },
+  {
+   "title": "Sub-Creator Paid: UGC stream (checked 26 Oct 2026)",
+   "url": "https://subcreatorpaid.com/streams/ugc/"
+  }
+ ],
+ "thumb": {
+  "headline": "3 UGC samples.\n^Phone only.^",
+  "hero": "face",
+  "hold": "film",
+  "mood": -0.4,
+  "sticker": "Film today",
+  "chip": "No studio, no followers",
+  "top": 330,
+  "size": 130
+ },
+ "style": "story"
+}

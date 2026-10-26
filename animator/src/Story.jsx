@@ -4,20 +4,14 @@
 import React from 'react';
 import {AbsoluteFill, Sequence, useCurrentFrame, interpolate, Img, staticFile, Audio} from 'remotion';
 import {C, FONT, Fonts} from './Short';
-import {RED, ease, pop, glow, FromSide, PopIn, CountUp, RedPill, Logo, BRAND_GLOW, Face, Phone, Cursor, Chip, ReelWall, Stamp, DrawLine} from './graphics';
+import {RED, ease, pop, glow, FromSide, PopIn, CountUp, RedPill, Logo, BRAND_GLOW, Face, Phone, Cursor, Chip, ReelWall, Stamp, DrawLine, XMark, BlackChip, Payout} from './graphics';
+import {SCENES2} from './Story2';
 
 const OV = 8; // overlap between scenes (frames)
 const clean = (s) => String(s).replace(/[^\w$%'-]/g, '').toLowerCase();
 const lerp = (f, a, b, x, y) => interpolate(f, [a, b], [x, y], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
 
 // ---------- shared bits
-const XMark = ({size = 54}) => (
-  <div style={{width: size, height: size, borderRadius: size / 2, background: RED, color: '#fff', fontWeight: 900, fontSize: size * 0.6, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0}}>✕</div>
-);
-const BlackChip = ({children, x = false, style = {}}) => (
-  <div style={{display: 'flex', alignItems: 'center', gap: 20, background: C.ink, color: '#fff', fontFamily: FONT, fontWeight: 800, fontSize: 46, padding: '20px 32px', borderRadius: 28,
-    boxShadow: x ? '0 16px 60px rgba(217,58,58,0.35)' : glow('0,0,0', 0.18, 50), whiteSpace: 'nowrap', ...style}}>{x && <XMark />}{children}</div>
-);
 const AdScreen = ({f}) => (
   <div style={{position: 'absolute', inset: 0, background: 'linear-gradient(170deg, #F4EDE4, #E7D9C6)', fontFamily: FONT}}>
     <div style={{position: 'absolute', left: 30, top: 40, background: C.ink, color: '#fff', fontWeight: 800, fontSize: 26, padding: '4px 14px', borderRadius: 8}}>Ad</div>
@@ -28,14 +22,6 @@ const AdScreen = ({f}) => (
     </div>
     <div style={{position: 'absolute', left: 60, right: 60, top: 640, height: 140, borderRadius: 16, background: '#C49A6C', border: `6px solid ${C.ink}`}} />
     <div style={{position: 'absolute', left: 40, right: 40, bottom: 44, background: C.ink, color: '#fff', textAlign: 'center', fontWeight: 800, fontSize: 34, padding: 22, borderRadius: 20}}>Shop now</div>
-  </div>
-);
-const Payout = ({p, amount = '+$150', label = 'Brand payment', style = {}}) => (
-  <div style={{position: 'absolute', opacity: p, transform: `translateY(${(1 - p) * -80}px) scale(${0.9 + 0.1 * p})`, ...style}}>
-    <div style={{display: 'flex', alignItems: 'center', gap: 20, background: '#fff', borderRadius: 30, padding: '20px 30px', boxShadow: '0 0 60px rgba(46,125,79,0.45)', border: `4px solid ${C.acc}`}}>
-      <div style={{width: 60, height: 60, borderRadius: 16, background: C.acc, color: '#fff', fontWeight: 900, fontSize: 40, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>$</div>
-      <div><div style={{fontWeight: 700, fontSize: 28, color: '#5F5E58'}}>{label}</div><div style={{fontWeight: 900, fontSize: 48, color: C.acc}}>{amount}</div></div>
-    </div>
   </div>
 );
 const Snap = ({src, show = 1}) => <Img src={staticFile(src)} style={{position: 'absolute', left: 0, top: 0, width: '100%', opacity: show}} />;
@@ -440,12 +426,12 @@ const Official = ({f, w, s}) => {
   </>);
 };
 
-const SCENES = {wait10k: Wait10k, proof_intro: ProofIntro, official: Official, viral: Viral, views_fans: ViewsFans, ypp: Ypp, fan_ladder: FanLadder, small_group: SmallGroup, counters: Counters, face_strike: FaceStrike, phone_fly: PhoneFly, ugc_explain: UgcExplain, rate3d: Rate, apps: Apps, wall: Wall, stamp_wall: StampScene, catch: Catch, journey: Journey, end_rows: EndCta};
+const SCENES = {...SCENES2, wait10k: Wait10k, proof_intro: ProofIntro, official: Official, viral: Viral, views_fans: ViewsFans, ypp: Ypp, fan_ladder: FanLadder, small_group: SmallGroup, counters: Counters, face_strike: FaceStrike, phone_fly: PhoneFly, ugc_explain: UgcExplain, rate3d: Rate, apps: Apps, wall: Wall, stamp_wall: StampScene, catch: Catch, journey: Journey, end_rows: EndCta};
 
 const Scene = ({b, i, start, len, last}) => {
   const lf = useCurrentFrame();
   const gf = lf + start;
-  const w = (k) => { const hit = (b.words || []).find((x) => clean(x.w).startsWith(clean(k))); return (hit ? hit.f : b.speakFrom) - start; };
+  const w = (k) => { const ws = b.words || []; const hit = ws.find((x) => clean(x.w) === clean(k)) || ws.find((x) => clean(x.w).startsWith(clean(k))); return (hit ? hit.f : b.speakFrom) - start; };
   const S = SCENES[b.show.type] || Catch;
   const cont = b.show.continue; // keeps the background running into the next scene (no exit)
   const out = last || cont ? 0 : ease(lf - (len - OV), OV);

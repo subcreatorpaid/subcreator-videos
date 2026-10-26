@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import {C, FONT, Fonts} from './Short';
+import {Face, RED} from './graphics';
 
 // Cover / thumbnail, 1080x1920 (Reels, TikTok, Shorts). Rules: brain/brand.md visuals + docs/animator-rules.md
 // - everything that matters sits in the centre 4:5 crop (y 285-1635) so the Instagram grid shows it
@@ -9,15 +10,15 @@ import {C, FONT, Fonts} from './Short';
 const Head = ({text, size = 150}) => (
   <div style={{fontFamily: FONT, fontWeight: 900, fontSize: size, lineHeight: 0.98, letterSpacing: '-0.045em', color: C.ink, textAlign: 'center'}}>
     {String(text).split('\n').map((line, i) => (
-      <div key={i}>{line.split(/(\*[^*]+\*)/).filter(Boolean).map((p, j) => p.startsWith('*')
-        ? <span key={j} style={{color: '#fff', background: C.acc, borderRadius: 18, padding: '0 22px', boxDecorationBreak: 'clone'}}>{p.slice(1, -1)}</span>
+      <div key={i}>{line.split(/(\*[^*]+\*|~[^~]+~|\^[^^]+\^)/).filter(Boolean).map((p, j) => /^[*~^]/.test(p)
+        ? <span key={j} style={{color: '#fff', background: p[0] === '*' ? C.acc : p[0] === '~' ? RED : C.ink, borderRadius: 18, padding: '0 22px', boxDecorationBreak: 'clone'}}>{p.slice(1, -1)}</span>
         : <span key={j}>{p}</span>)}</div>
     ))}
   </div>
 );
 
 const Card = ({children, style = {}}) => (
-  <div style={{background: C.card, border: `5px solid ${C.ink}`, borderRadius: 34, boxShadow: `14px 14px 0 ${C.ink}`, ...style}}>{children}</div>
+  <div style={{background: C.card, border: `5px solid ${C.ink}`, borderRadius: 34, boxShadow: '0 24px 80px rgba(21,21,21,0.16)', ...style}}>{children}</div>
 );
 const Tag = ({text, style = {}}) => (
   <div style={{position: 'absolute', fontFamily: FONT, fontWeight: 700, fontSize: 26, color: '#5F5E58', background: C.bg, border: `2px solid ${C.line}`, borderRadius: 8, padding: '2px 10px', ...style}}>{text}</div>
@@ -27,7 +28,6 @@ const Heroes = {
   // a creator dashboard with a big $0.00 (views/earnings myths)
   dashboard: ({h}) => (
     <Card style={{width: 820, padding: '40px 50px', position: 'relative', transform: 'rotate(-2deg)'}}>
-      <Tag text="example" style={{right: 24, top: 20}} />
       <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 30, letterSpacing: '.14em', color: '#5F5E58'}}>YOUR CREATOR DASHBOARD</div>
       {(h.rows || []).map(([k, v], i) => (
         <div key={i} style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: 22, borderBottom: `3px solid ${C.line}`, paddingBottom: 14}}>
@@ -47,7 +47,6 @@ const Heroes = {
       <div style={{width: 420, height: 660, borderRadius: 56, background: C.ink, padding: 15, boxShadow: '18px 18px 0 rgba(21,21,21,.16)'}}>
         <div style={{width: '100%', height: '100%', borderRadius: 46, background: 'linear-gradient(170deg,#F3E9DC,#FBF7F1)', position: 'relative', overflow: 'hidden'}}>
           <div style={{position: 'absolute', top: 60, left: 26, background: C.ink, color: '#fff', fontFamily: FONT, fontWeight: 800, fontSize: 28, borderRadius: 8, padding: '4px 14px'}}>Ad</div>
-          <div style={{position: 'absolute', top: 64, right: 26, fontFamily: FONT, fontWeight: 700, fontSize: 26, color: '#5F5E58'}}>example UGC</div>
           <svg width="390" height="370" viewBox="0 0 300 300" style={{position: 'absolute', top: 140, left: 0}}>
             <g transform="translate(150 120)"><rect x="-30" y="-80" width="60" height="110" rx="16" fill={C.ink} /><rect x="-16" y="-104" width="32" height="28" rx="7" fill={C.ink} /><rect x="-20" y="-46" width="40" height="24" rx="5" fill="#fff" /></g>
             <rect x="60" y="170" width="180" height="90" rx="10" fill="#C79A6B" stroke={C.ink} strokeWidth="5" /><rect x="140" y="170" width="20" height="90" fill={C.ink} opacity=".35" />
@@ -56,7 +55,16 @@ const Heroes = {
         </div>
       </div>
       {h.sticker && <div style={{position: 'absolute', right: -150, top: 230, transform: 'rotate(9deg)', background: C.card, color: C.ink, border: `5px solid ${C.ink}`, borderRadius: 20,
-        padding: '16px 26px', fontFamily: FONT, fontWeight: 900, fontSize: 48, boxShadow: `8px 8px 0 ${C.ink}`, whiteSpace: 'nowrap'}}>{h.sticker}</div>}
+        padding: '16px 26px', fontFamily: FONT, fontWeight: 900, fontSize: 48, boxShadow: '0 16px 50px rgba(21,21,21,0.18)', whiteSpace: 'nowrap'}}>{h.sticker}</div>}
+    </div>
+  ),
+  // the recurring creator face acting the topic, with a sticker (red = loss/warning, green = money, else black)
+  face: ({h}) => (
+    <div style={{position: 'relative', width: 760, height: 700}}>
+      <div style={{position: 'absolute', left: 0, top: 0}}><Face mood={h.mood ?? 0.6} f={0} size={560} hold={h.hold ?? null} /></div>
+      {h.sticker && <div style={{position: 'absolute', right: -40, top: 40, transform: 'rotate(8deg)', background: h.sticker_color === 'red' ? RED : h.sticker_color === 'green' ? C.acc : C.ink, color: '#fff',
+        borderRadius: 26, padding: '18px 34px', fontFamily: FONT, fontWeight: 900, fontSize: 64, whiteSpace: 'nowrap',
+        boxShadow: h.sticker_color === 'red' ? '0 0 70px rgba(217,58,58,0.45)' : h.sticker_color === 'green' ? '0 0 70px rgba(46,125,79,0.45)' : '0 20px 60px rgba(21,21,21,0.25)'}}>{h.sticker}</div>}
     </div>
   ),
   // a big struck-out number next to the real one (requirements myths)

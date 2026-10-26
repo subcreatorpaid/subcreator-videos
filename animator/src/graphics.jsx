@@ -208,3 +208,20 @@ export const DrawLine = ({d, p, color = C.acc, width = 12, len = 4000, dash = fa
     <path d={d} stroke={color} strokeWidth={width} strokeLinecap="round" strokeDasharray={len} strokeDashoffset={len * (1 - p)} opacity={dash ? 0.9 : 1} />
   </svg>
 );
+
+// Shared story pieces: red X badge, black chip (optionally with the X), green payout card.
+export const XMark = ({size = 54}) => (
+  <div style={{width: size, height: size, borderRadius: size / 2, background: RED, color: '#fff', fontWeight: 900, fontSize: size * 0.6, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0}}>✕</div>
+);
+export const BlackChip = ({children, x = false, style = {}}) => (
+  <div style={{display: 'flex', alignItems: 'center', gap: 20, background: C.ink, color: '#fff', fontFamily: FONT, fontWeight: 800, fontSize: 46, padding: '20px 32px', borderRadius: 28,
+    boxShadow: x ? '0 16px 60px rgba(217,58,58,0.35)' : glow('0,0,0', 0.18, 50), whiteSpace: 'nowrap', ...style}}>{x && <XMark />}{children}</div>
+);
+export const Payout = ({p, amount = '+$150', label = 'Brand payment', style = {}}) => (
+  <div style={{position: 'absolute', opacity: p, transform: `translateY(${(1 - p) * -80}px) scale(${0.9 + 0.1 * p})`, ...style}}>
+    <div style={{display: 'flex', alignItems: 'center', gap: 20, background: '#fff', borderRadius: 30, padding: '20px 30px', boxShadow: '0 0 60px rgba(46,125,79,0.45)', border: `4px solid ${C.acc}`}}>
+      <div style={{width: 60, height: 60, borderRadius: 16, background: C.acc, color: '#fff', fontWeight: 900, fontSize: 40, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>$</div>
+      <div><div style={{fontWeight: 700, fontSize: 28, color: '#5F5E58'}}>{label}</div><div style={{fontWeight: 900, fontSize: 48, color: C.acc}}>{amount}</div></div>
+    </div>
+  </div>
+);

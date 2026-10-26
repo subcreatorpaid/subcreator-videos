@@ -1,0 +1,277 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "20261029_spot_fake_deals",
+ "format": "story style: lock-screen DM + magnifier, DM thread with 5 red flags filling a flag counter, bank-details form stamped SCAM SIGN, verify by phone",
+ "beats": [
+  {
+   "say": "A brand just messaged you. Before you get excited, check for these five warning signs.",
+   "show": {
+    "type": "dm_alert",
+    "red": [
+     "warning"
+    ]
+   },
+   "sfx": [
+    [
+     0.3,
+     "bell"
+    ],
+    [
+     "before",
+     "whip"
+    ],
+    [
+     "check",
+     "swoosh"
+    ],
+    [
+     "five",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "One: a brand ambassador manager messages you out of nowhere. Two: they flatter your page and style.",
+   "show": {
+    "type": "flags",
+    "done": 0,
+    "msgs": [
+     [
+      "one",
+      "Hi! I manage brand ambassadors for a big brand.",
+      "Out of nowhere"
+     ],
+     [
+      "two",
+      "Your style is amazing! You're perfect for us!",
+      "Heavy flattery"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "one",
+     "pop"
+    ],
+    [
+     "nowhere",
+     "thud"
+    ],
+    [
+     "two",
+     "pop"
+    ],
+    [
+     "style",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Three: they drop names of real people at the company. Four: they send links that only look official.",
+   "show": {
+    "type": "flags",
+    "done": 2,
+    "msgs": [
+     [
+      "three",
+      "Our marketing director picked you herself.",
+      "Name-dropping"
+     ],
+     [
+      "four",
+      "Sign up here:",
+      "Lookalike link",
+      "brand-ambassadors-team.co"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "three",
+     "pop"
+    ],
+    [
+     "company",
+     "thud"
+    ],
+    [
+     "four",
+     "pop"
+    ],
+    [
+     "official",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Five, the big one: they ask for your bank or personal details, so payments can start.",
+   "show": {
+    "type": "bank_ask",
+    "red": [
+     "bank",
+     "personal"
+    ],
+    "stamp": "start"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "bank",
+     "thud"
+    ],
+    [
+     "start",
+     "drop"
+    ]
+   ]
+  },
+  {
+   "say": "To check, call the brand on a number you already know is real, never one they sent. And never share bank details in a DM.",
+   "show": {
+    "type": "verify",
+    "red": [
+     "never"
+    ],
+    "last": "share"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "real",
+     "ding"
+    ],
+    [
+     "never",
+     "whip"
+    ],
+    [
+     "share",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment GUIDE, or get it free on [subcreatorpaid.com|sub creator paid dot com]. Tools I use are in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Spot fake brand deals"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "tools",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big sign",
+   "say": "If a brand asks for your bank details to start payments, stop.",
+   "show": {
+    "type": "bank_ask",
+    "red": [
+     "bank",
+     "stop"
+    ],
+    "stamp": "stop"
+   },
+   "sfx": [
+    [
+     "bank",
+     "thud"
+    ],
+    [
+     "stop",
+     "drop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "A brand just messaged you? Check for these five warning signs first.",
+   "show": {
+    "type": "dm_alert",
+    "red": [
+     "warning"
+    ]
+   },
+   "sfx": [
+    [
+     0.2,
+     "bell"
+    ],
+    [
+     "five",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Is that brand deal in your DMs real? Here are five signs it's fake.",
+   "show": {
+    "type": "dm_alert",
+    "red": [
+     "fake"
+    ]
+   },
+   "sfx": [
+    [
+     0.2,
+     "bell"
+    ],
+    [
+     "five",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "FTC: Bogus brand ambassador managers scam prospective influencers (Oct 2023)",
+   "url": "https://www.ftc.gov/business-guidance/blog/2023/10/influence-peddling-bogus-brand-ambassador-managers-scam-prospective-influencers"
+  }
+ ],
+ "thumb": {
+  "headline": "Fake brand\n~deal?~",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 1,
+  "sticker": "5 red flags",
+  "sticker_color": "red",
+  "chip": "Check before you reply",
+  "top": 330,
+  "size": 140
+ },
+ "style": "story"
+}

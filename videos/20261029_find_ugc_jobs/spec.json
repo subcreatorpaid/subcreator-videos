@@ -1,0 +1,389 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "20261029_find_ugc_jobs",
+ "format": "story style: question marks -> 4 flipping cards, Billo + JoinBrands real pages on a phone, a Fiverr-style gig card with incoming brand messages, an email pitch that folds into a paper plane",
+ "beats": [
+  {
+   "say": "You've got samples. So where do paying UGC jobs actually come from? Four places.",
+   "show": {
+    "type": "four_doors",
+    "at": "four",
+    "items": [
+     [
+      "Billo",
+      null
+     ],
+     [
+      "JoinBrands",
+      null
+     ],
+     [
+      "Fiverr",
+      null
+     ],
+     [
+      "Pitch brands",
+      "mail"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0.2,
+     "pop"
+    ],
+    [
+     0.4,
+     "pop"
+    ],
+    [
+     0.6,
+     "pop"
+    ],
+    [
+     "four",
+     "card"
+    ],
+    [
+     "four",
+     "card"
+    ],
+    [
+     "four",
+     "card"
+    ],
+    [
+     "four",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "One: Billo. No follower minimum, for creators in the US, UK and Canada.",
+   "show": {
+    "type": "official",
+    "n": 1,
+    "name": "Billo",
+    "images": [
+     "assets/snap_billo_countries.png"
+    ],
+    "phone": true,
+    "key_word": "minimum",
+    "call": "No follower minimum\nUS · UK · Canada"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "minimum",
+     "pop"
+    ],
+    [
+     "canada",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Two: [JoinBrands|Join Brands]. Brands post briefs, and you apply with your samples.",
+   "show": {
+    "type": "official",
+    "n": 2,
+    "name": "JoinBrands",
+    "images": [
+     "assets/snap_jb.png"
+    ],
+    "phone": true,
+    "key_word": "apply",
+    "call": "Apply with your samples"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "apply",
+     "click"
+    ],
+    [
+     "samples",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Three: Fiverr. List UGC as a gig, so brands can find you.",
+   "show": {
+    "type": "gig",
+    "n": 3,
+    "title": "Fiverr",
+    "msgs": [
+     [
+      "find",
+      "New message from a brand"
+     ],
+     [
+      "find",
+      "Is your UGC gig open?"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "gig",
+     "card"
+    ],
+    [
+     "find",
+     "bell"
+    ],
+    [
+     "find",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Four: pitch brands directly. Email them a sample made with a product you already use.",
+   "show": {
+    "type": "pitch_mail",
+    "n": 4,
+    "title": "Pitch directly",
+    "to": "hello@yourfavebrand.com",
+    "subject": "A UGC video for you",
+    "attach": "sample",
+    "send": "use",
+    "body": "Hi! I love your product, so I made a short sample video with it. Want more like this?"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.4,
+     "key"
+    ],
+    [
+     0.8,
+     "key"
+    ],
+    [
+     1.2,
+     "key"
+    ],
+    [
+     1.6,
+     "key"
+    ],
+    [
+     2.0,
+     "key"
+    ],
+    [
+     "sample",
+     "pop"
+    ],
+    [
+     "use",
+     "whoosh"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: Insense needs one thousand Instagram followers, and every brand wants samples first.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "items": [
+     [
+      "insense",
+      "Insense: 1,000+ IG followers",
+      true
+     ],
+     [
+      "samples",
+      "Samples first",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "insense",
+     "whip"
+    ],
+    [
+     "samples",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment GUIDE, or get it free on [subcreatorpaid.com|sub creator paid dot com]. Tools I use are in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Where to find UGC jobs"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "tools",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the list",
+   "say": "Four places small creators find paid UGC jobs.",
+   "show": {
+    "type": "four_doors",
+    "at": "four",
+    "items": [
+     [
+      "Billo",
+      null
+     ],
+     [
+      "JoinBrands",
+      null
+     ],
+     [
+      "Fiverr",
+      null
+     ],
+     [
+      "Pitch brands",
+      "mail"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "four",
+     "card"
+    ],
+    [
+     "four",
+     "card"
+    ]
+   ]
+  },
+  {
+   "label": "B: the proof",
+   "say": "Billo takes UGC creators with no follower minimum.",
+   "show": {
+    "type": "official",
+    "n": 1,
+    "name": "Billo",
+    "images": [
+     "assets/snap_billo_countries.png"
+    ],
+    "phone": true,
+    "key_word": "minimum",
+    "call": "No follower minimum\nUS · UK · Canada"
+   },
+   "sfx": [
+    [
+     "minimum",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Where do paying UGC jobs actually come from?",
+   "show": {
+    "type": "four_doors",
+    "at": "from",
+    "items": [
+     [
+      "Billo",
+      null
+     ],
+     [
+      "JoinBrands",
+      null
+     ],
+     [
+      "Fiverr",
+      null
+     ],
+     [
+      "Pitch brands",
+      "mail"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0.2,
+     "pop"
+    ],
+    [
+     "from",
+     "card"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Billo: UGC creator jobs (no follower requirement; US, UK, Canada)",
+   "url": "https://billo.app/blog/ugc-creator-jobs/"
+  },
+  {
+   "title": "JoinBrands: creator getting started guide",
+   "url": "https://help.joinbrands.com/en/articles/6462008-creator-getting-started-guide"
+  },
+  {
+   "title": "Insense: for creators (follower requirements)",
+   "url": "https://insense.pro/for-creators/en"
+  }
+ ],
+ "thumb": {
+  "headline": "Where UGC\n^jobs^ hide",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.3,
+  "sticker": "4 places",
+  "chip": "No follower minimum",
+  "top": 330,
+  "size": 140
+ },
+ "style": "story"
+}
