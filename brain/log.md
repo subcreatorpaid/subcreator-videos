@@ -11,3 +11,4 @@ One line per run: `YYYY-MM-DD HH:MM | role | what was done | needs owner`
 2026-10-26 04:25 | creator | Animator v2 (word-synced lower captions, camera punch/whip, music+SFX, 7 new elements) + UGC animated sample | owner: review sample
 2026-10-26 04:55 | creator | Animator v3: UGC ad clips in phones, channel feed, platforms beat (Billo/JoinBrands/Fiverr verified), slower pace + holds; Insense = 1k+ followers (facts + sample captions fixed) | owner: review v3
 2026-10-26 07:30 | secretary | Owner cancelled week of 26 Oct; marked cancelled, alert added; waiting for owner | pause/delete Buffer queue
+2026-10-26 08:05 | secretary | Daily check: guard 0 errors (live site check green 07:28), renders idle, nothing new posted (7 cancelled posts still in Buffer); dashboard hides cancelled posts from "going out today"; to-dos synced with Start here; dashboard rebuilt | pause Buffer queue, say "apply the rules", pick first remake topics

@@ -1,11 +1,21 @@
 {
-  "updated": "2026-10-26 07:30",
+  "updated": "2026-10-26 08:05",
   "updated_by": "secretary",
   "today": [
     {
-      "task": "Pause the Buffer queue on Instagram, TikTok and YouTube (or delete the 7 posts) so last week's videos don't go out",
+      "task": "Pause the Buffer queue on Instagram, TikTok and YouTube (or delete the 7 posts) so the cancelled videos don't go out",
       "link": "https://publish.buffer.com",
       "mins": 2
+    },
+    {
+      "task": "Read the editing teardown, then say \"apply the rules\" (or what to change)",
+      "link": "https://claude.ai/artifact/XSYVXuCCbfTWsVeFcDuQW4",
+      "mins": 10
+    },
+    {
+      "task": "Tell me the first topics to remake with the animator (pick from 100 Video Ideas)",
+      "link": "https://claude.ai/artifact/SvJ9VwDfNZFKjpde1LyeqQ",
+      "mins": 5
     }
   ],
   "approvals": [],
@@ -62,7 +72,7 @@
   "website": {
     "url": "https://subcreatorpaid.com",
     "health": "ok",
-    "checked": "2026-10-25",
+    "checked": "2026-10-26",
     "pending_comments": 0,
     "subscribers": 0
   },

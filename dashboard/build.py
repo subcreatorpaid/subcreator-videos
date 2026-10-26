@@ -48,7 +48,7 @@ approvals = status.get("approvals", [])
 alerts = status.get("alerts", [])
 posts = week.get("posts", [])
 today_iso = NOW.date().isoformat()
-going = [p for p in posts if p.get("day") == today_iso]
+going = [p for p in posts if p.get("day") == today_iso and p.get("status") != "cancelled"]
 counts = {}
 for p in posts:
     counts[p.get("status")] = counts.get(p.get("status"), 0) + 1
