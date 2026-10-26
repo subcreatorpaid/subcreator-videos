@@ -1,0 +1,349 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v060_proof_kit_coach",
+ "title": "Proof: an email list behind a $100,000 business",
+ "type": "proof",
+ "format": "",
+ "beats": [
+  {
+   "say": "Can an email list really build a business? Kit's own case study says one coach brought in over a hundred thousand dollars.",
+   "show": {
+    "type": "stat_cards",
+    "title": "KIT CASE STUDY",
+    "green": [
+     "hundred"
+    ],
+    "cards": [
+     [
+      "hundred",
+      "$100,000+",
+      "coaching business",
+      true
+     ]
+    ],
+    "source": "Kit (ConvertKit) blog"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "hundred",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "She ran a coaching business and used Kit to email her audience about her offers.",
+   "show": {
+    "type": "page_card",
+    "url": "convertkit.com/resources/blog",
+    "mark": "Kt",
+    "title": "Case study: a coach's email list",
+    "checked": "Kit's own case study",
+    "bullets": [
+     [
+      "coaching",
+      "A coaching business"
+     ],
+     [
+      "email",
+      "Email to her audience"
+     ],
+     [
+      "offers",
+      "$100,000+ brought in",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "coaching",
+     "pop"
+    ],
+    [
+     "email",
+     "pop"
+    ],
+    [
+     "offers",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The honest part: the case study doesn't say how long it took or how big the list was.",
+   "show": {
+    "type": "myth",
+    "myth": "Quick money from email",
+    "myth_word": "honest",
+    "fact": "No timeframe or list size given",
+    "fact_word": "doesn't",
+    "fact_green": false
+   },
+   "sfx": [
+    [
+     "honest",
+     "thud"
+    ],
+    [
+     "doesn't",
+     "swipe"
+    ]
+   ]
+  },
+  {
+   "say": "What it shows: email works for selling something you already offer, like coaching, a course or a guide.",
+   "show": {
+    "type": "checklist",
+    "title": "Email sells",
+    "items": [
+     [
+      "coaching",
+      "Coaching"
+     ],
+     [
+      "course",
+      "A course"
+     ],
+     [
+      "guide",
+      "A guide"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "coaching",
+     "click"
+    ],
+    [
+     "course",
+     "click"
+    ],
+    [
+     "guide",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Kit is free up to ten thousand subscribers, so you can start the list before you have an offer.",
+   "show": {
+    "type": "stat_cards",
+    "title": "KIT FREE PLAN",
+    "cards": [
+     [
+      "ten",
+      "10,000",
+      "subscribers free"
+     ]
+    ],
+    "source": "Email Vendor Selection, Aug 2026",
+    "hold": "laptop",
+    "mood": -0.5
+   },
+   "sfx": [
+    [
+     "ten",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: one success story isn't an average. Track your own sign-ups and sales from day one.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "average",
+      "Not an average",
+      true
+     ],
+     [
+      "track",
+      "Track your own numbers",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "average",
+     "whip"
+    ],
+    [
+     "track",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [EMAIL|email] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Kit is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Email list, real results",
+    "keyword": "EMAIL",
+    "tool": "Kit"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$100,000|A hundred thousand dollars], with an email list behind it.",
+   "show": {
+    "type": "page_card",
+    "url": "convertkit.com/resources/blog",
+    "mark": "Kt",
+    "title": "Case study: a coach's email list",
+    "checked": "Kit's own case study",
+    "bullets": [
+     [
+      "coaching",
+      "A coaching business"
+     ],
+     [
+      "email",
+      "Email to her audience"
+     ],
+     [
+      "offers",
+      "$100,000+ brought in",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Think email is old-fashioned?",
+   "show": {
+    "type": "checklist",
+    "title": "Email sells",
+    "items": [
+     [
+      "coaching",
+      "Coaching"
+     ],
+     [
+      "course",
+      "A course"
+     ],
+     [
+      "guide",
+      "A guide"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Can an email list really build a business?",
+   "show": {
+    "type": "stat_cards",
+    "title": "KIT CASE STUDY",
+    "green": [
+     "hundred"
+    ],
+    "cards": [
+     [
+      "hundred",
+      "$100,000+",
+      "coaching business",
+      true
+     ]
+    ],
+    "source": "Kit (ConvertKit) blog"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Kit case study: $100,000+ for a coaching business",
+   "url": "https://convertkit.com/resources/blog/daphnee-lagredelle-case-study"
+  },
+  {
+   "title": "Email Vendor Selection: Kit pricing (Aug 2026)",
+   "url": "https://www.emailvendorselection.com/kit-pricing/"
+  }
+ ],
+ "thumb": {
+  "headline": "*$100K* with an\nemail list",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.7,
+  "sticker": "The honest part",
+  "sticker_color": "red",
+  "chip": "Kit case study",
+  "size": 120
+ },
+ "finder_stream": "email-newsletter"
+}

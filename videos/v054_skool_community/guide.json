@@ -1,0 +1,46 @@
+{
+ "title": "Paid community plan",
+ "subtitle": "Launch a small Skool group",
+ "sections": [
+  [
+   "Promise",
+   [
+    "What can members do after 30 days? Write it in one sentence."
+   ]
+  ],
+  [
+   "Weekly rhythm",
+   [
+    "1 live call",
+    "1 short lesson",
+    "A wins thread"
+   ]
+  ],
+  [
+   "Referral",
+   [
+    "Skool: 40% of referred users' Skool fee while they stay."
+   ]
+  ]
+ ],
+ "steps": [
+  "Write your 30-day promise.",
+  "Invite 10 followers for a free first month.",
+  "Run 4 weeks before charging."
+ ],
+ "keyword": "COMMUNITY",
+ "sources": [
+  [
+   "Skool referral program",
+   "https://www.skool.com/settings?t=referrals"
+  ]
+ ],
+ "video": "Run a paid community (Skool)",
+ "tool": {
+  "id": "skool",
+  "name": "Skool",
+  "earns": "40% of their Skool fee while they stay",
+  "signup": "https://www.skool.com/settings?t=referrals",
+  "status": "joined"
+ }
+}

@@ -1,0 +1,354 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v042_submagic_captions",
+ "title": "Captions that keep people watching (Submagic)",
+ "type": "tool",
+ "format": "",
+ "beats": [
+  {
+   "say": "Most people watch short videos with the sound off. No captions, and they scroll past.",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "chips": [
+     [
+      "sound",
+      "Sound off",
+      "red"
+     ],
+     [
+      "scroll",
+      "They scroll",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "sound",
+     "thud"
+    ],
+    [
+     "scroll",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Submagic adds word-by-word captions to your video, with highlights on the key words.",
+   "show": {
+    "type": "tool_demo",
+    "app": "Submagic",
+    "input": "my-video.mp4",
+    "input_word": "adds",
+    "process": "Writing captions",
+    "process_word": "word-by-word",
+    "outputs": [
+     [
+      "highlights",
+      "Word-by-word"
+     ],
+     [
+      "highlights",
+      "Key words highlighted"
+     ],
+     [
+      "key",
+      "Emoji + zooms"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "adds",
+     "drop"
+    ],
+    [
+     "word-by-word",
+     "whoosh"
+    ],
+    [
+     "highlights",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Check three things before you export: spelling of names, numbers, and that captions don't cover your face.",
+   "show": {
+    "type": "checklist",
+    "title": "Before export",
+    "items": [
+     [
+      "spelling",
+      "Names spelled right"
+     ],
+     [
+      "numbers",
+      "Numbers right"
+     ],
+     [
+      "face",
+      "Not covering your face"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "spelling",
+     "click"
+    ],
+    [
+     "numbers",
+     "click"
+    ],
+    [
+     "face",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Keep one style across every video, so people recognise you in the feed.",
+   "show": {
+    "type": "talk",
+    "mood": -0.5,
+    "hold": "phone0",
+    "chips": [
+     [
+      "style",
+      "One style",
+      null
+     ],
+     [
+      "recognise",
+      "Easy to recognise",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "style",
+     "pop"
+    ],
+    [
+     "recognise",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Submagic's affiliate program pays thirty percent recurring if you share it.",
+   "show": {
+    "type": "stat_cards",
+    "title": "SUBMAGIC AFFILIATE",
+    "green": [
+     "thirty"
+    ],
+    "cards": [
+     [
+      "thirty",
+      "30%",
+      "recurring",
+      true
+     ]
+    ],
+    "source": "Submagic"
+   },
+   "sfx": [
+    [
+     "thirty",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: auto captions still make mistakes, so read every line before you post.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "mistakes",
+      "Auto captions make mistakes",
+      true
+     ],
+     [
+      "read",
+      "Read every line",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "mistakes",
+     "whip"
+    ],
+    [
+     "read",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [CAPTIONS|captions] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Submagic is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Captions checklist",
+    "keyword": "CAPTIONS",
+    "tool": "Submagic"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[30%|Thirty percent] recurring. That's Submagic's affiliate rate.",
+   "show": {
+    "type": "stat_cards",
+    "title": "SUBMAGIC AFFILIATE",
+    "green": [
+     "thirty"
+    ],
+    "cards": [
+     [
+      "thirty",
+      "30%",
+      "recurring",
+      true
+     ]
+    ],
+    "source": "Submagic"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Great video, but people scroll past in the first second?",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "chips": [
+     [
+      "sound",
+      "Sound off",
+      "red"
+     ],
+     [
+      "scroll",
+      "They scroll",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Do your videos work with the sound off?",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "chips": [
+     [
+      "sound",
+      "Sound off",
+      "red"
+     ],
+     [
+      "scroll",
+      "They scroll",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Submagic affiliate program",
+   "url": "https://www.submagic.co/affiliate"
+  }
+ ],
+ "thumb": {
+  "headline": "Sound off?\n*Add captions*",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": -0.4,
+  "sticker": "Submagic",
+  "chip": "Caption workflow",
+  "size": 130
+ },
+ "finder_stream": null
+}

@@ -1,0 +1,53 @@
+{
+ "title": "Price a Fiverr gig",
+ "subtitle": "The 20% fee, the backwards math and 3 packages",
+ "sections": [
+  [
+   "The fee",
+   [
+    "Fiverr keeps 20% of each order, including tips."
+   ]
+  ],
+  [
+   "Backwards math",
+   [
+    "Price = what you want ÷ 0.8.",
+    "$40 → $50 · $48 → $60 · $80 → $100."
+   ]
+  ],
+  [
+   "Clearance",
+   [
+    "About 14 days after completion for new sellers; 7 for Top Rated/Pro."
+   ]
+  ],
+  [
+   "Packages",
+   [
+    "Basic: small, fast, wins first reviews.",
+    "Standard: most buyers pick this.",
+    "Premium: extras (raw files, rush, extra revisions)."
+   ]
+  ]
+ ],
+ "steps": [
+  "Decide what you want per order.",
+  "Divide by 0.8 for your price.",
+  "Set up 3 packages."
+ ],
+ "keyword": "FIVERR",
+ "sources": [
+  [
+   "Wise: how to get paid on Fiverr (20% fee, clearance)",
+   "https://wise.com/us/blog/how-to-get-paid-on-fiverr"
+  ]
+ ],
+ "video": "Price your Fiverr gig after the 20% cut",
+ "tool": {
+  "id": "fiverr",
+  "name": "Fiverr",
+  "earns": "25% of a new buyer's first order + 10% for 12 months",
+  "signup": "https://affiliates.fiverr.com",
+  "status": "waiting for owner login"
+ }
+}

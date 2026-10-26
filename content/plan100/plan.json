@@ -214,5 +214,869 @@
   "stream": "email-newsletter",
   "beats": 7,
   "words": 137
+ },
+ {
+  "n": 21,
+  "slug": "v021_follower_ladder",
+  "title": "What unlocks at each follower count",
+  "type": "value",
+  "keyword": "LADDER",
+  "tool": "vidiq",
+  "affiliate": {
+   "id": "vidiq",
+   "name": "vidIQ",
+   "earns": "15-25% lifetime recurring (by sales tier)",
+   "signup": "https://support.vidiq.com/en/articles/7866006",
+   "status": "to join"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 135
+ },
+ {
+  "n": 22,
+  "slug": "v022_twitch_affiliate_50",
+  "title": "Twitch pays at 50 followers (with 3 more rules)",
+  "type": "value",
+  "keyword": "TWITCH",
+  "tool": "riverside",
+  "affiliate": {
+   "id": "riverside",
+   "name": "Riverside",
+   "earns": "up to 20% per subscription",
+   "signup": "https://riverside.com/affiliate-program",
+   "status": "to join"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 139
+ },
+ {
+  "n": 23,
+  "slug": "v023_tiktok_shop_1000",
+  "title": "TikTok Shop affiliate at 1,000 followers",
+  "type": "value",
+  "keyword": "SHOP",
+  "tool": "opusclip",
+  "affiliate": {
+   "id": "opusclip",
+   "name": "OpusClip",
+   "earns": "25% of their payments (at least year one)",
+   "signup": "https://www.opus.pro/affiliate",
+   "status": "joined"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 135
+ },
+ {
+  "n": 24,
+  "slug": "v024_shorts_45_percent",
+  "title": "YouTube Shorts: why views pay so little",
+  "type": "value",
+  "keyword": "SHORTS",
+  "tool": "vidiq",
+  "affiliate": {
+   "id": "vidiq",
+   "name": "vidIQ",
+   "earns": "15-25% lifetime recurring (by sales tier)",
+   "signup": "https://support.vidiq.com/en/articles/7866006",
+   "status": "to join"
+  },
+  "stream": "youtube-fan-funding",
+  "beats": 7,
+  "words": 143
+ },
+ {
+  "n": 25,
+  "slug": "v025_snapchat_bar",
+  "title": "Snapchat pays creators, but look at the bar",
+  "type": "value",
+  "keyword": "SNAP",
+  "tool": "opusclip",
+  "affiliate": {
+   "id": "opusclip",
+   "name": "OpusClip",
+   "earns": "25% of their payments (at least year one)",
+   "signup": "https://www.opus.pro/affiliate",
+   "status": "joined"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 123
+ },
+ {
+  "n": 26,
+  "slug": "v026_facebook_fast_track",
+  "title": "Facebook pays $1,000 a month, if you qualify",
+  "type": "value",
+  "keyword": "FACEBOOK",
+  "tool": "opusclip",
+  "affiliate": {
+   "id": "opusclip",
+   "name": "OpusClip",
+   "earns": "25% of their payments (at least year one)",
+   "signup": "https://www.opus.pro/affiliate",
+   "status": "joined"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 138
+ },
+ {
+  "n": 27,
+  "slug": "v027_amazon_influencer",
+  "title": "Amazon Influencer vs Associates",
+  "type": "value",
+  "keyword": "AMAZON",
+  "tool": "amazon",
+  "affiliate": {
+   "id": "amazon",
+   "name": "Amazon Associates",
+   "earns": "category rates (most about 3-4.5%)",
+   "signup": "https://affiliate-program.amazon.com",
+   "status": "to join"
+  },
+  "stream": "amazon-associates",
+  "beats": 7,
+  "words": 137
+ },
+ {
+  "n": 28,
+  "slug": "v028_vidiq_tool",
+  "title": "Find video ideas that already work (vidIQ)",
+  "type": "tool",
+  "keyword": "IDEAS",
+  "tool": "vidiq",
+  "affiliate": {
+   "id": "vidiq",
+   "name": "vidIQ",
+   "earns": "15-25% lifetime recurring (by sales tier)",
+   "signup": "https://support.vidiq.com/en/articles/7866006",
+   "status": "to join"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 125
+ },
+ {
+  "n": 29,
+  "slug": "v029_riverside_tool",
+  "title": "Record a studio-quality podcast remotely (Riverside)",
+  "type": "tool",
+  "keyword": "PODCAST",
+  "tool": "riverside",
+  "affiliate": {
+   "id": "riverside",
+   "name": "Riverside",
+   "earns": "up to 20% per subscription",
+   "signup": "https://riverside.com/affiliate-program",
+   "status": "to join"
+  },
+  "stream": "spotify-memberships",
+  "beats": 7,
+  "words": 136
+ },
+ {
+  "n": 30,
+  "slug": "v030_proof_three_numbers",
+  "title": "Proof: 3 official numbers that show creators get paid",
+  "type": "proof",
+  "keyword": "PROOF",
+  "tool": "elevenlabs",
+  "affiliate": {
+   "id": "elevenlabs",
+   "name": "ElevenLabs",
+   "earns": "22% of their payments for 12 months",
+   "signup": "https://elevenlabs.io/affiliate",
+   "status": "joined"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 128
+ },
+ {
+  "n": 31,
+  "slug": "v031_disclose_in_video",
+  "title": "Disclose in the video, not just the caption",
+  "type": "value",
+  "keyword": "DISCLOSE",
+  "tool": "beehiiv",
+  "affiliate": {
+   "id": "beehiiv",
+   "name": "beehiiv",
+   "earns": "50-60% of what they pay for 12 months",
+   "signup": "https://www.beehiiv.com/partners",
+   "status": "joined"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 123
+ },
+ {
+  "n": 32,
+  "slug": "v032_fiverr_price_after_fee",
+  "title": "Price your Fiverr gig after the 20% cut",
+  "type": "value",
+  "keyword": "FIVERR",
+  "tool": "fiverr",
+  "affiliate": {
+   "id": "fiverr",
+   "name": "Fiverr",
+   "earns": "25% of a new buyer's first order + 10% for 12 months",
+   "signup": "https://affiliates.fiverr.com",
+   "status": "waiting for owner login"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 125
+ },
+ {
+  "n": 33,
+  "slug": "v033_shutterstock_levels",
+  "title": "Stock footage pay resets every January",
+  "type": "value",
+  "keyword": "STOCK",
+  "tool": "opusclip",
+  "affiliate": {
+   "id": "opusclip",
+   "name": "OpusClip",
+   "earns": "25% of their payments (at least year one)",
+   "signup": "https://www.opus.pro/affiliate",
+   "status": "joined"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 117
+ },
+ {
+  "n": 34,
+  "slug": "v034_etsy_template_math",
+  "title": "Etsy templates: the full fee math",
+  "type": "value",
+  "keyword": "ETSY",
+  "tool": "printify",
+  "affiliate": {
+   "id": "printify",
+   "name": "Printify",
+   "earns": "5% of product price for 12 months",
+   "signup": "https://help.printify.com/hc/en-us/articles/4483629612817",
+   "status": "to join"
+  },
+  "stream": "etsy-templates",
+  "beats": 7,
+  "words": 133
+ },
+ {
+  "n": 35,
+  "slug": "v035_ugc_usage_rights",
+  "title": "UGC: charge more when brands run it as an ad",
+  "type": "value",
+  "keyword": "RIGHTS",
+  "tool": "fiverr",
+  "affiliate": {
+   "id": "fiverr",
+   "name": "Fiverr",
+   "earns": "25% of a new buyer's first order + 10% for 12 months",
+   "signup": "https://affiliates.fiverr.com",
+   "status": "waiting for owner login"
+  },
+  "stream": "ugc",
+  "beats": 7,
+  "words": 135
+ },
+ {
+  "n": 36,
+  "slug": "v036_ambassador_scam_urls",
+  "title": "Fake brand ambassador DMs: check the link",
+  "type": "value",
+  "keyword": "SAFE",
+  "tool": "beehiiv",
+  "affiliate": {
+   "id": "beehiiv",
+   "name": "beehiiv",
+   "earns": "50-60% of what they pay for 12 months",
+   "signup": "https://www.beehiiv.com/partners",
+   "status": "joined"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 134
+ },
+ {
+  "n": 37,
+  "slug": "v037_free_newsletter_start",
+  "title": "Start a newsletter for $0",
+  "type": "value",
+  "keyword": "LIST",
+  "tool": "kit",
+  "affiliate": {
+   "id": "kit",
+   "name": "Kit",
+   "earns": "50% of their first 12 months",
+   "signup": "https://kit.com/affiliate",
+   "status": "to join"
+  },
+  "stream": "email-newsletter",
+  "beats": 7,
+  "words": 130
+ },
+ {
+  "n": 38,
+  "slug": "v038_spotify_vs_patreon",
+  "title": "Podcast members: Spotify vs Patreon",
+  "type": "value",
+  "keyword": "MEMBERS",
+  "tool": "riverside",
+  "affiliate": {
+   "id": "riverside",
+   "name": "Riverside",
+   "earns": "up to 20% per subscription",
+   "signup": "https://riverside.com/affiliate-program",
+   "status": "to join"
+  },
+  "stream": "spotify-memberships",
+  "beats": 7,
+  "words": 131
+ },
+ {
+  "n": 39,
+  "slug": "v039_opusclip_tool",
+  "title": "One long video, ten Shorts (OpusClip)",
+  "type": "tool",
+  "keyword": "CLIPS",
+  "tool": "opusclip",
+  "affiliate": {
+   "id": "opusclip",
+   "name": "OpusClip",
+   "earns": "25% of their payments (at least year one)",
+   "signup": "https://www.opus.pro/affiliate",
+   "status": "joined"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 139
+ },
+ {
+  "n": 40,
+  "slug": "v040_proof_youtube_100b",
+  "title": "Proof: YouTube paid out $100 billion",
+  "type": "proof",
+  "keyword": "YOUTUBE",
+  "tool": "vidiq",
+  "affiliate": {
+   "id": "vidiq",
+   "name": "vidIQ",
+   "earns": "15-25% lifetime recurring (by sales tier)",
+   "signup": "https://support.vidiq.com/en/articles/7866006",
+   "status": "to join"
+  },
+  "stream": "youtube-fan-funding",
+  "beats": 7,
+  "words": 146
+ },
+ {
+  "n": 41,
+  "slug": "v041_tiktok_100k_math",
+  "title": "What 100,000 TikTok views pay (reported)",
+  "type": "value",
+  "keyword": "VIEWS",
+  "tool": "opusclip",
+  "affiliate": {
+   "id": "opusclip",
+   "name": "OpusClip",
+   "earns": "25% of their payments (at least year one)",
+   "signup": "https://www.opus.pro/affiliate",
+   "status": "joined"
+  },
+  "stream": "tiktok-creator-rewards",
+  "beats": 7,
+  "words": 117
+ },
+ {
+  "n": 42,
+  "slug": "v042_submagic_captions",
+  "title": "Captions that keep people watching (Submagic)",
+  "type": "tool",
+  "keyword": "CAPTIONS",
+  "tool": "submagic",
+  "affiliate": {
+   "id": "submagic",
+   "name": "Submagic",
+   "earns": "30% recurring",
+   "signup": "https://www.submagic.co/affiliate",
+   "status": "to join"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 111
+ },
+ {
+  "n": 43,
+  "slug": "v043_voice_clone_checklist",
+  "title": "Before you share your voice clone: 5 checks",
+  "type": "value",
+  "keyword": "CLONE",
+  "tool": "elevenlabs",
+  "affiliate": {
+   "id": "elevenlabs",
+   "name": "ElevenLabs",
+   "earns": "22% of their payments for 12 months",
+   "signup": "https://elevenlabs.io/affiliate",
+   "status": "joined"
+  },
+  "stream": "elevenlabs-voice",
+  "beats": 7,
+  "words": 130
+ },
+ {
+  "n": 44,
+  "slug": "v044_bio_link_order",
+  "title": "Fix your link in bio in 3 minutes",
+  "type": "value",
+  "keyword": "BIO",
+  "tool": "stan",
+  "affiliate": {
+   "id": "stan",
+   "name": "Stan Store",
+   "earns": "20% recurring (confirm on joining)",
+   "signup": "https://stan.store/affiliates",
+   "status": "to join"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 116
+ },
+ {
+  "n": 45,
+  "slug": "v045_sell_20_compare",
+  "title": "Selling a $20 guide: Gumroad vs Stan vs Ko-fi",
+  "type": "value",
+  "keyword": "COMPARE",
+  "tool": "stan",
+  "affiliate": {
+   "id": "stan",
+   "name": "Stan Store",
+   "earns": "20% recurring (confirm on joining)",
+   "signup": "https://stan.store/affiliates",
+   "status": "to join"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 128
+ },
+ {
+  "n": 46,
+  "slug": "v046_sell_at_500",
+  "title": "3 things to sell with 500 followers",
+  "type": "value",
+  "keyword": "SELL",
+  "tool": "stan",
+  "affiliate": {
+   "id": "stan",
+   "name": "Stan Store",
+   "earns": "20% recurring (confirm on joining)",
+   "signup": "https://stan.store/affiliates",
+   "status": "to join"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 124
+ },
+ {
+  "n": 47,
+  "slug": "v047_media_kit_small",
+  "title": "A media kit when you're small",
+  "type": "value",
+  "keyword": "KIT",
+  "tool": "kit",
+  "affiliate": {
+   "id": "kit",
+   "name": "Kit",
+   "earns": "50% of their first 12 months",
+   "signup": "https://kit.com/affiliate",
+   "status": "to join"
+  },
+  "stream": "ugc",
+  "beats": 7,
+  "words": 136
+ },
+ {
+  "n": 48,
+  "slug": "v048_pitch_email",
+  "title": "The 5-line brand pitch email",
+  "type": "value",
+  "keyword": "PITCH",
+  "tool": "kit",
+  "affiliate": {
+   "id": "kit",
+   "name": "Kit",
+   "earns": "50% of their first 12 months",
+   "signup": "https://kit.com/affiliate",
+   "status": "to join"
+  },
+  "stream": "ugc",
+  "beats": 7,
+  "words": 121
+ },
+ {
+  "n": 49,
+  "slug": "v049_beehiiv_tool",
+  "title": "Start a newsletter that can earn (beehiiv)",
+  "type": "tool",
+  "keyword": "BEEHIIV",
+  "tool": "beehiiv",
+  "affiliate": {
+   "id": "beehiiv",
+   "name": "beehiiv",
+   "earns": "50-60% of what they pay for 12 months",
+   "signup": "https://www.beehiiv.com/partners",
+   "status": "joined"
+  },
+  "stream": "email-newsletter",
+  "beats": 7,
+  "words": 123
+ },
+ {
+  "n": 50,
+  "slug": "v050_proof_patreon_10b",
+  "title": "Proof: Patreon paid creators $10 billion",
+  "type": "proof",
+  "keyword": "FANS",
+  "tool": "beehiiv",
+  "affiliate": {
+   "id": "beehiiv",
+   "name": "beehiiv",
+   "earns": "50-60% of what they pay for 12 months",
+   "signup": "https://www.beehiiv.com/partners",
+   "status": "joined"
+  },
+  "stream": "patreon",
+  "beats": 7,
+  "words": 140
+ },
+ {
+  "n": 51,
+  "slug": "v051_amazon_3_sales_rule",
+  "title": "Amazon closes your account without 3 sales",
+  "type": "value",
+  "keyword": "AMAZON",
+  "tool": "amazon",
+  "affiliate": {
+   "id": "amazon",
+   "name": "Amazon Associates",
+   "earns": "category rates (most about 3-4.5%)",
+   "signup": "https://affiliate-program.amazon.com",
+   "status": "to join"
+  },
+  "stream": "amazon-associates",
+  "beats": 7,
+  "words": 126
+ },
+ {
+  "n": 52,
+  "slug": "v052_yt_shopping_payout_timing",
+  "title": "YouTube Shopping pays 60-120 days later",
+  "type": "value",
+  "keyword": "PAYOUT",
+  "tool": "vidiq",
+  "affiliate": {
+   "id": "vidiq",
+   "name": "vidIQ",
+   "earns": "15-25% lifetime recurring (by sales tier)",
+   "signup": "https://support.vidiq.com/en/articles/7866006",
+   "status": "to join"
+  },
+  "stream": "youtube-fan-funding",
+  "beats": 7,
+  "words": 119
+ },
+ {
+  "n": 53,
+  "slug": "v053_affiliate_disclose_link",
+  "title": "Affiliate links: disclose before the link",
+  "type": "value",
+  "keyword": "LINKS",
+  "tool": "beehiiv",
+  "affiliate": {
+   "id": "beehiiv",
+   "name": "beehiiv",
+   "earns": "50-60% of what they pay for 12 months",
+   "signup": "https://www.beehiiv.com/partners",
+   "status": "joined"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 135
+ },
+ {
+  "n": 54,
+  "slug": "v054_skool_community",
+  "title": "Run a paid community (Skool)",
+  "type": "tool",
+  "keyword": "COMMUNITY",
+  "tool": "skool",
+  "affiliate": {
+   "id": "skool",
+   "name": "Skool",
+   "earns": "40% of their Skool fee while they stay",
+   "signup": "https://www.skool.com/settings?t=referrals",
+   "status": "joined"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 132
+ },
+ {
+  "n": 55,
+  "slug": "v055_rate_card",
+  "title": "Make a UGC rate card in 10 minutes",
+  "type": "value",
+  "keyword": "RATES",
+  "tool": "kit",
+  "affiliate": {
+   "id": "kit",
+   "name": "Kit",
+   "earns": "50% of their first 12 months",
+   "signup": "https://kit.com/affiliate",
+   "status": "to join"
+  },
+  "stream": "ugc",
+  "beats": 7,
+  "words": 120
+ },
+ {
+  "n": 56,
+  "slug": "v056_tiktok_one_minute",
+  "title": "Why TikTok wants 1-minute videos for pay",
+  "type": "value",
+  "keyword": "MINUTE",
+  "tool": "opusclip",
+  "affiliate": {
+   "id": "opusclip",
+   "name": "OpusClip",
+   "earns": "25% of their payments (at least year one)",
+   "signup": "https://www.opus.pro/affiliate",
+   "status": "joined"
+  },
+  "stream": "tiktok-creator-rewards",
+  "beats": 7,
+  "words": 118
+ },
+ {
+  "n": 57,
+  "slug": "v057_comment_keyword_funnel",
+  "title": "Why I say 'comment a keyword'",
+  "type": "value",
+  "keyword": "FUNNEL",
+  "tool": "kit",
+  "affiliate": {
+   "id": "kit",
+   "name": "Kit",
+   "earns": "50% of their first 12 months",
+   "signup": "https://kit.com/affiliate",
+   "status": "to join"
+  },
+  "stream": "email-newsletter",
+  "beats": 7,
+  "words": 131
+ },
+ {
+  "n": 58,
+  "slug": "v058_post_at_zero",
+  "title": "What to post when you have 0 followers",
+  "type": "value",
+  "keyword": "START",
+  "tool": "opusclip",
+  "affiliate": {
+   "id": "opusclip",
+   "name": "OpusClip",
+   "earns": "25% of their payments (at least year one)",
+   "signup": "https://www.opus.pro/affiliate",
+   "status": "joined"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 121
+ },
+ {
+  "n": 59,
+  "slug": "v059_descript_edit",
+  "title": "Edit video like a document (Descript)",
+  "type": "tool",
+  "keyword": "EDIT",
+  "tool": "descript",
+  "affiliate": {
+   "id": "descript",
+   "name": "Descript",
+   "earns": "commission via PartnerStack (rate shown after approval)",
+   "signup": "https://www.descript.com/affiliate",
+   "status": "to join"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 118
+ },
+ {
+  "n": 60,
+  "slug": "v060_proof_kit_coach",
+  "title": "Proof: an email list behind a $100,000 business",
+  "type": "proof",
+  "keyword": "EMAIL",
+  "tool": "kit",
+  "affiliate": {
+   "id": "kit",
+   "name": "Kit",
+   "earns": "50% of their first 12 months",
+   "signup": "https://kit.com/affiliate",
+   "status": "to join"
+  },
+  "stream": "email-newsletter",
+  "beats": 7,
+  "words": 137
+ },
+ {
+  "n": 61,
+  "slug": "v061_one_video_four_apps",
+  "title": "Post one video on 4 apps the right way",
+  "type": "value",
+  "keyword": "REPOST",
+  "tool": "opusclip",
+  "affiliate": {
+   "id": "opusclip",
+   "name": "OpusClip",
+   "earns": "25% of their payments (at least year one)",
+   "signup": "https://www.opus.pro/affiliate",
+   "status": "joined"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 124
+ },
+ {
+  "n": 62,
+  "slug": "v062_ugc_three_samples",
+  "title": "The 3 UGC samples brands want to see",
+  "type": "value",
+  "keyword": "SAMPLES",
+  "tool": "fiverr",
+  "affiliate": {
+   "id": "fiverr",
+   "name": "Fiverr",
+   "earns": "25% of a new buyer's first order + 10% for 12 months",
+   "signup": "https://affiliates.fiverr.com",
+   "status": "waiting for owner login"
+  },
+  "stream": "ugc",
+  "beats": 7,
+  "words": 117
+ },
+ {
+  "n": 63,
+  "slug": "v063_tiktok_live_gifts",
+  "title": "TikTok LIVE gifts: how they turn into money",
+  "type": "value",
+  "keyword": "LIVE",
+  "tool": "riverside",
+  "affiliate": {
+   "id": "riverside",
+   "name": "Riverside",
+   "earns": "up to 20% per subscription",
+   "signup": "https://riverside.com/affiliate-program",
+   "status": "to join"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 129
+ },
+ {
+  "n": 64,
+  "slug": "v064_youtube_fan_funding",
+  "title": "YouTube fan funding at 500 subscribers",
+  "type": "value",
+  "keyword": "FANS",
+  "tool": "vidiq",
+  "affiliate": {
+   "id": "vidiq",
+   "name": "vidIQ",
+   "earns": "15-25% lifetime recurring (by sales tier)",
+   "signup": "https://support.vidiq.com/en/articles/7866006",
+   "status": "to join"
+  },
+  "stream": "youtube-fan-funding",
+  "beats": 7,
+  "words": 127
+ },
+ {
+  "n": 65,
+  "slug": "v065_printify_merch",
+  "title": "Merch without stock (print on demand)",
+  "type": "tool",
+  "keyword": "MERCH",
+  "tool": "printify",
+  "affiliate": {
+   "id": "printify",
+   "name": "Printify",
+   "earns": "5% of product price for 12 months",
+   "signup": "https://help.printify.com/hc/en-us/articles/4483629612817",
+   "status": "to join"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 134
+ },
+ {
+  "n": 66,
+  "slug": "v066_price_first_guide",
+  "title": "How to price your first guide",
+  "type": "value",
+  "keyword": "PRICE",
+  "tool": "stan",
+  "affiliate": {
+   "id": "stan",
+   "name": "Stan Store",
+   "earns": "20% recurring (confirm on joining)",
+   "signup": "https://stan.store/affiliates",
+   "status": "to join"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 138
+ },
+ {
+  "n": 67,
+  "slug": "v067_amazon_storefront_ideas",
+  "title": "5 Amazon storefront lists that get clicks",
+  "type": "value",
+  "keyword": "LISTS",
+  "tool": "amazon",
+  "affiliate": {
+   "id": "amazon",
+   "name": "Amazon Associates",
+   "earns": "category rates (most about 3-4.5%)",
+   "signup": "https://affiliate-program.amazon.com",
+   "status": "to join"
+  },
+  "stream": "amazon-associates",
+  "beats": 7,
+  "words": 125
+ },
+ {
+  "n": 68,
+  "slug": "v068_kajabi_courses",
+  "title": "Sell a course: all-in-one or cheap tools? (Kajabi)",
+  "type": "tool",
+  "keyword": "COURSE",
+  "tool": "kajabi",
+  "affiliate": {
+   "id": "kajabi",
+   "name": "Kajabi",
+   "earns": "10-20% recurring (tiered)",
+   "signup": "https://kajabi.com/partners",
+   "status": "to join"
+  },
+  "stream": null,
+  "beats": 7,
+  "words": 122
  }
 ]

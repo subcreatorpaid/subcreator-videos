@@ -1,0 +1,51 @@
+{
+ "title": "Twitch Affiliate checklist",
+ "subtitle": "The 4 rules and a 30-day plan",
+ "sections": [
+  [
+   "The rules (last 30 days)",
+   [
+    "50 followers",
+    "500 minutes broadcast",
+    "7 unique broadcast days",
+    "Average 3 concurrent viewers",
+    "Check Creator Dashboard > Achievements for your live progress."
+   ]
+  ],
+  [
+   "What it unlocks",
+   [
+    "Channel subscriptions",
+    "Bits (cheering)"
+   ]
+  ],
+  [
+   "30-day plan",
+   [
+    "Stream 3 fixed days a week, 2 hours each.",
+    "Invite 5 friends to the first streams.",
+    "Clip one moment per stream to Shorts and TikTok."
+   ]
+  ]
+ ],
+ "steps": [
+  "Open your Achievements page.",
+  "Set your stream schedule.",
+  "Post your first clip after the next stream."
+ ],
+ "keyword": "TWITCH",
+ "sources": [
+  [
+   "Tom's Guide: Twitch Affiliate requirements",
+   "https://www.tomsguide.com/us/how-to-become-twitch-affiliate-requirements,news-30486.html"
+  ]
+ ],
+ "video": "Twitch pays at 50 followers (with 3 more rules)",
+ "tool": {
+  "id": "riverside",
+  "name": "Riverside",
+  "earns": "up to 20% per subscription",
+  "signup": "https://riverside.com/affiliate-program",
+  "status": "to join"
+ }
+}

@@ -1,0 +1,367 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v064_youtube_fan_funding",
+ "title": "YouTube fan funding at 500 subscribers",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "At five hundred subscribers, YouTube lets fans pay you directly. Here's what opens.",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "laptop",
+    "chips": [
+     [
+      "five",
+      "500 subs",
+      null
+     ],
+     [
+      "fans",
+      "Fans pay you",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "five",
+     "pop"
+    ],
+    [
+     "fans",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The expanded Partner Program opens at five hundred subscribers with three public uploads in ninety days, plus three thousand watch hours or three million Shorts views.",
+   "show": {
+    "type": "checklist",
+    "title": "Expanded YPP",
+    "items": [
+     [
+      "five",
+      "500 subscribers"
+     ],
+     [
+      "uploads",
+      "3 uploads in 90 days"
+     ],
+     [
+      "three",
+      "3,000 hours or 3M Shorts views"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "five",
+     "click"
+    ],
+    [
+     "uploads",
+     "click"
+    ],
+    [
+     "three",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Then fans can join memberships, send Super Thanks on videos, and Super Chats on lives.",
+   "show": {
+    "type": "stat_cards",
+    "title": "FAN FUNDING",
+    "cards": [
+     [
+      "memberships",
+      "Join",
+      "channel memberships"
+     ],
+     [
+      "thanks",
+      "Thanks",
+      "on videos"
+     ],
+     [
+      "chats",
+      "Chat",
+      "on lives"
+     ]
+    ],
+    "hold": "laptop",
+    "mood": -0.6
+   },
+   "sfx": [
+    [
+     "memberships",
+     "card"
+    ],
+    [
+     "thanks",
+     "card"
+    ],
+    [
+     "chats",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "Ads come later, at one thousand subscribers with four thousand watch hours, or ten million Shorts views.",
+   "show": {
+    "type": "ladder",
+    "rungs": [
+     [
+      "_5",
+      "500",
+      "Fan funding + Shopping",
+      "youtube",
+      true
+     ],
+     [
+      "ads",
+      "1,000",
+      "Ads (+4,000 hours or 10M Shorts views)",
+      "youtube",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "ads",
+     "pop"
+    ],
+    [
+     "thousand",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Give members one simple perk, like a monthly live Q and A or early access.",
+   "show": {
+    "type": "checklist",
+    "title": "Member perks",
+    "items": [
+     [
+      "monthly",
+      "Monthly live Q&A"
+     ],
+     [
+      "early",
+      "Early access"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "monthly",
+     "click"
+    ],
+    [
+     "early",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: it's only in eligible countries, and review takes about a month.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "countries",
+      "Eligible countries",
+      true
+     ],
+     [
+      "month",
+      "~1 month review",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "countries",
+     "whip"
+    ],
+    [
+     "month",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [FANS|fans] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. vidIQ is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "YouTube at 500 subs",
+    "keyword": "FANS",
+    "tool": "vidIQ"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[500|Five hundred] subscribers. That's when YouTube fans can pay you.",
+   "show": {
+    "type": "checklist",
+    "title": "Expanded YPP",
+    "items": [
+     [
+      "five",
+      "500 subscribers"
+     ],
+     [
+      "uploads",
+      "3 uploads in 90 days"
+     ],
+     [
+      "three",
+      "3,000 hours or 3M Shorts views"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Fans love your videos, but there's no way to support you?",
+   "show": {
+    "type": "stat_cards",
+    "title": "FAN FUNDING",
+    "cards": [
+     [
+      "memberships",
+      "Join",
+      "channel memberships"
+     ],
+     [
+      "thanks",
+      "Thanks",
+      "on videos"
+     ],
+     [
+      "chats",
+      "Chat",
+      "on lives"
+     ]
+    ],
+    "hold": "laptop",
+    "mood": -0.6
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What does YouTube unlock at five hundred subscribers?",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "laptop",
+    "chips": [
+     [
+      "five",
+      "500 subs",
+      null
+     ],
+     [
+      "fans",
+      "Fans pay you",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "YouTube Help: expanded YouTube Partner Program",
+   "url": "https://support.google.com/youtube/answer/13429240?hl=en"
+  }
+ ],
+ "thumb": {
+  "headline": "YouTube pays\nat *500* subs",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.5,
+  "sticker": "Fan funding",
+  "chip": "Before ads",
+  "size": 130
+ },
+ "finder_stream": "youtube-fan-funding"
+}

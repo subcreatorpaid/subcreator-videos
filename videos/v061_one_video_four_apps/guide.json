@@ -1,0 +1,48 @@
+{
+ "title": "Cross-posting checklist",
+ "subtitle": "One video, four apps",
+ "sections": [
+  [
+   "Before export",
+   [
+    "No watermarks from other apps.",
+    "9:16 vertical.",
+    "Text away from edges and buttons."
+   ]
+  ],
+  [
+   "Per app",
+   [
+    "New caption.",
+    "Native on-screen text if needed.",
+    "Check length and music rules."
+   ]
+  ],
+  [
+   "Track",
+   [
+    "Views and follows per app each week."
+   ]
+  ]
+ ],
+ "steps": [
+  "Export a clean master file.",
+  "Post to all 4 apps this week.",
+  "Compare results on Sunday."
+ ],
+ "keyword": "REPOST",
+ "sources": [
+  [
+   "FTC: Disclosures 101 for social media influencers",
+   "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+  ]
+ ],
+ "video": "Post one video on 4 apps the right way",
+ "tool": {
+  "id": "opusclip",
+  "name": "OpusClip",
+  "earns": "25% of their payments (at least year one)",
+  "signup": "https://www.opus.pro/affiliate",
+  "status": "joined"
+ }
+}

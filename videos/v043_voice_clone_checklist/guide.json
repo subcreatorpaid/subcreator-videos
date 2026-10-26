@@ -1,0 +1,42 @@
+{
+ "title": "Voice clone checklist",
+ "subtitle": "5 checks before you share your voice",
+ "sections": [
+  [
+   "The checks",
+   [
+    "Professional Voice Clone (Creator plan or above).",
+    "Clean audio in a quiet room.",
+    "A clear, searchable voice description.",
+    "Notice period: immediate to 2 years.",
+    "Payouts: Stripe, W-8/W-9, ~60 countries, usually from $10."
+   ]
+  ],
+  [
+   "How you earn",
+   [
+    "Only from paying users' usage of your voice."
+   ]
+  ]
+ ],
+ "steps": [
+  "Record 30 minutes of clean audio.",
+  "Create the clone.",
+  "Write the description before sharing."
+ ],
+ "keyword": "CLONE",
+ "sources": [
+  [
+   "ElevenLabs docs: voice payouts",
+   "https://elevenlabs.io/docs/eleven-creative/voices/payouts"
+  ]
+ ],
+ "video": "Before you share your voice clone: 5 checks",
+ "tool": {
+  "id": "elevenlabs",
+  "name": "ElevenLabs",
+  "earns": "22% of their payments for 12 months",
+  "signup": "https://elevenlabs.io/affiliate",
+  "status": "joined"
+ }
+}

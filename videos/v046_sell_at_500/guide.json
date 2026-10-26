@@ -1,0 +1,52 @@
+{
+ "title": "Sell at 500 followers",
+ "subtitle": "3 product ideas and how to launch one",
+ "sections": [
+  [
+   "Ideas",
+   [
+    "A small guide: your most-asked question, answered.",
+    "A template that saves an hour.",
+    "A short review call (profile, plan, pitch)."
+   ]
+  ],
+  [
+   "Example only",
+   [
+    "500 followers × 2% buying × $10 = ~$100 before fees."
+   ]
+  ],
+  [
+   "Launch",
+   [
+    "Post 3 free tips on the topic first.",
+    "Announce it in a video and your stories.",
+    "Pin a comment with the link."
+   ]
+  ]
+ ],
+ "steps": [
+  "Read your last 50 comments for the top question.",
+  "Make the product in a weekend.",
+  "Launch with one video."
+ ],
+ "keyword": "SELL",
+ "sources": [
+  [
+   "Stan Store pricing",
+   "https://stan.store/blog/stan-store-pricing/"
+  ],
+  [
+   "Fungies: Gumroad fees (checked Aug 2026)",
+   "https://fungies.io/leaving-gumroad-cheaper-alternatives-2026/"
+  ]
+ ],
+ "video": "3 things to sell with 500 followers",
+ "tool": {
+  "id": "stan",
+  "name": "Stan Store",
+  "earns": "20% recurring (confirm on joining)",
+  "signup": "https://stan.store/affiliates",
+  "status": "to join"
+ }
+}

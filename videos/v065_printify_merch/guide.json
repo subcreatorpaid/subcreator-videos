@@ -1,0 +1,48 @@
+{
+ "title": "Merch without stock",
+ "subtitle": "Print-on-demand setup and pricing",
+ "sections": [
+  [
+   "Setup",
+   [
+    "Upload a design.",
+    "Pick a product (shirt, mug, tote).",
+    "Connect a store.",
+    "The printer makes and ships each order."
+   ]
+  ],
+  [
+   "Pricing",
+   [
+    "Profit = price − product cost − shipping.",
+    "Order one sample yourself first."
+   ]
+  ],
+  [
+   "Affiliate",
+   [
+    "Printify: 5% of product price for 12 months."
+   ]
+  ]
+ ],
+ "steps": [
+  "Write 5 phrases your audience says.",
+  "Design one product.",
+  "Order a sample before launch."
+ ],
+ "keyword": "MERCH",
+ "sources": [
+  [
+   "Printify affiliate program",
+   "https://help.printify.com/hc/en-us/articles/4483629612817"
+  ]
+ ],
+ "video": "Merch without stock (print on demand)",
+ "tool": {
+  "id": "printify",
+  "name": "Printify",
+  "earns": "5% of product price for 12 months",
+  "signup": "https://help.printify.com/hc/en-us/articles/4483629612817",
+  "status": "to join"
+ }
+}

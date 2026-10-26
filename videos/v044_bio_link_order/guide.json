@@ -1,0 +1,46 @@
+{
+ "title": "Link-in-bio fix",
+ "subtitle": "The 3-link order that gets clicks",
+ "sections": [
+  [
+   "Order",
+   [
+    "1. Free guide / newsletter sign-up.",
+    "2. The tool or product from your latest video.",
+    "3. Your other platforms."
+   ]
+  ],
+  [
+   "Say it",
+   [
+    "'Comment the keyword' or 'tap the first link in my bio' at the end of every video."
+   ]
+  ],
+  [
+   "Keep it fresh",
+   [
+    "Update link 2 with every new video."
+   ]
+  ]
+ ],
+ "steps": [
+  "Delete links nobody clicked last month.",
+  "Set the 3-link order.",
+  "Mention link 1 in your next video."
+ ],
+ "keyword": "BIO",
+ "sources": [
+  [
+   "Stan Store pricing",
+   "https://stan.store/blog/stan-store-pricing/"
+  ]
+ ],
+ "video": "Fix your link in bio in 3 minutes",
+ "tool": {
+  "id": "stan",
+  "name": "Stan Store",
+  "earns": "20% recurring (confirm on joining)",
+  "signup": "https://stan.store/affiliates",
+  "status": "to join"
+ }
+}

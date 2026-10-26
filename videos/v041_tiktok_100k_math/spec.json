@@ -1,0 +1,392 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v041_tiktok_100k_math",
+ "title": "What 100,000 TikTok views pay (reported)",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "A hundred thousand TikTok views. What does that really pay? Here's the math.",
+   "show": {
+    "type": "talk",
+    "mood": 0.3,
+    "hold": "phone0",
+    "chips": [
+     [
+      "hundred",
+      "100K views",
+      null
+     ],
+     [
+      "pay",
+      "Pays…?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "hundred",
+     "pop"
+    ],
+    [
+     "pay",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Creator guides report forty cents to a dollar for every thousand qualifying views in Creator Rewards.",
+   "show": {
+    "type": "stat_cards",
+    "title": "REPORTED RATE",
+    "cards": [
+     [
+      "forty",
+      "$0.40",
+      "per 1,000"
+     ],
+     [
+      "dollar",
+      "$1.00",
+      "per 1,000",
+      true
+     ]
+    ],
+    "source": "Stack Influence, Jun 2026"
+   },
+   "sfx": [
+    [
+     "forty",
+     "card"
+    ],
+    [
+     "dollar",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "So a hundred thousand qualifying views is about forty to one hundred dollars.",
+   "show": {
+    "type": "calc",
+    "title": "100,000 qualifying views",
+    "green": [
+     "one"
+    ],
+    "rows": [
+     [
+      "hundred",
+      "Views ÷ 1,000",
+      "100",
+      null
+     ],
+     [
+      "forty",
+      "Rate",
+      "$0.40–1",
+      "×"
+     ]
+    ],
+    "result": [
+     "one",
+     "Reported pay",
+     100,
+     "$40–$",
+     "",
+     0
+    ],
+    "note": "Example only"
+   },
+   "sfx": [
+    [
+     "hundred",
+     "pop"
+    ],
+    [
+     "forty",
+     "pop"
+    ],
+    [
+     "one",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "And only qualifying views count: videos over a minute, from accounts that meet the bar.",
+   "show": {
+    "type": "checklist",
+    "title": "Qualifying views",
+    "items": [
+     [
+      "minute",
+      "Videos 1 minute+"
+     ],
+     [
+      "bar",
+      "10K followers + 100K views / 30 days"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "minute",
+     "click"
+    ],
+    [
+     "bar",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Compare: one UGC video often pays fifty to four hundred dollars, with zero followers.",
+   "show": {
+    "type": "compare",
+    "title": "Same effort?",
+    "cols": [
+     "100K views",
+     "1 UGC video"
+    ],
+    "rows": [
+     [
+      "fifty",
+      "Pay",
+      [
+       "~$40–100",
+       "$50–400"
+      ]
+     ],
+     [
+      "zero",
+      "Followers",
+      [
+       "10K+",
+       "0"
+      ],
+      [
+       0
+      ]
+     ]
+    ],
+    "best": 1,
+    "best_word": "followers"
+   },
+   "sfx": [
+    [
+     "fifty",
+     "pop"
+    ],
+    [
+     "zero",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: these rates are reported by creator guides, not published by TikTok, and they vary by country.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "reported",
+      "Reported, not official",
+      true
+     ],
+     [
+      "country",
+      "Varies by country",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "reported",
+     "whip"
+    ],
+    [
+     "country",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [VIEWS|views] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. OpusClip is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "TikTok views math",
+    "keyword": "VIEWS",
+    "tool": "OpusClip"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[100,000|One hundred thousand] TikTok views can pay about forty to one hundred dollars.",
+   "show": {
+    "type": "calc",
+    "title": "100,000 qualifying views",
+    "green": [
+     "one"
+    ],
+    "rows": [
+     [
+      "hundred",
+      "Views ÷ 1,000",
+      "100",
+      null
+     ],
+     [
+      "forty",
+      "Rate",
+      "$0.40–1",
+      "×"
+     ]
+    ],
+    "result": [
+     "one",
+     "Reported pay",
+     100,
+     "$40–$",
+     "",
+     0
+    ],
+    "note": "Example only"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Your TikTok blew up, and the payout was tiny?",
+   "show": {
+    "type": "talk",
+    "mood": 0.3,
+    "hold": "phone0",
+    "chips": [
+     [
+      "hundred",
+      "100K views",
+      null
+     ],
+     [
+      "pay",
+      "Pays…?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How much does TikTok pay per one hundred thousand views?",
+   "show": {
+    "type": "talk",
+    "mood": 0.3,
+    "hold": "phone0",
+    "chips": [
+     [
+      "hundred",
+      "100K views",
+      null
+     ],
+     [
+      "pay",
+      "Pays…?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Stack Influence: 5 TikTok monetization paths (Jun 2026)",
+   "url": "https://stackinfluence.com/blog/5-tiktok-monetization-paths-that-pay-creators-in-2026"
+  },
+  {
+   "title": "Insense: UGC creator rates (Sep 2026)",
+   "url": "https://insense.pro/blog/ugc-creator-rates"
+  }
+ ],
+ "thumb": {
+  "headline": "100K views\n= *$40–100*?",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 0.6,
+  "sticker": "Reported rate",
+  "chip": "TikTok Creator Rewards math",
+  "size": 120
+ },
+ "finder_stream": "tiktok-creator-rewards"
+}

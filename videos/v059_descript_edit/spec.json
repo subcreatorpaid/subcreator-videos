@@ -1,0 +1,356 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v059_descript_edit",
+ "title": "Edit video like a document (Descript)",
+ "type": "tool",
+ "format": "",
+ "beats": [
+  {
+   "say": "Editing takes forever when you scrub through a timeline. Here's how to edit by deleting words instead.",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "laptop",
+    "chips": [
+     [
+      "forever",
+      "Takes forever",
+      "red"
+     ],
+     [
+      "words",
+      "Edit the words",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "forever",
+     "thud"
+    ],
+    [
+     "words",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Descript writes out what you said. Delete a sentence in the text, and it's gone from the video.",
+   "show": {
+    "type": "tool_demo",
+    "app": "Descript",
+    "input": "raw-take.mp4",
+    "input_word": "writes",
+    "process": "Transcribing",
+    "process_word": "said",
+    "outputs": [
+     [
+      "delete",
+      "Transcript"
+     ],
+     [
+      "delete",
+      "Cut by text"
+     ],
+     [
+      "gone",
+      "Clean video"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "writes",
+     "drop"
+    ],
+    [
+     "said",
+     "whoosh"
+    ],
+    [
+     "delete",
+     "pop"
+    ],
+    [
+     "gone",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "It can also remove filler words like um and uh in one click.",
+   "show": {
+    "type": "myth",
+    "myth": "um, uh, you know…",
+    "myth_word": "filler",
+    "fact": "Removed in one click",
+    "fact_word": "click"
+   },
+   "sfx": [
+    [
+     "filler",
+     "thud"
+    ],
+    [
+     "click",
+     "swipe"
+    ]
+   ]
+  },
+  {
+   "say": "Record one long take, cut it by text, then export short vertical clips.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "record",
+      "One long take",
+      "film",
+      0
+     ],
+     [
+      "cut",
+      "Cut by text",
+      "laptop",
+      -0.3
+     ],
+     [
+      "export",
+      "Export clips",
+      "phone0",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "record",
+     "pop"
+    ],
+    [
+     "cut",
+     "pop"
+    ],
+    [
+     "export",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Descript has an affiliate program through PartnerStack. The rate is shown after you're approved.",
+   "show": {
+    "type": "page_card",
+    "url": "descript.com/affiliate",
+    "mark": "De",
+    "title": "Descript affiliate",
+    "checked": "Via PartnerStack",
+    "bullets": [
+     [
+      "affiliate",
+      "Affiliate program",
+      true
+     ],
+     [
+      "approved",
+      "Rate shown after approval"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "affiliate",
+     "pop"
+    ],
+    [
+     "approved",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: the transcript can mishear names and numbers, so read it before you cut.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "mishear",
+      "Can mishear names",
+      true
+     ],
+     [
+      "read",
+      "Read before you cut",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "mishear",
+     "whip"
+    ],
+    [
+     "read",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [EDIT|edit] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Descript is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Edit by text",
+    "keyword": "EDIT",
+    "tool": "Descript"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[1|One] click to remove every um and uh.",
+   "show": {
+    "type": "myth",
+    "myth": "um, uh, you know…",
+    "myth_word": "filler",
+    "fact": "Removed in one click",
+    "fact_word": "click"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Spending hours scrubbing through your timeline?",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "laptop",
+    "chips": [
+     [
+      "forever",
+      "Takes forever",
+      "red"
+     ],
+     [
+      "words",
+      "Edit the words",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What if editing video was like editing a document?",
+   "show": {
+    "type": "tool_demo",
+    "app": "Descript",
+    "input": "raw-take.mp4",
+    "input_word": "writes",
+    "process": "Transcribing",
+    "process_word": "said",
+    "outputs": [
+     [
+      "delete",
+      "Transcript"
+     ],
+     [
+      "delete",
+      "Cut by text"
+     ],
+     [
+      "gone",
+      "Clean video"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Descript help: affiliates",
+   "url": "https://help.descript.com/connect-with-us/affiliates"
+  }
+ ],
+ "thumb": {
+  "headline": "Edit video\nlike a *doc*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.4,
+  "sticker": "Descript",
+  "chip": "Cut by deleting words",
+  "size": 130
+ },
+ "finder_stream": null
+}

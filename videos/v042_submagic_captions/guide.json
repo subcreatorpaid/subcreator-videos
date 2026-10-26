@@ -1,0 +1,48 @@
+{
+ "title": "Captions checklist",
+ "subtitle": "Make videos work with the sound off",
+ "sections": [
+  [
+   "Workflow",
+   [
+    "Upload your video to Submagic.",
+    "Pick one caption style and keep it.",
+    "Highlight money words and key terms."
+   ]
+  ],
+  [
+   "Before export",
+   [
+    "Names and brand names spelled right.",
+    "Numbers and $ amounts right.",
+    "Captions clear of your face and on-screen text."
+   ]
+  ],
+  [
+   "Affiliate",
+   [
+    "Submagic: 30% recurring."
+   ]
+  ]
+ ],
+ "steps": [
+  "Caption your next video.",
+  "Save your style as a template.",
+  "Read every line before posting."
+ ],
+ "keyword": "CAPTIONS",
+ "sources": [
+  [
+   "Submagic affiliate program",
+   "https://www.submagic.co/affiliate"
+  ]
+ ],
+ "video": "Captions that keep people watching (Submagic)",
+ "tool": {
+  "id": "submagic",
+  "name": "Submagic",
+  "earns": "30% recurring",
+  "signup": "https://www.submagic.co/affiliate",
+  "status": "to join"
+ }
+}

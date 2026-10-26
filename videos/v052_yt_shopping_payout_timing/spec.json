@@ -1,0 +1,350 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v052_yt_shopping_payout_timing",
+ "title": "YouTube Shopping pays 60-120 days later",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Someone bought through your YouTube Shopping link. So where's the money? Here's the timeline.",
+   "show": {
+    "type": "talk",
+    "mood": 0.7,
+    "hold": "phone0",
+    "chips": [
+     [
+      "bought",
+      "Someone bought",
+      "green"
+     ],
+     [
+      "money",
+      "Where's the money?",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "bought",
+     "ding"
+    ],
+    [
+     "money",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "The sale happens on day zero. YouTube pays through AdSense sixty to one hundred twenty days later.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "zero",
+      "Day 0",
+      "sale"
+     ],
+     [
+      "sixty",
+      "Day 60–120",
+      "AdSense payout",
+      "green"
+     ]
+    ],
+    "hold": "phone0"
+   },
+   "sfx": [
+    [
+     "zero",
+     "pop"
+    ],
+    [
+     "sixty",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "If the buyer returns the product, the commission is taken back.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "_0",
+      "Day 0",
+      "sale"
+     ],
+     [
+      "returns",
+      "Return",
+      "commission reversed",
+      "red"
+     ]
+    ],
+    "hold": "phone0",
+    "end_mood": 0.8
+   },
+   "sfx": [
+    [
+     "returns",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "And each brand sets its own commission, so check the rate before you tag a product.",
+   "show": {
+    "type": "checklist",
+    "title": "Before you tag",
+    "items": [
+     [
+      "brand",
+      "Check the brand's rate"
+     ],
+     [
+      "rate",
+      "Use it yourself"
+     ],
+     [
+      "tag",
+      "Tag where you talk about it"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "brand",
+     "click"
+    ],
+    [
+     "rate",
+     "click"
+    ],
+    [
+     "tag",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "So plan for a slow start: money you earn this month shows up in two to four months.",
+   "show": {
+    "type": "stat_cards",
+    "title": "PLAN FOR IT",
+    "cards": [
+     [
+      "two",
+      "2–4",
+      "months to arrive"
+     ]
+    ],
+    "hold": "laptop",
+    "mood": 0.2
+   },
+   "sfx": [
+    [
+     "two",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: you need the Partner Program, five hundred subscribers, and an eligible country first.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "partner",
+      "Partner Program",
+      true
+     ],
+     [
+      "five",
+      "500 subscribers",
+      true
+     ],
+     [
+      "country",
+      "Eligible country",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "partner",
+     "whip"
+    ],
+    [
+     "five",
+     "whip"
+    ],
+    [
+     "country",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [PAYOUT|payout] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. vidIQ is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "YouTube Shopping payouts",
+    "keyword": "PAYOUT",
+    "tool": "vidIQ"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[60|Sixty] to [120|one hundred twenty] days. That's how long YouTube Shopping money takes.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "zero",
+      "Day 0",
+      "sale"
+     ],
+     [
+      "sixty",
+      "Day 60–120",
+      "AdSense payout",
+      "green"
+     ]
+    ],
+    "hold": "phone0"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Someone bought through your link, and you still haven't been paid?",
+   "show": {
+    "type": "talk",
+    "mood": 0.7,
+    "hold": "phone0",
+    "chips": [
+     [
+      "bought",
+      "Someone bought",
+      "green"
+     ],
+     [
+      "money",
+      "Where's the money?",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "When does YouTube Shopping actually pay you?",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "zero",
+      "Day 0",
+      "sale"
+     ],
+     [
+      "sixty",
+      "Day 60–120",
+      "AdSense payout",
+      "green"
+     ]
+    ],
+    "hold": "phone0"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "PPC Land: YouTube Shopping opens to 500 subscribers (Mar 2026)",
+   "url": "https://ppc.land/youtube-opens-shopping-affiliate-program-to-creators-with-500-subscribers/"
+  }
+ ],
+ "thumb": {
+  "headline": "Paid *60–120*\ndays later",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 0.6,
+  "sticker": "Returns reverse it",
+  "sticker_color": "red",
+  "chip": "YouTube Shopping payouts",
+  "size": 120
+ },
+ "finder_stream": "youtube-fan-funding"
+}

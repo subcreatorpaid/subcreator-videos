@@ -1,0 +1,50 @@
+{
+ "title": "How Shorts money works",
+ "subtitle": "The ad pool, the 45%, and what pays sooner",
+ "sections": [
+  [
+   "Shorts ad revenue",
+   [
+    "Ads between Shorts go into a pool.",
+    "Part pays for music licensing.",
+    "Creators keep 45% of their allocated share."
+   ]
+  ],
+  [
+   "Who gets it",
+   [
+    "YouTube Partner Program: 1,000 subscribers + 10M Shorts views in 90 days, or 4,000 public watch hours in 12 months."
+   ]
+  ],
+  [
+   "What pays sooner",
+   [
+    "From 500 subscribers: fan funding (memberships, Super Thanks) and Shopping, in eligible countries."
+   ]
+  ]
+ ],
+ "steps": [
+  "Check YouTube Studio > Earn.",
+  "Add an email sign-up link to every Short's description.",
+  "Pin a comment pointing to your free guide."
+ ],
+ "keyword": "SHORTS",
+ "sources": [
+  [
+   "Engadget: YouTube Shorts ad revenue sharing (Sep 2022)",
+   "https://www.engadget.com/youtube-revenue-sharing-shorts-creators-170137275.html"
+  ],
+  [
+   "YouTube Help: expanded YouTube Partner Program",
+   "https://support.google.com/youtube/answer/13429240?hl=en"
+  ]
+ ],
+ "video": "YouTube Shorts: why views pay so little",
+ "tool": {
+  "id": "vidiq",
+  "name": "vidIQ",
+  "earns": "15-25% lifetime recurring (by sales tier)",
+  "signup": "https://support.vidiq.com/en/articles/7866006",
+  "status": "to join"
+ }
+}

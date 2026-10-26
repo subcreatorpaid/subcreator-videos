@@ -1,0 +1,363 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v054_skool_community",
+ "title": "Run a paid community (Skool)",
+ "type": "tool",
+ "format": "",
+ "beats": [
+  {
+   "say": "Your followers keep asking the same questions. A small paid community can answer them all in one place.",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "questions",
+      "Same questions",
+      null
+     ],
+     [
+      "community",
+      "Paid community",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "questions",
+     "pop"
+    ],
+    [
+     "community",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Skool puts a community, courses and a calendar in one place. You set a monthly price, members pay to join.",
+   "show": {
+    "type": "tool_demo",
+    "app": "Skool",
+    "input": "Small Creator Money Club",
+    "input_word": "puts",
+    "process": "Setting up your group",
+    "process_word": "community",
+    "outputs": [
+     [
+      "community",
+      "Community feed"
+     ],
+     [
+      "courses",
+      "Courses"
+     ],
+     [
+      "calendar",
+      "Calendar"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "puts",
+     "key"
+    ],
+    [
+     "community",
+     "pop"
+    ],
+    [
+     "courses",
+     "pop"
+    ],
+    [
+     "calendar",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Start with one promise: what will members be able to do after thirty days?",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "promise",
+      "One promise",
+      null
+     ],
+     [
+      "thirty",
+      "In 30 days",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "promise",
+     "pop"
+    ],
+    [
+     "thirty",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Then a weekly live call, one short lesson a week, and a place to share wins.",
+   "show": {
+    "type": "checklist",
+    "title": "Each week",
+    "items": [
+     [
+      "live",
+      "1 live call"
+     ],
+     [
+      "lesson",
+      "1 short lesson"
+     ],
+     [
+      "wins",
+      "A wins thread"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "live",
+     "click"
+    ],
+    [
+     "lesson",
+     "click"
+    ],
+    [
+     "wins",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Skool's referral program pays forty percent of the Skool fee of people you refer, while they stay.",
+   "show": {
+    "type": "stat_cards",
+    "title": "SKOOL REFERRALS",
+    "green": [
+     "forty"
+    ],
+    "cards": [
+     [
+      "forty",
+      "40%",
+      "of their Skool fee",
+      true
+     ]
+    ],
+    "source": "Skool referral program"
+   },
+   "sfx": [
+    [
+     "forty",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: a community needs you to show up every week, so only start one you can keep running.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "show",
+      "You show up weekly",
+      true
+     ],
+     [
+      "keep",
+      "Only if you can keep it up",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "show",
+     "whip"
+    ],
+    [
+     "keep",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [COMMUNITY|community] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Skool is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Paid community plan",
+    "keyword": "COMMUNITY",
+    "tool": "Skool"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[40%|Forty percent]. That's Skool's referral rate, while they stay.",
+   "show": {
+    "type": "stat_cards",
+    "title": "SKOOL REFERRALS",
+    "green": [
+     "forty"
+    ],
+    "cards": [
+     [
+      "forty",
+      "40%",
+      "of their Skool fee",
+      true
+     ]
+    ],
+    "source": "Skool referral program"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Answering the same questions in your DMs every single day?",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "questions",
+      "Same questions",
+      null
+     ],
+     [
+      "community",
+      "Paid community",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Should you start a paid community?",
+   "show": {
+    "type": "tool_demo",
+    "app": "Skool",
+    "input": "Small Creator Money Club",
+    "input_word": "puts",
+    "process": "Setting up your group",
+    "process_word": "community",
+    "outputs": [
+     [
+      "community",
+      "Community feed"
+     ],
+     [
+      "courses",
+      "Courses"
+     ],
+     [
+      "calendar",
+      "Calendar"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Skool referral program",
+   "url": "https://www.skool.com/settings?t=referrals"
+  }
+ ],
+ "thumb": {
+  "headline": "Run a *paid*\ncommunity",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.4,
+  "sticker": "Skool",
+  "chip": "Setup + weekly plan",
+  "size": 130
+ },
+ "finder_stream": null
+}

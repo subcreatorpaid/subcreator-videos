@@ -1,0 +1,384 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v033_shutterstock_levels",
+ "title": "Stock footage pay resets every January",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "You can sell your phone footage as stock. But the pay rate resets every January.",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "film",
+    "chips": [
+     [
+      "footage",
+      "Phone footage",
+      null
+     ],
+     [
+      "stock",
+      "Sold as stock",
+      "green"
+     ],
+     [
+      "resets",
+      "Resets in January",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "stock",
+     "ding"
+    ],
+    [
+     "resets",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Shutterstock pays contributors fifteen to forty percent of what it earns from each download.",
+   "show": {
+    "type": "stat_cards",
+    "title": "SHUTTERSTOCK CONTRIBUTORS",
+    "green": [
+     "forty"
+    ],
+    "cards": [
+     [
+      "fifteen",
+      "15%",
+      "level 1"
+     ],
+     [
+      "forty",
+      "40%",
+      "level 6",
+      true
+     ]
+    ],
+    "source": "Shutterstock help centre"
+   },
+   "sfx": [
+    [
+     "fifteen",
+     "card"
+    ],
+    [
+     "forty",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "There are six levels for images and video. The more you've sold, the higher your level.",
+   "show": {
+    "type": "ladder",
+    "title": "6 earning levels",
+    "rungs": [
+     [
+      "six",
+      "Level 1",
+      "15% to start",
+      null,
+      false
+     ],
+     [
+      "higher",
+      "Level 6",
+      "up to 40%",
+      null,
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "six",
+     "pop"
+    ],
+    [
+     "higher",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "But on January first, everyone goes back to level one.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "level",
+      "Level 6",
+      "by December",
+      "green"
+     ],
+     [
+      "january",
+      "Jan 1",
+      "back to level 1",
+      "red"
+     ]
+    ],
+    "hold": "film",
+    "end_mood": 0.8
+   },
+   "sfx": [
+    [
+     "january",
+     "thud"
+    ],
+    [
+     "one",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Film what buyers search for: hands typing, city streets, food, and everyday moments without faces or logos.",
+   "show": {
+    "type": "checklist",
+    "title": "Clips that sell",
+    "items": [
+     [
+      "hands",
+      "Hands typing"
+     ],
+     [
+      "streets",
+      "City streets"
+     ],
+     [
+      "food",
+      "Food"
+     ],
+     [
+      "faces",
+      "No faces or logos"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "hands",
+     "click"
+    ],
+    [
+     "streets",
+     "click"
+    ],
+    [
+     "food",
+     "click"
+    ],
+    [
+     "faces",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: each download pays a small cut, so stock adds up only with hundreds of clips.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "film",
+    "items": [
+     [
+      "small",
+      "Small cut each",
+      true
+     ],
+     [
+      "hundreds",
+      "Needs hundreds of clips",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "small",
+     "whip"
+    ],
+    [
+     "hundreds",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [STOCK|stock] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. OpusClip is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Sell stock footage",
+    "keyword": "STOCK",
+    "tool": "OpusClip"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[40%|Forty percent]. That's Shutterstock's top contributor rate.",
+   "show": {
+    "type": "stat_cards",
+    "title": "SHUTTERSTOCK CONTRIBUTORS",
+    "green": [
+     "forty"
+    ],
+    "cards": [
+     [
+      "fifteen",
+      "15%",
+      "level 1"
+     ],
+     [
+      "forty",
+      "40%",
+      "level 6",
+      true
+     ]
+    ],
+    "source": "Shutterstock help centre"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Climbed to the top pay level, and lost it on January first?",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "level",
+      "Level 6",
+      "by December",
+      "green"
+     ],
+     [
+      "january",
+      "Jan 1",
+      "back to level 1",
+      "red"
+     ]
+    ],
+    "hold": "film",
+    "end_mood": 0.8
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Can your phone footage earn money as stock?",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "film",
+    "chips": [
+     [
+      "footage",
+      "Phone footage",
+      null
+     ],
+     [
+      "stock",
+      "Sold as stock",
+      "green"
+     ],
+     [
+      "resets",
+      "Resets in January",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Shutterstock contributor help: earnings levels",
+   "url": "https://submit.shutterstock.com/help/en/articles/10594604"
+  }
+ ],
+ "thumb": {
+  "headline": "Stock pay\n~resets~ in Jan",
+  "hero": "face",
+  "hold": "film",
+  "mood": 0.6,
+  "sticker": "15–40%",
+  "chip": "Shutterstock levels",
+  "size": 130
+ },
+ "finder_stream": null
+}

@@ -1,0 +1,46 @@
+{
+ "title": "YouTube Shopping payouts",
+ "subtitle": "The timeline, returns and rates",
+ "sections": [
+  [
+   "Timeline",
+   [
+    "Day 0: purchase.",
+    "60-120 days later: AdSense payout.",
+    "Returns reverse the commission."
+   ]
+  ],
+  [
+   "Rates",
+   [
+    "Each brand sets its own commission per product."
+   ]
+  ],
+  [
+   "Who can join",
+   [
+    "YPP channels from 500 subscribers in eligible countries; not music or made-for-kids channels."
+   ]
+  ]
+ ],
+ "steps": [
+  "Check eligibility in YouTube Studio > Earn.",
+  "Tag 3 products you use.",
+  "Note expected payout months in a sheet."
+ ],
+ "keyword": "PAYOUT",
+ "sources": [
+  [
+   "PPC Land: YouTube Shopping opens to 500 subscribers (Mar 2026)",
+   "https://ppc.land/youtube-opens-shopping-affiliate-program-to-creators-with-500-subscribers/"
+  ]
+ ],
+ "video": "YouTube Shopping pays 60-120 days later",
+ "tool": {
+  "id": "vidiq",
+  "name": "vidIQ",
+  "earns": "15-25% lifetime recurring (by sales tier)",
+  "signup": "https://support.vidiq.com/en/articles/7866006",
+  "status": "to join"
+ }
+}

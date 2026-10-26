@@ -1,0 +1,336 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v040_proof_youtube_100b",
+ "title": "Proof: YouTube paid out $100 billion",
+ "type": "proof",
+ "format": "",
+ "beats": [
+  {
+   "say": "YouTube says it paid out more than one hundred billion dollars in four years. Here's what that means for you.",
+   "show": {
+    "type": "stat_cards",
+    "title": "PAID OUT BY YOUTUBE",
+    "green": [
+     "hundred"
+    ],
+    "cards": [
+     [
+      "hundred",
+      "$100B+",
+      "in 4 years",
+      true
+     ]
+    ],
+    "source": "YouTube, Made on YouTube, Sep 2025"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "hundred",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "YouTube said it at Made on YouTube in September twenty twenty-five: over one hundred billion to creators, artists and media companies, since twenty twenty-one.",
+   "show": {
+    "type": "page_card",
+    "url": "Made on YouTube · Sep 2025",
+    "mark": "youtube",
+    "title": "$100 billion paid out",
+    "checked": "Reported by Shacknews, 16 Sep 2025",
+    "bullets": [
+     [
+      "creators",
+      "Creators, artists, media companies",
+      false
+     ],
+     [
+      "twenty-one",
+      "Since 2021",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "creators",
+     "pop"
+    ],
+    [
+     "twenty-one",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The honest part: that includes big media companies and huge channels. Most small channels see a tiny slice.",
+   "show": {
+    "type": "myth",
+    "myth": "Every channel shares $100B",
+    "myth_word": "honest",
+    "fact": "Big channels take most of it",
+    "fact_word": "small",
+    "fact_green": false
+   },
+   "sfx": [
+    [
+     "honest",
+     "thud"
+    ],
+    [
+     "small",
+     "swipe"
+    ]
+   ]
+  },
+  {
+   "say": "Your slice starts at five hundred subscribers, with fan funding and Shopping, then ads at one thousand.",
+   "show": {
+    "type": "ladder",
+    "rungs": [
+     [
+      "five",
+      "500",
+      "Fan funding + Shopping",
+      "youtube",
+      true
+     ],
+     [
+      "thousand",
+      "1,000",
+      "Ad revenue (+ watch hours or Shorts views)",
+      "youtube",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "five",
+     "pop"
+    ],
+    [
+     "thousand",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "So the money is real. The path is: grow to five hundred, turn on fan funding, then grow to a thousand.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "real",
+      "The money is real",
+      null,
+      -0.5
+     ],
+     [
+      "five",
+      "Grow to 500",
+      "laptop",
+      0
+     ],
+     [
+      "thousand",
+      "Then 1,000",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "real",
+     "pop"
+    ],
+    [
+     "five",
+     "pop"
+    ],
+    [
+     "thousand",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: a big total doesn't promise any one channel money. Treat it as proof the path exists.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "total",
+      "A total, not a promise",
+      true
+     ],
+     [
+      "path",
+      "Proof the path exists",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "total",
+     "whip"
+    ],
+    [
+     "path",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [YOUTUBE|youtube] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. vidIQ is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "YouTube's $100B, explained",
+    "keyword": "YOUTUBE",
+    "tool": "vidIQ"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$100,000,000,000|One hundred billion dollars]. That's what YouTube paid out in four years.",
+   "show": {
+    "type": "page_card",
+    "url": "Made on YouTube · Sep 2025",
+    "mark": "youtube",
+    "title": "$100 billion paid out",
+    "checked": "Reported by Shacknews, 16 Sep 2025",
+    "bullets": [
+     [
+      "creators",
+      "Creators, artists, media companies",
+      false
+     ],
+     [
+      "twenty-one",
+      "Since 2021",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Think YouTube only pays the giant channels?",
+   "show": {
+    "type": "myth",
+    "myth": "Every channel shares $100B",
+    "myth_word": "honest",
+    "fact": "Big channels take most of it",
+    "fact_word": "small",
+    "fact_green": false
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Where does YouTube's one hundred billion dollars go?",
+   "show": {
+    "type": "myth",
+    "myth": "Every channel shares $100B",
+    "myth_word": "honest",
+    "fact": "Big channels take most of it",
+    "fact_word": "small",
+    "fact_green": false
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Shacknews: YouTube paid $100B+ since 2021 (Made on YouTube, Sep 2025)",
+   "url": "https://www.shacknews.com/article/145986/youtube-claim-100-billion-dollar-pay-out"
+  },
+  {
+   "title": "YouTube Help: expanded YouTube Partner Program",
+   "url": "https://support.google.com/youtube/answer/13429240?hl=en"
+  }
+ ],
+ "thumb": {
+  "headline": "YouTube paid\n*$100 billion*",
+  "hero": "face",
+  "hold": "money",
+  "mood": -0.8,
+  "sticker": "The honest part",
+  "sticker_color": "red",
+  "chip": "Where it goes",
+  "size": 120
+ },
+ "finder_stream": "youtube-fan-funding"
+}

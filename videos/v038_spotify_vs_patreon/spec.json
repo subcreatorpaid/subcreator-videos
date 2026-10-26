@@ -1,0 +1,417 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v038_spotify_vs_patreon",
+ "title": "Podcast members: Spotify vs Patreon",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Podcast fans paying five dollars a month: who lets you keep more, Spotify or Patreon?",
+   "show": {
+    "type": "talk",
+    "mood": 0.1,
+    "hold": "call",
+    "chips": [
+     [
+      "five",
+      "$5 / month",
+      null
+     ],
+     [
+      "spotify",
+      "Spotify",
+      null
+     ],
+     [
+      "patreon",
+      "Patreon",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "five",
+     "pop"
+    ],
+    [
+     "patreon",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Spotify Memberships: creators keep ninety percent. That's [$4.50|four fifty].",
+   "show": {
+    "type": "fee_split",
+    "label": "$5 on Spotify",
+    "mark": "spotify",
+    "green": [
+     "$4.50"
+    ],
+    "parts": [
+     [
+      "ninety",
+      "Spotify 10%",
+      0.5,
+      "fee"
+     ],
+     [
+      "$4.50",
+      "You keep",
+      4.5,
+      "keep"
+     ]
+    ],
+    "source": "Spotify newsroom, Oct 2026"
+   },
+   "sfx": [
+    [
+     "ninety",
+     "card"
+    ],
+    [
+     "$4.50",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Patreon: ten percent platform fee, plus about two point nine percent and thirty cents for a US card. About [$4.06|four oh six].",
+   "show": {
+    "type": "fee_split",
+    "label": "$5 on Patreon",
+    "mark": "Pa",
+    "green": [
+     "$4.06"
+    ],
+    "parts": [
+     [
+      "ten",
+      "Platform 10%",
+      0.5,
+      "fee"
+     ],
+     [
+      "card",
+      "Card 2.9% + $0.30",
+      0.44,
+      "fee"
+     ],
+     [
+      "$4.06",
+      "You keep",
+      4.06,
+      "keep"
+     ]
+    ],
+    "source": "Patreon support"
+   },
+   "sfx": [
+    [
+     "ten",
+     "card"
+    ],
+    [
+     "card",
+     "card"
+    ],
+    [
+     "$4.06",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "But Spotify needs a hundred listeners and a hundred hours in thirty days, and works in thirty-four markets. Patreon has no audience minimum.",
+   "show": {
+    "type": "compare",
+    "title": "Before you pick",
+    "cols": [
+     "Spotify",
+     "Patreon"
+    ],
+    "rows": [
+     [
+      "hundred",
+      "Minimum",
+      [
+       "100 listeners + 100 hrs",
+       "None"
+      ],
+      [
+       0
+      ]
+     ],
+     [
+      "thirty-four",
+      "Where",
+      [
+       "34 markets",
+       "Worldwide"
+      ]
+     ]
+    ],
+    "best": 1,
+    "best_word": "minimum"
+   },
+   "sfx": [
+    [
+     "hundred",
+     "pop"
+    ],
+    [
+     "thirty-four",
+     "pop"
+    ],
+    [
+     "minimum",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Many podcasters use both: Spotify for listeners already there, Patreon for fans from everywhere else.",
+   "show": {
+    "type": "talk",
+    "mood": -0.6,
+    "hold": "call",
+    "chips": [
+     [
+      "spotify",
+      "Spotify listeners",
+      "green"
+     ],
+     [
+      "patreon",
+      "Patreon: everyone else",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "spotify",
+     "pop"
+    ],
+    [
+     "patreon",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: Spotify only shares fan contact details if fans opt in, so keep your own email list too.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "call",
+    "items": [
+     [
+      "opt",
+      "Contacts only if opted in",
+      true
+     ],
+     [
+      "email",
+      "Keep an email list",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "opt",
+     "whip"
+    ],
+    [
+     "email",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [MEMBERS|members] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Riverside is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Podcast memberships compared",
+    "keyword": "MEMBERS",
+    "tool": "Riverside"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$4.50|Four fifty] versus [$4.06|four oh six]. Same five dollar fan, two platforms.",
+   "show": {
+    "type": "fee_split",
+    "label": "$5 on Patreon",
+    "mark": "Pa",
+    "green": [
+     "$4.06"
+    ],
+    "parts": [
+     [
+      "ten",
+      "Platform 10%",
+      0.5,
+      "fee"
+     ],
+     [
+      "card",
+      "Card 2.9% + $0.30",
+      0.44,
+      "fee"
+     ],
+     [
+      "$4.06",
+      "You keep",
+      4.06,
+      "keep"
+     ]
+    ],
+    "source": "Patreon support"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Fans want to support your podcast, but you don't know where to send them?",
+   "show": {
+    "type": "talk",
+    "mood": 0.1,
+    "hold": "call",
+    "chips": [
+     [
+      "five",
+      "$5 / month",
+      null
+     ],
+     [
+      "spotify",
+      "Spotify",
+      null
+     ],
+     [
+      "patreon",
+      "Patreon",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Spotify or Patreon: where should podcast fans pay you?",
+   "show": {
+    "type": "talk",
+    "mood": 0.1,
+    "hold": "call",
+    "chips": [
+     [
+      "five",
+      "$5 / month",
+      null
+     ],
+     [
+      "spotify",
+      "Spotify",
+      null
+     ],
+     [
+      "patreon",
+      "Patreon",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Spotify newsroom: Memberships for creators (20 Oct 2026)",
+   "url": "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/"
+  },
+  {
+   "title": "Patreon: standard platform fee for new creators",
+   "url": "https://support.patreon.com/hc/en-us/articles/36426991446797"
+  }
+ ],
+ "thumb": {
+  "headline": "Spotify *$4.50*\nPatreon $4.06",
+  "hero": "face",
+  "hold": "call",
+  "mood": -0.3,
+  "sticker": "Same $5 fan",
+  "chip": "Podcast memberships",
+  "size": 110
+ },
+ "finder_stream": "spotify-memberships"
+}

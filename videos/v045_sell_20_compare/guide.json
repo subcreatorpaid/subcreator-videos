@@ -1,0 +1,56 @@
+{
+ "title": "Where to sell a guide",
+ "subtitle": "Gumroad vs Ko-fi vs Stan, with the math",
+ "sections": [
+  [
+   "Fees",
+   [
+    "Gumroad: 10% + $0.50 per direct sale (30% via Discover).",
+    "Ko-fi: 5% on Free; 0% on Gold ($12/month).",
+    "Stan: 0% of sales; Creator plan $29/month."
+   ]
+  ],
+  [
+   "10 sales of $20 (platform cost only)",
+   [
+    "Gumroad: $25",
+    "Ko-fi Free: $10 (Gold: $12)",
+    "Stan: $29"
+   ]
+  ],
+  [
+   "All of them",
+   [
+    "Card/PayPal processing still applies."
+   ]
+  ]
+ ],
+ "steps": [
+  "Estimate your monthly sales honestly.",
+  "Pick the cheapest for that number.",
+  "Re-check every 3 months."
+ ],
+ "keyword": "COMPARE",
+ "sources": [
+  [
+   "Fungies: Gumroad fees (checked Aug 2026)",
+   "https://fungies.io/leaving-gumroad-cheaper-alternatives-2026/"
+  ],
+  [
+   "SchoolMaker: Ko-fi pricing (Sep 2026)",
+   "https://schoolmaker.com/blog/ko-fi-pricing"
+  ],
+  [
+   "Stan Store pricing",
+   "https://stan.store/blog/stan-store-pricing/"
+  ]
+ ],
+ "video": "Selling a $20 guide: Gumroad vs Stan vs Ko-fi",
+ "tool": {
+  "id": "stan",
+  "name": "Stan Store",
+  "earns": "20% recurring (confirm on joining)",
+  "signup": "https://stan.store/affiliates",
+  "status": "to join"
+ }
+}

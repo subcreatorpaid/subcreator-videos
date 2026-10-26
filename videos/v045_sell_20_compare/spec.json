@@ -1,0 +1,378 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v045_sell_20_compare",
+ "title": "Selling a $20 guide: Gumroad vs Stan vs Ko-fi",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "You made a twenty dollar guide. Where should you sell it? Here's what three platforms take.",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "twenty",
+      "$20 guide",
+      null
+     ],
+     [
+      "three",
+      "3 platforms",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "twenty",
+     "pop"
+    ],
+    [
+     "three",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Gumroad: ten percent plus fifty cents per direct sale, before card fees. That's two fifty.",
+   "show": {
+    "type": "fee_split",
+    "label": "$20 on Gumroad",
+    "mark": "Gu",
+    "parts": [
+     [
+      "ten",
+      "Gumroad 10% + $0.50",
+      2.5,
+      "fee"
+     ],
+     [
+      "fifty",
+      "Before card fees",
+      17.5,
+      "keep"
+     ]
+    ],
+    "source": "Gumroad pricing via Fungies"
+   },
+   "sfx": [
+    [
+     "ten",
+     "card"
+    ],
+    [
+     "fifty",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Ko-fi: five percent on the free plan, so one dollar. Zero on Gold, which costs twelve dollars a month.",
+   "show": {
+    "type": "fee_split",
+    "label": "$20 on Ko-fi (free)",
+    "mark": "Kf",
+    "parts": [
+     [
+      "five",
+      "Ko-fi 5%",
+      1.0,
+      "fee"
+     ],
+     [
+      "dollar",
+      "Before card fees",
+      19.0,
+      "keep"
+     ]
+    ],
+    "source": "SchoolMaker, Ko-fi pricing"
+   },
+   "sfx": [
+    [
+     "five",
+     "card"
+    ],
+    [
+     "twelve",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Stan: zero percent of sales, but the plan is twenty-nine dollars a month.",
+   "show": {
+    "type": "fee_split",
+    "label": "$20 on Stan",
+    "mark": "St",
+    "parts": [
+     [
+      "zero",
+      "Stan 0%",
+      0.01,
+      "fee"
+     ],
+     [
+      "twenty-nine",
+      "Before card fees · plan $29/mo",
+      19.99,
+      "keep"
+     ]
+    ],
+    "source": "Stan pricing"
+   },
+   "sfx": [
+    [
+     "zero",
+     "ding"
+    ],
+    [
+     "twenty-nine",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Under about twelve sales a month, Gumroad or Ko-fi costs less. Above that, a flat plan starts to win.",
+   "show": {
+    "type": "compare",
+    "title": "Cost for 10 sales of $20",
+    "cols": [
+     "Gumroad",
+     "Ko-fi free",
+     "Stan"
+    ],
+    "rows": [
+     [
+      "twelve",
+      "Platform cost",
+      [
+       "$25",
+       "$10",
+       "$29"
+      ]
+     ]
+    ],
+    "best": 1,
+    "best_word": "flat"
+   },
+   "sfx": [
+    [
+     "twelve",
+     "pop"
+    ],
+    [
+     "flat",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: every option still charges card processing, and the right pick changes as your sales grow.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "card",
+      "Card fees on all",
+      true
+     ],
+     [
+      "grow",
+      "Re-check as you grow",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "card",
+     "whip"
+    ],
+    [
+     "grow",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [COMPARE|compare] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Stan Store is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Where to sell a guide",
+    "keyword": "COMPARE",
+    "tool": "Stan Store"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$2.50|Two fifty], [$1|one dollar], or [$29|twenty-nine] a month. Same twenty dollar guide.",
+   "show": {
+    "type": "compare",
+    "title": "Cost for 10 sales of $20",
+    "cols": [
+     "Gumroad",
+     "Ko-fi free",
+     "Stan"
+    ],
+    "rows": [
+     [
+      "twelve",
+      "Platform cost",
+      [
+       "$25",
+       "$10",
+       "$29"
+      ]
+     ]
+    ],
+    "best": 1,
+    "best_word": "flat"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Made a guide, and stuck choosing where to sell it?",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "twenty",
+      "$20 guide",
+      null
+     ],
+     [
+      "three",
+      "3 platforms",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Gumroad, Stan or Ko-fi: which costs less for you?",
+   "show": {
+    "type": "compare",
+    "title": "Cost for 10 sales of $20",
+    "cols": [
+     "Gumroad",
+     "Ko-fi free",
+     "Stan"
+    ],
+    "rows": [
+     [
+      "twelve",
+      "Platform cost",
+      [
+       "$25",
+       "$10",
+       "$29"
+      ]
+     ]
+    ],
+    "best": 1,
+    "best_word": "flat"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Fungies: Gumroad fees (checked Aug 2026)",
+   "url": "https://fungies.io/leaving-gumroad-cheaper-alternatives-2026/"
+  },
+  {
+   "title": "SchoolMaker: Ko-fi pricing (Sep 2026)",
+   "url": "https://schoolmaker.com/blog/ko-fi-pricing"
+  },
+  {
+   "title": "Stan Store pricing",
+   "url": "https://stan.store/blog/stan-store-pricing/"
+  }
+ ],
+ "thumb": {
+  "headline": "Sell a $20 guide:\n*who takes less?*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": 0.2,
+  "sticker": "3 platforms",
+  "chip": "Gumroad · Ko-fi · Stan",
+  "size": 110
+ },
+ "finder_stream": null
+}

@@ -1,0 +1,355 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v044_bio_link_order",
+ "title": "Fix your link in bio in 3 minutes",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Ten links in your bio, and nobody clicks any of them? Here's the three-minute fix.",
+   "show": {
+    "type": "talk",
+    "mood": 0.7,
+    "hold": "phone0",
+    "chips": [
+     [
+      "ten",
+      "10 links",
+      "red"
+     ],
+     [
+      "nobody",
+      "0 clicks",
+      "red"
+     ],
+     [
+      "three",
+      "3-min fix",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "ten",
+     "thud"
+    ],
+    [
+     "three",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Put one thing first: the free guide or newsletter sign-up. That's the link that grows your list.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "first",
+      "1st: free guide",
+      "laptop",
+      -0.3
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "first",
+     "pop"
+    ],
+    [
+     "list",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Second: the one tool or product your latest video mentioned.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "_1",
+      "Free guide",
+      "laptop",
+      0
+     ],
+     [
+      "second",
+      "Tool from latest video",
+      "phone0",
+      -0.3
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "second",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Third: your other platforms. Everything else goes on a single page, or goes.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "_1",
+      "Free guide",
+      "laptop",
+      0
+     ],
+     [
+      "_2",
+      "Latest tool",
+      "phone0",
+      -0.2
+     ],
+     [
+      "third",
+      "Other platforms",
+      null,
+      -0.6
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "third",
+     "pop"
+    ],
+    [
+     "everything",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Then say it in the video: comment the keyword, or tap the first link in my bio.",
+   "show": {
+    "type": "talk",
+    "mood": -0.6,
+    "hold": "phone0",
+    "chips": [
+     [
+      "comment",
+      "Comment the keyword",
+      null
+     ],
+     [
+      "first",
+      "Tap the first link",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "first",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: change the second link with every new video, or it goes stale fast.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "change",
+      "Update link 2 often",
+      true
+     ],
+     [
+      "stale",
+      "Stale links get ignored",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "change",
+     "whip"
+    ],
+    [
+     "stale",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [BIO|bio] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Stan Store is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Link-in-bio fix",
+    "keyword": "BIO",
+    "tool": "Stan Store"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[3|Three] links. That's all your bio needs.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "_1",
+      "Free guide",
+      "laptop",
+      0
+     ],
+     [
+      "_2",
+      "Latest tool",
+      "phone0",
+      -0.2
+     ],
+     [
+      "third",
+      "Other platforms",
+      null,
+      -0.6
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Ten links in your bio, and nobody clicks?",
+   "show": {
+    "type": "talk",
+    "mood": 0.7,
+    "hold": "phone0",
+    "chips": [
+     [
+      "ten",
+      "10 links",
+      "red"
+     ],
+     [
+      "nobody",
+      "0 clicks",
+      "red"
+     ],
+     [
+      "three",
+      "3-min fix",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What should be the first link in your bio?",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "first",
+      "1st: free guide",
+      "laptop",
+      -0.3
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Stan Store pricing",
+   "url": "https://stan.store/blog/stan-store-pricing/"
+  }
+ ],
+ "thumb": {
+  "headline": "Your bio needs\n*3 links*",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": -0.3,
+  "sticker": "Not 10",
+  "sticker_color": "red",
+  "chip": "Link-in-bio fix",
+  "size": 120
+ },
+ "finder_stream": null
+}

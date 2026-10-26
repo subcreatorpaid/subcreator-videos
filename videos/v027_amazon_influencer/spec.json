@@ -1,0 +1,368 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v027_amazon_influencer",
+ "title": "Amazon Influencer vs Associates",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Amazon has two programs for creators, and the difference changes what you earn.",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "two",
+      "2 programs",
+      null
+     ],
+     [
+      "difference",
+      "Big difference",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "two",
+     "pop"
+    ],
+    [
+     "difference",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Associates: links anywhere. Most categories pay about three to four and a half percent, and you need three sales in your first hundred eighty days.",
+   "show": {
+    "type": "page_card",
+    "url": "affiliate-program.amazon.com",
+    "mark": "Az",
+    "title": "Amazon Associates",
+    "checked": "Lasso, Oct 2026",
+    "bullets": [
+     [
+      "links",
+      "Links anywhere"
+     ],
+     [
+      "percent",
+      "Most categories ~3–4.5%",
+      true
+     ],
+     [
+      "three",
+      "3 sales in 180 days",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "links",
+     "pop"
+    ],
+    [
+     "percent",
+     "ding"
+    ],
+    [
+     "three",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Influencer: a storefront on Amazon with your picks and videos. There's no published follower minimum.",
+   "show": {
+    "type": "page_card",
+    "url": "amazon.com/shop/yourname",
+    "mark": "Az",
+    "title": "Amazon Influencer",
+    "checked": "Makeinfluence, 2026",
+    "bullets": [
+     [
+      "storefront",
+      "Your own storefront"
+     ],
+     [
+      "videos",
+      "Your picks + videos"
+     ],
+     [
+      "minimum",
+      "No published follower minimum",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "storefront",
+     "pop"
+    ],
+    [
+     "videos",
+     "pop"
+    ],
+    [
+     "minimum",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "New since April fourteenth: onsite videos earn only on the exact product you promoted, not on everything the buyer adds.",
+   "show": {
+    "type": "myth",
+    "myth": "You earn on the whole cart",
+    "myth_word": "new",
+    "fact": "Only the exact promoted product",
+    "fact_word": "exact",
+    "fact_green": false
+   },
+   "sfx": [
+    [
+     "new",
+     "thud"
+    ],
+    [
+     "exact",
+     "swipe"
+    ]
+   ]
+  },
+  {
+   "say": "Start with Associates links in your bio, then apply for Influencer when you post product videos.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "associates",
+      "Associates links",
+      "laptop",
+      0
+     ],
+     [
+      "product",
+      "Product videos",
+      "film",
+      -0.3
+     ],
+     [
+      "influencer",
+      "Apply for Influencer",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "associates",
+     "pop"
+    ],
+    [
+     "product",
+     "pop"
+    ],
+    [
+     "influencer",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: both need US bank and tax details, and rates differ by category, with some cut this year.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "bank",
+      "US bank + tax info",
+      true
+     ],
+     [
+      "rates",
+      "Rates vary, some cut",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "bank",
+     "whip"
+    ],
+    [
+     "rates",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [AMAZON|amazon] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Amazon Associates is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Amazon: which program?",
+    "keyword": "AMAZON",
+    "tool": "Amazon Associates"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[3|Three] sales in [180|one hundred eighty] days, or Amazon closes your account.",
+   "show": {
+    "type": "page_card",
+    "url": "affiliate-program.amazon.com",
+    "mark": "Az",
+    "title": "Amazon Associates",
+    "checked": "Lasso, Oct 2026",
+    "bullets": [
+     [
+      "links",
+      "Links anywhere"
+     ],
+     [
+      "percent",
+      "Most categories ~3–4.5%",
+      true
+     ],
+     [
+      "three",
+      "3 sales in 180 days",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Sending people to Amazon, and earning less than you thought?",
+   "show": {
+    "type": "myth",
+    "myth": "You earn on the whole cart",
+    "myth_word": "new",
+    "fact": "Only the exact promoted product",
+    "fact_word": "exact",
+    "fact_green": false
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Amazon Associates or Amazon Influencer: which one is for you?",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "two",
+      "2 programs",
+      null
+     ],
+     [
+      "difference",
+      "Big difference",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Lasso: Amazon affiliate commission rates",
+   "url": "https://getlasso.co/amazon-affiliate-commission-rate/"
+  },
+  {
+   "title": "Makeinfluence: Amazon Associates vs Influencer Program",
+   "url": "https://www.makeinfluence.com/en/academy/amazon-associates-vs-amazon-influencer-program-whats-actually-different"
+  }
+ ],
+ "thumb": {
+  "headline": "Amazon:\n*2* programs",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": 0.2,
+  "sticker": "Which one?",
+  "chip": "Associates vs Influencer",
+  "size": 140
+ },
+ "finder_stream": "amazon-associates"
+}

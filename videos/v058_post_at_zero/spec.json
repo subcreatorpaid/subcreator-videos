@@ -1,0 +1,359 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v058_post_at_zero",
+ "title": "What to post when you have 0 followers",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Zero followers, and no idea what to post first? Use these three formats.",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "chips": [
+     [
+      "zero",
+      "0 followers",
+      "red"
+     ],
+     [
+      "three",
+      "3 formats",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "zero",
+     "thud"
+    ],
+    [
+     "three",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "One: the answer video. Take one question people in your niche ask, and answer it in under a minute.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "answer",
+      "1. Answer video",
+      "phone0",
+      0
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "answer",
+     "pop"
+    ],
+    [
+     "question",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Two: the list video. Three tools, three mistakes, or three steps. Numbers keep people watching.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "_1",
+      "1. Answer video",
+      "phone0",
+      0
+     ],
+     [
+      "list",
+      "2. List video",
+      "laptop",
+      -0.3
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "list",
+     "pop"
+    ],
+    [
+     "numbers",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Three: the try-it video. You test something for a week and show what happened.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "_1",
+      "1. Answer video",
+      "phone0",
+      0
+     ],
+     [
+      "_2",
+      "2. List video",
+      "laptop",
+      -0.3
+     ],
+     [
+      "try-it",
+      "3. Try-it video",
+      "film",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "try-it",
+     "pop"
+    ],
+    [
+     "happened",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Post the same three formats on TikTok, Reels and Shorts. One video, three chances to be found.",
+   "show": {
+    "type": "talk",
+    "mood": -0.5,
+    "hold": "phone0",
+    "chips": [
+     [
+      "tiktok",
+      "TikTok",
+      null
+     ],
+     [
+      "reels",
+      "Reels",
+      null
+     ],
+     [
+      "shorts",
+      "Shorts",
+      null
+     ],
+     [
+      "three",
+      "3 chances",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "tiktok",
+     "pop"
+    ],
+    [
+     "reels",
+     "pop"
+    ],
+    [
+     "shorts",
+     "pop"
+    ],
+    [
+     "three",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: the first twenty videos teach you more than they grow you. Keep going.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "twenty",
+      "First 20 = practice",
+      true
+     ],
+     [
+      "going",
+      "Keep going",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "twenty",
+     "whip"
+    ],
+    [
+     "going",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [START|start] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. OpusClip is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Your first 20 videos",
+    "keyword": "START",
+    "tool": "OpusClip"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[3|Three] formats. That's all you need at zero followers.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "answer",
+      "1. Answer video",
+      "phone0",
+      0
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Zero followers, and you've been staring at the record button?",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "chips": [
+     [
+      "zero",
+      "0 followers",
+      "red"
+     ],
+     [
+      "three",
+      "3 formats",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What should you post first with no followers?",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "chips": [
+     [
+      "zero",
+      "0 followers",
+      "red"
+     ],
+     [
+      "three",
+      "3 formats",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Insense: UGC creator rates (Sep 2026)",
+   "url": "https://insense.pro/blog/ugc-creator-rates"
+  }
+ ],
+ "thumb": {
+  "headline": "0 followers?\nPost *these 3*",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 0.4,
+  "sticker": "Formats",
+  "chip": "Answer · list · try-it",
+  "size": 120
+ },
+ "finder_stream": null
+}

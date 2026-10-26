@@ -1,0 +1,49 @@
+{
+ "title": "UGC rate card template",
+ "subtitle": "4 rows, ready to fill in",
+ "sections": [
+  [
+   "Rows",
+   [
+    "1 video: organic, 1 platform, $[base].",
+    "3-video bundle: $[base × 3 minus a small discount].",
+    "Extra hooks for testing: $[add-on] each.",
+    "Paid ad use: +$[x] for 30 days, +$[y] for 90 days."
+   ]
+  ],
+  [
+   "Range",
+   [
+    "Beginners usually $50-$400 per video."
+   ]
+  ],
+  [
+   "Adjust for",
+   [
+    "Rush deadlines",
+    "Long or broad usage",
+    "Raw footage requests"
+   ]
+  ]
+ ],
+ "steps": [
+  "Fill in your base price.",
+  "Make it one image in Canva.",
+  "Send it with every quote."
+ ],
+ "keyword": "RATES",
+ "sources": [
+  [
+   "Insense: UGC creator rates (Sep 2026)",
+   "https://insense.pro/blog/ugc-creator-rates"
+  ]
+ ],
+ "video": "Make a UGC rate card in 10 minutes",
+ "tool": {
+  "id": "kit",
+  "name": "Kit",
+  "earns": "50% of their first 12 months",
+  "signup": "https://kit.com/affiliate",
+  "status": "to join"
+ }
+}

@@ -1,0 +1,363 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v047_media_kit_small",
+ "title": "A media kit when you're small",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Brands ask for your media kit, and you have a few hundred followers. Here's what to put in it.",
+   "show": {
+    "type": "talk",
+    "mood": 0.5,
+    "hold": "phone0",
+    "chips": [
+     [
+      "media",
+      "Media kit?",
+      null
+     ],
+     [
+      "hundred",
+      "Few hundred followers",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "media",
+     "pop"
+    ],
+    [
+     "hundred",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Lead with your work, not your numbers: three sample videos, each with one line on the result you aimed for.",
+   "show": {
+    "type": "page_card",
+    "url": "yourname.com/media-kit",
+    "mark": "MK",
+    "title": "Page 1: your work",
+    "checked": "Samples first",
+    "bullets": [
+     [
+      "three",
+      "3 sample videos",
+      true
+     ],
+     [
+      "result",
+      "One line on the goal of each"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "work",
+     "pop"
+    ],
+    [
+     "three",
+     "ding"
+    ],
+    [
+     "result",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Then who watches you: age range, top countries, and what they care about, straight from your app's insights.",
+   "show": {
+    "type": "checklist",
+    "title": "Page 2: your audience",
+    "items": [
+     [
+      "age",
+      "Age range"
+     ],
+     [
+      "countries",
+      "Top countries"
+     ],
+     [
+      "care",
+      "What they care about"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "age",
+     "click"
+    ],
+    [
+     "countries",
+     "click"
+    ],
+    [
+     "care",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Then your offer: what's included, your base price, and that paid ad use costs extra.",
+   "show": {
+    "type": "checklist",
+    "title": "Page 3: your offer",
+    "items": [
+     [
+      "included",
+      "What's included"
+     ],
+     [
+      "base",
+      "Base price"
+     ],
+     [
+      "paid",
+      "Paid ad use = extra"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "included",
+     "click"
+    ],
+    [
+     "base",
+     "click"
+    ],
+    [
+     "paid",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Beginners usually price UGC at fifty to four hundred dollars a video, so pick a starting point in that range.",
+   "show": {
+    "type": "stat_cards",
+    "title": "BEGINNER UGC RATES",
+    "cards": [
+     [
+      "fifty",
+      "$50",
+      "per video"
+     ],
+     [
+      "four",
+      "$400",
+      "per video",
+      true
+     ]
+    ],
+    "source": "Insense, Sep 2026"
+   },
+   "sfx": [
+    [
+     "fifty",
+     "card"
+    ],
+    [
+     "four",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: never fake numbers. Brands can check, and one fake stat ends the deal.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "fake",
+      "Never fake numbers",
+      true
+     ],
+     [
+      "check",
+      "Brands check",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "fake",
+     "whip"
+    ],
+    [
+     "check",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [KIT|media kit] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Kit is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Small-creator media kit",
+    "keyword": "KIT",
+    "tool": "Kit"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[3|Three] sample videos beat a big follower count.",
+   "show": {
+    "type": "page_card",
+    "url": "yourname.com/media-kit",
+    "mark": "MK",
+    "title": "Page 1: your work",
+    "checked": "Samples first",
+    "bullets": [
+     [
+      "three",
+      "3 sample videos",
+      true
+     ],
+     [
+      "result",
+      "One line on the goal of each"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "A brand asks for your media kit, and you've got a few hundred followers?",
+   "show": {
+    "type": "talk",
+    "mood": 0.5,
+    "hold": "phone0",
+    "chips": [
+     [
+      "media",
+      "Media kit?",
+      null
+     ],
+     [
+      "hundred",
+      "Few hundred followers",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What goes in a media kit when you're small?",
+   "show": {
+    "type": "talk",
+    "mood": 0.5,
+    "hold": "phone0",
+    "chips": [
+     [
+      "media",
+      "Media kit?",
+      null
+     ],
+     [
+      "hundred",
+      "Few hundred followers",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Insense: UGC creator rates (Sep 2026)",
+   "url": "https://insense.pro/blog/ugc-creator-rates"
+  }
+ ],
+ "thumb": {
+  "headline": "Media kit\nwith *few followers*",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 0.2,
+  "sticker": "3 pages",
+  "chip": "Work · audience · offer",
+  "size": 110
+ },
+ "finder_stream": "ugc"
+}

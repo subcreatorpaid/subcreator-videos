@@ -173,22 +173,23 @@ const Myth = ({f, w, s}) => {
 // 6. A path of steps; the camera glides from step to step and the creator acts each one out.
 const Steps = ({f, w, s}) => {
   const steps = s.steps || [];
-  const GAP = 470; const Y = (i) => 260 + i * GAP; const L = (i) => i % 2 === 0; const X = (i) => (L(i) ? 300 : 780);
-  let cam = 0;
-  steps.forEach((p, i) => { if (i > 0) cam += GAP * ease(f - w(p[0]) + 6, 14); });
+  const GAP = 330; const Y = (i) => 230 + i * GAP; const L = (i) => i % 2 === 0;
   const at = (i) => (i === 0 ? Math.min(4, w(steps[0][0]) - 6) : w(steps[i][0]) - 6);
-  const path = `M${X(0)} ${Y(0) + 50}` + steps.slice(1).map((_, j) => { const i = j + 1; return ` C ${X(i - 1)} ${Y(i - 1) + 280}, ${X(i)} ${Y(i) - 200}, ${X(i)} ${Y(i) + 50}`; }).join('');
+  let cam = 0;  // three steps fit on screen; from the 4th on, the path scrolls up one step at a time
+  steps.forEach((p, i) => { if (i > 2) cam += GAP * ease(f - at(i), 14); });
+  const X = (i) => (L(i) ? 330 : 750);
+  const path = `M${X(0)} ${Y(0) + 60}` + steps.slice(1).map((_, j) => { const i = j + 1; return ` C ${X(i - 1)} ${Y(i - 1) + 220}, ${X(i)} ${Y(i) - 140}, ${X(i)} ${Y(i) + 10}`; }).join('');
   const last = steps.length - 1;
   return (<>
-    {s.title && <div style={{position: 'absolute', left: 70, top: 120, fontWeight: 900, fontSize: 52, opacity: ease(f, 10), zIndex: 2}}>{s.title}</div>}
-    <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 4000, transform: `translateY(${-cam}px)`}}>
-      <DrawLine d={path} p={lerp(f, at(0), at(last) + 10, 0, 1)} color={C.ink} width={10} len={600 * steps.length} />
+    {s.title && <div style={{position: 'absolute', left: 70, top: 110, fontWeight: 900, fontSize: 52, opacity: ease(f, 10), zIndex: 2}}>{s.title}</div>}
+    <div style={{position: 'absolute', left: 0, top: s.title ? 60 : 0, width: 1080, height: 4000, transform: `translateY(${-cam}px)`}}>
+      <DrawLine d={path} p={lerp(f, at(0), at(last) + 10, 0, 1)} color={C.line} width={10} len={420 * steps.length} />
       {steps.map(([k, t, hold, mood], i) => (
         <React.Fragment key={i}>
-          <FromSide f={f - at(i)} side={L(i) ? 'left' : 'right'} dist={500} style={{left: L(i) ? 60 : 470, top: Y(i)}}>
+          <FromSide f={f - at(i)} side={L(i) ? 'left' : 'right'} dist={500} style={{left: L(i) ? 60 : undefined, right: L(i) ? undefined : 60, top: Y(i)}}>
             <Chip green={s.money_last && i === last} dark={!(s.money_last && i === last)} style={{position: 'static', fontSize: 46}}>{i + 1}. {t}</Chip>
           </FromSide>
-          <Guy x={L(i) ? 520 : 40} y={Y(i) + 70} sc={0.4} mood={mood ?? 0} f={f} hold={hold ?? null} o={ease(f - at(i) - 4, 10)} />
+          <Guy x={L(i) ? 780 : 60} y={Y(i) - 40} sc={0.32} mood={mood ?? 0} f={f} hold={hold ?? null} o={ease(f - at(i) - 4, 10)} />
         </React.Fragment>
       ))}
     </div>
@@ -261,7 +262,7 @@ const Timeline = ({f, w, s}) => {
       return (
         <React.Fragment key={i}>
           <div style={{position: 'absolute', left: X(i) - 26, top: 620, width: 52, height: 52, borderRadius: 26, background: '#fff', border: `8px solid ${col}`, transform: `scale(${p})`}} />
-          <div style={{position: 'absolute', left: X(i) - 180, width: 360, top: up ? 330 : 730, textAlign: 'center', opacity: ease(f - w(k) + 2, 8), transform: `translateY(${(1 - ease(f - w(k) + 2, 10)) * (up ? -40 : 40)}px)`}}>
+          <div style={{position: 'absolute', left: Math.min(Math.max(X(i) - 180, 20), 700), width: 360, top: up ? 330 : 730, textAlign: 'center', opacity: ease(f - w(k) + 2, 8), transform: `translateY(${(1 - ease(f - w(k) + 2, 10)) * (up ? -40 : 40)}px)`}}>
             <div style={{fontWeight: 900, fontSize: 76, color: col, lineHeight: 1}}>{big}</div>
             <div style={{fontWeight: 700, fontSize: 34, color: MUTED, marginTop: 10, lineHeight: 1.2}}>{sub}</div>
           </div>
@@ -320,10 +321,10 @@ const ToolDemo = ({f, w, s}) => {
         {outs.map(([k, t], i) => {
           const p = pop(f - w(k) - i * 4 + 2);
           return (
-            <div key={i} style={{width: 270, height: 360, borderRadius: 22, background: ['linear-gradient(135deg,#E9C46A,#C9962F)', 'linear-gradient(135deg,#C7B8E8,#6E58B8)', 'linear-gradient(135deg,#A9C8E8,#3D6FA8)'][i % 3],
+            <div key={i} style={{width: outs.length > 3 ? 196 : 270, height: outs.length > 3 ? 300 : 360, borderRadius: 22, background: ['linear-gradient(135deg,#E9C46A,#C9962F)', 'linear-gradient(135deg,#C7B8E8,#6E58B8)', 'linear-gradient(135deg,#A9C8E8,#3D6FA8)'][i % 3],
               transform: `scale(${p})`, display: 'flex', alignItems: 'flex-end', padding: 18, boxSizing: 'border-box', position: 'relative'}}>
-              <div style={{position: 'absolute', left: 18, right: 18, bottom: 70, height: 40, borderRadius: 8, background: 'rgba(0,0,0,0.7)'}} />
-              <div style={{color: '#fff', fontWeight: 900, fontSize: 30, textShadow: '0 2px 10px rgba(0,0,0,0.4)'}}>{t}</div>
+              <div style={{position: 'absolute', left: 18, top: 18, width: 54, height: 54, borderRadius: 27, background: 'rgba(0,0,0,0.55)', display: 'flex', alignItems: 'center', justifyContent: 'center'}}><div style={{width: 0, height: 0, borderTop: '11px solid transparent', borderBottom: '11px solid transparent', borderLeft: '18px solid #fff', marginLeft: 4}} /></div>
+              <div style={{color: '#fff', fontWeight: 900, fontSize: outs.length > 3 ? 26 : 30, lineHeight: 1.15, textShadow: '0 2px 10px rgba(0,0,0,0.4)'}}>{t}</div>
             </div>
           );
         })}
@@ -340,22 +341,22 @@ const Ladder = ({f, w, s}) => {
   const rungs = s.rungs || [];
   const n = rungs.length;
   let at = 0; rungs.forEach(([k], i) => { if (f >= w(k) - 2) at = i; });
-  const pos = (i) => [60 + i * (n > 1 ? 560 / (n - 1) : 0), 1060 - i * (n > 1 ? 780 / (n - 1) : 0)];
+  const G = n > 3 ? 210 : 250; const pos = (i) => [70 + i * (n > 3 ? 35 : 70), 640 + ((n - 1) / 2 - i) * G];  // a staircase, lowest rung first, centred; keys starting with _ are rungs already shown
   return (<>
     {s.title && <div style={{position: 'absolute', left: 70, top: 130, fontWeight: 900, fontSize: 56, opacity: ease(f, 10)}}>{s.title}</div>}
     {rungs.map(([k, need, unlock, mark, money], i) => {
       const p = ease(f - w(k) + 6, 14);
       const [x, y] = pos(i);
       return (
-        <div key={i} style={{position: 'absolute', left: x, top: y, width: 440, opacity: 0.25 + 0.75 * p, transform: `perspective(1800px) rotateX(16deg) rotateZ(-3deg) translateX(${(1 - p) * 80}px)`}}>
-          <div style={{background: C.ink, color: '#fff', borderRadius: 28, padding: '20px 26px', display: 'flex', alignItems: 'center', gap: 18, boxShadow: money ? '0 20px 70px rgba(46,125,79,0.4)' : glow('0,0,0', 0.12, 50)}}>
-            <Mark name={mark} size={64} />
-            <div><div style={{fontWeight: 900, fontSize: 46, color: money ? '#7BE0A0' : '#fff'}}>{need}</div><div style={{fontWeight: 700, fontSize: 30, opacity: 0.8}}>{unlock}</div></div>
+        <div key={i} style={{position: 'absolute', left: x, top: y, width: 800, opacity: 0.2 + 0.8 * p, transform: `perspective(1800px) rotateX(14deg) rotateZ(-2deg) translateY(${(1 - p) * 120}px)`}}>
+          <div style={{background: C.ink, color: '#fff', borderRadius: 30, padding: '24px 30px', display: 'flex', alignItems: 'center', gap: 22, boxShadow: money && p > 0.5 ? '0 20px 70px rgba(46,125,79,0.45)' : glow('0,0,0', 0.12, 50)}}>
+            {mark && <Mark name={mark} size={72} />}
+            <div style={{minWidth: 0}}><div style={{fontWeight: 900, fontSize: 62, lineHeight: 1, color: money ? '#7BE0A0' : '#fff'}}>{need}</div><div style={{fontWeight: 700, fontSize: 34, opacity: 0.85, marginTop: 6}}>{unlock}</div></div>
           </div>
         </div>
       );
     })}
-    {n > 0 && <Guy x={pos(at)[0] + 440} y={pos(at)[1] - 210} sc={0.3} mood={rungs[at] && rungs[at][4] ? -0.9 : 0.2} f={f} hold={rungs[at] && rungs[at][4] ? 'money' : 'phone0'} />}
+    {n > 0 && <Guy x={Math.min(pos(at)[0] + 560, 800)} y={pos(at)[1] - 200} sc={0.3} mood={rungs[at] && rungs[at][4] ? -0.9 : 0.2} f={f} hold={rungs[at] && rungs[at][4] ? 'money' : 'phone0'} />}
   </>);
 };
 

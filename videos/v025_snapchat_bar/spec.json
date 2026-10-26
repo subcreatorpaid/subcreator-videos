@@ -1,0 +1,352 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v025_snapchat_bar",
+ "title": "Snapchat pays creators, but look at the bar",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Snapchat pays creators. But look at what it asks for first.",
+   "show": {
+    "type": "talk",
+    "mood": 0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "pays",
+      "Snapchat pays",
+      "green"
+     ],
+     [
+      "first",
+      "But first…",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "pays",
+     "ding"
+    ],
+    [
+     "first",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Fifty thousand followers. Twenty-five posts a month. Posting on ten of the last twenty-eight days.",
+   "show": {
+    "type": "checklist",
+    "title": "Snapchat's bar",
+    "items": [
+     [
+      "fifty",
+      "50,000 followers"
+     ],
+     [
+      "twenty-five",
+      "25 posts a month"
+     ],
+     [
+      "ten",
+      "Post on 10 of 28 days"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "fifty",
+     "click"
+    ],
+    [
+     "twenty-five",
+     "click"
+    ],
+    [
+     "ten",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Plus one of these in twenty-eight days: ten million Snap views, one million Spotlight views, or twelve thousand hours watched.",
+   "show": {
+    "type": "stat_cards",
+    "title": "PLUS ONE OF THESE (28 DAYS)",
+    "cards": [
+     [
+      "ten",
+      "10M",
+      "Snap views"
+     ],
+     [
+      "million",
+      "1M",
+      "Spotlight views"
+     ],
+     [
+      "twelve",
+      "12,000",
+      "view hours"
+     ]
+    ],
+    "source": "Social Samosa, Dec 2024"
+   },
+   "sfx": [
+    [
+     "ten",
+     "card"
+    ],
+    [
+     "million",
+     "card"
+    ],
+    [
+     "twelve",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "So for small creators, Snapchat is a place to grow, not to get paid yet.",
+   "show": {
+    "type": "myth",
+    "myth": "Snapchat pays small creators",
+    "myth_word": "small",
+    "fact": "Grow there, earn elsewhere first",
+    "fact_word": "grow"
+   },
+   "sfx": [
+    [
+     "small",
+     "thud"
+    ],
+    [
+     "grow",
+     "swipe"
+    ]
+   ]
+  },
+  {
+   "say": "Repost your best Shorts to Spotlight, and earn first with UGC, affiliate links or a newsletter.",
+   "show": {
+    "type": "talk",
+    "mood": -0.5,
+    "hold": "laptop",
+    "chips": [
+     [
+      "spotlight",
+      "Repost to Spotlight",
+      null
+     ],
+     [
+      "ugc",
+      "UGC",
+      "green"
+     ],
+     [
+      "newsletter",
+      "Newsletter",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "spotlight",
+     "pop"
+    ],
+    [
+     "ugc",
+     "pop"
+    ],
+    [
+     "newsletter",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: these rules are from a December twenty twenty-four report, so check Snapchat's own page for changes.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "report",
+      "From a 2024 report",
+      true
+     ],
+     [
+      "page",
+      "Check Snapchat's page",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "report",
+     "whip"
+    ],
+    [
+     "page",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [SNAP|snap] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. OpusClip is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Snapchat: grow there first",
+    "keyword": "SNAP",
+    "tool": "OpusClip"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[50,000|Fifty thousand] followers. That's Snapchat's starting bar.",
+   "show": {
+    "type": "checklist",
+    "title": "Snapchat's bar",
+    "items": [
+     [
+      "fifty",
+      "50,000 followers"
+     ],
+     [
+      "twenty-five",
+      "25 posts a month"
+     ],
+     [
+      "ten",
+      "Post on 10 of 28 days"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Posting on Snapchat every day and still not paid?",
+   "show": {
+    "type": "checklist",
+    "title": "Snapchat's bar",
+    "items": [
+     [
+      "fifty",
+      "50,000 followers"
+     ],
+     [
+      "twenty-five",
+      "25 posts a month"
+     ],
+     [
+      "ten",
+      "Post on 10 of 28 days"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Does Snapchat pay small creators?",
+   "show": {
+    "type": "myth",
+    "myth": "Snapchat pays small creators",
+    "myth_word": "small",
+    "fact": "Grow there, earn elsewhere first",
+    "fact_word": "grow"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Social Samosa: Snapchat unified monetization (Dec 2024)",
+   "url": "https://www.socialsamosa.com/industry-updates/snapchat-announces-unified-monetisation-program-creators-8447401"
+  }
+ ],
+ "thumb": {
+  "headline": "Snapchat pays\nat ~50K~",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 0.8,
+  "sticker": "+ 25 posts/mo",
+  "sticker_color": "red",
+  "chip": "The real bar",
+  "size": 130
+ },
+ "finder_stream": null
+}

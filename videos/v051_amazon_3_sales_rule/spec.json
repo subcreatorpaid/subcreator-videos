@@ -1,0 +1,393 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v051_amazon_3_sales_rule",
+ "title": "Amazon closes your account without 3 sales",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Joined Amazon Associates? You have a deadline most people miss.",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "laptop",
+    "chips": [
+     [
+      "amazon",
+      "Amazon Associates",
+      null
+     ],
+     [
+      "deadline",
+      "A deadline",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "deadline",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "You need three qualifying sales in your first one hundred eighty days, or the account is closed.",
+   "show": {
+    "type": "timeline",
+    "title": "Your first 180 days",
+    "points": [
+     [
+      "_0",
+      "Day 0",
+      "join"
+     ],
+     [
+      "three",
+      "3 sales",
+      "needed",
+      "green"
+     ],
+     [
+      "eighty",
+      "Day 180",
+      "or closed",
+      "red"
+     ]
+    ],
+    "hold": "laptop"
+   },
+   "sfx": [
+    [
+     "three",
+     "pop"
+    ],
+    [
+     "eighty",
+     "thud"
+    ],
+    [
+     "closed",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "So don't join until you have content ready to send people to.",
+   "show": {
+    "type": "myth",
+    "myth": "Join first, figure it out later",
+    "myth_word": "join",
+    "fact": "Have content ready first",
+    "fact_word": "content",
+    "fact_green": false
+   },
+   "sfx": [
+    [
+     "join",
+     "thud"
+    ],
+    [
+     "content",
+     "swipe"
+    ]
+   ]
+  },
+  {
+   "say": "Pick three products you already use, make one honest video about each, and put the links in the description and your bio.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "three",
+      "3 products you use",
+      "phone0",
+      0
+     ],
+     [
+      "honest",
+      "One honest video each",
+      "film",
+      -0.3
+     ],
+     [
+      "links",
+      "Links in description + bio",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "three",
+     "pop"
+    ],
+    [
+     "honest",
+     "pop"
+    ],
+    [
+     "links",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Most categories pay about three to four and a half percent, so a forty dollar item earns about a dollar eighty.",
+   "show": {
+    "type": "calc",
+    "title": "One sale",
+    "green": [
+     "eighty"
+    ],
+    "rows": [
+     [
+      "forty",
+      "Item",
+      "$40",
+      null
+     ],
+     [
+      "percent",
+      "Commission",
+      "4.5%",
+      "×"
+     ]
+    ],
+    "result": [
+     "eighty",
+     "You earn",
+     1.8,
+     "$",
+     "",
+     2
+    ]
+   },
+   "sfx": [
+    [
+     "forty",
+     "pop"
+    ],
+    [
+     "percent",
+     "pop"
+    ],
+    [
+     "eighty",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: sales from friends and family can break the rules, so get real buyers.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "friends",
+      "Friends + family risky",
+      true
+     ],
+     [
+      "real",
+      "Real buyers only",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "friends",
+     "whip"
+    ],
+    [
+     "real",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [AMAZON|amazon] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Amazon Associates is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Amazon: the 180-day plan",
+    "keyword": "AMAZON",
+    "tool": "Amazon Associates"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[180|One hundred eighty] days. That's your Amazon deadline.",
+   "show": {
+    "type": "timeline",
+    "title": "Your first 180 days",
+    "points": [
+     [
+      "_0",
+      "Day 0",
+      "join"
+     ],
+     [
+      "three",
+      "3 sales",
+      "needed",
+      "green"
+     ],
+     [
+      "eighty",
+      "Day 180",
+      "or closed",
+      "red"
+     ]
+    ],
+    "hold": "laptop"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Your Amazon affiliate account got closed, and you don't know why?",
+   "show": {
+    "type": "timeline",
+    "title": "Your first 180 days",
+    "points": [
+     [
+      "_0",
+      "Day 0",
+      "join"
+     ],
+     [
+      "three",
+      "3 sales",
+      "needed",
+      "green"
+     ],
+     [
+      "eighty",
+      "Day 180",
+      "or closed",
+      "red"
+     ]
+    ],
+    "hold": "laptop"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What happens if you don't make three Amazon sales?",
+   "show": {
+    "type": "timeline",
+    "title": "Your first 180 days",
+    "points": [
+     [
+      "_0",
+      "Day 0",
+      "join"
+     ],
+     [
+      "three",
+      "3 sales",
+      "needed",
+      "green"
+     ],
+     [
+      "eighty",
+      "Day 180",
+      "or closed",
+      "red"
+     ]
+    ],
+    "hold": "laptop"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Lasso: Amazon affiliate commission rates",
+   "url": "https://getlasso.co/amazon-affiliate-commission-rate/"
+  }
+ ],
+ "thumb": {
+  "headline": "3 sales or\n~closed~",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": 0.8,
+  "sticker": "180 days",
+  "sticker_color": "red",
+  "chip": "Amazon Associates rule",
+  "size": 140
+ },
+ "finder_stream": "amazon-associates"
+}

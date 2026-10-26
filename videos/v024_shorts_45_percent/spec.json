@@ -1,0 +1,395 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v024_shorts_45_percent",
+ "title": "YouTube Shorts: why views pay so little",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Your Short got a million views, and it paid almost nothing. Here's how Shorts money really works.",
+   "show": {
+    "type": "talk",
+    "mood": 0.8,
+    "hold": "phone0",
+    "chips": [
+     [
+      "million",
+      "1M views",
+      null
+     ],
+     [
+      "nothing",
+      "≈ $0?",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "million",
+     "pop"
+    ],
+    [
+     "nothing",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Shorts ads go into one shared pool. Part of it pays for music, and creators keep forty-five percent of their share.",
+   "show": {
+    "type": "fee_split",
+    "label": "Your share of the pool",
+    "mark": "youtube",
+    "dec": 0,
+    "pre": "",
+    "parts": [
+     [
+      "music",
+      "Music + YouTube",
+      55,
+      "fee"
+     ],
+     [
+      "forty-five",
+      "You keep 45%",
+      45,
+      "keep"
+     ]
+    ],
+    "source": "YouTube via Engadget"
+   },
+   "sfx": [
+    [
+     "pool",
+     "whoosh"
+    ],
+    [
+     "music",
+     "card"
+    ],
+    [
+     "forty-five",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "And you only get a share once you're in the Partner Program: one thousand subscribers, plus ten million Shorts views in ninety days.",
+   "show": {
+    "type": "progress",
+    "mark": "youtube",
+    "title": "Partner Program (Shorts path)",
+    "bars": [
+     [
+      "thousand",
+      "Subscribers",
+      640,
+      1000
+     ],
+     [
+      "ten",
+      "Shorts views, 90 days",
+      1200000,
+      10000000
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "thousand",
+     "count"
+    ],
+    [
+     "ten",
+     "count"
+    ],
+    [
+     "ninety",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Before that, five hundred subscribers opens fan funding and Shopping, which can pay sooner than ads.",
+   "show": {
+    "type": "talk",
+    "mood": -0.5,
+    "hold": "laptop",
+    "chips": [
+     [
+      "five",
+      "500 subs",
+      null
+     ],
+     [
+      "fan",
+      "Fan funding",
+      "green"
+     ],
+     [
+      "shopping",
+      "Shopping",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "five",
+     "pop"
+    ],
+    [
+     "fan",
+     "pop"
+    ],
+    [
+     "shopping",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "So use Shorts to grow, and send viewers somewhere that pays: your email list, a guide, or a tool link.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "grow",
+      "Shorts: grow",
+      "phone0",
+      0
+     ],
+     [
+      "email",
+      "Email list",
+      "laptop",
+      -0.3
+     ],
+     [
+      "tool",
+      "Guide or tool link",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "grow",
+     "pop"
+    ],
+    [
+     "email",
+     "pop"
+    ],
+    [
+     "tool",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: the forty-five percent is of your share after music costs, so views alone rarely add up.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "share",
+      "45% of your share",
+      true
+     ],
+     [
+      "views",
+      "Views alone rarely pay",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "share",
+     "whip"
+    ],
+    [
+     "views",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [SHORTS|shorts] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. vidIQ is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "How Shorts money works",
+    "keyword": "SHORTS",
+    "tool": "vidIQ"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[45%|Forty-five percent]. That's what YouTube Shorts creators keep, of their share.",
+   "show": {
+    "type": "fee_split",
+    "label": "Your share of the pool",
+    "mark": "youtube",
+    "dec": 0,
+    "pre": "",
+    "parts": [
+     [
+      "music",
+      "Music + YouTube",
+      55,
+      "fee"
+     ],
+     [
+      "forty-five",
+      "You keep 45%",
+      45,
+      "keep"
+     ]
+    ],
+    "source": "YouTube via Engadget"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "A million Shorts views, and it paid almost nothing?",
+   "show": {
+    "type": "talk",
+    "mood": 0.8,
+    "hold": "phone0",
+    "chips": [
+     [
+      "million",
+      "1M views",
+      null
+     ],
+     [
+      "nothing",
+      "≈ $0?",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Why do Shorts views pay so little?",
+   "show": {
+    "type": "fee_split",
+    "label": "Your share of the pool",
+    "mark": "youtube",
+    "dec": 0,
+    "pre": "",
+    "parts": [
+     [
+      "music",
+      "Music + YouTube",
+      55,
+      "fee"
+     ],
+     [
+      "forty-five",
+      "You keep 45%",
+      45,
+      "keep"
+     ]
+    ],
+    "source": "YouTube via Engadget"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Engadget: YouTube Shorts ad revenue sharing (Sep 2022)",
+   "url": "https://www.engadget.com/youtube-revenue-sharing-shorts-creators-170137275.html"
+  },
+  {
+   "title": "YouTube Help: expanded YouTube Partner Program",
+   "url": "https://support.google.com/youtube/answer/13429240?hl=en"
+  }
+ ],
+ "thumb": {
+  "headline": "1M Shorts views\n= ~$?~",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 0.9,
+  "sticker": "You keep 45%",
+  "chip": "How Shorts money works",
+  "size": 120
+ },
+ "finder_stream": "youtube-fan-funding"
+}

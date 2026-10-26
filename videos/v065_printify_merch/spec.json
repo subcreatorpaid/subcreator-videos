@@ -1,0 +1,386 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v065_printify_merch",
+ "title": "Merch without stock (print on demand)",
+ "type": "tool",
+ "format": "",
+ "beats": [
+  {
+   "say": "Want merch, but no money for stock? Print on demand only makes a shirt after someone buys it.",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "merch",
+      "Merch",
+      null
+     ],
+     [
+      "stock",
+      "No stock",
+      "green"
+     ],
+     [
+      "buys",
+      "Made after a sale",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "stock",
+     "ding"
+    ],
+    [
+     "buys",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "In Printify, upload a design, pick a product, and connect a store. The printer ships it to the buyer.",
+   "show": {
+    "type": "tool_demo",
+    "app": "Printify",
+    "input": "logo-design.png",
+    "input_word": "upload",
+    "process": "Placing your design",
+    "process_word": "pick",
+    "outputs": [
+     [
+      "product",
+      "T-shirt"
+     ],
+     [
+      "product",
+      "Mug"
+     ],
+     [
+      "ships",
+      "Tote bag"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "upload",
+     "drop"
+    ],
+    [
+     "pick",
+     "whoosh"
+    ],
+    [
+     "product",
+     "pop"
+    ],
+    [
+     "ships",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Your profit is your price minus the product and shipping cost. Set the price with that in mind.",
+   "show": {
+    "type": "calc",
+    "title": "Profit (example)",
+    "green": [
+     "profit"
+    ],
+    "rows": [
+     [
+      "price",
+      "Your price",
+      "$25",
+      null
+     ],
+     [
+      "product",
+      "Product + shipping",
+      "$15",
+      "−"
+     ]
+    ],
+    "result": [
+     "profit",
+     "Your profit",
+     10,
+     "$"
+    ],
+    "note": "Example numbers"
+   },
+   "sfx": [
+    [
+     "price",
+     "pop"
+    ],
+    [
+     "product",
+     "pop"
+    ],
+    [
+     "profit",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Merch sells when it's an inside joke or a phrase your audience already says.",
+   "show": {
+    "type": "checklist",
+    "title": "Merch that sells",
+    "items": [
+     [
+      "inside",
+      "An inside joke"
+     ],
+     [
+      "phrase",
+      "A phrase fans say"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "inside",
+     "click"
+    ],
+    [
+     "phrase",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Printify's affiliate program pays five percent of product price for twelve months on people you refer.",
+   "show": {
+    "type": "stat_cards",
+    "title": "PRINTIFY AFFILIATE",
+    "green": [
+     "five"
+    ],
+    "cards": [
+     [
+      "five",
+      "5%",
+      "for 12 months",
+      true
+     ]
+    ],
+    "source": "Printify help centre"
+   },
+   "sfx": [
+    [
+     "five",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: profit per item is small, so merch works best once you have fans who want to show they're in.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "small",
+      "Small profit per item",
+      true
+     ],
+     [
+      "fans",
+      "Needs real fans",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "small",
+     "whip"
+    ],
+    [
+     "fans",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [MERCH|merch] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Printify is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Merch without stock",
+    "keyword": "MERCH",
+    "tool": "Printify"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[0|Zero] stock. The shirt is made after someone buys it.",
+   "show": {
+    "type": "tool_demo",
+    "app": "Printify",
+    "input": "logo-design.png",
+    "input_word": "upload",
+    "process": "Placing your design",
+    "process_word": "pick",
+    "outputs": [
+     [
+      "product",
+      "T-shirt"
+     ],
+     [
+      "product",
+      "Mug"
+     ],
+     [
+      "ships",
+      "Tote bag"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Want merch, but can't afford boxes of shirts?",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "merch",
+      "Merch",
+      null
+     ],
+     [
+      "stock",
+      "No stock",
+      "green"
+     ],
+     [
+      "buys",
+      "Made after a sale",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do you sell merch without buying stock?",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "merch",
+      "Merch",
+      null
+     ],
+     [
+      "stock",
+      "No stock",
+      "green"
+     ],
+     [
+      "buys",
+      "Made after a sale",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Printify affiliate program",
+   "url": "https://help.printify.com/hc/en-us/articles/4483629612817"
+  }
+ ],
+ "thumb": {
+  "headline": "Merch with\n*no stock*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.4,
+  "sticker": "Print on demand",
+  "chip": "Printify setup",
+  "size": 130
+ },
+ "finder_stream": null
+}

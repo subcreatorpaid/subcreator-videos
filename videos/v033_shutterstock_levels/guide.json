@@ -1,0 +1,50 @@
+{
+ "title": "Sell stock footage",
+ "subtitle": "Shutterstock levels and what to film",
+ "sections": [
+  [
+   "Pay",
+   [
+    "15%-40% of what Shutterstock earns from each download.",
+    "6 levels for images and video.",
+    "Everyone resets to level 1 on 1 January."
+   ]
+  ],
+  [
+   "What to film",
+   [
+    "Hands typing, phones, laptops",
+    "City streets and transport",
+    "Food prep",
+    "Everyday moments without faces, logos or brands"
+   ]
+  ],
+  [
+   "Tips",
+   [
+    "Steady, 10-20 second clips.",
+    "Clear titles and keywords."
+   ]
+  ]
+ ],
+ "steps": [
+  "Film 20 clips this week.",
+  "Upload with clear keywords.",
+  "Add 10 clips every week."
+ ],
+ "keyword": "STOCK",
+ "sources": [
+  [
+   "Shutterstock contributor help: earnings levels",
+   "https://submit.shutterstock.com/help/en/articles/10594604"
+  ]
+ ],
+ "video": "Stock footage pay resets every January",
+ "tool": {
+  "id": "opusclip",
+  "name": "OpusClip",
+  "earns": "25% of their payments (at least year one)",
+  "signup": "https://www.opus.pro/affiliate",
+  "status": "joined"
+ }
+}

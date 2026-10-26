@@ -1,0 +1,387 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v032_fiverr_price_after_fee",
+ "title": "Price your Fiverr gig after the 20% cut",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "You set your Fiverr gig at fifty dollars, and only forty arrives. Here's how to price it right.",
+   "show": {
+    "type": "talk",
+    "mood": 0.7,
+    "hold": "money",
+    "chips": [
+     [
+      "fifty",
+      "$50 gig",
+      null
+     ],
+     [
+      "forty",
+      "$40 arrives",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "fifty",
+     "pop"
+    ],
+    [
+     "forty",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Fiverr keeps twenty percent of every order, including tips.",
+   "show": {
+    "type": "fee_split",
+    "label": "$50 order",
+    "mark": "Fv",
+    "dec": 0,
+    "parts": [
+     [
+      "twenty",
+      "Fiverr 20%",
+      10,
+      "fee"
+     ],
+     [
+      "tips",
+      "You keep",
+      40,
+      "keep"
+     ]
+    ],
+    "source": "Wise, Fiverr payments guide"
+   },
+   "sfx": [
+    [
+     "twenty",
+     "card"
+    ],
+    [
+     "tips",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "So work backwards. If you want forty-eight dollars, divide by point eight. Your price is sixty.",
+   "show": {
+    "type": "calc",
+    "title": "Work backwards",
+    "green": [
+     "sixty"
+    ],
+    "rows": [
+     [
+      "forty-eight",
+      "You want",
+      "$48",
+      null
+     ],
+     [
+      "point",
+      "Divide by",
+      "0.8",
+      "÷"
+     ]
+    ],
+    "result": [
+     "sixty",
+     "Set your price",
+     60,
+     "$"
+    ]
+   },
+   "sfx": [
+    [
+     "forty-eight",
+     "pop"
+    ],
+    [
+     "point",
+     "pop"
+    ],
+    [
+     "sixty",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "New sellers wait about fourteen days after an order is done before the money clears.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "done",
+      "Day 0",
+      "order done"
+     ],
+     [
+      "fourteen",
+      "Day 14",
+      "money clears",
+      "green"
+     ]
+    ],
+    "hold": "money"
+   },
+   "sfx": [
+    [
+     "done",
+     "pop"
+    ],
+    [
+     "fourteen",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Offer three packages: a basic one to win first reviews, a standard one, and a premium one with extras.",
+   "show": {
+    "type": "compare",
+    "title": "3 packages",
+    "cols": [
+     "Basic",
+     "Standard",
+     "Premium"
+    ],
+    "rows": [
+     [
+      "basic",
+      "Goal",
+      [
+       "First reviews",
+       "Most orders",
+       "Extras"
+      ]
+     ]
+    ],
+    "best": 1,
+    "best_word": "premium"
+   },
+   "sfx": [
+    [
+     "basic",
+     "pop"
+    ],
+    [
+     "standard",
+     "pop"
+    ],
+    [
+     "premium",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: these fee details come from a payments guide, so check Fiverr's own fee page before you set prices.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "guide",
+      "From a payments guide",
+      true
+     ],
+     [
+      "page",
+      "Check Fiverr's page",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "guide",
+     "whip"
+    ],
+    [
+     "page",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [FIVERR|fiverr] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Fiverr is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Price a Fiverr gig",
+    "keyword": "FIVERR",
+    "tool": "Fiverr"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[20%|Twenty percent] of every Fiverr order goes to Fiverr. Even tips.",
+   "show": {
+    "type": "fee_split",
+    "label": "$50 order",
+    "mark": "Fv",
+    "dec": 0,
+    "parts": [
+     [
+      "twenty",
+      "Fiverr 20%",
+      10,
+      "fee"
+     ],
+     [
+      "tips",
+      "You keep",
+      40,
+      "keep"
+     ]
+    ],
+    "source": "Wise, Fiverr payments guide"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "You charged fifty dollars, and only forty arrived?",
+   "show": {
+    "type": "talk",
+    "mood": 0.7,
+    "hold": "money",
+    "chips": [
+     [
+      "fifty",
+      "$50 gig",
+      null
+     ],
+     [
+      "forty",
+      "$40 arrives",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do you price a Fiverr gig after the fee?",
+   "show": {
+    "type": "calc",
+    "title": "Work backwards",
+    "green": [
+     "sixty"
+    ],
+    "rows": [
+     [
+      "forty-eight",
+      "You want",
+      "$48",
+      null
+     ],
+     [
+      "point",
+      "Divide by",
+      "0.8",
+      "÷"
+     ]
+    ],
+    "result": [
+     "sixty",
+     "Set your price",
+     60,
+     "$"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Wise: how to get paid on Fiverr (20% fee, clearance)",
+   "url": "https://wise.com/us/blog/how-to-get-paid-on-fiverr"
+  }
+ ],
+ "thumb": {
+  "headline": "Fiverr takes\n~20%~",
+  "hero": "face",
+  "hold": "money",
+  "mood": 0.8,
+  "sticker": "Price ÷ 0.8",
+  "chip": "Price your gig right",
+  "size": 140
+ },
+ "finder_stream": null
+}

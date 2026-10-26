@@ -1,0 +1,51 @@
+{
+ "title": "beehiiv starter",
+ "subtitle": "Set up, grow, then turn on Boosts",
+ "sections": [
+  [
+   "Set up",
+   [
+    "Create a publication and a sign-up page.",
+    "Write a short welcome email.",
+    "Put the sign-up link first in your bio."
+   ]
+  ],
+  [
+   "Earn",
+   [
+    "Boosts: paid when your readers subscribe to newsletters you recommend.",
+    "Case study: $25,000 from Boosts at 31,000 subscribers (Apr 2025)."
+   ]
+  ],
+  [
+   "Partner program",
+   [
+    "50% (Bronze) to 60% (Gold) for 12 months; 60-day cookie."
+   ]
+  ]
+ ],
+ "steps": [
+  "Create your publication today.",
+  "Send issue #1 this week.",
+  "Mention the sign-up in every video."
+ ],
+ "keyword": "BEEHIIV",
+ "sources": [
+  [
+   "beehiiv case study: $25,000 from Boosts (Apr 2025)",
+   "https://www.beehiiv.com/blog/case-study-geekout-newsletter"
+  ],
+  [
+   "beehiiv partner program",
+   "https://www.beehiiv.com/partners"
+  ]
+ ],
+ "video": "Start a newsletter that can earn (beehiiv)",
+ "tool": {
+  "id": "beehiiv",
+  "name": "beehiiv",
+  "earns": "50-60% of what they pay for 12 months",
+  "signup": "https://www.beehiiv.com/partners",
+  "status": "joined"
+ }
+}

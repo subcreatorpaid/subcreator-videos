@@ -1,0 +1,46 @@
+{
+ "title": "Amazon: the 180-day plan",
+ "subtitle": "Get your 3 sales before the deadline",
+ "sections": [
+  [
+   "The rule",
+   [
+    "3 qualifying sales in the first 180 days, or the account closes."
+   ]
+  ],
+  [
+   "Plan",
+   [
+    "Week 1: pick 3 products you use.",
+    "Weeks 2-4: one honest video per product.",
+    "Links in descriptions and bio; disclose them."
+   ]
+  ],
+  [
+   "Pay",
+   [
+    "Most categories ~3-4.5%. $40 item at 4.5% ≈ $1.80."
+   ]
+  ]
+ ],
+ "steps": [
+  "Make the 3 videos BEFORE joining.",
+  "Join and add links the same day.",
+  "Track clicks weekly."
+ ],
+ "keyword": "AMAZON",
+ "sources": [
+  [
+   "Lasso: Amazon affiliate commission rates",
+   "https://getlasso.co/amazon-affiliate-commission-rate/"
+  ]
+ ],
+ "video": "Amazon closes your account without 3 sales",
+ "tool": {
+  "id": "amazon",
+  "name": "Amazon Associates",
+  "earns": "category rates (most about 3-4.5%)",
+  "signup": "https://affiliate-program.amazon.com",
+  "status": "to join"
+ }
+}

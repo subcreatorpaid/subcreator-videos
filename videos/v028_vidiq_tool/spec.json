@@ -1,0 +1,401 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v028_vidiq_tool",
+ "title": "Find video ideas that already work (vidIQ)",
+ "type": "tool",
+ "format": "",
+ "beats": [
+  {
+   "say": "Out of video ideas? Here's how I find topics people already search for, with one tool.",
+   "show": {
+    "type": "talk",
+    "mood": 0.5,
+    "hold": "laptop",
+    "chips": [
+     [
+      "ideas",
+      "Out of ideas?",
+      "red"
+     ],
+     [
+      "search",
+      "What people search",
+      null
+     ],
+     [
+      "tool",
+      "One tool",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "ideas",
+     "thud"
+    ],
+    [
+     "tool",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "In vidIQ, type your topic, and it shows search volume, competition, and related keywords.",
+   "show": {
+    "type": "tool_demo",
+    "app": "vidIQ",
+    "input": "small creator income",
+    "input_word": "type",
+    "process": "Checking searches",
+    "process_word": "shows",
+    "outputs": [
+     [
+      "volume",
+      "Search volume"
+     ],
+     [
+      "competition",
+      "Competition"
+     ],
+     [
+      "related",
+      "Related keywords"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "type",
+     "key"
+    ],
+    [
+     "volume",
+     "pop"
+    ],
+    [
+     "competition",
+     "pop"
+    ],
+    [
+     "related",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Look for outliers: small channels whose video beat their usual views by a lot. That topic is working right now.",
+   "show": {
+    "type": "stat_cards",
+    "title": "AN OUTLIER (EXAMPLE)",
+    "cards": [
+     [
+      "usual",
+      "2K",
+      "usual views"
+     ],
+     [
+      "lot",
+      "48K",
+      "this video",
+      true
+     ]
+    ],
+    "hold": "laptop",
+    "mood": -0.6
+   },
+   "sfx": [
+    [
+     "outliers",
+     "pop"
+    ],
+    [
+     "usual",
+     "card"
+    ],
+    [
+     "lot",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Then make your own version: same question, your answer, your proof.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "question",
+      "Same question",
+      "laptop",
+      0
+     ],
+     [
+      "answer",
+      "Your answer",
+      "film",
+      -0.3
+     ],
+     [
+      "proof",
+      "Your proof",
+      null,
+      -0.7
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "question",
+     "pop"
+    ],
+    [
+     "answer",
+     "pop"
+    ],
+    [
+     "proof",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "And if you share vidIQ, its affiliate program pays fifteen to twenty-five percent, every month, for as long as people stay.",
+   "show": {
+    "type": "stat_cards",
+    "title": "VIDIQ AFFILIATE",
+    "green": [
+     "fifteen",
+     "twenty-five"
+    ],
+    "cards": [
+     [
+      "fifteen",
+      "15%",
+      "0–10 sales"
+     ],
+     [
+      "twenty-five",
+      "25%",
+      "51+ sales",
+      true
+     ]
+    ],
+    "source": "vidIQ support"
+   },
+   "sfx": [
+    [
+     "fifteen",
+     "card"
+    ],
+    [
+     "twenty-five",
+     "card"
+    ],
+    [
+     "stay",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: the free plan limits searches, so pick a few keywords and go deep.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "free",
+      "Free plan limits",
+      true
+     ],
+     [
+      "deep",
+      "Go deep, not wide",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "free",
+     "whip"
+    ],
+    [
+     "deep",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [IDEAS|ideas] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. vidIQ is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Find ideas that work",
+    "keyword": "IDEAS",
+    "tool": "vidIQ"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[48,000|Forty-eight thousand] views on a channel that usually gets two thousand. That's an outlier.",
+   "show": {
+    "type": "stat_cards",
+    "title": "AN OUTLIER (EXAMPLE)",
+    "cards": [
+     [
+      "usual",
+      "2K",
+      "usual views"
+     ],
+     [
+      "lot",
+      "48K",
+      "this video",
+      true
+     ]
+    ],
+    "hold": "laptop",
+    "mood": -0.6
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Staring at a blank page, with no idea what to post?",
+   "show": {
+    "type": "talk",
+    "mood": 0.5,
+    "hold": "laptop",
+    "chips": [
+     [
+      "ideas",
+      "Out of ideas?",
+      "red"
+     ],
+     [
+      "search",
+      "What people search",
+      null
+     ],
+     [
+      "tool",
+      "One tool",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do you find video ideas people already want?",
+   "show": {
+    "type": "tool_demo",
+    "app": "vidIQ",
+    "input": "small creator income",
+    "input_word": "type",
+    "process": "Checking searches",
+    "process_word": "shows",
+    "outputs": [
+     [
+      "volume",
+      "Search volume"
+     ],
+     [
+      "competition",
+      "Competition"
+     ],
+     [
+      "related",
+      "Related keywords"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "vidIQ affiliate program",
+   "url": "https://support.vidiq.com/en/articles/7866006"
+  }
+ ],
+ "thumb": {
+  "headline": "Ideas that\n*already work*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.4,
+  "sticker": "Find outliers",
+  "chip": "vidIQ walkthrough",
+  "size": 130
+ },
+ "finder_stream": null
+}

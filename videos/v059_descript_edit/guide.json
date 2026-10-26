@@ -1,0 +1,48 @@
+{
+ "title": "Edit by text",
+ "subtitle": "A fast Descript workflow",
+ "sections": [
+  [
+   "Workflow",
+   [
+    "Record one long take.",
+    "Import to Descript; let it transcribe.",
+    "Delete sentences you don't need.",
+    "Remove filler words.",
+    "Export vertical clips."
+   ]
+  ],
+  [
+   "Check",
+   [
+    "Names, brand names and numbers in the transcript."
+   ]
+  ],
+  [
+   "Affiliate",
+   [
+    "Through PartnerStack; rate shown after approval."
+   ]
+  ]
+ ],
+ "steps": [
+  "Record a 10-minute take.",
+  "Cut it to 3 clips by text.",
+  "Post one today."
+ ],
+ "keyword": "EDIT",
+ "sources": [
+  [
+   "Descript help: affiliates",
+   "https://help.descript.com/connect-with-us/affiliates"
+  ]
+ ],
+ "video": "Edit video like a document (Descript)",
+ "tool": {
+  "id": "descript",
+  "name": "Descript",
+  "earns": "commission via PartnerStack (rate shown after approval)",
+  "signup": "https://www.descript.com/affiliate",
+  "status": "to join"
+ }
+}

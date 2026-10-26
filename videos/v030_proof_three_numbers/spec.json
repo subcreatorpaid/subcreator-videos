@@ -1,0 +1,364 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v030_proof_three_numbers",
+ "title": "Proof: 3 official numbers that show creators get paid",
+ "type": "proof",
+ "format": "",
+ "beats": [
+  {
+   "say": "Is creator money real, or just screenshots? Here are three numbers from the companies themselves.",
+   "show": {
+    "type": "talk",
+    "mood": 0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "real",
+      "Real?",
+      null
+     ],
+     [
+      "screenshots",
+      "Screenshots?",
+      "red"
+     ],
+     [
+      "companies",
+      "Official numbers",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "screenshots",
+     "thud"
+    ],
+    [
+     "companies",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "One: ElevenLabs says it has paid over twenty-two million dollars to more than ten thousand four hundred voice creators.",
+   "show": {
+    "type": "page_card",
+    "url": "elevenlabs.io/blog",
+    "mark": "EL",
+    "title": "$22 million earned by voice creators",
+    "checked": "ElevenLabs blog · May 2026",
+    "bullets": [
+     [
+      "twenty-two",
+      "$22M+ paid out",
+      true
+     ],
+     [
+      "four",
+      "10,400+ voice creators"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "twenty-two",
+     "ding"
+    ],
+    [
+     "four",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Two: beehiiv's case study shows a newsletter earning twenty-five thousand dollars from Boosts.",
+   "show": {
+    "type": "page_card",
+    "url": "beehiiv.com/blog",
+    "mark": "bh",
+    "title": "Case study: $25,000 from Boosts",
+    "checked": "beehiiv blog · Apr 2025",
+    "bullets": [
+     [
+      "twenty-five",
+      "$25,000 from Boosts",
+      true
+     ],
+     [
+      "boosts",
+      "At 31,000 subscribers"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "twenty-five",
+     "ding"
+    ],
+    [
+     "boosts",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Three: YouTube says over one point three million creators are in its Shopping affiliate program.",
+   "show": {
+    "type": "page_card",
+    "url": "ppc.land · YouTube statement",
+    "mark": "youtube",
+    "title": "YouTube Shopping affiliate",
+    "checked": "Sep 2026",
+    "bullets": [
+     [
+      "point",
+      "1.3M+ creators enrolled",
+      true
+     ],
+     [
+      "shopping",
+      "From 500 subscribers"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "point",
+     "ding"
+    ],
+    [
+     "shopping",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "These are totals across many creators, so they show the stream is real, not what one person will make.",
+   "show": {
+    "type": "myth",
+    "myth": "Everyone earns this",
+    "myth_word": "totals",
+    "fact": "Totals across many creators",
+    "fact_word": "real",
+    "fact_green": false
+   },
+   "sfx": [
+    [
+     "totals",
+     "thud"
+    ],
+    [
+     "real",
+     "swipe"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: most creators earn far less than the top ones, so start small and track your own numbers.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "less",
+      "Most earn far less",
+      true
+     ],
+     [
+      "track",
+      "Track your own numbers",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "less",
+     "whip"
+    ],
+    [
+     "track",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [PROOF|proof] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. ElevenLabs is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Proof creators get paid",
+    "keyword": "PROOF",
+    "tool": "ElevenLabs"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$22,000,000|Twenty-two million dollars], paid to voice creators. Here's the source.",
+   "show": {
+    "type": "page_card",
+    "url": "elevenlabs.io/blog",
+    "mark": "EL",
+    "title": "$22 million earned by voice creators",
+    "checked": "ElevenLabs blog · May 2026",
+    "bullets": [
+     [
+      "twenty-two",
+      "$22M+ paid out",
+      true
+     ],
+     [
+      "four",
+      "10,400+ voice creators"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Tired of fake income screenshots?",
+   "show": {
+    "type": "talk",
+    "mood": 0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "real",
+      "Real?",
+      null
+     ],
+     [
+      "screenshots",
+      "Screenshots?",
+      "red"
+     ],
+     [
+      "companies",
+      "Official numbers",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Is creator money real? Here are three official numbers.",
+   "show": {
+    "type": "talk",
+    "mood": 0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "real",
+      "Real?",
+      null
+     ],
+     [
+      "screenshots",
+      "Screenshots?",
+      "red"
+     ],
+     [
+      "companies",
+      "Official numbers",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "ElevenLabs: $22 million earned by voice creators (May 2026)",
+   "url": "https://elevenlabs.io/blog/22-million-earned-by-voice-creators-on-elevenlabs"
+  },
+  {
+   "title": "beehiiv case study: $25,000 from Boosts (Apr 2025)",
+   "url": "https://www.beehiiv.com/blog/case-study-geekout-newsletter"
+  },
+  {
+   "title": "PPC Land: YouTube Shopping in 35 markets by year end (Sep 2026)",
+   "url": "https://ppc.land/youtube-creators-in-35-markets-to-earn-shopping-commissions-by-year-end/"
+  }
+ ],
+ "thumb": {
+  "headline": "3 *official*\nnumbers",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": -0.3,
+  "sticker": "No screenshots",
+  "chip": "Proof from the companies",
+  "size": 140
+ },
+ "finder_stream": null
+}

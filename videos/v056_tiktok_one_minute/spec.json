@@ -1,0 +1,383 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v056_tiktok_one_minute",
+ "title": "Why TikTok wants 1-minute videos for pay",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Your fifteen-second TikToks won't count for Creator Rewards. Here's why length matters.",
+   "show": {
+    "type": "talk",
+    "mood": 0.7,
+    "hold": "phone0",
+    "chips": [
+     [
+      "fifteen",
+      "15-second videos",
+      "red"
+     ],
+     [
+      "count",
+      "Don't count",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "fifteen",
+     "thud"
+    ],
+    [
+     "count",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Creator guides say only videos of one minute or more earn in Creator Rewards.",
+   "show": {
+    "type": "compare",
+    "title": "Counts for Creator Rewards?",
+    "cols": [
+     "Under 1 min",
+     "1 min+"
+    ],
+    "rows": [
+     [
+      "minute",
+      "Earns",
+      [
+       "No",
+       "Yes"
+      ],
+      [
+       0
+      ]
+     ]
+    ],
+    "best": 1,
+    "best_word": "more"
+   },
+   "sfx": [
+    [
+     "minute",
+     "pop"
+    ],
+    [
+     "more",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "And your account needs ten thousand followers and a hundred thousand views in thirty days.",
+   "show": {
+    "type": "progress",
+    "mark": "tiktok",
+    "bars": [
+     [
+      "ten",
+      "Followers",
+      4200,
+      10000
+     ],
+     [
+      "hundred",
+      "Views, 30 days",
+      61000,
+      100000
+     ]
+    ],
+    "hold": "phone0"
+   },
+   "sfx": [
+    [
+     "ten",
+     "count"
+    ],
+    [
+     "hundred",
+     "count"
+    ]
+   ]
+  },
+  {
+   "say": "A one-minute video needs a reason to stay: a list, a story, or a step-by-step.",
+   "show": {
+    "type": "checklist",
+    "title": "Hold a full minute",
+    "items": [
+     [
+      "list",
+      "A numbered list"
+     ],
+     [
+      "story",
+      "A story with a twist"
+     ],
+     [
+      "step-by-step",
+      "A step-by-step"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "list",
+     "click"
+    ],
+    [
+     "story",
+     "click"
+    ],
+    [
+     "step-by-step",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Keep short videos for growth, and post one longer video a week for Rewards once you qualify.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "short",
+      "Short: grow",
+      "phone0",
+      0
+     ],
+     [
+      "longer",
+      "1 longer a week",
+      "film",
+      -0.3
+     ],
+     [
+      "rewards",
+      "Rewards once eligible",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "short",
+     "pop"
+    ],
+    [
+     "longer",
+     "pop"
+    ],
+    [
+     "rewards",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: these rules come from creator guides, so check the Creator Rewards page in your app.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "guides",
+      "From creator guides",
+      true
+     ],
+     [
+      "app",
+      "Check in your app",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "guides",
+     "whip"
+    ],
+    [
+     "app",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [MINUTE|minute] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. OpusClip is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "1-minute TikToks that hold",
+    "keyword": "MINUTE",
+    "tool": "OpusClip"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[1|One] minute. That's the shortest video TikTok Creator Rewards counts.",
+   "show": {
+    "type": "compare",
+    "title": "Counts for Creator Rewards?",
+    "cols": [
+     "Under 1 min",
+     "1 min+"
+    ],
+    "rows": [
+     [
+      "minute",
+      "Earns",
+      [
+       "No",
+       "Yes"
+      ],
+      [
+       0
+      ]
+     ]
+    ],
+    "best": 1,
+    "best_word": "more"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Posting fifteen-second TikToks, and wondering why they don't pay?",
+   "show": {
+    "type": "talk",
+    "mood": 0.7,
+    "hold": "phone0",
+    "chips": [
+     [
+      "fifteen",
+      "15-second videos",
+      "red"
+     ],
+     [
+      "count",
+      "Don't count",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How long should a TikTok be to get paid?",
+   "show": {
+    "type": "compare",
+    "title": "Counts for Creator Rewards?",
+    "cols": [
+     "Under 1 min",
+     "1 min+"
+    ],
+    "rows": [
+     [
+      "minute",
+      "Earns",
+      [
+       "No",
+       "Yes"
+      ],
+      [
+       0
+      ]
+     ]
+    ],
+    "best": 1,
+    "best_word": "more"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Metricool: TikTok Creator Rewards requirements",
+   "url": "https://metricool.com/tiktok-creator-next/"
+  }
+ ],
+ "thumb": {
+  "headline": "TikTok pays for\n*1-minute* videos",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 0.4,
+  "sticker": "15 s won't count",
+  "sticker_color": "red",
+  "chip": "Creator Rewards rule",
+  "size": 110
+ },
+ "finder_stream": "tiktok-creator-rewards"
+}

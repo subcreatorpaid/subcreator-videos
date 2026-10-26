@@ -1,0 +1,372 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v061_one_video_four_apps",
+ "title": "Post one video on 4 apps the right way",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "One video can go on TikTok, Reels, Shorts and Facebook. But a straight copy can hold it back.",
+   "show": {
+    "type": "talk",
+    "mood": 0.3,
+    "hold": "phone0",
+    "chips": [
+     [
+      "tiktok",
+      "TikTok",
+      null
+     ],
+     [
+      "reels",
+      "Reels",
+      null
+     ],
+     [
+      "shorts",
+      "Shorts",
+      null
+     ],
+     [
+      "copy",
+      "Straight copy?",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "tiktok",
+     "pop"
+    ],
+    [
+     "shorts",
+     "pop"
+    ],
+    [
+     "copy",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Export without watermarks. A logo from another app looks like a repost.",
+   "show": {
+    "type": "checklist",
+    "title": "Rule 1",
+    "items": [
+     [
+      "watermarks",
+      "No other app's watermark"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "watermarks",
+     "click"
+    ],
+    [
+     "logo",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Rewrite the caption for each app, and add the on-screen text again in the app's own editor if needed.",
+   "show": {
+    "type": "checklist",
+    "title": "Rule 2",
+    "items": [
+     [
+      "caption",
+      "New caption per app"
+     ],
+     [
+      "on-screen",
+      "Native text if needed"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "caption",
+     "click"
+    ],
+    [
+     "on-screen",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Keep it vertical, nine by sixteen, and keep text away from the edges where buttons sit.",
+   "show": {
+    "type": "checklist",
+    "title": "Rule 3",
+    "items": [
+     [
+      "vertical",
+      "9:16 vertical"
+     ],
+     [
+      "edges",
+      "Text away from edges"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "vertical",
+     "click"
+    ],
+    [
+     "edges",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Then watch which app grows fastest, and give that one your best ideas first.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "watch",
+      "Watch each app",
+      "phone0",
+      0
+     ],
+     [
+      "fastest",
+      "Find the fastest",
+      "laptop",
+      -0.3
+     ],
+     [
+      "best",
+      "Best ideas there first",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "watch",
+     "pop"
+    ],
+    [
+     "fastest",
+     "pop"
+    ],
+    [
+     "best",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: each app has its own rules on length and music, so check before you post.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "length",
+      "Length rules differ",
+      true
+     ],
+     [
+      "music",
+      "Music rights differ",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "length",
+     "whip"
+    ],
+    [
+     "music",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [REPOST|repost] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. OpusClip is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Cross-posting checklist",
+    "keyword": "REPOST",
+    "tool": "OpusClip"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[4|Four] apps. One video. Three rules.",
+   "show": {
+    "type": "talk",
+    "mood": 0.3,
+    "hold": "phone0",
+    "chips": [
+     [
+      "tiktok",
+      "TikTok",
+      null
+     ],
+     [
+      "reels",
+      "Reels",
+      null
+     ],
+     [
+      "shorts",
+      "Shorts",
+      null
+     ],
+     [
+      "copy",
+      "Straight copy?",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Reposted your TikTok to Reels, and it flopped?",
+   "show": {
+    "type": "checklist",
+    "title": "Rule 1",
+    "items": [
+     [
+      "watermarks",
+      "No other app's watermark"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do you post one video on every app the right way?",
+   "show": {
+    "type": "talk",
+    "mood": 0.3,
+    "hold": "phone0",
+    "chips": [
+     [
+      "tiktok",
+      "TikTok",
+      null
+     ],
+     [
+      "reels",
+      "Reels",
+      null
+     ],
+     [
+      "shorts",
+      "Shorts",
+      null
+     ],
+     [
+      "copy",
+      "Straight copy?",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "FTC: Disclosures 101 for social media influencers",
+   "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+  }
+ ],
+ "thumb": {
+  "headline": "1 video,\n*4 apps*",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": -0.3,
+  "sticker": "No watermarks",
+  "sticker_color": "red",
+  "chip": "Cross-posting rules",
+  "size": 140
+ },
+ "finder_stream": null
+}

@@ -1,0 +1,393 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v026_facebook_fast_track",
+ "title": "Facebook pays $1,000 a month, if you qualify",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Facebook will pay some creators a thousand dollars a month for three months. Here's who qualifies.",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "money",
+    "chips": [
+     [
+      "thousand",
+      "$1,000/mo",
+      "green"
+     ],
+     [
+      "three",
+      "3 months",
+      null
+     ],
+     [
+      "qualifies",
+      "Who?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "thousand",
+     "ding"
+    ],
+    [
+     "qualifies",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Meta's Creator Fast Track pays a thousand dollars a month if you have a hundred thousand followers on Instagram, TikTok or YouTube, and three thousand at a million.",
+   "show": {
+    "type": "stat_cards",
+    "title": "CREATOR FAST TRACK",
+    "green": [
+     "thousand",
+     "three"
+    ],
+    "cards": [
+     [
+      "thousand",
+      "$1,000/mo",
+      "100K+ followers elsewhere",
+      true
+     ],
+     [
+      "three",
+      "$3,000/mo",
+      "1M+ followers elsewhere",
+      true
+     ]
+    ],
+    "source": "Meta, Mar 2026"
+   },
+   "sfx": [
+    [
+     "thousand",
+     "card"
+    ],
+    [
+     "three",
+     "card"
+    ],
+    [
+     "million",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "It's for three months, and it's meant to bring big creators from other apps to Facebook.",
+   "show": {
+    "type": "timeline",
+    "title": "How it runs",
+    "points": [
+     [
+      "three",
+      "3 months",
+      "guaranteed pay",
+      "green"
+     ],
+     [
+      "bring",
+      "Goal",
+      "move to Facebook"
+     ]
+    ],
+    "hold": "laptop"
+   },
+   "sfx": [
+    [
+     "three",
+     "pop"
+    ],
+    [
+     "bring",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "So under a hundred thousand followers, it's not for you yet. Keep it on your list for later.",
+   "show": {
+    "type": "talk",
+    "mood": 0.4,
+    "hold": null,
+    "red": [
+     "not"
+    ],
+    "chips": [
+     [
+      "under",
+      "Under 100K",
+      "red"
+     ],
+     [
+      "later",
+      "Save for later",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "under",
+     "thud"
+    ],
+    [
+     "later",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Meanwhile, post your best videos to Facebook too. Same video, one more audience.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "best",
+      "Your best videos",
+      "film",
+      0
+     ],
+     [
+      "facebook",
+      "Post to Facebook too",
+      "laptop",
+      -0.3
+     ],
+     [
+      "audience",
+      "One more audience",
+      "phone0",
+      -0.7
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "best",
+     "pop"
+    ],
+    [
+     "facebook",
+     "pop"
+    ],
+    [
+     "audience",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: it's a short program with its own rules, so read Meta's page before you plan around it.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "short",
+      "Only 3 months",
+      true
+     ],
+     [
+      "rules",
+      "Own rules",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "short",
+     "whip"
+    ],
+    [
+     "rules",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [FACEBOOK|facebook] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. OpusClip is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Facebook Creator Fast Track",
+    "keyword": "FACEBOOK",
+    "tool": "OpusClip"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$1,000|A thousand dollars] a month from Facebook. Here's who gets it.",
+   "show": {
+    "type": "stat_cards",
+    "title": "CREATOR FAST TRACK",
+    "green": [
+     "thousand",
+     "three"
+    ],
+    "cards": [
+     [
+      "thousand",
+      "$1,000/mo",
+      "100K+ followers elsewhere",
+      true
+     ],
+     [
+      "three",
+      "$3,000/mo",
+      "1M+ followers elsewhere",
+      true
+     ]
+    ],
+    "source": "Meta, Mar 2026"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Big on TikTok, but Facebook pays you nothing?",
+   "show": {
+    "type": "stat_cards",
+    "title": "CREATOR FAST TRACK",
+    "green": [
+     "thousand",
+     "three"
+    ],
+    "cards": [
+     [
+      "thousand",
+      "$1,000/mo",
+      "100K+ followers elsewhere",
+      true
+     ],
+     [
+      "three",
+      "$3,000/mo",
+      "1M+ followers elsewhere",
+      true
+     ]
+    ],
+    "source": "Meta, Mar 2026"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Will Facebook pay you just for showing up?",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "money",
+    "chips": [
+     [
+      "thousand",
+      "$1,000/mo",
+      "green"
+     ],
+     [
+      "three",
+      "3 months",
+      null
+     ],
+     [
+      "qualifies",
+      "Who?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Meta: Facebook Creator Fast Track (Mar 2026)",
+   "url": "https://about.fb.com/news/2026/03/creator-fast-track-grow-your-audience-earn-money-on-facebook/"
+  }
+ ],
+ "thumb": {
+  "headline": "Facebook pays\n*$1,000*/mo",
+  "hero": "face",
+  "hold": "money",
+  "mood": -0.6,
+  "sticker": "If you have 100K",
+  "sticker_color": "red",
+  "chip": "Creator Fast Track",
+  "size": 130
+ },
+ "finder_stream": null
+}

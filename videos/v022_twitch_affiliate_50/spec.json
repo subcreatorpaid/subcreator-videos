@@ -1,0 +1,393 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v022_twitch_affiliate_50",
+ "title": "Twitch pays at 50 followers (with 3 more rules)",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Twitch lets streamers earn at just fifty followers. But there are three more rules most people miss.",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "fifty",
+      "50 followers",
+      "green"
+     ],
+     [
+      "three",
+      "+ 3 rules",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "fifty",
+     "ding"
+    ],
+    [
+     "three",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "In the last thirty days, you need fifty followers, five hundred minutes streamed, seven different stream days, and an average of three viewers.",
+   "show": {
+    "type": "progress",
+    "title": "Twitch Affiliate",
+    "bars": [
+     [
+      "fifty",
+      "Followers",
+      50,
+      50
+     ],
+     [
+      "hundred",
+      "Minutes streamed",
+      380,
+      500
+     ],
+     [
+      "seven",
+      "Stream days",
+      5,
+      7
+     ],
+     [
+      "three",
+      "Average viewers",
+      2,
+      3
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "fifty",
+     "count"
+    ],
+    [
+     "hundred",
+     "count"
+    ],
+    [
+     "seven",
+     "count"
+    ],
+    [
+     "three",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Average viewers is the hard one. Three people watching at once, on average, across your streams.",
+   "show": {
+    "type": "stat_cards",
+    "title": "THE HARD ONE",
+    "cards": [
+     [
+      "three",
+      "3",
+      "average viewers"
+     ]
+    ],
+    "hold": "laptop",
+    "mood": 0.6
+   },
+   "sfx": [
+    [
+     "three",
+     "card"
+    ],
+    [
+     "average",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Once you're in, viewers can subscribe to your channel and cheer with Bits.",
+   "show": {
+    "type": "checklist",
+    "title": "Affiliate unlocks",
+    "items": [
+     [
+      "subscribe",
+      "Channel subscriptions"
+     ],
+     [
+      "bits",
+      "Cheering with Bits"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "subscribe",
+     "click"
+    ],
+    [
+     "bits",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "To get there: stream on a fixed schedule, invite friends to the first streams, and clip your best moments to Shorts and TikTok.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "schedule",
+      "Fixed schedule",
+      "laptop",
+      0
+     ],
+     [
+      "friends",
+      "Invite friends",
+      "phone0",
+      -0.2
+     ],
+     [
+      "clip",
+      "Clip to Shorts + TikTok",
+      "film",
+      -0.6
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "schedule",
+     "pop"
+    ],
+    [
+     "friends",
+     "pop"
+    ],
+    [
+     "clip",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: these rules come from older guides, so check Twitch's own achievements page before you plan around them.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "older",
+      "From older guides",
+      true
+     ],
+     [
+      "achievements",
+      "Check your dashboard",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "older",
+     "whip"
+    ],
+    [
+     "achievements",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [TWITCH|twitch] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Riverside is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Twitch Affiliate checklist",
+    "keyword": "TWITCH",
+    "tool": "Riverside"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[50|Fifty] followers. That's all Twitch asks to start paying you.",
+   "show": {
+    "type": "progress",
+    "title": "Twitch Affiliate",
+    "bars": [
+     [
+      "fifty",
+      "Followers",
+      50,
+      50
+     ],
+     [
+      "hundred",
+      "Minutes streamed",
+      380,
+      500
+     ],
+     [
+      "seven",
+      "Stream days",
+      5,
+      7
+     ],
+     [
+      "three",
+      "Average viewers",
+      2,
+      3
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Streaming for weeks and still not affiliate?",
+   "show": {
+    "type": "stat_cards",
+    "title": "THE HARD ONE",
+    "cards": [
+     [
+      "three",
+      "3",
+      "average viewers"
+     ]
+    ],
+    "hold": "laptop",
+    "mood": 0.6
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What does Twitch really need before it pays you?",
+   "show": {
+    "type": "progress",
+    "title": "Twitch Affiliate",
+    "bars": [
+     [
+      "fifty",
+      "Followers",
+      50,
+      50
+     ],
+     [
+      "hundred",
+      "Minutes streamed",
+      380,
+      500
+     ],
+     [
+      "seven",
+      "Stream days",
+      5,
+      7
+     ],
+     [
+      "three",
+      "Average viewers",
+      2,
+      3
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Tom's Guide: Twitch Affiliate requirements",
+   "url": "https://www.tomsguide.com/us/how-to-become-twitch-affiliate-requirements,news-30486.html"
+  }
+ ],
+ "thumb": {
+  "headline": "Twitch pays at\n*50* followers",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.4,
+  "sticker": "+3 more rules",
+  "sticker_color": "red",
+  "chip": "Twitch Affiliate",
+  "size": 130
+ },
+ "finder_stream": null
+}

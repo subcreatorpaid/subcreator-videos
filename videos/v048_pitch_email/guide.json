@@ -1,0 +1,44 @@
+{
+ "title": "The 5-line pitch",
+ "subtitle": "A copy-paste brand pitch email",
+ "sections": [
+  [
+   "Template",
+   [
+    "1. Hi! I make [type] videos for [audience].",
+    "2. [Brand] is the one I actually use for [reason].",
+    "3. Idea: a [length] video showing [specific moment].",
+    "4. 3 samples: [link].",
+    "5. Open to a quick test video?"
+   ]
+  ],
+  [
+   "Sending",
+   [
+    "Use the partnerships/marketing email on their website.",
+    "Follow up once after 7 days.",
+    "Track brand, date, reply in a sheet."
+   ]
+  ]
+ ],
+ "steps": [
+  "List 10 brands you use.",
+  "Send 10 pitches this week.",
+  "Follow up next week."
+ ],
+ "keyword": "PITCH",
+ "sources": [
+  [
+   "Insense: UGC creator rates (Sep 2026)",
+   "https://insense.pro/blog/ugc-creator-rates"
+  ]
+ ],
+ "video": "The 5-line brand pitch email",
+ "tool": {
+  "id": "kit",
+  "name": "Kit",
+  "earns": "50% of their first 12 months",
+  "signup": "https://kit.com/affiliate",
+  "status": "to join"
+ }
+}

@@ -1,0 +1,378 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v067_amazon_storefront_ideas",
+ "title": "5 Amazon storefront lists that get clicks",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Your Amazon storefront is just a list of products? Organise it like this instead.",
+   "show": {
+    "type": "talk",
+    "mood": 0.4,
+    "hold": "laptop",
+    "chips": [
+     [
+      "storefront",
+      "Amazon storefront",
+      null
+     ],
+     [
+      "organise",
+      "Organise it",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "storefront",
+     "pop"
+    ],
+    [
+     "organise",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Make lists people search for: my desk setup, under twenty dollars, what I use daily, gifts, and beginner kit.",
+   "show": {
+    "type": "checklist",
+    "title": "5 lists",
+    "items": [
+     [
+      "desk",
+      "My desk setup"
+     ],
+     [
+      "twenty",
+      "Under $20"
+     ],
+     [
+      "daily",
+      "What I use daily"
+     ],
+     [
+      "gifts",
+      "Gifts"
+     ],
+     [
+      "beginner",
+      "Beginner kit"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "desk",
+     "click"
+    ],
+    [
+     "twenty",
+     "click"
+    ],
+    [
+     "daily",
+     "click"
+    ],
+    [
+     "gifts",
+     "click"
+    ],
+    [
+     "beginner",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Add a short video to the products you use most. Since April, onsite videos earn on the exact product promoted.",
+   "show": {
+    "type": "page_card",
+    "url": "amazon.com/shop/yourname",
+    "mark": "Az",
+    "title": "Storefront video",
+    "checked": "Makeinfluence, 2026",
+    "bullets": [
+     [
+      "video",
+      "Short video per product"
+     ],
+     [
+      "exact",
+      "Earns on the exact product",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "video",
+     "pop"
+    ],
+    [
+     "exact",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Point people there: the storefront link in your bio, and say which list in each video.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "bio",
+      "Storefront in bio",
+      "phone0",
+      0
+     ],
+     [
+      "list",
+      "Name the list in videos",
+      "film",
+      -0.3
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "bio",
+     "pop"
+    ],
+    [
+     "list",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "And disclose clearly: say you earn from purchases through your storefront.",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "phone0",
+    "chips": [
+     [
+      "disclose",
+      "Disclose clearly",
+      null
+     ],
+     [
+      "earn",
+      "\"I earn from purchases\"",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "disclose",
+     "pop"
+    ],
+    [
+     "earn",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: Amazon reviews your account for Influencer, and US bank and tax details are needed.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "reviews",
+      "Account review",
+      true
+     ],
+     [
+      "bank",
+      "US bank + tax info",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "reviews",
+     "whip"
+    ],
+    [
+     "bank",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [LISTS|lists] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Amazon Associates is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Storefront that converts",
+    "keyword": "LISTS",
+    "tool": "Amazon Associates"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[5|Five] storefront lists that people actually click.",
+   "show": {
+    "type": "checklist",
+    "title": "5 lists",
+    "items": [
+     [
+      "desk",
+      "My desk setup"
+     ],
+     [
+      "twenty",
+      "Under $20"
+     ],
+     [
+      "daily",
+      "What I use daily"
+     ],
+     [
+      "gifts",
+      "Gifts"
+     ],
+     [
+      "beginner",
+      "Beginner kit"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Your Amazon storefront is one long messy list?",
+   "show": {
+    "type": "talk",
+    "mood": 0.4,
+    "hold": "laptop",
+    "chips": [
+     [
+      "storefront",
+      "Amazon storefront",
+      null
+     ],
+     [
+      "organise",
+      "Organise it",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How should you organise your Amazon storefront?",
+   "show": {
+    "type": "talk",
+    "mood": 0.4,
+    "hold": "laptop",
+    "chips": [
+     [
+      "storefront",
+      "Amazon storefront",
+      null
+     ],
+     [
+      "organise",
+      "Organise it",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Makeinfluence: Amazon Associates vs Influencer Program",
+   "url": "https://www.makeinfluence.com/en/academy/amazon-associates-vs-amazon-influencer-program-whats-actually-different"
+  }
+ ],
+ "thumb": {
+  "headline": "Storefront lists\nthat get *clicks*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.3,
+  "sticker": "5 lists",
+  "chip": "Amazon Influencer",
+  "size": 110
+ },
+ "finder_stream": "amazon-associates"
+}

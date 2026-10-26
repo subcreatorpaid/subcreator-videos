@@ -1,0 +1,410 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v035_ugc_usage_rights",
+ "title": "UGC: charge more when brands run it as an ad",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "A brand wants to run your UGC video as a paid ad. That should cost more. Here's why.",
+   "show": {
+    "type": "talk",
+    "mood": 0.3,
+    "hold": "film",
+    "chips": [
+     [
+      "paid",
+      "Paid ad",
+      null
+     ],
+     [
+      "more",
+      "Costs more",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "paid",
+     "pop"
+    ],
+    [
+     "more",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Beginners usually charge fifty to four hundred dollars a video. That base price is for a short, organic post.",
+   "show": {
+    "type": "stat_cards",
+    "title": "BASE PRICE",
+    "cards": [
+     [
+      "fifty",
+      "$50",
+      "per video"
+     ],
+     [
+      "four",
+      "$400",
+      "per video",
+      true
+     ]
+    ],
+    "source": "Insense, Sep 2026"
+   },
+   "sfx": [
+    [
+     "fifty",
+     "card"
+    ],
+    [
+     "four",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "Usage rights cover where they post it, for how long, and whether they pay to boost it.",
+   "show": {
+    "type": "checklist",
+    "title": "Usage rights =",
+    "items": [
+     [
+      "where",
+      "Where it's posted"
+     ],
+     [
+      "long",
+      "For how long"
+     ],
+     [
+      "boost",
+      "Paid boosting or not"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "where",
+     "click"
+    ],
+    [
+     "long",
+     "click"
+    ],
+    [
+     "boost",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Paid ads, more platforms or longer use mean more people see your work, so they cost more.",
+   "show": {
+    "type": "compare",
+    "title": "Quote more for",
+    "cols": [
+     "Base",
+     "Charge more"
+    ],
+    "rows": [
+     [
+      "paid",
+      "Ads",
+      [
+       "Organic",
+       "Paid ads"
+      ]
+     ],
+     [
+      "platforms",
+      "Platforms",
+      [
+       "One",
+       "Several"
+      ]
+     ],
+     [
+      "longer",
+      "Time",
+      [
+       "Short",
+       "Longer use"
+      ]
+     ]
+    ],
+    "best": 1,
+    "best_word": "cost"
+   },
+   "sfx": [
+    [
+     "paid",
+     "pop"
+    ],
+    [
+     "platforms",
+     "pop"
+    ],
+    [
+     "longer",
+     "pop"
+    ],
+    [
+     "cost",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Ask before you quote: where will it run, for how long, and will you put ad money behind it?",
+   "show": {
+    "type": "chat",
+    "name": "Brand",
+    "mark": "Br",
+    "msgs": [
+     [
+      "ask",
+      "Can we use your video?",
+      false
+     ],
+     [
+      "run",
+      "Where will it run, and for how long?",
+      true
+     ],
+     [
+      "money",
+      "Will you put ad money behind it?",
+      true
+     ]
+    ],
+    "mood": -0.2,
+    "hold": "phone0"
+   },
+   "sfx": [
+    [
+     "ask",
+     "pop"
+    ],
+    [
+     "run",
+     "pop"
+    ],
+    [
+     "money",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: rates swing a lot by niche, so get every term in writing before you film.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "film",
+    "items": [
+     [
+      "niche",
+      "Rates vary by niche",
+      true
+     ],
+     [
+      "writing",
+      "Get it in writing",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "niche",
+     "whip"
+    ],
+    [
+     "writing",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [RIGHTS|rights] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Fiverr is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "UGC usage rights",
+    "keyword": "RIGHTS",
+    "tool": "Fiverr"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$50|Fifty] to [$400|four hundred dollars] is the base price. Ads cost more.",
+   "show": {
+    "type": "stat_cards",
+    "title": "BASE PRICE",
+    "cards": [
+     [
+      "fifty",
+      "$50",
+      "per video"
+     ],
+     [
+      "four",
+      "$400",
+      "per video",
+      true
+     ]
+    ],
+    "source": "Insense, Sep 2026"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "A brand turned your video into an ad, and paid you the organic price?",
+   "show": {
+    "type": "talk",
+    "mood": 0.3,
+    "hold": "film",
+    "chips": [
+     [
+      "paid",
+      "Paid ad",
+      null
+     ],
+     [
+      "more",
+      "Costs more",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What should you charge when a brand runs your video as an ad?",
+   "show": {
+    "type": "compare",
+    "title": "Quote more for",
+    "cols": [
+     "Base",
+     "Charge more"
+    ],
+    "rows": [
+     [
+      "paid",
+      "Ads",
+      [
+       "Organic",
+       "Paid ads"
+      ]
+     ],
+     [
+      "platforms",
+      "Platforms",
+      [
+       "One",
+       "Several"
+      ]
+     ],
+     [
+      "longer",
+      "Time",
+      [
+       "Short",
+       "Longer use"
+      ]
+     ]
+    ],
+    "best": 1,
+    "best_word": "cost"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Insense: UGC creator rates (Sep 2026)",
+   "url": "https://insense.pro/blog/ugc-creator-rates"
+  }
+ ],
+ "thumb": {
+  "headline": "Ads = *charge\nmore*",
+  "hero": "face",
+  "hold": "film",
+  "mood": -0.3,
+  "sticker": "Usage rights",
+  "chip": "UGC pricing",
+  "size": 130
+ },
+ "finder_stream": "ugc"
+}

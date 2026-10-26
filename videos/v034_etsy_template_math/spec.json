@@ -1,0 +1,450 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v034_etsy_template_math",
+ "title": "Etsy templates: the full fee math",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Selling templates on Etsy? Here's every fee on a ten dollar sale, and what's left for you.",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "laptop",
+    "chips": [
+     [
+      "templates",
+      "Templates",
+      null
+     ],
+     [
+      "fee",
+      "Every fee",
+      "red"
+     ],
+     [
+      "left",
+      "What's left",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "fee",
+     "thud"
+    ],
+    [
+     "left",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Twenty cents to list it. Six and a half percent transaction fee. About three percent plus twenty-five cents for payment. You keep about [$8.60|eight sixty].",
+   "show": {
+    "type": "fee_split",
+    "label": "$10 template",
+    "mark": "Et",
+    "green": [
+     "$8.60"
+    ],
+    "parts": [
+     [
+      "twenty",
+      "Listing",
+      0.2,
+      "fee"
+     ],
+     [
+      "six",
+      "Transaction 6.5%",
+      0.65,
+      "fee"
+     ],
+     [
+      "three",
+      "Payment ~3% + $0.25",
+      0.55,
+      "fee"
+     ],
+     [
+      "$8.60",
+      "You keep",
+      8.6,
+      "keep"
+     ]
+    ],
+    "source": "Checkout Page, Etsy fees (US)"
+   },
+   "sfx": [
+    [
+     "twenty",
+     "card"
+    ],
+    [
+     "six",
+     "card"
+    ],
+    [
+     "three",
+     "card"
+    ],
+    [
+     "$8.60",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Fifty sales a month at [$8.60|eight sixty] is about [$430|four hundred thirty dollars].",
+   "show": {
+    "type": "calc",
+    "title": "Example: 50 sales",
+    "green": [
+     "$430"
+    ],
+    "rows": [
+     [
+      "fifty",
+      "Sales",
+      "50",
+      null
+     ],
+     [
+      "$8.60",
+      "You keep each",
+      "$8.60",
+      "×"
+     ]
+    ],
+    "result": [
+     "$430",
+     "Per month",
+     430,
+     "$"
+    ],
+    "note": "Example only"
+   },
+   "sfx": [
+    [
+     "fifty",
+     "pop"
+    ],
+    [
+     "$8.60",
+     "pop"
+    ],
+    [
+     "$430",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Templates that sell solve one job: a budget sheet, a content calendar, a media kit for small creators.",
+   "show": {
+    "type": "checklist",
+    "title": "Template ideas",
+    "items": [
+     [
+      "budget",
+      "Budget sheet"
+     ],
+     [
+      "calendar",
+      "Content calendar"
+     ],
+     [
+      "media",
+      "Media kit"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "budget",
+     "click"
+    ],
+    [
+     "calendar",
+     "click"
+    ],
+    [
+     "media",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Use the words buyers type in your title, show the template in use, and make five listings, not one.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "words",
+      "Buyer's words in title",
+      "laptop",
+      0
+     ],
+     [
+      "show",
+      "Show it in use",
+      "phone0",
+      -0.3
+     ],
+     [
+      "five",
+      "Make 5 listings",
+      null,
+      -0.7
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "words",
+     "pop"
+    ],
+    [
+     "show",
+     "pop"
+    ],
+    [
+     "five",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: popular niches are crowded, so pick a narrow audience you understand.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "crowded",
+      "Crowded niches",
+      true
+     ],
+     [
+      "narrow",
+      "Go narrow",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "crowded",
+     "whip"
+    ],
+    [
+     "narrow",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [ETSY|etsy] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Printify is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Etsy template starter",
+    "keyword": "ETSY",
+    "tool": "Printify"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$8.60|Eight sixty]. That's what's left from a [$10|ten dollar] Etsy template.",
+   "show": {
+    "type": "fee_split",
+    "label": "$10 template",
+    "mark": "Et",
+    "green": [
+     "$8.60"
+    ],
+    "parts": [
+     [
+      "twenty",
+      "Listing",
+      0.2,
+      "fee"
+     ],
+     [
+      "six",
+      "Transaction 6.5%",
+      0.65,
+      "fee"
+     ],
+     [
+      "three",
+      "Payment ~3% + $0.25",
+      0.55,
+      "fee"
+     ],
+     [
+      "$8.60",
+      "You keep",
+      8.6,
+      "keep"
+     ]
+    ],
+    "source": "Checkout Page, Etsy fees (US)"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Listed a template on Etsy, and it never sold?",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "words",
+      "Buyer's words in title",
+      "laptop",
+      0
+     ],
+     [
+      "show",
+      "Show it in use",
+      "phone0",
+      -0.3
+     ],
+     [
+      "five",
+      "Make 5 listings",
+      null,
+      -0.7
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What does Etsy really take from a template sale?",
+   "show": {
+    "type": "fee_split",
+    "label": "$10 template",
+    "mark": "Et",
+    "green": [
+     "$8.60"
+    ],
+    "parts": [
+     [
+      "twenty",
+      "Listing",
+      0.2,
+      "fee"
+     ],
+     [
+      "six",
+      "Transaction 6.5%",
+      0.65,
+      "fee"
+     ],
+     [
+      "three",
+      "Payment ~3% + $0.25",
+      0.55,
+      "fee"
+     ],
+     [
+      "$8.60",
+      "You keep",
+      8.6,
+      "keep"
+     ]
+    ],
+    "source": "Checkout Page, Etsy fees (US)"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Checkout Page: Etsy fees",
+   "url": "https://checkoutpage.com/blog/etsy-fees"
+  }
+ ],
+ "thumb": {
+  "headline": "Etsy keeps\n*$1.40* of $10",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": 0.2,
+  "sticker": "You keep ~$8.60",
+  "sticker_color": "green",
+  "chip": "Template fee math",
+  "size": 120
+ },
+ "finder_stream": "etsy-templates"
+}

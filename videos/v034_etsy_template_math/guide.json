@@ -1,0 +1,58 @@
+{
+ "title": "Etsy template starter",
+ "subtitle": "Fees, an example month and 10 template ideas",
+ "sections": [
+  [
+   "Fees (US)",
+   [
+    "$0.20 listing fee",
+    "6.5% transaction fee",
+    "~3% + $0.25 payment processing",
+    "$10 sale: keep about $8.60"
+   ]
+  ],
+  [
+   "Ideas",
+   [
+    "Budget sheet",
+    "Content calendar",
+    "Media kit for small creators",
+    "Rate card",
+    "Brand pitch email pack",
+    "Habit tracker",
+    "Meal planner",
+    "Wedding checklist",
+    "Study planner",
+    "Small business invoice"
+   ]
+  ],
+  [
+   "Listing tips",
+   [
+    "Buyer's search words in the title.",
+    "Mockup photo of it in use.",
+    "Start with 5 listings."
+   ]
+  ]
+ ],
+ "steps": [
+  "Pick a narrow audience.",
+  "Make 5 templates in Canva or Sheets.",
+  "List them with buyer's words."
+ ],
+ "keyword": "ETSY",
+ "sources": [
+  [
+   "Checkout Page: Etsy fees",
+   "https://checkoutpage.com/blog/etsy-fees"
+  ]
+ ],
+ "video": "Etsy templates: the full fee math",
+ "tool": {
+  "id": "printify",
+  "name": "Printify",
+  "earns": "5% of product price for 12 months",
+  "signup": "https://help.printify.com/hc/en-us/articles/4483629612817",
+  "status": "to join"
+ }
+}

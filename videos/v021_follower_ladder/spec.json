@@ -1,0 +1,442 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v021_follower_ladder",
+ "title": "What unlocks at each follower count",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Every follower count unlocks a different way to get paid. Here's the ladder, from zero to ten thousand.",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "phone0",
+    "chips": [
+     [
+      "every",
+      "Each level",
+      null
+     ],
+     [
+      "ladder",
+      "The ladder",
+      null
+     ],
+     [
+      "ten",
+      "0 → 10K",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "ladder",
+     "pop"
+    ],
+    [
+     "ten",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "At zero: UGC, affiliate links and selling your own guide. At fifty, Twitch's affiliate rules can open subs and Bits.",
+   "show": {
+    "type": "ladder",
+    "title": "The follower ladder",
+    "rungs": [
+     [
+      "zero",
+      "0",
+      "UGC · affiliate links · your own guide",
+      null,
+      true
+     ],
+     [
+      "fifty",
+      "50",
+      "Twitch Affiliate (+ watch-time rules)",
+      null,
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "zero",
+     "pop"
+    ],
+    [
+     "fifty",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "At five hundred subscribers, YouTube opens fan funding and Shopping. At one thousand, TikTok Shop affiliate and LIVE gifts open.",
+   "show": {
+    "type": "ladder",
+    "rungs": [
+     [
+      "_0",
+      "0",
+      "UGC · affiliate links · your own guide",
+      null,
+      true
+     ],
+     [
+      "_50",
+      "50",
+      "Twitch Affiliate (+ watch-time rules)",
+      null,
+      true
+     ],
+     [
+      "five",
+      "500",
+      "YouTube fan funding + Shopping",
+      "youtube",
+      true
+     ],
+     [
+      "thousand",
+      "1,000",
+      "TikTok Shop affiliate + LIVE gifts",
+      "tiktok",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "five",
+     "pop"
+    ],
+    [
+     "thousand",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "At ten thousand, plus one hundred thousand monthly views, TikTok's Creator Rewards opens.",
+   "show": {
+    "type": "ladder",
+    "rungs": [
+     [
+      "_0",
+      "0",
+      "UGC · affiliate links · your own guide",
+      null,
+      true
+     ],
+     [
+      "_50",
+      "50",
+      "Twitch Affiliate",
+      null,
+      true
+     ],
+     [
+      "_500",
+      "500",
+      "YouTube fan funding + Shopping",
+      "youtube",
+      true
+     ],
+     [
+      "_1000",
+      "1,000",
+      "TikTok Shop + LIVE gifts",
+      "tiktok",
+      true
+     ],
+     [
+      "ten",
+      "10,000",
+      "TikTok Creator Rewards (+100K views)",
+      "tiktok",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "ten",
+     "pop"
+    ],
+    [
+     "hundred",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "So don't wait for ten thousand. Pick the rung you're on today and start there.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "wait",
+      "Don't wait for 10K",
+      null,
+      0.5
+     ],
+     [
+      "rung",
+      "Find your rung",
+      "phone0",
+      0
+     ],
+     [
+      "start",
+      "Start there today",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "wait",
+     "thud"
+    ],
+    [
+     "rung",
+     "pop"
+    ],
+    [
+     "start",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: each rung has extra rules, like countries and age, so check each program's page before you count on it.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "extra",
+      "Extra rules",
+      true
+     ],
+     [
+      "countries",
+      "Countries + age",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "extra",
+     "whip"
+    ],
+    [
+     "countries",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [LADDER|ladder] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. vidIQ is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "The follower ladder",
+    "keyword": "LADDER",
+    "tool": "vidIQ"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[50|Fifty] followers. That's the first rung on the ladder.",
+   "show": {
+    "type": "ladder",
+    "title": "The follower ladder",
+    "rungs": [
+     [
+      "zero",
+      "0",
+      "UGC · affiliate links · your own guide",
+      null,
+      true
+     ],
+     [
+      "fifty",
+      "50",
+      "Twitch Affiliate (+ watch-time rules)",
+      null,
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Waiting for ten thousand followers before you earn anything?",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "wait",
+      "Don't wait for 10K",
+      null,
+      0.5
+     ],
+     [
+      "rung",
+      "Find your rung",
+      "phone0",
+      0
+     ],
+     [
+      "start",
+      "Start there today",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What can you unlock at five hundred followers?",
+   "show": {
+    "type": "ladder",
+    "rungs": [
+     [
+      "_0",
+      "0",
+      "UGC · affiliate links · your own guide",
+      null,
+      true
+     ],
+     [
+      "_50",
+      "50",
+      "Twitch Affiliate (+ watch-time rules)",
+      null,
+      true
+     ],
+     [
+      "five",
+      "500",
+      "YouTube fan funding + Shopping",
+      "youtube",
+      true
+     ],
+     [
+      "thousand",
+      "1,000",
+      "TikTok Shop affiliate + LIVE gifts",
+      "tiktok",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Tom's Guide: Twitch Affiliate requirements",
+   "url": "https://www.tomsguide.com/us/how-to-become-twitch-affiliate-requirements,news-30486.html"
+  },
+  {
+   "title": "YouTube Help: expanded YouTube Partner Program",
+   "url": "https://support.google.com/youtube/answer/13429240?hl=en"
+  },
+  {
+   "title": "Stack Influence: 5 TikTok monetization paths (Jun 2026)",
+   "url": "https://stackinfluence.com/blog/5-tiktok-monetization-paths-that-pay-creators-in-2026"
+  },
+  {
+   "title": "Metricool: TikTok Creator Rewards requirements",
+   "url": "https://metricool.com/tiktok-creator-next/"
+  }
+ ],
+ "thumb": {
+  "headline": "What pays at\n*0, 50, 500, 1K*",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": -0.4,
+  "sticker": "The ladder",
+  "chip": "Follower count → income",
+  "size": 110
+ },
+ "finder_stream": null
+}

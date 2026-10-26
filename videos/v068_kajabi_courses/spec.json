@@ -1,0 +1,405 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v068_kajabi_courses",
+ "title": "Sell a course: all-in-one or cheap tools? (Kajabi)",
+ "type": "tool",
+ "format": "",
+ "beats": [
+  {
+   "say": "Thinking about a course? First decide: one all-in-one platform, or cheap tools stuck together.",
+   "show": {
+    "type": "talk",
+    "mood": 0.1,
+    "hold": "laptop",
+    "chips": [
+     [
+      "course",
+      "A course",
+      null
+     ],
+     [
+      "all-in-one",
+      "All-in-one?",
+      null
+     ],
+     [
+      "cheap",
+      "Cheap tools?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "all-in-one",
+     "pop"
+    ],
+    [
+     "cheap",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "All-in-one platforms like Kajabi host the course, the sales page, payments and emails in one place.",
+   "show": {
+    "type": "tool_demo",
+    "app": "Kajabi",
+    "input": "Creator Money 101",
+    "input_word": "host",
+    "process": "Building your course site",
+    "process_word": "sales",
+    "outputs": [
+     [
+      "course",
+      "Course"
+     ],
+     [
+      "sales",
+      "Sales page"
+     ],
+     [
+      "emails",
+      "Emails"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "host",
+     "key"
+    ],
+    [
+     "sales",
+     "whoosh"
+    ],
+    [
+     "emails",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Cheap tools means a video host, a checkout, and an email tool you connect yourself.",
+   "show": {
+    "type": "compare",
+    "title": "Two ways",
+    "cols": [
+     "All-in-one",
+     "Cheap tools"
+    ],
+    "rows": [
+     [
+      "video",
+      "Setup",
+      [
+       "One place",
+       "Connect 3 tools"
+      ]
+     ],
+     [
+      "connect",
+      "Cost",
+      [
+       "Monthly plan",
+       "Lower to start"
+      ]
+     ]
+    ],
+    "best": 1,
+    "best_word": "yourself"
+   },
+   "sfx": [
+    [
+     "video",
+     "pop"
+    ],
+    [
+     "connect",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Start cheap. Pre-sell to ten people before you build the whole course. Move to all-in-one when it sells.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "cheap",
+      "Start cheap",
+      "laptop",
+      0
+     ],
+     [
+      "pre-sell",
+      "Pre-sell to 10",
+      "call",
+      -0.3
+     ],
+     [
+      "sells",
+      "Upgrade when it sells",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "cheap",
+     "pop"
+    ],
+    [
+     "pre-sell",
+     "pop"
+    ],
+    [
+     "sells",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Kajabi's affiliate program pays ten to twenty percent recurring, and anyone can apply.",
+   "show": {
+    "type": "stat_cards",
+    "title": "KAJABI AFFILIATE",
+    "green": [
+     "twenty"
+    ],
+    "cards": [
+     [
+      "ten",
+      "10%",
+      "to start"
+     ],
+     [
+      "twenty",
+      "20%",
+      "top tier, recurring",
+      true
+     ]
+    ],
+    "source": "SchoolMaker, Sep 2026"
+   },
+   "sfx": [
+    [
+     "ten",
+     "card"
+    ],
+    [
+     "twenty",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: a course is a lot of work. Prove people want it before you film ten lessons.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "work",
+      "A lot of work",
+      true
+     ],
+     [
+      "prove",
+      "Prove demand first",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "work",
+     "whip"
+    ],
+    [
+     "prove",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [COURSE|course] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Kajabi is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Course: pre-sell first",
+    "keyword": "COURSE",
+    "tool": "Kajabi"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[10|Ten] pre-sales before you build anything.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "cheap",
+      "Start cheap",
+      "laptop",
+      0
+     ],
+     [
+      "pre-sell",
+      "Pre-sell to 10",
+      "call",
+      -0.3
+     ],
+     [
+      "sells",
+      "Upgrade when it sells",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Spent weeks building a course, and nobody bought?",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "cheap",
+      "Start cheap",
+      "laptop",
+      0
+     ],
+     [
+      "pre-sell",
+      "Pre-sell to 10",
+      "call",
+      -0.3
+     ],
+     [
+      "sells",
+      "Upgrade when it sells",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "All-in-one course platform or cheap tools: which first?",
+   "show": {
+    "type": "talk",
+    "mood": 0.1,
+    "hold": "laptop",
+    "chips": [
+     [
+      "course",
+      "A course",
+      null
+     ],
+     [
+      "all-in-one",
+      "All-in-one?",
+      null
+     ],
+     [
+      "cheap",
+      "Cheap tools?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "SchoolMaker: Kajabi affiliate program (Sep 2026)",
+   "url": "https://schoolmaker.com/blog/kajabi-affiliate-program"
+  }
+ ],
+ "thumb": {
+  "headline": "Sell a course:\n*pre-sell first*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.2,
+  "sticker": "All-in-one?",
+  "chip": "Kajabi vs cheap tools",
+  "size": 110
+ },
+ "finder_stream": null
+}

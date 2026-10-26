@@ -1,0 +1,52 @@
+{
+ "title": "Podcast memberships compared",
+ "subtitle": "Spotify vs Patreon for a $5 fan",
+ "sections": [
+  [
+   "Spotify Memberships",
+   [
+    "You keep 90% ($4.50 of $5).",
+    "Needs 100 listeners + 100 hours in 30 days.",
+    "34 markets; contact details only from opted-in fans."
+   ]
+  ],
+  [
+   "Patreon",
+   [
+    "10% platform fee + processing (US card 2.9% + $0.30): ~$4.06 of $5.",
+    "No audience minimum."
+   ]
+  ],
+  [
+   "Use both",
+   [
+    "Spotify for listeners already on Spotify.",
+    "Patreon for fans from YouTube, TikTok, email."
+   ]
+  ]
+ ],
+ "steps": [
+  "Check your Spotify listener numbers.",
+  "Plan one members-only perk.",
+  "Collect emails from day one."
+ ],
+ "keyword": "MEMBERS",
+ "sources": [
+  [
+   "Spotify newsroom: Memberships for creators (20 Oct 2026)",
+   "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/"
+  ],
+  [
+   "Patreon: standard platform fee for new creators",
+   "https://support.patreon.com/hc/en-us/articles/36426991446797"
+  ]
+ ],
+ "video": "Podcast members: Spotify vs Patreon",
+ "tool": {
+  "id": "riverside",
+  "name": "Riverside",
+  "earns": "up to 20% per subscription",
+  "signup": "https://riverside.com/affiliate-program",
+  "status": "to join"
+ }
+}

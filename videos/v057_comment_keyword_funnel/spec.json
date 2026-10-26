@@ -1,0 +1,391 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v057_comment_keyword_funnel",
+ "title": "Why I say 'comment a keyword'",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Ever wonder why creators say comment a word for a free guide? Here's what happens behind it.",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "phone0",
+    "chips": [
+     [
+      "comment",
+      "Comment a word",
+      null
+     ],
+     [
+      "guide",
+      "Free guide",
+      "green"
+     ],
+     [
+      "behind",
+      "Behind it?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "behind",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "You comment the keyword. An auto-reply sends you a message with a link.",
+   "show": {
+    "type": "chat",
+    "name": "Auto-reply",
+    "mark": "@",
+    "msgs": [
+     [
+      "comment",
+      "GUIDE",
+      true
+     ],
+     [
+      "auto-reply",
+      "Here's your free guide! Where should I send it?",
+      false
+     ]
+    ],
+    "mood": -0.3,
+    "hold": "phone0"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "auto-reply",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The link asks for your email, and the guide arrives in your inbox. Now the creator can reach you on any platform.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "link",
+      "Link → email form",
+      "phone0",
+      0
+     ],
+     [
+      "inbox",
+      "Guide in your inbox",
+      "laptop",
+      -0.3
+     ],
+     [
+      "platform",
+      "Reach on any platform",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "link",
+     "pop"
+    ],
+    [
+     "inbox",
+     "pop"
+    ],
+    [
+     "platform",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Comments also tell the app people care about the video, so it can reach more viewers.",
+   "show": {
+    "type": "talk",
+    "mood": -0.6,
+    "hold": "phone0",
+    "chips": [
+     [
+      "comments",
+      "More comments",
+      null
+     ],
+     [
+      "reach",
+      "More reach",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "comments",
+     "pop"
+    ],
+    [
+     "reach",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "To set it up: one guide, one keyword per video, a free email tool like Kit, and an auto-reply tool.",
+   "show": {
+    "type": "checklist",
+    "title": "Set it up",
+    "items": [
+     [
+      "guide",
+      "One free guide"
+     ],
+     [
+      "keyword",
+      "One keyword per video"
+     ],
+     [
+      "kit",
+      "Email tool (Kit free plan)"
+     ],
+     [
+      "auto-reply",
+      "Auto-reply tool"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "guide",
+     "click"
+    ],
+    [
+     "keyword",
+     "click"
+    ],
+    [
+     "kit",
+     "click"
+    ],
+    [
+     "auto-reply",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: the guide has to be really useful, or people unsubscribe the same day.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "useful",
+      "Must be really useful",
+      true
+     ],
+     [
+      "unsubscribe",
+      "Or they unsubscribe",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "useful",
+     "whip"
+    ],
+    [
+     "unsubscribe",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [FUNNEL|funnel] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Kit is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Comment-keyword funnel",
+    "keyword": "FUNNEL",
+    "tool": "Kit"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[1|One] word in the comments. Here's what it starts.",
+   "show": {
+    "type": "chat",
+    "name": "Auto-reply",
+    "mark": "@",
+    "msgs": [
+     [
+      "comment",
+      "GUIDE",
+      true
+     ],
+     [
+      "auto-reply",
+      "Here's your free guide! Where should I send it?",
+      false
+     ]
+    ],
+    "mood": -0.3,
+    "hold": "phone0"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Getting views, but no way to reach those people again?",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "link",
+      "Link → email form",
+      "phone0",
+      0
+     ],
+     [
+      "inbox",
+      "Guide in your inbox",
+      "laptop",
+      -0.3
+     ],
+     [
+      "platform",
+      "Reach on any platform",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Why do creators say comment a word for a free guide?",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "phone0",
+    "chips": [
+     [
+      "comment",
+      "Comment a word",
+      null
+     ],
+     [
+      "guide",
+      "Free guide",
+      "green"
+     ],
+     [
+      "behind",
+      "Behind it?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Email Vendor Selection: Kit pricing (Aug 2026)",
+   "url": "https://www.emailvendorselection.com/kit-pricing/"
+  }
+ ],
+ "thumb": {
+  "headline": "Why *'comment\na keyword'*?",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": -0.3,
+  "sticker": "The funnel",
+  "chip": "Behind the free guide",
+  "size": 110
+ },
+ "finder_stream": "email-newsletter"
+}

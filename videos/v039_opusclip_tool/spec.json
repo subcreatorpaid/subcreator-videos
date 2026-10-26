@@ -1,0 +1,388 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v039_opusclip_tool",
+ "title": "One long video, ten Shorts (OpusClip)",
+ "type": "tool",
+ "format": "",
+ "beats": [
+  {
+   "say": "Posting every day takes hours. Here's how one long video becomes a week of Shorts.",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "laptop",
+    "chips": [
+     [
+      "hours",
+      "Hours a day",
+      "red"
+     ],
+     [
+      "week",
+      "A week of Shorts",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "hours",
+     "thud"
+    ],
+    [
+     "week",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Paste a long video into OpusClip. It finds the strongest moments and cuts them into vertical clips with captions.",
+   "show": {
+    "type": "tool_demo",
+    "app": "OpusClip",
+    "input": "podcast-ep-12.mp4",
+    "input_word": "paste",
+    "process": "Finding the best moments",
+    "process_word": "finds",
+    "outputs": [
+     [
+      "vertical",
+      "Clip 1"
+     ],
+     [
+      "vertical",
+      "Clip 2"
+     ],
+     [
+      "captions",
+      "Clip 3"
+     ],
+     [
+      "captions",
+      "+ captions"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "paste",
+     "drop"
+    ],
+    [
+     "finds",
+     "whoosh"
+    ],
+    [
+     "vertical",
+     "pop"
+    ],
+    [
+     "captions",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "You still choose. Keep the clips that make sense alone, and fix the first line of each one.",
+   "show": {
+    "type": "checklist",
+    "title": "Before you post",
+    "items": [
+     [
+      "alone",
+      "Makes sense alone"
+     ],
+     [
+      "first",
+      "Strong first line"
+     ],
+     [
+      "fix",
+      "Captions correct"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "alone",
+     "click"
+    ],
+    [
+     "first",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Post one a day across TikTok, Reels and Shorts, and point every clip to the full video or your free guide.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "one",
+      "One a day",
+      "phone0",
+      0
+     ],
+     [
+      "tiktok",
+      "TikTok · Reels · Shorts",
+      "phone0",
+      -0.3
+     ],
+     [
+      "guide",
+      "Point to your guide",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "one",
+     "pop"
+    ],
+    [
+     "tiktok",
+     "pop"
+    ],
+    [
+     "guide",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "And OpusClip's affiliate program pays twenty-five percent of what people you refer pay, for at least the first year.",
+   "show": {
+    "type": "stat_cards",
+    "title": "OPUSCLIP AFFILIATE",
+    "green": [
+     "twenty-five"
+    ],
+    "cards": [
+     [
+      "twenty-five",
+      "25%",
+      "of their payments",
+      true
+     ],
+     [
+      "year",
+      "1st year+",
+      "at least"
+     ]
+    ],
+    "source": "OpusClip affiliate page"
+   },
+   "sfx": [
+    [
+     "twenty-five",
+     "ding"
+    ],
+    [
+     "year",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: the free plan has limits, and AI picks aren't always your best moments, so review each clip.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "free",
+      "Free plan limits",
+      true
+     ],
+     [
+      "review",
+      "Review every clip",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "free",
+     "whip"
+    ],
+    [
+     "review",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [CLIPS|clips] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. OpusClip is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "One video, a week of Shorts",
+    "keyword": "CLIPS",
+    "tool": "OpusClip"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[1|One] long video. A week of Shorts.",
+   "show": {
+    "type": "tool_demo",
+    "app": "OpusClip",
+    "input": "podcast-ep-12.mp4",
+    "input_word": "paste",
+    "process": "Finding the best moments",
+    "process_word": "finds",
+    "outputs": [
+     [
+      "vertical",
+      "Clip 1"
+     ],
+     [
+      "vertical",
+      "Clip 2"
+     ],
+     [
+      "captions",
+      "Clip 3"
+     ],
+     [
+      "captions",
+      "+ captions"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Spending hours editing every single Short?",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "laptop",
+    "chips": [
+     [
+      "hours",
+      "Hours a day",
+      "red"
+     ],
+     [
+      "week",
+      "A week of Shorts",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do you post every day without editing all day?",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "laptop",
+    "chips": [
+     [
+      "hours",
+      "Hours a day",
+      "red"
+     ],
+     [
+      "week",
+      "A week of Shorts",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "OpusClip affiliate program",
+   "url": "https://www.opus.pro/affiliate"
+  }
+ ],
+ "thumb": {
+  "headline": "1 video →\n*a week* of Shorts",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.5,
+  "sticker": "OpusClip",
+  "chip": "Repurpose workflow",
+  "size": 110
+ },
+ "finder_stream": null
+}

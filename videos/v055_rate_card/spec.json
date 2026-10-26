@@ -1,0 +1,418 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v055_rate_card",
+ "title": "Make a UGC rate card in 10 minutes",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "A brand asks for your rates, and you send a long message. Send a rate card instead.",
+   "show": {
+    "type": "talk",
+    "mood": 0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "rates",
+      "Your rates?",
+      null
+     ],
+     [
+      "card",
+      "Send a rate card",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "rates",
+     "pop"
+    ],
+    [
+     "card",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Row one: one video, your base price for a short organic post.",
+   "show": {
+    "type": "compare",
+    "title": "Rate card",
+    "cols": [
+     "Item",
+     "Price"
+    ],
+    "rows": [
+     [
+      "one",
+      "1 video",
+      [
+       "Organic, 1 platform",
+       "$ base"
+      ]
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "one",
+     "pop"
+    ],
+    [
+     "base",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Row two: a bundle of three videos at a small discount. Row three: extra hooks for testing.",
+   "show": {
+    "type": "compare",
+    "title": "Rate card",
+    "cols": [
+     "Item",
+     "Price"
+    ],
+    "rows": [
+     [
+      "_1",
+      "1 video",
+      [
+       "Organic, 1 platform",
+       "$ base"
+      ]
+     ],
+     [
+      "bundle",
+      "3 videos",
+      [
+       "Bundle",
+       "small discount"
+      ]
+     ],
+     [
+      "hooks",
+      "Extra hooks",
+      [
+       "For testing",
+       "add-on"
+      ]
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "bundle",
+     "pop"
+    ],
+    [
+     "hooks",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Row four: paid ad use, priced by how long they run it.",
+   "show": {
+    "type": "compare",
+    "title": "Rate card",
+    "cols": [
+     "Item",
+     "Price"
+    ],
+    "rows": [
+     [
+      "_1",
+      "1 video",
+      [
+       "Organic",
+       "$ base"
+      ]
+     ],
+     [
+      "_2",
+      "3 videos",
+      [
+       "Bundle",
+       "discount"
+      ]
+     ],
+     [
+      "_3",
+      "Extra hooks",
+      [
+       "Testing",
+       "add-on"
+      ]
+     ],
+     [
+      "paid",
+      "Paid ad use",
+      [
+       "30/90 days",
+       "+ extra"
+      ],
+      [
+       1
+      ]
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "paid",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Beginners usually charge fifty to four hundred dollars a video, so set your base inside that range.",
+   "show": {
+    "type": "stat_cards",
+    "title": "BEGINNER RANGE",
+    "cards": [
+     [
+      "fifty",
+      "$50",
+      "per video"
+     ],
+     [
+      "four",
+      "$400",
+      "per video",
+      true
+     ]
+    ],
+    "source": "Insense, Sep 2026"
+   },
+   "sfx": [
+    [
+     "fifty",
+     "card"
+    ],
+    [
+     "four",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: a rate card is a starting point, so adjust for big usage or rush deadlines.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "starting",
+      "A starting point",
+      false
+     ],
+     [
+      "rush",
+      "Adjust for rush + usage",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "starting",
+     "whip"
+    ],
+    [
+     "rush",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [RATES|rates] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Kit is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "UGC rate card template",
+    "keyword": "RATES",
+    "tool": "Kit"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[4|Four] rows. That's your whole UGC rate card.",
+   "show": {
+    "type": "compare",
+    "title": "Rate card",
+    "cols": [
+     "Item",
+     "Price"
+    ],
+    "rows": [
+     [
+      "_1",
+      "1 video",
+      [
+       "Organic",
+       "$ base"
+      ]
+     ],
+     [
+      "_2",
+      "3 videos",
+      [
+       "Bundle",
+       "discount"
+      ]
+     ],
+     [
+      "_3",
+      "Extra hooks",
+      [
+       "Testing",
+       "add-on"
+      ]
+     ],
+     [
+      "paid",
+      "Paid ad use",
+      [
+       "30/90 days",
+       "+ extra"
+      ],
+      [
+       1
+      ]
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "A brand asks your rates, and you write them an essay?",
+   "show": {
+    "type": "talk",
+    "mood": 0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "rates",
+      "Your rates?",
+      null
+     ],
+     [
+      "card",
+      "Send a rate card",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What should a UGC rate card include?",
+   "show": {
+    "type": "compare",
+    "title": "Rate card",
+    "cols": [
+     "Item",
+     "Price"
+    ],
+    "rows": [
+     [
+      "one",
+      "1 video",
+      [
+       "Organic, 1 platform",
+       "$ base"
+      ]
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Insense: UGC creator rates (Sep 2026)",
+   "url": "https://insense.pro/blog/ugc-creator-rates"
+  }
+ ],
+ "thumb": {
+  "headline": "UGC rate card\nin *10 min*",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": -0.3,
+  "sticker": "4 rows",
+  "chip": "Template inside",
+  "size": 120
+ },
+ "finder_stream": "ugc"
+}

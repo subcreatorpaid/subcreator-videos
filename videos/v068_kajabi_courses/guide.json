@@ -1,0 +1,47 @@
+{
+ "title": "Course: pre-sell first",
+ "subtitle": "Validate, then choose your platform",
+ "sections": [
+  [
+   "Two ways",
+   [
+    "All-in-one (Kajabi): course, sales page, payments, emails together.",
+    "Cheap tools: video host + checkout + email tool."
+   ]
+  ],
+  [
+   "Pre-sell",
+   [
+    "Write the outline and the promise.",
+    "Offer it to your audience at an early price.",
+    "Build only after 10 people pay."
+   ]
+  ],
+  [
+   "Affiliate",
+   [
+    "Kajabi: 10-20% recurring (tiered), 30-day cookie."
+   ]
+  ]
+ ],
+ "steps": [
+  "Write a 5-lesson outline.",
+  "Post a pre-sale offer.",
+  "Build after 10 sales."
+ ],
+ "keyword": "COURSE",
+ "sources": [
+  [
+   "SchoolMaker: Kajabi affiliate program (Sep 2026)",
+   "https://schoolmaker.com/blog/kajabi-affiliate-program"
+  ]
+ ],
+ "video": "Sell a course: all-in-one or cheap tools? (Kajabi)",
+ "tool": {
+  "id": "kajabi",
+  "name": "Kajabi",
+  "earns": "10-20% recurring (tiered)",
+  "signup": "https://kajabi.com/partners",
+  "status": "to join"
+ }
+}

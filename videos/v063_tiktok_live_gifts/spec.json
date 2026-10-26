@@ -1,0 +1,357 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v063_tiktok_live_gifts",
+ "title": "TikTok LIVE gifts: how they turn into money",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Viewers sent you gifts on TikTok LIVE. Here's how those gifts turn into money.",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "gifts",
+      "LIVE gifts",
+      "green"
+     ],
+     [
+      "money",
+      "→ money?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "gifts",
+     "ding"
+    ],
+    [
+     "money",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Creator guides say LIVE opens at around one thousand followers, and you must be eighteen to receive gifts.",
+   "show": {
+    "type": "checklist",
+    "title": "To go LIVE (reported)",
+    "items": [
+     [
+      "thousand",
+      "~1,000 followers"
+     ],
+     [
+      "eighteen",
+      "18+ for gifts"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "thousand",
+     "click"
+    ],
+    [
+     "eighteen",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Viewers buy coins, send gifts, and gifts become diamonds you can cash out.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "coins",
+      "Viewers buy coins",
+      "phone0",
+      0
+     ],
+     [
+      "gifts",
+      "They send gifts",
+      "phone0",
+      -0.3
+     ],
+     [
+      "diamonds",
+      "Diamonds → cash",
+      "money",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "coins",
+     "pop"
+    ],
+    [
+     "gifts",
+     "pop"
+    ],
+    [
+     "diamonds",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Plan each LIVE: a clear topic, a start time you post in advance, and a reason to stay, like a live Q and A.",
+   "show": {
+    "type": "checklist",
+    "title": "Plan each LIVE",
+    "items": [
+     [
+      "topic",
+      "A clear topic"
+     ],
+     [
+      "time",
+      "Start time posted ahead"
+     ],
+     [
+      "stay",
+      "A reason to stay"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "topic",
+     "click"
+    ],
+    [
+     "time",
+     "click"
+    ],
+    [
+     "stay",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Thank gifters by name. It costs nothing and keeps people coming back.",
+   "show": {
+    "type": "talk",
+    "mood": -0.7,
+    "hold": "phone0",
+    "chips": [
+     [
+      "thank",
+      "Thank by name",
+      "green"
+     ],
+     [
+      "back",
+      "They come back",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "thank",
+     "ding"
+    ],
+    [
+     "back",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: TikTok doesn't publish a fixed gift-to-cash rate here, and rules vary by country, so check in your app.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "rate",
+      "No fixed public rate",
+      true
+     ],
+     [
+      "country",
+      "Varies by country",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "rate",
+     "whip"
+    ],
+    [
+     "country",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [LIVE|live] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Riverside is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "TikTok LIVE plan",
+    "keyword": "LIVE",
+    "tool": "Riverside"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[1,000|One thousand] followers. That's when TikTok LIVE gifts open, reportedly.",
+   "show": {
+    "type": "checklist",
+    "title": "To go LIVE (reported)",
+    "items": [
+     [
+      "thousand",
+      "~1,000 followers"
+     ],
+     [
+      "eighteen",
+      "18+ for gifts"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Going LIVE to an empty room?",
+   "show": {
+    "type": "checklist",
+    "title": "Plan each LIVE",
+    "items": [
+     [
+      "topic",
+      "A clear topic"
+     ],
+     [
+      "time",
+      "Start time posted ahead"
+     ],
+     [
+      "stay",
+      "A reason to stay"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do TikTok LIVE gifts turn into money?",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "gifts",
+      "LIVE gifts",
+      "green"
+     ],
+     [
+      "money",
+      "→ money?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Stack Influence: 5 TikTok monetization paths (Jun 2026)",
+   "url": "https://stackinfluence.com/blog/5-tiktok-monetization-paths-that-pay-creators-in-2026"
+  }
+ ],
+ "thumb": {
+  "headline": "LIVE gifts\n→ *real money*?",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": -0.4,
+  "sticker": "Coins → diamonds",
+  "chip": "TikTok LIVE explained",
+  "size": 120
+ },
+ "finder_stream": null
+}

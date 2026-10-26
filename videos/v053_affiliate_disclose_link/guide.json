@@ -1,0 +1,46 @@
+{
+ "title": "Affiliate disclosure",
+ "subtitle": "Copy-paste lines for captions and videos",
+ "sections": [
+  [
+   "Caption lines",
+   [
+    "I earn a commission if you buy through this link.",
+    "Affiliate link: I may earn a commission at no extra cost to you."
+   ]
+  ],
+  [
+   "Video lines",
+   [
+    "Say: 'This is my affiliate link, so I earn if you buy.'",
+    "Show the same words on screen."
+   ]
+  ],
+  [
+   "Avoid",
+   [
+    "Disclosure only in your profile, at the end, behind MORE, or in hashtags."
+   ]
+  ]
+ ],
+ "steps": [
+  "Add the line to your caption template.",
+  "Add the spoken line to your script template.",
+  "Fix your last 5 posts."
+ ],
+ "keyword": "LINKS",
+ "sources": [
+  [
+   "FTC: Disclosures 101 for social media influencers",
+   "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+  ]
+ ],
+ "video": "Affiliate links: disclose before the link",
+ "tool": {
+  "id": "beehiiv",
+  "name": "beehiiv",
+  "earns": "50-60% of what they pay for 12 months",
+  "signup": "https://www.beehiiv.com/partners",
+  "status": "joined"
+ }
+}

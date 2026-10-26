@@ -1,0 +1,397 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v037_free_newsletter_start",
+ "title": "Start a newsletter for $0",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "You can start a newsletter today for zero dollars. Here's what each free option costs you later.",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "zero",
+      "$0 to start",
+      "green"
+     ],
+     [
+      "later",
+      "Costs later?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "zero",
+     "ding"
+    ],
+    [
+     "later",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Kit is free up to ten thousand subscribers. Substack is free, but takes ten percent once you charge.",
+   "show": {
+    "type": "compare",
+    "title": "Free newsletter options",
+    "cols": [
+     "Kit",
+     "Substack"
+    ],
+    "rows": [
+     [
+      "ten",
+      "Free up to",
+      [
+       "10,000 subs",
+       "Unlimited"
+      ]
+     ],
+     [
+      "charge",
+      "When you charge",
+      [
+       "Paid plan $39+",
+       "10% + Stripe"
+      ],
+      [
+       1
+      ]
+     ]
+    ],
+    "source": "Email Vendor Selection; SchoolMaker"
+   },
+   "sfx": [
+    [
+     "kit",
+     "pop"
+    ],
+    [
+     "substack",
+     "pop"
+    ],
+    [
+     "charge",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Both let you send unlimited free emails to grow the list first.",
+   "show": {
+    "type": "talk",
+    "mood": -0.5,
+    "hold": "laptop",
+    "chips": [
+     [
+      "unlimited",
+      "Unlimited emails",
+      "green"
+     ],
+     [
+      "grow",
+      "Grow first",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "unlimited",
+     "ding"
+    ],
+    [
+     "grow",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Give people a reason to join: a free guide, a checklist, or a weekly tip they can use the same day.",
+   "show": {
+    "type": "checklist",
+    "title": "Reasons to join",
+    "items": [
+     [
+      "guide",
+      "A free guide"
+     ],
+     [
+      "checklist",
+      "A checklist"
+     ],
+     [
+      "tip",
+      "A weekly tip"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "guide",
+     "click"
+    ],
+    [
+     "checklist",
+     "click"
+    ],
+    [
+     "tip",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Then put the sign-up link in your bio and mention it at the end of every video.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "bio",
+      "Link in bio",
+      "phone0",
+      0
+     ],
+     [
+      "mention",
+      "Mention it in videos",
+      "film",
+      -0.3
+     ],
+     [
+      "every",
+      "Every video",
+      "laptop",
+      -0.8
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "bio",
+     "pop"
+    ],
+    [
+     "mention",
+     "pop"
+    ],
+    [
+     "every",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: free plans have limits, like branding and fewer automations, so check them as you grow.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "limits",
+      "Free plan limits",
+      true
+     ],
+     [
+      "branding",
+      "Branding + automations",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "limits",
+     "whip"
+    ],
+    [
+     "branding",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [LIST|list] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Kit is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Newsletter for $0",
+    "keyword": "LIST",
+    "tool": "Kit"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$0|Zero dollars]. That's what a newsletter costs to start.",
+   "show": {
+    "type": "talk",
+    "mood": -0.3,
+    "hold": "laptop",
+    "chips": [
+     [
+      "zero",
+      "$0 to start",
+      "green"
+     ],
+     [
+      "later",
+      "Costs later?",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "If your account vanished tomorrow, how would you reach your followers?",
+   "show": {
+    "type": "checklist",
+    "title": "Reasons to join",
+    "items": [
+     [
+      "guide",
+      "A free guide"
+     ],
+     [
+      "checklist",
+      "A checklist"
+     ],
+     [
+      "tip",
+      "A weekly tip"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Kit or Substack: which free newsletter is right for you?",
+   "show": {
+    "type": "compare",
+    "title": "Free newsletter options",
+    "cols": [
+     "Kit",
+     "Substack"
+    ],
+    "rows": [
+     [
+      "ten",
+      "Free up to",
+      [
+       "10,000 subs",
+       "Unlimited"
+      ]
+     ],
+     [
+      "charge",
+      "When you charge",
+      [
+       "Paid plan $39+",
+       "10% + Stripe"
+      ],
+      [
+       1
+      ]
+     ]
+    ],
+    "source": "Email Vendor Selection; SchoolMaker"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Email Vendor Selection: Kit pricing (Aug 2026)",
+   "url": "https://www.emailvendorselection.com/kit-pricing/"
+  },
+  {
+   "title": "SchoolMaker: Substack pricing (Sep 2026)",
+   "url": "https://schoolmaker.com/blog/substack-pricing"
+  }
+ ],
+ "thumb": {
+  "headline": "Newsletter\nfor *$0*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.5,
+  "sticker": "Kit vs Substack",
+  "chip": "Free options compared",
+  "size": 140
+ },
+ "finder_stream": "email-newsletter"
+}

@@ -1,0 +1,50 @@
+{
+ "title": "Remote podcast setup",
+ "subtitle": "Record guests well, then turn episodes into clips and members",
+ "sections": [
+  [
+   "Record",
+   [
+    "Riverside records each person locally and uploads separate tracks.",
+    "Mic 5-10 cm from your mouth; quiet, soft room."
+   ]
+  ],
+  [
+   "Repurpose",
+   [
+    "Cut 3 clips per episode for Shorts and TikTok."
+   ]
+  ],
+  [
+   "Get paid",
+   [
+    "Spotify Memberships: 100 listeners + 100 hours in 30 days; you keep 90%.",
+    "Riverside affiliate: up to 20% per subscription."
+   ]
+  ]
+ ],
+ "steps": [
+  "Book one guest.",
+  "Record a 20-minute episode.",
+  "Cut 3 clips the same day."
+ ],
+ "keyword": "PODCAST",
+ "sources": [
+  [
+   "Riverside affiliate program",
+   "https://riverside.com/affiliate-program"
+  ],
+  [
+   "Spotify newsroom: Memberships for creators (20 Oct 2026)",
+   "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/"
+  ]
+ ],
+ "video": "Record a studio-quality podcast remotely (Riverside)",
+ "tool": {
+  "id": "riverside",
+  "name": "Riverside",
+  "earns": "up to 20% per subscription",
+  "signup": "https://riverside.com/affiliate-program",
+  "status": "to join"
+ }
+}

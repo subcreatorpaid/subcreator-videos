@@ -1,0 +1,364 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v048_pitch_email",
+ "title": "The 5-line brand pitch email",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Brands ignore long pitch emails. Here's a five-line pitch that gets read.",
+   "show": {
+    "type": "talk",
+    "mood": 0.5,
+    "hold": "laptop",
+    "chips": [
+     [
+      "long",
+      "Long emails",
+      "red"
+     ],
+     [
+      "five",
+      "5 lines",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "long",
+     "thud"
+    ],
+    [
+     "five",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Line one: who you are, in one sentence. Line two: why this brand, with one specific detail.",
+   "show": {
+    "type": "chat",
+    "name": "Pitch email",
+    "mark": "@",
+    "msgs": [
+     [
+      "who",
+      "Hi! I make short videos for people starting a side income.",
+      true
+     ],
+     [
+      "brand",
+      "Your budget app is the one I actually use for my creator money.",
+      true
+     ]
+    ],
+    "hold": "laptop",
+    "mood": -0.2
+   },
+   "sfx": [
+    [
+     "who",
+     "pop"
+    ],
+    [
+     "brand",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Line three: your idea for them. Line four: a link to three samples. Line five: one easy question.",
+   "show": {
+    "type": "chat",
+    "name": "Pitch email",
+    "mark": "@",
+    "msgs": [
+     [
+      "idea",
+      "Idea: a 30-second 'my first $100' video using it.",
+      true
+     ],
+     [
+      "samples",
+      "3 samples: yourname.com/work",
+      true
+     ],
+     [
+      "question",
+      "Open to a quick test video?",
+      true
+     ]
+    ],
+    "hold": "laptop",
+    "mood": -0.4
+   },
+   "sfx": [
+    [
+     "idea",
+     "pop"
+    ],
+    [
+     "samples",
+     "pop"
+    ],
+    [
+     "question",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Send it to the marketing or partnerships email on their website, not a random DM.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "marketing",
+      "Find their partnerships email",
+      "laptop",
+      0
+     ],
+     [
+      "send",
+      "Send it",
+      null,
+      -0.5
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "marketing",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Follow up once after a week. Then move on to the next brand.",
+   "show": {
+    "type": "timeline",
+    "points": [
+     [
+      "_0",
+      "Day 0",
+      "pitch"
+     ],
+     [
+      "week",
+      "Day 7",
+      "one follow-up"
+     ],
+     [
+      "move",
+      "Then",
+      "next brand",
+      "green"
+     ]
+    ],
+    "hold": "laptop"
+   },
+   "sfx": [
+    [
+     "week",
+     "pop"
+    ],
+    [
+     "move",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: most pitches get no reply. Send ten a week and track them in a simple sheet.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "reply",
+      "Most get no reply",
+      true
+     ],
+     [
+      "ten",
+      "Send 10 a week",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "reply",
+     "whip"
+    ],
+    [
+     "ten",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [PITCH|pitch] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Kit is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "The 5-line pitch",
+    "keyword": "PITCH",
+    "tool": "Kit"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[5|Five] lines. That's the whole pitch email.",
+   "show": {
+    "type": "chat",
+    "name": "Pitch email",
+    "mark": "@",
+    "msgs": [
+     [
+      "who",
+      "Hi! I make short videos for people starting a side income.",
+      true
+     ],
+     [
+      "brand",
+      "Your budget app is the one I actually use for my creator money.",
+      true
+     ]
+    ],
+    "hold": "laptop",
+    "mood": -0.2
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Sent brands long emails, and heard nothing back?",
+   "show": {
+    "type": "talk",
+    "mood": 0.5,
+    "hold": "laptop",
+    "chips": [
+     [
+      "long",
+      "Long emails",
+      "red"
+     ],
+     [
+      "five",
+      "5 lines",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What should a brand pitch email say?",
+   "show": {
+    "type": "chat",
+    "name": "Pitch email",
+    "mark": "@",
+    "msgs": [
+     [
+      "who",
+      "Hi! I make short videos for people starting a side income.",
+      true
+     ],
+     [
+      "brand",
+      "Your budget app is the one I actually use for my creator money.",
+      true
+     ]
+    ],
+    "hold": "laptop",
+    "mood": -0.2
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Insense: UGC creator rates (Sep 2026)",
+   "url": "https://insense.pro/blog/ugc-creator-rates"
+  }
+ ],
+ "thumb": {
+  "headline": "The *5-line*\npitch",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.3,
+  "sticker": "Gets read",
+  "chip": "Brand pitch template",
+  "size": 140
+ },
+ "finder_stream": "ugc"
+}

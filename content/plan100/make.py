@@ -33,6 +33,7 @@ for r in rows:
     for i, b in enumerate(json.load(open(ROOT / "videos" / r["slug"] / "spec.json"))["beats"]):
         ws = spoken(b["say"]); ks = []; keys(b["show"], ks); ks += [s[0] for s in b["sfx"] if isinstance(s[0], str)]
         for k in ks:
+            if k.startswith("_"): continue  # shown from the start of the beat on purpose
             k2 = k.lower().strip(".")
             if not any(w == k2 or w.startswith(k2) for w in ws): bad.append((r["slug"], i + 1, k))
 for x in bad: print("timing word not spoken:", x)

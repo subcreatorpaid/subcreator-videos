@@ -1,0 +1,49 @@
+{
+ "title": "Comment-keyword funnel",
+ "subtitle": "Build the free-guide funnel step by step",
+ "sections": [
+  [
+   "How it works",
+   [
+    "Viewer comments the keyword.",
+    "Auto-reply DM sends a link.",
+    "Link opens an email form.",
+    "Email sequence delivers the guide."
+   ]
+  ],
+  [
+   "Tools",
+   [
+    "Email: Kit (free up to 10,000 subscribers).",
+    "Auto-reply: a DM automation tool for Instagram/TikTok."
+   ]
+  ],
+  [
+   "Make it work",
+   [
+    "One keyword per video, said AND shown on screen.",
+    "A guide people can use the same day."
+   ]
+  ]
+ ],
+ "steps": [
+  "Write your one-page guide.",
+  "Set up the Kit form + 1-email sequence.",
+  "Add the keyword to your next video."
+ ],
+ "keyword": "FUNNEL",
+ "sources": [
+  [
+   "Email Vendor Selection: Kit pricing (Aug 2026)",
+   "https://www.emailvendorselection.com/kit-pricing/"
+  ]
+ ],
+ "video": "Why I say 'comment a keyword'",
+ "tool": {
+  "id": "kit",
+  "name": "Kit",
+  "earns": "50% of their first 12 months",
+  "signup": "https://kit.com/affiliate",
+  "status": "to join"
+ }
+}

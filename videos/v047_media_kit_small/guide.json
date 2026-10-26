@@ -1,0 +1,48 @@
+{
+ "title": "Small-creator media kit",
+ "subtitle": "A 3-page template",
+ "sections": [
+  [
+   "Page 1: your work",
+   [
+    "3 sample videos (links or stills).",
+    "One line on what each was meant to do."
+   ]
+  ],
+  [
+   "Page 2: your audience",
+   [
+    "Age range, top countries, interests (from app insights).",
+    "Engagement on your best posts."
+   ]
+  ],
+  [
+   "Page 3: your offer",
+   [
+    "What's included (length, edits, raw files).",
+    "Base price (beginners usually $50-$400 per video).",
+    "Paid ad use and longer use cost extra."
+   ]
+  ]
+ ],
+ "steps": [
+  "Pick your 3 best samples.",
+  "Screenshot your audience insights.",
+  "Write your base offer."
+ ],
+ "keyword": "KIT",
+ "sources": [
+  [
+   "Insense: UGC creator rates (Sep 2026)",
+   "https://insense.pro/blog/ugc-creator-rates"
+  ]
+ ],
+ "video": "A media kit when you're small",
+ "tool": {
+  "id": "kit",
+  "name": "Kit",
+  "earns": "50% of their first 12 months",
+  "signup": "https://kit.com/affiliate",
+  "status": "to join"
+ }
+}

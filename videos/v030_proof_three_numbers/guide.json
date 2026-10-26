@@ -1,0 +1,49 @@
+{
+ "title": "Proof creators get paid",
+ "subtitle": "Official numbers, and how to read them",
+ "sections": [
+  [
+   "The numbers",
+   [
+    "ElevenLabs: $22M+ paid to 10,400+ voice creators (May 2026).",
+    "beehiiv: $25,000 from Boosts for one newsletter at 31,000 subscribers (Apr 2025).",
+    "YouTube Shopping: 1.3M+ creators enrolled (Sep 2026)."
+   ]
+  ],
+  [
+   "How to read them",
+   [
+    "Totals across many creators prove a stream is real.",
+    "They don't predict what one person earns; most earn far less than the top."
+   ]
+  ]
+ ],
+ "steps": [
+  "Pick the stream that fits you.",
+  "Set a 30-day test.",
+  "Track your own numbers weekly."
+ ],
+ "keyword": "PROOF",
+ "sources": [
+  [
+   "ElevenLabs: $22 million earned by voice creators (May 2026)",
+   "https://elevenlabs.io/blog/22-million-earned-by-voice-creators-on-elevenlabs"
+  ],
+  [
+   "beehiiv case study: $25,000 from Boosts (Apr 2025)",
+   "https://www.beehiiv.com/blog/case-study-geekout-newsletter"
+  ],
+  [
+   "PPC Land: YouTube Shopping in 35 markets by year end (Sep 2026)",
+   "https://ppc.land/youtube-creators-in-35-markets-to-earn-shopping-commissions-by-year-end/"
+  ]
+ ],
+ "video": "Proof: 3 official numbers that show creators get paid",
+ "tool": {
+  "id": "elevenlabs",
+  "name": "ElevenLabs",
+  "earns": "22% of their payments for 12 months",
+  "signup": "https://elevenlabs.io/affiliate",
+  "status": "joined"
+ }
+}

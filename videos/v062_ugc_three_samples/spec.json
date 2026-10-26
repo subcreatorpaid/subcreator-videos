@@ -1,0 +1,350 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v062_ugc_three_samples",
+ "title": "The 3 UGC samples brands want to see",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Brands won't hire you for UGC without samples. Make these three, with products you already own.",
+   "show": {
+    "type": "talk",
+    "mood": 0.3,
+    "hold": "film",
+    "chips": [
+     [
+      "samples",
+      "No samples?",
+      "red"
+     ],
+     [
+      "three",
+      "Make 3",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "samples",
+     "thud"
+    ],
+    [
+     "three",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "One: an unboxing. First impressions, close-up, in natural light.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "unboxing",
+      "1. Unboxing",
+      "film",
+      0
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "unboxing",
+     "pop"
+    ],
+    [
+     "close-up",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Two: a problem-solution video. Show the problem, then the product fixing it.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "_1",
+      "1. Unboxing",
+      "film",
+      0
+     ],
+     [
+      "problem-solution",
+      "2. Problem → solution",
+      "phone0",
+      -0.3
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "problem-solution",
+     "pop"
+    ],
+    [
+     "fixing",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Three: a testimonial. Talk to camera about why you'd recommend it to a friend.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "_1",
+      "1. Unboxing",
+      "film",
+      0
+     ],
+     [
+      "_2",
+      "2. Problem → solution",
+      "phone0",
+      -0.3
+     ],
+     [
+      "testimonial",
+      "3. Testimonial",
+      "call",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "testimonial",
+     "pop"
+    ],
+    [
+     "friend",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Brands judge the samples, not your follower count. Beginners usually charge fifty to four hundred dollars a video.",
+   "show": {
+    "type": "stat_cards",
+    "title": "WITH SAMPLES",
+    "cards": [
+     [
+      "fifty",
+      "$50",
+      "per video"
+     ],
+     [
+      "four",
+      "$400",
+      "per video",
+      true
+     ]
+    ],
+    "source": "Insense, Sep 2026; Billo"
+   },
+   "sfx": [
+    [
+     "samples",
+     "pop"
+    ],
+    [
+     "fifty",
+     "card"
+    ],
+    [
+     "four",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: don't show brand logos you weren't paid by in a way that looks like an ad for them.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "film",
+    "items": [
+     [
+      "logos",
+      "Careful with logos",
+      true
+     ],
+     [
+      "ad",
+      "Don't fake a sponsorship",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "logos",
+     "whip"
+    ],
+    [
+     "ad",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [SAMPLES|samples] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Fiverr is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "UGC sample kit",
+    "keyword": "SAMPLES",
+    "tool": "Fiverr"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[3|Three] sample videos. That's your UGC portfolio.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "unboxing",
+      "1. Unboxing",
+      "film",
+      0
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Want UGC work, but you have nothing to show brands?",
+   "show": {
+    "type": "talk",
+    "mood": 0.3,
+    "hold": "film",
+    "chips": [
+     [
+      "samples",
+      "No samples?",
+      "red"
+     ],
+     [
+      "three",
+      "Make 3",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Which sample videos do UGC brands want to see?",
+   "show": {
+    "type": "talk",
+    "mood": 0.3,
+    "hold": "film",
+    "chips": [
+     [
+      "samples",
+      "No samples?",
+      "red"
+     ],
+     [
+      "three",
+      "Make 3",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Insense: UGC creator rates (Sep 2026)",
+   "url": "https://insense.pro/blog/ugc-creator-rates"
+  },
+  {
+   "title": "Billo: UGC creator jobs (no follower requirement)",
+   "url": "https://billo.app/blog/ugc-creator-jobs/"
+  }
+ ],
+ "thumb": {
+  "headline": "3 UGC samples\n*brands want*",
+  "hero": "face",
+  "hold": "film",
+  "mood": -0.4,
+  "sticker": "Use what you own",
+  "chip": "Unbox · fix · testimonial",
+  "size": 120
+ },
+ "finder_stream": "ugc"
+}

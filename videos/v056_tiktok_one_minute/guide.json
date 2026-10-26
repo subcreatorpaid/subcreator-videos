@@ -1,0 +1,41 @@
+{
+ "title": "1-minute TikToks that hold",
+ "subtitle": "3 formats that keep people for 60 seconds",
+ "sections": [
+  [
+   "The rule (reported)",
+   [
+    "Creator Rewards counts videos 1 minute or longer.",
+    "Account: 10,000 followers + 100,000 views in 30 days, 18+."
+   ]
+  ],
+  [
+   "Formats",
+   [
+    "Numbered list: say the count up front.",
+    "Story with a twist at 45 seconds.",
+    "Step-by-step: show each step on screen."
+   ]
+  ]
+ ],
+ "steps": [
+  "Pick one format.",
+  "Script it to 150 words.",
+  "Post one a week."
+ ],
+ "keyword": "MINUTE",
+ "sources": [
+  [
+   "Metricool: TikTok Creator Rewards requirements",
+   "https://metricool.com/tiktok-creator-next/"
+  ]
+ ],
+ "video": "Why TikTok wants 1-minute videos for pay",
+ "tool": {
+  "id": "opusclip",
+  "name": "OpusClip",
+  "earns": "25% of their payments (at least year one)",
+  "signup": "https://www.opus.pro/affiliate",
+  "status": "joined"
+ }
+}

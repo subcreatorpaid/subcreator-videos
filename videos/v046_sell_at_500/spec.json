@@ -1,0 +1,396 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v046_sell_at_500",
+ "title": "3 things to sell with 500 followers",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Five hundred followers is enough to sell something. Here are three things that work at that size.",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "five",
+      "500 followers",
+      null
+     ],
+     [
+      "sell",
+      "Enough to sell",
+      "green"
+     ],
+     [
+      "three",
+      "3 ideas",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "sell",
+     "ding"
+    ],
+    [
+     "three",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "One: a small guide that answers the question you get asked most in comments.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "guide",
+      "1. A small guide",
+      "laptop",
+      0
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "guide",
+     "pop"
+    ],
+    [
+     "comments",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Two: a template that saves people an hour, like a budget sheet or a content calendar.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "_1",
+      "1. A small guide",
+      "laptop",
+      0
+     ],
+     [
+      "template",
+      "2. A template",
+      "laptop",
+      -0.3
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "template",
+     "pop"
+    ],
+    [
+     "hour",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Three: a short call where you review someone's profile or plan.",
+   "show": {
+    "type": "steps",
+    "money_last": true,
+    "steps": [
+     [
+      "_1",
+      "1. A small guide",
+      "laptop",
+      0
+     ],
+     [
+      "_2",
+      "2. A template",
+      "laptop",
+      -0.3
+     ],
+     [
+      "call",
+      "3. A short call",
+      "call",
+      -1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "call",
+     "pop"
+    ],
+    [
+     "review",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Example: five hundred followers, two percent buy a ten dollar template. That's ten sales, about a hundred dollars before fees.",
+   "show": {
+    "type": "calc",
+    "title": "Example only",
+    "green": [
+     "hundred"
+    ],
+    "rows": [
+     [
+      "five",
+      "Followers",
+      "500",
+      null
+     ],
+     [
+      "two",
+      "Who buy",
+      "2%",
+      "×"
+     ],
+     [
+      "ten",
+      "Price",
+      "$10",
+      "×"
+     ]
+    ],
+    "result": [
+     "hundred",
+     "Before fees",
+     100,
+     "$"
+    ],
+    "note": "Example, not a promise"
+   },
+   "sfx": [
+    [
+     "five",
+     "pop"
+    ],
+    [
+     "two",
+     "pop"
+    ],
+    [
+     "ten",
+     "pop"
+    ],
+    [
+     "hundred",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: small audiences buy only when they trust you, so give real help for free first.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "trust",
+      "Needs trust",
+      true
+     ],
+     [
+      "free",
+      "Help for free first",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "trust",
+     "whip"
+    ],
+    [
+     "free",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [SELL|sell] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Stan Store is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Sell at 500 followers",
+    "keyword": "SELL",
+    "tool": "Stan Store"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[500|Five hundred] followers is enough to sell something.",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "five",
+      "500 followers",
+      null
+     ],
+     [
+      "sell",
+      "Enough to sell",
+      "green"
+     ],
+     [
+      "three",
+      "3 ideas",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Think you need a huge audience before you can sell anything?",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "five",
+      "500 followers",
+      null
+     ],
+     [
+      "sell",
+      "Enough to sell",
+      "green"
+     ],
+     [
+      "three",
+      "3 ideas",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What can you sell with only five hundred followers?",
+   "show": {
+    "type": "talk",
+    "mood": -0.4,
+    "hold": "phone0",
+    "chips": [
+     [
+      "five",
+      "500 followers",
+      null
+     ],
+     [
+      "sell",
+      "Enough to sell",
+      "green"
+     ],
+     [
+      "three",
+      "3 ideas",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Stan Store pricing",
+   "url": "https://stan.store/blog/stan-store-pricing/"
+  },
+  {
+   "title": "Fungies: Gumroad fees (checked Aug 2026)",
+   "url": "https://fungies.io/leaving-gumroad-cheaper-alternatives-2026/"
+  }
+ ],
+ "thumb": {
+  "headline": "Sell at\n*500* followers",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": -0.5,
+  "sticker": "3 ideas",
+  "chip": "Guide · template · call",
+  "size": 140
+ },
+ "finder_stream": null
+}

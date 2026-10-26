@@ -1,0 +1,387 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v029_riverside_tool",
+ "title": "Record a studio-quality podcast remotely (Riverside)",
+ "type": "tool",
+ "format": "",
+ "beats": [
+  {
+   "say": "Want a podcast with guests, but no studio? Here's the setup that records each person in high quality.",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "call",
+    "chips": [
+     [
+      "podcast",
+      "Podcast",
+      null
+     ],
+     [
+      "studio",
+      "No studio",
+      "red"
+     ],
+     [
+      "quality",
+      "High quality",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "studio",
+     "thud"
+    ],
+    [
+     "quality",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Riverside records every guest on their own device, then uploads each track, so a weak internet connection doesn't ruin the audio.",
+   "show": {
+    "type": "tool_demo",
+    "app": "Riverside",
+    "input": "Invite link → guest",
+    "input_word": "records",
+    "process": "Uploading each track",
+    "process_word": "uploads",
+    "outputs": [
+     [
+      "connection",
+      "Your track"
+     ],
+     [
+      "connection",
+      "Guest track"
+     ],
+     [
+      "audio",
+      "Video tracks"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "records",
+     "click"
+    ],
+    [
+     "uploads",
+     "whoosh"
+    ],
+    [
+     "audio",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Then cut clips for Shorts and TikTok from the same recording.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "cut",
+      "Cut clips",
+      "laptop",
+      0
+     ],
+     [
+      "shorts",
+      "Shorts + TikTok",
+      "phone0",
+      -0.3
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "cut",
+     "pop"
+    ],
+    [
+     "shorts",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "And once you reach a hundred listeners and a hundred hours in thirty days, Spotify Memberships lets you keep ninety percent of member payments.",
+   "show": {
+    "type": "progress",
+    "mark": "spotify",
+    "title": "Spotify Memberships",
+    "bars": [
+     [
+      "listeners",
+      "Listeners, 30 days",
+      100,
+      100
+     ],
+     [
+      "hours",
+      "Hours, 30 days",
+      100,
+      100
+     ]
+    ],
+    "big": [
+     "ninety",
+     "Keep 90%",
+     true
+    ]
+   },
+   "sfx": [
+    [
+     "listeners",
+     "count"
+    ],
+    [
+     "hours",
+     "count"
+    ],
+    [
+     "ninety",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Riverside's affiliate program pays up to twenty percent per subscription if you share it.",
+   "show": {
+    "type": "stat_cards",
+    "title": "RIVERSIDE AFFILIATE",
+    "green": [
+     "twenty"
+    ],
+    "cards": [
+     [
+      "twenty",
+      "Up to 20%",
+      "per subscription",
+      true
+     ]
+    ],
+    "source": "Riverside affiliate page"
+   },
+   "sfx": [
+    [
+     "twenty",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: good gear still matters. A cheap mic close to your mouth beats an expensive one across the room.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "call",
+    "items": [
+     [
+      "gear",
+      "Mic placement matters",
+      true
+     ],
+     [
+      "close",
+      "Close beats expensive",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "gear",
+     "whip"
+    ],
+    [
+     "close",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [PODCAST|podcast] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Riverside is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Remote podcast setup",
+    "keyword": "PODCAST",
+    "tool": "Riverside"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[90%|Ninety percent]. That's what Spotify lets podcasters keep from members.",
+   "show": {
+    "type": "progress",
+    "mark": "spotify",
+    "title": "Spotify Memberships",
+    "bars": [
+     [
+      "listeners",
+      "Listeners, 30 days",
+      100,
+      100
+     ],
+     [
+      "hours",
+      "Hours, 30 days",
+      100,
+      100
+     ]
+    ],
+    "big": [
+     "ninety",
+     "Keep 90%",
+     true
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Your guest's internet dropped, and the whole episode sounds bad?",
+   "show": {
+    "type": "tool_demo",
+    "app": "Riverside",
+    "input": "Invite link → guest",
+    "input_word": "records",
+    "process": "Uploading each track",
+    "process_word": "uploads",
+    "outputs": [
+     [
+      "connection",
+      "Your track"
+     ],
+     [
+      "connection",
+      "Guest track"
+     ],
+     [
+      "audio",
+      "Video tracks"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do you record a podcast remotely that sounds like a studio?",
+   "show": {
+    "type": "talk",
+    "mood": 0.2,
+    "hold": "call",
+    "chips": [
+     [
+      "podcast",
+      "Podcast",
+      null
+     ],
+     [
+      "studio",
+      "No studio",
+      "red"
+     ],
+     [
+      "quality",
+      "High quality",
+      "green"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Riverside affiliate program",
+   "url": "https://riverside.com/affiliate-program"
+  },
+  {
+   "title": "Spotify newsroom: Memberships for creators (20 Oct 2026)",
+   "url": "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/"
+  }
+ ],
+ "thumb": {
+  "headline": "Studio podcast,\n*no studio*",
+  "hero": "face",
+  "hold": "call",
+  "mood": -0.4,
+  "sticker": "Remote guests",
+  "chip": "Riverside setup",
+  "size": 120
+ },
+ "finder_stream": "spotify-memberships"
+}

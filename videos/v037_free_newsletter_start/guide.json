@@ -1,0 +1,53 @@
+{
+ "title": "Newsletter for $0",
+ "subtitle": "Kit vs Substack and a 3-step start",
+ "sections": [
+  [
+   "Kit",
+   [
+    "Free up to 10,000 subscribers.",
+    "Unlimited emails, forms, 1 automation, 1 sequence.",
+    "Paid plans from $39/month."
+   ]
+  ],
+  [
+   "Substack",
+   [
+    "Free to start.",
+    "10% of paid subscriptions + Stripe when you charge."
+   ]
+  ],
+  [
+   "Reasons to join",
+   [
+    "Free guide",
+    "Checklist",
+    "A weekly tip people can use the same day"
+   ]
+  ]
+ ],
+ "steps": [
+  "Pick Kit or Substack.",
+  "Make one reason to join.",
+  "Link it in your bio today."
+ ],
+ "keyword": "LIST",
+ "sources": [
+  [
+   "Email Vendor Selection: Kit pricing (Aug 2026)",
+   "https://www.emailvendorselection.com/kit-pricing/"
+  ],
+  [
+   "SchoolMaker: Substack pricing (Sep 2026)",
+   "https://schoolmaker.com/blog/substack-pricing"
+  ]
+ ],
+ "video": "Start a newsletter for $0",
+ "tool": {
+  "id": "kit",
+  "name": "Kit",
+  "earns": "50% of their first 12 months",
+  "signup": "https://kit.com/affiliate",
+  "status": "to join"
+ }
+}

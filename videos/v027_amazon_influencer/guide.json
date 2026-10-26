@@ -1,0 +1,53 @@
+{
+ "title": "Amazon: which program?",
+ "subtitle": "Associates vs Influencer, side by side",
+ "sections": [
+  [
+   "Associates",
+   [
+    "Links anywhere (site, bio, description).",
+    "Most categories ~3-4.5%; example: $40 item at 4.5% = ~$1.80.",
+    "3 qualifying sales in the first 180 days or the account closes."
+   ]
+  ],
+  [
+   "Influencer",
+   [
+    "A storefront on Amazon with your picks and videos.",
+    "No published follower minimum; Amazon reviews your account.",
+    "Since 14 Apr 2026: onsite commission only on the exact promoted product."
+   ]
+  ],
+  [
+   "Both",
+   [
+    "US bank account + tax information.",
+    "Rates vary by category; some were cut in 2026."
+   ]
+  ]
+ ],
+ "steps": [
+  "Join Associates and make 3 links to products you use.",
+  "Film one honest product video.",
+  "Apply for Influencer after 5 product videos."
+ ],
+ "keyword": "AMAZON",
+ "sources": [
+  [
+   "Lasso: Amazon affiliate commission rates",
+   "https://getlasso.co/amazon-affiliate-commission-rate/"
+  ],
+  [
+   "Makeinfluence: Amazon Associates vs Influencer Program",
+   "https://www.makeinfluence.com/en/academy/amazon-associates-vs-amazon-influencer-program-whats-actually-different"
+  ]
+ ],
+ "video": "Amazon Influencer vs Associates",
+ "tool": {
+  "id": "amazon",
+  "name": "Amazon Associates",
+  "earns": "category rates (most about 3-4.5%)",
+  "signup": "https://affiliate-program.amazon.com",
+  "status": "to join"
+ }
+}

@@ -1,0 +1,348 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v031_disclose_in_video",
+ "title": "Disclose in the video, not just the caption",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Writing ad in your caption isn't enough for a video. Here's what the FTC says.",
+   "show": {
+    "type": "myth",
+    "myth": "#ad in the caption is enough",
+    "myth_word": "writing",
+    "fact": "Disclose in the video itself",
+    "fact_word": "ftc",
+    "fact_green": false
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "caption",
+     "thud"
+    ],
+    [
+     "ftc",
+     "swipe"
+    ]
+   ]
+  },
+  {
+   "say": "In a video, say it out loud and show it on screen. In a live stream, repeat it.",
+   "show": {
+    "type": "checklist",
+    "title": "FTC: video + live",
+    "items": [
+     [
+      "say",
+      "Say it out loud"
+     ],
+     [
+      "show",
+      "Show it on screen"
+     ],
+     [
+      "repeat",
+      "Live: repeat it"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "say",
+     "click"
+    ],
+    [
+     "show",
+     "click"
+    ],
+    [
+     "repeat",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Don't hide it in your profile, at the very end, behind more, or mixed into hashtags.",
+   "show": {
+    "type": "checklist",
+    "title": "Not here",
+    "items": [
+     [
+      "profile",
+      "Only in your profile",
+      true
+     ],
+     [
+      "end",
+      "Only at the end",
+      true
+     ],
+     [
+      "more",
+      "Behind \"more\"",
+      true
+     ],
+     [
+      "hashtags",
+      "Mixed into hashtags",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "profile",
+     "thud"
+    ],
+    [
+     "end",
+     "thud"
+    ],
+    [
+     "more",
+     "thud"
+    ],
+    [
+     "hashtags",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Use clear words like ad or sponsored. Skip sp, spon and collab.",
+   "show": {
+    "type": "compare",
+    "title": "Words to use",
+    "cols": [
+     "Clear",
+     "Unclear"
+    ],
+    "rows": [
+     [
+      "ad",
+      "Use",
+      [
+       "ad, sponsored",
+       "sp, spon, collab"
+      ],
+      [
+       1
+      ]
+     ]
+    ],
+    "best": 0,
+    "best_word": "skip"
+   },
+   "sfx": [
+    [
+     "ad",
+     "pop"
+    ],
+    [
+     "skip",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "And the platform's paid partnership label may not be enough on its own.",
+   "show": {
+    "type": "talk",
+    "mood": 0.5,
+    "hold": "phone0",
+    "chips": [
+     [
+      "label",
+      "Platform label",
+      null
+     ],
+     [
+      "enough",
+      "May not be enough",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "label",
+     "pop"
+    ],
+    [
+     "enough",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: this is US law, and it can apply to you from abroad if your audience is in the US.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "us",
+      "US law",
+      true
+     ],
+     [
+      "abroad",
+      "Applies from abroad",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "us",
+     "whip"
+    ],
+    [
+     "abroad",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [DISCLOSE|disclose] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. beehiiv is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Disclose it right",
+    "keyword": "DISCLOSE",
+    "tool": "beehiiv"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[2|Two] places to disclose in a video: out loud and on screen.",
+   "show": {
+    "type": "checklist",
+    "title": "FTC: video + live",
+    "items": [
+     [
+      "say",
+      "Say it out loud"
+     ],
+     [
+      "show",
+      "Show it on screen"
+     ],
+     [
+      "repeat",
+      "Live: repeat it"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Put #ad in your caption and thought you were covered?",
+   "show": {
+    "type": "myth",
+    "myth": "#ad in the caption is enough",
+    "myth_word": "writing",
+    "fact": "Disclose in the video itself",
+    "fact_word": "ftc",
+    "fact_green": false
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Is #ad in the caption enough for a video?",
+   "show": {
+    "type": "myth",
+    "myth": "#ad in the caption is enough",
+    "myth_word": "writing",
+    "fact": "Disclose in the video itself",
+    "fact_word": "ftc",
+    "fact_green": false
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "FTC: Disclosures 101 for social media influencers",
+   "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+  }
+ ],
+ "thumb": {
+  "headline": "#ad in caption\n~isn't enough~",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 0.7,
+  "sticker": "Say it + show it",
+  "chip": "FTC disclosure rules",
+  "size": 110
+ },
+ "finder_stream": null
+}

@@ -1,0 +1,47 @@
+{
+ "title": "Price your first guide",
+ "subtitle": "The value test and a launch plan",
+ "sections": [
+  [
+   "The test",
+   [
+    "How much time or money does it save the buyer?",
+    "Price well below that value."
+   ]
+  ],
+  [
+   "Examples only",
+   [
+    "Checklist that saves an hour: $5-10.",
+    "Full system that saves a week: more."
+   ]
+  ],
+  [
+   "After launch",
+   [
+    "Almost everyone buys: raise the price.",
+    "Nobody buys: explain it better, then test lower."
+   ]
+  ]
+ ],
+ "steps": [
+  "Write what your guide saves the buyer.",
+  "Pick a launch price.",
+  "Review sales after 2 weeks."
+ ],
+ "keyword": "PRICE",
+ "sources": [
+  [
+   "Fungies: Gumroad fees (checked Aug 2026)",
+   "https://fungies.io/leaving-gumroad-cheaper-alternatives-2026/"
+  ]
+ ],
+ "video": "How to price your first guide",
+ "tool": {
+  "id": "stan",
+  "name": "Stan Store",
+  "earns": "20% recurring (confirm on joining)",
+  "signup": "https://stan.store/affiliates",
+  "status": "to join"
+ }
+}

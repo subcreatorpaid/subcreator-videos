@@ -1,0 +1,347 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v043_voice_clone_checklist",
+ "title": "Before you share your voice clone: 5 checks",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Thinking of sharing your voice on ElevenLabs to earn? Do these five checks first.",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "call",
+    "chips": [
+     [
+      "voice",
+      "Your voice",
+      null
+     ],
+     [
+      "five",
+      "5 checks",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "voice",
+     "pop"
+    ],
+    [
+     "five",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "One: you need a Professional Voice Clone, which needs the Creator plan or above.",
+   "show": {
+    "type": "page_card",
+    "url": "elevenlabs.io/docs · voice payouts",
+    "mark": "EL",
+    "title": "Check 1: the right clone",
+    "checked": "Official docs",
+    "bullets": [
+     [
+      "professional",
+      "Professional Voice Clone"
+     ],
+     [
+      "creator",
+      "Creator plan or above",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "professional",
+     "pop"
+    ],
+    [
+     "creator",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Two: record clean audio in a quiet room. Three: write a clear description so people can find your voice.",
+   "show": {
+    "type": "checklist",
+    "title": "Checks 2 + 3",
+    "items": [
+     [
+      "clean",
+      "Clean audio, quiet room"
+     ],
+     [
+      "description",
+      "Clear voice description"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "clean",
+     "click"
+    ],
+    [
+     "description",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Four: pick your notice period. That's how long people can keep using your voice after you remove it, from immediate to two years.",
+   "show": {
+    "type": "timeline",
+    "title": "Check 4: notice period",
+    "points": [
+     [
+      "immediate",
+      "Now",
+      "immediate"
+     ],
+     [
+      "two",
+      "2 years",
+      "longest"
+     ]
+    ],
+    "hold": "call"
+   },
+   "sfx": [
+    [
+     "immediate",
+     "pop"
+    ],
+    [
+     "two",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Five: get ready for payouts. Stripe, a tax form, and one of about sixty payout countries.",
+   "show": {
+    "type": "checklist",
+    "title": "Check 5: payouts",
+    "items": [
+     [
+      "stripe",
+      "Stripe account"
+     ],
+     [
+      "tax",
+      "W-8 or W-9 tax form"
+     ],
+     [
+      "sixty",
+      "~60 payout countries"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "stripe",
+     "click"
+    ],
+    [
+     "tax",
+     "click"
+    ],
+    [
+     "sixty",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: you're paid only when paying users use your voice, so earnings depend on demand.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "call",
+    "items": [
+     [
+      "paying",
+      "Only paying users count",
+      true
+     ],
+     [
+      "demand",
+      "Depends on demand",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "paying",
+     "whip"
+    ],
+    [
+     "demand",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [CLONE|clone] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. ElevenLabs is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Voice clone checklist",
+    "keyword": "CLONE",
+    "tool": "ElevenLabs"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[2|Two] years. That's the longest notice period for your voice.",
+   "show": {
+    "type": "checklist",
+    "title": "Check 5: payouts",
+    "items": [
+     [
+      "stripe",
+      "Stripe account"
+     ],
+     [
+      "tax",
+      "W-8 or W-9 tax form"
+     ],
+     [
+      "sixty",
+      "~60 payout countries"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Shared your voice, and nobody's using it?",
+   "show": {
+    "type": "checklist",
+    "title": "Checks 2 + 3",
+    "items": [
+     [
+      "clean",
+      "Clean audio, quiet room"
+     ],
+     [
+      "description",
+      "Clear voice description"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "What should you check before sharing your voice clone?",
+   "show": {
+    "type": "talk",
+    "mood": -0.2,
+    "hold": "call",
+    "chips": [
+     [
+      "voice",
+      "Your voice",
+      null
+     ],
+     [
+      "five",
+      "5 checks",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "ElevenLabs docs: voice payouts",
+   "url": "https://elevenlabs.io/docs/eleven-creative/voices/payouts"
+  }
+ ],
+ "thumb": {
+  "headline": "Voice clone:\n*5 checks*",
+  "hero": "face",
+  "hold": "call",
+  "mood": -0.2,
+  "sticker": "Before you share",
+  "chip": "ElevenLabs Voice Library",
+  "size": 130
+ },
+ "finder_stream": "elevenlabs-voice"
+}

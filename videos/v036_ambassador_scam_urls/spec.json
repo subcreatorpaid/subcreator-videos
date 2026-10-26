@@ -1,0 +1,392 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v036_ambassador_scam_urls",
+ "title": "Fake brand ambassador DMs: check the link",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "A brand ambassador DM says you've been selected. Check the link before you click anything.",
+   "show": {
+    "type": "chat",
+    "name": "brand.ambassadors",
+    "mark": "?",
+    "msgs": [
+     [
+      "selected",
+      "Congrats! You've been selected 🎉",
+      false
+     ],
+     [
+      "link",
+      "Sign up here: brand-partners.co",
+      false
+     ]
+    ],
+    "mood": 0.2,
+    "hold": "phone0"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "selected",
+     "pop"
+    ],
+    [
+     "link",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "The FTC warns that fake managers message out of nowhere, flatter you, and name-drop big brands.",
+   "show": {
+    "type": "checklist",
+    "title": "FTC warning signs",
+    "items": [
+     [
+      "nowhere",
+      "Out of nowhere",
+      true
+     ],
+     [
+      "flatter",
+      "Lots of flattery",
+      true
+     ],
+     [
+      "name-drop",
+      "Name-drops big brands",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "nowhere",
+     "thud"
+    ],
+    [
+     "flatter",
+     "thud"
+    ],
+    [
+     "name-drop",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "They use lookalike web addresses: one letter off, or an extra word, so it looks real at a glance.",
+   "show": {
+    "type": "compare",
+    "title": "Real or lookalike?",
+    "cols": [
+     "Real",
+     "Lookalike"
+    ],
+    "rows": [
+     [
+      "letter",
+      "Domain",
+      [
+       "nike.com",
+       "nlke-partners.co"
+      ],
+      [
+       1
+      ]
+     ]
+    ],
+    "best": 0,
+    "best_word": "glance"
+   },
+   "sfx": [
+    [
+     "letter",
+     "pop"
+    ],
+    [
+     "word",
+     "pop"
+    ],
+    [
+     "glance",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "And they ask for your bank details or personal information to start.",
+   "show": {
+    "type": "talk",
+    "mood": 0.9,
+    "hold": "phone0",
+    "red": [
+     "bank"
+    ],
+    "chips": [
+     [
+      "bank",
+      "Bank details?",
+      "red"
+     ],
+     [
+      "personal",
+      "Personal info?",
+      "red"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "bank",
+     "thud"
+    ],
+    [
+     "personal",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Go to the brand's real website yourself, contact them using details you find there, and report fakes at report fraud dot F T C dot gov.",
+   "show": {
+    "type": "steps",
+    "steps": [
+     [
+      "website",
+      "Find the real website",
+      "laptop",
+      0
+     ],
+     [
+      "contact",
+      "Contact them yourself",
+      "call",
+      -0.2
+     ],
+     [
+      "report",
+      "Report fakes",
+      null,
+      -0.6
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "website",
+     "pop"
+    ],
+    [
+     "contact",
+     "pop"
+    ],
+    [
+     "report",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: some fake pages look perfect, so never pay or share bank details to start a deal.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "phone0",
+    "items": [
+     [
+      "perfect",
+      "Fakes can look perfect",
+      true
+     ],
+     [
+      "pay",
+      "Never pay to start",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "perfect",
+     "whip"
+    ],
+    [
+     "pay",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [SAFE|safe] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. beehiiv is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Spot fake brand deals",
+    "keyword": "SAFE",
+    "tool": "beehiiv"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[1|One] letter off. That's how fake brand links fool creators.",
+   "show": {
+    "type": "compare",
+    "title": "Real or lookalike?",
+    "cols": [
+     "Real",
+     "Lookalike"
+    ],
+    "rows": [
+     [
+      "letter",
+      "Domain",
+      [
+       "nike.com",
+       "nlke-partners.co"
+      ],
+      [
+       1
+      ]
+     ]
+    ],
+    "best": 0,
+    "best_word": "glance"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "A brand says you've been selected, but something feels off?",
+   "show": {
+    "type": "chat",
+    "name": "brand.ambassadors",
+    "mark": "?",
+    "msgs": [
+     [
+      "selected",
+      "Congrats! You've been selected 🎉",
+      false
+     ],
+     [
+      "link",
+      "Sign up here: brand-partners.co",
+      false
+     ]
+    ],
+    "mood": 0.2,
+    "hold": "phone0"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do you know a brand ambassador DM is real?",
+   "show": {
+    "type": "checklist",
+    "title": "FTC warning signs",
+    "items": [
+     [
+      "nowhere",
+      "Out of nowhere",
+      true
+     ],
+     [
+      "flatter",
+      "Lots of flattery",
+      true
+     ],
+     [
+      "name-drop",
+      "Name-drops big brands",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "FTC: bogus brand ambassador managers scam (Oct 2023)",
+   "url": "https://www.ftc.gov/business-guidance/blog/2023/10/influence-peddling-bogus-brand-ambassador-managers-scam-prospective-influencers"
+  }
+ ],
+ "thumb": {
+  "headline": "Fake brand DM?\n~check the link~",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 0.8,
+  "sticker": "1 letter off",
+  "sticker_color": "red",
+  "chip": "FTC warning signs",
+  "size": 110
+ },
+ "finder_stream": null
+}
