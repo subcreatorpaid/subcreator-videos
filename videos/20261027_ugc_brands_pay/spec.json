@@ -7,224 +7,431 @@
   "kokoro_voice": "af_heart",
   "speed": 0.95
  },
- "gap": 0.4,
+ "gap": 0.25,
  "slug": "20261027_ugc_brands_pay",
- "format": "income stream: phone ad, versus, price tag, platform cards (animator rules v4)",
+ "format": "story style (owner pick 26 Oct 2026): face + real logos + real app pages, green = money, red = loss",
  "beats": [
   {
    "say": "Hundreds of followers, posting every week, and still zero dollars?",
-   "punch": [
-    "zero"
-   ],
    "show": {
-    "type": "dashboard",
-    "feed": true,
-    "followers": 847,
-    "posts": "Every week",
-    "posts_word": "posting",
-    "zero_word": "zero",
-    "earnings": "$0.00",
-    "hook_text": "Hundreds of followers and still *$0*?"
-   }
+    "type": "counters",
+    "red": [
+     "zero",
+     "dollars"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.17,
+     "whip"
+    ],
+    [
+     0.34,
+     "whip"
+    ],
+    [
+     0.1,
+     "key"
+    ],
+    [
+     0.22,
+     "key"
+    ],
+    [
+     0.33999999999999997,
+     "key"
+    ],
+    [
+     0.45999999999999996,
+     "key"
+    ],
+    [
+     0.58,
+     "key"
+    ],
+    [
+     0.7,
+     "key"
+    ],
+    [
+     0.82,
+     "key"
+    ],
+    [
+     0.94,
+     "key"
+    ],
+    [
+     1.06,
+     "key"
+    ],
+    [
+     1.1800000000000002,
+     "key"
+    ],
+    [
+     1.3,
+     "key"
+    ],
+    [
+     1.42,
+     "key"
+    ],
+    [
+     "zero",
+     "thud"
+    ]
+   ]
   },
   {
    "say": "That's not a follower problem.",
-   "punch": [
-    "problem."
-   ],
-   "hold": 1.0,
    "show": {
-    "type": "statement",
-    "feed": 0.22,
-    "strike_pre": "Not a",
-    "strike": "follower",
-    "strike_word": "follower",
-    "text": "*problem*",
-    "text_word": "problem.",
-    "size": 90,
-    "acc_scale": 1.9
-   }
+    "type": "face_strike",
+    "red": [
+     "follower"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "pop"
+    ],
+    [
+     0.2,
+     "pop"
+    ],
+    [
+     "follower",
+     "card"
+    ],
+    [
+     "problem",
+     "swipe"
+    ]
+   ]
   },
   {
    "say": "Brands don't pay for followers. They pay for videos.",
-   "punch": [
-    "videos."
-   ],
-   "hold": 1.4,
    "show": {
-    "type": "versus",
-    "left": "Followers",
-    "left_word": "followers.",
-    "right": "Videos",
-    "right_word": "videos.",
-    "left_sub": "doesn't pay",
-    "right_sub": "what brands pay for"
+    "type": "phone_fly",
+    "red": [
+     "don't"
+    ],
+    "green": [
+     "videos"
+    ]
    },
-   "riser": true
+   "sfx": [
+    [
+     0,
+     "pop"
+    ],
+    [
+     "they",
+     "whoosh"
+    ],
+    [
+     "videos",
+     "ding"
+    ]
+   ]
   },
   {
-   "say": "It's called UGC. Short videos you film, that brands run as their own ads. Zero followers needed.",
-   "punch": [
-    "UGC."
-   ],
+   "say": "It's called UGC: short videos you film, that brands run as their own ads. Zero followers needed.",
    "show": {
-    "type": "phone_ad",
-    "clip": "unbox",
-    "label": "UGC",
-    "label_word": "UGC.",
-    "sticker": "0 followers needed",
-    "sticker_word": "zero"
-   }
+    "type": "ugc_explain"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "ugc",
+     "pop"
+    ],
+    [
+     "film",
+     "zip"
+    ],
+    [
+     "brands",
+     "whip"
+    ],
+    [
+     "zero",
+     "pop"
+    ]
+   ]
   },
   {
    "say": "Beginners usually charge [$50|fifty] to [$400|four hundred dollars] a video.",
-   "hold": 0.8,
    "show": {
-    "type": "rate",
-    "low": 50,
-    "high": 400,
-    "low_word": "$50",
-    "high_word": "$400",
-    "unit": "per video, beginners",
-    "src": "Insense, Sep 2026"
-   }
+    "type": "rate3d",
+    "green": [
+     "$50",
+     "$400"
+    ]
+   },
+   "sfx": [
+    [
+     "$50",
+     "card"
+    ],
+    [
+     "$400",
+     "ding"
+    ]
+   ]
   },
   {
-   "say": "Where do you find the work? Billo has no follower minimum. [JoinBrands|Join Brands] is free to join. Or sell UGC as a [Fiverr|Fiver] gig.",
+   "say": "Where do you find the work? Billo has no follower minimum, and takes creators from the US, UK and Canada. [JoinBrands|Join Brands] is free to join.",
    "show": {
-    "type": "platforms",
-    "heading": "Where to find UGC work",
-    "items": [
-     {
-      "name": "Billo",
-      "domain": "billo.app",
-      "fact": "No follower minimum (US, UK, Canada)",
-      "word": "Billo"
-     },
-     {
-      "name": "JoinBrands",
-      "domain": "joinbrands.com",
-      "fact": "Free to join",
-      "word": "JoinBrands"
-     },
-     {
-      "name": "Fiverr",
-      "domain": "fiverr.com",
-      "fact": "Sell a UGC gig",
-      "word": "Fiverr"
-     }
+    "type": "apps",
+    "images": [
+     "assets/snap_billo_home.png",
+     "assets/snap_billo_countries.png",
+     "assets/snap_jb.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
     ],
-    "note": "Insense opens up at 1,000+ Instagram followers",
-    "note_word": "gig."
-   }
+    [
+     "billo",
+     "click"
+    ],
+    [
+     "takes",
+     "page"
+    ],
+    [
+     "us",
+     "pop"
+    ],
+    [
+     "joinbrands",
+     "whip"
+    ],
+    [
+     "free",
+     "click"
+    ]
+   ]
   },
   {
-   "say": "To get hired, you need three samples, all filmed on your phone.",
+   "say": "To get hired, film three samples on your phone: unbox it, use it, say what you liked.",
    "show": {
-    "type": "samples",
-    "items": [
-     "Sample 1",
-     "Sample 2",
-     "Sample 3"
+    "type": "wall",
+    "continue": true
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
     ],
-    "word": "need",
-    "phone_word": "phone.",
-    "chip": "All filmed on your phone"
-   }
+    [
+     "unbox",
+     "pop"
+    ],
+    [
+     "use",
+     "pop"
+    ],
+    [
+     "liked",
+     "pop"
+    ]
+   ]
   },
   {
    "say": "One rule: label them not sponsored, and never imply a brand hired you.",
    "show": {
-    "type": "stamp",
-    "clip": "fix",
-    "text": "NOT SPONSORED",
-    "word": "sponsored,",
-    "sub": "Never imply a brand hired you",
-    "sub_word": "never"
-   }
+    "type": "stamp_wall",
+    "from_prev": true,
+    "red": [
+     "not",
+     "never"
+    ]
+   },
+   "sfx": [
+    [
+     "not",
+     "thud"
+    ],
+    [
+     "not",
+     "drop"
+    ],
+    [
+     "never",
+     "whip"
+    ]
+   ]
   },
   {
    "say": "The catch: no brand says yes until it sees your samples, and rates vary by niche.",
    "show": {
-    "type": "features",
-    "heading": "*THE CATCH*",
-    "items": [
-     [
-      "x",
-      "No samples, no yes"
-     ],
-     [
-      "alert",
-      "Rates vary by niche"
-     ],
-     [
-      "check",
-      "So film samples first"
-     ]
+    "type": "catch",
+    "red": [
+     "catch"
     ]
-   }
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "samples",
+     "whip"
+    ],
+    [
+     "rates",
+     "whip"
+    ]
+   ]
   },
   {
-   "say": "Comment GUIDE, or get it free on [subcreatorpaid.com|sub creator paid dot com]. My tools are in my bio. Follow for more.",
+   "say": "So: film samples, apply, pitch, get paid. My free guide has every step.",
    "show": {
-    "type": "end_cta",
-    "keyword": "GUIDE",
-    "comment_sub": "free guide, or get it on the site",
-    "tools_word": "tools"
-   }
+    "type": "journey",
+    "green": [
+     "paid"
+    ]
+   },
+   "sfx": [
+    [
+     "samples",
+     "whip"
+    ],
+    [
+     "apply",
+     "whip"
+    ],
+    [
+     "pitch",
+     "whip"
+    ],
+    [
+     "paid",
+     "ding"
+    ],
+    [
+     "guide",
+     "whoosh"
+    ]
+   ]
+  },
+  {
+   "say": "Comment GUIDE, or get it free on [subcreatorpaid.com|sub creator paid dot com]. Tools I use are in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "tools",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
   }
  ],
  "hooks": [
   {
    "label": "A: the big number",
    "say": "Brands pay beginners [$50|fifty] to [$400|four hundred dollars] a video. Zero followers needed.",
-   "punch": [
-    "zero"
-   ],
    "show": {
-    "type": "rate",
-    "low": 50,
-    "high": 400,
-    "low_word": "$50",
-    "high_word": "$400",
-    "unit": "per video, beginners",
-    "src": "Insense, Sep 2026",
-    "hook_text": "*$50-$400* a video, *0* followers"
-   }
+    "type": "rate3d",
+    "green": [
+     "$50",
+     "$400"
+    ]
+   },
+   "sfx": [
+    [
+     "$50",
+     "card"
+    ],
+    [
+     "$400",
+     "ding"
+    ]
+   ]
   },
   {
    "label": "B: the pain line",
    "say": "Hundreds of followers, posting every week, and still zero dollars?",
-   "punch": [
-    "zero"
-   ],
    "show": {
-    "type": "dashboard",
-    "feed": true,
-    "followers": 847,
-    "posts": "Every week",
-    "posts_word": "posting",
-    "zero_word": "zero",
-    "earnings": "$0.00",
-    "hook_text": "Hundreds of followers and still *$0*?"
-   }
+    "type": "counters",
+    "red": [
+     "zero",
+     "dollars"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.17,
+     "whip"
+    ],
+    [
+     0.34,
+     "whip"
+    ],
+    [
+     "zero",
+     "thud"
+    ]
+   ]
   },
   {
    "label": "C: the question",
    "say": "Why do accounts with hundreds of followers still earn zero?",
-   "punch": [
-    "zero?"
-   ],
    "show": {
-    "type": "dashboard",
-    "feed": true,
-    "followers": 847,
-    "posts": "Every week",
-    "posts_word": "posting",
-    "zero_word": "zero",
-    "earnings": "$0.00",
-    "hook_text": "Hundreds of followers. Why still *$0*?"
-   }
+    "type": "counters",
+    "red": [
+     "zero"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.17,
+     "whip"
+    ],
+    [
+     0.34,
+     "whip"
+    ],
+    [
+     "zero",
+     "thud"
+    ]
+   ]
   }
  ],
  "sources": [
@@ -233,7 +440,6 @@
    "url": "site/data/streams/ugc.json"
   }
  ],
- "main_punch": "videos.",
  "thumb": {
   "headline": "Brands pay for\n*videos*",
   "hero": "phone",
@@ -241,5 +447,6 @@
   "chip": "Not followers. Here's how.",
   "size": 128,
   "top": 330
- }
+ },
+ "style": "story"
 }

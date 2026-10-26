@@ -126,7 +126,19 @@ try:
     # A3: a swoosh on every other beat change and a tick on every other reveal, about half the old count
     bounds = [beats[0]["from"] / FPS] + [b["from"] / FPS for b in beats[1::2]] + [N / SR]
     reveals = [(b["speakFrom"] / FPS + 0.2, "blip") for b in beats[2::2]]
+    if spec.get("style") == "story": bounds, reveals = [0.0, N / SR], []  # story: effects come from each beat's "sfx" list
     music, sfx = synth_bed(N, bounds, reveals)
+    # beat "sfx": [[word or seconds-from-line-start, kind], ...] (kinds in renderer/sfx.py)
+    ev = []
+    for sb, b in zip(spec["beats"], beats):
+        for at, kind in sb.get("sfx", []):
+            if isinstance(at, str):
+                w = next((x for x in b["words"] if re.sub(r"[^\w$%'-]", "", x["w"]).lower().startswith(at.lower())), None)
+                if w: ev.append((w["f"] / FPS - 0.03, kind))
+            else: ev.append((b["speakFrom"] / FPS + at, kind))
+    if ev:
+        import sfx as fxlib
+        sfx += fxlib.render(ev, N)
     rng = np.random.default_rng(3)
     def thud():
         lt = np.arange(int(0.3 * SR)) / SR
@@ -183,7 +195,7 @@ for f in ("Inter-Black.otf", "Inter-ExtraBold.otf", "Inter-Bold.otf", "Inter-Med
     p = HERE.parent / "fonts" / f
     if p.exists(): shutil.copy(p, pub / f)
 props = {"slug": spec["slug"], "handle": spec.get("handle", "@subcreatorpaid"), "fps": FPS, "total": total, "beats": beats,
-         "captions": spec.get("captions", True), "thumb": spec.get("thumb", {})}
+         "captions": spec.get("captions", True), "thumb": spec.get("thumb", {}), "style": spec.get("style", "")}
 (HERE / "props.json").write_text(json.dumps(props, indent=1))
 
 # W2: one still per beat at its answer moment (18 frames before the beat ends, when everything is still)
