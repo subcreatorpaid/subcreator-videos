@@ -1,0 +1,131 @@
+<title>Sub-Creator Paid Index</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Instrument+Serif:ital@1&display=swap">
+<style>
+/* Layout: one reading column; summary line, then to-dos, links, folders, then the filterable video list. Brand book colours. */
+:root {
+  --bg: #F6F5F1; --card: #FFFFFF; --ink: #151515; --muted: #5F5E58; --line: #E2DFD7;
+  --accent: #2E7D4F; --accent-soft: #E3F0E7; --chip: #EDEBE4;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif: "Instrument Serif", Georgia, serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #141513; --card: #1C1D1A; --ink: #EEEDE8; --muted: #A3A29B; --line: #2E2F2B;
+  --accent: #5DBB85; --accent-soft: #1E3327; --chip: #262724; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #141513; --card: #1C1D1A; --ink: #EEEDE8; --muted: #A3A29B; --line: #2E2F2B;
+  --accent: #5DBB85; --accent-soft: #1E3327; --chip: #262724; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.5; }
+.wrap { max-width: 980px; margin: 0 auto; padding-block: 32px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 36px; }
+h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin: 0; text-wrap: balance; }
+h1 em { font-family: var(--serif); font-weight: 400; font-style: italic; color: var(--accent); }
+h2 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 12px; }
+.lede { color: var(--muted); margin: 8px 0 0; max-width: 62ch; }
+.counts { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 16px; font-variant-numeric: tabular-nums; }
+.counts span b { font-size: 22px; font-weight: 800; margin-right: 6px; }
+.counts .sched b { color: var(--accent); }
+.todos { list-style: none; margin: 0; padding: 0; counter-reset: t; display: grid; gap: 10px; }
+.todos li { counter-increment: t; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px 12px 46px; position: relative; }
+.todos li::before { content: counter(t); position: absolute; left: 14px; top: 12px; width: 22px; height: 22px; border-radius: 50%; background: var(--chip); font-size: 12px; font-weight: 700; display: grid; place-items: center; }
+.todos li b { display: block; }
+.todos li span { color: var(--muted); font-size: 14px; }
+.todos a { font-size: 14px; color: var(--accent); font-weight: 600; }
+.links { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 10px; }
+.link { display: grid; gap: 2px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--ink); text-decoration: none; }
+.link:hover, .link:focus-visible { border-color: var(--accent); outline: none; }
+.link span { color: var(--muted); font-size: 13px; }
+.folders { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.folders li { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.folders code, td code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12.5px; }
+.folders code { min-width: 190px; font-weight: 600; }
+.folders span { color: var(--muted); min-width: 0; }
+.bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px; }
+.bar button { font: inherit; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+.bar button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.bar button:focus-visible, .bar input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.bar input { font: inherit; font-size: 14px; flex: 1 1 180px; min-width: 0; padding: 7px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
+.tablebox { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
+table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 14px; }
+th { text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 600; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.t b { display: block; font-weight: 600; }
+td.t code { color: var(--muted); }
+td small { display: block; color: var(--muted); font-size: 12px; margin-top: 3px; white-space: nowrap; }
+.pill { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 9px; border-radius: 999px; white-space: nowrap; }
+.pill.scheduled { background: var(--accent-soft); color: var(--accent); }
+.pill.ready { background: var(--chip); color: var(--ink); }
+.pill.paused { border: 1px dashed var(--muted); color: var(--muted); }
+.empty { padding: 20px; color: var(--muted); }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Sub-Creator Paid, <em>all in one place</em></h1>
+    <p class="lede">Every video and its status, your links, and what still needs you. The files are in the project folder, laid out as shown under Folders.</p>
+    <div class="counts">
+      <span><b>{{TOTAL}}</b>videos</span>
+      <span class="sched"><b>{{SCHED}}</b>scheduled in Buffer</span>
+      <span><b>{{READY}}</b>finished, ready to schedule</span>
+      <span><b>{{PAUSED}}</b>paused, not rendered</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Your open to-dos</h2>
+    <ol class="todos">{{TODOS}}</ol>
+  </section>
+
+  <section>
+    <h2>Links</h2>
+    <div class="links">{{LINKS}}</div>
+  </section>
+
+  <section>
+    <h2>Folders</h2>
+    <ul class="folders">{{FOLDERS}}</ul>
+  </section>
+
+  <section>
+    <h2>Videos</h2>
+    <div class="bar" role="group" aria-label="Filter videos">
+      <button type="button" id="f-all" data-f="all" aria-pressed="true">All</button>
+      <button type="button" id="f-scheduled" data-f="scheduled" aria-pressed="false">Scheduled</button>
+      <button type="button" id="f-ready" data-f="ready" aria-pressed="false">Finished</button>
+      <button type="button" id="f-paused" data-f="paused" aria-pressed="false">Paused</button>
+      <input id="q" type="search" placeholder="Search by number, title or tool" aria-label="Search videos">
+    </div>
+    <div class="tablebox">
+      <table>
+        <thead><tr><th>#</th><th>Video and folder</th><th>Status</th><th>Type</th><th>Length</th><th>Tool</th></tr></thead>
+        <tbody id="rows">{{ROWS}}</tbody>
+      </table>
+      <p class="empty" id="empty" hidden>No videos match.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  var f = "all", q = document.getElementById("q"), rows = [].slice.call(document.querySelectorAll("#rows tr"));
+  function apply() {
+    var s = q.value.trim().toLowerCase(), shown = 0;
+    rows.forEach(function (r) {
+      var ok = (f === "all" || r.dataset.s === f) && (!s || r.dataset.q.indexOf(s) > -1);
+      r.hidden = !ok; if (ok) shown++;
+    });
+    document.getElementById("empty").hidden = shown > 0;
+  }
+  document.querySelectorAll(".bar button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      f = b.dataset.f;
+      document.querySelectorAll(".bar button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      apply();
+    });
+  });
+  q.addEventListener("input", apply);
+})();
+</script>

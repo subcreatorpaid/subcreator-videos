@@ -96,7 +96,8 @@ def main():
            "or put it in site/data/links.json, and subcreatorpaid.com/go/<id> starts pointing to it.", "",
            "| Program | Status | You earn | Videos that use it | Sign up |", "|---|---|---|---|---|"]
     aff += [f"| {AFF[k][0]} | {AFF[k][3]} | {AFF[k][1]} | {len(used.get(k, []))} ({', '.join(used.get(k, [])[:8])}{'…' if len(used.get(k, [])) > 8 else ''}) | {AFF[k][2]} |" for k in order]
-    (OUT / "AFFILIATE_SIGNUPS.md").write_text("\n".join(aff) + "\n")
+    affdir = OUT.parent / "04-affiliates"; affdir.mkdir(exist_ok=True)  # project folder layout: 04-affiliates/ sits beside 02-videos/
+    (affdir / "AFFILIATE_SIGNUPS.md").write_text("\n".join(aff) + "\n")
     print(len(reg), "folders in", OUT)
 
 

@@ -48,6 +48,7 @@ Hand-offs always go through files in `brain/` (never "remember it"): researcher 
 | Website (Cloudflare Pages, builds on every push to main) | `site/build.py`, `functions/api/*` (finder, subscribe, comments on D1) |
 | 100-video plan + render buttons | `content/plan100/` (batch01-08.py -> make.py; bio.py = 4 bio videos + finder tutorial; then master.py -> render_room.py); master folder /mnt/project-files/02-videos/; Render Room (one Render button per video) https://claude.ai/artifact/5RpYRzaySkv1cMp3xQtcok |
 | Checks | `scripts/guard.py` (local) and `.github/workflows/guard.yml` (daily live check) |
+| Project folder layout + index | /mnt/project-files/: 00-INDEX.md, 01-start-here, 02-videos/NNN_slug, 03-guides, 04-affiliates, 05-style-and-voice, 99-archive. `content/plan100/index_page.py` rebuilds 00-INDEX.md + Project Index artifact https://claude.ai/artifact/BDkpce2TAqHhja1nM9bsKU (rerun after renders/scheduling) |
 | Project history | Claude Docs "Project Summary": https://claude.ai/artifact/LJVKULTZrQCh2xTWuVdfh6 |
 
 ## How every run behaves

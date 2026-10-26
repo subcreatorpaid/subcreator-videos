@@ -1,86 +1,81 @@
 {
-  "updated": "2026-10-26 08:40",
-  "updated_by": "secretary",
-  "today": [
-    {
-      "task": "Pause the Buffer queue on Instagram, TikTok and YouTube (or delete the 7 posts) so the cancelled videos don't go out",
-      "link": "https://publish.buffer.com",
-      "mins": 2
-    },
-    {
-      "task": "Pick the first videos to remake: say \"go\" on ideas 1-10 or swap any",
-      "link": "https://claude.ai/artifact/SvJ9VwDfNZFKjpde1LyeqQ",
-      "mins": 5
-    },
-    {
-      "task": "Log in to Fiverr Affiliates and paste your link",
-      "link": "https://fiverraffiliates.com/v2/login/",
-      "mins": 2
-    }
-  ],
-  "approvals": [],
-  "alerts": [
-    {
-      "level": "high",
-      "text": "Week of 26 Oct cancelled by owner: 7 posts still scheduled in Buffer until paused/deleted. Remake everything with animator v3; wait for owner's next instruction."
-    }
-  ],
-  "pipeline": {
-    "drafted": 0,
-    "approved": 0,
-    "rendered": 3,
-    "scheduled": 7,
-    "posted": 0
+ "updated": "2026-10-26 15:10",
+ "updated_by": "secretary",
+ "today": [
+  {
+   "task": "Say \"go\" to render the 36 paused videos (GitHub minutes ran out; cloud render ~2.5 min each)",
+   "link": "https://claude.ai/artifact/BDkpce2TAqHhja1nM9bsKU",
+   "mins": 1
   },
-  "affiliates": [
-    {
-      "id": "beehiiv",
-      "status": "live",
-      "earns": "50% for 12 months"
-    },
-    {
-      "id": "opusclip",
-      "status": "live",
-      "earns": "25%"
-    },
-    {
-      "id": "elevenlabs",
-      "status": "live",
-      "earns": "22% for 12 months"
-    },
-    {
-      "id": "skool",
-      "status": "live",
-      "earns": "40% while they stay"
-    },
-    {
-      "id": "kit",
-      "status": "in review",
-      "earns": "50% for 12 months"
-    },
-    {
-      "id": "fiverr",
-      "status": "waiting owner",
-      "earns": "hybrid"
-    },
-    {
-      "id": "stan",
-      "status": "later",
-      "earns": "~20% recurring"
-    }
-  ],
-  "website": {
-    "url": "https://subcreatorpaid.com",
-    "health": "ok",
-    "checked": "2026-10-26",
-    "pending_comments": 0,
-    "subscribers": 0
+  {
+   "task": "Log in to Fiverr Affiliates and paste your link",
+   "link": "https://fiverraffiliates.com/v2/login/",
+   "mins": 2
   },
-  "last_week": null,
-  "money": {
-    "earned_month_usd": 0,
-    "pending_usd": 0,
-    "costs_month_usd": 0,
-    "note": "All tools on free plans."
+  {
+   "task": "Join open affiliate programs (Kit, vidIQ, Riverside, Stan, Amazon...): list in 04-affiliates",
+   "link": "https://claude.ai/artifact/BDkpce2TAqHhja1nM9bsKU",
+   "mins": 15
   }
+ ],
+ "approvals": [],
+ "alerts": [],
+ "pipeline": {
+  "drafted": 0,
+  "approved": 0,
+  "rendered": 3,
+  "scheduled": 7,
+  "posted": 0
+ },
+ "affiliates": [
+  {
+   "id": "beehiiv",
+   "status": "live",
+   "earns": "50% for 12 months"
+  },
+  {
+   "id": "opusclip",
+   "status": "live",
+   "earns": "25%"
+  },
+  {
+   "id": "elevenlabs",
+   "status": "live",
+   "earns": "22% for 12 months"
+  },
+  {
+   "id": "skool",
+   "status": "live",
+   "earns": "40% while they stay"
+  },
+  {
+   "id": "kit",
+   "status": "in review",
+   "earns": "50% for 12 months"
+  },
+  {
+   "id": "fiverr",
+   "status": "waiting owner",
+   "earns": "hybrid"
+  },
+  {
+   "id": "stan",
+   "status": "later",
+   "earns": "~20% recurring"
+  }
+ ],
+ "website": {
+  "url": "https://subcreatorpaid.com",
+  "health": "ok",
+  "checked": "2026-10-26",
+  "pending_comments": 0,
+  "subscribers": 0
+ },
+ "last_week": null,
+ "money": {
+  "earned_month_usd": 0,
+  "pending_usd": 0,
+  "costs_month_usd": 0,
+  "note": "All tools on free plans."
+ }
 }
