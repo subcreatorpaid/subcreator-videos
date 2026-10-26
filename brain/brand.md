@@ -31,8 +31,15 @@ trading / crypto / investments / loans / get-paid-to-watch schemes.
 - **Myths / how-tos** (value): saves and shares.
 - **Small Account Wins / proof**: official pages, viewer wins, comment replies, the owner's own numbers (only real ones).
 
-## Every video ends the same way
-Comment a keyword -> free guide (email list) -> follow. Tool videos also say/show "Affiliate link" on screen.
+## Every video ends the same way (owner rule, 26 Oct 2026)
+Four parts, 6-8 s in total, in this order:
+1. **Comment for the ebook:** "Comment KEYWORD and I'll send you the free <topic> guide." One keyword per guide (UGC, TOOLS, LIST, PAID...).
+   Until comment-to-DM automation is live, add: "or get it free on subcreatorpaid.com". Never promise a DM we can't send.
+2. **The website:** "Everything is on subcreatorpaid.com" with subcreatorpaid.com/links on screen.
+3. **The related affiliate tool:** "The tool I'd start with is linked in my bio" + "Affiliate link" on screen, and the "Tools I use" block
+   with the disclosure in the caption. Pick the tool that fits the video's topic (UGC -> Fiverr/OpusClip, email -> beehiiv/Kit, voice -> ElevenLabs, community -> Skool).
+4. **Follow.**
+Each ebook is a related free guide (PDF on the site, email sign-up to get it). Topic guides are drafted by the creator and need the owner's OK before going live.
 
 ## Before anything ships (creator + guard check)
 1. Every fact verified on an official page within 30 days, source saved.

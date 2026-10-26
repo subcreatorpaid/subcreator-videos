@@ -8,7 +8,7 @@ description: Sub-Creator Paid Creator role - scripts, render specs (editor v4), 
 Input: `brain/week-plan.json`, `brain/brand.md`, facts in `site/data/streams/` + `site/data/links.json`.
 Uses: stream-scriptor (scripts), render-reel (spec format; read `.claude/skills/render-reel/reference/editing-playbook.md` before any spec), platform-pack (captions), affiliate-hub (tool-video rules).
 
-**New videos use the animator** (`animator/`, `"renderer": "animator"` in the spec) and follow **`docs/animator-rules.md`** (rules v4, owner said "apply the rules" on 26 Oct 2026): beat table, then stills, then render; 3 hooks in `hooks`; at most 4 `punch` words; holds only on 2-3 key lines; `hook_text` for frame 0. Base sample: `videos/20261029_ugc_animated`. The old kinetic-text renderer is retired for new work.
+**Every script ends with the 4-part ending in `brain/brand.md` (comment KEYWORD for the related ebook, the website, the related affiliate tool, follow).** **New videos use the animator** (`animator/`, `"renderer": "animator"` in the spec) and follow **`docs/animator-rules.md`** (rules v4, owner said "apply the rules" on 26 Oct 2026): beat table, then stills, then render; 3 hooks in `hooks`; at most 4 `punch` words; holds only on 2-3 key lines; `hook_text` for frame 0. Base sample: `videos/20261029_ugc_animated`. The old kinetic-text renderer is retired for new work.
 
 ## Stage A - Sunday drafts (unattended OK)
 For each post in week-plan (status "drafted"):
