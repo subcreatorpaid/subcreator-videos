@@ -36,10 +36,9 @@ CSS = r"""
  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--serif:"Instrument Serif",Georgia,"Times New Roman",serif;--mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
  --glow:0 14px 34px rgba(21,21,21,.16),0 3px 10px rgba(21,21,21,.07);--glow-sm:0 8px 20px rgba(21,21,21,.20),0 2px 6px rgba(21,21,21,.08);--glow-lg:0 18px 44px rgba(21,21,21,.26),0 4px 12px rgba(21,21,21,.08);color-scheme:light}
 *{box-sizing:border-box}[hidden]{display:none!important}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);
- background-image:radial-gradient(ellipse 75% 60% at 50% 22%,rgba(246,245,241,0) 0%,rgba(246,245,241,0) 36%,var(--bg) 90%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Cpath d='M0 .5H56M.5 0V56' stroke='%23E4E1DA'/%3E%3Ccircle cx='.5' cy='.5' r='2.4' fill='%23D2CEC5'/%3E%3C/svg%3E");
- background-size:100% 100%,56px 56px;background-attachment:fixed,fixed}
+html{overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;overflow-x:clip;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);
+ background-image:radial-gradient(900px 520px at 6% -6%,rgba(46,125,79,.10),transparent 70%),radial-gradient(900px 520px at 96% 4%,rgba(217,58,58,.08),transparent 70%);background-repeat:no-repeat}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg)}
 a{color:inherit}img{max-width:100%}
 .wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -72,7 +71,22 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 .mmenu a{padding:10px 0;font-weight:700;text-decoration:none;border-bottom:1px solid var(--line)}
 @media(max-width:900px){.nav>a.l,.dd{display:none}.mnav{display:inline-block}}
 /* hero */
-.hero{padding-block:72px 28px;text-align:center}
+.hero{padding-block:72px 28px;text-align:center;position:relative}
+.man{position:absolute;top:255px;width:185px;aspect-ratio:1;pointer-events:none;z-index:0}.man.l{left:10px}.man.r{right:10px}.man.r .tag2.t1{left:auto;right:30%}.man.l .tag2.t1{left:-14%;top:-6%}.man.r .tag2.t2{left:auto;right:-4%}
+.man img{position:relative;width:100%;animation:bob 3.2s ease-in-out infinite}.man.l img{animation-delay:-1.6s}
+.man .ring{position:absolute;inset:4%;border-radius:50%;background:repeating-conic-gradient(from 0deg,var(--c) 0 6deg,transparent 6deg 18deg);opacity:.16;animation:spin 26s linear infinite;-webkit-mask:radial-gradient(circle,transparent 38%,#000 40%,#000 68%,transparent 70%);mask:radial-gradient(circle,transparent 38%,#000 40%,#000 68%,transparent 70%)}
+.man .halo{position:absolute;inset:18%;border-radius:50%;background:var(--c);opacity:.12;filter:blur(18px);animation:pulse2 3.2s ease-in-out infinite}
+.man .tag2{position:absolute;font:900 17px/1 var(--sans);color:#fff;padding:9px 13px;border-radius:12px;white-space:nowrap;animation:float 4s ease-in-out infinite}
+.man.r .tag2{background:var(--money);box-shadow:0 0 34px rgba(46,125,79,.45)}.man.l .tag2{background:var(--loss);box-shadow:0 0 34px rgba(217,58,58,.45)}
+.man .tag2.t1{top:2%;left:52%;transform:rotate(8deg)}.man .tag2.t2{bottom:16%;left:-6%;transform:rotate(-7deg);animation-delay:-2s;background:var(--ink)!important;box-shadow:0 12px 30px rgba(21,21,21,.25)!important}
+.man .coin{position:absolute;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:#fff;font:900 14px var(--sans);background:var(--c);animation:rise 5s linear infinite;opacity:0}
+.man .coin:nth-of-type(2){left:18%;animation-delay:-1.7s}.man .coin:nth-of-type(3){left:70%;animation-delay:-3.4s}.man .coin:nth-of-type(1){left:44%}
+@keyframes bob{50%{transform:translateY(-10px)}}@keyframes pulse2{50%{transform:scale(1.15);opacity:.2}}@keyframes float{50%{translate:0 -8px}}
+@keyframes rise{0%{bottom:20%;opacity:0}15%{opacity:.9}80%{opacity:.7}100%{bottom:100%;opacity:0}}
+.hero>*:not(.man){position:relative;z-index:1}
+@media(max-width:1100px){.hero{padding-top:190px}.man{width:150px;top:10px}.man.l{left:8%}.man.r{right:8%}.man .tag2{font-size:13px;padding:6px 9px}}
+@media(max-width:760px){.hero{padding-top:160px;overflow-x:clip}.man{width:128px;top:4px}.man.l{left:0}.man.r{right:0}.man .tag2.t2{display:none}.man.r .tag2.t1{left:auto;right:0}.man.l .tag2.t1{left:30%}}
+@media(prefers-reduced-motion:reduce){.man *,.dslide video,.belt .tr{animation:none!important}}
 .hero h1{font-weight:900;font-size:clamp(46px,9vw,118px);letter-spacing:-.045em;line-height:.95}
 .hero h1 em.s{display:inline-block;margin-top:.08em}
 .hero .bio{max-width:58ch;margin:24px auto 0;font-size:clamp(17px,1.9vw,20px);color:var(--muted)}
@@ -129,10 +143,24 @@ section.s{padding-block:84px 10px}
 .rc .bar{height:6px;border-radius:9px;background:var(--line);overflow:hidden}.rc .bar i{display:block;height:100%;background:var(--acc)}
 .rc p{font-size:14px;color:var(--muted)}.rc .first{font-weight:700;color:var(--ink)}
 .hint{font-size:12px;color:var(--muted)}
+.ai{background:var(--ink);color:#F2F1EC;border-color:var(--ink);box-shadow:0 30px 70px rgba(21,21,21,.28)}
+.ai .intro p,.ai .hint,.ai .or{color:#A9A79F}.ai h2 em.s{background:#fff;color:var(--ink)}.ai .badge{background:#2A2A2A}.ai .badge i{background:var(--money)}.ai .link{border-color:#fff}
+.ai .inp{background:#202020;border-color:#3A3A3A;color:#fff}.ai .inp::placeholder{color:#7D7B74}.ai .inp:focus{border-color:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.12)}
+.ai .pills button{background:#202020;border-color:#3A3A3A;color:#F2F1EC}.ai .pills button[aria-pressed="true"]{background:#fff;border-color:#fff;color:var(--ink)}
+.ai .btn.primary{background:#fff;border-color:#fff;color:var(--ink)}.ai .err{color:#FF7A7A}
+.ai .think div{color:#A9A79F}.ai .think div.done{color:#fff}.ai .think div.done::before{background:var(--money);border-color:var(--money)}.ai .think div.run::before{border-color:#fff;border-top-color:transparent}
+.ai .rc{background:#1E1E1E;border-color:#333;color:#F2F1EC}.ai .rc p{color:#A9A79F}.ai .rc .first{color:#fff}.ai .rc .pc{background:var(--money)}.ai .rc .bar{background:#333}.ai .rc .bar i{background:var(--money)}
 /* series */
 .series{padding-block:26px;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:28px;align-items:start}
 @media(max-width:860px){.series{grid-template-columns:minmax(0,1fr)}}
-.series h3{font-size:28px;font-weight:900}.series p{color:var(--muted);margin:10px 0 16px}
+.series h3{font-size:28px;font-weight:900}
+.sman{position:relative;width:170px;aspect-ratio:1;margin-top:22px}.sman img{position:relative;width:100%;animation:bob 3.4s ease-in-out infinite}
+.sman::before{content:"";position:absolute;inset:8%;border-radius:50%;background:repeating-conic-gradient(var(--c) 0 6deg,transparent 6deg 18deg);opacity:.15;animation:spin 30s linear infinite;-webkit-mask:radial-gradient(circle,transparent 40%,#000 42%,#000 68%,transparent 70%);mask:radial-gradient(circle,transparent 40%,#000 42%,#000 68%,transparent 70%)}
+.sman b{position:absolute;right:-6px;top:6%;font:900 14px/1 var(--sans);color:#fff;background:var(--c);padding:7px 10px;border-radius:10px;transform:rotate(7deg);animation:float 4s ease-in-out infinite}
+@media(max-width:860px){.series>div:first-child{display:grid;grid-template-columns:1fr 110px;column-gap:14px}.series>div:first-child>*:not(.sman){grid-column:1}.sman{grid-column:2;grid-row:1/5;width:110px;margin:0;align-self:center}.sman b{font-size:11px}}
+.row.belt{overflow:hidden;scroll-snap-type:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 92%,transparent)}
+.belt .tr{display:flex;gap:16px;width:max-content;animation:belt var(--sp,60s) linear infinite}.belt:hover .tr,.belt:active .tr{animation-play-state:paused}
+@keyframes belt{to{transform:translateX(calc(-50% - 8px))}}.series p{color:var(--muted);margin:10px 0 16px}
 .row{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 22px}
 .ep{flex:0 0 186px;scroll-snap-align:start;text-decoration:none}
 .ep .th{aspect-ratio:9/16;border-radius:16px;border:1.5px solid rgba(21,21,21,.85);background:#F6F5F1 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Cpath d='M0 .5H22M.5 0V22' stroke='%23E4E1DA'/%3E%3C/svg%3E");box-shadow:var(--glow);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:14px;gap:8px;transition:transform .15s,box-shadow .15s}
@@ -143,7 +171,9 @@ section.s{padding-block:84px 10px}
 .ep.soon .th{opacity:.6}
 .ep .th.img{padding:0;overflow:hidden;background:#F6F5F1}.ep .th.img img{width:100%;height:100%;object-fit:cover;display:block}
 .ep .th.logo{background:#fff;gap:18px}.ep .th.logo img{width:auto;height:auto;max-width:70%;max-height:110px;object-fit:contain}
-.vframe.img{padding:0}.vframe.img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.vframe.img{padding:0}
+.dslide{overflow:visible}.dslide video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:0;animation:dsl 12s infinite;background:#F6F5F1}
+@keyframes dsl{0%{opacity:0;transform:translateX(24%)}4%{opacity:1;transform:none}25%{opacity:1;transform:none}29%{opacity:0;transform:translateX(-24%)}100%{opacity:0}}.vframe.img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit}
 /* metrics */
 .metrics{margin-top:80px;background:var(--ink);color:#fff}
 .metrics .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding-block:44px;gap:20px}
@@ -343,19 +373,27 @@ def build():
     t_eps = "".join(ep("Tool", p["name"], "affiliate" if p["pays_you"] else "free tool", "/tools/", p["name"], p["category"], img=logo(p["id"]), logo=True) for p in pay_progs[:6])
     w_eps = "".join(ep(f'Video {v["n"]}', v["title"][:22], f'{v["seconds"]} s', f'/videos/#v{v["n"]}', v["title"], "Watch + free guide", img=v.get("poster")) for v in videos[:6]) or \
         ep("Coming soon", "Your question", "answered", "/#finder", "First episode soon", "Ask in the comments", True)
+    sman = lambda img, c, t: f'<div class="sman" style="--c:{c}" aria-hidden="true"><img src="/static/man/{img}.svg" alt=""><b>{t}</b></div>'
+    belt = lambda eps, n: f'<div class="row belt" style="--sp:{max(30, n * 7)}s"><div class="tr">{eps}<div style="display:contents" aria-hidden="true">{eps}</div></div></div>'
+    hooks = [v for v in videos if os.path.exists(os.path.join(HERE, "static", "v", "hooks", f'{v["n"]}.mp4'))]  # 4 s hook clips for the phone slideshow
     hero_card = ""
     if latest:
         words = latest["title"].split(" (")[0]
         hero_card = (f'<div class="heroimg"><div class="in"><span class="live">NEW INCOME STREAM</span><h2>{e(words)}: <em class="s{money(latest["pay_short"])}">{e(latest["pay_short"])}</em></h2>'
                      f'<p>{e(latest["one_liner"])} Followers needed: {e(latest["followers"].split(".")[0])}.</p><div><a class="link" href="/streams/{latest["slug"]}/">Read the steps →</a></div></div>'
-                     + (f'<a class="vframe img" href="/streams/{latest["slug"]}/" aria-label="{e(words)}"><img src="{thumb(latest["slug"])}" alt=""><span class="playbig" aria-hidden="true"></span></a></div>' if thumb(latest["slug"]) else
+                     + (f'<a class="vframe img dslide" href="/videos/" aria-label="Watch the latest videos">'
+                        + "".join(f'<video src="/static/v/hooks/{v["n"]}.mp4" poster="{v["poster"]}" muted autoplay loop playsinline preload="metadata" style="animation-delay:{i * 3}s"></video>' for i, v in enumerate(hooks[:4]))
+                        + '<span class="playbig" aria-hidden="true"></span></a></div>' if len(hooks) >= 4 else
+                        f'<a class="vframe img" href="/streams/{latest["slug"]}/" aria-label="{e(words)}"><img src="{thumb(latest["slug"])}" alt=""><span class="playbig" aria-hidden="true"></span></a></div>' if thumb(latest["slug"]) else
                      f'<a class="vframe" href="/streams/{latest["slug"]}/" aria-label="{e(words)}"><span class="sun" aria-hidden="true">$</span><span class="a">{e(latest["category"])}</span>'
                      f'<span class="b">{e(latest["pay_short"])}</span><span class="c">{e(latest["pay_unit"])}</span><span class="playbig" aria-hidden="true"></span></a></div>'))
     posts_html = "".join(f'<a class="essay" href="/blog/{p["slug"]}/"><p class="eyebrow">{e(p["tag"])}</p><h3>{e(p["title"])}</h3><p>{e(p["dek"])}</p><small>{e(str(p["minutes"]))} MIN READ</small></a>' for p in posts[:3])
     if not posts_html:
         posts_html = "".join(f'<a class="essay" href="/streams/{s["slug"]}/"><p class="eyebrow">{e(s["category"])}</p><h3>{e(s["title"].split(" (")[0])}: the full guide</h3><p>{e(s["one_liner"])}</p><small>CHECKED {e(s["checked"])}</small></a>' for s in streams[:3])
     stack = "".join(f'<div>{e(s["title"].split(" (")[0])} <span>{e(s["pay_short"])}</span></div>' for s in streams[:4])
-    home = (f'<section class="wrap hero"><p class="eyebrow">For creators under 10k followers</p><h1 style="margin-top:18px">Small account.<br><em class="s m">Real income.</em></h1>'
+    man = lambda side, img, c, t1, t2, coin: (f'<div class="man {side}" style="--c:{c}" aria-hidden="true"><span class="ring"></span><span class="halo"></span>'
+                                             + "".join(f'<span class="coin">{coin}</span>' for _ in range(3)) + f'<img src="/static/man/{img}.svg" alt=""><span class="tag2 t1">{t1}</span><span class="tag2 t2">{t2}</span></div>')
+    home = (f'<section class="wrap hero">' + man("l", "loss", "var(--loss)", "$0 from views", "Waiting for 10k?", "✕") + man("r", "hero", "var(--money)", "+$50 a video", "No 10k needed", "$") + f'<p class="eyebrow">For creators under 10k followers</p><h1 style="margin-top:18px">Small account.<br><em class="s m">Real income.</em></h1>'
             f'<p class="bio">Sub-Creator Paid finds the ways small creators actually get paid, checks every number on the official page, and turns it into a short video and a step-by-step guide.</p>'
             f'<div class="ctas"><a class="btn primary" href="#finder">Find my income streams</a><a class="btn" href="#watch">Watch the latest videos</a></div>'
             f'<div class="cred"><span><b>{len(streams)}</b> income streams verified</span><span><b>USD</b> pay figures</span><span><b>Every</b> affiliate link disclosed</span></div>{hero_card}</section>'
@@ -363,9 +401,9 @@ def build():
             f'<section class="strip" aria-label="Programs and tools we have checked"><p class="k">Programs and tools we\'ve checked</p>'
             f'<div class="mq"><div class="tr">{mq}{mq}</div></div><div class="mq rev" style="margin-top:12px"><div class="tr">{mq2}{mq2}</div></div></section>'
             f'<section class="s wrap" id="watch"><div class="shead"><div><h2>Three series, <em class="s">one goal.</em></h2><p>Get your first income before your account is big. Each series answers a different question.</p></div></div>'
-            f'<div class="series"><div><p class="eyebrow">Daily · 60 seconds</p><h3 style="margin-top:8px">Stream of the Day</h3><p>One verified way to get paid: the pay, the catch and the first steps.</p><a class="link" href="/streams/">All income streams →</a></div><div class="row">{s_eps}</div></div>'
-            f'<div class="series"><div><p class="eyebrow">Weekly</p><h3 style="margin-top:8px">Tools That Pay</h3><p>Creator tools with fair referral programs, checked before we mention them.</p><a class="link" href="/tools/">All tools →</a></div><div class="row">{t_eps}</div></div>'
-            f'<div class="series"><div><p class="eyebrow">Fridays</p><h3 style="margin-top:8px">Small Account Wins</h3><p>Your questions answered, and real numbers from creators under 10k.</p><a class="link" href="/videos/">All videos →</a></div><div class="row">{w_eps}</div></div></section>'
+            f'<div class="series"><div><p class="eyebrow">Daily · 60 seconds</p><h3 style="margin-top:8px">Stream of the Day</h3><p>One verified way to get paid: the pay, the catch and the first steps.</p><a class="link" href="/streams/">All income streams →</a>{sman("stream", "var(--money)", "Get paid")}</div>{belt(s_eps, len(streams))}</div>'
+            f'<div class="series"><div><p class="eyebrow">Weekly</p><h3 style="margin-top:8px">Tools That Pay</h3><p>Creator tools with fair referral programs, checked before we mention them.</p><a class="link" href="/tools/">All tools →</a>{sman("tools", "var(--ink)", "Checked")}</div>{belt(t_eps, 6)}</div>'
+            f'<div class="series"><div><p class="eyebrow">Fridays</p><h3 style="margin-top:8px">Small Account Wins</h3><p>Your questions answered, and real numbers from creators under 10k.</p><a class="link" href="/videos/">All videos →</a>{sman("wins", "var(--loss)", "No fake payouts")}</div>{belt(w_eps, 6)}</div></section>'
             f'<section class="metrics" aria-label="Site numbers"><div class="wrap"><div><b class="num">100%</b><span>of pay figures linked to the official page</span></div>'
             f'<div><b class="num">{len(streams)}</b><span>income stream guides, each with sources</span></div><div><b class="num">{len(progs)}</b><span>creator tools listed, free plans marked</span></div>'
             f'<div><b class="num">$0</b><span>to use the finder, tracker and guides</span></div></div></section>'
