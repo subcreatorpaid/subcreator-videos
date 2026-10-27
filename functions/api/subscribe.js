@@ -1,7 +1,7 @@
 // Newsletter sign-up: POST /api/subscribe {email, first, last}
 // Saves the subscriber in the site's own Cloudflare D1 database (binding "DB").
 // When BEEHIIV_API_KEY and BEEHIIV_PUBLICATION_ID are set, also sends them to beehiiv (which sends the emails).
-import { json, ensure, ipHash, tooMany } from "../../lib/db.js";
+import { json, ensure, ipHash, tooMany, retry } from "../../lib/db.js";
 
 export async function onRequestPost({ request, env }) {
   let b; try { b = await request.json(); } catch { return json({ ok: false, message: "Bad request." }, 400); }
@@ -25,12 +25,12 @@ export async function onRequestPost({ request, env }) {
   }
   if (env.DB) {
     try {
-      await ensure(env.DB);
+      await retry(() => ensure(env.DB));
       const iph = await ipHash(request);
-      if (await tooMany(env.DB, "subscribers", iph, 5)) return json({ ok: false, message: "Too many sign-ups from this connection. Try again later." }, 429);
-      await env.DB.prepare(`INSERT INTO subscribers (email, first, last, source, synced, created, iph) VALUES (?1, ?2, ?3, 'website', ?4, ?5, ?6)
+      if (await retry(() => tooMany(env.DB, "subscribers", iph, 5))) return json({ ok: false, message: "Too many sign-ups from this connection. Try again later." }, 429);
+      await retry(() => env.DB.prepare(`INSERT INTO subscribers (email, first, last, source, synced, created, iph) VALUES (?1, ?2, ?3, 'website', ?4, ?5, ?6)
         ON CONFLICT(email) DO UPDATE SET status = 'active', synced = MAX(synced, excluded.synced)`)
-        .bind(email, first, last, synced, new Date().toISOString(), iph).run();
+        .bind(email, first, last, synced, new Date().toISOString(), iph).run());
     } catch (e) {
       console.log("subscribe db error", String(e && e.message || e));
       if (!synced) return json({ ok: false, message: "Something went wrong. Please try again in a minute." }, 500);
