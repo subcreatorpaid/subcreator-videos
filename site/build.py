@@ -32,9 +32,9 @@ CSS = r"""
 @font-face{font-family:Inter;src:url(/static/Inter-Bold.otf);font-weight:700;font-display:swap}
 @font-face{font-family:Inter;src:url(/static/Inter-ExtraBold.otf);font-weight:800;font-display:swap}
 @font-face{font-family:Inter;src:url(/static/Inter-Black.otf);font-weight:900;font-display:swap}
-:root{--bg:#F6F5F1;--paper:#FFFFFF;--ink:#151515;--muted:#5F5E58;--line:#E2DFD7;--acc:#2E7D4F;--acc-soft:#E3F0E7;--gold:#E9C46A;
+:root{--bg:#F6F5F1;--paper:#FFFFFF;--ink:#151515;--muted:#5F5E58;--line:#E2DFD7;--acc:#151515;--acc-soft:#ECEAE4;--money:#2E7D4F;--money-soft:#E3F0E7;--loss:#D93A3A;--loss-soft:#FBE9E9;--gold:#E9C46A;
  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--serif:"Instrument Serif",Georgia,"Times New Roman",serif;--mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
- --glow:0 14px 34px rgba(46,125,79,.16),0 3px 10px rgba(21,21,21,.07);--glow-sm:0 8px 20px rgba(46,125,79,.20),0 2px 6px rgba(21,21,21,.08);--glow-lg:0 18px 44px rgba(46,125,79,.26),0 4px 12px rgba(21,21,21,.08);color-scheme:light}
+ --glow:0 14px 34px rgba(21,21,21,.16),0 3px 10px rgba(21,21,21,.07);--glow-sm:0 8px 20px rgba(21,21,21,.20),0 2px 6px rgba(21,21,21,.08);--glow-lg:0 18px 44px rgba(21,21,21,.26),0 4px 12px rgba(21,21,21,.08);color-scheme:light}
 *{box-sizing:border-box}[hidden]{display:none!important}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);
@@ -44,11 +44,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 a{color:inherit}img{max-width:100%}
 .wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 h1,h2,h3{margin:0;line-height:1.02;letter-spacing:-.03em;text-wrap:balance}p{margin:0}
-em.s{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--acc)}
+em.s{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--acc)}em.s.m,.m{color:var(--money)}.l,dl dt.l{color:var(--loss)}
 .eyebrow{font:700 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:800 15px/1 var(--sans);padding:15px 22px;border-radius:999px;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);text-decoration:none;cursor:pointer;box-shadow:var(--glow-sm);transition:transform .12s,box-shadow .12s}
 .btn:hover{transform:translateY(-2px);box-shadow:var(--glow-lg)}.btn:active{transform:translateY(1px)}.btn[disabled]{opacity:.6;cursor:wait}
-.btn.primary{background:var(--acc);border-color:var(--acc);color:#fff;box-shadow:0 10px 26px rgba(46,125,79,.35)}.btn.dark{background:var(--ink);color:#fff}.btn.sm{padding:11px 16px;font-size:14px}
+.btn.primary{background:var(--acc);border-color:var(--acc);color:#fff;box-shadow:0 10px 26px rgba(21,21,21,.35)}.btn.dark{background:var(--ink);color:#fff}.btn.sm{padding:11px 16px;font-size:14px}
 :focus-visible{outline:3px solid var(--acc);outline-offset:3px}
 .link{font-weight:800;text-decoration:none;border-bottom:2px solid var(--acc);padding-bottom:2px}
 .num{font-variant-numeric:tabular-nums}
@@ -60,7 +60,7 @@ em.s{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(246,245,241,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;gap:26px;padding-block:14px}
 .mark{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;letter-spacing:-.03em;text-decoration:none;margin-right:auto;text-transform:lowercase}
-.mark i{width:34px;height:34px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:900;box-shadow:var(--glow-sm);text-transform:none}
+.mark i{width:34px;height:34px;border-radius:50%;background:var(--money);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:900;box-shadow:var(--glow-sm);text-transform:none}
 .nav>a.l,.dd>button{font:600 15px var(--sans);color:var(--muted);text-decoration:none;background:none;border:0;cursor:pointer;padding:0}
 .nav>a.l:hover,.dd>button:hover,.nav>a.l[aria-current]{color:var(--ink)}
 .dd{position:relative}
@@ -89,8 +89,8 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 .playbig::after{content:"";border-left:22px solid var(--ink);border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px}
 @media(max-width:760px){.heroimg{aspect-ratio:auto;padding-bottom:118%}.heroimg .in{max-width:100%}.vframe{top:auto;bottom:4%;right:50%;transform:translateX(50%) rotate(2deg);height:auto;width:52%}}
 .live{display:inline-flex;align-items:center;gap:8px;font:700 12px var(--mono);color:var(--acc)}
-.live::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px rgba(46,125,79,.2);animation:pulse 1.6s ease-in-out infinite}
-@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(46,125,79,0)}}
+.live::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px rgba(21,21,21,.2);animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(21,21,21,0)}}
 /* marquee */
 .strip{padding-block:46px 10px}
 .strip p.k{text-align:center;font:700 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
@@ -111,7 +111,7 @@ section.s{padding-block:84px 10px}
 .badge i{width:8px;height:8px;border-radius:50%;background:#9FD7B3}
 .ai form{display:grid;gap:14px}.ai label.f{font-weight:700;font-size:14px;display:block;margin-bottom:7px}
 .inp{width:100%;min-width:0;font:500 16px var(--sans);padding:14px 15px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
-.inp:focus{border-color:var(--acc);outline:none;box-shadow:0 0 0 4px rgba(46,125,79,.15)}
+.inp:focus{border-color:var(--acc);outline:none;box-shadow:0 0 0 4px rgba(21,21,21,.15)}
 .pills{display:flex;flex-wrap:wrap;gap:8px}
 .pills button{font:600 14px/1 var(--sans);padding:10px 13px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
 .pills button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
@@ -141,6 +141,9 @@ section.s{padding-block:84px 10px}
 .ep .t3{background:var(--ink);color:#fff;font:800 11px var(--sans);padding:5px 9px}
 .ep .cap{font-size:14px;font-weight:700;margin-top:10px;line-height:1.3}.ep .cap span{display:block;font-weight:500;color:var(--muted);font-size:12px;margin-top:2px}
 .ep.soon .th{opacity:.6}
+.ep .th.img{padding:0;overflow:hidden;background:#F6F5F1}.ep .th.img img{width:100%;height:100%;object-fit:cover;display:block}
+.ep .th.logo{background:#fff;gap:18px}.ep .th.logo img{width:auto;height:auto;max-width:70%;max-height:110px;object-fit:contain}
+.vframe.img{padding:0}.vframe.img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit}
 /* metrics */
 .metrics{margin-top:80px;background:var(--ink);color:#fff}
 .metrics .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding-block:44px;gap:20px}
@@ -203,7 +206,7 @@ section.s{padding-block:84px 10px}
 @media(max-width:500px){.facts-card div{grid-template-columns:minmax(0,1fr);gap:4px}}
 .body2{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:40px}@media(max-width:900px){.body2{grid-template-columns:minmax(0,1fr)}}
 .article h2{font-size:30px;margin:34px 0 12px;font-weight:900}.article p,.article li{color:#2B2B28;max-width:65ch}
-.callout{padding:18px 20px;border-radius:16px;background:var(--acc-soft);border:1.5px solid var(--acc);margin:22px 0}
+.callout{padding:18px 20px;border-radius:16px;background:var(--acc-soft);border:1.5px solid var(--acc);margin:22px 0}.callout.l{background:var(--loss-soft);border-color:var(--loss);color:var(--ink)}.callout.l b{color:var(--loss)}
 .rail{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:10px;margin:8px 0 18px}
 .rail div{border:1.5px solid var(--ink);border-radius:12px;padding:10px 12px;background:var(--paper);font-weight:700;font-size:14px;transition:background .2s,color .2s}
 .rail div small{display:block;font:700 11px var(--mono);color:var(--muted)}.rail div.on{background:var(--acc);color:#fff;border-color:var(--acc)}.rail div.on small{color:#DDF0E3}
@@ -243,7 +246,7 @@ def head(title, desc, path, extra=""):
             f'<link rel="stylesheet" href="/static/site.css?v={TODAY}">{extra}</head><body><a class="skip" href="#main">Skip to content</a>')
 
 def header(cur=""):
-    items = "".join(f'<a href="/streams/{s["slug"]}/">{e(s["title"].split(" (")[0])}<small>{e(s["category"])} · {e(s["pay_short"])}</small></a>' for s in streams)
+    items = "".join(f'<a href="/streams/{s["slug"]}/">{e(s["title"].split(" (")[0])}<small>{e(s["category"])} · <span class="{money(s["pay_short"]).strip()}">{e(s["pay_short"])}</span></small></a>' for s in streams)
     def l(href, label, key):
         return f'<a class="l" href="{href}"{" aria-current=page" if cur == key else ""}>{label}</a>'
     return (f'<header class="top"><div class="wrap nav"><a class="mark" href="/"><i>$</i>sub-creator paid</a>'
@@ -286,12 +289,22 @@ def page(path, title, desc, body, cur="", extra=""):
 def stream_card(s):
     return (f'<a class="card stream" href="/streams/{s["slug"]}/" data-cat="{s["cat"]}" data-zero="{1 if s["match"]["min_followers"] == 0 else 0}">'
             f'<div class="r1"><div class="ic">{e(s["letter"])}</div><div style="min-width:0"><h3>{e(s["title"].split(" (")[0])}</h3><span class="tag">{e(s["category"])}</span></div></div>'
-            f'<div class="facts"><div><small>Pay</small><b class="num">{e(s["pay_short"])}</b><span class="hint" style="display:block">{e(s["pay_unit"])}</span></div>'
+            f'<div class="facts"><div><small>Pay</small><b class="num{money(s["pay_short"])}">{e(s["pay_short"])}</b><span class="hint" style="display:block">{e(s["pay_unit"])}</span></div>'
             f'<div><small>To start</small><b>{e(s["start"])}</b></div></div>'
             f'<div class="foot"><span>{"No follower minimum" if s["match"]["min_followers"] == 0 else "Needs an audience"}</span><span>Read the steps →</span></div></a>')
 
-def ep(label, big, box, href, cap, sub, soon=False):
-    return (f'<a class="ep{" soon" if soon else ""}" href="{href}"><div class="th"><span class="t1">{e(label)}</span><span class="t2">{e(big)}</span><span class="t3">{e(box)}</span></div>'
+def money(x):  # green only for money amounts (new colour scheme)
+    return " m" if any(c in str(x) for c in "$%") else ""
+
+def ep(label, big, box, href, cap, sub, soon=False, img=None, logo=False):
+    # img: a real picture (video thumbnail, or the tool's logo when logo=True) instead of the text card
+    if img and logo:
+        th = f'<div class="th logo"><img src="{img}" alt="{e(big)} logo" loading="lazy"><span class="t3">{e(box)}</span></div>'
+    elif img:
+        th = f'<div class="th img"><img src="{img}" alt="{e(cap)}" loading="lazy"></div>'
+    else:
+        th = f'<div class="th"><span class="t1">{e(label)}</span><span class="t2">{e(big)}</span><span class="t3">{e(box)}</span></div>'
+    return (f'<a class="ep{" soon" if soon else ""}" href="{href}">{th}'
             f'<p class="cap">{e(cap)}<span>{e(sub)}</span></p></a>')
 
 def finder_html():
@@ -324,22 +337,25 @@ def build():
     # ---------- home
     mq = "".join(f"<span>{e(p['name'])}</span>" for p in pay_progs)
     mq2 = "".join(f"<span>{e(p['name'])}</span>" for p in reversed(pay_progs))
-    s_eps = "".join(ep(s["category"], s["pay_short"], s["pay_unit"][:24], f'/streams/{s["slug"]}/', s["title"].split(" (")[0], s["category"]) for s in streams)
-    t_eps = "".join(ep("Tool", p["name"], "affiliate" if p["pays_you"] else "free tool", "/tools/", p["name"], p["category"]) for p in pay_progs[:6])
-    w_eps = "".join(ep(f'Video {v["n"]}', v["title"][:22], f'{v["seconds"]} s', f'/videos/#v{v["n"]}', v["title"], "Watch + free guide") for v in videos[:6]) or \
+    thumb = lambda slug: f"/static/th/{slug}.jpg" if os.path.exists(os.path.join(HERE, "static", "th", f"{slug}.jpg")) else None  # video thumbnail for a stream
+    logo = lambda pid: next((f"/static/logos/{pid}.{x}" for x in ("svg", "png", "webp", "jpg") if os.path.exists(os.path.join(HERE, "static", "logos", f"{pid}.{x}"))), None)
+    s_eps = "".join(ep(s["category"], s["pay_short"], s["pay_unit"][:24], f'/streams/{s["slug"]}/', s["title"].split(" (")[0], s["category"], img=thumb(s["slug"])) for s in streams)
+    t_eps = "".join(ep("Tool", p["name"], "affiliate" if p["pays_you"] else "free tool", "/tools/", p["name"], p["category"], img=logo(p["id"]), logo=True) for p in pay_progs[:6])
+    w_eps = "".join(ep(f'Video {v["n"]}', v["title"][:22], f'{v["seconds"]} s', f'/videos/#v{v["n"]}', v["title"], "Watch + free guide", img=v.get("poster")) for v in videos[:6]) or \
         ep("Coming soon", "Your question", "answered", "/#finder", "First episode soon", "Ask in the comments", True)
     hero_card = ""
     if latest:
         words = latest["title"].split(" (")[0]
-        hero_card = (f'<div class="heroimg"><div class="in"><span class="live">NEW INCOME STREAM</span><h2>{e(words)}: <em class="s">{e(latest["pay_short"])}</em></h2>'
+        hero_card = (f'<div class="heroimg"><div class="in"><span class="live">NEW INCOME STREAM</span><h2>{e(words)}: <em class="s{money(latest["pay_short"])}">{e(latest["pay_short"])}</em></h2>'
                      f'<p>{e(latest["one_liner"])} Followers needed: {e(latest["followers"].split(".")[0])}.</p><div><a class="link" href="/streams/{latest["slug"]}/">Read the steps →</a></div></div>'
+                     + (f'<a class="vframe img" href="/streams/{latest["slug"]}/" aria-label="{e(words)}"><img src="{thumb(latest["slug"])}" alt=""><span class="playbig" aria-hidden="true"></span></a></div>' if thumb(latest["slug"]) else
                      f'<a class="vframe" href="/streams/{latest["slug"]}/" aria-label="{e(words)}"><span class="sun" aria-hidden="true">$</span><span class="a">{e(latest["category"])}</span>'
-                     f'<span class="b">{e(latest["pay_short"])}</span><span class="c">{e(latest["pay_unit"])}</span><span class="playbig" aria-hidden="true"></span></a></div>')
+                     f'<span class="b">{e(latest["pay_short"])}</span><span class="c">{e(latest["pay_unit"])}</span><span class="playbig" aria-hidden="true"></span></a></div>'))
     posts_html = "".join(f'<a class="essay" href="/blog/{p["slug"]}/"><p class="eyebrow">{e(p["tag"])}</p><h3>{e(p["title"])}</h3><p>{e(p["dek"])}</p><small>{e(str(p["minutes"]))} MIN READ</small></a>' for p in posts[:3])
     if not posts_html:
         posts_html = "".join(f'<a class="essay" href="/streams/{s["slug"]}/"><p class="eyebrow">{e(s["category"])}</p><h3>{e(s["title"].split(" (")[0])}: the full guide</h3><p>{e(s["one_liner"])}</p><small>CHECKED {e(s["checked"])}</small></a>' for s in streams[:3])
     stack = "".join(f'<div>{e(s["title"].split(" (")[0])} <span>{e(s["pay_short"])}</span></div>' for s in streams[:4])
-    home = (f'<section class="wrap hero"><p class="eyebrow">For creators under 10k followers</p><h1 style="margin-top:18px">Small account.<br><em class="s">Real income.</em></h1>'
+    home = (f'<section class="wrap hero"><p class="eyebrow">For creators under 10k followers</p><h1 style="margin-top:18px">Small account.<br><em class="s m">Real income.</em></h1>'
             f'<p class="bio">Sub-Creator Paid finds the ways small creators actually get paid, checks every number on the official page, and turns it into a short video and a step-by-step guide.</p>'
             f'<div class="ctas"><a class="btn primary" href="#finder">Find my income streams</a><a class="btn" href="#watch">Watch the latest videos</a></div>'
             f'<div class="cred"><span><b>{len(streams)}</b> income streams verified</span><span><b>USD</b> pay figures</span><span><b>Every</b> affiliate link disclosed</span></div>{hero_card}</section>'
@@ -396,9 +412,9 @@ def build():
                 f'<h1 style="margin-top:12px;font-size:clamp(38px,6vw,68px);font-weight:900;letter-spacing:-.04em">{e(nm)}</h1><p class="lead" style="font-size:19px;color:var(--muted);margin-top:16px;max-width:48ch">{e(s["one_liner"])}</p>'
                 f'<div class="meta"><span class="tag">{"No follower minimum" if s["match"]["min_followers"] == 0 else "Needs an audience"}</span><span class="tag">Last checked {e(s["checked"])}</span><span class="tag warn">Rules can change</span></div></div>'
                 f'<div class="card facts-card"><dl><div><dt>Followers needed</dt><dd>{e(s["followers"])}</dd></div><div><dt>What it pays</dt><dd class="num">{e(s["pay"])}</dd></div>'
-                f'<div><dt>The catch</dt><dd>{e(s["catch"])}</dd></div><div><dt>Great for</dt><dd>{e(", ".join(s["great_for"]))}</dd></div></dl></div></div>'
+                f'<div><dt class="l">The catch</dt><dd>{e(s["catch"])}</dd></div><div><dt>Great for</dt><dd>{e(", ".join(s["great_for"]))}</dd></div></dl></div></div>'
                 f'<div class="body2"><article class="article"><h2>How to start</h2><div class="rail" id="rail" style="--n:{len(s["steps"])}">{rail}</div>{steps}'
-                f'<div class="callout"><b>The catch:</b> {e(s["catch"])}</div>{comments}</article>'
+                f'<div class="callout l"><b>The catch:</b> {e(s["catch"])}</div>{comments}</article>'
                 f'<aside class="side"><div class="card"><p class="eyebrow">Tools for this stream</p><ul class="toolli">{tools}</ul><p class="hint" style="margin-top:10px">Links marked affiliate may earn us a commission at no cost to you. <a href="/disclosure/">Disclosure</a></p></div>'
                 f'<div class="card"><p class="eyebrow">Sources</p>{src}<p class="hint" style="margin-top:8px">Check the official page before you rely on any number.</p></div>'
                 f'<div class="card"><p class="eyebrow">Next stream</p><a href="/streams/{nxt["slug"]}/" style="text-decoration:none"><b style="display:block;margin-top:8px;font-size:18px">{e(nxt["title"].split(" (")[0])}</b><span class="hint">{e(nxt["pay_short"])} {e(nxt["pay_unit"])}</span></a></div>'
