@@ -16,12 +16,12 @@
     "tiktok": 0,
     "youtube": 0,
     "telegram": null,
-    "email_subscribers": 1,
+    "email_subscribers": 0,
     "site_visitors_7d": 62,
     "affiliate_clicks_7d": null,
     "affiliate_signups_total": 0,
     "earned_usd_total": 0,
-    "site_note": "27 Oct 08:50: Cloudflare Web Analytics since 25 Oct 11:06 (about 2 days): 62 visits / 69 page views (24h: 35 / 36), 41 desktop / 28 mobile, top country US. D1: 1 subscriber, 1 comment. Finder: 7 successful uses. Search Console: 4 impressions, 0 clicks. Includes owner testing."
+    "site_note": "27 Oct 08:50: Cloudflare Web Analytics since 25 Oct 11:06 (about 2 days): 62 visits / 69 page views (24h: 35 / 36), 41 desktop / 28 mobile, top country US. D1: 0 real subscribers/comments (the 1 row in each is the 25 Oct setup test). Finder: 7 successful uses. Search Console: 4 impressions, 0 clicks. Includes owner testing."
   },
   "history": []
 }
