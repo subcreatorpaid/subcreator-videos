@@ -82,7 +82,8 @@
   "health": "ok",
   "checked": "2026-10-27",
   "pending_comments": 0,
-  "subscribers": 0
+  "subscribers": 1,
+  "visits_since_launch": 62
  },
  "last_week": null,
  "money": {
