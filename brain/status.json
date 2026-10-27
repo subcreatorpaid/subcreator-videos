@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-26 15:10",
+ "updated": "2026-10-27 08:00",
  "updated_by": "secretary",
  "today": [
   {
@@ -18,14 +18,27 @@
    "mins": 15
   }
  ],
- "approvals": [],
- "alerts": [],
+ "approvals": [
+  {
+   "what": "Cover-first copies of videos 002-008 (they open on a near-blank frame now)",
+   "say": "use the cover copies",
+   "since": "2026-10-27"
+  }
+ ],
+ "alerts": [
+  {
+   "level": "warn",
+   "since": "2026-10-27",
+   "text": "GitHub Actions is blocked (minutes used up / billing), so the daily website check and renders can't run there. Checks ran here instead: files pass, website loads; live link and header checks skipped.",
+   "link": "https://github.com/settings/billing"
+  }
+ ],
  "pipeline": {
   "drafted": 0,
   "approved": 0,
   "rendered": 3,
   "scheduled": 7,
-  "posted": 0
+  "posted": 1
  },
  "affiliates": [
   {
@@ -67,7 +80,7 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-10-26",
+  "checked": "2026-10-27",
   "pending_comments": 0,
   "subscribers": 0
  },

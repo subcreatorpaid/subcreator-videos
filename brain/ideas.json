@@ -1,165 +1,173 @@
 {
-  "note": "Top 20 trending ideas (owner asked for 20, not 100, on 26 Oct 2026), in make order; 1-10 = suggested first animator batch, waiting for the owner's go. Master list: Claude Docs '20 Best Video Ideas' https://claude.ai/artifact/SvJ9VwDfNZFKjpde1LyeqQ. Every idea goes through opportunity-check before scripting.",
-  "ideas": [
-    {
-      "rank": 1,
-      "title": "UGC: brands pay for videos you never post",
-      "type": "value",
-      "source": "top-20 list 26 Oct",
-      "affiliate": null,
-      "status": "rendered (review)"
-    },
-    {
-      "rank": 2,
-      "title": "Why views alone won't pay you yet",
-      "type": "value",
-      "source": "top-20 list 26 Oct",
-      "affiliate": null,
-      "status": "rendered (review)"
-    },
-    {
-      "rank": 3,
-      "title": "You don't need 10k followers to earn",
-      "type": "value",
-      "source": "top-20 list 26 Oct",
-      "affiliate": null,
-      "status": "rendered (review)"
-    },
-    {
-      "rank": 4,
-      "title": "Make 3 UGC samples with just your phone",
-      "type": "value",
-      "source": "top-20 list 26 Oct",
-      "affiliate": null,
-      "status": "rendered (review)"
-    },
-    {
-      "rank": 5,
-      "title": "How to price your first UGC video",
-      "type": "value",
-      "source": "top-20 list 26 Oct",
-      "affiliate": null,
-      "status": "rendered (review)"
-    },
-    {
-      "rank": 6,
-      "title": "Where small creators find UGC jobs",
-      "type": "value",
-      "source": "top-20 list 26 Oct",
-      "affiliate": "fiverr",
-      "status": "rendered (review)"
-    },
-    {
-      "rank": 7,
-      "title": "How to spot fake brand deals",
-      "type": "value",
-      "source": "top-20 list 26 Oct",
-      "affiliate": null,
-      "status": "rendered (review)"
-    },
-    {
-      "rank": 8,
-      "title": "Affiliate and ad disclosure: how to stay legal",
-      "type": "value",
-      "source": "top-20 list 26 Oct",
-      "affiliate": null,
-      "status": "rendered (review)"
-    },
-    {
-      "rank": 9,
-      "title": "Turn one podcast into ten Shorts for clients",
-      "type": "tool",
-      "source": "top-20 list 26 Oct",
-      "affiliate": "opusclip",
-      "status": "queued"
-    },
-    {
-      "rank": 10,
-      "title": "Voiceover as a side service, no mic setup",
-      "type": "tool",
-      "source": "top-20 list 26 Oct",
-      "affiliate": "elevenlabs",
-      "status": "queued"
-    },
-    {
-      "rank": 11,
-      "title": "TikTok Shop affiliate: who qualifies",
-      "type": "value",
-      "source": "top-20 list 26 Oct",
-      "affiliate": null,
-      "status": "queued"
-    },
-    {
-      "rank": 12,
-      "title": "Amazon Associates with 0 followers",
-      "type": "value",
-      "source": "top-20 list 26 Oct",
-      "affiliate": null,
-      "status": "queued"
-    },
-    {
-      "rank": 13,
-      "title": "Usage rights: get paid again for the same video",
-      "type": "value",
-      "source": "top-20 list 26 Oct",
-      "affiliate": null,
-      "status": "queued"
-    },
-    {
-      "rank": 14,
-      "title": "The 3 numbers brands check instead of followers",
-      "type": "value",
-      "source": "top-20 list 26 Oct",
-      "affiliate": null,
-      "status": "queued"
-    },
-    {
-      "rank": 15,
-      "title": "Base fee plus bonus: the new brand deal",
-      "type": "value",
-      "source": "top-20 list 26 Oct",
-      "affiliate": null,
-      "status": "queued"
-    },
-    {
-      "rank": 16,
-      "title": "Local businesses paying for content",
-      "type": "value",
-      "source": "top-20 list 26 Oct",
-      "affiliate": null,
-      "status": "queued"
-    },
-    {
-      "rank": 17,
-      "title": "Start a paid newsletter before you have fans",
-      "type": "tool",
-      "source": "top-20 list 26 Oct",
-      "affiliate": "beehiiv",
-      "status": "queued"
-    },
-    {
-      "rank": 18,
-      "title": "Sell a digital product with 0 audience",
-      "type": "value",
-      "source": "top-20 list 26 Oct",
-      "affiliate": null,
-      "status": "queued"
-    },
-    {
-      "rank": 19,
-      "title": "The free AI tools that save hours a week",
-      "type": "tool",
-      "source": "top-20 list 26 Oct",
-      "affiliate": "opusclip",
-      "status": "queued"
-    },
-    {
-      "rank": 20,
-      "title": "A paid community at 1,000 followers",
-      "type": "tool",
-      "source": "top-20 list 26 Oct",
-      "affiliate": "skool",
-      "status": "needs_verification"
-    }
-  ]
+ "note": "Top 20 trending ideas (owner asked for 20, not 100, on 26 Oct 2026), in make order; 1-10 = suggested first animator batch, waiting for the owner's go. Master list: Claude Docs '20 Best Video Ideas' https://claude.ai/artifact/SvJ9VwDfNZFKjpde1LyeqQ. Every idea goes through opportunity-check before scripting.",
+ "ideas": [
+  {
+   "rank": 1,
+   "title": "UGC: brands pay for videos you never post",
+   "type": "value",
+   "source": "top-20 list 26 Oct",
+   "affiliate": null,
+   "status": "rendered (review)"
+  },
+  {
+   "rank": 2,
+   "title": "Why views alone won't pay you yet",
+   "type": "value",
+   "source": "top-20 list 26 Oct",
+   "affiliate": null,
+   "status": "rendered (review)"
+  },
+  {
+   "rank": 3,
+   "title": "You don't need 10k followers to earn",
+   "type": "value",
+   "source": "top-20 list 26 Oct",
+   "affiliate": null,
+   "status": "rendered (review)"
+  },
+  {
+   "rank": 4,
+   "title": "Make 3 UGC samples with just your phone",
+   "type": "value",
+   "source": "top-20 list 26 Oct",
+   "affiliate": null,
+   "status": "rendered (review)"
+  },
+  {
+   "rank": 5,
+   "title": "How to price your first UGC video",
+   "type": "value",
+   "source": "top-20 list 26 Oct",
+   "affiliate": null,
+   "status": "rendered (review)"
+  },
+  {
+   "rank": 6,
+   "title": "Where small creators find UGC jobs",
+   "type": "value",
+   "source": "top-20 list 26 Oct",
+   "affiliate": "fiverr",
+   "status": "rendered (review)"
+  },
+  {
+   "rank": 7,
+   "title": "How to spot fake brand deals",
+   "type": "value",
+   "source": "top-20 list 26 Oct",
+   "affiliate": null,
+   "status": "rendered (review)"
+  },
+  {
+   "rank": 8,
+   "title": "Affiliate and ad disclosure: how to stay legal",
+   "type": "value",
+   "source": "top-20 list 26 Oct",
+   "affiliate": null,
+   "status": "rendered (review)"
+  },
+  {
+   "rank": 9,
+   "title": "Turn one podcast into ten Shorts for clients",
+   "type": "tool",
+   "source": "top-20 list 26 Oct",
+   "affiliate": "opusclip",
+   "status": "queued"
+  },
+  {
+   "rank": 10,
+   "title": "Voiceover as a side service, no mic setup",
+   "type": "tool",
+   "source": "top-20 list 26 Oct",
+   "affiliate": "elevenlabs",
+   "status": "queued"
+  },
+  {
+   "rank": 11,
+   "title": "TikTok Shop affiliate: who qualifies",
+   "type": "value",
+   "source": "top-20 list 26 Oct",
+   "affiliate": null,
+   "status": "queued"
+  },
+  {
+   "rank": 12,
+   "title": "Amazon Associates with 0 followers",
+   "type": "value",
+   "source": "top-20 list 26 Oct",
+   "affiliate": null,
+   "status": "queued"
+  },
+  {
+   "rank": 13,
+   "title": "Usage rights: get paid again for the same video",
+   "type": "value",
+   "source": "top-20 list 26 Oct",
+   "affiliate": null,
+   "status": "queued"
+  },
+  {
+   "rank": 14,
+   "title": "The 3 numbers brands check instead of followers",
+   "type": "value",
+   "source": "top-20 list 26 Oct",
+   "affiliate": null,
+   "status": "queued"
+  },
+  {
+   "rank": 15,
+   "title": "Base fee plus bonus: the new brand deal",
+   "type": "value",
+   "source": "top-20 list 26 Oct",
+   "affiliate": null,
+   "status": "queued"
+  },
+  {
+   "rank": 16,
+   "title": "Local businesses paying for content",
+   "type": "value",
+   "source": "top-20 list 26 Oct",
+   "affiliate": null,
+   "status": "queued"
+  },
+  {
+   "rank": 17,
+   "title": "Start a paid newsletter before you have fans",
+   "type": "tool",
+   "source": "top-20 list 26 Oct",
+   "affiliate": "beehiiv",
+   "status": "queued"
+  },
+  {
+   "rank": 18,
+   "title": "Sell a digital product with 0 audience",
+   "type": "value",
+   "source": "top-20 list 26 Oct",
+   "affiliate": null,
+   "status": "queued"
+  },
+  {
+   "rank": 19,
+   "title": "The free AI tools that save hours a week",
+   "type": "tool",
+   "source": "top-20 list 26 Oct",
+   "affiliate": "opusclip",
+   "status": "queued"
+  },
+  {
+   "rank": 20,
+   "title": "A paid community at 1,000 followers",
+   "type": "tool",
+   "source": "top-20 list 26 Oct",
+   "affiliate": "skool",
+   "status": "needs_verification"
+  },
+  {
+   "rank": 21,
+   "title": "Spotify now pays podcasts in 35 more countries (3 episodes, 1,000 listeners)",
+   "type": "value",
+   "source": "daily scan 27 Oct: https://techeconomy.ng/spotify-partner-programme-35-new-markets (17 Sep 2026); confirm on Spotify for Creators before use",
+   "affiliate": null,
+   "status": "needs_verification"
+  }
+ ]
 }
