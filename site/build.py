@@ -44,7 +44,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 a{color:inherit}img{max-width:100%}
 .wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 h1,h2,h3{margin:0;line-height:1.02;letter-spacing:-.03em;text-wrap:balance}p{margin:0}
-em.s{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--acc)}em.s.m,.m{color:var(--money)}.l,dl dt.l{color:var(--loss)}
+em.s{font-style:normal;color:#fff;background:var(--ink);border-radius:.16em;padding:0 .2em;margin:0 .02em;-webkit-box-decoration-break:clone;box-decoration-break:clone;box-shadow:0 10px 26px rgba(21,21,21,.18)}em.s.m{background:var(--money);color:#fff;box-shadow:0 10px 30px rgba(46,125,79,.35)}em.s.l{background:var(--loss);color:#fff;box-shadow:0 10px 30px rgba(217,58,58,.35)}.m{color:var(--money)}.l,dl dt.l{color:var(--loss)}
 .eyebrow{font:700 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:800 15px/1 var(--sans);padding:15px 22px;border-radius:999px;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);text-decoration:none;cursor:pointer;box-shadow:var(--glow-sm);transition:transform .12s,box-shadow .12s}
 .btn:hover{transform:translateY(-2px);box-shadow:var(--glow-lg)}.btn:active{transform:translateY(1px)}.btn[disabled]{opacity:.6;cursor:wait}
@@ -53,7 +53,7 @@ em.s{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-
 .link{font-weight:800;text-decoration:none;border-bottom:2px solid var(--acc);padding-bottom:2px}
 .num{font-variant-numeric:tabular-nums}
 .tag{display:inline-block;font:700 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:6px 8px;border-radius:6px;background:var(--acc-soft);color:var(--acc)}
-.tag.warn{background:#FBEFD5;color:#8A5A00}
+.tag.warn{background:var(--loss-soft);color:var(--loss)}
 .card{background:var(--paper);border:1.5px solid rgba(21,21,21,.85);border-radius:20px;box-shadow:var(--glow)}
 .skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;z-index:60;background:var(--paper);padding:10px 14px;border-radius:10px}
 /* header */
@@ -74,7 +74,7 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 /* hero */
 .hero{padding-block:72px 28px;text-align:center}
 .hero h1{font-weight:900;font-size:clamp(46px,9vw,118px);letter-spacing:-.045em;line-height:.95}
-.hero h1 em.s{font-size:1.06em;display:inline-block;padding-right:.04em}
+.hero h1 em.s{display:inline-block;margin-top:.08em}
 .hero .bio{max-width:58ch;margin:24px auto 0;font-size:clamp(17px,1.9vw,20px);color:var(--muted)}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:30px}
 .cred{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;margin-top:26px;font-size:14px;color:var(--muted)}.cred b{color:var(--ink)}
@@ -188,7 +188,7 @@ section.s{padding-block:84px 10px}
 .join{margin-top:84px;border-radius:28px;background:var(--ink);color:#fff;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);box-shadow:0 22px 50px rgba(21,21,21,.25)}
 @media(max-width:860px){.join{grid-template-columns:minmax(0,1fr)}}
 .join .in{padding:clamp(24px,5vw,56px);display:flex;flex-direction:column;gap:16px;justify-content:center}
-.join h2{font-size:clamp(34px,5vw,60px);font-weight:900}.join h2 em.s{color:#9FD7B3}.join p{color:#C9C8C2;font-size:18px;max-width:42ch}
+.join h2{font-size:clamp(34px,5vw,60px);font-weight:900}.join h2 em.s{background:#fff;color:var(--ink)}.join p{color:#C9C8C2;font-size:18px;max-width:42ch}
 .join .img{min-height:280px;background:#1F2A23;display:grid;place-items:center;padding:28px}
 .join .stack{display:grid;gap:10px;width:min(320px,100%)}
 .join .stack div{background:#fff;color:var(--ink);border-radius:14px;padding:12px 14px;font-weight:700;box-shadow:0 10px 26px rgba(0,0,0,.25);display:flex;justify-content:space-between;gap:10px}
@@ -206,10 +206,10 @@ section.s{padding-block:84px 10px}
 @media(max-width:500px){.facts-card div{grid-template-columns:minmax(0,1fr);gap:4px}}
 .body2{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:40px}@media(max-width:900px){.body2{grid-template-columns:minmax(0,1fr)}}
 .article h2{font-size:30px;margin:34px 0 12px;font-weight:900}.article p,.article li{color:#2B2B28;max-width:65ch}
-.callout{padding:18px 20px;border-radius:16px;background:var(--acc-soft);border:1.5px solid var(--acc);margin:22px 0}.callout.l{background:var(--loss-soft);border-color:var(--loss);color:var(--ink)}.callout.l b{color:var(--loss)}
+.callout{padding:18px 20px;border-radius:16px;background:var(--acc-soft);border:1.5px solid var(--acc);margin:22px 0}.callout.l{background:var(--loss-soft);border-color:var(--loss);color:var(--ink);box-shadow:0 10px 30px rgba(217,58,58,.14)}.callout.l b{color:var(--loss)}
 .rail{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:10px;margin:8px 0 18px}
 .rail div{border:1.5px solid var(--ink);border-radius:12px;padding:10px 12px;background:var(--paper);font-weight:700;font-size:14px;transition:background .2s,color .2s}
-.rail div small{display:block;font:700 11px var(--mono);color:var(--muted)}.rail div.on{background:var(--acc);color:#fff;border-color:var(--acc)}.rail div.on small{color:#DDF0E3}
+.rail div small{display:block;font:700 11px var(--mono);color:var(--muted)}.rail div.on{background:var(--acc);color:#fff;border-color:var(--acc)}.rail div.on small{color:#D8D6CF}
 .stepcard{padding:20px;margin:16px 0;display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;align-items:start}
 .stepcard .n{width:56px;height:56px;border-radius:14px;background:var(--ink);color:#fff;display:grid;place-items:center;font:900 22px var(--mono)}.stepcard.on .n{background:var(--acc)}
 .side{display:flex;flex-direction:column;gap:18px;align-self:start;position:sticky;top:calc(84px + env(safe-area-inset-top,0px))}.side .card{padding:18px}
@@ -387,7 +387,7 @@ def build():
     chips = '<div class="filters" role="group" aria-label="Filter income streams"><button type="button" class="chip on" data-f="all">All</button><button type="button" class="chip" data-f="zero">No follower minimum</button>' + "".join(
         f'<button type="button" class="chip" data-f="{c}">{e(n)}</button>' for c, n in sorted({(s["cat"], s["category"]) for s in streams})) + '</div>'
     write("streams/index.html", page("/streams/", "Income streams for small creators", "Every verified income stream for creators under 10k followers, with pay, requirements and first steps.",
-          f'<section class="wrap page"><p class="eyebrow">Income stream library</p><h1 style="margin-top:12px">Pick a way to <em class="s">get paid.</em></h1>'
+          f'<section class="wrap page"><p class="eyebrow">Income stream library</p><h1 style="margin-top:12px">Pick a way to <em class="s m">get paid.</em></h1>'
           f'<p class="lead">Each page shows the pay, the catch, the first steps and the sources. Not sure where to start? Try the <a href="/#finder">AI finder</a>.</p></section>'
           f'<section class="wrap">{chips}<div class="cards" id="scards">{"".join(stream_card(s) for s in streams)}</div><p class="hint" id="noneleft" hidden style="margin-top:14px">No streams match this filter yet.</p></section>'))
     # ---------- stream pages
@@ -461,7 +461,7 @@ def build():
                          f'<div class="prose"><p>Our audience is creators under 10k followers looking for real ways to earn. Sponsored videos and pages are always labelled "Sponsored" or "Ad", and we only partner with products we would recommend anyway.</p>'
                          f'<p>To get in touch, message us on <a href="{e(cfg.get("telegram", "/"))}">Telegram</a> or Instagram <a href="{e(SOC.get("instagram", "/"))}">{e(cfg["handle"])}</a>. A media kit with current numbers is available on request.</p></div>'),
         "disclosure": ("How this site makes money", "Affiliate and sponsorship disclosure for Sub-Creator Paid.",
-                       '<h1>How this site <em class="s">makes money.</em></h1><p class="lead">Straight answer: affiliate links, our own guides, and clearly labelled sponsors.</p>',
+                       '<h1>How this site <em class="s m">makes money.</em></h1><p class="lead">Straight answer: affiliate links, our own guides, and clearly labelled sponsors.</p>',
                        '<div class="prose"><p>Some tool links are affiliate links (marked "affiliate"). If you sign up through them, the company may pay us a commission. It costs you nothing extra.</p>'
                        '<p>We list free options even when they pay us nothing, and every income stream page shows the catch and its sources. Commissions never change what we say about a program.</p>'
                        '<p>Sponsored videos or pages always say "Sponsored" or "Ad". As an Amazon Associate we earn from qualifying purchases where Amazon links are used.</p><p>Nothing on this site is financial advice.</p></div>'),
