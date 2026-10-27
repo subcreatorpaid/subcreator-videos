@@ -6,7 +6,7 @@
 | Email forwarding | hello@subcreatorpaid.com -> Gmail | public contact | Cloudflare Email Routing |
 | Instagram / TikTok / YouTube | @subcreatorpaid | posting | via Buffer (free plan, set time zone London) |
 | Telegram | t.me/subcreatorpaid | channel | |
-| GitHub | subcreatorpaid/subcreator-videos (private) | brain, renders, website source | Actions render videos |
+| GitHub | subcreatorpaid/subcreator-videos (public since 27 Oct 2026, for free Actions minutes; never commit secrets) | brain, renders, website source | Actions render videos |
 | Cloudflare | subcreatorpaid@gmail.com | domain, Pages, Workers AI (binding AI), D1 subcreator-site (binding DB), email routing | project name subcreator-videos |
 | Google Search Console | subcreatorpaid account | sitemap submitted 25 Oct | Domain property |
 | Bing / IndexNow | key file /27a0f68460bc9be88bdf6cdcf77335a8.txt | submitted 25 Oct | Bing Webmaster account optional |

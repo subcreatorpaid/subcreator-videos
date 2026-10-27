@@ -52,7 +52,8 @@ def todos(vids):
     paused = sum(v["status"] == "paused" for v in vids)
     to_join = [v[0] for k, v in AFF.items() if v[3] != "joined" and k != "fiverr"]
     return [
-        (f"Say \"go\" to render the {paused} paused videos", "GitHub's free render minutes ran out. I can render them in the cloud, about 2.5 minutes each.", "https://claude.ai/artifact/5RpYRzaySkv1cMp3xQtcok"),
+        (f"Say \"go\" to render the {paused} paused videos", "Press Render in the Render Room, or tell me go.", "https://claude.ai/artifact/5RpYRzaySkv1cMp3xQtcok"),
+    ][:1 if paused else 0] + [
         ("Log in to Fiverr Affiliates and send me your link", "Seven videos point to Fiverr.", "https://fiverraffiliates.com/v2/login/"),
         (f"Join the {len(to_join)} affiliate programs still open", ", ".join(to_join) + ". The list in 04-affiliates says which videos use each one.", None),
         ("Set up ManyChat", "Comment keyword, then a DM that asks for the email, then the free guide.", "https://manychat.com"),

@@ -3,11 +3,6 @@
  "updated_by": "secretary",
  "today": [
   {
-   "task": "Say \"go\" to render the 36 paused videos (GitHub minutes ran out; cloud render ~2.5 min each)",
-   "link": "https://claude.ai/artifact/BDkpce2TAqHhja1nM9bsKU",
-   "mins": 1
-  },
-  {
    "task": "Log in to Fiverr Affiliates and paste your link",
    "link": "https://fiverraffiliates.com/v2/login/",
    "mins": 2
@@ -16,6 +11,11 @@
    "task": "Join open affiliate programs (Kit, vidIQ, Riverside, Stan, Amazon...): list in 04-affiliates",
    "link": "https://claude.ai/artifact/BDkpce2TAqHhja1nM9bsKU",
    "mins": 15
+  },
+  {
+   "task": "Review the 36 new videos in 02-videos (011, 032, 033, 038, 051, 052, 070-080, 082-100)",
+   "link": "https://claude.ai/artifact/BDkpce2TAqHhja1nM9bsKU",
+   "mins": 20
   }
  ],
  "approvals": [
@@ -25,14 +25,7 @@
    "since": "2026-10-27"
   }
  ],
- "alerts": [
-  {
-   "level": "warn",
-   "since": "2026-10-27",
-   "text": "GitHub Actions is blocked (minutes used up / billing), so the daily website check and renders can't run there. Checks ran here instead: files pass, website loads; live link and header checks skipped.",
-   "link": "https://github.com/settings/billing"
-  }
- ],
+ "alerts": [],
  "pipeline": {
   "drafted": 0,
   "approved": 0,

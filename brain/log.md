@@ -33,3 +33,4 @@ One line per run: `YYYY-MM-DD HH:MM | role | what was done | needs owner`
 2026-10-27 09:10 | guard | Sign-up + comments hardened (D1 steps retried, comments page never errors), http -> https 301 redirect for every page (Google saw both) | none
 2026-10-27 09:15 | researcher | Correction: the 1 subscriber + 1 comment in D1 are the 25 Oct setup test rows; real subscribers = 0 | none
 2026-10-27 09:15 | guard | Site fix: comments script error ($ out of scope) fixed on every page; phone slideshow uses video covers (hook clips opened blank); sticker no longer covers the payout card; css/js versioned by content so browsers get fixes at once | none
+2026-10-27 09:25 | creator | repo made public by owner (free Actions); Guard checks green on GitHub incl. live checks; all 36 paused videos rendered on GitHub in 17 min and copied into 02-videos (105/105 have video.mp4); Project Index rebuilt | review the 36 new videos
