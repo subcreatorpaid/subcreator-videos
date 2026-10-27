@@ -442,11 +442,13 @@
  ],
  "thumb": {
   "headline": "Brands pay for\n*videos*",
-  "hero": "phone",
+  "hero": "face",
+  "hold": "film",
+  "mood": -0.4,
   "sticker": "0 followers",
   "chip": "Not followers. Here's how.",
-  "size": 128,
-  "top": 330
+  "top": 330,
+  "size": 130
  },
  "style": "story"
 }

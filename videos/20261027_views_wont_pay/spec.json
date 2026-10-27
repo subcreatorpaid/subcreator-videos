@@ -333,21 +333,14 @@
   }
  ],
  "thumb": {
-  "headline": "Viral.\nStill *$0*?",
-  "hero": "dashboard",
-  "rows": [
-   [
-    "Views",
-    "2.4M"
-   ],
-   [
-    "Followers",
-    "847"
-   ]
-  ],
-  "earned": "$0.00",
+  "headline": "Viral.\nStill ~$0~?",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 1,
+  "sticker": "2.4M views",
   "chip": "Why views don't pay yet",
-  "top": 360
+  "top": 330,
+  "size": 140
  },
  "style": "story"
 }
