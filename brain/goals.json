@@ -23,5 +23,24 @@
     "earned_usd_total": 0,
     "site_note": "27 Oct 08:50: Cloudflare Web Analytics since 25 Oct 11:06 (about 2 days): 62 visits / 69 page views (24h: 35 / 36), 41 desktop / 28 mobile, top country US. D1: 0 real subscribers/comments (the 1 row in each is the 25 Oct setup test). Finder: 7 successful uses. Search Console: 4 impressions, 0 clicks. Includes owner testing."
   },
-  "history": []
+  "history": [
+    {
+      "date": "2026-10-27",
+      "video": "001 Brands pay for videos (posted 26 Oct 18:00, read ~15 h later)",
+      "youtube": {
+        "views": 14,
+        "likes": 1,
+        "avg_pct_viewed": 33.7
+      },
+      "instagram": {
+        "views": 19,
+        "reach": 19,
+        "avg_watch_s": 12
+      },
+      "tiktok": {
+        "views": 0
+      },
+      "followers_gained": 0
+    }
+  ]
 }
