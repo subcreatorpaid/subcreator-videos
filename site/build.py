@@ -9,7 +9,7 @@ Data in site/data/:
 Run:  python3 site/build.py      Cloudflare Pages runs this on every push (build output: site/_site).
 The AI finder and newsletter sign-up are Cloudflare Pages Functions in /functions (repo root).
 """
-import glob, html, json, os, shutil, datetime
+import glob, hashlib, html, json, os, shutil, datetime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "_site")
@@ -83,7 +83,7 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 .man .halo{position:absolute;inset:18%;border-radius:50%;background:var(--c);opacity:.12;filter:blur(18px);animation:pulse2 3.2s ease-in-out infinite}
 .man .tag2{position:absolute;font:900 17px/1 var(--sans);color:#fff;padding:9px 13px;border-radius:12px;white-space:nowrap;animation:float 4s ease-in-out infinite}
 .man.r .tag2{background:var(--money);box-shadow:0 0 34px rgba(46,125,79,.45)}.man.l .tag2{background:var(--loss);box-shadow:0 0 34px rgba(217,58,58,.45)}
-.man .tag2.t1{top:2%;left:52%;transform:rotate(8deg)}.man .tag2.t2{bottom:16%;left:-6%;transform:rotate(-7deg);animation-delay:-2s;background:var(--ink)!important;box-shadow:0 12px 30px rgba(21,21,21,.25)!important}
+.man .tag2.t1{top:2%;left:52%;transform:rotate(8deg)}.man .tag2.t2{bottom:-2%;left:-6%;transform:rotate(-7deg);animation-delay:-2s;background:var(--ink)!important;box-shadow:0 12px 30px rgba(21,21,21,.25)!important}
 .man .coin{position:absolute;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:#fff;font:900 14px var(--sans);background:var(--c);animation:rise 5s linear infinite;opacity:0}
 .man .coin:nth-of-type(2){left:18%;animation-delay:-1.7s}.man .coin:nth-of-type(3){left:70%;animation-delay:-3.4s}.man .coin:nth-of-type(1){left:44%}
 @keyframes bob{50%{transform:translateY(-10px)}}@keyframes pulse2{50%{transform:scale(1.15);opacity:.2}}@keyframes float{50%{translate:0 -8px}}
@@ -91,7 +91,7 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 .hero>*:not(.man){position:relative;z-index:1}
 @media(max-width:1100px){.hero{padding-top:190px}.man{width:150px;top:10px}.man.l{left:8%}.man.r{right:8%}.man .tag2{font-size:13px;padding:6px 9px}}
 @media(max-width:760px){.hero{padding-top:184px;overflow-x:clip}.man{width:158px;top:18px}.man .wg{padding:9px 10px;inset:20% 2% 10%}.wg small{font-size:8px}.wg .kv{font-size:11px}.wg .kv b{font-size:14px}.wg .pay{font-size:28px}.wg .sub{font-size:9px}.spark{height:22px}.man .coin{display:none}.man.l{left:0}.man.r{right:0}.man .tag2.t2{display:none}.man.r .tag2.t1{left:auto;right:0}.man.l .tag2.t1{left:30%}}
-@media(prefers-reduced-motion:reduce){.man *,.sman *,.dslide video,.belt .tr{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.man *,.sman *,.belt .tr{animation:none!important}.dslide img{opacity:0!important}.dslide img:first-child{opacity:1!important}}
 .hero h1{font-weight:900;font-size:clamp(46px,9vw,118px);letter-spacing:-.045em;line-height:.95}
 .hero h1 em.s{display:inline-block;margin-top:.08em}
 .hero .bio{max-width:58ch;margin:24px auto 0;font-size:clamp(17px,1.9vw,20px);color:var(--muted)}
@@ -184,7 +184,7 @@ section.s{padding-block:84px 10px}
 .ep .th.img{padding:0;overflow:hidden;background:#F6F5F1}.ep .th.img img{width:100%;height:100%;object-fit:cover;display:block}
 .ep .th.logo{background:#fff;gap:18px}.ep .th.logo img{width:auto;height:auto;max-width:70%;max-height:110px;object-fit:contain}
 .vframe.img{padding:0}
-.dslide{overflow:visible}.dslide video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:0;animation:dsl 12s infinite;background:#F6F5F1}
+.dslide{overflow:visible}.dslide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:0;animation:dsl 12s infinite;background:#F6F5F1}
 @keyframes dsl{0%{opacity:0;transform:translateX(24%)}4%{opacity:1;transform:none}25%{opacity:1;transform:none}29%{opacity:0;transform:translateX(-24%)}100%{opacity:0}}.vframe.img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit}
 /* metrics */
 .metrics{margin-top:80px;background:var(--ink);color:#fff}
@@ -276,6 +276,9 @@ footer .fine{grid-column:1/-1;color:var(--muted);font-size:12px;border-top:1px s
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 """
 
+# cache-busting version for site.css + site.js: changes whenever either file changes (static files are cached for a day)
+ASSET_V = hashlib.sha1((CSS + open(os.path.join(HERE, "site.js")).read()).encode()).hexdigest()[:10]
+
 def head(title, desc, path, extra=""):
     url = SITE + path
     fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%232E7D4F'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='900' font-size='36' text-anchor='middle' fill='white'%3E$%3C/text%3E%3C/svg%3E"
@@ -285,7 +288,7 @@ def head(title, desc, path, extra=""):
             f'<meta name="twitter:card" content="summary"><link rel="icon" href="{fav}">'
             f'<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
             f'<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500;700&display=swap">'
-            f'<link rel="stylesheet" href="/static/site.css?v={TODAY}">{extra}</head><body><a class="skip" href="#main">Skip to content</a>')
+            f'<link rel="stylesheet" href="/static/site.css?v={ASSET_V}">{extra}</head><body><a class="skip" href="#main">Skip to content</a>')
 
 def header(cur=""):
     items = "".join(f'<a href="/streams/{s["slug"]}/">{e(s["title"].split(" (")[0])}<small>{e(s["category"])} · <span class="{money(s["pay_short"]).strip()}">{e(s["pay_short"])}</span></small></a>' for s in streams)
@@ -310,7 +313,7 @@ def footer():
             f'<div><h4>About</h4><a href="/about/">How it works</a><a href="/work-with-us/">Work with us</a><a href="/disclosure/">Disclosure</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>'
             f'<div class="fine"><span>Not financial advice. Affiliate links are marked and disclosed.</span><span>© {datetime.date.today().year} Sub-Creator Paid</span></div></div></footer>'
             + MODAL + f'<script>window.SCP={json.dumps({"news": bool(cfg.get("beehiiv_publication_id") or cfg.get("newsletter_form_url")), "tg": cfg.get("telegram", "")})}</script>'
-            + '<script src="/static/site.js?v=' + TODAY + '" defer></script></body></html>')
+            + '<script src="/static/site.js?v=' + ASSET_V + '" defer></script></body></html>')
 
 MODAL = ('<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mt"><div class="box"><button class="x" type="button" id="mx" aria-label="Close">×</button>'
          '<div id="mform"><h3 id="mt">Join the free list</h3><p>Get the Small Creator Income Guide and one verified income stream every Tuesday.</p>'
@@ -396,15 +399,15 @@ def build():
     }
     sman = lambda img, c, t: f'<div class="sman" style="--c:{c}" aria-hidden="true"><div class="gbox">{GFX[img]}</div><b>{t}</b></div>'
     belt = lambda eps, n: f'<div class="row belt" style="--sp:{max(30, n * 7)}s"><div class="tr">{eps}<div style="display:contents" aria-hidden="true">{eps}</div></div></div>'
-    hooks = [v for v in videos if os.path.exists(os.path.join(HERE, "static", "v", "hooks", f'{v["n"]}.mp4'))]  # 4 s hook clips for the phone slideshow
+    slides = [v for v in videos if v.get("poster")]  # video covers for the phone slideshow (the hook clips open on near-empty frames)
     hero_card = ""
     if latest:
         words = latest["title"].split(" (")[0]
         hero_card = (f'<div class="heroimg"><div class="in"><span class="live">NEW INCOME STREAM</span><h2>{e(words)}: <em class="s{money(latest["pay_short"])}">{e(latest["pay_short"])}</em></h2>'
                      f'<p>{e(latest["one_liner"])} Followers needed: {e(latest["followers"].split(".")[0])}.</p><div><a class="link" href="/streams/{latest["slug"]}/">Read the steps →</a></div></div>'
                      + (f'<a class="vframe img dslide" href="/videos/" aria-label="Watch the latest videos">'
-                        + "".join(f'<video src="/static/v/hooks/{v["n"]}.mp4" poster="{v["poster"]}" muted autoplay loop playsinline preload="metadata" style="animation-delay:{i * 3}s"></video>' for i, v in enumerate(hooks[:4]))
-                        + '<span class="playbig" aria-hidden="true"></span></a></div>' if len(hooks) >= 4 else
+                        + "".join(f'<img src="{v["poster"]}" alt="" style="animation-delay:{i * 3}s">' for i, v in enumerate(slides[:4]))
+                        + '<span class="playbig" aria-hidden="true"></span></a></div>' if len(slides) >= 4 else
                         f'<a class="vframe img" href="/streams/{latest["slug"]}/" aria-label="{e(words)}"><img src="{thumb(latest["slug"])}" alt=""><span class="playbig" aria-hidden="true"></span></a></div>' if thumb(latest["slug"]) else
                      f'<a class="vframe" href="/streams/{latest["slug"]}/" aria-label="{e(words)}"><span class="sun" aria-hidden="true">$</span><span class="a">{e(latest["category"])}</span>'
                      f'<span class="b">{e(latest["pay_short"])}</span><span class="c">{e(latest["pay_unit"])}</span><span class="playbig" aria-hidden="true"></span></a></div>'))

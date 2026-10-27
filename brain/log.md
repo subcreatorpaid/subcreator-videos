@@ -32,3 +32,4 @@ One line per run: `YYYY-MM-DD HH:MM | role | what was done | needs owner`
 2026-10-27 08:55 | researcher | Site stats read (read-only) on owner's PC: 62 visits/69 views since 25 Oct, 1 email sign-up, 1 comment, 7 finder uses, Search Console 4 impressions; 1 subscribe 503 + 2 comments 504 seen | owner: say if the sign-up error should be investigated
 2026-10-27 09:10 | guard | Sign-up + comments hardened (D1 steps retried, comments page never errors), http -> https 301 redirect for every page (Google saw both) | none
 2026-10-27 09:15 | researcher | Correction: the 1 subscriber + 1 comment in D1 are the 25 Oct setup test rows; real subscribers = 0 | none
+2026-10-27 09:15 | guard | Site fix: comments script error ($ out of scope) fixed on every page; phone slideshow uses video covers (hook clips opened blank); sticker no longer covers the payout card; css/js versioned by content so browsers get fixes at once | none

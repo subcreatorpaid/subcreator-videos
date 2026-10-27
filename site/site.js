@@ -72,7 +72,9 @@ if(tt){const K='scp-tracker-v1';let rows=[];try{rows=JSON.parse(localStorage.get
  $('#tadd').addEventListener('click',()=>{const p=$('#tprog').value;if(!p){$('#terr').textContent='Choose a program first.';return}$('#terr').textContent='';
   rows.push({p,s:$('#tstat').value,a:$('#tamt').value||0});$('#tamt').value='';save();draw()});draw()}
 })();
-// comments (own D1-backed API)
+// comments (own D1-backed API), in its own scope with its own $ helper
+(function(){
+const $=s=>document.querySelector(s);
 const cmb=$('#comments');
 if(cmb){const pg=cmb.dataset.page,list=cmb.querySelector('.cm-list'),f=cmb.querySelector('.cm-form'),msg=cmb.querySelector('.cm-msg');
  const esc=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -88,3 +90,4 @@ if(cmb){const pg=cmb.dataset.page,list=cmb.querySelector('.cm-list'),f=cmb.query
    const j=await r.json().catch(()=>({}));msg.textContent=j.message||(r.ok?'Thanks!':'Something went wrong.');if(r.ok&&j.ok){$('#cmb').value=''}}
   catch(x){msg.textContent='Could not connect. Check your internet and try again.'}
   b.disabled=false})}
+})();
