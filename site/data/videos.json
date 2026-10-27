@@ -1,5 +1,31 @@
 [
  {
+  "n": "B1",
+  "slug": "b1_who_we_are",
+  "featured": true,
+  "title": "Who we are",
+  "date": "2026-10-27",
+  "seconds": 67,
+  "about": "Sub-Creator Paid helps creators with under 10,000 followers find which income streams really pay. Every video gives you the real number in US dollars, the source, and the catch. Some streams need no followers at all (UGC, affiliate links); others open early (Twitch Affiliate at 50 followers, YouTube fan funding at 500 subscribers). No fake payout screenshots, and we never promise you'll earn a set amount.",
+  "video": "/static/v/b1_who_we_are.mp4",
+  "poster": "/static/v/b1_who_we_are.jpg",
+  "guide": "/files/small-creator-income-guide.pdf",
+  "sources": []
+ },
+ {
+  "n": "T1",
+  "slug": "t1_finder_tutorial",
+  "featured": true,
+  "title": "How to use the AI Income Finder",
+  "date": "2026-10-27",
+  "seconds": 101,
+  "about": "Step by step: describe your account (niche and follower count), pick your followers, platform and what you enjoy, tap Find my income streams, then read your 3 matches: score, why it fits, typical pay and your first step. Open a match's page for the catch and the sources, and do step 1 today. Pay figures come only from our checked data.",
+  "video": "/static/v/t1_finder_tutorial.mp4",
+  "poster": "/static/v/t1_finder_tutorial.jpg",
+  "guide": "/files/small-creator-income-guide.pdf",
+  "sources": []
+ },
+ {
   "n": "001",
   "slug": "20261027_ugc_brands_pay",
   "title": "Brands pay for videos",

@@ -18,6 +18,8 @@ cfg = json.load(open(D("config.json")))
 progs = {p["id"]: p for p in json.load(open(D("links.json")))["programs"]}
 streams = [json.load(open(f)) for f in sorted(glob.glob(D("streams", "*.json")))]
 videos = json.load(open(D("videos.json"))) if os.path.exists(D("videos.json")) else []  # finished videos (MP4 + poster in static/v)
+featured = {v["n"]: v for v in videos if v.get("featured")}  # "Start here" videos: B1 who we are, T1 finder tutorial
+videos = [v for v in videos if not v.get("featured")]
 posts = sorted([json.load(open(f)) for f in glob.glob(D("posts", "*.json"))], key=lambda p: p["date"], reverse=True)
 e = html.escape
 SITE = cfg.get("site_url", "").rstrip("/")
@@ -297,7 +299,8 @@ def finder_html():
         f'<button type="button" data-v="{v}" aria-pressed="{"true" if i == 0 else "false"}">{e(t)}</button>' for i, (v, t) in enumerate(opts)) + '</div>'
     return (f'<div class="ai"><div class="intro"><span class="badge"><i></i>AI INCOME FINDER</span><h2 style="margin-top:16px">Which income streams <em class="s">fit you?</em></h2>'
             f'<p>Paste your profile link or describe your account. The AI looks at your niche, platform and audience size, then matches you with verified income streams and the first step for each.</p>'
-            f'<p class="hint" style="margin-top:14px">Free. We only use what you type here, we never log in to or post on your account, and we only quote pay figures we have checked.</p></div>'
+            f'<p class="hint" style="margin-top:14px">Free. We only use what you type here, we never log in to or post on your account, and we only quote pay figures we have checked.</p>'
+            + (f'<p style="margin-top:14px"><a class="link" href="/videos/#vT1">Watch how it works (about {round(featured["T1"]["seconds"] / 60)} min) →</a></p>' if "T1" in featured else "") + '</div>'
             f'<div><form id="aif" novalidate><input class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" id="aihp" name="website">'
             f'<div><label class="f" for="prof">Your profile link or a short description</label><input class="inp" type="text" id="prof" maxlength="300" placeholder="instagram.com/yourname  or  \'home cooking videos, 800 followers\'"></div>'
             f'<p class="or">AND PICK WHAT FITS</p>'
@@ -432,7 +435,9 @@ def build():
     simple = {
         "about": ("How Sub-Creator Paid works", "How the site and videos are made, checked and approved.",
                   '<h1>How it <em class="s">works.</em></h1><p class="lead">One person runs Sub-Creator Paid with a team of AI tools. Here is exactly how a video or page is made.</p>',
-                  '<div class="prose"><h2>1. Research</h2><p>AI tools watch for new creator programs, rate changes and questions from small creators.</p><h2>2. Fact check</h2><p>Every pay figure, requirement and rule is checked on the official page and dated. If we cannot confirm it, we do not publish it.</p>'
+                  (f'<article class="card vcard" style="max-width:380px;margin-bottom:36px"><video controls preload="none" playsinline poster="{featured["B1"]["poster"]}" src="{featured["B1"]["video"]}"></video>'
+                   f'<div class="vbody"><p class="eyebrow">Who we are · {featured["B1"]["seconds"]} s</p></div></article>' if "B1" in featured else "")
+                  + '<div class="prose"><h2>1. Research</h2><p>AI tools watch for new creator programs, rate changes and questions from small creators.</p><h2>2. Fact check</h2><p>Every pay figure, requirement and rule is checked on the official page and dated. If we cannot confirm it, we do not publish it.</p>'
                   '<h2>3. Make</h2><p>Scripts, videos, captions and pages are drafted with AI tools in our own style.</p><h2>4. Approve</h2><p>A person reviews everything. Nothing goes live without that approval.</p>'
                   '<h2>5. Publish and keep it fresh</h2><p>Content goes out on TikTok, Instagram, YouTube and this site. Pages show a "last checked" date and are rechecked regularly.</p></div>'),
         "work-with-us": ("Work with Sub-Creator Paid", "Sponsorships and partnerships with Sub-Creator Paid.",
@@ -480,17 +485,18 @@ def build():
     # ---------- downloadable files (free guide)
     if os.path.isdir(os.path.join(HERE, "files")): shutil.copytree(os.path.join(HERE, "files"), os.path.join(OUT, "files"), dirs_exist_ok=True)
     # ---------- videos
-    if videos:
+    if videos or featured:
         def vcard(v):
             src = "".join(f'<li><a href="{e(x["url"])}" rel="noopener" target="_blank">{e(x["title"])}</a></li>' for x in v["sources"])
             return (f'<article class="card vcard" id="v{v["n"]}"><video controls preload="none" playsinline poster="{v["poster"]}" src="{v["video"]}"></video>'
-                    f'<div class="vbody"><p class="eyebrow">Video {e(v["n"])} · {v["seconds"]} s</p><h3>{e(v["title"])}</h3><p style="white-space:pre-line">{e(v["about"])}</p>'
+                    f'<div class="vbody"><p class="eyebrow">{"Start here" if v.get("featured") else "Video " + e(v["n"])} · {v["seconds"]} s</p><h3>{e(v["title"])}</h3><p style="white-space:pre-line">{e(v["about"])}</p>'
                     f'<p style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn primary" href="{v["guide"]}" target="_blank" rel="noopener">Free guide (PDF)</a><a class="btn" href="/#finder">Try the AI finder</a></p>'
                     + (f'<details><summary>Sources</summary><ul>{src}</ul></details>' if src else "") + '</div></article>')
         write("videos/index.html", page("/videos/", f'Videos: {cfg["site_name"]}', "Short videos on income streams that pay small creators, with the free guide and the sources for each.",
               f'<section class="wrap page"><p class="eyebrow">Watch</p><h1>Short videos, <em class="s">real numbers.</em></h1>'
               f'<p class="lead" style="max-width:56ch;color:var(--muted);margin-top:14px">Every video shows the number, the source and the catch. Grab the free guide under each one, or try the <a href="/#finder">AI finder</a>.</p></section>'
-              f'<section class="wrap"><div class="vgrid">{"".join(vcard(v) for v in videos)}</div></section>', "watch"))
+              + (f'<section class="wrap"><p class="eyebrow">Start here</p><div class="vgrid" style="margin-top:14px">{"".join(vcard(v) for v in featured.values())}</div></section>' if featured else "")
+              + f'<section class="wrap" style="margin-top:40px"><p class="eyebrow">Latest videos</p><div class="vgrid" style="margin-top:14px">{"".join(vcard(v) for v in videos)}</div></section>', "watch"))
     # ---------- redirects, headers, sitemap, robots
     redir = "".join(f"/go/{p['id']}/ {p['referral_url'] or p['official_url']} 302\n/go/{p['id']} {p['referral_url'] or p['official_url']} 302\n" for p in progs.values())
     write("_redirects", redir)
@@ -498,7 +504,7 @@ def build():
           "  Strict-Transport-Security: max-age=31536000; includeSubDomains\n"
           "  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cusdis.com https://static.cloudflareinsights.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cusdis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://cusdis.com https://challenges.cloudflare.com; connect-src 'self' https://cusdis.com https://cloudflareinsights.com; base-uri 'self'; form-action 'self'\n"
           "/static/*\n  Cache-Control: public, max-age=86400\n")
-    urls = ["/", "/streams/", "/tools/", "/tracker/", "/blog/", "/guide/", "/links/", "/about/", "/work-with-us/", "/disclosure/", "/privacy/", "/terms/"] + [f"/streams/{s['slug']}/" for s in streams] + [f"/blog/{p['slug']}/" for p in posts] + (["/videos/"] if videos else [])
+    urls = ["/", "/streams/", "/tools/", "/tracker/", "/blog/", "/guide/", "/links/", "/about/", "/work-with-us/", "/disclosure/", "/privacy/", "/terms/"] + [f"/streams/{s['slug']}/" for s in streams] + [f"/blog/{p['slug']}/" for p in posts] + (["/videos/"] if videos or featured else [])
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>{SITE}{u}</loc><lastmod>{TODAY}</lastmod></url>" for u in urls) + "</urlset>")
     if cfg.get("indexnow_key"): write(f"{cfg['indexnow_key']}.txt", cfg["indexnow_key"])
     write("robots.txt", f"User-agent: *\nAllow: /\nDisallow: /go/\nSitemap: {SITE}/sitemap.xml\n")
