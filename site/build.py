@@ -73,7 +73,12 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 /* hero */
 .hero{padding-block:72px 28px;text-align:center;position:relative}
 .man{position:absolute;top:255px;width:185px;aspect-ratio:1;pointer-events:none;z-index:0}.man.l{left:10px}.man.r{right:10px}.man.r .tag2.t1{left:auto;right:30%}.man.l .tag2.t1{left:-14%;top:-6%}.man.r .tag2.t2{left:auto;right:-4%}
-.man img{position:relative;width:100%;animation:bob 3.2s ease-in-out infinite}.man.l img{animation-delay:-1.6s}
+.man .wg{position:absolute;inset:16% 4% 14%;background:#fff;color:var(--ink);border:1.5px solid var(--ink);border-radius:18px;padding:12px 14px;text-align:left;box-shadow:0 18px 40px rgba(21,21,21,.14);animation:bob 3.2s ease-in-out infinite;display:flex;flex-direction:column;gap:4px}
+.man.l .wg{animation-delay:-1.6s;transform:rotate(-4deg)}.man.r .wg{transform:rotate(3deg)}
+.wg small{font:700 10px var(--mono);letter-spacing:.1em;color:var(--muted)}.wg .kv{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;font-weight:700}.wg .kv b{font-size:18px;font-weight:900}.wg .kv b.l{color:var(--loss)}
+.wg .pay{font:900 40px/1 var(--sans);color:var(--money);letter-spacing:-.03em}.wg .sub{font-size:11px;font-weight:700;color:var(--muted);line-height:1.3}
+.spark{width:100%;height:34px;margin-top:auto}.spark path{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 3.2s ease-in-out infinite}
+@keyframes draw{0%{stroke-dashoffset:1}45%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:0;opacity:0}}
 .man .ring{position:absolute;inset:4%;border-radius:50%;background:repeating-conic-gradient(from 0deg,var(--c) 0 6deg,transparent 6deg 18deg);opacity:.16;animation:spin 26s linear infinite;-webkit-mask:radial-gradient(circle,transparent 38%,#000 40%,#000 68%,transparent 70%);mask:radial-gradient(circle,transparent 38%,#000 40%,#000 68%,transparent 70%)}
 .man .halo{position:absolute;inset:18%;border-radius:50%;background:var(--c);opacity:.12;filter:blur(18px);animation:pulse2 3.2s ease-in-out infinite}
 .man .tag2{position:absolute;font:900 17px/1 var(--sans);color:#fff;padding:9px 13px;border-radius:12px;white-space:nowrap;animation:float 4s ease-in-out infinite}
@@ -85,8 +90,8 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 @keyframes rise{0%{bottom:20%;opacity:0}15%{opacity:.9}80%{opacity:.7}100%{bottom:100%;opacity:0}}
 .hero>*:not(.man){position:relative;z-index:1}
 @media(max-width:1100px){.hero{padding-top:190px}.man{width:150px;top:10px}.man.l{left:8%}.man.r{right:8%}.man .tag2{font-size:13px;padding:6px 9px}}
-@media(max-width:760px){.hero{padding-top:160px;overflow-x:clip}.man{width:128px;top:4px}.man.l{left:0}.man.r{right:0}.man .tag2.t2{display:none}.man.r .tag2.t1{left:auto;right:0}.man.l .tag2.t1{left:30%}}
-@media(prefers-reduced-motion:reduce){.man *,.dslide video,.belt .tr{animation:none!important}}
+@media(max-width:760px){.hero{padding-top:184px;overflow-x:clip}.man{width:158px;top:18px}.man .wg{padding:9px 10px;inset:20% 2% 10%}.wg small{font-size:8px}.wg .kv{font-size:11px}.wg .kv b{font-size:14px}.wg .pay{font-size:28px}.wg .sub{font-size:9px}.spark{height:22px}.man .coin{display:none}.man.l{left:0}.man.r{right:0}.man .tag2.t2{display:none}.man.r .tag2.t1{left:auto;right:0}.man.l .tag2.t1{left:30%}}
+@media(prefers-reduced-motion:reduce){.man *,.sman *,.dslide video,.belt .tr{animation:none!important}}
 .hero h1{font-weight:900;font-size:clamp(46px,9vw,118px);letter-spacing:-.045em;line-height:.95}
 .hero h1 em.s{display:inline-block;margin-top:.08em}
 .hero .bio{max-width:58ch;margin:24px auto 0;font-size:clamp(17px,1.9vw,20px);color:var(--muted)}
@@ -154,7 +159,14 @@ section.s{padding-block:84px 10px}
 .series{padding-block:26px;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:28px;align-items:start}
 @media(max-width:860px){.series{grid-template-columns:minmax(0,1fr)}}
 .series h3{font-size:28px;font-weight:900}
-.sman{position:relative;width:170px;aspect-ratio:1;margin-top:22px}.sman img{position:relative;width:100%;animation:bob 3.4s ease-in-out infinite}
+.sman{position:relative;width:170px;aspect-ratio:1;margin-top:22px}
+.gbox{position:absolute;inset:13%;background:#fff;border:1.5px solid var(--ink);border-radius:20px;box-shadow:0 16px 36px rgba(21,21,21,.12);display:grid;place-items:center;overflow:hidden;animation:bob 3.4s ease-in-out infinite}
+.bars{display:flex;align-items:flex-end;gap:6%;width:72%;height:62%}.bars i{flex:1;height:var(--h);background:var(--money);border-radius:4px 4px 0 0;transform-origin:bottom;animation:grow 2.8s ease-in-out infinite}
+@keyframes grow{0%{transform:scaleY(.1)}40%,80%{transform:scaleY(1)}100%{transform:scaleY(.1)}}
+.cyc{position:relative;width:70%;height:70%}.cyc span{position:absolute;inset:0;display:grid;place-items:center;opacity:0;animation:cyc 12s infinite}.cyc img{max-width:100%;max-height:70%;object-fit:contain}
+@keyframes cyc{0%{opacity:0;transform:translateY(30%)}3%,14%{opacity:1;transform:none}17%,100%{opacity:0;transform:translateY(-30%)}}
+.flip{position:relative;width:100%;height:100%}.flip span{position:absolute;inset:0;display:grid;place-items:center;font:900 30px var(--sans);letter-spacing:-.03em;animation:flip 4s infinite}
+.flip .a{color:var(--loss)}.flip .b{color:var(--money);animation-delay:-2s}@keyframes flip{0%,40%{opacity:1;transform:none}50%,90%{opacity:0;transform:rotateX(90deg)}100%{opacity:1;transform:none}}
 .sman::before{content:"";position:absolute;inset:8%;border-radius:50%;background:repeating-conic-gradient(var(--c) 0 6deg,transparent 6deg 18deg);opacity:.15;animation:spin 30s linear infinite;-webkit-mask:radial-gradient(circle,transparent 40%,#000 42%,#000 68%,transparent 70%);mask:radial-gradient(circle,transparent 40%,#000 42%,#000 68%,transparent 70%)}
 .sman b{position:absolute;right:-6px;top:6%;font:900 14px/1 var(--sans);color:#fff;background:var(--c);padding:7px 10px;border-radius:10px;transform:rotate(7deg);animation:float 4s ease-in-out infinite}
 @media(max-width:860px){.series>div:first-child{display:grid;grid-template-columns:1fr 110px;column-gap:14px}.series>div:first-child>*:not(.sman){grid-column:1}.sman{grid-column:2;grid-row:1/5;width:110px;margin:0;align-self:center}.sman b{font-size:11px}}
@@ -373,7 +385,16 @@ def build():
     t_eps = "".join(ep("Tool", p["name"], "affiliate" if p["pays_you"] else "free tool", "/tools/", p["name"], p["category"], img=logo(p["id"]), logo=True) for p in pay_progs[:6])
     w_eps = "".join(ep(f'Video {v["n"]}', v["title"][:22], f'{v["seconds"]} s', f'/videos/#v{v["n"]}', v["title"], "Watch + free guide", img=v.get("poster")) for v in videos[:6]) or \
         ep("Coming soon", "Your question", "answered", "/#finder", "First episode soon", "Ask in the comments", True)
-    sman = lambda img, c, t: f'<div class="sman" style="--c:{c}" aria-hidden="true"><img src="/static/man/{img}.svg" alt=""><b>{t}</b></div>'
+    # motion graphics (no character, owner 27 Oct): payout card, $0 dashboard, growing bars, cycling tool logos, $0 -> $50 counter
+    spark = lambda d, c: f'<svg class="spark" viewBox="0 0 120 40" preserveAspectRatio="none"><path d="{d}" stroke="{c}" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/></svg>'
+    GFX = {
+        "loss": '<div class="wg"><small>YOUR DASHBOARD</small><div class="kv"><span>Views</span><b>2.4M</b></div><div class="kv"><span>Earned</span><b class="l">$0.00</b></div>' + spark("M2 30 L20 31 L38 29 L56 32 L74 30 L92 31 L118 30", "var(--loss)") + '</div>',
+        "hero": '<div class="wg"><small>PAYOUT</small><div class="pay">+$50</div><span class="sub">UGC video · 0 followers needed</span>' + spark("M2 36 L20 33 L38 34 L56 24 L74 26 L92 12 L118 4", "var(--money)") + '</div>',
+        "stream": '<div class="bars">' + "".join(f'<i style="--h:{h}%;animation-delay:{k * .18}s"></i>' for k, h in enumerate((28, 46, 38, 64, 58, 86))) + '</div>',
+        "tools": '<div class="cyc">' + "".join(f'<span style="animation-delay:{k * 2}s"><img src="/static/logos/{pid}.png" alt=""></span>' for k, pid in enumerate(("beehiiv", "kit", "stan", "skool", "elevenlabs", "opusclip"))) + '</div>',
+        "wins": '<div class="flip"><span class="a">$0</span><span class="b">+$50</span></div>',
+    }
+    sman = lambda img, c, t: f'<div class="sman" style="--c:{c}" aria-hidden="true"><div class="gbox">{GFX[img]}</div><b>{t}</b></div>'
     belt = lambda eps, n: f'<div class="row belt" style="--sp:{max(30, n * 7)}s"><div class="tr">{eps}<div style="display:contents" aria-hidden="true">{eps}</div></div></div>'
     hooks = [v for v in videos if os.path.exists(os.path.join(HERE, "static", "v", "hooks", f'{v["n"]}.mp4'))]  # 4 s hook clips for the phone slideshow
     hero_card = ""
@@ -392,7 +413,7 @@ def build():
         posts_html = "".join(f'<a class="essay" href="/streams/{s["slug"]}/"><p class="eyebrow">{e(s["category"])}</p><h3>{e(s["title"].split(" (")[0])}: the full guide</h3><p>{e(s["one_liner"])}</p><small>CHECKED {e(s["checked"])}</small></a>' for s in streams[:3])
     stack = "".join(f'<div>{e(s["title"].split(" (")[0])} <span>{e(s["pay_short"])}</span></div>' for s in streams[:4])
     man = lambda side, img, c, t1, t2, coin: (f'<div class="man {side}" style="--c:{c}" aria-hidden="true"><span class="ring"></span><span class="halo"></span>'
-                                             + "".join(f'<span class="coin">{coin}</span>' for _ in range(3)) + f'<img src="/static/man/{img}.svg" alt=""><span class="tag2 t1">{t1}</span><span class="tag2 t2">{t2}</span></div>')
+                                             + "".join(f'<span class="coin">{coin}</span>' for _ in range(3)) + f'{GFX[img]}<span class="tag2 t1">{t1}</span><span class="tag2 t2">{t2}</span></div>')
     home = (f'<section class="wrap hero">' + man("l", "loss", "var(--loss)", "$0 from views", "Waiting for 10k?", "✕") + man("r", "hero", "var(--money)", "+$50 a video", "No 10k needed", "$") + f'<p class="eyebrow">For creators under 10k followers</p><h1 style="margin-top:18px">Small account.<br><em class="s m">Real income.</em></h1>'
             f'<p class="bio">Sub-Creator Paid finds the ways small creators actually get paid, checks every number on the official page, and turns it into a short video and a step-by-step guide.</p>'
             f'<div class="ctas"><a class="btn primary" href="#finder">Find my income streams</a><a class="btn" href="#watch">Watch the latest videos</a></div>'
