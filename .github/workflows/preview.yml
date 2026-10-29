@@ -1,0 +1,82 @@
+name: Style preview (Remotion)
+run-name: "Preview ${{ inputs.spec || 'softui_finder' }} ${{ inputs.res || '360' }}p"
+
+# Renders one preview spec from animator/previews/<name>.json at a small review size (default 360x640) and publishes it
+# on the Releases page (tag previews). Private review files, not posted anywhere. Specs live outside videos/ so the
+# main render workflow never picks them up.
+on:
+  workflow_dispatch:
+    inputs:
+      spec:
+        description: "Preview spec name in animator/previews/ (without .json)"
+        default: "softui_finder"
+      res:
+        description: "Width in px (360 = 360x640)"
+        default: "360"
+  push:
+    branches: ["claude/**"]
+    paths: ["animator/previews/**", "animator/src/SoftUI.jsx", ".github/workflows/preview.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: preview-${{ inputs.spec || 'softui_finder' }}
+  cancel-in-progress: true
+
+env:
+  SPEC: ${{ inputs.spec || 'softui_finder' }}
+  RES: ${{ inputs.res || '360' }}
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt faster-whisper pyloudnorm
+      - uses: actions/cache@v4
+        with:
+          path: |
+            models
+            ~/.cache/huggingface
+          key: kokoro-v1.0-whisper
+      - name: Voice model (first run only)
+        run: |
+          mkdir -p models
+          base=https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0
+          [ -s models/kokoro-v1.0.onnx ] || curl -fsSL -o models/kokoro-v1.0.onnx "$base/kokoro-v1.0.onnx"
+          [ -s models/voices-v1.0.bin ] || curl -fsSL -o models/voices-v1.0.bin "$base/voices-v1.0.bin"
+      - name: Voice + word timings
+        run: python animator/prep.py "animator/previews/$SPEC.json"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: animator/package-lock.json
+      - name: Headless Chrome libraries
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libnss3 libdbus-1-3 libatk1.0-0 libgbm-dev libasound2t64 libxrandr2 libxkbcommon-dev \
+            libxfixes3 libxcomposite1 libxdamage1 libatk-bridge2.0-0 libpango-1.0-0 libcairo2 libcups2
+      - name: Render
+        working-directory: animator
+        run: |
+          npm ci --no-audit --no-fund
+          mkdir -p out
+          # render at half size (whole pixels), then scale down with Remotion's own ffmpeg
+          npx remotion render src/index.jsx Short out/raw.mp4 --props=props.json --scale=0.5 --codec=h264 --crf=18 --concurrency=100%
+          h=$(( RES * 16 / 9 / 2 * 2 ))
+          npx remotion ffmpeg -loglevel error -y -i out/raw.mp4 -vf scale=$RES:$h -c:v libx264 -crf 21 -c:a aac -b:a 128k -movflags +faststart "out/${SPEC}_${RES}p.mp4"
+          rm out/raw.mp4
+      - name: Publish on the Releases page
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag=previews
+          gh release view "$tag" >/dev/null 2>&1 || gh release create "$tag" --title "Style previews (review)" --notes "Private review files. Not posted anywhere."
+          gh release upload "$tag" animator/out/*.mp4 --clobber
