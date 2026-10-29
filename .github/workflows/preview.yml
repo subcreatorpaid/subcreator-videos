@@ -15,7 +15,7 @@ on:
         default: "360"
   push:
     branches: ["claude/**"]
-    paths: ["animator/previews/**", "animator/src/SoftUI.jsx", ".github/workflows/preview.yml"]
+    paths: ["animator/previews/**", "animator/src/SoftUI.jsx", "animator/src/flow/**", ".github/workflows/preview.yml"]
 
 permissions:
   contents: write
@@ -91,8 +91,11 @@ jobs:
         run: |
           npm ci --no-audit --no-fund
           mkdir -p out
-          # render at half size (whole pixels), then scale down with Remotion's own ffmpeg
-          npx remotion render src/index.jsx Short out/raw.mp4 --props=props.json --scale=0.5 --codec=h264 --crf=18 --concurrency=100%
+          # a spec can ask for its own size ("preview_res": 720 = 720x1280)
+          R=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1])).get('preview_res',''))" "previews/$SPEC.json"); RES=${R:-$RES}
+          # render at a whole-pixel size (full for 720p and up, else half), then scale down with Remotion's own ffmpeg
+          S=0.5; [ "$RES" -gt 540 ] && S=1
+          npx remotion render src/index.jsx Short out/raw.mp4 --props=props.json --scale=$S --codec=h264 --crf=18 --concurrency=100%
           h=$(( RES * 16 / 9 / 2 * 2 ))
           npx remotion ffmpeg -loglevel error -y -i out/raw.mp4 -vf scale=$RES:$h -c:v libx264 -crf 21 -c:a aac -b:a 128k -movflags +faststart "out/${SPEC}_${RES}p.mp4"
           rm out/raw.mp4
