@@ -12,7 +12,7 @@ import {StreamArt, Avatar, Icon, Check, BrandLogo} from './art';
 
 const K = {bg: '#F5F5F2', ui: '#0E0E10', lime: '#CDF24F', mut: '#8B8B86', red: '#E5484D', card: '#1C1C1F'};
 const ART = {ink: '#0E0E10', a: '#CDF24F', b: '#FFFFFF', c: '#2E2E33', box: '#FFFFFF', rec: '#CDF24F', recInk: '#0E0E10'};
-const LINES = ['I film cozy cooking,', '600 followers.', 'What can pay me?'];
+const LINES = ['I post Reels and TikToks,', '600 followers.', 'What can pay me?'];
 const CARDS = [
   {name: 'Etsy templates', line: 'Sell a digital file again and again', pay: 'about $8.60 of a $10 sale', kind: 'etsy', logos: ['etsy']},
   {name: 'Amazon Associates', line: 'Earn a cut when someone buys', pay: '3%–4.5% on most categories', kind: 'amazon', logos: ['amazon']},
@@ -92,7 +92,7 @@ export const Launch = ({beats = []}) => {
         <div style={{width: 84, height: 84, borderRadius: 26, background: K.ui, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><Icon name="spark" size={48} color={K.lime} /></div>
         <div><div style={{fontWeight: 800, fontSize: 44, color: K.ui}}>AI Income Finder</div><div style={{fontWeight: 600, fontSize: 30, color: K.mut}}>Free · 16 verified streams</div></div>
       </div>
-      {sent > 0.3 && <div style={{position: 'absolute', left: 120, top: 320 + (f >= W(3, '$50') && f < W(3, '$50') + 20 ? -Math.abs(Math.sin((f - W(3, '$50')) / 3)) * 30 : Math.sin(f / 11) * 5), opacity: expo(f - send - 6, 10)}}><Avatar size={110} /></div>}
+      {sent > 0.3 && <div style={{position: 'absolute', left: 120, top: 320 + (f >= W(3, '$50') && f < W(3, '$50') + 20 ? -Math.abs(Math.sin((f - W(3, '$50')) / 3)) * 30 : Math.sin(f / 11) * 5), opacity: expo(f - send - 6, 10)}}><Avatar size={110} hat={false} /></div>}
       {/* composer / bubble */}
       <div style={{position: 'absolute', left: comp.x, top: comp.y, width: comp.w, height: comp.h, transform: `scale(${mix(0.55, 1, spring(f, {w: 0.45, z: 0.7}))}) rotate(${(1 - spring(f, {w: 0.45, z: 0.7})) * -8}deg)`}}>
         {sent < 0.6 && <div style={{opacity: 1 - sent * 1.6}}><Iridescent f={f} w={comp.w} h={comp.h} r={48} /></div>}
@@ -103,14 +103,14 @@ export const Launch = ({beats = []}) => {
         {sent < 0.3 && <div style={{position: 'absolute', right: 34, bottom: 34, width: 96, height: 96, borderRadius: 48, background: K.ui, transform: `scale(${press})`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: K.lime, fontSize: 54, fontWeight: 900, fontFamily: FONT}}>↑</div>}
       </div>
       {/* live chips under the composer: niche, follower counter across platforms, the question; they fly into the bubble on send */}
-      {sent < 1 && [[W(0, 'cooking'), 110, 1230, -6, 'pan'], [W(0, '600'), 520, 1260, 5, 'count'], [W(0, 'pay'), 300, 1460, -3, 'q']].map(([at, x, y, r, k], i) => {
+      {sent < 1 && [[W(0, 'post'), 110, 1230, -6, 'pan'], [W(0, '600'), 520, 1260, 5, 'count'], [W(0, 'pay'), 300, 1460, -3, 'q']].map(([at, x, y, r, k], i) => {
         const p = spring(f - at + 3, {w: 0.5, z: 0.6}); if (p <= 0) return null; const fly = expoIn(f - send + 2, 8);
         const n = Math.round(600 * expo(f - at + 3, 16));
         return (
           <div key={k} style={{position: 'absolute', left: mix(x, 500, fly), top: mix(y + Math.sin(f / 9 + i) * 8, 500, fly), transform: `scale(${p * (1 - fly * 0.8)}) rotate(${r + Math.sin(f / 13 + i) * 2}deg)`, opacity: 1 - fly,
             background: k === 'count' ? K.ui : k === 'q' ? K.lime : '#fff', color: k === 'count' ? '#fff' : K.ui, borderRadius: 999, padding: '20px 34px', display: 'flex', alignItems: 'center', gap: 16,
             fontFamily: FONT, fontWeight: 800, fontSize: 44, boxShadow: '0 16px 40px rgba(0,0,0,0.12)'}}>
-            {k === 'pan' && <><svg width="54" height="54" viewBox="0 0 24 24"><circle cx="10" cy="13" r="7" fill={K.ui} /><path d="M16 11 L23 8" stroke={K.ui} strokeWidth="3" strokeLinecap="round" /><circle cx="10" cy="13" r="3" fill="#FFD27A" /></svg>Cozy cooking</>}
+            {k === 'pan' && <><Icon name="play" size={44} color={K.ui} />Small creator</>}
             {k === 'count' && <><Logo name="instagram" size={44} /><Logo name="tiktok" size={44} /><span style={{color: K.lime}}>{n}</span> followers</>}
             {k === 'q' && <>What can pay me? <span style={{display: 'inline-block', transform: `rotate(${Math.sin(f / 4) * 12}deg)`}}>$</span></>}
           </div>

@@ -12,11 +12,11 @@
  "preview_res": 720,
  "style": "launch",
  "slug": "flow_launch_finder",
- "title": "The free AI Income Finder (launch film, one palette, faster)",
+ "title": "The free AI Income Finder (launch film, general)",
  "type": "value",
  "beats": [
   {
-   "say": "Cozy cooking, [600|six hundred] followers. What can actually pay you?",
+   "say": "You post Reels and TikToks, and you have [600|six hundred] followers. What can actually pay you?",
    "show": {
     "type": "launch"
    },
