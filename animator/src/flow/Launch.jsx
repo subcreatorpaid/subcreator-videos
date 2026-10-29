@@ -8,17 +8,17 @@ import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {FONT} from '../Short';
 import {Logo} from '../graphics';
 import {expo, expoIn, inOut, spring, kf, mix, clamp01, camera, Rise, typedCount, Cursor, useTimes, hash} from './kit';
-import {StreamArt, Avatar, Icon, Check} from './art';
+import {StreamArt, Avatar, Icon, Check, BrandLogo} from './art';
 
 const K = {bg: '#F5F5F2', ui: '#0E0E10', lime: '#CDF24F', mut: '#8B8B86', red: '#E5484D', card: '#1C1C1F'};
 const ART = {ink: '#0E0E10', a: '#CDF24F', b: '#FFFFFF', c: '#2E2E33', box: '#FFFFFF', rec: '#CDF24F', recInk: '#0E0E10'};
 const LINES = ['I film cozy cooking,', '600 followers.', 'What can pay me?'];
 const CARDS = [
-  {name: 'Etsy templates', line: 'Sell a digital file again and again', pay: 'about $8.60 of a $10 sale', kind: 'etsy'},
-  {name: 'Amazon Associates', line: 'Earn a cut when someone buys', pay: '3%–4.5% on most categories', kind: 'amazon'},
-  {name: 'Fiverr gigs', line: 'Sell a small service', pay: 'Fiverr keeps 20%', kind: 'fiverr'},
-  {name: 'UGC videos', line: 'Brands pay for videos they run as ads', pay: '$50–$400 a video', kind: 'ugc', best: true},
-  {name: 'ElevenLabs voices', line: 'Earn when paying users pick your voice', pay: 'Paid through Stripe', kind: 'voice'},
+  {name: 'Etsy templates', line: 'Sell a digital file again and again', pay: 'about $8.60 of a $10 sale', kind: 'etsy', logos: ['etsy']},
+  {name: 'Amazon Associates', line: 'Earn a cut when someone buys', pay: '3%–4.5% on most categories', kind: 'amazon', logos: ['amazon']},
+  {name: 'Fiverr gigs', line: 'Sell a small service', pay: 'Fiverr keeps 20%', kind: 'fiverr', logos: ['fiverr']},
+  {name: 'UGC videos', line: 'Brands pay for videos they run as ads', pay: '$50–$400 a video', kind: 'ugc', best: true, logos: ['billo', 'joinbrands']},
+  {name: 'ElevenLabs voices', line: 'Earn when paying users pick your voice', pay: 'Paid through Stripe', kind: 'voice', logos: ['elevenlabs']},
 ];
 
 // Owner, 29 Oct 2026 09:22: "more animations, a little bit fast". Extra layers below: drifting lime dust, punch zooms on key
@@ -69,7 +69,7 @@ export const Launch = ({beats = []}) => {
   const think = expo(f - send - 5, 12);
   const ring = {x: mix(910, 540, think), y: mix(1070, 1060, think), d: mix(96, 300, think)};
   const tossAt = [W(1, 'checks'), W(1, '16'), W(1, 'verified'), W(1, 'streams')];
-  const TILES = ['instagram', 'tiktok', 'youtube', 'spotify', 'E', 'a', 'fi', 'EL', 'K', 'P', 'S', 'G', 'T', 'Y', 'U', 'Ko'];
+  const TILES = ['instagram', 'tiktok', 'youtube', 'spotify', 'etsy', 'amazon', 'fiverr', 'elevenlabs', 'kit', 'patreon', 'substack', 'gumroad', 'twitch', 'beehiiv', 'billo', 'kofi'];
   // ---- drop: lime flood fills the frame, cards burst, strip lands on the best match
   const flood = expoIn(f - drop + 8, 8) * (1 - expo(f - chat, 10));
   const burst = spring(f - drop, {w: 0.4, z: 0.7});
@@ -136,7 +136,7 @@ export const Launch = ({beats = []}) => {
         return (
           <div key={i} style={{position: 'absolute', left: x - 50, top: y - 50, width: 100, height: 100, borderRadius: 28, background: '#fff', boxShadow: '0 12px 26px rgba(0,0,0,0.14)', display: 'flex', alignItems: 'center', justifyContent: 'center',
             fontFamily: FONT, fontWeight: 900, fontSize: 40, color: K.ui, transform: `rotate(${(1 - expo(f - at, 14)) * 120}deg) scale(${f >= drop - 8 ? 1 - expoIn(f - drop + 8, 8) : 1})`}}>
-            {['instagram', 'tiktok', 'youtube', 'spotify'].includes(t) ? <Logo name={t} size={62} /> : t}
+            <BrandLogo name={t} size={62} />
           </div>
         );
       })}
@@ -238,7 +238,9 @@ export const Launch = ({beats = []}) => {
               <div style={{position: 'absolute', left: 0, right: 0, top: 1460, textAlign: 'center', fontFamily: FONT, fontWeight: 800, fontSize: 56, color: K.lime, opacity: expo(f - W(5, 'comment') + 4, 10)}}>Comment FINDER for the free guide</div>
               <div style={{position: 'absolute', left: 0, right: 0, top: 1000, textAlign: 'center', fontWeight: 700, fontSize: 40, color: '#9A9A94', opacity: expo(f - outro - 28, 8)}}>Free AI Income Finder</div>
               <div style={{position: 'absolute', left: 0, right: 0, top: 1120, textAlign: 'center', opacity: expo(f - W(5, 'tools') + 4, 10)}}>
-                <span style={{background: '#1E1E21', color: '#CFCFCA', borderRadius: 40, padding: '14px 28px', fontWeight: 700, fontSize: 30}}>Tools I use: link in bio · Affiliate link</span>
+                <span style={{display: 'inline-flex', alignItems: 'center', gap: 14, background: '#1E1E21', color: '#CFCFCA', borderRadius: 40, padding: '12px 26px', fontWeight: 700, fontSize: 30}}>Tools I use:
+                  {['beehiiv', 'elevenlabs', 'opusclip', 'skool'].map((n, i) => <span key={n} style={{display: 'inline-flex', width: 56, height: 56, borderRadius: 14, background: '#fff', alignItems: 'center', justifyContent: 'center',
+                    transform: `scale(${spring(f - W(5, 'tools') - i * 3, {w: 0.5, z: 0.6})})`}}><BrandLogo name={n} size={42} /></span>)} · Affiliate links</span>
               </div>
               <div style={{position: 'absolute', left: 300, top: 1300, width: 480, height: 110, borderRadius: 55, background: f > W(5, 'follow') + 4 ? '#2A2A2D' : '#fff', color: f > W(5, 'follow') + 4 ? '#fff' : K.ui,
                 display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 44, opacity: expo(f - W(5, 'follow') + 10, 8)}}>{f > W(5, 'follow') + 4 ? 'Following' : 'Follow'}</div>
@@ -255,7 +257,11 @@ export const Launch = ({beats = []}) => {
 const DarkCard = ({c, shine = -999}) => (
   <div style={{position: 'relative', width: 580, height: 760, borderRadius: 40, background: K.ui, overflow: 'hidden', boxShadow: '0 40px 80px rgba(0,0,0,0.25)', fontFamily: FONT}}>
     <div style={{position: 'absolute', left: shine, top: -200, width: 120, height: 1200, background: 'rgba(255,255,255,0.14)', transform: 'rotate(20deg)', zIndex: 2}} />
-    <div style={{height: 380, background: c.best ? K.lime : K.card, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><StreamArt kind={c.kind} size={320} p={c.best ? {...ART, a: '#FFFFFF', rec: K.ui, recInk: K.lime} : ART} /></div>
+    <div style={{position: 'relative', height: 380, background: c.best ? K.lime : K.card, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      {c.best ? <StreamArt kind={c.kind} size={300} p={{...ART, a: '#FFFFFF', rec: K.ui, recInk: K.lime}} /> : (
+        <div style={{width: 230, height: 230, borderRadius: 56, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 20px 40px rgba(0,0,0,0.3)'}}><BrandLogo name={c.logos[0]} size={150} /></div>)}
+      {c.best && <div style={{position: 'absolute', right: 22, bottom: 22, display: 'flex', gap: 12}}>{c.logos.map((n) => <div key={n} style={{width: 96, height: 96, borderRadius: 24, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center'}}><BrandLogo name={n} size={74} /></div>)}</div>}
+    </div>
     <div style={{padding: '34px 38px'}}>
       <div style={{fontWeight: 800, fontSize: 46, color: '#fff'}}>{c.name}</div>
       <div style={{fontWeight: 500, fontSize: 30, color: '#A5A5A0', marginTop: 10}}>{c.line}</div>

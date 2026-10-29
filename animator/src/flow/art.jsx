@@ -2,6 +2,8 @@
 // SVG illustrations instead of letter glyphs, one per income stream, plus small UI pieces (avatar, waveform, ring,
 // coin, check). Other companies' marks are never drawn; streams are shown by what you make, not by a logo.
 import React from 'react';
+import {Logo} from '../graphics';
+import {BRAND} from './brandlogos';
 
 // Creator avatar: same friendly cartoon face as the rest of the channel (round head, dot eyes, smile), cooking hat.
 export const Avatar = ({size = 120, hat = true, bg = '#FFD9B8'}) => (
@@ -78,4 +80,12 @@ export const Icon = ({name, size = 44, color = '#0E0E10'}) => {
     link: <g><path d="M10 14 L14 10" stroke={color} strokeWidth="2.2" strokeLinecap="round" /><path d="M8.5 11.5 L6.5 13.5 A3.5 3.5 0 0 0 11.5 18.5 L13.5 16.5 M15.5 12.5 L17.5 10.5 A3.5 3.5 0 0 0 12.5 5.5 L10.5 7.5" stroke={color} strokeWidth="2.2" fill="none" strokeLinecap="round" /></g>,
   };
   return <svg width={size} height={size} viewBox="0 0 24 24">{P[name]}</svg>;
+};
+
+// Real brand mark by name: platform logos from ../graphics, other programs from brandlogos.js (owner: "put the logos of everything").
+export const BrandLogo = ({name, size = 62, color}) => {
+  if (['instagram', 'tiktok', 'youtube', 'spotify'].includes(name)) return <Logo name={name} size={size} />;
+  const b = BRAND[name]; if (!b) return null;
+  if (b.png) return <img src={b.png} style={{width: size, height: size, objectFit: 'contain'}} />;
+  return <svg width={size} height={size} viewBox="0 0 24 24"><path d={b.d} fill={color || b.hex} /></svg>;
 };
