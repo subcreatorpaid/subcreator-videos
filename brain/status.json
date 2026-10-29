@@ -1,21 +1,21 @@
 {
- "updated": "2026-10-27 08:00",
+ "updated": "2026-10-29 07:50",
  "updated_by": "secretary",
  "today": [
   {
-   "task": "Log in to Fiverr Affiliates and paste your link",
-   "link": "https://fiverraffiliates.com/v2/login/",
+   "task": "Check in the TikTok app that video 001 isn't flagged (it had 0 views while YouTube and Instagram got views)",
+   "link": "https://www.tiktok.com/@subcreatorpaid",
    "mins": 2
   },
   {
-   "task": "Join open affiliate programs (Kit, vidIQ, Riverside, Stan, Amazon...): list in 04-affiliates",
-   "link": "https://claude.ai/artifact/BDkpce2TAqHhja1nM9bsKU",
-   "mins": 15
-  },
-  {
-   "task": "Review the 36 new videos in 02-videos (011, 032, 033, 038, 051, 052, 070-080, 082-100)",
+   "task": "Review the 36 new videos and say which post after 2 Nov (the posting queue runs out then)",
    "link": "https://claude.ai/artifact/BDkpce2TAqHhja1nM9bsKU",
    "mins": 20
+  },
+  {
+   "task": "Connect beehiiv to the website sign-up so new subscribers get the welcome email (1 real sign-up so far got none)",
+   "link": "https://app.beehiiv.com/",
+   "mins": 10
   }
  ],
  "approvals": [
@@ -23,13 +23,28 @@
    "what": "Cover-first copies of videos 002-008 (they open on a near-blank frame now)",
    "say": "use the cover copies",
    "since": "2026-10-27"
+  },
+  {
+   "what": "Fiverr Affiliates: log in and paste your link (only you can)",
+   "say": "Fiverr link is <your link>",
+   "since": "2026-10-26"
+  },
+  {
+   "what": "Which finished videos to schedule after 008 (2 Nov), one a day at 18:00",
+   "say": "schedule videos <numbers> from 3 Nov",
+   "since": "2026-10-29"
   }
  ],
- "alerts": [],
+ "alerts": [
+  {
+   "text": "Posting queue ends 2 Nov (video 008). Nothing is scheduled after that, and the week of 26 Oct stays cancelled until you say which videos go next.",
+   "since": "2026-10-29"
+  }
+ ],
  "pipeline": {
   "drafted": 0,
   "approved": 0,
-  "rendered": 3,
+  "rendered": 36,
   "scheduled": 7,
   "posted": 1
  },
@@ -56,7 +71,7 @@
   },
   {
    "id": "kit",
-   "status": "in review",
+   "status": "in review (since 25 Oct)",
    "earns": "50% for 12 months"
   },
   {
@@ -73,10 +88,10 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-10-27",
+  "checked": "2026-10-29",
   "pending_comments": 0,
-  "subscribers": 0,
-  "visits_since_launch": 62
+  "subscribers": 1,
+  "visits_since_launch": 76
  },
  "last_week": null,
  "money": {
