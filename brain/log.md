@@ -43,3 +43,4 @@ One line per run: `YYYY-MM-DD HH:MM | role | what was done | needs owner`
 2026-10-29 13:25 | creator | Gemini drafts scheduled (owner's pick): scan daily 06:00 UTC, drafts Sundays 07:00 UTC, skips ideas already drafted | owner: merge the schedule PR
 2026-10-29 13:40 | secretary | Credit cuts (owner: 'change all'): Morning brief paused, daily briefing on Sonnet, researcher/creator read Gemini scans+drafts first, get_videos.ps1 copies renders to the PC | owner: merge the PR
 2026-10-29 13:50 | creator | Owner rule: review renders at 360p (animate.yml mode preview), final 1080p only after the last OK, never 4K | owner: merge the PR
+2026-10-29 13:50 | creator | Owner rule: review renders at 360p (animate.yml mode preview), final 1080p only after the last OK, never 4K | owner: merge the PR
