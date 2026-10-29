@@ -5,7 +5,7 @@
 // Chapters: who we are -> the channel -> the website + 16 guides -> AI Income Finder -> tracker + tools -> free guide ->
 // newsletter -> our promise -> outro.
 import React from 'react';
-import {AbsoluteFill, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, useCurrentFrame, staticFile} from 'remotion';
 import {FONT} from '../Short';
 import {Logo} from '../graphics';
 import {expo, expoIn, spring, kf, mix, clamp01, camera, Rise, typedCount, Cursor, useTimes, hash} from './kit';
@@ -19,11 +19,17 @@ const ORBIT = ['instagram', 'tiktok', 'youtube', 'spotify', 'etsy', 'amazon', 'f
 const STREAMS = [['ugc', 'UGC'], ['etsy', 'Etsy'], ['amazon', 'Amazon'], ['fiverr', 'Fiverr'], ['elevenlabs', 'Voice'], ['beehiiv', 'Newsletter'], ['gumroad', 'Gumroad'], ['kofi', 'Ko-fi'],
   ['patreon', 'Patreon'], ['spotify', 'Spotify'], ['substack', 'Substack'], ['tiktok', 'Rewards'], ['tiktok', 'TikTok Shop'], ['twitch', 'Twitch'], ['youtube', 'Shopping'], ['youtube', 'Fan funding']];
 // beat -> canvas cell; cells sit on a zigzag so each move is a diagonal whip
-const CELL = [0, 1, 2, 3, 4, 4, 5, 5, 6, 7, 8, 9, 10];
-const DARK = {5: true, 9: true, 10: true};
+const CELL = [0, 1, 2, 3, 4, 4, 5, 5, 6, 7, 8, 9, 10, 11];
+const DARK = {5: true, 10: true, 11: true};
 const cellPos = (c) => ({x: (c % 2) * 1300, y: c * 2100});
-const CHAPTERS = [[0, 'Who we are'], [2, 'The channel'], [4, 'The website'], [6, 'AI Income Finder'], [8, 'Free tools'], [9, 'Free guides'], [10, 'The free list'], [11, 'Our promise']];
+const CHAPTERS = [[0, 'Who we are'], [2, 'The channel'], [4, 'The website'], [6, 'AI Income Finder'], [8, 'Free tools'], [9, 'Free guides'], [10, 'The free list'], [11, 'All free'], [12, 'Our promise']];
 
+// Real captures of the live site (Lime Glass look), taken with playwright from the built site; listed in beat 4's show.images so prep.py copies them.
+const Cap = ({name, w = 980, y = 0, h, r = 0, style = {}}) => (
+  <div style={{width: w, height: h, overflow: 'hidden', borderRadius: r, position: 'relative', ...style}}>
+    <img src={staticFile('a_' + name + '.png')} style={{width: w, display: 'block', marginTop: -y}} />
+  </div>
+);
 const pop = (f, at, o = {w: 0.42, z: 0.6}) => spring(f - at, o);
 const Card = ({children, style = {}, dark}) => (
   <div style={{position: 'absolute', background: dark ? K.card : '#fff', borderRadius: 44, boxShadow: '0 30px 70px rgba(0,0,0,0.12)', fontFamily: FONT, ...style}}>{children}</div>
@@ -203,42 +209,15 @@ const S4 = ({f, W, B}) => {
         <div style={{marginLeft: 20, flex: 1, height: 70, borderRadius: 35, background: '#fff', display: 'flex', alignItems: 'center', gap: 14, padding: '0 28px', fontWeight: 700, fontSize: 38, color: K.ui}}>
           <Lock size={30} color={K.mut} />{URL.slice(0, typed)}{typed < URL.length && f % 16 < 8 ? '|' : ''}</div>
       </div>
-      <div style={{position: 'absolute', left: 0, right: 0, top: 120, transform: `translateY(${-scroll * 1060}px)`}}>
-        {/* home hero (matches the live Lime Glass site) */}
-        <div style={{padding: '50px 60px', background: `radial-gradient(circle at 10% 20%, ${K.soft}, transparent 60%)`}}>
-          <div style={{opacity: expo(f - built, 8), fontWeight: 800, fontSize: 30, color: K.mut, letterSpacing: 2}}>FOR CREATORS UNDER 10K FOLLOWERS</div>
-          <div style={{marginTop: 20}}><Rise f={f} at={built + 2} text="Small account." size={96} weight={900} font={FONT} /></div>
-          <div style={{marginTop: 6}}><Money size={96} p={expo(f - built - 6, 10)}>Real income.</Money></div>
-          <div style={{display: 'flex', gap: 20, marginTop: 44}}>
-            {['Try the AI finder', 'Get the free guide'].map((t, i) => <div key={t} style={{transform: `scale(${pop(f, built + 10 + i * 4)})`}}><Pill bg={i ? '#fff' : K.ui} color={i ? K.ui : '#fff'} size={36} style={{border: `3px solid ${K.ui}`}}>{t}</Pill></div>)}
-          </div>
-        </div>
-        <div style={{display: 'flex', gap: 20, padding: '20px 60px'}}>
-          {[['16', 'income stream guides'], ['15', 'creator tools'], ['$0', 'to use it all']].map(([n, l], i) => { const p = pop(f, built + 16 + i * 4);
-            return <div key={l} style={{flex: 1, borderRadius: 30, background: i === 2 ? K.lime : '#F5F5F2', padding: 26, transform: `translateY(${(1 - p) * 200}px)`, opacity: clamp01(p * 2)}}>
-              <div style={{fontWeight: 900, fontSize: 72, color: K.ui}}>{n}</div><div style={{fontWeight: 700, fontSize: 28, color: K.mut}}>{l}</div></div>; })}
-        </div>
-        <div style={{margin: '20px 60px', height: 300, borderRadius: 34, background: K.ui, padding: 34, opacity: expo(f - built - 26, 8)}}>
-          <div style={{fontWeight: 800, fontSize: 44, color: '#fff'}}>AI Income Finder</div><div style={{marginTop: 22, height: 80, borderRadius: 40, background: '#2A2A2D'}} />
-        </div>
-        {/* streams library (beat 5) */}
-        <div style={{padding: '40px 60px 0'}}>
-          <div style={{display: 'flex', alignItems: 'center', gap: 24}}>
-            <div style={{width: 150, height: 150, borderRadius: 40, background: K.lime, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 100, color: K.ui, transform: `scale(${1 + 0.08 * Math.max(0, 1 - Math.abs(f - W(5, '16') - 2) / 6)})`}}>{n16}</div>
-            <div><div style={{fontWeight: 900, fontSize: 58, color: K.ui}}>Income stream guides</div><div style={{fontWeight: 700, fontSize: 32, color: K.mut}}>Pay, requirements, steps, the catch</div></div>
-          </div>
-          <div style={{display: 'grid', gridTemplateColumns: 'repeat(4, 190px)', gap: 30, marginTop: 40}}>
-            {STREAMS.map(([n, l], i) => { const p = expo(f - tileAt(i), 10); const h = hi[l]; const on = h && f >= h - 2 ? Math.max(0, 1 - (f - h - 2) / 26) : 0;
-              const chk = expo(f - W(5, 'source') - i * 0.8, 8);
-              return (
-                <div key={l} style={{position: 'relative', textAlign: 'center', transform: `perspective(800px) rotateY(${(1 - p) * 90}deg) scale(${1 + on * 0.18})`, opacity: clamp01(p * 3), zIndex: on ? 2 : 1}}>
-                  <Tile name={n} size={190} r={44} logo={0.5} bg={on ? K.lime : '#fff'} style={{border: `3px solid ${on ? K.ui : K.line}`, boxShadow: on ? '0 20px 40px rgba(0,0,0,0.2)' : 'none'}} />
-                  <div style={{fontWeight: 700, fontSize: 26, color: K.ui, marginTop: 8}}>{l}</div>
-                  {chk > 0 && <div style={{position: 'absolute', right: -8, top: -8, width: 56, height: 56, borderRadius: 28, background: K.ui, display: 'flex', alignItems: 'center', justifyContent: 'center', transform: `scale(${chk})`}}><Check size={36} color={K.lime} /></div>}
-                </div>
-              ); })}
-          </div>
-        </div>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 120, transform: `translateY(${-scroll * 1060}px)`, opacity: expo(f - built + 4, 6)}}>
+        <Cap name="home" w={980} />
+        <Cap name="streams" w={980} />
+        <div style={{position: 'absolute', left: 60, top: 1000, transform: `scale(${pop(f, built + 6)})`, transformOrigin: 'left'}}><Pill bg={K.lime} color={K.ui} size={34}>Live on subcreatorpaid.com</Pill></div>
+        <div style={{position: 'absolute', left: 40, top: 1930, display: 'flex', alignItems: 'center', gap: 20, background: 'rgba(14,14,16,0.92)', borderRadius: 40, padding: '14px 30px 14px 14px', transform: `scale(${1 + 0.08 * Math.max(0, 1 - Math.abs(f - W(5, '16') - 2) / 6)})`, transformOrigin: 'left'}}>
+          <div style={{width: 96, height: 96, borderRadius: 28, background: K.lime, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 66, color: K.ui, fontFamily: FONT}}>{n16}</div>
+          <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 44, color: '#fff'}}>income stream guides</div></div>
+        {[['UGC', 330, 1480], ['Etsy', 250, 1640], ['Rewards', 610, 1560], ['Patreon', 560, 1740]].map(([l, x, y]) => { const at = hi[l]; const on = f >= at - 3 ? Math.max(0, 1 - (f - at) / 40) : 0; if (f < at - 3 || on <= 0) return null;
+          return <div key={l} style={{position: 'absolute', left: x, top: y, transform: `scale(${pop(f, at - 3, {w: 0.6, z: 0.5})}) rotate(-5deg)`, opacity: clamp01(on * 2)}}><Pill bg={K.lime} color={K.ui} size={34} style={{border: `4px solid ${K.ui}`}}>{l}</Pill></div>; })}
       </div>
     </div>
     {(() => { const p = pop(f, W(5, 'source') - 4); return (
@@ -264,7 +243,14 @@ const S6 = ({f, W, B}) => {
   const n = Math.min(16, Math.round(16 * clamp01((f - send - 6) / Math.max(8, pick - send - 10))));
   const cards = spring(f - pick, {w: 0.42, z: 0.66}); const lift = expo(f - W(7, 'best') + 3, 8);
   const comp = {x: mix(90, 230, sent), y: mix(560, 300, sent), w: mix(900, 760, sent), h: mix(400, 230, sent)};
+  const capOut = expoIn(f - W(6, 'tell') + 6, 8);
   return (<>
+    {capOut < 1 && <div style={{position: 'absolute', left: 50, top: 420, width: 980, height: 1000, borderRadius: 40, overflow: 'hidden', boxShadow: '0 40px 100px rgba(0,0,0,0.5)', background: '#fff',
+      transform: `translateY(${(1 - pop(f, B(6) + 4, {w: 0.34, z: 0.72})) * 1400 - capOut * 300}px) scale(${1 - capOut * 0.15}) rotate(${(1 - pop(f, B(6) + 4)) * 8}deg)`, opacity: 1 - capOut}}>
+      <div style={{height: 70, background: '#EDEDE8', display: 'flex', alignItems: 'center', gap: 12, padding: '0 26px'}}>{[0, 1, 2].map((i) => <div key={i} style={{width: 20, height: 20, borderRadius: 10, background: i === 2 ? K.lime : '#C8C8C2'}} />)}
+        <div style={{marginLeft: 16, flex: 1, height: 46, borderRadius: 23, background: '#fff', display: 'flex', alignItems: 'center', gap: 10, padding: '0 22px', fontFamily: FONT, fontWeight: 700, fontSize: 28, color: K.ui}}><Lock size={22} color={K.mut} />subcreatorpaid.com</div></div>
+      <Cap name="finder" w={980} y={0} h={930} />
+    </div>}
     <div style={{position: 'absolute', left: 90, top: 250, display: 'flex', alignItems: 'center', gap: 22, transform: `scale(${head})`, transformOrigin: 'left', opacity: 1 - sent}}>
       <div style={{width: 110, height: 110, borderRadius: 32, background: K.lime, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><Icon name="spark" size={64} color={K.ui} /></div>
       <div><div style={{fontWeight: 900, fontSize: 64, color: '#fff'}}>AI Income Finder</div><div style={{marginTop: 4}}><Pill bg={K.lime} color={K.ui} size={30}>Free</Pill></div></div>
@@ -319,25 +305,17 @@ const S8 = ({f, W, B}) => {
   const tr = pop(f, B(8) + 2); const tl = pop(f, W(8, 'tools') - 6);
   return (<>
     <div style={{position: 'absolute', left: 90, top: 230}}><Rise f={f} at={B(8) + 2} text="Free tools" size={84} weight={900} font={FONT} /></div>
-    <Card style={{left: 90, top: 380, width: 900, height: 560, transform: `translateX(${(1 - tr) * -1100}px) rotate(${(1 - tr) * -10}deg)`}}>
-      <div style={{position: 'absolute', left: 50, top: 44, fontWeight: 900, fontSize: 56, color: K.ui}}>Income tracker</div>
-      <div style={{position: 'absolute', right: 44, top: 46}}><Pill bg={K.lime} color={K.ui} size={30}>Free</Pill></div>
-      {['ugc', 'etsy', 'patreon'].map((n, i) => { const p = expo(f - B(8) - 8 - i * 5, 10);
-        return <div key={n} style={{position: 'absolute', left: 50, right: 50, top: 150 + i * 112, height: 92, borderRadius: 26, background: '#F5F5F2', display: 'flex', alignItems: 'center', gap: 22, padding: '0 20px', transform: `translateX(${(1 - p) * 600}px)`, opacity: p}}>
-          <Tile name={n} size={66} r={18} /><div style={{fontWeight: 800, fontSize: 36, color: K.ui, flex: 1}}>{['UGC deals', 'Etsy shop', 'Patreon'][i]}</div>
-          <div style={{width: 220, height: 20, borderRadius: 10, background: K.line, overflow: 'hidden'}}><div style={{width: `${expo(f - B(8) - 14 - i * 5, 20) * [70, 45, 30][i]}%`, height: '100%', background: i === 0 ? K.lime : K.ui}} /></div>
-          <div style={{width: 52, height: 52, borderRadius: 16, background: K.ui, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><Check size={34} color={K.lime} p={expo(f - B(8) - 20 - i * 5, 8)} /></div>
-        </div>; })}
-      <div style={{position: 'absolute', left: 50, bottom: 36, transform: `scale(${pop(f, W(8, 'device') - 4, {w: 0.6, z: 0.5})})`, transformOrigin: 'left'}}><Pill bg={K.ui} color="#fff" size={34}><Lock size={36} color={K.lime} />Saved on your device only</Pill></div>
+    <Card style={{left: 90, top: 380, width: 900, height: 560, overflow: 'hidden', transform: `translateX(${(1 - tr) * -1100}px) rotate(${(1 - tr) * -10}deg)`}}>
+      <Cap name="tracker" w={900} y={90} h={560} />
+      <div style={{position: 'absolute', right: 30, top: 30}}><Pill bg={K.lime} color={K.ui} size={34}>Income tracker · Free</Pill></div>
+      <div style={{position: 'absolute', left: 30, bottom: 30, transform: `scale(${pop(f, W(8, 'device') - 4, {w: 0.6, z: 0.5})})`, transformOrigin: 'left'}}><Pill bg={K.ui} color="#fff" size={34}><Lock size={36} color={K.lime} />Saved on your device only</Pill></div>
     </Card>
-    <Card style={{left: 90, top: 1000, width: 900, height: 470, transform: `translateX(${(1 - tl) * 1100}px) rotate(${(1 - tl) * 10}deg)`}}>
-      <div style={{position: 'absolute', left: 50, top: 44, fontWeight: 900, fontSize: 56, color: K.ui}}>Tools page</div>
-      <div style={{position: 'absolute', right: 44, top: 56, fontWeight: 700, fontSize: 28, color: K.mut}}>Affiliate links</div>
-      {['beehiiv', 'kit', 'elevenlabs', 'opusclip'].map((n, i) => { const p = pop(f, W(8, 'tools') - 2 + i * 3, {w: 0.5, z: 0.55}); const tag = pop(f, W(8, 'free') - 2 + i * 3, {w: 0.6, z: 0.5});
-        return <div key={n} style={{position: 'absolute', left: 50 + i * 205, top: 160 + Math.sin(f / 9 + i) * 6, transform: `scale(${p})`}}>
-          <Tile name={n} size={180} r={44} logo={0.6} style={{border: `3px solid ${K.line}`}} />
-          <div style={{position: 'absolute', left: 0, right: 0, top: 200, textAlign: 'center', transform: `scale(${tag}) rotate(${(i % 2 ? 1 : -1) * 4}deg)`}}><Pill bg={K.lime} color={K.ui} size={26}>Free plan</Pill></div>
-        </div>; })}
+    <Card style={{left: 90, top: 1000, width: 900, height: 470, overflow: 'hidden', transform: `translateX(${(1 - tl) * 1100}px) rotate(${(1 - tl) * 10}deg)`}}>
+      <Cap name="tools" w={900} y={90} h={470} />
+      <div style={{position: 'absolute', right: 30, top: 30}}><Pill bg={K.lime} color={K.ui} size={34}>Tools page</Pill></div>
+      {['beehiiv', 'kit', 'elevenlabs', 'opusclip'].map((n, i) => { const p = pop(f, W(8, 'marked') - 6 + i * 3, {w: 0.5, z: 0.55});
+        return <div key={n} style={{position: 'absolute', left: 30 + i * 100, bottom: 24, transform: `scale(${p})`}}><Tile name={n} size={84} r={22} logo={0.62} /></div>; })}
+      <div style={{position: 'absolute', right: 30, bottom: 30, transform: `scale(${pop(f, W(8, 'free') - 2, {w: 0.6, z: 0.5})}) rotate(3deg)`}}><Pill bg={K.lime} color={K.ui} size={34} style={{border: `4px solid ${K.ui}`}}>Free plans marked</Pill></div>
     </Card>
     <Burst f={f} at={W(8, 'marked')} x={540} y={1400} n={14} r={360} />
   </>);
@@ -345,9 +323,14 @@ const S8 = ({f, W, B}) => {
 
 // ---------------------------------------------------------------- 9: the free guide (PDF book)
 const S9 = ({f, W, B}) => {
-  const b = pop(f, B(9) - 2, {w: 0.32, z: 0.7}); const fan = expo(f - W(9, 'covers') + 4, 16);
+  const b = pop(f, W(9, 'covers') - 2, {w: 0.32, z: 0.7}); const fan = expo(f - W(9, 'under') + 14, 16);
   const pages = ['ugc', 'etsy', 'patreon', 'tiktok', 'amazon'];
+  const gOut = expoIn(f - W(9, 'covers') + 8, 10);
   return (<>
+    {gOut < 1 && <div style={{position: 'absolute', left: 50, top: 400, width: 980, height: 760, borderRadius: 40, overflow: 'hidden', boxShadow: '0 40px 100px rgba(0,0,0,0.25)', background: '#fff',
+      transform: `translateY(${(1 - pop(f, B(9) + 2, {w: 0.34, z: 0.72})) * 1300 - gOut * 400}px) scale(${1 - gOut * 0.2})`, opacity: 1 - gOut}}>
+      <Cap name="guide" w={980} h={760} />
+    </div>}
     <div style={{position: 'absolute', left: 90, top: 230}}><Rise f={f} at={B(9) + 2} text="Free guides" size={84} weight={900} font={FONT} /></div>
     <div style={{position: 'absolute', left: 290, top: 470, width: 500, height: 680, transform: `translateY(${(1 - b) * 1200}px) translateY(${Math.sin(f / 14) * 12}px)`}}>
       {pages.map((n, i) => { const a = (i - 2) * 16 * fan; return (
@@ -411,29 +394,47 @@ const S10 = ({f, W, B}) => {
   </>);
 };
 
+// ---------------------------------------------------------------- 11: everything you get (real captures as thumbnails)
+const SERVICES = [
+  ['Stream guides', '16 verified, with sources', 'streams', 'stream'], ['AI Income Finder', 'Your best match in seconds', 'finder', 'finder'], ['Income tracker', 'Saved on your device', 'tracker', 'tracker'],
+  ['Tools page', 'Free plans marked', 'tools', 'tools'], ['Free PDF guide', 'Every stream under 10k', 'guide', 'pdf'], ['Weekly email', 'One verified stream a week', null, 'weekly']];
+const S11a = ({f, W, B}) => (<>
+  <div style={{position: 'absolute', left: 90, top: 230}}><Rise f={f} at={B(11) + 2} text="What you get" size={84} weight={900} font={FONT} /></div>
+  <div style={{position: 'absolute', left: 90, top: 360 + 0}}><Pill bg={K.lime} color={K.ui} size={40}>All free</Pill></div>
+  {SERVICES.map(([t, sub, img, key], i) => { const at = W(11, key) - 4; const p = pop(f, at, {w: 0.5, z: 0.58}); if (p <= 0) return null;
+    return (
+      <Card key={t} style={{left: 90, top: 470 + i * 215, width: 900, height: 190, transform: `translateX(${(1 - p) * 1000}px) rotate(${(1 - p) * 6}deg)`, borderRadius: 40, overflow: 'hidden', display: 'flex', alignItems: 'center'}}>
+        <div style={{width: 190, height: 190, flexShrink: 0, background: img ? '#EDEDE8' : K.ui, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          {img ? <Cap name={img} w={380} h={190} /> : <Icon name="cal" size={90} color={K.lime} />}</div>
+        <div style={{padding: '0 36px', flex: 1}}><div style={{fontWeight: 900, fontSize: 52, color: K.ui}}>{t}</div><div style={{fontWeight: 700, fontSize: 30, color: K.mut, marginTop: 6}}>{sub}</div></div>
+        <div style={{marginRight: 30, transform: `scale(${pop(f, at + 6, {w: 0.6, z: 0.5})})`}}><Pill bg={K.lime} color={K.ui} size={30}>Free</Pill></div>
+      </Card>); })}
+  <Burst f={f} at={W(11, 'weekly')} x={540} y={1500} n={16} r={420} />
+</>);
+
 // ---------------------------------------------------------------- 11: our promise (dark kinetic type)
 const S11 = ({f, W, B}) => {
   const L = [
-    {at: W(11, 'hype'), t: 'No hype.', c: '#fff'},
-    {at: W(11, 'promises'), t: 'No promises.', c: '#fff'},
-    {at: W(11, 'real'), t: 'Real numbers.', money: true},
-    {at: W(11, 'catch') - 6, t: '+ the catch.', c: K.red},
+    {at: W(12, 'hype'), t: 'No hype.', c: '#fff'},
+    {at: W(12, 'promises'), t: 'No promises.', c: '#fff'},
+    {at: W(12, 'real'), t: 'Real numbers.', money: true},
+    {at: W(12, 'catch') - 6, t: '+ the catch.', c: K.red},
   ];
   return (<>
     <svg width="1080" height="1920" style={{position: 'absolute', left: 0, top: 0, opacity: 0.5}}>
-      {[0, 1, 2].map((i) => <circle key={i} cx="540" cy="900" r={300 + i * 180 + ((f - B(11)) * 3) % 180} stroke="#2A2A2D" strokeWidth="4" fill="none" />)}
+      {[0, 1, 2].map((i) => <circle key={i} cx="540" cy="900" r={300 + i * 180 + ((f - B(12)) * 3) % 180} stroke="#2A2A2D" strokeWidth="4" fill="none" />)}
     </svg>
-    <div style={{position: 'absolute', left: 90, top: 300}}><Rise f={f} at={B(11)} text="Our promise" size={56} weight={800} font={FONT} color="#8B8B86" /></div>
+    <div style={{position: 'absolute', left: 90, top: 300}}><Rise f={f} at={B(12)} text="Our promise" size={56} weight={800} font={FONT} color="#8B8B86" /></div>
     {L.map((l, i) => { const p = pop(f, l.at - 3, {w: 0.55, z: 0.55}); if (p <= 0) return null; const shake = f - l.at < 8 ? Math.sin((f - l.at) * 2.6) * 10 * (1 - (f - l.at) / 8) : 0;
       return <div key={i} style={{position: 'absolute', left: 90, top: 470 + i * 230, transform: `translateX(${shake}px) scale(${mix(1.8, 1, p)})`, transformOrigin: 'left center', opacity: clamp01(p * 2), fontFamily: FONT, fontWeight: 900, fontSize: 132, letterSpacing: -5, color: l.c}}>
         {l.money ? <Money size={132}>{l.t}</Money> : l.t}</div>; })}
-    <Burst f={f} at={W(11, 'real')} x={480} y={1060} n={20} r={480} />
+    <Burst f={f} at={W(12, 'real')} x={480} y={1060} n={20} r={480} />
   </>);
 };
 
 // ---------------------------------------------------------------- 12: outro (dark)
 const S12 = ({f, W, B}) => {
-  const outro = B(12); const o = expo(f - outro, 12); const p = expo(f - outro - 1, 16);
+  const outro = B(13); const o = expo(f - outro, 12); const p = expo(f - outro - 1, 16);
   const x = mix(mix(140, 440, p), mix(440, 540, p), p), y = mix(mix(1500, 1050, p), mix(1050, 620, p), p);
   const mark = expo(f - outro - 14, 10);
   return (<>
@@ -446,22 +447,22 @@ const S12 = ({f, W, B}) => {
     {mark > 0.9 && <Pulse f={f} x={540} y={500} d={240} from={outro + 24} every={22} />}
     <Burst f={f} at={outro + 20} x={540} y={500} n={18} r={380} />
     <div style={{position: 'absolute', left: 0, right: 0, top: 720, textAlign: 'center', fontFamily: FONT}}>
-      <div style={{fontWeight: 900, fontSize: 84, color: '#fff', clipPath: `inset(0 ${(1 - expo(f - W(12, 'subcreatorpaid.com') + 6, 10)) * 50}% 0 ${(1 - expo(f - W(12, 'subcreatorpaid.com') + 6, 10)) * 50}%)`}}>subcreatorpaid.com</div>
-      <div style={{fontWeight: 700, fontSize: 40, color: '#9A9A94', marginTop: 16, opacity: expo(f - W(12, 'subcreatorpaid.com'), 8)}}>Free AI Income Finder · 16 guides · free guide</div>
+      <div style={{fontWeight: 900, fontSize: 84, color: '#fff', clipPath: `inset(0 ${(1 - expo(f - W(13, 'subcreatorpaid.com') + 6, 10)) * 50}% 0 ${(1 - expo(f - W(13, 'subcreatorpaid.com') + 6, 10)) * 50}%)`}}>subcreatorpaid.com</div>
+      <div style={{fontWeight: 700, fontSize: 40, color: '#9A9A94', marginTop: 16, opacity: expo(f - W(13, 'subcreatorpaid.com'), 8)}}>Free AI Income Finder · 16 guides · free guide</div>
     </div>
-    {(() => { const q = pop(f, W(12, 'comment') - 3, {w: 0.5, z: 0.55}); return (
+    {(() => { const q = pop(f, W(13, 'comment') - 3, {w: 0.5, z: 0.55}); return (
       <div style={{position: 'absolute', left: 0, right: 0, top: 960, display: 'flex', justifyContent: 'center', transform: `scale(${q})`}}>
         <Pill bg={K.lime} color={K.ui} size={54}>Comment GUIDE for the free guide</Pill></div>); })()}
-    <div style={{position: 'absolute', left: 0, right: 0, top: 1130, textAlign: 'center', opacity: expo(f - W(12, 'tools') + 4, 10), fontFamily: FONT}}>
+    <div style={{position: 'absolute', left: 0, right: 0, top: 1130, textAlign: 'center', opacity: expo(f - W(13, 'tools') + 4, 10), fontFamily: FONT}}>
       <span style={{display: 'inline-flex', alignItems: 'center', gap: 14, background: '#1E1E21', color: '#CFCFCA', borderRadius: 40, padding: '12px 26px', fontWeight: 700, fontSize: 30}}>Tools I use:
-        {['beehiiv', 'elevenlabs', 'opusclip', 'skool'].map((n, i) => <span key={n} style={{display: 'inline-flex', width: 56, height: 56, borderRadius: 14, background: '#fff', alignItems: 'center', justifyContent: 'center', transform: `scale(${spring(f - W(12, 'tools') - i * 3, {w: 0.5, z: 0.6})})`}}><BrandLogo name={n} size={42} /></span>)} · Affiliate links</span>
+        {['beehiiv', 'elevenlabs', 'opusclip', 'skool'].map((n, i) => <span key={n} style={{display: 'inline-flex', width: 56, height: 56, borderRadius: 14, background: '#fff', alignItems: 'center', justifyContent: 'center', transform: `scale(${spring(f - W(13, 'tools') - i * 3, {w: 0.5, z: 0.6})})`}}><BrandLogo name={n} size={42} /></span>)} · Affiliate links</span>
     </div>
-    <div style={{position: 'absolute', left: 300, top: 1290, width: 480, height: 110, borderRadius: 55, background: f > W(12, 'follow') + 4 ? '#2A2A2D' : '#fff', color: f > W(12, 'follow') + 4 ? '#fff' : K.ui, fontFamily: FONT,
-      display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 44, opacity: expo(f - W(12, 'follow') + 10, 8), transform: `scale(${f > W(12, 'follow') && f < W(12, 'follow') + 5 ? 0.92 : 1})`}}>{f > W(12, 'follow') + 4 ? 'Following' : 'Follow'}</div>
+    <div style={{position: 'absolute', left: 300, top: 1290, width: 480, height: 110, borderRadius: 55, background: f > W(13, 'follow') + 4 ? '#2A2A2D' : '#fff', color: f > W(13, 'follow') + 4 ? '#fff' : K.ui, fontFamily: FONT,
+      display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 44, opacity: expo(f - W(13, 'follow') + 10, 8), transform: `scale(${f > W(13, 'follow') && f < W(13, 'follow') + 5 ? 0.92 : 1})`}}>{f > W(13, 'follow') + 4 ? 'Following' : 'Follow'}</div>
   </>);
 };
 
-const SCENES = {0: S0, 1: S1, 2: S2, 3: S3, 4: S4, 5: S6, 6: S8, 7: S9, 8: S10, 9: S11, 10: S12};
+const SCENES = {0: S0, 1: S1, 2: S2, 3: S3, 4: S4, 5: S6, 6: S8, 7: S9, 8: S10, 9: S11a, 10: S11, 11: S12};
 
 export const Overview = ({beats = []}) => {
   const f = useCurrentFrame();
@@ -478,7 +479,7 @@ export const Overview = ({beats = []}) => {
   const cam = camera(f, track);
   const prev = camera(f - 1, track);
   const vy = cam.y - prev.y, vx = cam.x - prev.x;
-  const keys = [W(0, '10000'), W(0, 'paid'), W(2, '10000'), W(3, 'dollars'), W(5, '16'), W(7, 'best'), W(9, 'under'), W(11, 'real')];
+  const keys = [W(0, '10000'), W(0, 'paid'), W(2, '10000'), W(3, 'dollars'), W(5, '16'), W(7, 'best'), W(9, 'under'), W(12, 'real')];
   const punch = keys.reduce((s, w) => s + 0.035 * Math.max(0, 1 - Math.abs(f - w - 2) / 7), 0);
   const z = cam.z * (1 + punch); const cx = cam.x + Math.sin(f / 37) * 6, cy = cam.y + Math.cos(f / 43) * 8;
   const skew = Math.max(-14, Math.min(14, vy * 0.03)); const rot = Math.max(-4, Math.min(4, vx * 0.012));

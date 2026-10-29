@@ -138,7 +138,15 @@
   {
    "say": "Everything lives on one website: subcreatorpaid.com.",
    "show": {
-    "type": "overview"
+    "type": "overview",
+    "images": [
+     "overview_site/home.png",
+     "overview_site/streams.png",
+     "overview_site/finder.png",
+     "overview_site/tracker.png",
+     "overview_site/tools.png",
+     "overview_site/guide.png"
+    ]
    },
    "sfx": [
     [
@@ -192,7 +200,7 @@
    ]
   },
   {
-   "say": "The star is the free AI Income Finder. Tell it what you post and how many followers you have.",
+   "say": "The star is the free AI Income Finder, right on the site. Tell it what you post and how many followers you have.",
    "show": {
     "type": "overview"
    },
@@ -324,6 +332,42 @@
     [
      "spam",
      "click"
+    ]
+   ]
+  },
+  {
+   "say": "So here's what you get, all free: stream guides, the AI Income Finder, the tracker, a tools page, the PDF guide, and a weekly email.",
+   "show": {
+    "type": "overview"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "stream",
+     "card"
+    ],
+    [
+     "finder",
+     "ding"
+    ],
+    [
+     "tracker",
+     "card"
+    ],
+    [
+     "tools",
+     "pop"
+    ],
+    [
+     "pdf",
+     "page"
+    ],
+    [
+     "weekly",
+     "ding"
     ]
    ]
   },
