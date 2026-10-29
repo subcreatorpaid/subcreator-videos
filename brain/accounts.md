@@ -16,5 +16,6 @@
 | Skool | subcreatorpaid | affiliate | payouts (owner to add) |
 | Fiverr Affiliates | subcreatorpaid@gmail.com | affiliate | owner to log in |
 | Kaggle | | free GPU | AI host dropped; unused |
+| Gemini API (AI Studio) | | GitHub secret `GEMINI_API_KEY` (never in the repo) | drafts only: `scripts/gemini_draft.py`, workflow "Gemini drafts" (button) |
 | vidIQ | connector | research, voice | credits reset 14th monthly |
 | Bitwarden | owner | passwords | |
