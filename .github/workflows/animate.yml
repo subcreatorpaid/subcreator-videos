@@ -3,7 +3,8 @@ run-name: "Animate ${{ inputs.video }} (${{ inputs.mode }})"  # the Render Room 
 
 # Renders one video spec with the Remotion animator (animator/), following docs/animator-rules.md.
 # Actions tab > "Animate video (Remotion)" > Run workflow > video folder name + mode.
-#   stills = one frame per beat for review (rule W2), about 3 min
+#   stills  = one frame per beat for review (rule W2), about 3 min
+#   preview = the whole video at 360x640 for the owner's review (no hook clips), release video-<slug>-preview
 #   full   = the video split across 4 machines in parallel + 3 hook clips in parallel (rule H3),
 #            then joined, with the contact sheet and cue sheet (rule W6)
 on:
@@ -13,9 +14,9 @@ on:
         description: "Video folder name under videos/"
         required: true
       mode:
-        description: "stills = one frame per beat for review (W2, ~3 min); full = video + 3 hook clips + contact sheet + cue sheet"
+        description: "stills = one frame per beat (W2, ~3 min); preview = whole video at 360p for review (no hook clips); full = final 1080p video + 3 hook clips (only after the owner's OK)"
         type: choice
-        options: [stills, full]
+        options: [stills, preview, full]
         default: stills
 
 permissions:
@@ -100,6 +101,7 @@ jobs:
         run: |
           p="${{ matrix.part }}"; s=false
           if [ "$MODE" = stills ] && [ "$p" != 1 ]; then s=true; fi
+          case "$p" in hook_*) [ "$MODE" = preview ] && s=true;; esac
           case "$p" in hook_*) [ "${{ needs.prep.outputs.hooks }}" = 3 ] || s=true;; esac
           echo "skip=$s" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
@@ -151,7 +153,8 @@ jobs:
               hook_*) npx remotion render build Short "out/${V}_${p}.mp4" --props=props.json --codec=h264 --crf=20 --concurrency=100% ;;
               *) total=$(python3 -c "import json;print(json.load(open('props.json'))['total'])")
                  a=$(( (p - 1) * total / PARTS )); b=$(( p * total / PARTS - 1 ))
-                 npx remotion render build Short "out/part_${p}.mp4" --props=props.json --frames=$a-$b --muted --codec=h264 --crf=20 --concurrency=100% ;;
+                 sc=1; [ "$MODE" = preview ] && sc=0.5  # preview: half size here, 360p in the finish job
+                 npx remotion render build Short "out/part_${p}.mp4" --props=props.json --frames=$a-$b --muted --codec=h264 --crf=20 --scale=$sc --concurrency=100% ;;
             esac
           fi
       - uses: actions/upload-artifact@v4
@@ -176,7 +179,7 @@ jobs:
           mkdir -p out
           cp pieces/prep/main/cue.md "out/${V}_cue.md"
           cp pieces/piece-1/*.png out/
-          if [ "$MODE" = full ]; then
+          if [ "$MODE" != stills ]; then
             # Ubuntu's apt mirror hangs often, so take a static ffmpeg build from GitHub first and fall back to apt
             if ! command -v ffmpeg >/dev/null; then
               (curl -fsSL --retry 3 -m 180 https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz | tar -xJ -C /tmp \
@@ -191,13 +194,17 @@ jobs:
             n=$(( (total + 44) / 45 ))
             ffmpeg -loglevel error -y -i "out/${V}_animated.mp4" -vf "fps=2/3,scale=270:-1,tile=6x$(( (n + 5) / 6 ))" -frames:v 1 "out/${V}_contact_sheet.png"
             cp pieces/piece-hook_*/*.mp4 out/ 2>/dev/null || true
+            if [ "$MODE" = preview ]; then  # small review copy: 360x640
+              ffmpeg -loglevel error -y -i "out/${V}_animated.mp4" -vf scale=360:640 -c:v libx264 -crf 23 -c:a aac -b:a 128k -movflags +faststart "out/${V}_preview_360p.mp4"
+              rm "out/${V}_animated.mp4"
+            fi
           fi
           ls -la out
       - name: Publish on the Releases page
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          tag="video-${V}-animated"; [ "$MODE" = stills ] && tag="video-${V}-stills"
+          tag="video-${V}-animated"; [ "$MODE" = stills ] && tag="video-${V}-stills"; [ "$MODE" = preview ] && tag="video-${V}-preview"
           gh release view "$tag" >/dev/null 2>&1 || gh release create "$tag" --title "${V} (animator, $MODE)" --notes "Private review files. Not posted anywhere."
           gh release upload "$tag" out/* --clobber
           echo "- Released: $tag" >> "$GITHUB_STEP_SUMMARY"

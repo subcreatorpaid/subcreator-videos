@@ -56,7 +56,8 @@ Hand-offs always go through files in `brain/` (never "remember it"): researcher 
 ## How every run behaves
 1. Pull latest (`git pull`), read this file + `brain/rules.md` + `brain/status.json`.
 2. Do only your role's job. Write results into `brain/` files, not chat.
-3. Keep Claude use lean: one thread per task; read Gemini scans/drafts instead of re-searching or re-drafting; copy files with scripts, not by hand. Run `python3 scripts/guard.py` before committing. Commit with a clear message ending in the attribution lines from the session, push to main.
+3. Renders: review copies at 360p (animate.yml mode `preview`, or preview.yml default); the final 1080p (mode `full`) only after the owner OKs the last review. Never 4K (platforms cap at 1080x1920).
+   Keep Claude use lean: one thread per task; read Gemini scans/drafts instead of re-searching or re-drafting; copy files with scripts, not by hand. Run `python3 scripts/guard.py` before committing. Commit with a clear message ending in the attribution lines from the session, push to main.
    Every push to main redeploys the website, so batch all of a run's edits into one commit.
 4. Append one line to `brain/log.md`: `YYYY-MM-DD HH:MM | role | what was done | what needs the owner`.
 5. If something needs the owner, add it to `status.json -> approvals` (max 3 to-dos a day in `today`), never ping for routine work.
