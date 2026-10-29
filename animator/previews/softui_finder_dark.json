@@ -1,0 +1,266 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "softui",
+ "composition": "Short",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.3,
+ "slug": "softui_finder_dark",
+ "title": "The free AI Income Finder (Soft UI style)",
+ "type": "tool",
+ "beats": [
+  {
+   "say": "Most small creators pick an income stream by guessing.",
+   "show": {
+    "type": "guess",
+    "serif": [
+     "guessing"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "guessing",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "So we built a free tool that picks three for you, in seconds.",
+   "show": {
+    "type": "app",
+    "hl": [
+     "free"
+    ],
+    "blue": [
+     "three"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "free",
+     "thud"
+    ],
+    [
+     "three",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "It's called the AI Income Finder, on [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "site",
+    "hl": [
+     "ai",
+     "income",
+     "finder"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "finder",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Describe your account in a few words.",
+   "show": {
+    "type": "typing",
+    "serif": [
+     "few",
+     "words"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "describe",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Pick your followers, your platform, and what you enjoy.",
+   "show": {
+    "type": "pick",
+    "blue": [
+     "followers",
+     "platform",
+     "enjoy"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "followers",
+     "click"
+    ],
+    [
+     "platform",
+     "click"
+    ],
+    [
+     "enjoy",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "It checks our verified income streams, and the AI picks the three that fit you.",
+   "show": {
+    "type": "scan",
+    "serif": [
+     "verified"
+    ],
+    "blue": [
+     "three"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "checks",
+     "click"
+    ],
+    [
+     "three",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Each match shows why it fits, what it pays, and one first step.",
+   "show": {
+    "type": "result",
+    "serif": [
+     "step"
+    ],
+    "green": [
+     "pays"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "why",
+     "pop"
+    ],
+    [
+     "pays",
+     "pop"
+    ],
+    [
+     "step",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Pay figures come from our checked data, never from the AI.",
+   "show": {
+    "type": "proof",
+    "serif": [
+     "checked"
+    ],
+    "red": [
+     "never"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "never",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: it's a starting point, not a promise. Test your top match for thirty days.",
+   "show": {
+    "type": "calendar",
+    "red": [
+     "catch"
+    ],
+    "serif": [
+     "promise"
+    ],
+    "blue": [
+     "thirty"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "thirty",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [FINDER|finder] for the free guide, or try it free on [subcreatorpaid.com|sub creator paid dot com]. Tools I use are in my bio. Follow for more.",
+   "show": {
+    "type": "cta",
+    "hl": [
+     "finder"
+    ],
+    "keyword": "FINDER",
+    "tool": "Tools I use"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "finder",
+     "pop"
+    ],
+    [
+     "follow",
+     "ding"
+    ]
+   ]
+  }
+ ],
+ "bg": "dark"
+}

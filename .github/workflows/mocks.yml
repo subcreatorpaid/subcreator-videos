@@ -1,0 +1,118 @@
+name: Style mocks (Remotion)
+run-name: "Style mocks ${{ inputs.res || '144' }}p"
+
+# Renders the 5 style mocks (animator/src/Mocks.jsx, composition "Mock", n = 1..5) from animator/mocks/spec.json
+# at a small review size and publishes them on the Releases page (tag style-mocks). Private review files, not posted.
+on:
+  workflow_dispatch:
+    inputs:
+      res:
+        description: "Height of the short side in px (144 = 144x256)"
+        default: "144"
+  push:
+    branches: ["claude/**"]
+    paths: ["animator/src/Mocks.jsx", "animator/mocks/**", ".github/workflows/mocks.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: style-mocks
+  cancel-in-progress: true
+
+env:
+  RES: ${{ inputs.res || '144' }}
+
+jobs:
+  prep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt faster-whisper pyloudnorm
+      - uses: actions/cache@v4
+        with:
+          path: |
+            models
+            ~/.cache/huggingface
+          key: kokoro-v1.0-whisper
+      - name: Voice model (first run only)
+        run: |
+          mkdir -p models
+          base=https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0
+          [ -s models/kokoro-v1.0.onnx ] || curl -fsSL -o models/kokoro-v1.0.onnx "$base/kokoro-v1.0.onnx"
+          [ -s models/voices-v1.0.bin ] || curl -fsSL -o models/voices-v1.0.bin "$base/voices-v1.0.bin"
+      - name: Voice + word timings
+        run: |
+          python animator/prep.py animator/mocks/spec.json
+          mkdir -p bundle && cp -r animator/props.json animator/public bundle/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prep
+          path: bundle
+          retention-days: 3
+
+  render:
+    needs: prep
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        n: [1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: animator/package-lock.json
+      - name: Headless Chrome libraries
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libnss3 libdbus-1-3 libatk1.0-0 libgbm-dev libasound2t64 libxrandr2 libxkbcommon-dev \
+            libxfixes3 libxcomposite1 libxdamage1 libatk-bridge2.0-0 libpango-1.0-0 libcairo2 libcups2
+      - uses: actions/download-artifact@v4
+        with:
+          name: prep
+          path: bundle
+      - name: Render mock ${{ matrix.n }}
+        working-directory: animator
+        run: |
+          npm ci --no-audit --no-fund
+          cp -r ../bundle/props.json ../bundle/public .
+          python3 -c "import json;p=json.load(open('props.json'));p['n']=${{ matrix.n }};json.dump(p,open('props.json','w'))"
+          mkdir -p out
+          names=(x midnight_glass paper_collage swiss_type isometric phone_native)
+          # render at 1/4 size (whole pixels), then scale down with Remotion's own ffmpeg (exact 9:16, even sizes)
+          npx remotion render src/index.jsx Mock out/raw.mp4 --props=props.json --scale=0.25 --codec=h264 --crf=18 --concurrency=100%
+          h=$(( RES * 16 / 9 / 2 * 2 ))
+          npx remotion ffmpeg -loglevel error -y -i out/raw.mp4 -vf scale=$RES:$h -c:v libx264 -crf 22 -c:a aac -b:a 96k -movflags +faststart \
+            "out/mock${{ matrix.n }}_${names[${{ matrix.n }}]}_${RES}p.mp4"
+          rm out/raw.mp4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mock-${{ matrix.n }}
+          path: animator/out
+          retention-days: 7
+
+  publish:
+    needs: render
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: pieces
+      - name: Publish on the Releases page
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag=style-mocks
+          gh release view "$tag" >/dev/null 2>&1 || gh release create "$tag" --title "5 style mocks (review)" --notes "Private review files. Not posted anywhere."
+          gh release upload "$tag" pieces/mock-*/*.mp4 --clobber
+          ls pieces/mock-*/ >> "$GITHUB_STEP_SUMMARY"

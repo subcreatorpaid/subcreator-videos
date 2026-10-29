@@ -70,3 +70,32 @@ Pick the beat types from the topic type, keep every rule above. Tag each idea wi
 | Comparison | versus, stack | quick alternation between the two sides |
 | Proof | shot with real public-page screenshots + step tracker | slower so people can read |
 Every week, compare saves and shares per topic type and shift the mix toward what works.
+
+## L - Look v5 (owner ask, 29 Oct 2026, from 5 reference reels)
+Default for `"style": "story"` videos; `"look": "v4"` in the spec brings back the old full-frame layout with bottom subtitles.
+Taken from the reels (layout and motion ideas only, no copied content): one centred hero card, the spoken line built word by
+word above it, a dark spotlight flip for the catch, a mono kicker and a progress tracker.
+- L1. The scene plays inside ONE white stage card (x 108-972, y 430-1480, radius 56, soft shadow, never a hard edge). Scenes are
+  drawn at 0.8 scale from source y 120. The card gets a slow 1.2% push per beat that stops 18 frames before the beat ends (M4, P3).
+- L2. Headline above the card replaces the bottom subtitles: up to 7 words, each word fades/blurs in 3 frames before it is
+  spoken; words two places back turn grey. Money words get a green box, loss words a red box, ALL-CAPS comment keywords an ink box.
+- L3. Kicker at y 128: `// <spec title>` in mono with a green dot. Beat tracker (one segment per beat) at y 1508; handle at y 1580.
+- L4. Background: 60 px grid fading out from the centre. Catch / warning beats (`"type": "catch"` or `"dark": true`) flip the
+  page to ink with a warm light cone and a red glow around the card; the card stays white.
+- L5. Brand stays: off-white, ink, green only for money, red for loss, the same face, real logos, soft glows.
+
+## F - Flow / launch film (owner pick, 29 Oct 2026) - the current default look
+Built from the owner's animation prompts (launch-film prompt). Code: `animator/src/flow/` (kit.jsx motion helpers, art.jsx
+drawn elements + `BrandLogo`, brandlogos.js, Launch.jsx). Spec `"style": "launch"`; preview with `.github/workflows/preview.yml`
+(`"preview_res": 720`). Reference render: `/mnt/project-files/05-style-and-voice/flow-720p/flow_launch_finder_general_720p.mp4`.
+- F1. One continuous take, no cuts or fades: each scene grows out of the last (composer -> bubble -> finder ring -> lime flood ->
+  result cards -> chat -> button expands into the page -> route -> brand mark).
+- F2. One palette: off-white `#F5F5F2`, ink `#0E0E10`, lime `#CDF24F`. Money = ink text on a lime box. Red only on "The catch".
+  No rainbow, blue, orange or green fills. Real logos keep their own colours.
+- F3. Real logos on every tile, card and chip (simple-icons + program logo files); never letters.
+- F4. Always moving: drifting lime dust, spring pop-ins, live counters (followers, n/16), spinner + orbiting tiles, card tilt +
+  shine, pulse rings, lime bursts on money and best match, small punch zooms (+3.5%) on key words, gentle camera sway.
+- F5. Fast: voice speed 1.12, gap 0.25, short lines (about 25 s for 6 beats); moves 8-12 frames, typing ~2 chars a frame.
+- F6. Instagram safe area: the film plays in a box scaled 0.7 at (92, 262) so nothing sits under the right-side buttons or the
+  bottom name/caption; `@subcreatorpaid` with the S mark sits at the top centre (y ~170) for the whole video.
+- F7. General audience: no niche persona unless the topic needs one ("I post Reels and TikToks, 600 followers").

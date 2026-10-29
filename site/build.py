@@ -12,7 +12,7 @@ The AI finder and newsletter sign-up are Cloudflare Pages Functions in /function
 import glob, hashlib, html, json, os, shutil, datetime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "_site")
+OUT = os.environ.get("SITE_OUT") or os.path.join(HERE, "_site")
 D = lambda *p: os.path.join(HERE, "data", *p)
 cfg = json.load(open(D("config.json")))
 progs = {p["id"]: p for p in json.load(open(D("links.json")))["programs"]}
@@ -32,7 +32,7 @@ CSS = r"""
 @font-face{font-family:Inter;src:url(/static/Inter-Bold.otf);font-weight:700;font-display:swap}
 @font-face{font-family:Inter;src:url(/static/Inter-ExtraBold.otf);font-weight:800;font-display:swap}
 @font-face{font-family:Inter;src:url(/static/Inter-Black.otf);font-weight:900;font-display:swap}
-:root{--bg:#F6F5F1;--paper:#FFFFFF;--ink:#151515;--muted:#5F5E58;--line:#E2DFD7;--acc:#151515;--acc-soft:#ECEAE4;--money:#2E7D4F;--money-soft:#E3F0E7;--loss:#D93A3A;--loss-soft:#FBE9E9;--gold:#E9C46A;
+:root{--bg:#F6F5F1;--paper:#FFFFFF;--ink:#151515;--muted:#5F5E58;--line:#E2DFD7;--acc:#151515;--acc-soft:#F1FBD0;--money:#CDF24F;--money-soft:#F1FBD0;--lime:#CDF24F;--loss:#D93A3A;--loss-soft:#FBE9E9;--gold:#E9C46A;
  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--serif:"Instrument Serif",Georgia,"Times New Roman",serif;--mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
  --glow:0 14px 34px rgba(21,21,21,.16),0 3px 10px rgba(21,21,21,.07);--glow-sm:0 8px 20px rgba(21,21,21,.20),0 2px 6px rgba(21,21,21,.08);--glow-lg:0 18px 44px rgba(21,21,21,.26),0 4px 12px rgba(21,21,21,.08);color-scheme:light}
 *{box-sizing:border-box}[hidden]{display:none!important}
@@ -43,7 +43,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 a{color:inherit}img{max-width:100%}
 .wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 h1,h2,h3{margin:0;line-height:1.02;letter-spacing:-.03em;text-wrap:balance}p{margin:0}
-em.s{font-style:normal;color:#fff;background:var(--ink);border-radius:.16em;padding:0 .2em;margin:0 .02em;-webkit-box-decoration-break:clone;box-decoration-break:clone;box-shadow:0 10px 26px rgba(21,21,21,.18)}em.s.m{background:var(--money);color:#fff;box-shadow:0 10px 30px rgba(46,125,79,.35)}em.s.l{background:var(--loss);color:#fff;box-shadow:0 10px 30px rgba(217,58,58,.35)}.m{color:var(--money)}.l,dl dt.l{color:var(--loss)}
+em.s{font-style:normal;color:#fff;background:var(--ink);border-radius:.16em;padding:0 .2em;margin:0 .02em;-webkit-box-decoration-break:clone;box-decoration-break:clone;box-shadow:0 10px 26px rgba(21,21,21,.18)}em.s.m{background:var(--lime);color:var(--ink);box-shadow:0 10px 30px rgba(205,242,79,.55)}em.s.l{background:var(--loss);color:#fff;box-shadow:0 10px 30px rgba(217,58,58,.35)}.m{color:var(--ink);background:linear-gradient(transparent 58%,var(--lime) 58%);padding:0 .08em}.l,dl dt.l{color:var(--loss)}
 .eyebrow{font:700 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:800 15px/1 var(--sans);padding:15px 22px;border-radius:999px;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);text-decoration:none;cursor:pointer;box-shadow:var(--glow-sm);transition:transform .12s,box-shadow .12s}
 .btn:hover{transform:translateY(-2px);box-shadow:var(--glow-lg)}.btn:active{transform:translateY(1px)}.btn[disabled]{opacity:.6;cursor:wait}
@@ -59,7 +59,7 @@ em.s{font-style:normal;color:#fff;background:var(--ink);border-radius:.16em;padd
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(246,245,241,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;gap:26px;padding-block:14px}
 .mark{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;letter-spacing:-.03em;text-decoration:none;margin-right:auto;text-transform:lowercase}
-.mark i{width:34px;height:34px;border-radius:50%;background:var(--money);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:900;box-shadow:var(--glow-sm);text-transform:none}
+.mark{white-space:nowrap}.mark i{flex:none;width:34px;height:34px;border-radius:10px;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-style:normal;font-weight:900;box-shadow:var(--glow-sm);text-transform:none}
 .nav>a.l,.dd>button{font:600 15px var(--sans);color:var(--muted);text-decoration:none;background:none;border:0;cursor:pointer;padding:0}
 .nav>a.l:hover,.dd>button:hover,.nav>a.l[aria-current]{color:var(--ink)}
 .dd{position:relative}
@@ -70,27 +70,28 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 .mmenu{border-top:1px solid var(--line);padding-block:10px 16px;display:grid}
 .mmenu a{padding:10px 0;font-weight:700;text-decoration:none;border-bottom:1px solid var(--line)}
 @media(max-width:900px){.nav>a.l,.dd{display:none}.mnav{display:inline-block}}
+.nav .btn{white-space:nowrap}@media(max-width:520px){.nav{gap:8px}.mark{font-size:15px;gap:7px}.mark i{width:30px;height:30px}.nav .btn.sm{padding:9px 11px;font-size:12.5px}.mnav{padding:7px 9px;font-size:13px}}
 /* hero */
 .hero{padding-block:72px 28px;text-align:center;position:relative}
 .man{position:absolute;top:255px;width:185px;aspect-ratio:1;pointer-events:none;z-index:0}.man.l{left:10px}.man.r{right:10px}.man.r .tag2.t1{left:auto;right:30%}.man.l .tag2.t1{left:-14%;top:-6%}.man.r .tag2.t2{left:auto;right:-4%}
 .man .wg{position:absolute;inset:16% 4% 14%;background:#fff;color:var(--ink);border:1.5px solid var(--ink);border-radius:18px;padding:12px 14px;text-align:left;box-shadow:0 18px 40px rgba(21,21,21,.14);animation:bob 3.2s ease-in-out infinite;display:flex;flex-direction:column;gap:4px}
 .man.l .wg{animation-delay:-1.6s;transform:rotate(-4deg)}.man.r .wg{transform:rotate(3deg)}
 .wg small{font:700 10px var(--mono);letter-spacing:.1em;color:var(--muted)}.wg .kv{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;font-weight:700}.wg .kv b{font-size:18px;font-weight:900}.wg .kv b.l{color:var(--loss)}
-.wg .pay{font:900 40px/1 var(--sans);color:var(--money);letter-spacing:-.03em}.wg .sub{font-size:11px;font-weight:700;color:var(--muted);line-height:1.3}
+.wg .pay{font:900 40px/1 var(--sans);color:var(--ink);background:var(--lime);border-radius:8px;padding:2px 6px;align-self:flex-start;letter-spacing:-.03em}.wg .sub{font-size:11px;font-weight:700;color:var(--muted);line-height:1.3}
 .spark{width:100%;height:34px;margin-top:auto}.spark path{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 3.2s ease-in-out infinite}
 @keyframes draw{0%{stroke-dashoffset:1}45%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:0;opacity:0}}
 .man .ring{position:absolute;inset:4%;border-radius:50%;background:repeating-conic-gradient(from 0deg,var(--c) 0 6deg,transparent 6deg 18deg);opacity:.16;animation:spin 26s linear infinite;-webkit-mask:radial-gradient(circle,transparent 38%,#000 40%,#000 68%,transparent 70%);mask:radial-gradient(circle,transparent 38%,#000 40%,#000 68%,transparent 70%)}
 .man .halo{position:absolute;inset:18%;border-radius:50%;background:var(--c);opacity:.12;filter:blur(18px);animation:pulse2 3.2s ease-in-out infinite}
 .man .tag2{position:absolute;font:900 17px/1 var(--sans);color:#fff;padding:9px 13px;border-radius:12px;white-space:nowrap;animation:float 4s ease-in-out infinite}
-.man.r .tag2{background:var(--money);box-shadow:0 0 34px rgba(46,125,79,.45)}.man.l .tag2{background:var(--loss);box-shadow:0 0 34px rgba(217,58,58,.45)}
+.man.r .tag2{background:var(--lime);color:var(--ink);box-shadow:0 0 34px rgba(205,242,79,.6)}.man.l .tag2{background:var(--loss);box-shadow:0 0 34px rgba(217,58,58,.45)}
 .man .tag2.t1{top:2%;left:52%;transform:rotate(8deg)}.man .tag2.t2{bottom:-2%;left:-6%;transform:rotate(-7deg);animation-delay:-2s;background:var(--ink)!important;box-shadow:0 12px 30px rgba(21,21,21,.25)!important}
 .man .coin{position:absolute;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:#fff;font:900 14px var(--sans);background:var(--c);animation:rise 5s linear infinite;opacity:0}
 .man .coin:nth-of-type(2){left:18%;animation-delay:-1.7s}.man .coin:nth-of-type(3){left:70%;animation-delay:-3.4s}.man .coin:nth-of-type(1){left:44%}
 @keyframes bob{50%{transform:translateY(-10px)}}@keyframes pulse2{50%{transform:scale(1.15);opacity:.2}}@keyframes float{50%{translate:0 -8px}}
 @keyframes rise{0%{bottom:20%;opacity:0}15%{opacity:.9}80%{opacity:.7}100%{bottom:100%;opacity:0}}
 .hero>*:not(.man){position:relative;z-index:1}
-@media(max-width:1100px){.hero{padding-top:190px}.man{width:150px;top:10px}.man.l{left:8%}.man.r{right:8%}.man .tag2{font-size:13px;padding:6px 9px}}
-@media(max-width:760px){.hero{padding-top:184px;overflow-x:clip}.man{width:158px;top:18px}.man .wg{padding:9px 10px;inset:20% 2% 10%}.wg small{font-size:8px}.wg .kv{font-size:11px}.wg .kv b{font-size:14px}.wg .pay{font-size:28px}.wg .sub{font-size:9px}.spark{height:22px}.man .coin{display:none}.man.l{left:0}.man.r{right:0}.man .tag2.t2{display:none}.man.r .tag2.t1{left:auto;right:0}.man.l .tag2.t1{left:30%}}
+@media(max-width:1100px){.hero{padding-top:56px}.man{width:150px;top:10px}.man.l{left:8%}.man.r{right:8%}.man .tag2{font-size:13px;padding:6px 9px}}
+@media(max-width:760px){.hero{padding-top:40px;overflow-x:clip}.man{width:158px;top:18px}.man .wg{padding:9px 10px;inset:20% 2% 10%}.wg small{font-size:8px}.wg .kv{font-size:11px}.wg .kv b{font-size:14px}.wg .pay{font-size:28px}.wg .sub{font-size:9px}.spark{height:22px}.man .coin{display:none}.man.l{left:0}.man.r{right:0}.man .tag2.t2{display:none}.man.r .tag2.t1{left:auto;right:0}.man.l .tag2.t1{left:30%}}
 @media(prefers-reduced-motion:reduce){.man *,.sman *,.belt .tr{animation:none!important}.dslide img{opacity:0!important}.dslide img:first-child{opacity:1!important}}
 .hero h1{font-weight:900;font-size:clamp(46px,9vw,118px);letter-spacing:-.045em;line-height:.95}
 .hero h1 em.s{display:inline-block;margin-top:.08em}
@@ -127,7 +128,7 @@ section.s{padding-block:84px 10px}
 @media(max-width:900px){.ai{grid-template-columns:minmax(0,1fr)}}
 .ai h2{font-size:clamp(32px,4.6vw,56px);font-weight:900}.ai .intro p{color:var(--muted);margin-top:14px;font-size:17px}
 .badge{display:inline-flex;align-items:center;gap:8px;font:700 12px var(--mono);letter-spacing:.08em;color:#fff;background:var(--ink);padding:7px 11px;border-radius:999px}
-.badge i{width:8px;height:8px;border-radius:50%;background:#9FD7B3}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--lime)}
 .ai form{display:grid;gap:14px}.ai label.f{font-weight:700;font-size:14px;display:block;margin-bottom:7px}
 .inp{width:100%;min-width:0;font:500 16px var(--sans);padding:14px 15px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
 .inp:focus{border-color:var(--acc);outline:none;box-shadow:0 0 0 4px rgba(21,21,21,.15)}
@@ -154,7 +155,7 @@ section.s{padding-block:84px 10px}
 .ai .pills button{background:#202020;border-color:#3A3A3A;color:#F2F1EC}.ai .pills button[aria-pressed="true"]{background:#fff;border-color:#fff;color:var(--ink)}
 .ai .btn.primary{background:#fff;border-color:#fff;color:var(--ink)}.ai .err{color:#FF7A7A}
 .ai .think div{color:#A9A79F}.ai .think div.done{color:#fff}.ai .think div.done::before{background:var(--money);border-color:var(--money)}.ai .think div.run::before{border-color:#fff;border-top-color:transparent}
-.ai .rc{background:#1E1E1E;border-color:#333;color:#F2F1EC}.ai .rc p{color:#A9A79F}.ai .rc .first{color:#fff}.ai .rc .pc{background:var(--money)}.ai .rc .bar{background:#333}.ai .rc .bar i{background:var(--money)}
+.ai .rc{background:#1E1E1E;border-color:#333;color:#F2F1EC}.ai .rc p{color:#A9A79F}.ai .rc .first{color:#fff}.ai .rc .pc{background:var(--money);color:var(--ink)}.ai .rc .bar{background:#333}.ai .rc .bar i{background:var(--money)}
 /* series */
 .series{padding-block:26px;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:28px;align-items:start}
 @media(max-width:860px){.series{grid-template-columns:minmax(0,1fr)}}
@@ -166,7 +167,7 @@ section.s{padding-block:84px 10px}
 .cyc{position:relative;width:70%;height:70%}.cyc span{position:absolute;inset:0;display:grid;place-items:center;opacity:0;animation:cyc 12s infinite}.cyc img{max-width:100%;max-height:70%;object-fit:contain}
 @keyframes cyc{0%{opacity:0;transform:translateY(30%)}3%,14%{opacity:1;transform:none}17%,100%{opacity:0;transform:translateY(-30%)}}
 .flip{position:relative;width:100%;height:100%}.flip span{position:absolute;inset:0;display:grid;place-items:center;font:900 30px var(--sans);letter-spacing:-.03em;animation:flip 4s infinite}
-.flip .a{color:var(--loss)}.flip .b{color:var(--money);animation-delay:-2s}@keyframes flip{0%,40%{opacity:1;transform:none}50%,90%{opacity:0;transform:rotateX(90deg)}100%{opacity:1;transform:none}}
+.flip .a{color:var(--loss)}.flip .b{color:var(--ink);background:var(--lime);border-radius:.12em;padding:0 .15em;animation-delay:-2s}@keyframes flip{0%,40%{opacity:1;transform:none}50%,90%{opacity:0;transform:rotateX(90deg)}100%{opacity:1;transform:none}}
 .sman::before{content:"";position:absolute;inset:8%;border-radius:50%;background:repeating-conic-gradient(var(--c) 0 6deg,transparent 6deg 18deg);opacity:.15;animation:spin 30s linear infinite;-webkit-mask:radial-gradient(circle,transparent 40%,#000 42%,#000 68%,transparent 70%);mask:radial-gradient(circle,transparent 40%,#000 42%,#000 68%,transparent 70%)}
 .sman b{position:absolute;right:-6px;top:6%;font:900 14px/1 var(--sans);color:#fff;background:var(--c);padding:7px 10px;border-radius:10px;transform:rotate(7deg);animation:float 4s ease-in-out infinite}
 @media(max-width:860px){.series>div:first-child{display:grid;grid-template-columns:1fr 110px;column-gap:14px}.series>div:first-child>*:not(.sman){grid-column:1}.sman{grid-column:2;grid-row:1/5;width:110px;margin:0;align-self:center}.sman b{font-size:11px}}
@@ -277,11 +278,13 @@ footer .fine{grid-column:1/-1;color:var(--muted);font-size:12px;border-top:1px s
 """
 
 # cache-busting version for site.css + site.js: changes whenever either file changes (static files are cached for a day)
+# Look: owner picked option 1 "Lime Glass" on 29 Oct 2026 (site/themes.py); SITE_THEME=<name> builds the other options to compare.
+import sys; sys.path.insert(0, HERE); from themes import THEMES; CSS += THEMES[os.environ.get("SITE_THEME") or "glass"]
 ASSET_V = hashlib.sha1((CSS + open(os.path.join(HERE, "site.js")).read()).encode()).hexdigest()[:10]
 
 def head(title, desc, path, extra=""):
     url = SITE + path
-    fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%232E7D4F'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='900' font-size='36' text-anchor='middle' fill='white'%3E$%3C/text%3E%3C/svg%3E"
+    fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='2' y='2' width='60' height='60' rx='16' fill='%23151515'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='900' font-size='36' text-anchor='middle' fill='%23CDF24F'%3E$%3C/text%3E%3C/svg%3E"
     return (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
             f'<title>{e(title)}</title><meta name="description" content="{e(desc)}"><link rel="canonical" href="{e(url)}">'
             f'<meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{e(url)}"><meta property="og:type" content="website">'
@@ -417,7 +420,7 @@ def build():
     stack = "".join(f'<div>{e(s["title"].split(" (")[0])} <span>{e(s["pay_short"])}</span></div>' for s in streams[:4])
     man = lambda side, img, c, t1, t2, coin: (f'<div class="man {side}" style="--c:{c}" aria-hidden="true"><span class="ring"></span><span class="halo"></span>'
                                              + "".join(f'<span class="coin">{coin}</span>' for _ in range(3)) + f'{GFX[img]}<span class="tag2 t1">{t1}</span><span class="tag2 t2">{t2}</span></div>')
-    home = (f'<section class="wrap hero">' + man("l", "loss", "var(--loss)", "$0 from views", "Waiting for 10k?", "✕") + man("r", "hero", "var(--money)", "+$50 a video", "No 10k needed", "$") + f'<p class="eyebrow">For creators under 10k followers</p><h1 style="margin-top:18px">Small account.<br><em class="s m">Real income.</em></h1>'
+    home = (f'<section class="wrap hero">' + f'<p class="eyebrow">For creators under 10k followers</p><h1 style="margin-top:18px">Small account.<br><em class="s m">Real income.</em></h1>'
             f'<p class="bio">Sub-Creator Paid finds the ways small creators actually get paid, checks every number on the official page, and turns it into a short video and a step-by-step guide.</p>'
             f'<div class="ctas"><a class="btn primary" href="#finder">Find my income streams</a><a class="btn" href="#watch">Watch the latest videos</a></div>'
             f'<div class="cred"><span><b>{len(streams)}</b> income streams verified</span><span><b>USD</b> pay figures</span><span><b>Every</b> affiliate link disclosed</span></div>{hero_card}</section>'
@@ -439,7 +442,7 @@ def build():
             f'<p>Research, scripts, editing and fact checks are done with AI tools, and nothing goes out until a person approves it. Every pay figure links to its source.</p><a class="link" href="/about/">See how it works →</a></div>'
             f'<div class="flow"><div><i>01</i>Research: new programs and rate changes</div><div><i>02</i>Fact check against official pages</div><div><i>03</i>Script, video and captions</div>'
             f'<div class="you"><i>OK</i>A person reviews and approves</div><div><i>05</i>Published to TikTok, Instagram and YouTube</div></div></div></section>'
-            f'<section class="wrap"><div class="join"><div class="in"><p class="eyebrow" style="color:#9FD7B3">Free weekly email</p><h2>Join the <em class="s">free list.</em></h2>'
+            f'<section class="wrap"><div class="join"><div class="in"><p class="eyebrow" style="color:var(--lime)">Free weekly email</p><h2>Join the <em class="s">free list.</em></h2>'
             f'<p>One verified income stream every Tuesday, plus the free guide when you join. No spam, unsubscribe in one click.</p><div><button class="btn primary js-join" type="button">Join the free list</button></div></div>'
             f'<div class="img" aria-hidden="true"><div class="stack">{stack}</div></div></div></section>')
     ld = {"@context": "https://schema.org", "@type": "WebSite", "name": cfg["site_name"], "url": SITE + "/", "sameAs": [v for v in SOC.values() if v]}

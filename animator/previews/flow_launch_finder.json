@@ -1,0 +1,127 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.25,
+ "preview_res": 720,
+ "style": "launch",
+ "slug": "flow_launch_finder",
+ "title": "The free AI Income Finder (launch film, general)",
+ "type": "value",
+ "beats": [
+  {
+   "say": "You post Reels and TikToks, and you have [600|six hundred] followers. What can actually pay you?",
+   "show": {
+    "type": "launch"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "600",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Ask our free AI Income Finder. It checks [16|sixteen] verified streams.",
+   "show": {
+    "type": "launch"
+   },
+   "sfx": [
+    [
+     0,
+     "click"
+    ],
+    [
+     "checks",
+     "swoosh"
+    ],
+    [
+     "16",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "It shows what fits, and picks your best match.",
+   "show": {
+    "type": "launch"
+   },
+   "sfx": [
+    [
+     0,
+     "thud"
+    ],
+    [
+     "fit",
+     "swipe"
+    ],
+    [
+     "best",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "For you: UGC. Beginners charge [$50–$400|fifty to four hundred dollars] a video.",
+   "show": {
+    "type": "launch"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "$50",
+     "count"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: brands want samples first. Your first step: three sample videos.",
+   "show": {
+    "type": "launch"
+   },
+   "sfx": [
+    [
+     0,
+     "click"
+    ],
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "three",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Comment FINDER for the link. Tools I use are in my bio. Follow for more.",
+   "show": {
+    "type": "launch"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "follow",
+     "click"
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,111 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.3,
+ "preview_res": 720,
+ "style": "showreel",
+ "slug": "flow_showreel_amazon",
+ "title": "Amazon Associates (showreel style)",
+ "type": "value",
+ "beats": [
+  {
+   "say": "Amazon pays you when people buy from your link.",
+   "show": {
+    "type": "showreel"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "link",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Most categories pay about [3%|three percent] to [4.5%|four and a half percent].",
+   "show": {
+    "type": "showreel"
+   },
+   "sfx": [
+    [
+     0,
+     "swipe"
+    ],
+    [
+     "3%",
+     "thud"
+    ],
+    [
+     "45",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "So a [$40|forty dollar] item at [4.5%|four and a half percent] earns you about [$1.80|a dollar eighty].",
+   "show": {
+    "type": "showreel"
+   },
+   "sfx": [
+    [
+     0,
+     "page"
+    ],
+    [
+     "$40",
+     "click"
+    ],
+    [
+     "$1",
+     "count"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: you need three sales in your first [180|one hundred eighty] days, or the account closes.",
+   "show": {
+    "type": "showreel"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "closes",
+     "drop"
+    ]
+   ]
+  },
+  {
+   "say": "Comment AMAZON for the free guide, and follow for more.",
+   "show": {
+    "type": "showreel"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "follow",
+     "click"
+    ]
+   ]
+  }
+ ]
+}

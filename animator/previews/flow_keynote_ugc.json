@@ -1,0 +1,123 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.3,
+ "preview_res": 720,
+ "style": "keynote",
+ "slug": "flow_keynote_ugc",
+ "title": "UGC for beginners (keynote sting style)",
+ "type": "value",
+ "beats": [
+  {
+   "say": "Brands will pay you for videos, even with zero followers.",
+   "show": {
+    "type": "keynote"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "zero",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "So what does UGC pay a beginner?",
+   "show": {
+    "type": "keynote"
+   },
+   "sfx": [
+    [
+     0,
+     "click"
+    ],
+    [
+     "pay",
+     "whoosh"
+    ]
+   ]
+  },
+  {
+   "say": "Most beginners charge [$50–$400|fifty to four hundred dollars] per video, and you need no followers to start.",
+   "show": {
+    "type": "keynote"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "$50",
+     "count"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: brands want to see samples first.",
+   "show": {
+    "type": "keynote"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "catch",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "So film three: an unboxing, a review, and a how-to.",
+   "show": {
+    "type": "keynote"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "unboxing",
+     "card"
+    ],
+    [
+     "review",
+     "card"
+    ],
+    [
+     "how-to",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "Comment UGC and I'll send you the free guide. Follow for more.",
+   "show": {
+    "type": "keynote"
+   },
+   "sfx": [
+    [
+     0,
+     "glass"
+    ],
+    [
+     "follow",
+     "whoosh"
+    ]
+   ]
+  }
+ ]
+}
