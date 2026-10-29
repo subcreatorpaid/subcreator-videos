@@ -2,11 +2,10 @@ name: Gemini drafts
 
 # Cheap bulk drafting on the Gemini API (scripts/gemini_draft.py): trend scan and hooks/captions for queued ideas.
 # Results land on a gemini/<date> branch with a pull request; merging it is the owner's OK. Nothing is posted.
-# Schedule (owner's choice 29 Oct): trend scan every day 06:00 UTC (06:00 London in winter), drafts every Sunday 07:00 UTC.
+# Schedule (owner's choice 29 Oct): trend scan every day 06:00 UTC. The Sunday drafts now run in weekly.yml (drafts + storyboard stills).
 on:
   schedule:
     - cron: "0 6 * * *"
-    - cron: "0 7 * * 0"
   workflow_dispatch:
     inputs:
       job:
@@ -34,7 +33,7 @@ jobs:
       - name: Draft with Gemini
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          JOB: ${{ inputs.job || (github.event.schedule == '0 7 * * 0' && 'drafts' || 'scan') }}
+          JOB: ${{ inputs.job || 'scan' }}
           N: ${{ inputs.n || '5' }}
         run: python3 scripts/gemini_draft.py "$JOB" --n "$N"
       - name: Guard checks
@@ -42,7 +41,7 @@ jobs:
       - name: Open a pull request for review
         env:
           GH_TOKEN: ${{ github.token }}
-          JOB: ${{ inputs.job || (github.event.schedule == '0 7 * * 0' && 'drafts' || 'scan') }}
+          JOB: ${{ inputs.job || 'scan' }}
         run: |
           [ -n "$(git status --porcelain)" ] || { echo "nothing new"; exit 0; }
           branch="gemini/$(date -u +%Y-%m-%d)-$JOB-${{ github.run_number }}"

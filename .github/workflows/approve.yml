@@ -1,0 +1,81 @@
+name: Approved final - render and schedule
+run-name: "Approve ${{ github.event.issue.title }}"
+
+# Step 3. The owner adds the label "approve-final" to a "Review: <slug>" issue. Only the repository owner's label counts.
+# Renders the 1080p final + hooks (animate.yml, mode full), then schedules it in Buffer for 18:00 London on its planned day
+# (scripts/buffer_schedule.py). Removing nothing, posting nothing else. Run it manually with dry_run to test Buffer without posting.
+on:
+  issues:
+    types: [labeled]
+  workflow_dispatch:
+    inputs:
+      video:
+        description: "Slug to schedule (the post must already be 'rendered')"
+        required: true
+      dry_run:
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: approve-${{ github.event.issue.number || inputs.video }}
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    if: >-
+      ${{ github.event_name == 'workflow_dispatch' || (github.event.label.name == 'approve-final' &&
+      github.actor == github.repository_owner && startsWith(github.event.issue.title, 'Review: ')) }}
+    runs-on: ubuntu-latest
+    outputs:
+      slug: ${{ steps.s.outputs.slug }}
+      skip_render: ${{ github.event_name == 'workflow_dispatch' }}
+    steps:
+      - id: s
+        env:
+          TITLE: ${{ github.event.issue.title }}
+          INPUT: ${{ inputs.video }}
+        run: |
+          slug="${INPUT:-${TITLE#Review: }}"
+          [[ "$slug" =~ ^[A-Za-z0-9_-]+$ ]] || { echo "bad slug"; exit 1; }
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+
+  render:
+    needs: gate
+    if: needs.gate.outputs.skip_render != 'true'
+    permissions:
+      contents: write
+    uses: ./.github/workflows/animate.yml
+    with:
+      video: ${{ needs.gate.outputs.slug }}
+      mode: full
+
+  schedule:
+    needs: [gate, render]
+    if: ${{ !cancelled() && needs.gate.result == 'success' && (needs.render.result == 'success' || needs.render.result == 'skipped') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Mark rendered
+        if: needs.render.result == 'success'
+        run: python3 scripts/pipeline.py set "${{ needs.gate.outputs.slug }}" rendered
+      - name: Send to Buffer
+        env:
+          BUFFER_TOKEN: ${{ secrets.BUFFER_TOKEN }}
+          BUFFER_CHANNELS: ${{ vars.BUFFER_CHANNELS }}
+        run: python3 scripts/buffer_schedule.py "${{ needs.gate.outputs.slug }}" ${{ (github.event_name == 'workflow_dispatch' && inputs.dry_run) && '--dry-run' || '' }}
+      - name: Save status and tell the owner on the issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "pipeline[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add brain/week-plan.json && { git diff --cached --quiet || { git commit -m "Pipeline: ${{ needs.gate.outputs.slug }} status" && git push origin HEAD:main; }; }
+          [ -n "${{ github.event.issue.number }}" ] && gh issue comment "${{ github.event.issue.number }}" --body "Final rendered and scheduled in Buffer. Check the queue in Buffer." && gh issue close "${{ github.event.issue.number }}" || true
