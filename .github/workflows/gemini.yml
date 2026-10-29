@@ -2,8 +2,11 @@ name: Gemini drafts
 
 # Cheap bulk drafting on the Gemini API (scripts/gemini_draft.py): trend scan and hooks/captions for queued ideas.
 # Results land on a gemini/<date> branch with a pull request; merging it is the owner's OK. Nothing is posted.
-# Button only for now. To run on its own, add a schedule (e.g. cron "0 5 * * *" for scan) once the owner says so.
+# Schedule (owner's choice 29 Oct): trend scan every day 06:00 UTC (06:00 London in winter), drafts every Sunday 07:00 UTC.
 on:
+  schedule:
+    - cron: "0 6 * * *"
+    - cron: "0 7 * * 0"
   workflow_dispatch:
     inputs:
       job:
@@ -31,23 +34,24 @@ jobs:
       - name: Draft with Gemini
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          JOB: ${{ inputs.job }}
-          N: ${{ inputs.n }}
+          JOB: ${{ inputs.job || (github.event.schedule == '0 7 * * 0' && 'drafts' || 'scan') }}
+          N: ${{ inputs.n || '5' }}
         run: python3 scripts/gemini_draft.py "$JOB" --n "$N"
       - name: Guard checks
         run: python3 scripts/guard.py --strict
       - name: Open a pull request for review
         env:
           GH_TOKEN: ${{ github.token }}
+          JOB: ${{ inputs.job || (github.event.schedule == '0 7 * * 0' && 'drafts' || 'scan') }}
         run: |
           [ -n "$(git status --porcelain)" ] || { echo "nothing new"; exit 0; }
-          branch="gemini/$(date -u +%Y-%m-%d)-${{ inputs.job }}-${{ github.run_number }}"
+          branch="gemini/$(date -u +%Y-%m-%d)-$JOB-${{ github.run_number }}"
           git config user.name "gemini-drafts[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$branch"
           git add brain/
-          git commit -m "Gemini ${{ inputs.job }} drafts $(date -u +%Y-%m-%d) (needs review)"
+          git commit -m "Gemini $JOB drafts $(date -u +%Y-%m-%d) (needs review)"
           git push -u origin "$branch"
-          gh pr create --base main --head "$branch" --title "Gemini ${{ inputs.job }} $(date -u +%Y-%m-%d) (review)" \
+          gh pr create --base main --head "$branch" --title "Gemini $JOB $(date -u +%Y-%m-%d) (review)" \
             --body "Drafted by the Gemini API (scripts/gemini_draft.py). Check every figure against its official source and the brand rules before merging. Merging only adds draft files to brain/; nothing is posted." \
             || echo "Could not open the pull request (turn on Settings > Actions > General > 'Allow GitHub Actions to create and approve pull requests'). The branch $branch is pushed."
