@@ -59,7 +59,7 @@ em.s{font-style:normal;color:#fff;background:var(--ink);border-radius:.16em;padd
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(246,245,241,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;gap:26px;padding-block:14px}
 .mark{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;letter-spacing:-.03em;text-decoration:none;margin-right:auto;text-transform:lowercase}
-.mark i{width:34px;height:34px;border-radius:10px;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-style:normal;font-weight:900;box-shadow:var(--glow-sm);text-transform:none}
+.mark{white-space:nowrap}.mark i{flex:none;width:34px;height:34px;border-radius:10px;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-style:normal;font-weight:900;box-shadow:var(--glow-sm);text-transform:none}
 .nav>a.l,.dd>button{font:600 15px var(--sans);color:var(--muted);text-decoration:none;background:none;border:0;cursor:pointer;padding:0}
 .nav>a.l:hover,.dd>button:hover,.nav>a.l[aria-current]{color:var(--ink)}
 .dd{position:relative}
@@ -70,6 +70,7 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 .mmenu{border-top:1px solid var(--line);padding-block:10px 16px;display:grid}
 .mmenu a{padding:10px 0;font-weight:700;text-decoration:none;border-bottom:1px solid var(--line)}
 @media(max-width:900px){.nav>a.l,.dd{display:none}.mnav{display:inline-block}}
+.nav .btn{white-space:nowrap}@media(max-width:520px){.nav{gap:8px}.mark{font-size:15px;gap:7px}.mark i{width:30px;height:30px}.nav .btn.sm{padding:9px 11px;font-size:12.5px}.mnav{padding:7px 9px;font-size:13px}}
 /* hero */
 .hero{padding-block:72px 28px;text-align:center;position:relative}
 .man{position:absolute;top:255px;width:185px;aspect-ratio:1;pointer-events:none;z-index:0}.man.l{left:10px}.man.r{right:10px}.man.r .tag2.t1{left:auto;right:30%}.man.l .tag2.t1{left:-14%;top:-6%}.man.r .tag2.t2{left:auto;right:-4%}
