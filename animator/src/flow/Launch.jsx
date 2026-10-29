@@ -175,8 +175,19 @@ export const Launch = ({beats = []}) => {
   const pageW = mix(330 * cam.z, 1080, grow), pageH = mix(104 * cam.z, 1920, grow);
   const pageX = mix(bx - 165 * cam.z, 0, grow), pageY = mix(by - 52 * cam.z, 0, grow);
   const o = expo(f - outro, 12);
+  // Instagram safe area (owner, 29 Oct 2026, from a phone screenshot): the like/comment buttons cover the right ~140 px and the
+  // name + caption cover the bottom ~480 px, so the whole film is packed into a box clear of both, and the brand sits on top.
+  const SAFE = {s: 0.7, x: 92, y: 262};
+  const dark = f >= outro || grow > 0.97; const limeAll = flood > 0.985;
+  const outerBg = limeAll ? K.lime : dark ? K.ui : K.bg;
   return (
-    <AbsoluteFill style={{background: K.bg, overflow: 'hidden', fontFamily: FONT}}>
+    <AbsoluteFill style={{background: outerBg, overflow: 'hidden', fontFamily: FONT}}>
+      <Dust f={f} dark={dark} />
+      <div style={{position: 'absolute', left: 0, right: 140, top: 168, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 18}}>
+        <div style={{width: 66, height: 66, borderRadius: 18, background: dark ? K.lime : K.ui, color: dark ? K.ui : K.lime, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 44}}>S</div>
+        <div style={{fontWeight: 800, fontSize: 46, color: dark ? '#fff' : K.ui, letterSpacing: -1}}>@subcreatorpaid</div>
+      </div>
+      <div style={{position: 'absolute', left: SAFE.x, top: SAFE.y, width: 1080, height: 1920, transform: `scale(${SAFE.s})`, transformOrigin: '0 0', overflow: 'hidden', borderRadius: 60, background: outerBg}}>
       <Dust f={f} />
       {world}
       {flood > 0 && <div style={{position: 'absolute', left: rx - floodR, top: ry - floodR, width: floodR * 2, height: floodR * 2, borderRadius: '50%', background: K.lime}} />}
@@ -249,7 +260,7 @@ export const Launch = ({beats = []}) => {
         </div>
       )}
       {f >= page && f < page + 30 && (() => { const [cx, cy] = toScreen(285, 1472); const p = expo(f - page, 5); return <Cursor x={mix(900, cx, p)} y={mix(1700, cy, p)} s={f >= click && f < click + 5 ? 0.85 : 1} />; })()}
-      <div style={{position: 'absolute', left: 0, right: 0, top: 1610, textAlign: 'center', fontWeight: 700, fontSize: 30, color: f >= page + 20 ? '#fff' : K.ui, opacity: 0.45}}>@subcreatorpaid</div>
+      </div>
     </AbsoluteFill>
   );
 };
