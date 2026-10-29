@@ -48,6 +48,6 @@ jobs:
           git add brain/
           git commit -m "Gemini ${{ inputs.job }} drafts $(date -u +%Y-%m-%d) (needs review)"
           git push -u origin "$branch"
-          gh pr create --base main --head "$branch" --title "Gemini ${{ inputs.job }} drafts $(date -u +%Y-%m-%d)" \
+          gh pr create --base main --head "$branch" --title "Gemini ${{ inputs.job }} $(date -u +%Y-%m-%d) (review)" \
             --body "Drafted by the Gemini API (scripts/gemini_draft.py). Check every figure against its official source and the brand rules before merging. Merging only adds draft files to brain/; nothing is posted." \
             || echo "Could not open the pull request (turn on Settings > Actions > General > 'Allow GitHub Actions to create and approve pull requests'). The branch $branch is pushed."
