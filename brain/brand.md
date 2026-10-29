@@ -51,6 +51,9 @@ Four parts, 6-8 s in total, in this order:
    No ebook file or affiliate link is sent straight in a DM. Replies to individual DMs in the owner's name still need his OK.
 Each ebook is a related free guide (PDF on the site, email sign-up to get it). Topic guides are drafted by the creator and need the owner's OK before going live.
 
+## Video review order (owner rule, 29 Oct 2026)
+Every video: 1) storyboard sheet (one still per scene + its voice line) for the owner's OK, 2) 360p review render, 3) 1080p final only after he finishes reviewing. Details: `docs/animator-rules.md` section G.
+
 ## Before anything ships (creator + guard check)
 1. Every fact verified on an official page within 30 days, source saved.
 2. Pay is a range or labelled example; the catch is stated.

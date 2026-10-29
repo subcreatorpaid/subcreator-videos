@@ -99,3 +99,9 @@ drawn elements + `BrandLogo`, brandlogos.js, Launch.jsx). Spec `"style": "launch
 - F6. Instagram safe area: the film plays in a box scaled 0.7 at (92, 262) so nothing sits under the right-side buttons or the
   bottom name/caption; `@subcreatorpaid` with the S mark sits at the top centre (y ~170) for the whole video.
 - F7. General audience: no niche persona unless the topic needs one ("I post Reels and TikToks, 600 followers").
+
+## G - Review pipeline for every video (owner rule, 29 Oct 2026: "do it, make a rule")
+Order, no step skipped: 1) **storyboard sheet** (one still frame per scene with its voice line underneath, one image) sent to the owner;
+he marks all scene changes in one message; 2) **360p review render** (preview.yml, `"preview_res": 360`) after the storyboard OK; 3) notes, re-render at 360p;
+4) **1080p final** (`"preview_res": 1080`) only after he says the review is done. Never render a later step before the earlier OK.
+Storyboard stills are local Remotion stills with estimated word times (no voice render needed); save as `<slug>_storyboard.png` next to the review files.
