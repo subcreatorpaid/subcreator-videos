@@ -86,10 +86,14 @@ jobs:
           npm ci --no-audit --no-fund
           cp -r ../bundle/props.json ../bundle/public .
           python3 -c "import json;p=json.load(open('props.json'));p['n']=${{ matrix.n }};json.dump(p,open('props.json','w'))"
-          scale=$(python3 -c "print(round($RES/1080, 5))")
           mkdir -p out
           names=(x midnight_glass paper_collage swiss_type isometric phone_native)
-          npx remotion render src/index.jsx Mock "out/mock${{ matrix.n }}_${names[${{ matrix.n }}]}_${RES}p.mp4" --props=props.json --scale=$scale --codec=h264 --crf=22 --concurrency=100%
+          # render at 1/4 size (whole pixels), then scale down with Remotion's own ffmpeg (exact 9:16, even sizes)
+          npx remotion render src/index.jsx Mock out/raw.mp4 --props=props.json --scale=0.25 --codec=h264 --crf=18 --concurrency=100%
+          h=$(( RES * 16 / 9 / 2 * 2 ))
+          npx remotion ffmpeg -loglevel error -y -i out/raw.mp4 -vf "scale=$RES:$h:flags=lanczos,setsar=1" -c:v libx264 -crf 22 -c:a aac -b:a 96k -movflags +faststart \
+            "out/mock${{ matrix.n }}_${names[${{ matrix.n }}]}_${RES}p.mp4"
+          rm out/raw.mp4
       - uses: actions/upload-artifact@v4
         with:
           name: mock-${{ matrix.n }}
