@@ -142,7 +142,9 @@ def check_pages(pages):
 
 
 def check_links(internal, external, images):
-    for u, s in many({u for u, _ in internal}, lambda u: fetch(u)).items():
+    # /go/ links are checked by check_go (they redirect to third parties that block bots); /cdn-cgi/ is Cloudflare's own
+    skip = ("/go/", "/cdn-cgi/")
+    for u, s in many({u for u, _ in internal if not u.replace(SITE, "").startswith(skip)}, lambda u: fetch(u)).items():
         if s.status not in (200, 301, 302, 307, 308):
             err(f"broken internal link {u.replace(SITE, '')} -> HTTP {s.status} {s.error} (on {where(internal, u)})")
 
@@ -277,6 +279,40 @@ def check_browser(pages):
                 warn(f"speed {path}: {t:.1f}s to load on phone")
 
 
+LH_PAGES = ["/", "/guide/", "/streams/ugc/"]  # home page holds the AI finder; a guide page; a stream page
+LH_MIN = {"performance": 60, "accessibility": 85, "best-practices": 85, "seo": 90}  # below this = error
+
+
+def check_lighthouse():
+    """Lighthouse (mobile, default) scores via npx; skipped with a warning if node/chromium are missing."""
+    import os, subprocess, tempfile
+    try:
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as pw:
+            chrome = pw.chromium.executable_path
+    except Exception:
+        warn("lighthouse skipped: no chromium")
+        return
+    rows = []
+    for path in LH_PAGES:
+        out = tempfile.mktemp(suffix=".json")
+        try:
+            r = subprocess.run(["npx", "--yes", "lighthouse@12.2.1", SITE + path, "--output=json", f"--output-path={out}", "--quiet",
+                                "--chrome-flags=--headless=new --no-sandbox", "--only-categories=" + ",".join(LH_MIN)],
+                               env=dict(os.environ, CHROME_PATH=chrome), capture_output=True, text=True, timeout=240)
+            cats = json.load(open(out))["categories"]
+        except Exception as e:
+            warn(f"lighthouse {path}: did not run ({str(e)[:80]})")
+            continue
+        sc = {k: round((cats[k]["score"] or 0) * 100) for k in LH_MIN}
+        rows.append(f"{path} " + "/".join(str(sc[k]) for k in LH_MIN))
+        for k, v in sc.items():
+            if v < LH_MIN[k]:
+                err(f"lighthouse {path}: {k} score {v} is below {LH_MIN[k]} (phone size)")
+    if rows:
+        facts.append("Lighthouse phone scores (speed/accessibility/best-practices/SEO): " + ", ".join(rows))
+
+
 def main():
     pages = sitemap_pages()
     internal, external, images = check_pages(pages)
@@ -285,6 +321,7 @@ def main():
     check_apis()
     check_ssl()
     check_browser(pages)
+    check_lighthouse()
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     lines = [f"# Website health {now}", "", f"**{'FAIL' if errors else 'PASS'}**: {len(errors)} error(s), {len(warnings)} warning(s)", ""]
     lines += [f"- :x: {e}" for e in errors] + [f"- :warning: {w}" for w in warnings]

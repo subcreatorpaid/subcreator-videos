@@ -9,7 +9,7 @@ Data in site/data/:
 Run:  python3 site/build.py      Cloudflare Pages runs this on every push (build output: site/_site).
 The AI finder and newsletter sign-up are Cloudflare Pages Functions in /functions (repo root).
 """
-import glob, hashlib, html, json, os, shutil, datetime
+import glob, re, hashlib, html, json, os, shutil, datetime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.environ.get("SITE_OUT") or os.path.join(HERE, "_site")
@@ -568,7 +568,8 @@ def build():
     # ---------- videos
     if videos or featured:
         def vcard(v):
-            src = "".join(f'<li><a href="{e(x["url"])}" rel="noopener" target="_blank">{e(x["title"])}</a></li>' for x in v["sources"])
+            def surl(u): m = re.match(r"site/data/streams/([\w-]+)\.json$", u); return f"/streams/{m.group(1)}/" if m else u  # repo path -> its stream page
+            src = "".join(f'<li><a href="{e(surl(x["url"]))}" rel="noopener" target="_blank">{e(x["title"])}</a></li>' for x in v["sources"])
             return (f'<article class="card vcard" id="v{v["n"]}"><video controls preload="none" playsinline poster="{v["poster"]}" src="{v["video"]}"></video>'
                     f'<div class="vbody"><p class="eyebrow">{"Start here" if v.get("featured") else "Video " + e(v["n"])} · {v["seconds"]} s</p><h3>{e(v["title"])}</h3><p style="white-space:pre-line">{e(v["about"])}</p>'
                     f'<p style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn primary" href="{v["guide"]}" target="_blank" rel="noopener">Free guide (PDF)</a><a class="btn" href="/#finder">Try the AI finder</a></p>'
