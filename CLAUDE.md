@@ -47,6 +47,7 @@ Hand-offs always go through files in `brain/` (never "remember it"): researcher 
 | New videos (animator) and its rules | `animator/` + `docs/animator-rules.md` (rules v4); workflow `.github/workflows/animate.yml` (mode stills or full) |
 | Website (Cloudflare Pages, builds on every push to main) | `site/build.py`, `functions/api/*` (finder, subscribe, comments on D1) |
 | 100-video plan + render buttons | `content/plan100/` (batch01-08.py -> make.py; bio.py = 4 bio videos + finder tutorial; then master.py -> render_room.py); master folder /mnt/project-files/02-videos/; Render Room (one Render button per video) https://claude.ai/artifact/5RpYRzaySkv1cMp3xQtcok |
+| Gemini drafts (cheap bulk drafting) | `scripts/gemini_draft.py`; workflow `.github/workflows/gemini.yml`: trend scan daily 06:00 UTC -> `brain/research/<date>_gemini_scan.md`, hooks/captions Sundays -> `brain/drafts/`; each run opens a PR, merge = owner OK. Claude fact-checks drafts instead of writing from scratch |
 | Checks | `scripts/guard.py` (local) and `.github/workflows/guard.yml` (daily live check) |
 | Project folder layout + index | /mnt/project-files/: 00-INDEX.md, 01-start-here, 02-videos/NNN_slug, 03-guides, 04-affiliates, 05-style-and-voice, 99-archive. `content/plan100/index_page.py` rebuilds 00-INDEX.md + Project Index artifact https://claude.ai/artifact/BDkpce2TAqHhja1nM9bsKU (rerun after renders/scheduling) |
 | Project history | Claude Docs "Project Summary": https://claude.ai/artifact/LJVKULTZrQCh2xTWuVdfh6 |

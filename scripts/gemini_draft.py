@@ -67,8 +67,9 @@ def scan():
 
 def drafts(n):
     ideas = json.loads((ROOT / "brain/ideas.json").read_text())["ideas"]
-    todo = [i for i in ideas if i.get("status") == "queued"][:n]
-    if not todo: print("no queued ideas"); return None
+    done = {it.get("title") for f in (ROOT / "brain/drafts").glob("*_gemini.json") for it in json.loads(f.read_text()).get("items", [])}
+    todo = [i for i in ideas if i.get("status") == "queued" and i["title"] not in done][:n]
+    if not todo: print("no queued ideas without a draft"); return None
     joined = [p["id"] for p in json.loads((ROOT / "site/data/links.json").read_text())["programs"] if p.get("joined")]
     prompt = (f"Draft short-form video copy for these {len(todo)} ideas:\n{json.dumps(todo, indent=1)}\n\n"
               "For each idea return an object with: rank, title, hooks (3 different opening lines, max 12 words each: a big number, "
