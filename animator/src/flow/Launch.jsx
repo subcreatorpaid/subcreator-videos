@@ -23,22 +23,22 @@ const CARDS = [
 
 // Owner, 29 Oct 2026 09:22: "more animations, a little bit fast". Extra layers below: drifting lime dust, punch zooms on key
 // words, live counters, orbiting tiles with a spinner, card tilt + shine, pulse rings, lime bursts, flying sample phones.
-const Burst = ({f, at, x, y, n = 14, r = 260, color = '#CDF24F', size = 18}) => {
+export const Burst = ({f, at, x, y, n = 14, r = 260, color = '#CDF24F', size = 18}) => {
   const t = f - at; if (t < 0 || t > 26) return null; const p = expo(t, 18);
   return <>{Array.from({length: n}, (_, i) => { const a = (i / n) * Math.PI * 2 + i; const d = r * p * (0.6 + hash(i + at) * 0.6);
     return <div key={i} style={{position: 'absolute', left: x + Math.cos(a) * d - size / 2, top: y + Math.sin(a) * d - size / 2, width: size, height: size, borderRadius: i % 3 ? size / 2 : 4,
       background: i % 4 === 0 ? '#0E0E10' : color, opacity: 1 - clamp01((t - 12) / 14), transform: `rotate(${t * 12 + i * 30}deg) scale(${1 - p * 0.4})`}} />; })}</>;
 };
-const Pulse = ({f, x, y, d, color = '#CDF24F', every = 24, from = 0}) => (
+export const Pulse = ({f, x, y, d, color = '#CDF24F', every = 24, from = 0}) => (
   <>{[0, 1].map((k) => { const t = ((f - from + k * every / 2) % every) / every; if (f < from) return null;
     return <div key={k} style={{position: 'absolute', left: x - (d / 2) * (1 + t * 0.7), top: y - (d / 2) * (1 + t * 0.7), width: d * (1 + t * 0.7), height: d * (1 + t * 0.7), borderRadius: '50%', border: `6px solid ${color}`, opacity: (1 - t) * 0.8}} />; })}</>
 );
-const Dust = ({f, dark}) => (
+export const Dust = ({f, dark}) => (
   <>{Array.from({length: 18}, (_, i) => { const x = (hash(i) * 1080 + f * (0.6 + hash(i + 5))) % 1120 - 20, y = (hash(i + 9) * 1920 - f * (1.2 + hash(i + 3) * 1.6) + 4000) % 1960 - 20;
     const s = 6 + hash(i + 2) * 12; return <div key={i} style={{position: 'absolute', left: x, top: y, width: s, height: s, borderRadius: s / 2, background: '#CDF24F', opacity: dark ? 0.5 : 0.7 * (0.4 + 0.6 * Math.abs(Math.sin(f / 20 + i)))}} />; })}</>
 );
 
-const Iridescent = ({f, w, h, r}) => (
+export const Iridescent = ({f, w, h, r}) => (
   <div style={{position: 'absolute', left: -40, top: -40, width: w + 80, height: h + 80, borderRadius: r + 40, filter: 'blur(34px)', opacity: 0.85, overflow: 'hidden'}}>
     <div style={{position: 'absolute', left: '50%', top: '50%', width: 1600, height: 1600, marginLeft: -800, marginTop: -800, transform: `rotate(${f * 3}deg)`,
       background: 'conic-gradient(from 0deg, #CDF24F, rgba(205,242,79,0.15), #CDF24F, rgba(205,242,79,0.15), #CDF24F)'}} />
@@ -265,7 +265,7 @@ export const Launch = ({beats = []}) => {
   );
 };
 
-const DarkCard = ({c, shine = -999}) => (
+export const DarkCard = ({c, shine = -999}) => (
   <div style={{position: 'relative', width: 580, height: 760, borderRadius: 40, background: K.ui, overflow: 'hidden', boxShadow: '0 40px 80px rgba(0,0,0,0.25)', fontFamily: FONT}}>
     <div style={{position: 'absolute', left: shine, top: -200, width: 120, height: 1200, background: 'rgba(255,255,255,0.14)', transform: 'rotate(20deg)', zIndex: 2}} />
     <div style={{position: 'relative', height: 380, background: c.best ? K.lime : K.card, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
