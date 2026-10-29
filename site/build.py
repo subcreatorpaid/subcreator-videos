@@ -278,8 +278,8 @@ footer .fine{grid-column:1/-1;color:var(--muted);font-size:12px;border-top:1px s
 """
 
 # cache-busting version for site.css + site.js: changes whenever either file changes (static files are cached for a day)
-if os.environ.get("SITE_THEME"):  # look options for the owner to compare (site/themes.py)
-    import sys; sys.path.insert(0, HERE); from themes import THEMES; CSS += THEMES[os.environ["SITE_THEME"]]
+# Look: owner picked option 1 "Lime Glass" on 29 Oct 2026 (site/themes.py); SITE_THEME=<name> builds the other options to compare.
+import sys; sys.path.insert(0, HERE); from themes import THEMES; CSS += THEMES[os.environ.get("SITE_THEME") or "glass"]
 ASSET_V = hashlib.sha1((CSS + open(os.path.join(HERE, "site.js")).read()).encode()).hexdigest()[:10]
 
 def head(title, desc, path, extra=""):
