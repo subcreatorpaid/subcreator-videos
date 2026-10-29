@@ -1,5 +1,5 @@
 name: Style preview (Remotion)
-run-name: "Preview ${{ inputs.spec || 'softui_finder' }} ${{ inputs.res || '360' }}p"
+run-name: "Preview ${{ inputs.spec || 'changed specs' }} ${{ inputs.res || '360' }}p"
 
 # Renders one preview spec from animator/previews/<name>.json at a small review size (default 360x640) and publishes it
 # on the Releases page (tag previews). Private review files, not posted anywhere. Specs live outside videos/ so the
@@ -8,8 +8,8 @@ on:
   workflow_dispatch:
     inputs:
       spec:
-        description: "Preview spec name in animator/previews/ (without .json)"
-        default: "softui_finder"
+        description: "Preview spec names in animator/previews/ (without .json), space separated; empty = all"
+        default: ""
       res:
         description: "Width in px (360 = 360x640)"
         default: "360"
@@ -21,15 +21,38 @@ permissions:
   contents: write
 
 concurrency:
-  group: preview-${{ inputs.spec || 'softui_finder' }}
+  group: preview-${{ github.ref }}
   cancel-in-progress: true
 
 env:
-  SPEC: ${{ inputs.spec || 'softui_finder' }}
   RES: ${{ inputs.res || '360' }}
 
 jobs:
+  pick:
+    runs-on: ubuntu-latest
+    outputs:
+      specs: ${{ steps.p.outputs.specs }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - id: p
+        env:
+          INPUT: ${{ inputs.spec }}
+        run: |
+          if [ -n "$INPUT" ]; then L="$INPUT"
+          else L=$(git diff --name-only HEAD~1 HEAD | grep -E '^animator/previews/[^/]+\.json$' | xargs -r -n1 basename | sed 's/\.json$//')
+               [ -z "$L" ] && L=$(ls animator/previews/*.json | xargs -n1 basename | sed 's/\.json$//'); fi
+          echo "specs=$(python3 -c "import json,sys;print(json.dumps(sys.argv[1:]))" $L)" >> "$GITHUB_OUTPUT"
+
   preview:
+    needs: pick
+    strategy:
+      fail-fast: false
+      matrix:
+        spec: ${{ fromJson(needs.pick.outputs.specs) }}
+    env:
+      SPEC: ${{ matrix.spec }}
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:

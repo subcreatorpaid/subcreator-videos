@@ -17,6 +17,42 @@ const clean = (s) => String(s).replace(/[^\w$%'-]/g, '').toLowerCase();
 
 const U = {bg: '#F4F0EB', ink: '#1D1D1F', mut: '#8E8A85', line: '#ECE7E1', serif: '#B5573B', blue: '#3B6A8E', blue2: '#5F8FB3', hl: '#F8DCCB',
   green: '#2E8B57', greenSoft: '#E2F2E8', red: '#E0393E', redSoft: '#FCE3E2', card: '#FFFFFF'};
+// Backgrounds (owner, 29 Oct 2026: "I like the design but change the background"). Spec "bg": warm (first cut) | dark | grid | forest.
+const THEMES = {
+  warm: {ink: U.ink, serif: U.serif, blue: U.blue, hlBg: '248,220,203', hlInk: U.serif, green: U.green, handle: U.ink},
+  dark: {ink: '#F4F2EE', serif: '#F09A76', blue: '#9CC3E4', hlBg: '240,154,118', hlInk: '#FFFFFF', green: '#5BD68E', handle: '#F4F2EE'},
+  grid: {ink: U.ink, serif: U.serif, blue: U.blue, hlBg: '248,220,203', hlInk: U.serif, green: U.green, handle: U.ink},
+  forest: {ink: '#F6F3EC', serif: '#F3C98B', blue: '#BFE3F5', hlBg: '243,201,139', hlInk: '#1D1D1F', green: '#9BF0BC', handle: '#F6F3EC'},
+};
+const Theme = React.createContext(THEMES.warm);
+const Backdrop = ({bg, f}) => {
+  if (bg === 'dark') return (<>
+    <AbsoluteFill style={{background: 'linear-gradient(180deg, #16181B 0%, #0D0E10 100%)'}} />
+    <AbsoluteFill style={{background: `radial-gradient(55% 32% at 50% ${6 + Math.sin(f / 90) * 2}%, rgba(255,240,220,0.16), transparent 70%)`}} />
+    <AbsoluteFill style={{backgroundImage: 'radial-gradient(rgba(255,255,255,0.09) 2px, transparent 2px)', backgroundSize: '46px 46px', transform: `translateY(${-f * 0.25}px)`,
+      WebkitMaskImage: 'radial-gradient(60% 45% at 50% 50%, #000 20%, transparent 100%)'}} />
+    <AbsoluteFill style={{background: `radial-gradient(45% 22% at ${50 + Math.sin(f / 70) * 8}% 62%, rgba(46,139,87,0.20), transparent 70%)`}} />
+  </>);
+  if (bg === 'grid') return (<>
+    <AbsoluteFill style={{background: '#F6F5F1'}} />
+    <AbsoluteFill style={{backgroundImage: 'linear-gradient(#E2DFD7 2px, transparent 2px), linear-gradient(90deg, #E2DFD7 2px, transparent 2px)', backgroundSize: '72px 72px', backgroundPosition: `36px ${-f * 0.4}px`,
+      opacity: 0.8, WebkitMaskImage: 'radial-gradient(65% 50% at 50% 50%, #000 25%, transparent 100%)'}} />
+    <AbsoluteFill style={{background: 'radial-gradient(42% 26% at 50% 55%, rgba(46,125,79,0.13), transparent 70%)'}} />
+  </>);
+  if (bg === 'forest') return (<>
+    <AbsoluteFill style={{background: 'linear-gradient(170deg, #2D7550 0%, #1A4A33 55%, #0F2E20 100%)'}} />
+    <AbsoluteFill style={{background: `radial-gradient(50% 30% at ${45 + Math.sin(f / 80) * 6}% 8%, rgba(255,255,255,0.18), transparent 70%), radial-gradient(40% 25% at 80% 95%, rgba(243,201,139,0.18), transparent 70%)`}} />
+    <AbsoluteFill style={{backgroundImage: 'linear-gradient(rgba(255,255,255,0.06) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,0.06) 2px, transparent 2px)', backgroundSize: '72px 72px',
+      WebkitMaskImage: 'radial-gradient(60% 45% at 50% 50%, #000 20%, transparent 100%)'}} />
+  </>);
+  return (<>
+    <AbsoluteFill style={{background: U.bg}} />
+    <AbsoluteFill style={{background: `radial-gradient(38% 26% at ${30 + Math.sin(f / 90) * 6}% ${78 + Math.cos(f / 110) * 4}%, rgba(246,196,176,0.55), transparent 70%),
+      radial-gradient(34% 24% at ${80 + Math.cos(f / 100) * 5}% ${20 + Math.sin(f / 80) * 4}%, rgba(242,198,200,0.45), transparent 70%),
+      radial-gradient(40% 28% at ${75 + Math.sin(f / 120) * 5}% 92%, rgba(205,220,234,0.6), transparent 70%)`}} />
+    <AbsoluteFill style={{background: 'radial-gradient(90% 70% at 50% 45%, transparent 60%, rgba(120,90,70,0.10))'}} />
+  </>);
+};
 const SERIF = '"SerifX", "DejaVu Serif", Georgia, serif';
 const MONO = '"DejaVu Sans Mono", "Courier New", monospace';
 const SHADOW = '0 50px 90px rgba(70,45,30,0.13), 0 10px 24px rgba(70,45,30,0.07), 0 0 0 1.5px rgba(0,0,0,0.035)';
@@ -253,14 +289,14 @@ const chunkWords = (beats) => {
   return out;
 };
 const Headline = ({beats}) => {
-  const f = useCurrentFrame();
+  const f = useCurrentFrame(); const T = React.useContext(Theme);
   const chunks = React.useMemo(() => chunkWords(beats), [beats]);
   let ci = -1; chunks.forEach((c, i) => { if (f >= c[0].f - 3) ci = i; });
   if (ci < 0) return null;
   const ch = chunks[ci]; const next = chunks[ci + 1]; const leave = next ? ease(f - next[0].f + 6, 4) : 0;
   return (
     <div style={{position: 'absolute', left: 60, right: 60, top: 260, height: 300, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', opacity: 1 - leave, filter: `blur(${leave * 8}px)`}}>
-      <div style={{textAlign: 'center', fontFamily: FONT, fontWeight: 800, fontSize: 84, lineHeight: 1.12, letterSpacing: -2.5, color: U.ink}}>
+      <div style={{textAlign: 'center', fontFamily: FONT, fontWeight: 800, fontSize: 84, lineHeight: 1.12, letterSpacing: -2.5, color: T.ink}}>
         {ch.map((w, i) => {
           const t = f - w.f + 3; const p = ease(t, 7);
           const txt = String(w.w).replace(/\*/g, ''); const c = clean(txt); const S = w.s || {};
@@ -268,10 +304,10 @@ const Headline = ({beats}) => {
           const money = /^\$/.test(c) || has('green');
           const st = {display: 'inline-block', marginRight: 20, opacity: p, filter: `blur(${(1 - p) * 10}px)`, transform: `translateY(${(1 - p) * 12}px)`};
           if (has('red')) return <span key={i} style={{...st, color: '#fff', background: U.red, borderRadius: 16, padding: '0 16px'}}>{txt}</span>;
-          if (has('hl')) return <span key={i} style={{...st, color: U.serif, background: `rgba(248,220,203,${p})`, borderRadius: 14, padding: '0 12px'}}>{txt}</span>;
-          if (has('serif')) return <span key={i} style={{...st, fontFamily: SERIF, fontStyle: 'italic', fontWeight: 400, color: U.serif, fontSize: '1.02em', letterSpacing: -1}}>{txt}</span>;
-          if (has('blue')) return <span key={i} style={{...st, color: U.blue}}>{txt}</span>;
-          if (money) return <span key={i} style={{...st, color: U.green}}>{txt}</span>;
+          if (has('hl')) return <span key={i} style={{...st, color: T.hlInk, background: `rgba(${T.hlBg},${p})`, borderRadius: 14, padding: '0 12px'}}>{txt}</span>;
+          if (has('serif')) return <span key={i} style={{...st, fontFamily: SERIF, fontStyle: 'italic', fontWeight: 400, color: T.serif, fontSize: '1.02em', letterSpacing: -1}}>{txt}</span>;
+          if (has('blue')) return <span key={i} style={{...st, color: T.blue}}>{txt}</span>;
+          if (money) return <span key={i} style={{...st, color: T.green}}>{txt}</span>;
           return <span key={i} style={st}>{txt}</span>;
         })}
       </div>
@@ -293,23 +329,22 @@ const Shot = ({b, i, start, len, last}) => {
   );
 };
 
-export const SoftUI = ({beats = [], handle = '@subcreatorpaid', total = 90}) => {
-  const f = useCurrentFrame();
+export const SoftUI = ({beats = [], handle = '@subcreatorpaid', total = 90, bg = 'warm'}) => {
+  const f = useCurrentFrame(); const T = THEMES[bg] || THEMES.warm;
   return (
+    <Theme.Provider value={T}>
     <AbsoluteFill style={{background: U.bg, overflow: 'hidden', fontFamily: FONT}}>
       <Fonts /><SerifFont />
-      <AbsoluteFill style={{background: `radial-gradient(38% 26% at ${30 + Math.sin(f / 90) * 6}% ${78 + Math.cos(f / 110) * 4}%, rgba(246,196,176,0.55), transparent 70%),
-        radial-gradient(34% 24% at ${80 + Math.cos(f / 100) * 5}% ${20 + Math.sin(f / 80) * 4}%, rgba(242,198,200,0.45), transparent 70%),
-        radial-gradient(40% 28% at ${75 + Math.sin(f / 120) * 5}% 92%, rgba(205,220,234,0.6), transparent 70%)`}} />
-      <AbsoluteFill style={{background: 'radial-gradient(90% 70% at 50% 45%, transparent 60%, rgba(120,90,70,0.10))'}} />
+      <Backdrop bg={bg} f={f} />
       {beats.map((b, i) => {
         const start = Math.max(0, b.from - (i ? OV : 0));
         const end = i + 1 < beats.length ? beats[i + 1].from + 2 : total;
         return <Sequence key={i} from={start} durationInFrames={Math.max(1, end - start)}><Shot b={b} i={i} start={start} len={Math.max(1, end - start)} last={i === beats.length - 1} /></Sequence>;
       })}
       <Headline beats={beats} />
-      <div style={{position: 'absolute', left: 0, right: 0, top: 1600, textAlign: 'center', fontFamily: FONT, fontWeight: 700, fontSize: 32, color: U.ink, opacity: 0.5}}>{handle}</div>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 1600, textAlign: 'center', fontFamily: FONT, fontWeight: 700, fontSize: 32, color: T.handle, opacity: 0.55}}>{handle}</div>
       <Audio src={staticFile('voice.wav')} />
     </AbsoluteFill>
+    </Theme.Provider>
   );
 };
