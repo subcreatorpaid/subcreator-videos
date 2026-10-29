@@ -37,7 +37,7 @@ Hand-offs always go through files in `brain/` (never "remember it"): researcher 
 | Idea queue (from comments, research, outliers) | `brain/ideas.json` (+ Claude Docs "20 Best Video Ideas" (top 20 trending, in make order): https://claude.ai/artifact/SvJ9VwDfNZFKjpde1LyeqQ) |
 | What works (learned rules) | `brain/learnings.md` |
 | Dashboard data, to-dos, approvals queue | `brain/status.json` -> rendered by `dashboard/build.py` -> Control Room artifact https://claude.ai/artifact/2LBTT8WvBgQ4pf3iYLZ55v |
-| Run log (one line per run) | `brain/log.md` |
+| Run log (one file per entry, no conflicts) | `brain/log/YYYY-MM-DD-HHMM-<role>-<slug>.md`; old entries in `brain/log.md` (frozen) |
 | Accounts and tools (no passwords ever) | `brain/accounts.md` |
 | Verified income streams (facts library) | `site/data/streams/*.json` |
 | Free guide (PDF lead magnet) | `scripts/make_guide.py` -> `site/files/small-creator-income-guide.pdf` (rebuild after fact changes; monthly run) |
@@ -60,7 +60,7 @@ Hand-offs always go through files in `brain/` (never "remember it"): researcher 
 3. Renders: review copies at 360p (animate.yml mode `preview`, or preview.yml default); the final 1080p (mode `full`) only after the owner OKs the last review. Never 4K (platforms cap at 1080x1920).
    Keep Claude use lean: one thread per task; read Gemini scans/drafts instead of re-searching or re-drafting; copy files with scripts, not by hand. Run `python3 scripts/guard.py` before committing. Commit with a clear message ending in the attribution lines from the session, push to main.
    Every push to main redeploys the website, so batch all of a run's edits into one commit.
-4. Append one line to `brain/log.md`: `YYYY-MM-DD HH:MM | role | what was done | what needs the owner`.
+4. Write ONE new file `brain/log/YYYY-MM-DD-HHMM-<role>-<slug>.md` containing one line: `YYYY-MM-DD HH:MM | role | what was done | what needs the owner`. Never edit `brain/log.md` (old history; editing it makes PRs conflict).
 5. If something needs the owner, add it to `status.json -> approvals` (max 3 to-dos a day in `today`), never ping for routine work.
 6. Unattended runs never: post, publish videos, send email, accept terms, create accounts, enter passwords/payment/tax details,
    change DNS or security settings, spend vidIQ credits beyond the budget in `brain/rules.md`, or delete data.
