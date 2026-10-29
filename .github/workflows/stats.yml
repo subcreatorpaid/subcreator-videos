@@ -33,7 +33,7 @@ jobs:
         run: python3 scripts/weekly_stats.py | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Commit
         run: |
-          echo "$(date -u '+%Y-%m-%d %H:%M') | stats | weekly stats report (brain/stats) | nothing" >> brain/log.md
+          echo "$(date -u '+%Y-%m-%d %H:%M') | stats | weekly stats report (brain/stats) | nothing" > "brain/log/$(date -u +%Y-%m-%d-%H%M)-stats-weekly.md"
           python3 scripts/guard.py --strict
           git config user.name "stats[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add brain/ && git commit -m "Weekly stats $(date -u +%Y-%m-%d)" && git push origin HEAD:main

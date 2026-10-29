@@ -36,7 +36,13 @@ def day(d):
 
 status, goals, week = J("brain/status.json"), J("brain/goals.json"), J("brain/week-plan.json")
 links = {p["id"]: p for p in J("site/data/links.json", {"programs": []}).get("programs", [])}
-log_lines = [l for l in (B / "log.md").read_text(encoding="utf-8").splitlines() if l[:2] == "20"][-6:][::-1] if (B / "log.md").exists() else []
+def _read_log():  # history file + one file per entry in brain/log/ (each is one line starting with the date)
+    texts = [(B / "log.md").read_text(encoding="utf-8")] if (B / "log.md").exists() else []
+    texts += [f.read_text(encoding="utf-8") for f in sorted((B / "log").glob("20*.md"))]
+    return sorted(l for t in texts for l in t.splitlines() if l[:2] == "20")
+
+
+log_lines = _read_log()[-6:][::-1]
 
 STATUS_CHIP = {"drafted": "wait", "approved": "info", "rendered": "info", "checked": "info", "scheduled": "ok", "posted": "ok", "skipped": "mute",
                "live": "ok", "in review": "wait", "waiting owner": "wait", "later": "mute", "ok": "ok", "fail": "bad"}
