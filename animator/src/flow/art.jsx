@@ -25,7 +25,7 @@ export const StreamArt = ({kind, size = 300, p = {}}) => {
     <rect x="110" y="128" width="62" height="40" rx="10" fill={c} /><text x="141" y="155" textAnchor="middle" fontFamily="InterX" fontWeight="900" fontSize="20" fill="#fff">PDF</text>
   </g>);
   if (kind === 'amazon') return S(<g>
-    <path d="M40 80 L100 55 L160 80 L160 150 L100 175 L40 150 Z" fill="#E9B97A" stroke={ink} strokeWidth="5" strokeLinejoin="round" />
+    <path d="M40 80 L100 55 L160 80 L160 150 L100 175 L40 150 Z" fill={p.box || '#E9B97A'} stroke={ink} strokeWidth="5" strokeLinejoin="round" />
     <path d="M40 80 L100 105 L160 80 M100 105 L100 175" stroke={ink} strokeWidth="5" fill="none" strokeLinejoin="round" />
     <path d="M66 67 L126 92 L126 112" stroke={ink} strokeWidth="5" fill="none" opacity="0.5" />
     <circle cx="150" cy="52" r="26" fill={a} stroke={ink} strokeWidth="5" /><text x="150" y="61" textAnchor="middle" fontFamily="InterX" fontWeight="900" fontSize="26" fill={ink}>%</text>
@@ -39,8 +39,8 @@ export const StreamArt = ({kind, size = 300, p = {}}) => {
   if (kind === 'ugc') return S(<g>
     <rect x="58" y="22" width="84" height="156" rx="16" fill={ink} /><rect x="64" y="34" width="72" height="132" rx="10" fill={c} />
     <rect x="86" y="70" width="28" height="62" rx="8" fill={a} stroke={ink} strokeWidth="4" /><rect x="92" y="60" width="16" height="12" rx="3" fill={ink} />
-    <circle cx="100" cy="150" r="8" fill="#E5484D" stroke="#fff" strokeWidth="3" />
-    <rect x="72" y="42" width="30" height="10" rx="5" fill="#E5484D" /><text x="87" y="50.5" textAnchor="middle" fontFamily="InterX" fontWeight="900" fontSize="8" fill="#fff">REC</text>
+    <circle cx="100" cy="150" r="8" fill={p.rec || '#E5484D'} stroke="#fff" strokeWidth="3" />
+    <rect x="72" y="42" width="30" height="10" rx="5" fill={p.rec || '#E5484D'} /><text x="87" y="50.5" textAnchor="middle" fontFamily="InterX" fontWeight="900" fontSize="8" fill={p.recInk || '#fff'}>REC</text>
   </g>);
   if (kind === 'voice') return S(<g>
     <rect x="76" y="28" width="48" height="84" rx="24" fill={b} stroke={ink} strokeWidth="5" />

@@ -2,7 +2,7 @@
 // One continuous take, no fades or cuts: the composer is typed into, the send button ripples lime and the message becomes
 // a bubble, the button grows into the finder ring that tosses stream tiles, a lime flood bursts into result cards that
 // land on the best match, the flood contracts back into the chat, the black button expands into the page, and a route
-// ends on a pin that becomes the brand mark. Warm white #F5F5F2, black UI #0E0E10, lime #CDF24F, blue send #2F6BFF.
+// ends on a pin that becomes the brand mark. Warm white #F5F5F2, black UI #0E0E10, lime #CDF24F. One palette all the way through (owner, 29 Oct 2026: "keep the colour consistent"): white, black, lime; red only on "The catch".
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {FONT} from '../Short';
@@ -10,20 +10,21 @@ import {Logo} from '../graphics';
 import {expo, expoIn, inOut, spring, kf, mix, clamp01, camera, Rise, typedCount, Cursor, useTimes} from './kit';
 import {StreamArt, Avatar, Icon, Check} from './art';
 
-const K = {bg: '#F5F5F2', ui: '#0E0E10', lime: '#CDF24F', blue: '#2F6BFF', mut: '#8B8B86', money: '#1F8A4C', red: '#E5484D'};
+const K = {bg: '#F5F5F2', ui: '#0E0E10', lime: '#CDF24F', mut: '#8B8B86', red: '#E5484D', card: '#1C1C1F'};
+const ART = {ink: '#0E0E10', a: '#CDF24F', b: '#FFFFFF', c: '#2E2E33', box: '#FFFFFF', rec: '#CDF24F', recInk: '#0E0E10'};
 const LINES = ['I film cozy cooking,', '600 followers.', 'What can pay me?'];
 const CARDS = [
-  {name: 'Etsy templates', line: 'Sell a digital file again and again', pay: 'about $8.60 of a $10 sale', bg: '#F1641E', kind: 'etsy'},
-  {name: 'Amazon Associates', line: 'Earn a cut when someone buys', pay: '3%–4.5% on most categories', bg: '#2B2B2B', kind: 'amazon'},
-  {name: 'Fiverr gigs', line: 'Sell a small service', pay: 'Fiverr keeps 20%', bg: '#1DBF73', kind: 'fiverr'},
-  {name: 'UGC videos', line: 'Brands pay for videos they run as ads', pay: '$50–$400 a video', bg: '#2F6BFF', kind: 'ugc', best: true},
-  {name: 'ElevenLabs voices', line: 'Earn when paying users pick your voice', pay: 'Paid through Stripe', bg: '#111', kind: 'voice'},
+  {name: 'Etsy templates', line: 'Sell a digital file again and again', pay: 'about $8.60 of a $10 sale', kind: 'etsy'},
+  {name: 'Amazon Associates', line: 'Earn a cut when someone buys', pay: '3%–4.5% on most categories', kind: 'amazon'},
+  {name: 'Fiverr gigs', line: 'Sell a small service', pay: 'Fiverr keeps 20%', kind: 'fiverr'},
+  {name: 'UGC videos', line: 'Brands pay for videos they run as ads', pay: '$50–$400 a video', kind: 'ugc', best: true},
+  {name: 'ElevenLabs voices', line: 'Earn when paying users pick your voice', pay: 'Paid through Stripe', kind: 'voice'},
 ];
 
 const Iridescent = ({f, w, h, r}) => (
   <div style={{position: 'absolute', left: -40, top: -40, width: w + 80, height: h + 80, borderRadius: r + 40, filter: 'blur(34px)', opacity: 0.85, overflow: 'hidden'}}>
     <div style={{position: 'absolute', left: '50%', top: '50%', width: 1600, height: 1600, marginLeft: -800, marginTop: -800, transform: `rotate(${f * 3}deg)`,
-      background: 'conic-gradient(from 0deg, #FF6FB5, #FF9A3C, #CDF24F, #3CD3F0, #8B6CFF, #FF6FB5)'}} />
+      background: 'conic-gradient(from 0deg, #CDF24F, rgba(205,242,79,0.15), #CDF24F, rgba(205,242,79,0.15), #CDF24F)'}} />
   </div>
 );
 
@@ -77,16 +78,16 @@ export const Launch = ({beats = []}) => {
         {sent < 0.6 && <div style={{opacity: 1 - sent * 1.6}}><Iridescent f={f} w={comp.w} h={comp.h} r={48} /></div>}
         <div style={{position: 'absolute', inset: 0, borderRadius: mix(48, 56, sent), background: sent > 0.5 ? K.lime : '#fff', boxShadow: '0 20px 60px rgba(0,0,0,0.10)'}} />
         <div style={{position: 'absolute', left: mix(54, 44, sent), top: mix(50, 34, sent), fontFamily: FONT, fontWeight: 600, fontSize: mix(54, 44, sent), lineHeight: 1.3, color: K.ui}}>
-          {typed.map((l, i) => <div key={i} style={{height: mix(70, 57, sent)}}>{l}{sent === 0 && i === typed.findIndex((x, j) => x.length < LINES[j].length) ? <span style={{color: K.blue}}>|</span> : null}</div>)}
+          {typed.map((l, i) => <div key={i} style={{height: mix(70, 57, sent)}}>{l}{sent === 0 && i === typed.findIndex((x, j) => x.length < LINES[j].length) ? <span style={{color: K.ui}}>|</span> : null}</div>)}
         </div>
-        {sent < 0.3 && <div style={{position: 'absolute', right: 34, bottom: 34, width: 96, height: 96, borderRadius: 48, background: K.blue, transform: `scale(${press})`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 54, fontWeight: 900, fontFamily: FONT}}>↑</div>}
+        {sent < 0.3 && <div style={{position: 'absolute', right: 34, bottom: 34, width: 96, height: 96, borderRadius: 48, background: K.ui, transform: `scale(${press})`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: K.lime, fontSize: 54, fontWeight: 900, fontFamily: FONT}}>↑</div>}
       </div>
       {/* ripple */}
       {ripple > 0 && ripple < 1 && <div style={{position: 'absolute', left: 910 - ripple * 900, top: 1070 - ripple * 900, width: ripple * 1800, height: ripple * 1800, borderRadius: '50%', border: `${mix(60, 2, ripple)}px solid ${K.lime}`, opacity: 1 - ripple}} />}
       {/* finder ring + tossed tiles */}
       {f >= send && f < chat && (
-        <div style={{position: 'absolute', left: ring.x - ring.d / 2, top: ring.y - ring.d / 2, width: ring.d, height: ring.d, borderRadius: '50%', background: think < 0.5 ? K.blue : K.ui, border: `${mix(0, 14, think)}px solid ${K.lime}`,
-          display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontFamily: FONT, fontWeight: 900, fontSize: mix(54, 110, think)}}>{think > 0.5 ? 'S' : '↑'}</div>
+        <div style={{position: 'absolute', left: ring.x - ring.d / 2, top: ring.y - ring.d / 2, width: ring.d, height: ring.d, borderRadius: '50%', background: K.ui, border: `${mix(0, 14, think)}px solid ${K.lime}`,
+          display: 'flex', alignItems: 'center', justifyContent: 'center', color: K.lime, fontFamily: FONT, fontWeight: 900, fontSize: mix(54, 110, think)}}>{think > 0.5 ? 'S' : '↑'}</div>
       )}
       {f >= send && f < chat && TILES.map((t, i) => {
         const at = tossAt[i % 4] - 4; const p = clamp01((f - at) / 22); if (p <= 0) return null;
@@ -113,7 +114,7 @@ export const Launch = ({beats = []}) => {
         <div style={{position: 'absolute', left: 120, top: 980, width: 840}}>
           <Rise f={f} at={W(3, 'ugc') - 4} text="UGC fits you." size={84} weight={800} font={FONT} />
           <div style={{marginTop: 18}}><Rise f={f} at={W(3, 'beginners') - 4} text="Beginners usually charge" size={62} weight={600} font={FONT} color="#45453F" /></div>
-          <div style={{marginTop: 4}}><Rise f={f} at={W(3, '$50') - 4} text="$50–$400 a video." size={88} weight={900} font={FONT} color={K.money} /></div>
+          <div style={{marginTop: 4}}><span style={{display: 'inline-block', background: K.lime, borderRadius: 18, padding: '4px 22px 0', transform: `scaleX(${expo(f - W(3, '$50') + 6, 10)})`, transformOrigin: 'left'}}><Rise f={f} at={W(3, '$50') - 4} text="$50–$400 a video." size={76} weight={900} font={FONT} color={K.ui} /></span></div>
         </div>
         <div style={{position: 'absolute', left: 120, top: 1420, display: 'flex', gap: 22, opacity: expo(f - W(3, 'video'), 10), transform: `translateY(${(1 - expo(f - W(3, 'video'), 10)) * 30}px)`}}>
           <div style={{background: K.ui, color: '#fff', borderRadius: 60, padding: '30px 44px', fontFamily: FONT, fontWeight: 800, fontSize: 40, transform: `scale(${f >= click && f < click + 5 ? 0.94 : 1})`, minWidth: 330, textAlign: 'center'}}>
@@ -173,7 +174,7 @@ export const Launch = ({beats = []}) => {
             const mark = expo(f - outro - 28, 14);
             return (<>
               {mark < 1 && <div style={{position: 'absolute', left: x - 22, top: y - 22, width: 44, height: 44, borderRadius: 22, background: K.lime, opacity: 1 - mark}} />}
-              <div style={{position: 'absolute', left: 540 - 110, top: 760 - 110 - mark * 120, width: 220, height: 220, borderRadius: mix(110, 56, mark), background: mark > 0.3 ? 'linear-gradient(160deg, #3FA36C, #24764A)' : K.lime,
+              <div style={{position: 'absolute', left: 540 - 110, top: 760 - 110 - mark * 120, width: 220, height: 220, borderRadius: mix(110, 56, mark), background: K.lime,
                 transform: `scale(${mix(0.2, 1, mark)})`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 900, fontSize: 130 * mark}}>S</div>
               <div style={{position: 'absolute', left: 0, right: 0, top: 860, textAlign: 'center', overflow: 'hidden'}}>
                 <div style={{fontWeight: 900, fontSize: 84, color: '#fff', clipPath: `inset(0 ${(1 - expo(f - outro - 36, 16)) * 50}% 0 ${(1 - expo(f - outro - 36, 16)) * 50}%)`}}>subcreatorpaid.com</div>
@@ -196,8 +197,8 @@ export const Launch = ({beats = []}) => {
 };
 
 const DarkCard = ({c}) => (
-  <div style={{width: 580, height: 760, borderRadius: 40, background: '#0E0E10', overflow: 'hidden', boxShadow: '0 40px 80px rgba(0,0,0,0.25)', fontFamily: FONT}}>
-    <div style={{height: 380, background: c.bg, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><StreamArt kind={c.kind} size={320} /></div>
+  <div style={{width: 580, height: 760, borderRadius: 40, background: K.ui, overflow: 'hidden', boxShadow: '0 40px 80px rgba(0,0,0,0.25)', fontFamily: FONT}}>
+    <div style={{height: 380, background: c.best ? K.lime : K.card, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><StreamArt kind={c.kind} size={320} p={c.best ? {...ART, a: '#FFFFFF', rec: K.ui, recInk: K.lime} : ART} /></div>
     <div style={{padding: '34px 38px'}}>
       <div style={{fontWeight: 800, fontSize: 46, color: '#fff'}}>{c.name}</div>
       <div style={{fontWeight: 500, fontSize: 30, color: '#A5A5A0', marginTop: 10}}>{c.line}</div>
@@ -207,7 +208,7 @@ const DarkCard = ({c}) => (
 );
 const MiniCard = ({c}) => (
   <div style={{display: 'flex', gap: 22, alignItems: 'center', background: '#0E0E10', borderRadius: 34, padding: 20, fontFamily: FONT}}>
-    <div style={{width: 120, height: 120, borderRadius: 24, background: c.bg, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><StreamArt kind={c.kind} size={110} /></div>
+    <div style={{width: 120, height: 120, borderRadius: 24, background: K.lime, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><StreamArt kind={c.kind} size={110} p={{...ART, a: '#FFFFFF', rec: K.ui, recInk: K.lime}} /></div>
     <div><div style={{fontWeight: 800, fontSize: 40, color: '#fff'}}>{c.name}</div><div style={{fontWeight: 700, fontSize: 28, color: '#CDF24F', marginTop: 6}}>Best match</div></div>
   </div>
 );
