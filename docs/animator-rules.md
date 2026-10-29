@@ -83,3 +83,19 @@ word above it, a dark spotlight flip for the catch, a mono kicker and a progress
 - L4. Background: 60 px grid fading out from the centre. Catch / warning beats (`"type": "catch"` or `"dark": true`) flip the
   page to ink with a warm light cone and a red glow around the card; the card stays white.
 - L5. Brand stays: off-white, ink, green only for money, red for loss, the same face, real logos, soft glows.
+
+## F - Flow / launch film (owner pick, 29 Oct 2026) - the current default look
+Built from the owner's animation prompts (launch-film prompt). Code: `animator/src/flow/` (kit.jsx motion helpers, art.jsx
+drawn elements + `BrandLogo`, brandlogos.js, Launch.jsx). Spec `"style": "launch"`; preview with `.github/workflows/preview.yml`
+(`"preview_res": 720`). Reference render: `/mnt/project-files/05-style-and-voice/flow-720p/flow_launch_finder_general_720p.mp4`.
+- F1. One continuous take, no cuts or fades: each scene grows out of the last (composer -> bubble -> finder ring -> lime flood ->
+  result cards -> chat -> button expands into the page -> route -> brand mark).
+- F2. One palette: off-white `#F5F5F2`, ink `#0E0E10`, lime `#CDF24F`. Money = ink text on a lime box. Red only on "The catch".
+  No rainbow, blue, orange or green fills. Real logos keep their own colours.
+- F3. Real logos on every tile, card and chip (simple-icons + program logo files); never letters.
+- F4. Always moving: drifting lime dust, spring pop-ins, live counters (followers, n/16), spinner + orbiting tiles, card tilt +
+  shine, pulse rings, lime bursts on money and best match, small punch zooms (+3.5%) on key words, gentle camera sway.
+- F5. Fast: voice speed 1.12, gap 0.25, short lines (about 25 s for 6 beats); moves 8-12 frames, typing ~2 chars a frame.
+- F6. Instagram safe area: the film plays in a box scaled 0.7 at (92, 262) so nothing sits under the right-side buttons or the
+  bottom name/caption; `@subcreatorpaid` with the S mark sits at the top centre (y ~170) for the whole video.
+- F7. General audience: no niche persona unless the topic needs one ("I post Reels and TikToks, 600 followers").

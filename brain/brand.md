@@ -19,11 +19,13 @@ trading / crypto / investments / loans / get-paid-to-watch schemes.
 | "You NEED this tool" | "Here's the free option, and when the paid one is worth it." |
 
 ## Visuals (videos, thumbnails, site, dashboard)
-- Background off-white `#F6F5F1` with a faint grid that fades out; white cards `#FFFFFF`; ink `#151515`; muted `#5F5E58`; lines `#E2DFD7`.
-- One accent: forest green `#2E7D4F` (soft `#E3F0E7`) on ONE focal element per screen. Soft green glow shadows, never harsh.
+- Palette since 29 Oct 2026 (owner picked the launch film): ONE palette everywhere: white / off-white `#F5F5F2`, ink `#0E0E10`-`#151515`, lime `#CDF24F` (soft `#F1FBD0`).
+  Lime is a fill or glow, never text on a light background. Money = ink text on a lime box. Red `#D93A3A` only for loss / "The catch". Muted `#5F5E58`, lines `#E2DFD7`.
+- Real brand logos for every platform, program and tool shown (never letters or look-alikes); they keep their own colours.
+- Instagram safe area: all content inside x 60-940, y 230-1440 of 1080x1920; @subcreatorpaid with the S mark at the top centre, never at the very bottom.
 - Type: Inter (Black for hooks, ExtraBold body); website adds Instrument Serif italic accents.
-- Video: 1080x1920, kinetic text, editor v4 (see `docs/editing-playbook.md` and `docs/channel-study.md`), Kokoro voice.
-- Refuse: cash stacks, luxury shots, fake payouts, other channels' branding or content, real people's photos, a second accent colour.
+- Video: 1080x1920, launch-film style (`animator/src/flow/Launch.jsx`, spec `"style": "launch"`, rules in `docs/animator-rules.md` section F), Kokoro voice at 1.12, fast pacing.
+- Refuse: cash stacks, luxury shots, fake payouts, other channels' branding or content, real people's photos, a second accent colour (lime is the only accent).
 
 ## Series
 - **Income Stream of the Week** (value): one verified stream, followers needed, pay, steps, the catch. Gets a website page `site/data/streams/<slug>.json`.

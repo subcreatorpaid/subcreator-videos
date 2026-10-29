@@ -65,4 +65,5 @@ Hand-offs always go through files in `brain/` (never "remember it"): researcher 
 - Website live on subcreatorpaid.com (AI finder on Workers AI, email list + comments on D1 `subcreator-site`, IndexNow done, Search Console verified).
 - Affiliates live: beehiiv, OpusClip, ElevenLabs, Skool. Kit in review. Fiverr waiting for owner login/approval. Stan later.
 - No AI host (owner decision 25 Oct). Videos = kinetic text, Kokoro voice, editor v4.
+- Video look (owner pick, 29 Oct): launch film (`animator/src/flow/Launch.jsx`, rules F in `docs/animator-rules.md`): one palette white/black/lime, real logos, Instagram safe area with @subcreatorpaid on top, fast. Website restyle to match is on branch claude/project-thread-loe2p8, waiting for owner OK.
 - Week of 26 Oct CANCELLED by owner (26 Oct): do not post, schedule or re-render those videos. Everything is remade with the animator (`animator/`, base sample `videos/20261029_ugc_animated`), following `docs/animator-rules.md` (applied 26 Oct). WAIT for the owner's next instruction before making new videos.
