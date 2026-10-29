@@ -33,7 +33,7 @@ export const Launch = ({beats = []}) => {
   const send = B(1), drop = B(2) + 2, chat = B(3), page = B(4), outro = B(5);
   // ---- camera (world space; the composer sits at 540, 960)
   const cam = camera(f, [
-    [0, 1.08, 540, 960], [send - 2, 1.22, 560, 980], [send + 22, 1.0, 540, 960], [drop, 1.0, 540, 960], [drop + 30, 1.04, 540, 940],
+    [0, 1.0, 540, 960], [send - 2, 1.1, 540, 960], [send + 22, 1.0, 540, 960], [drop, 1.0, 540, 960], [drop + 30, 1.04, 540, 940],
     [chat, 1.04, 540, 940], [chat + 24, 1.0, 540, 960], [page, 1.0, 540, 960],
   ], (t, d) => (t <= 0 ? 0 : 1 - Math.pow(1 - inOut(t, d), 1)));
   const toScreen = (x, y) => [540 + (x - cam.x) * cam.z, 960 + (y - cam.y) * cam.z];
