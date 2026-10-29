@@ -46,3 +46,4 @@ One line per run: `YYYY-MM-DD HH:MM | role | what was done | needs owner`
 2026-10-29 14:10 | guard | added daily site-health Action (scripts/site_health.py) | merge PR
 2026-10-29 14:01 | creator | built weekly pipeline workflows (weekly, on-merge, approve, stats) | merge PR, add BUFFER_TOKEN secret
 2026-10-29 14:25 | guard | health check: Lighthouse scores added; fixed false alarms + broken source link on /videos/ | merge PR
+2026-10-29 14:18 | engineer | faster-whisper model fetch with retries + cache in animate/preview/render workflows; summary shows exact vs estimated timing | none

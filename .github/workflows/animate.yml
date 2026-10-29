@@ -56,7 +56,9 @@ jobs:
           path: |
             models
             ~/.cache/huggingface
-          key: kokoro-v1.0-whisper
+          key: kokoro-v1.0-whisper-tiny-en
+      - name: Word-timing model (faster-whisper, retries, falls back to estimates)
+        run: python scripts/fetch_whisper.py
       - name: Download the free voice model (first run only)
         run: |
           mkdir -p models
@@ -72,7 +74,8 @@ jobs:
       - name: Voice + word timings + music/SFX
         id: p
         run: |
-          python animator/prep.py "videos/$V/spec.json"
+          python animator/prep.py "videos/$V/spec.json" | tee prep.log
+          grep -q "whisper (" prep.log && echo "- Word timing: exact (faster-whisper)" >> "$GITHUB_STEP_SUMMARY" || echo "- Word timing: ESTIMATED (whisper model unavailable)" >> "$GITHUB_STEP_SUMMARY"
           mkdir -p bundle/main && cp -r animator/props.json animator/public animator/stills.txt animator/cue.md bundle/main/
           n=0
           if [ "$MODE" = full ] && python3 -c "import json,sys;sys.exit(0 if len(json.load(open('videos/$V/spec.json')).get('hooks',[]))>=3 else 1)"; then
