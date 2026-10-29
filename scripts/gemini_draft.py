@@ -86,7 +86,8 @@ def drafts(n):
     for it in items:
         md += [f"## {it.get('rank')}. {it.get('title')}", "**Hooks**"] + [f"- {h}" for h in it.get("hooks", [])]
         md += ["", "**Caption**", "", it.get("caption", ""), "", "**Hashtags** " + " ".join(it.get("hashtags", [])), "", "**Facts to verify**"]
-        md += [f"- {f}" for f in it.get("facts_to_verify", [])] + [""]
+        md += [f"- {f.get('claim')} (check: {f.get('official_source') or f.get('source')})" if isinstance(f, dict) else f"- {f}"
+               for f in it.get("facts_to_verify", [])] + [""]
     out = d / f"{TODAY}_gemini.md"; out.write_text("\n".join(md))
     return out
 
