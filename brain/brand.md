@@ -51,6 +51,23 @@ Four parts, 6-8 s in total, in this order:
    No ebook file or affiliate link is sent straight in a DM. Replies to individual DMs in the owner's name still need his OK.
 Each ebook is a related free guide (PDF on the site, email sign-up to get it). Topic guides are drafted by the creator and need the owner's OK before going live.
 
+## Packaging and hook strategy (owner ask, 29 Oct 2026; adapted from the YouTube script-writer instructions)
+Applies to every Reel, TikTok and Short, max 60 s. Every script comes with the packaging first, then the script.
+**Packaging**
+- 3 title options, each under 60 characters, each opening a curiosity loop. Use a loss angle ("Is X Quietly Costing You $Y?") or a shortcut angle ("The $0 Way To Start Z"). Mark the favourite. The title is the on-screen hook text and the YouTube Shorts title; Instagram and TikTok use it as the first caption line.
+- Cover: one visual with clear conflict or contrast (give it as an image prompt), plus 2-4 overlay words that never repeat the title. See rules C1-C4 in `docs/animator-rules.md`.
+**Hook and script**
+1. Click confirmation (0-3 s): the first sentence states the exact promise of the title. No intro, no greeting, no channel name.
+2. Belief challenge (3-10 s): why the common belief ("you need 10k") is incomplete or wrong, with a payoff promised for later in the video.
+3. Value beats: the stream, the proof with USD maths, who it suits. Add a re-hook line roughly every 10-15 s that opens a new question ("But here is the part nobody mentions...").
+4. Payoff and close: deliver the promised answer, then ONE takeaway, then the four-part ending above. Never "smash like", never "don't forget to".
+**Craft rules**
+- Write for the ear: short sentences, plain words.
+- A `[VISUAL: ...]` cue every 2-3 sentences; each cue must work as an image prompt on its own.
+- `[CHECK: claim]` after every figure, name or rule that is not yet verified. Never invent a statistic, study or quote (this also guards against repetitive or mass-produced content flags: each script needs a point of view, a worked example or a comparison).
+- No financial advice framed as instructions ("put your money in..."); describe how a program pays, with the catch.
+- US/UK English spelling.
+
 ## Before anything ships (creator + guard check)
 1. Every fact verified on an official page within 30 days, source saved.
 2. Pay is a range or labelled example; the catch is stated.

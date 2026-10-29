@@ -99,3 +99,13 @@ drawn elements + `BrandLogo`, brandlogos.js, Launch.jsx). Spec `"style": "launch
 - F6. Instagram safe area: the film plays in a box scaled 0.7 at (92, 262) so nothing sits under the right-side buttons or the
   bottom name/caption; `@subcreatorpaid` with the S mark sits at the top centre (y ~170) for the whole video.
 - F7. General audience: no niche persona unless the topic needs one ("I post Reels and TikToks, 600 followers").
+
+## R - Script and packaging (owner ask, 29 Oct 2026)
+Full text: "Packaging and hook strategy" in `brain/brand.md`. Rules the beat table and spec must follow:
+- R1. Packaging comes before the script: 3 titles under 60 characters (loss or shortcut angle, curiosity loop, favourite marked) and a cover idea with 2-4 overlay words that never repeat the title. The favourite title becomes `thumb.headline`/the hook text.
+- R2. Beat 1 (0-3 s) confirms the exact promise of the title in its first sentence. No intro, greeting or channel name. Matches H1 and H2.
+- R3. Beat 2 (3-10 s) challenges the belief and promises a payoff that comes later.
+- R4. A re-hook line every 10-15 s (a new question, not a recap). Videos under 25 s need one; 45-60 s videos need three or four.
+- R5. Payoff + one takeaway, then the four-part ending. No "smash like".
+- R6. A visual cue (the beat's graphic) changes every 2-3 sentences, in line with P1.
+- R7. Any figure not yet verified carries `[CHECK: claim]` in the script draft; none may remain at render time (guard fails on a leftover marker in spec lines).
