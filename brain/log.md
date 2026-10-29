@@ -41,3 +41,4 @@ One line per run: `YYYY-MM-DD HH:MM | role | what was done | needs owner`
 2026-10-29 13:00 | creator | Launch-film look set as house style (brand.md, animator rules F, real logos, IG safe area); website Lime Glass look (owner pick), floating hero cards removed, background kept | Hammad: OK to publish (merge branch claude/project-thread-loe2p8 into main)
 2026-10-29 13:10 | creator | Gemini drafting added (scripts/gemini_draft.py + 'Gemini drafts' workflow, button only, opens a PR with drafts) | owner: add GEMINI_API_KEY secret, allow Actions to open PRs, press Run
 2026-10-29 13:25 | creator | Gemini drafts scheduled (owner's pick): scan daily 06:00 UTC, drafts Sundays 07:00 UTC, skips ideas already drafted | owner: merge the schedule PR
+2026-10-29 13:40 | secretary | Credit cuts (owner: 'change all'): Morning brief paused, daily briefing on Sonnet, researcher/creator read Gemini scans+drafts first, get_videos.ps1 copies renders to the PC | owner: merge the PR
