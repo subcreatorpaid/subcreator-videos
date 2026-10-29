@@ -8,6 +8,10 @@ run-name: "Animate ${{ inputs.video }} (${{ inputs.mode }})"  # the Render Room 
 #   full   = the video split across 4 machines in parallel + 3 hook clips in parallel (rule H3),
 #            then joined, with the contact sheet and cue sheet (rule W6)
 on:
+  workflow_call:  # used by weekly.yml / on-merge.yml / approve.yml (same inputs)
+    inputs:
+      video: {type: string, required: true}
+      mode: {type: string, default: stills}
   workflow_dispatch:
     inputs:
       video:
@@ -23,12 +27,12 @@ permissions:
   contents: write
 
 concurrency:
-  group: animate-${{ github.event.inputs.video }}  # one queue per video, so several videos can render at once
+  group: animate-${{ inputs.video }}  # one queue per video, so several videos can render at once
   cancel-in-progress: false
 
 env:
-  V: ${{ github.event.inputs.video }}
-  MODE: ${{ github.event.inputs.mode || 'stills' }}
+  V: ${{ inputs.video }}
+  MODE: ${{ inputs.mode || 'stills' }}
   PARTS: 4
 
 jobs:

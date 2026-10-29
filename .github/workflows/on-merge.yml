@@ -1,0 +1,64 @@
+name: Storyboard approved - 360p previews
+run-name: "Previews after merge of ${{ github.event.pull_request.head.ref }}"
+
+# Step 2. Merging a weekly storyboard PR (branch gemini/*-weekly-*) is the owner's OK. Renders the 360p review copy of every
+# post with status "storyboard" in parallel (animate.yml, mode preview), marks them "previewed" and opens one review issue per video.
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  pick:
+    if: github.event.pull_request.merged == true && contains(github.event.pull_request.head.ref, '-weekly-') && startsWith(github.event.pull_request.head.ref, 'gemini/')
+    runs-on: ubuntu-latest
+    outputs:
+      slugs: ${{ steps.p.outputs.slugs }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - id: p
+        run: echo "slugs=$(python3 scripts/pipeline.py pick storyboard)" >> "$GITHUB_OUTPUT"
+
+  preview:
+    needs: pick
+    if: needs.pick.outputs.slugs != '[]'
+    strategy:
+      fail-fast: false
+      matrix:
+        video: ${{ fromJSON(needs.pick.outputs.slugs) }}
+    permissions:
+      contents: write
+    uses: ./.github/workflows/animate.yml
+    with:
+      video: ${{ matrix.video }}
+      mode: preview
+
+  review:
+    needs: [pick, preview]
+    if: ${{ !cancelled() && needs.preview.result != 'skipped' && needs.pick.outputs.slugs != '[]' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Mark previewed, open one review issue per video
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SLUGS: ${{ needs.pick.outputs.slugs }}
+        run: |
+          gh label create approve-final --color 0E8A16 --description "Owner OK: render 1080p and schedule in Buffer" 2>/dev/null || true
+          for s in $(python3 -c "import json,os;print(*json.loads(os.environ['SLUGS']))"); do
+            # only videos whose preview release exists
+            gh release view "video-$s-preview" >/dev/null 2>&1 || { echo "no preview for $s"; continue; }
+            python3 scripts/pipeline.py review-body "$s" > body.md
+            gh issue create --title "Review: $s" --body-file body.md
+            python3 scripts/pipeline.py set "$s" previewed
+          done
+          git config user.name "pipeline[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add brain/week-plan.json && { git diff --cached --quiet || { git commit -m "Pipeline: previews ready, review issues opened" && git push origin HEAD:main; }; }
