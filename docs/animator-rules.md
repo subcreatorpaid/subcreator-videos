@@ -47,7 +47,7 @@ by its number ("break M3 at 0:12"). Frames are at 30 fps. **Enforced** says wher
 ## W - Workflow
 - W1. Beat table first (line, seconds, graphic, hero, trigger word, hold, SFX). Wait for the owner's OK.
 - W2. Stills next: Actions > "Animate video" > mode `stills` gives one frame per beat at its answer moment. Wait for the OK.
-- W3. Full render (mode `full`), then 2 self-review passes on the contact sheet (a frame every 1.5 s) against these rules, fix, re-render.
+- W3. Review render at 360p (mode `preview`, owner rule 29 Oct 2026): 2 self-review passes on the contact sheet against these rules, fix, re-preview, then send it to the owner. Repeat for every round of notes. The final 1080p render (mode `full`, video + 3 hook clips) runs ONCE, only after the owner OKs the last preview. Never 4K.
 - W4. On a change, check only the changed beats with stills, never a whole new render.
 - W5. Every owner note becomes a numbered rule here. Never "make it better": say what and by how much.
 - W6. Deliver: the MP4, the 3 hook clips, the contact sheet, the cue sheet (`<slug>_cue.md`) and every choice made without asking.
