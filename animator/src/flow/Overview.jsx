@@ -8,11 +8,11 @@ import React from 'react';
 import {AbsoluteFill, useCurrentFrame, staticFile} from 'remotion';
 import {FONT} from '../Short';
 import {Logo} from '../graphics';
-import {expo, expoIn, spring, kf, mix, clamp01, camera, Rise, typedCount, Cursor, useTimes, hash} from './kit';
+import {expo, expoIn, inOut, spring, kf, mix, clamp01, camera, Rise, typedCount, Cursor, useTimes, hash} from './kit';
 import {StreamArt, Avatar, Icon, Check, BrandLogo} from './art';
 import {Burst, Pulse, Dust, Iridescent} from './Launch';
 
-const K = {bg: '#F5F5F2', ui: '#0E0E10', lime: '#CDF24F', soft: '#F1FBD0', mut: '#5F5E58', line: '#E2DFD7', red: '#D93A3A', card: '#1C1C1F'};
+const K = {bg: '#E3E3DB', ui: '#0E0E10', lime: '#CDF24F', soft: '#F1FBD0', mut: '#5F5E58', line: '#CFCEC4', red: '#D93A3A', card: '#1C1C1F'};
 const ART = {ink: '#0E0E10', a: '#CDF24F', b: '#FFFFFF', c: '#2E2E33', box: '#FFFFFF', rec: '#CDF24F', recInk: '#0E0E10'};
 const ORBIT = ['instagram', 'tiktok', 'youtube', 'spotify', 'etsy', 'amazon', 'fiverr', 'elevenlabs', 'kit', 'patreon', 'substack', 'gumroad', 'twitch', 'beehiiv', 'billo', 'kofi'];
 // the 16 stream guides on the site (site/data/streams), shown by the platform's own mark
@@ -30,12 +30,34 @@ const Cap = ({name, w = 980, y = 0, h, r = 0, style = {}}) => (
     <img src={staticFile('a_' + name + '.png')} style={{width: w, display: 'block', marginTop: -y}} />
   </div>
 );
+const CapBox = ({name, w = 900, h, x = 0, y = 0, sc = 1, style = {}}) => (
+  <div style={{width: w, height: h, overflow: 'hidden', position: 'relative', ...style}}>
+    <img src={staticFile('a_' + name + '.png')} style={{position: 'absolute', left: -x * sc, top: -y * sc, width: 1000 * sc}} />
+  </div>
+);
+// Sophisticated pointer (owner, 29 Oct): arrow with a lime halo, a short comet trail, a click ripple and an optional label chip.
+const Pointer = ({f, track, clicks = [], label, labelAt = 0}) => {
+  if (f < track[0][0] || f > track[track.length - 1][0] + 12) return null;
+  const at = (ff) => [kf(ff, track.map(([t, x]) => [t, x])), kf(ff, track.map(([t, , y]) => [t, y]))];
+  const [x, y] = at(f); const ck = clicks.find((c) => f >= c && f < c + 16); const t = ck === undefined ? -1 : (f - ck) / 16;
+  const appear = expo(f - track[0][0], 6);
+  return (<>
+    {[8, 5, 3].map((d, i) => { const [tx, ty] = at(f - d); return <div key={d} style={{position: 'absolute', left: tx - 8 + 4, top: ty - 8 + 4, width: 16 - i * 3, height: 16 - i * 3, borderRadius: '50%', background: K.lime, opacity: (0.18 + i * 0.16) * appear, zIndex: 59}} />; })}
+    {t >= 0 && <div style={{position: 'absolute', left: x + 4 - 20 - t * 50, top: y + 4 - 20 - t * 50, width: 40 + t * 100, height: 40 + t * 100, borderRadius: '50%', border: `${5 - t * 4}px solid ${K.lime}`, opacity: 1 - t, zIndex: 58}} />}
+    <div style={{position: 'absolute', left: x, top: y, zIndex: 60, opacity: appear, transform: `scale(${t >= 0 && t < 0.3 ? 0.82 : 1})`, transformOrigin: '4px 4px'}}>
+      <div style={{position: 'absolute', left: -26, top: -26, width: 72, height: 72, borderRadius: 36, background: K.lime, opacity: 0.45, filter: 'blur(10px)'}} />
+      <svg width="52" height="64" viewBox="0 0 27 33" style={{position: 'absolute', left: 0, top: 0, filter: 'drop-shadow(0 6px 8px rgba(0,0,0,0.35))'}}>
+        <path d="M2 2 L2 26 L8.5 20 L13 30 L17 28 L12.5 18.5 L21 18.5 Z" fill="#0E0E10" stroke="#fff" strokeWidth="2" strokeLinejoin="round" /></svg>
+      {label && f >= labelAt && <div style={{position: 'absolute', left: 46, top: 52, transform: `scale(${spring(f - labelAt, {w: 0.55, z: 0.55})})`, transformOrigin: '0 0'}}><Pill bg={K.ui} color="#fff" size={30} style={{border: `3px solid ${K.lime}`}}>{label}</Pill></div>}
+    </div>
+  </>);
+};
 const pop = (f, at, o = {w: 0.42, z: 0.6}) => spring(f - at, o);
 const Card = ({children, style = {}, dark}) => (
   <div style={{position: 'absolute', background: dark ? K.card : '#fff', borderRadius: 44, boxShadow: '0 30px 70px rgba(0,0,0,0.12)', fontFamily: FONT, ...style}}>{children}</div>
 );
 const Tile = ({name, size = 120, r = 30, logo = 0.62, bg = '#fff', style = {}}) => (
-  <div style={{width: size, height: size, borderRadius: r, background: bg, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 12px 28px rgba(0,0,0,0.13)', ...style}}>
+  <div style={{width: size, height: size, borderRadius: r, background: bg, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: `0 ${size * 0.14}px ${size * 0.34}px rgba(0,0,0,0.20), 0 2px 4px rgba(0,0,0,0.10), 0 0 ${size * 0.5}px rgba(205,242,79,0.55)`, ...style}}>
     {name === 'ugc' ? <StreamArt kind="ugc" size={size * 0.9} p={{...ART, a: '#fff', rec: K.ui, recInk: K.lime}} /> : <BrandLogo name={name} size={size * logo} />}
   </div>
 );
@@ -74,12 +96,13 @@ const S0 = ({f, W}) => {
     <Burst f={f} at={W(0, 'paid')} x={540} y={1240} n={18} r={460} />
     {/* brand mark with the 16 stream logos orbiting it */}
     {mark > 0 && <>
+      <div style={{position: 'absolute', left: 540 - 520, top: 860 - 520, width: 1040, height: 1040, borderRadius: '50%', opacity: mark * (0.85 + 0.15 * Math.sin(f / 9)), background: 'radial-gradient(circle, rgba(205,242,79,0.85) 0%, rgba(205,242,79,0.35) 38%, rgba(205,242,79,0) 70%)'}} />
       <svg width="900" height="900" style={{position: 'absolute', left: 90, top: 410, transform: `rotate(${f * 4}deg)`, opacity: mark}}>
         <circle cx="450" cy="450" r="420" stroke={K.lime} strokeWidth="12" fill="none" strokeDasharray="400 900" strokeLinecap="round" />
         <circle cx="450" cy="450" r="420" stroke={K.ui} strokeWidth="5" fill="none" strokeDasharray="80 1300" strokeDashoffset="-700" strokeLinecap="round" />
       </svg>
       {ORBIT.map((n, i) => { const p = expo(f - W(0, 'this') - i * 0.8, 14); const a = (i / 16) * Math.PI * 2 + f / 40; const R = 360 * p;
-        return <div key={i} style={{position: 'absolute', left: 540 + Math.cos(a) * R - 50, top: 860 + Math.sin(a) * R - 50, transform: `scale(${p}) rotate(${(1 - p) * 180}deg)`}}><Tile name={n} size={100} r={28} /></div>; })}
+        return <div key={i} style={{position: 'absolute', left: 540 + Math.cos(a) * R - 50, top: 860 + Math.sin(a) * R - 50, transform: `scale(${p}) rotate(${(1 - p) * 180}deg)`, filter: `drop-shadow(0 ${20 + Math.sin(a) * 8}px 18px rgba(14,14,16,0.22))`}}><Tile name={n} size={100} r={28} /></div>; })}
       <div style={{position: 'absolute', left: 540 - 150, top: 860 - 150, width: 300, height: 300, borderRadius: 80, background: K.ui, transform: `scale(${mark}) rotate(${(1 - mark) * -90}deg)`,
         display: 'flex', alignItems: 'center', justifyContent: 'center', color: K.lime, fontWeight: 900, fontSize: 200}}>S</div>
       <Pulse f={f} x={540} y={860} d={320} from={W(0, 'this') + 6} every={22} />
@@ -111,8 +134,8 @@ const S1 = ({f, W, B}) => {
           </div>
           <div style={{position: 'absolute', left: 260, top: 50, fontWeight: 900, fontSize: 76, color: r.red ? K.red : K.ui}}>{r.k}</div>
           <div style={{position: 'absolute', left: 262, top: 145, right: 40, fontWeight: 700, fontSize: 42, lineHeight: 1.2, color: K.mut}}>{r.t}</div>
-          {i === 0 && <div style={{position: 'absolute', left: 44, top: 260, display: 'flex', gap: 16, transform: `translateX(${-((f * 4) % 680)}px)`}}>
-            {[...ORBIT, ...ORBIT].map((n, j) => <Tile key={j} name={n} size={74} r={20} />)}</div>}
+          {i === 0 && <div style={{position: 'absolute', left: 24, right: 24, top: 236, height: 104, borderRadius: 30, background: 'linear-gradient(180deg, #D9F58A, #CDF24F)', boxShadow: 'inset 0 4px 14px rgba(0,0,0,0.18)', overflow: 'hidden'}}>
+            <div style={{position: 'absolute', left: 20, top: 14, display: 'flex', gap: 18, transform: `translateX(${-((f * 4) % 720)}px)`}}>{[...ORBIT, ...ORBIT].map((n, j) => <Tile key={j} name={n} size={76} r={22} />)}</div></div>}
           {i === 1 && <div style={{position: 'absolute', left: 262, top: 262, transform: `scale(${pop(f, W(1, 'official'), {w: 0.6, z: 0.5})}) rotate(-6deg)`}}>
             <Pill bg={K.lime} color={K.ui} size={38}><Check size={40} color={K.ui} />Source checked</Pill></div>}
           {i === 2 && <div style={{position: 'absolute', left: 262, top: 262}}><Pill bg="#FBE3E3" color={K.red} size={38}>Shown in every video</Pill></div>}
@@ -122,32 +145,23 @@ const S1 = ({f, W, B}) => {
   </>);
 };
 
-// ---------------------------------------------------------------- 2: who it's for
+// ---------------------------------------------------------------- 2: who it's for (any size; each guide shows the followers needed)
 const S2 = ({f, W, B}) => {
-  const z = W(2, 'zero'), top = W(2, '10000');
-  const v = kf(f, [[z - 2, 0], [top + 6, 1]]);
+  const ex = W(2, 'exactly'); const card = pop(f, ex - 22, {w: 0.36, z: 0.72}); const hl = expo(f - ex + 2, 10);
   return (<>
-    <div style={{position: 'absolute', left: 90, top: 250}}><Rise f={f} at={B(2) + 2} text="Made for" size={64} weight={800} font={FONT} color={K.mut} /></div>
-    <div style={{position: 'absolute', left: 90, top: 330, transform: `scale(${1 + 0.05 * Math.max(0, 1 - Math.abs(f - top - 2) / 7)})`, transformOrigin: 'left'}}>
-      <Rise f={f} at={z - 4} text={`0 – ${v >= 1 ? '10k' : fmt(Math.round(v * 10000))} followers`} size={100} weight={900} font={FONT} />
-    </div>
-    {/* slider */}
-    <div style={{position: 'absolute', left: 120, top: 760, width: 840, height: 24, borderRadius: 12, background: K.line}}>
-      <div style={{width: `${v * 100}%`, height: '100%', borderRadius: 12, background: K.lime}} />
-      <div style={{position: 'absolute', left: v * 840 - 44, top: -32, width: 88, height: 88, borderRadius: 44, background: K.ui, border: `8px solid ${K.lime}`}} />
-      {['0', '1k', '5k', '10k'].map((l, i) => <div key={l} style={{position: 'absolute', left: [0, 84, 420, 840][i] - 40, width: 80, textAlign: 'center', top: 70, fontFamily: FONT, fontWeight: 700, fontSize: 34, color: K.mut}}>{l}</div>)}
-      {[0.08, 0.3, 0.52, 0.74, 0.95].map((x, i) => { const p = v >= x ? pop(f, z + x * (top - z + 6)) : 0;
-        return <div key={i} style={{position: 'absolute', left: x * 840 - 55, top: -170 + Math.sin(f / 9 + i) * 8, transform: `scale(${p})`}}><Avatar size={110} hat={false} bg={i % 2 ? K.lime : '#fff'} /></div>; })}
-    </div>
-    {/* platforms */}
+    <div style={{position: 'absolute', left: 90, top: 250}}><Rise f={f} at={B(2) + 2} text="Made for every size" size={84} weight={900} font={FONT} /></div>
     {['instagram', 'tiktok', 'youtube'].map((n, i) => { const at = W(2, n); const p = pop(f, at - 4, {w: 0.5, z: 0.5});
-      return <div key={n} style={{position: 'absolute', left: 120 + i * 300, top: 980 + Math.sin(f / 10 + i * 2) * 10, transform: `scale(${p}) rotate(${(1 - p) * 40}deg)`}}>
-        <Tile name={n} size={240} r={64} logo={0.55} />
-        {p > 0.9 && f < at + 30 && <Pulse f={f} x={120} y={120} d={250} from={at} every={30} />}
+      return <div key={n} style={{position: 'absolute', left: 430 + (i - 1) * 300, top: 400 + Math.sin(f / 10 + i * 2) * 10, transform: `scale(${p}) rotate(${(1 - p) * 40}deg)`}}>
+        <Tile name={n} size={220} r={60} logo={0.55} />
+        {p > 0.9 && f < at + 30 && <Pulse f={f} x={110} y={110} d={230} from={at} every={30} />}
       </div>; })}
-    {/* learning alongside you */}
+    <Card style={{left: 90, top: 740, width: 900, height: 430, overflow: 'hidden', transform: `translateY(${(1 - card) * 900}px) rotate(${(1 - card) * -6}deg)`}}>
+      <CapBox name="stream" w={900} h={430} x={575} y={128} sc={2.05} />
+      <div style={{position: 'absolute', left: 14, top: 38, width: 872, height: 212, borderRadius: 26, background: 'rgba(205,242,79,0.42)', border: `5px solid ${K.ui}`, opacity: hl, transform: `scale(${mix(1.06, 1, hl)})`}} />
+    </Card>
+    <Pointer f={f} track={[[ex - 26, 900, 1500], [ex - 6, 700, 1000], [ex + 6, 560, 880], [ex + 60, 560, 880]]} clicks={[ex + 4]} label="Followers needed" labelAt={ex} />
     {(() => { const p = pop(f, W(2, 'learning') - 4); return (
-      <div style={{position: 'absolute', left: 90, top: 1330, display: 'flex', alignItems: 'center', gap: 24, transform: `scale(${p})`, transformOrigin: 'left center'}}>
+      <div style={{position: 'absolute', left: 90, right: 90, top: 1290, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 24, transform: `scale(${p})`}}>
         <div style={{transform: `rotate(${Math.sin(f / 6) * 6}deg)`}}><Avatar size={150} hat={false} /></div>
         <div style={{background: K.ui, color: '#fff', borderRadius: '44px 44px 44px 8px', padding: '30px 40px', fontFamily: FONT, fontWeight: 800, fontSize: 50}}>
           I'm learning <span style={{color: K.lime}}>alongside you.</span></div>
@@ -155,38 +169,57 @@ const S2 = ({f, W, B}) => {
   </>);
 };
 
-// ---------------------------------------------------------------- 3: the channel (a reel inside a phone)
+// ---------------------------------------------------------------- 3: the channel (UGC-style ads playing in a phone)
+const ADS = [
+  {bg: '#CDF24F', fg: '#0E0E10', art: 'bottle', hook: 'My new routine', cta: 'Shop now', tag: '$24'},
+  {bg: '#0E0E10', fg: '#CDF24F', art: 'phones', hook: 'Unboxing day', cta: 'Learn more', tag: '$79'},
+  {bg: '#FFFFFF', fg: '#0E0E10', art: 'mug', hook: 'Morning coffee, sorted', cta: 'Shop now', tag: '$18'},
+];
+const AdArt = ({kind, fg, acc}) => {
+  if (kind === 'bottle') return <svg width="260" height="360" viewBox="0 0 130 180"><rect x="48" y="6" width="34" height="26" rx="6" fill={fg} /><rect x="38" y="30" width="54" height="16" rx="5" fill={fg} opacity="0.7" /><rect x="22" y="44" width="86" height="128" rx="26" fill={acc} stroke={fg} strokeWidth="5" /><rect x="40" y="82" width="50" height="40" rx="8" fill={fg} /></svg>;
+  if (kind === 'phones') return <svg width="320" height="300" viewBox="0 0 160 150"><path d="M26 92 V70 A54 54 0 0 1 134 70 V92" stroke={fg} strokeWidth="12" fill="none" strokeLinecap="round" /><rect x="14" y="84" width="34" height="56" rx="14" fill={acc} stroke={fg} strokeWidth="5" /><rect x="112" y="84" width="34" height="56" rx="14" fill={acc} stroke={fg} strokeWidth="5" /></svg>;
+  return <svg width="300" height="300" viewBox="0 0 150 150"><path d="M30 50 H108 V104 A26 26 0 0 1 82 130 H56 A26 26 0 0 1 30 104 Z" fill={acc} stroke={fg} strokeWidth="6" strokeLinejoin="round" /><path d="M108 62 H122 A14 14 0 0 1 122 96 H108" stroke={fg} strokeWidth="6" fill="none" /><path d="M54 40 Q48 28 56 18 M72 40 Q66 28 74 18 M90 40 Q84 28 92 18" stroke={fg} strokeWidth="5" fill="none" strokeLinecap="round" /></svg>;
+};
+const AdClip = ({f, i, ad}) => {
+  const dark = ad.bg === '#0E0E10'; const acc = dark ? '#2E2E33' : ad.bg === '#FFFFFF' ? K.lime : '#FFFFFF';
+  return (
+    <div style={{position: 'absolute', left: 0, top: 0, width: 484, height: 1024, background: ad.bg, fontFamily: FONT, overflow: 'hidden'}}>
+      <div style={{position: 'absolute', left: 24, top: 58, display: 'flex', gap: 10}}><Pill bg={dark ? '#2E2E33' : K.ui} color={dark ? '#fff' : K.lime} size={22}>Sponsored</Pill></div>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 220 + Math.sin(f / 12 + i) * 14, display: 'flex', justifyContent: 'center', transform: `rotate(${Math.sin(f / 16 + i) * 3}deg)`}}><AdArt kind={ad.art} fg={ad.fg} acc={acc} /></div>
+      <div style={{position: 'absolute', right: 120, top: 200 + Math.cos(f / 9) * 6, transform: `scale(${spring(f - 14, {w: 0.5, z: 0.5})}) rotate(8deg)`}}><Pill bg={K.lime} color={K.ui} size={30} style={{border: `3px solid ${K.ui}`}}>{ad.tag}</Pill></div>
+      <div style={{position: 'absolute', left: 24, right: 24, top: 640, fontWeight: 900, fontSize: 46, color: ad.fg, lineHeight: 1.05}}>{ad.hook}</div>
+      <div style={{position: 'absolute', left: 24, top: 790, display: 'flex', alignItems: 'center', gap: 14}}><Avatar size={70} hat={false} /><div style={{fontWeight: 800, fontSize: 28, color: ad.fg}}>@creator</div></div>
+      <div style={{position: 'absolute', left: 24, right: 24, top: 890, height: 80, borderRadius: 40, background: dark ? K.lime : K.ui, color: dark ? K.ui : '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 34, transform: `scale(${1 + 0.03 * Math.sin(f / 5)})`}}>{ad.cta}</div>
+      <div style={{position: 'absolute', right: 20, top: 520, display: 'flex', flexDirection: 'column', gap: 28}}>{['star', 'play', 'link'].map((n) => <Icon key={n} name={n} size={44} color={ad.fg} />)}</div>
+    </div>
+  );
+};
 const S3 = ({f, W, B, E}) => {
   const ph = pop(f, B(3) + 2, {w: 0.36, z: 0.7});
-  const prog = clamp01((f - B(3)) / (E(3) - B(3)));
-  const SERIES = [['Stream of the Week', 40, 360, -5], ['Tools That Pay', 640, 520, 4], ['Myths + how-tos', 20, 1160, 3], ['Small Account Wins', 590, 1330, -4]];
+  const D = Math.max(70, (E(3) - B(3) - 12) / 3); const lt = f - B(3) - 8; const k = Math.max(0, Math.floor(lt / D)); const sw = clamp01((lt - (k + 1) * D + 12) / 12);
+  const yOff = -(Math.min(k, 2) * 1024 + (k < 2 ? inOut(sw * 12, 12) * 1024 : 0));
+  const SERIES = [['Stream of the Week', 30, 360, -5], ['Tools That Pay', 650, 520, 4], ['Myths + how-tos', 20, 1160, 3], ['Small Account Wins', 560, 1470, -4]];
   return (<>
     <div style={{position: 'absolute', left: 90, top: 230, display: 'flex', alignItems: 'center', gap: 16}}>
       <Rise f={f} at={B(3) + 2} text="The channel" size={84} weight={900} font={FONT} />
       {['instagram', 'tiktok', 'youtube'].map((n, i) => <span key={n} style={{transform: `scale(${pop(f, W(3, 'channel') + i * 3)})`, marginTop: -10}}><Logo name={n} size={60} /></span>)}
     </div>
-    <div style={{position: 'absolute', left: 280, top: 400, width: 520, height: 1060, borderRadius: 80, background: K.ui, padding: 18, transform: `translateY(${(1 - ph) * 1200}px) rotate(${(1 - ph) * 14 + Math.sin(f / 20) * 1.5}deg)`, boxShadow: '0 50px 100px rgba(0,0,0,0.25)'}}>
-      <div style={{position: 'relative', width: '100%', height: '100%', borderRadius: 64, background: K.card, overflow: 'hidden', fontFamily: FONT}}>
-        <div style={{position: 'absolute', left: 30, right: 30, top: 34, height: 8, borderRadius: 4, background: '#3A3A3E'}}><div style={{width: `${prog * 100}%`, height: '100%', borderRadius: 4, background: '#fff'}} /></div>
-        <div style={{position: 'absolute', left: 36, top: 80, transform: `scale(${pop(f, W(3, 'one') - 4)})`, transformOrigin: 'left'}}><Pill bg={K.lime} color={K.ui} size={26}>Income stream</Pill></div>
-        <div style={{position: 'absolute', left: 36, top: 150}}><Rise f={f} at={W(3, 'one')} text="UGC videos" size={66} weight={900} font={FONT} color="#fff" /></div>
-        <div style={{position: 'absolute', left: 90, top: 250, transform: `scale(${pop(f, W(3, 'verified') - 4)}) rotate(${Math.sin(f / 9) * 4}deg)`}}><StreamArt kind="ugc" size={300} p={ART} /></div>
-        <div style={{position: 'absolute', left: 36, top: 580}}>
-          <div style={{fontWeight: 700, fontSize: 28, color: '#A5A5A0', opacity: expo(f - W(3, 'pay') + 4, 8)}}>Pay</div>
-          <Money size={54} p={expo(f - W(3, 'pay') + 2, 10)}>$50–$400</Money>
+    <div style={{position: 'absolute', left: 280, top: 400, width: 520, height: 1060, borderRadius: 80, background: K.ui, padding: 18, transform: `translateY(${(1 - ph) * 1200}px) rotate(${(1 - ph) * 14 + Math.sin(f / 20) * 1.5}deg)`, boxShadow: '0 50px 100px rgba(0,0,0,0.3), 0 0 90px rgba(205,242,79,0.35)'}}>
+      <div style={{position: 'relative', width: '100%', height: '100%', borderRadius: 64, overflow: 'hidden', background: K.ui}}>
+        <div style={{position: 'absolute', left: 0, top: yOff, width: 484, height: 3072}}>
+          {ADS.map((ad, i) => <div key={i} style={{position: 'absolute', left: 0, top: i * 1024}}><AdClip f={f} i={i} ad={ad} /></div>)}
         </div>
-        <div style={{position: 'absolute', left: 36, top: 720, transform: `translateX(${(1 - expo(f - W(3, 'need') + 3, 10)) * -500}px)`}}><Pill bg="#2E2E33" size={30}><Check size={32} color={K.lime} />You need: 3 samples</Pill></div>
-        <div style={{position: 'absolute', left: 36, top: 820, transform: `translateX(${(1 - expo(f - W(3, 'catch') + 3, 10)) * -500}px) rotate(${f >= W(3, 'catch') ? Math.sin((f - W(3, 'catch')) / 3) * 4 * Math.exp(-(f - W(3, 'catch')) / 14) : 0}deg)`}}>
-          <Pill bg={K.red} size={30}>The catch: samples first</Pill></div>
-        {/* reel side buttons + rising hearts */}
-        <div style={{position: 'absolute', right: 22, top: 540, display: 'flex', flexDirection: 'column', gap: 30}}>{['star', 'play', 'link'].map((n) => <Icon key={n} name={n} size={46} color="#fff" />)}</div>
-        {Array.from({length: 6}, (_, i) => { const t = ((f - B(3) + i * 17) % 60) / 60; return <div key={i} style={{position: 'absolute', right: 30 + Math.sin(t * 6 + i) * 16, top: 520 - t * 360, opacity: (1 - t) * 0.9, transform: `scale(${0.6 + t * 0.6})`}}><Icon name="star" size={36} color={K.lime} /></div>; })}
+        <div style={{position: 'absolute', left: 30, right: 30, top: 24, height: 8, borderRadius: 4, background: 'rgba(120,120,120,0.45)'}}><div style={{width: `${clamp01((f - B(3)) / (E(3) - B(3))) * 100}%`, height: '100%', borderRadius: 4, background: '#fff'}} /></div>
       </div>
     </div>
     {SERIES.map(([t, x, y, r], i) => { const p = pop(f, W(3, 'short') + i * 4, {w: 0.5, z: 0.55});
-      return <div key={t} style={{position: 'absolute', left: x, top: y + Math.sin(f / 11 + i) * 10, transform: `scale(${p}) rotate(${r}deg)`, boxShadow: '0 16px 40px rgba(0,0,0,0.14)', borderRadius: 999}}>
+      return <div key={t} style={{position: 'absolute', left: x, top: y + Math.sin(f / 11 + i) * 10, transform: `scale(${p}) rotate(${r}deg)`, boxShadow: '0 16px 40px rgba(0,0,0,0.2)', borderRadius: 999}}>
         <Pill bg={i % 2 ? '#fff' : K.lime} color={K.ui} size={36}>{t}</Pill></div>; })}
-    <Burst f={f} at={W(3, 'pay')} x={420} y={1010} n={14} r={280} />
+    <div style={{position: 'absolute', left: 0, right: 0, top: 1590, display: 'flex', justifyContent: 'center', gap: 20}}>
+      <span style={{display: 'inline-block', transform: `scale(${pop(f, W(3, 'pay') - 3)})`}}><Money size={52}>$50–$400 a video</Money></span>
+      <span style={{display: 'inline-block', transform: `scale(${pop(f, W(3, 'catch') - 3)}) rotate(${f >= W(3, 'catch') ? Math.sin((f - W(3, 'catch')) / 3) * 4 * Math.exp(-(f - W(3, 'catch')) / 14) : 0}deg)`}}><Pill bg={K.red} size={46}>The catch</Pill></span>
+    </div>
+    <Burst f={f} at={W(3, 'pay')} x={540} y={1620} n={14} r={300} />
   </>);
 };
 
@@ -227,36 +260,66 @@ const S4 = ({f, W, B}) => {
   </>);
 };
 
-// ---------------------------------------------------------------- 6 + 7: AI Income Finder (dark cell)
-const LINES = ['I post Reels and TikToks,', '600 followers.', 'What can pay me?'];
+// ---------------------------------------------------------------- 6 + 7: AI Income Finder (dark cell): real capture + cursor scenarios, then the typed demo, then examples
+const LINES = ['I post Reels, TikToks', 'and YouTube Shorts,', '600 followers.'];
 const RES = [
-  {name: 'Etsy templates', pay: '$8.60 of a $10 sale', logo: 'etsy'},
-  {name: 'UGC videos', pay: '$50–$400 a video', logo: 'ugc', best: true},
-  {name: 'Fiverr gigs', pay: 'Fiverr keeps 20%', logo: 'fiverr'},
+  {name: 'Etsy templates', pay: 'Sell a file again and again', logo: 'etsy', key: 'etsy'},
+  {name: 'UGC videos', pay: '$50–$400 a video', logo: 'ugc', key: 'ugc'},
+  {name: 'YouTube Shopping', pay: 'Tag products in your videos', logo: 'youtube', key: 'youtube'},
 ];
+// chip positions in the capture (1000 px wide): [x, y, width, label]
+const SCEN = [
+  {a: [536, 364, 96, 'Instagram'], b: [559, 443, 142, 'Filming products'], res: 'UGC videos', logo: 'ugc'},
+  {a: [716, 364, 87, 'YouTube'], b: [727, 443, 178, 'Recommending things'], res: 'YouTube Shopping', logo: 'youtube'},
+  {a: [628, 364, 72, 'TikTok'], b: [562, 487, 134, 'Making templates'], res: 'Etsy templates', logo: 'etsy'},
+];
+const BTN = [601, 556];
 const S6 = ({f, W, B}) => {
   const head = pop(f, W(6, 'ai') - 6);
   const send = B(7); const sent = expo(f - send, 10);
-  const typed = (() => { let left = typedCount(f, W(6, 'tell') - 2, LINES.join('').length, 3, 2.3); return LINES.map((l) => { const s = l.slice(0, Math.max(0, left)); left -= l.length; return s; }); })();
+  const typeAt = W(6, 'type');
+  const typed = (() => { let left = typedCount(f, W(6, 'reels') - 2, LINES.join('').length, 3, 2.1); return LINES.map((l) => { const s = l.slice(0, Math.max(0, left)); left -= l.length; return s; }); })();
   const pick = W(7, 'picks') - 4; const ringOut = expoIn(f - pick + 6, 8);
   const ringIn = expo(f - send - 2, 12);
   const n = Math.min(16, Math.round(16 * clamp01((f - send - 6) / Math.max(8, pick - send - 10))));
-  const cards = spring(f - pick, {w: 0.42, z: 0.66}); const lift = expo(f - W(7, 'best') + 3, 8);
+  const cards = spring(f - pick, {w: 0.42, z: 0.66});
   const comp = {x: mix(90, 230, sent), y: mix(560, 300, sent), w: mix(900, 760, sent), h: mix(400, 230, sent)};
-  const capOut = expoIn(f - W(6, 'tell') + 6, 8);
+  const capOut = expoIn(f - typeAt + 4, 8);
+  // cursor scenarios on the real capture
+  const c0 = B(6) + 22, c1 = typeAt - 10; const SL = Math.max(54, (c1 - c0) / 3);
+  // capture is zoomed on the controls (right column of the panel): image px -> cell px
+  const ZX = 470, ZY = 100, ZS = 1.8, OX = 50, OY = 400 + 70; const sx = (x) => OX + (x - ZX) * ZS, sy = (y) => OY + (y - ZY) * ZS;
+  const track = [[c0 - 14, 900, 1500]]; const clicks = [];
+  SCEN.forEach((S, k) => { const t = c0 + k * SL; track.push([t + 0.2 * SL, sx(S.a[0]) - 8, sy(S.a[1]) - 6], [t + 0.4 * SL, sx(S.b[0]) - 8, sy(S.b[1]) - 6], [t + 0.58 * SL, sx(BTN[0]) - 8, sy(BTN[1]) - 6], [t + 0.9 * SL, sx(BTN[0]) + 60, sy(BTN[1]) + 80]); clicks.push(t + 0.2 * SL, t + 0.4 * SL, t + 0.58 * SL); });
+  const sc = Math.max(0, Math.min(2, Math.floor((f - c0) / SL))); const lt = f - c0 - sc * SL; const SS = SCEN[sc];
+  const chip = (c, on, key) => <div key={key} style={{position: 'absolute', left: (c[0] - ZX - c[2] / 2) * ZS, top: (c[1] - ZY - 20) * ZS, width: c[2] * ZS, height: 40 * ZS, borderRadius: 20 * ZS, background: on ? K.lime : '#222', border: on ? 'none' : '2px solid #444', color: on ? K.ui : '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: FONT, fontWeight: 700, fontSize: 15 * ZS, boxShadow: on ? '0 0 30px rgba(205,242,79,0.9)' : 'none'}}>{c[3]}</div>;
+  const res = clamp01((lt - 0.64 * SL) / 10);
   return (<>
-    {capOut < 1 && <div style={{position: 'absolute', left: 50, top: 420, width: 980, height: 1000, borderRadius: 40, overflow: 'hidden', boxShadow: '0 40px 100px rgba(0,0,0,0.5)', background: '#fff',
+    {capOut < 1 && <div style={{position: 'absolute', left: OX, top: 400, width: 980, height: 960, borderRadius: 40, overflow: 'hidden', boxShadow: '0 40px 100px rgba(0,0,0,0.5), 0 0 80px rgba(205,242,79,0.25)', background: '#222',
       transform: `translateY(${(1 - pop(f, B(6) + 4, {w: 0.34, z: 0.72})) * 1400 - capOut * 300}px) scale(${1 - capOut * 0.15}) rotate(${(1 - pop(f, B(6) + 4)) * 8}deg)`, opacity: 1 - capOut}}>
       <div style={{height: 70, background: '#EDEDE8', display: 'flex', alignItems: 'center', gap: 12, padding: '0 26px'}}>{[0, 1, 2].map((i) => <div key={i} style={{width: 20, height: 20, borderRadius: 10, background: i === 2 ? K.lime : '#C8C8C2'}} />)}
         <div style={{marginLeft: 16, flex: 1, height: 46, borderRadius: 23, background: '#fff', display: 'flex', alignItems: 'center', gap: 10, padding: '0 22px', fontFamily: FONT, fontWeight: 700, fontSize: 28, color: K.ui}}><Lock size={22} color={K.mut} />subcreatorpaid.com</div></div>
-      <Cap name="finder" w={980} y={0} h={930} />
+      <div style={{position: 'relative', width: 980, height: 890, overflow: 'hidden'}}>
+        <img src={staticFile('a_finder.png')} style={{position: 'absolute', left: -ZX * ZS, top: -ZY * ZS, width: 1000 * ZS}} />
+        {f >= c0 && <>
+          {chip(SCEN[0].a, false, 'd0')}{chip(SCEN[0].b, false, 'd1')}
+          {lt >= 0.2 * SL && chip(SS.a, true, 'a')}{lt >= 0.4 * SL && chip(SS.b, true, 'b')}
+          {lt >= 0.58 * SL && lt < 0.7 * SL && <div style={{position: 'absolute', left: (BTN[0] - ZX - 113) * ZS, top: (BTN[1] - ZY - 23) * ZS, width: 226 * ZS, height: 46 * ZS, borderRadius: 23 * ZS, boxShadow: '0 0 0 8px rgba(205,242,79,0.9), 0 0 40px rgba(205,242,79,0.9)'}} />}
+        </>}
+      </div>
     </div>}
+    {capOut < 1 && res > 0 && lt < SL && (
+      <div style={{position: 'absolute', left: 90, top: 1400, width: 900, height: 230, borderRadius: 44, background: K.lime, opacity: (1 - capOut) * res, transform: `translateY(${(1 - res) * 60}px) scale(${mix(0.94, 1, res)})`, display: 'flex', alignItems: 'center', gap: 34, padding: '0 40px', fontFamily: FONT, boxShadow: '0 0 90px rgba(205,242,79,0.7)'}}>
+        <div style={{width: 150, height: 150, borderRadius: 40, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 16px 30px rgba(0,0,0,0.25)'}}>{SS.logo === 'ugc' ? <StreamArt kind="ugc" size={130} p={{...ART, a: K.lime, rec: K.ui, recInk: K.lime}} /> : <BrandLogo name={SS.logo} size={96} />}</div>
+        <div><div style={{fontWeight: 800, fontSize: 30, color: K.ui, letterSpacing: 3}}>BEST MATCH</div><div style={{fontWeight: 900, fontSize: 58, color: K.ui, marginTop: 6}}>{SS.res}</div></div>
+      </div>)}
+    {capOut < 1 && <div style={{opacity: 1 - capOut}}><Pointer f={f} track={track} clicks={clicks} /></div>}
     <div style={{position: 'absolute', left: 90, top: 250, display: 'flex', alignItems: 'center', gap: 22, transform: `scale(${head})`, transformOrigin: 'left', opacity: 1 - sent}}>
-      <div style={{width: 110, height: 110, borderRadius: 32, background: K.lime, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><Icon name="spark" size={64} color={K.ui} /></div>
+      <div style={{width: 110, height: 110, borderRadius: 32, background: K.lime, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 40px rgba(205,242,79,0.7)'}}><Icon name="spark" size={64} color={K.ui} /></div>
       <div><div style={{fontWeight: 900, fontSize: 64, color: '#fff'}}>AI Income Finder</div><div style={{marginTop: 4}}><Pill bg={K.lime} color={K.ui} size={30}>Free</Pill></div></div>
     </div>
     {/* composer -> sent bubble */}
-    <div style={{position: 'absolute', left: comp.x, top: comp.y, width: comp.w, height: comp.h, transform: `scale(${pop(f, W(6, 'tell') - 10, {w: 0.45, z: 0.7})})`}}>
+    <div style={{position: 'absolute', left: comp.x, top: comp.y, width: comp.w, height: comp.h, transform: `scale(${pop(f, typeAt - 10, {w: 0.45, z: 0.7})})`}}>
       {sent < 0.6 && <div style={{opacity: 1 - sent * 1.6}}><Iridescent f={f} w={comp.w} h={comp.h} r={48} /></div>}
       <div style={{position: 'absolute', inset: 0, borderRadius: 48, background: sent > 0.5 ? K.lime : '#fff'}} />
       <div style={{position: 'absolute', left: mix(54, 40, sent), top: mix(54, 30, sent), fontFamily: FONT, fontWeight: 700, fontSize: mix(56, 46, sent), lineHeight: 1.3, color: K.ui}}>
@@ -264,12 +327,12 @@ const S6 = ({f, W, B}) => {
       </div>
       {sent < 0.3 && <div style={{position: 'absolute', right: 34, bottom: 34, width: 100, height: 100, borderRadius: 50, background: K.ui, transform: `scale(${f >= send - 3 && f < send + 3 ? 0.85 : 1})`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: K.lime, fontSize: 56, fontWeight: 900}}>↑</div>}
     </div>
-    {sent < 1 && [[W(6, 'post'), 90, 1040, -4, 'p'], [W(6, 'followers'), 420, 1200, 4, 'n']].map(([at, x, y, r, k], i) => { const p = pop(f, at - 2, {w: 0.5, z: 0.55}); const fly = expoIn(f - send + 2, 8);
-      return <div key={k} style={{position: 'absolute', left: mix(x, 400, fly), top: mix(y + Math.sin(f / 9 + i) * 8, 400, fly), transform: `scale(${p * (1 - fly)}) rotate(${r}deg)`}}>
-        <Pill bg={k === 'n' ? K.lime : '#fff'} color={K.ui} size={46}>{k === 'p' ? <><Logo name="instagram" size={48} /><Logo name="tiktok" size={48} />Reels + TikToks</> : <>{count(f, at - 2, 600, 14)} followers</>}</Pill></div>; })}
+    {sent < 1 && [[W(6, 'reels'), 90, 1010, -4, 'p'], [W(6, '600'), 480, 1190, 4, 'n']].map(([at, x, y, r, k], i) => { const p = pop(f, at - 2, {w: 0.5, z: 0.55}); const fly = expoIn(f - send + 2, 8);
+      return <div key={k} style={{position: 'absolute', left: mix(x, 400, fly), top: mix(y + Math.sin(f / 9 + i) * 8, 400, fly), transform: `scale(${p * (1 - fly)}) rotate(${r}deg)`, boxShadow: '0 0 40px rgba(205,242,79,0.45)', borderRadius: 999}}>
+        <Pill bg={k === 'n' ? K.lime : '#fff'} color={K.ui} size={44}>{k === 'p' ? <><Logo name="instagram" size={46} /><Logo name="tiktok" size={46} /><Logo name="youtube" size={46} />Reels · TikTok · YouTube</> : <>{count(f, at - 2, 600, 14)} followers</>}</Pill></div>; })}
     {/* thinking ring with the 16 streams */}
     {f >= send && f < pick + 12 && <>
-      <div style={{position: 'absolute', left: 540 - 160, top: 1000 - 160, width: 320, height: 320, borderRadius: 160, background: '#1E1E21', border: `14px solid ${K.lime}`, transform: `scale(${ringIn * (1 - ringOut)})`,
+      <div style={{position: 'absolute', left: 540 - 160, top: 1000 - 160, width: 320, height: 320, borderRadius: 160, background: '#1E1E21', border: `14px solid ${K.lime}`, transform: `scale(${ringIn * (1 - ringOut)})`, boxShadow: '0 0 90px rgba(205,242,79,0.6)',
         display: 'flex', alignItems: 'center', justifyContent: 'center', color: K.lime, fontWeight: 900, fontSize: 130}}>{n}</div>
       <svg width="520" height="520" style={{position: 'absolute', left: 280, top: 740, transform: `rotate(${f * 10}deg) scale(${ringIn * (1 - ringOut)})`}}>
         <circle cx="260" cy="260" r="240" stroke={K.lime} strokeWidth="12" fill="none" strokeDasharray="320 1200" strokeLinecap="round" /></svg>
@@ -280,56 +343,57 @@ const S6 = ({f, W, B}) => {
         <div style={{height: 22, borderRadius: 11, background: '#2A2A2D', marginTop: 18, overflow: 'hidden'}}><div style={{width: `${(n / 16) * 100}%`, height: '100%', background: K.lime}} /></div>
       </div>
     </>}
-    {/* results: three cards, the best match lifts */}
-    {f >= pick && RES.map((c, i) => { const l = c.best ? lift : 0; const x = 540 + (i - 1) * 330;
+    {/* examples: the best match hops between three different streams */}
+    {f >= pick && RES.map((c, i) => { const at = W(7, c.key) - 3; const nxt = RES[i + 1] ? W(7, RES[i + 1].key) - 3 : 1e9; const l = expo(f - at, 9) * (1 - expo(f - nxt, 9)); const x = 540 + (i - 1) * 330;
       return (
-        <div key={c.name} style={{position: 'absolute', left: x - 150, top: 780 - l * 70 + Math.sin(f / 9 + i) * 8, width: 300, transform: `perspective(1200px) rotateY(${(i - 1) * -14 * (1 - l * (c.best ? 1 : 0))}deg) scale(${cards * (c.best ? 1 + l * 0.22 : 1 - lift * 0.1)})`, opacity: c.best ? 1 : 1 - lift * 0.45, zIndex: c.best ? 2 : 1}}>
-          {c.best && l > 0.5 && <Pulse f={f} x={150} y={210} d={360} from={W(7, 'best')} every={20} />}
-          <div style={{borderRadius: 34, background: '#fff', overflow: 'hidden', fontFamily: FONT, boxShadow: '0 30px 60px rgba(0,0,0,0.4)'}}>
-            <div style={{height: 220, background: c.best ? K.lime : '#EDEDE8', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+        <div key={c.name} style={{position: 'absolute', left: x - 150, top: 780 - l * 70 + Math.sin(f / 9 + i) * 8, width: 300, transform: `perspective(1200px) rotateY(${(i - 1) * -14 * (1 - l)}deg) scale(${cards * (1 + l * 0.2)})`, opacity: 0.55 + l * 0.45, zIndex: l > 0.5 ? 2 : 1}}>
+          {l > 0.5 && <Pulse f={f} x={150} y={210} d={360} from={at} every={20} />}
+          <div style={{borderRadius: 34, background: '#fff', overflow: 'hidden', fontFamily: FONT, boxShadow: `0 30px 60px rgba(0,0,0,0.4), 0 0 ${l * 70}px rgba(205,242,79,0.8)`}}>
+            <div style={{height: 220, background: l > 0.5 ? K.lime : '#EDEDE8', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               {c.logo === 'ugc' ? <StreamArt kind="ugc" size={200} p={{...ART, a: '#fff', rec: K.ui, recInk: K.lime}} /> : <BrandLogo name={c.logo} size={120} />}</div>
-            <div style={{padding: '22px 24px'}}><div style={{fontWeight: 900, fontSize: 36, color: K.ui}}>{c.name}</div><div style={{fontWeight: 700, fontSize: 26, color: K.mut, marginTop: 8}}>{c.pay}</div></div>
+            <div style={{padding: '22px 24px'}}><div style={{fontWeight: 900, fontSize: 34, color: K.ui}}>{c.name}</div><div style={{fontWeight: 700, fontSize: 24, color: K.mut, marginTop: 8}}>{c.pay}</div></div>
           </div>
-          {c.best && <div style={{position: 'absolute', left: 0, right: 0, top: -70, textAlign: 'center', opacity: l, transform: `translateY(${(1 - l) * 20}px)`}}><Pill bg={K.ui} color={K.lime} size={30} style={{border: `3px solid ${K.lime}`}}>Best match</Pill></div>}
+          <div style={{position: 'absolute', left: 0, right: 0, top: -70, textAlign: 'center', opacity: l, transform: `translateY(${(1 - l) * 20}px)`}}><Pill bg={K.ui} color={K.lime} size={30} style={{border: `3px solid ${K.lime}`}}>Best match</Pill></div>
         </div>
       ); })}
-    <Burst f={f} at={W(7, 'best')} x={540} y={900} n={18} r={440} />
+    <Burst f={f} at={W(7, 'ugc')} x={540} y={900} n={18} r={440} />
     {(() => { const p = pop(f, W(7, 'first') - 4, {w: 0.5, z: 0.55}); return (
       <div style={{position: 'absolute', left: 0, right: 0, top: 1340, display: 'flex', justifyContent: 'center', transform: `translateY(${(1 - p) * 400}px) scale(${p})`}}>
-        <Pill bg={K.lime} color={K.ui} size={48}><Check size={52} color={K.ui} p={expo(f - W(7, 'first'), 10)} />First step: 3 sample videos</Pill></div>); })()}
+        <Pill bg={K.lime} color={K.ui} size={48}><Check size={52} color={K.ui} p={expo(f - W(7, 'first'), 10)} />Plus your first step</Pill></div>); })()}
   </>);
 };
 
-// ---------------------------------------------------------------- 8: tracker + tools
+// ---------------------------------------------------------------- 8: tools page (real capture + pointer)
 const S8 = ({f, W, B}) => {
-  const tr = pop(f, B(8) + 2); const tl = pop(f, W(8, 'tools') - 6);
+  const tl = pop(f, B(8) + 2, {w: 0.34, z: 0.72}); const fr = W(8, 'free'); const af = W(8, 'affiliate');
   return (<>
-    <div style={{position: 'absolute', left: 90, top: 230}}><Rise f={f} at={B(8) + 2} text="Free tools" size={84} weight={900} font={FONT} /></div>
-    <Card style={{left: 90, top: 380, width: 900, height: 560, overflow: 'hidden', transform: `translateX(${(1 - tr) * -1100}px) rotate(${(1 - tr) * -10}deg)`}}>
-      <Cap name="tracker" w={900} y={90} h={560} />
-      <div style={{position: 'absolute', right: 30, top: 30}}><Pill bg={K.lime} color={K.ui} size={34}>Income tracker · Free</Pill></div>
-      <div style={{position: 'absolute', left: 30, bottom: 30, transform: `scale(${pop(f, W(8, 'device') - 4, {w: 0.6, z: 0.5})})`, transformOrigin: 'left'}}><Pill bg={K.ui} color="#fff" size={34}><Lock size={36} color={K.lime} />Saved on your device only</Pill></div>
+    <div style={{position: 'absolute', left: 90, top: 230}}><Rise f={f} at={B(8) + 2} text="The tools page" size={84} weight={900} font={FONT} /></div>
+    <Card style={{left: 90, top: 380, width: 900, height: 860, overflow: 'hidden', transform: `translateY(${(1 - tl) * 1300}px) rotate(${(1 - tl) * 8}deg)`}}>
+      <CapBox name="tools" w={900} h={860} x={mix(0, 250, expo(f - fr + 30, 24))} y={mix(100, 175, expo(f - fr + 30, 24))} sc={mix(0.9, 1.15, expo(f - fr + 30, 24))} />
+      <div style={{position: 'absolute', left: 26, bottom: 26}}><Pill bg={K.lime} color={K.ui} size={32}>Every tool we checked</Pill></div>
     </Card>
-    <Card style={{left: 90, top: 1000, width: 900, height: 470, overflow: 'hidden', transform: `translateX(${(1 - tl) * 1100}px) rotate(${(1 - tl) * 10}deg)`}}>
-      <Cap name="tools" w={900} y={90} h={470} />
-      <div style={{position: 'absolute', right: 30, top: 30}}><Pill bg={K.lime} color={K.ui} size={34}>Tools page</Pill></div>
-      {['beehiiv', 'kit', 'elevenlabs', 'opusclip'].map((n, i) => { const p = pop(f, W(8, 'marked') - 6 + i * 3, {w: 0.5, z: 0.55});
-        return <div key={n} style={{position: 'absolute', left: 30 + i * 100, bottom: 24, transform: `scale(${p})`}}><Tile name={n} size={84} r={22} logo={0.62} /></div>; })}
-      <div style={{position: 'absolute', right: 30, bottom: 30, transform: `scale(${pop(f, W(8, 'free') - 2, {w: 0.6, z: 0.5})}) rotate(3deg)`}}><Pill bg={K.lime} color={K.ui} size={34} style={{border: `4px solid ${K.ui}`}}>Free plans marked</Pill></div>
-    </Card>
-    <Burst f={f} at={W(8, 'marked')} x={540} y={1400} n={14} r={360} />
+    <div style={{position: 'absolute', left: 0, right: 0, top: 1300, display: 'flex', justifyContent: 'center', gap: 26}}>
+      {['beehiiv', 'kit', 'elevenlabs', 'opusclip', 'skool'].map((n, i) => { const p = pop(f, W(8, 'tools') + 6 + i * 3, {w: 0.5, z: 0.55});
+        return <div key={n} style={{transform: `scale(${p}) translateY(${Math.sin(f / 9 + i) * 6}px)`}}><Tile name={n} size={130} r={34} logo={0.62} /></div>; })}
+    </div>
+    <div style={{position: 'absolute', left: 0, right: 0, top: 1500, display: 'flex', justifyContent: 'center', gap: 20}}>
+      <span style={{display: 'inline-block', transform: `scale(${pop(f, fr - 2, {w: 0.6, z: 0.5})}) rotate(-3deg)`}}><Pill bg={K.lime} color={K.ui} size={40} style={{border: `4px solid ${K.ui}`}}>Free plans marked</Pill></span>
+      <span style={{display: 'inline-block', transform: `scale(${pop(f, af - 2, {w: 0.6, z: 0.5})}) rotate(3deg)`}}><Pill bg={K.ui} color="#fff" size={40}>Affiliate links labelled</Pill></span>
+    </div>
+    <Pointer f={f} track={[[fr - 34, 960, 1500], [fr - 12, 800, 760], [fr + 2, 770, 640], [fr + 60, 770, 640]]} clicks={[fr + 2]} label="Free plan" labelAt={fr} />
+    <Burst f={f} at={fr} x={540} y={1400} n={14} r={360} />
   </>);
 };
 
 // ---------------------------------------------------------------- 9: the free guide (PDF book)
 const S9 = ({f, W, B}) => {
-  const b = pop(f, W(9, 'covers') - 2, {w: 0.32, z: 0.7}); const fan = expo(f - W(9, 'under') + 14, 16);
+  const b = pop(f, W(9, 'covers') - 2, {w: 0.32, z: 0.7}); const fan = expo(f - W(9, 'first') + 14, 16);
   const pages = ['ugc', 'etsy', 'patreon', 'tiktok', 'amazon'];
   const gOut = expoIn(f - W(9, 'covers') + 8, 10);
   return (<>
     {gOut < 1 && <div style={{position: 'absolute', left: 50, top: 400, width: 980, height: 760, borderRadius: 40, overflow: 'hidden', boxShadow: '0 40px 100px rgba(0,0,0,0.25)', background: '#fff',
       transform: `translateY(${(1 - pop(f, B(9) + 2, {w: 0.34, z: 0.72})) * 1300 - gOut * 400}px) scale(${1 - gOut * 0.2})`, opacity: 1 - gOut}}>
-      <Cap name="guide" w={980} h={760} />
+      <CapBox name="guide" w={980} h={760} x={0} y={60} sc={1.3} />
     </div>}
     <div style={{position: 'absolute', left: 90, top: 230}}><Rise f={f} at={B(9) + 2} text="Free guides" size={84} weight={900} font={FONT} /></div>
     <div style={{position: 'absolute', left: 290, top: 470, width: 500, height: 680, transform: `translateY(${(1 - b) * 1200}px) translateY(${Math.sin(f / 14) * 12}px)`}}>
@@ -347,10 +411,10 @@ const S9 = ({f, W, B}) => {
         <div style={{position: 'absolute', left: 50, bottom: 50}}><Pill bg={K.lime} color={K.ui} size={32}>Free PDF</Pill></div>
       </div>
     </div>
-    {(() => { const p = pop(f, W(9, 'under') - 3, {w: 0.55, z: 0.5}); return (
+    {(() => { const p = pop(f, W(9, 'first') - 3, {w: 0.55, z: 0.5}); return (
       <div style={{position: 'absolute', left: 0, right: 0, top: 1240, display: 'flex', justifyContent: 'center', transform: `scale(${mix(2, 1, p)}) rotate(${-4 + (1 - p) * 10}deg)`, opacity: clamp01(p * 2)}}>
-        <Pill bg={K.lime} color={K.ui} size={64} style={{border: `6px solid ${K.ui}`}}>Under 10k followers</Pill></div>); })()}
-    <Burst f={f} at={W(9, 'under')} x={540} y={1300} n={18} r={440} />
+        <Pill bg={K.lime} color={K.ui} size={64} style={{border: `6px solid ${K.ui}`}}>Step by step</Pill></div>); })()}
+    <Burst f={f} at={W(9, 'first')} x={540} y={1300} n={18} r={440} />
     <div style={{position: 'absolute', left: 0, right: 0, top: 1420, display: 'flex', justifyContent: 'center', opacity: expo(f - W(9, 'guide') + 2, 8)}}>
       <div style={{transform: `translateY(${Math.abs(Math.sin(f / 7)) * -16}px)`}}><Pill bg={K.ui} size={38}><span style={{color: K.lime, fontSize: 44}}>↓</span>Download free</Pill></div></div>
   </>);
@@ -397,7 +461,7 @@ const S10 = ({f, W, B}) => {
 // ---------------------------------------------------------------- 11: everything you get (real captures as thumbnails)
 const SERVICES = [
   ['Stream guides', '16 verified, with sources', 'streams', 'stream'], ['AI Income Finder', 'Your best match in seconds', 'finder', 'finder'], ['Income tracker', 'Saved on your device', 'tracker', 'tracker'],
-  ['Tools page', 'Free plans marked', 'tools', 'tools'], ['Free PDF guide', 'Every stream under 10k', 'guide', 'pdf'], ['Weekly email', 'One verified stream a week', null, 'weekly']];
+  ['Tools page', 'Free plans marked', 'tools', 'tools'], ['Free PDF guide', 'Every stream, step by step', 'guide', 'pdf'], ['Weekly email', 'One verified stream a week', null, 'weekly']];
 const S11a = ({f, W, B}) => (<>
   <div style={{position: 'absolute', left: 90, top: 230}}><Rise f={f} at={B(11) + 2} text="What you get" size={84} weight={900} font={FONT} /></div>
   <div style={{position: 'absolute', left: 90, top: 360 + 0}}><Pill bg={K.lime} color={K.ui} size={40}>All free</Pill></div>
@@ -426,8 +490,8 @@ const S11 = ({f, W, B}) => {
     </svg>
     <div style={{position: 'absolute', left: 90, top: 300}}><Rise f={f} at={B(12)} text="Our promise" size={56} weight={800} font={FONT} color="#8B8B86" /></div>
     {L.map((l, i) => { const p = pop(f, l.at - 3, {w: 0.55, z: 0.55}); if (p <= 0) return null; const shake = f - l.at < 8 ? Math.sin((f - l.at) * 2.6) * 10 * (1 - (f - l.at) / 8) : 0;
-      return <div key={i} style={{position: 'absolute', left: 90, top: 470 + i * 230, transform: `translateX(${shake}px) scale(${mix(1.8, 1, p)})`, transformOrigin: 'left center', opacity: clamp01(p * 2), fontFamily: FONT, fontWeight: 900, fontSize: 132, letterSpacing: -5, color: l.c}}>
-        {l.money ? <Money size={132}>{l.t}</Money> : l.t}</div>; })}
+      return <div key={i} style={{position: 'absolute', left: 90, top: 470 + i * 230, transform: `translateX(${shake}px) scale(${mix(1.8, 1, p)})`, transformOrigin: 'left center', opacity: clamp01(p * 2), fontFamily: FONT, fontWeight: 900, fontSize: 118, letterSpacing: -4, color: l.c}}>
+        {l.money ? <Money size={118}>{l.t}</Money> : l.t}</div>; })}
     <Burst f={f} at={W(12, 'real')} x={480} y={1060} n={20} r={480} />
   </>);
 };
@@ -468,24 +532,37 @@ export const Overview = ({beats = []}) => {
   const f = useCurrentFrame();
   const {B, W, E} = useTimes(beats);
   const nb = beats.length;
-  // camera: hold on each cell, whip (with a dip zoom) to the next one when its first line starts
+  // camera: hold on each cell; every move to the next cell uses its own transition (owner: "don't use the same transition")
   const centre = (c) => { const p = cellPos(c); return [p.x + 540, p.y + 960]; };
-  const track = [[0, 1, ...centre(0)]];
-  for (let i = 1; i < nb; i++) {
-    if (CELL[i] === CELL[i - 1]) continue;
-    const a = centre(CELL[i - 1]), b = centre(CELL[i]);
-    track.push([B(i) - 9, 1, ...a], [B(i) + 1, 0.62, (a[0] + b[0]) / 2, (a[1] + b[1]) / 2], [B(i) + 11, 1, ...b]);
-  }
-  const cam = camera(f, track);
-  const prev = camera(f - 1, track);
+  const TR = {1: 'whip', 2: 'drop', 3: 'roll', 4: 'pullback', 6: 'iris', 8: 'spin', 9: 'drop', 10: 'pullback', 11: 'whip', 12: 'roll', 13: 'iris'};
+  const TLEN = 22;
+  const back = (t) => 1 + 2.7 * Math.pow(t - 1, 3) + 1.7 * Math.pow(t - 1, 2);
+  const pose = (ff) => {
+    let last = null;
+    for (let i = 1; i < nb; i++) { if (CELL[i] !== CELL[i - 1] && ff >= B(i) - 9) last = i; }
+    if (last === null) { const [x, y] = centre(CELL[0]); return {x, y, z: 1, rot: 0, p: -1, type: 'none'}; }
+    const a = centre(CELL[last - 1]), b = centre(CELL[last]); const p = clamp01((ff - (B(last) - 9)) / TLEN); const type = TR[last] || 'whip'; const e = inOut(p * TLEN, TLEN); const sn = Math.sin(Math.PI * e);
+    const pos = (t) => [mix(a[0], b[0], t), mix(a[1], b[1], t)];
+    let x, y, z = 1, rot = 0;
+    if (type === 'iris') { [x, y] = p < 0.5 ? a : b; }
+    else if (type === 'drop') { [x, y] = pos(back(p)); z = 1 - 0.12 * sn; }
+    else { [x, y] = pos(e); }
+    if (type === 'whip') z = 1 - 0.38 * sn;
+    if (type === 'pullback') z = 1 - 0.7 * Math.pow(sn, 0.8);
+    if (type === 'roll') { z = 1 - 0.3 * sn; rot = (last % 2 ? 1 : -1) * 24 * sn; }
+    if (type === 'spin') { z = 1 - 0.5 * sn; rot = 360 * e; }
+    return {x, y, z, rot, p, type};
+  };
+  const cam = pose(f); const prev = pose(f - 1);
   const vy = cam.y - prev.y, vx = cam.x - prev.x;
-  const keys = [W(0, '10000'), W(0, 'paid'), W(2, '10000'), W(3, 'dollars'), W(5, '16'), W(7, 'best'), W(9, 'under'), W(12, 'real')];
+  const keys = [W(0, '10000'), W(0, 'paid'), W(2, 'exactly'), W(3, 'dollars'), W(5, '16'), W(7, 'best'), W(9, 'first'), W(12, 'real')];
   const punch = keys.reduce((s, w) => s + 0.035 * Math.max(0, 1 - Math.abs(f - w - 2) / 7), 0);
   const z = cam.z * (1 + punch); const cx = cam.x + Math.sin(f / 37) * 6, cy = cam.y + Math.cos(f / 43) * 8;
-  const skew = Math.max(-14, Math.min(14, vy * 0.03)); const rot = Math.max(-4, Math.min(4, vx * 0.012));
+  const skew = cam.type === 'whip' || cam.type === 'drop' ? Math.max(-14, Math.min(14, vy * 0.03)) : 0; const rot = cam.rot + (cam.type === 'whip' || cam.type === 'drop' ? Math.max(-4, Math.min(4, vx * 0.012)) : 0);
   const css = `translate(540px, 960px) rotate(${rot}deg) skewY(${skew}deg) scale(${z}) translate(${-cx}px, ${-cy}px)`;
+  const irisR = cam.type === 'iris' && cam.p >= 0 && cam.p < 1 ? 1100 * Math.sin(Math.PI * cam.p) : 0;
 
-  const SAFE = {s: 0.7, x: 92, y: 262};
+  const SAFE = {s: 0.7, x: 162, y: 262};
   const beat = Math.max(0, beats.findIndex((b, i) => f < E(i)) === -1 ? nb - 1 : beats.findIndex((b, i) => f < E(i)));
   const chapter = CHAPTERS.reduce((a, c, i) => (beat >= c[0] ? i : a), 0);
   const dark = DARK[CELL[beat]] && f > B(beat) + 1;
@@ -495,7 +572,7 @@ export const Overview = ({beats = []}) => {
   return (
     <AbsoluteFill style={{background: K.bg, overflow: 'hidden', fontFamily: FONT}}>
       <Dust f={f} />
-      <div style={{position: 'absolute', left: 0, right: 140, top: 168, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 18}}>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 168, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 18}}>
         <div style={{width: 66, height: 66, borderRadius: 18, background: K.ui, color: K.lime, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 44}}>S</div>
         <div style={{fontWeight: 800, fontSize: 46, color: K.ui, letterSpacing: -1}}>@subcreatorpaid</div>
       </div>
@@ -513,6 +590,7 @@ export const Overview = ({beats = []}) => {
               </div>
             ); })}
         </div>
+        {irisR > 8 && <div style={{position: 'absolute', left: 540 - irisR, top: 960 - irisR, width: irisR * 2, height: irisR * 2, borderRadius: '50%', background: K.lime, zIndex: 5}} />}
         {/* chapter pill + progress */}
         {beat < nb - 1 && (
           <div style={{position: 'absolute', left: 60, top: 60, right: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>

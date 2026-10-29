@@ -105,3 +105,10 @@ Order, no step skipped: 1) **storyboard sheet** (one still frame per scene with 
 he marks all scene changes in one message; 2) **360p review render** (preview.yml, `"preview_res": 360`) after the storyboard OK; 3) notes, re-render at 360p;
 4) **1080p final** (`"preview_res": 1080`) only after he says the review is done. Never render a later step before the earlier OK.
 Storyboard stills are local Remotion stills with estimated word times (no voice render needed); save as `<slug>_storyboard.png` next to the review files.
+
+### Overview film notes (owner review of storyboard v2, 29 Oct 2026) - apply to every flow film
+- G1. Everything centred: the Instagram safe box is centred in the frame (x 162, scale 0.7; still clear of the right-hand buttons) and the handle is centred on top.
+- G2. A slightly darker backdrop (#E3E3DB) so white panels never merge with it; logos get a lime glow + layered shadow for depth.
+- G3. A different transition for every scene change (whip, drop, roll, pull-back, spin, lime iris wipe); never the same one twice in a row.
+- G4. Use the sophisticated pointer (`Pointer` in `animator/src/flow/Overview.jsx`: halo, comet trail, click ripple, label chip) to draw attention; show real captures of the live site (`animator/previews/overview_site/`), not drawn mock-ups.
+- G5. Vary examples: never repeat the same stream name scene after scene; no "10k" claims unless the scene is about that fact.

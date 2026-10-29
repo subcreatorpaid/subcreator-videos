@@ -72,7 +72,7 @@
    ]
   },
   {
-   "say": "It's for creators with zero to [10,000|ten thousand] followers, on Instagram, TikTok and YouTube. I'm learning alongside you.",
+   "say": "It's for creators of every size, on Instagram, TikTok and YouTube. Every guide tells you exactly how many followers you need to start. I'm learning alongside you.",
    "show": {
     "type": "overview"
    },
@@ -80,10 +80,6 @@
     [
      0,
      "whip"
-    ],
-    [
-     "zero",
-     "count"
     ],
     [
      "instagram",
@@ -96,6 +92,10 @@
     [
      "youtube",
      "pop"
+    ],
+    [
+     "exactly",
+     "ding"
     ],
     [
      "learning",
@@ -200,31 +200,43 @@
    ]
   },
   {
-   "say": "The star is the free AI Income Finder, right on the site. Tell it what you post and how many followers you have.",
+   "say": "The star is the free AI Income Finder, right on the site. Pick your platform and what you enjoy, and watch it match you, again and again. Or just type it: Reels, TikToks and YouTube Shorts, 600 followers.",
    "show": {
     "type": "overview"
    },
    "sfx": [
     [
      0,
-     "whip"
+     "swoosh"
     ],
     [
      "ai",
      "glass"
     ],
     [
-     "tell",
+     "pick",
+     "click"
+    ],
+    [
+     "watch",
+     "ding"
+    ],
+    [
+     "type",
      "key"
     ],
     [
-     "followers",
+     "reels",
      "pop"
+    ],
+    [
+     "600",
+     "count"
     ]
    ]
   },
   {
-   "say": "It checks all [16|sixteen] streams, picks your best match, and gives you a first step.",
+   "say": "It checks all [16|sixteen] streams and picks your best match: maybe Etsy templates, UGC, or YouTube Shopping. Then it gives you a first step.",
    "show": {
     "type": "overview"
    },
@@ -238,12 +250,16 @@
      "count"
     ],
     [
-     "picks",
+     "etsy",
      "card"
     ],
     [
-     "best",
+     "ugc",
      "ding"
+    ],
+    [
+     "youtube",
+     "card"
     ],
     [
      "first",
@@ -252,7 +268,7 @@
    ]
   },
   {
-   "say": "There's a free income tracker that stays on your device, and a tools page with the free plans marked.",
+   "say": "There's a tools page with every creator tool we checked, free plans marked, and affiliate links labelled.",
    "show": {
     "type": "overview"
    },
@@ -262,25 +278,21 @@
      "whip"
     ],
     [
-     "tracker",
+     "tools",
      "card"
     ],
     [
-     "device",
-     "click"
-    ],
-    [
-     "tools",
-     "swipe"
-    ],
-    [
-     "marked",
+     "free",
      "pop"
+    ],
+    [
+     "affiliate",
+     "click"
     ]
    ]
   },
   {
-   "say": "Plus free guides. The Small Creator Income Guide covers every stream that works under [10k|ten thousand] followers.",
+   "say": "Plus free guides. The Small Creator Income Guide covers every stream, with pay ranges, requirements and the first week of steps.",
    "show": {
     "type": "overview"
    },
@@ -298,7 +310,7 @@
      "swipe"
     ],
     [
-     "under",
+     "first",
      "thud"
     ]
    ]
