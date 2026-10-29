@@ -38,7 +38,7 @@ CSS = r"""
 *{box-sizing:border-box}[hidden]{display:none!important}
 html{overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;overflow-x:clip;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);
- background-image:radial-gradient(900px 520px at 6% -6%,rgba(205,242,79,.28),transparent 70%),radial-gradient(900px 520px at 96% 4%,rgba(205,242,79,.16),transparent 70%);background-repeat:no-repeat}
+ background-image:radial-gradient(900px 520px at 6% -6%,rgba(46,125,79,.10),transparent 70%),radial-gradient(900px 520px at 96% 4%,rgba(217,58,58,.08),transparent 70%);background-repeat:no-repeat}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg)}
 a{color:inherit}img{max-width:100%}
 .wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -90,8 +90,8 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 @keyframes bob{50%{transform:translateY(-10px)}}@keyframes pulse2{50%{transform:scale(1.15);opacity:.2}}@keyframes float{50%{translate:0 -8px}}
 @keyframes rise{0%{bottom:20%;opacity:0}15%{opacity:.9}80%{opacity:.7}100%{bottom:100%;opacity:0}}
 .hero>*:not(.man){position:relative;z-index:1}
-@media(max-width:1100px){.hero{padding-top:190px}.man{width:150px;top:10px}.man.l{left:8%}.man.r{right:8%}.man .tag2{font-size:13px;padding:6px 9px}}
-@media(max-width:760px){.hero{padding-top:184px;overflow-x:clip}.man{width:158px;top:18px}.man .wg{padding:9px 10px;inset:20% 2% 10%}.wg small{font-size:8px}.wg .kv{font-size:11px}.wg .kv b{font-size:14px}.wg .pay{font-size:28px}.wg .sub{font-size:9px}.spark{height:22px}.man .coin{display:none}.man.l{left:0}.man.r{right:0}.man .tag2.t2{display:none}.man.r .tag2.t1{left:auto;right:0}.man.l .tag2.t1{left:30%}}
+@media(max-width:1100px){.hero{padding-top:56px}.man{width:150px;top:10px}.man.l{left:8%}.man.r{right:8%}.man .tag2{font-size:13px;padding:6px 9px}}
+@media(max-width:760px){.hero{padding-top:40px;overflow-x:clip}.man{width:158px;top:18px}.man .wg{padding:9px 10px;inset:20% 2% 10%}.wg small{font-size:8px}.wg .kv{font-size:11px}.wg .kv b{font-size:14px}.wg .pay{font-size:28px}.wg .sub{font-size:9px}.spark{height:22px}.man .coin{display:none}.man.l{left:0}.man.r{right:0}.man .tag2.t2{display:none}.man.r .tag2.t1{left:auto;right:0}.man.l .tag2.t1{left:30%}}
 @media(prefers-reduced-motion:reduce){.man *,.sman *,.belt .tr{animation:none!important}.dslide img{opacity:0!important}.dslide img:first-child{opacity:1!important}}
 .hero h1{font-weight:900;font-size:clamp(46px,9vw,118px);letter-spacing:-.045em;line-height:.95}
 .hero h1 em.s{display:inline-block;margin-top:.08em}
@@ -420,7 +420,7 @@ def build():
     stack = "".join(f'<div>{e(s["title"].split(" (")[0])} <span>{e(s["pay_short"])}</span></div>' for s in streams[:4])
     man = lambda side, img, c, t1, t2, coin: (f'<div class="man {side}" style="--c:{c}" aria-hidden="true"><span class="ring"></span><span class="halo"></span>'
                                              + "".join(f'<span class="coin">{coin}</span>' for _ in range(3)) + f'{GFX[img]}<span class="tag2 t1">{t1}</span><span class="tag2 t2">{t2}</span></div>')
-    home = (f'<section class="wrap hero">' + man("l", "loss", "var(--loss)", "$0 from views", "Waiting for 10k?", "✕") + man("r", "hero", "var(--lime)", "+$50 a video", "No 10k needed", "$") + f'<p class="eyebrow">For creators under 10k followers</p><h1 style="margin-top:18px">Small account.<br><em class="s m">Real income.</em></h1>'
+    home = (f'<section class="wrap hero">' + f'<p class="eyebrow">For creators under 10k followers</p><h1 style="margin-top:18px">Small account.<br><em class="s m">Real income.</em></h1>'
             f'<p class="bio">Sub-Creator Paid finds the ways small creators actually get paid, checks every number on the official page, and turns it into a short video and a step-by-step guide.</p>'
             f'<div class="ctas"><a class="btn primary" href="#finder">Find my income streams</a><a class="btn" href="#watch">Watch the latest videos</a></div>'
             f'<div class="cred"><span><b>{len(streams)}</b> income streams verified</span><span><b>USD</b> pay figures</span><span><b>Every</b> affiliate link disclosed</span></div>{hero_card}</section>'
