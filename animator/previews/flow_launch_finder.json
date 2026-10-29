@@ -6,17 +6,17 @@
  "audio": {
   "engine": "kokoro",
   "kokoro_voice": "am_michael+am_puck",
-  "speed": 1.1
+  "speed": 1.12
  },
- "gap": 0.3,
+ "gap": 0.25,
  "preview_res": 720,
  "style": "launch",
  "slug": "flow_launch_finder",
- "title": "The free AI Income Finder (launch film style, one palette)",
+ "title": "The free AI Income Finder (launch film, one palette, faster)",
  "type": "value",
  "beats": [
   {
-   "say": "You film cozy cooking, and you have [600|six hundred] followers. So what can actually pay you?",
+   "say": "Cozy cooking, [600|six hundred] followers. What can actually pay you?",
    "show": {
     "type": "launch"
    },
@@ -32,7 +32,7 @@
    ]
   },
   {
-   "say": "Type it into our free AI Income Finder. It checks [16|sixteen] verified streams.",
+   "say": "Ask our free AI Income Finder. It checks [16|sixteen] verified streams.",
    "show": {
     "type": "launch"
    },
@@ -52,7 +52,7 @@
    ]
   },
   {
-   "say": "Then it shows the ones that fit, and picks your best match.",
+   "say": "It shows what fits, and picks your best match.",
    "show": {
     "type": "launch"
    },
@@ -72,7 +72,7 @@
    ]
   },
   {
-   "say": "For you, that's UGC. Beginners usually charge [$50–$400|fifty to four hundred dollars] a video.",
+   "say": "For you: UGC. Beginners charge [$50–$400|fifty to four hundred dollars] a video.",
    "show": {
     "type": "launch"
    },
@@ -88,7 +88,7 @@
    ]
   },
   {
-   "say": "The catch: brands want samples first. So your first step is three sample videos.",
+   "say": "The catch: brands want samples first. Your first step: three sample videos.",
    "show": {
     "type": "launch"
    },
@@ -108,7 +108,7 @@
    ]
   },
   {
-   "say": "Comment FINDER and I'll send you the link. Tools I use are in my bio. Follow for more.",
+   "say": "Comment FINDER for the link. Tools I use are in my bio. Follow for more.",
    "show": {
     "type": "launch"
    },
