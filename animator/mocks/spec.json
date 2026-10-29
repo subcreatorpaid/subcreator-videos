@@ -1,0 +1,212 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "mock_styles",
+ "title": "5 style mocks (video 009 excerpt)",
+ "type": "mock",
+ "format": "",
+ "sources": [
+  {
+   "title": "Insense: UGC creator rates (Sep 2026)",
+   "url": "https://insense.pro/blog/ugc-creator-rates"
+  },
+  {
+   "title": "Lasso: Amazon affiliate commission rates",
+   "url": "https://getlasso.co/amazon-affiliate-commission-rate/"
+  },
+  {
+   "title": "Checkout Page: Etsy fees",
+   "url": "https://checkoutpage.com/blog/etsy-fees"
+  },
+  {
+   "title": "ElevenLabs docs: voice payouts",
+   "url": "https://elevenlabs.io/docs/eleven-creative/voices/payouts"
+  },
+  {
+   "title": "Wise: how to get paid on Fiverr (20% fee, clearance)",
+   "url": "https://wise.com/us/blog/how-to-get-paid-on-fiverr"
+  }
+ ],
+ "finder_stream": null,
+ "beats": [
+  {
+   "say": "Zero followers? You can still get paid. Five income streams with no follower minimum, and the catch.",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "red": [
+     "zero"
+    ],
+    "chips": [
+     [
+      "zero",
+      "0 followers",
+      "red"
+     ],
+     [
+      "five",
+      "5 streams",
+      null
+     ],
+     [
+      "catch",
+      "+ the catch",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "zero",
+     "thud"
+    ],
+    [
+     "five",
+     "pop"
+    ],
+    [
+     "catch",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "One: UGC. Brands pay you to film videos they run as ads. Beginners usually charge [$50|fifty] to [$400|four hundred dollars] a video.",
+   "show": {
+    "type": "stat_cards",
+    "title": "UGC \u00b7 BEGINNER RATES",
+    "green": [
+     "$50",
+     "$400"
+    ],
+    "cards": [
+     [
+      "$50",
+      "$50",
+      "per video"
+     ],
+     [
+      "$400",
+      "$400",
+      "per video",
+      true
+     ]
+    ],
+    "source": "Insense, Sep 2026"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "$50",
+     "card"
+    ],
+    [
+     "$400",
+     "card"
+    ],
+    [
+     "$400",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Two: Amazon Associates. Most categories pay about three to four and a half percent. So a [$40|forty dollar] item earns you about [$1.80|a dollar eighty].",
+   "show": {
+    "type": "calc",
+    "title": "Amazon Associates",
+    "green": [
+     "$1.80"
+    ],
+    "rows": [
+     [
+      "$40",
+      "Item price",
+      "$40",
+      null
+     ],
+     [
+      "percent",
+      "Commission",
+      "4.5%",
+      "\u00d7"
+     ]
+    ],
+    "result": [
+     "$1.80",
+     "You earn",
+     1.8,
+     "$",
+     "",
+     2
+    ]
+   },
+   "sfx": [
+    [
+     "$40",
+     "pop"
+    ],
+    [
+     "percent",
+     "pop"
+    ],
+    [
+     "$1.80",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: zero followers means nobody to push sales to yet. Each stream starts slow and needs real work before it pays.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "slow",
+      "Starts slow",
+      true
+     ],
+     [
+      "work",
+      "Needs real work",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "slow",
+     "whip"
+    ],
+    [
+     "work",
+     "whip"
+    ]
+   ]
+  }
+ ]
+}
