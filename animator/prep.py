@@ -196,7 +196,8 @@ for f in ("Inter-Black.otf", "Inter-ExtraBold.otf", "Inter-Bold.otf", "Inter-Med
     p = HERE.parent / "fonts" / f
     if p.exists(): shutil.copy(p, pub / f)
 props = {"slug": spec["slug"], "handle": spec.get("handle", "@subcreatorpaid"), "fps": FPS, "total": total, "beats": beats,
-         "captions": spec.get("captions", True), "thumb": spec.get("thumb", {}), "style": spec.get("style", "")}
+         "captions": spec.get("captions", True), "thumb": spec.get("thumb", {}), "style": spec.get("style", ""),
+         "title": spec.get("title", ""), "look": spec.get("look", "v5")}
 (HERE / "props.json").write_text(json.dumps(props, indent=1))
 
 # W2: one still per beat at its answer moment (18 frames before the beat ends, when everything is still)

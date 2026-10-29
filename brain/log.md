@@ -36,3 +36,4 @@ One line per run: `YYYY-MM-DD HH:MM | role | what was done | needs owner`
 2026-10-27 09:25 | creator | repo made public by owner (free Actions); Guard checks green on GitHub incl. live checks; all 36 paused videos rendered on GitHub in 17 min and copied into 02-videos (105/105 have video.mp4); Project Index rebuilt | review the 36 new videos
 2026-10-27 09:35 | researcher | Video 001 first ~15 h: YT 14 views (33.7% viewed), IG 19 views, TikTok 0 views; 0 followers. Hook is the first fix; TikTok post may be suppressed | owner: check the TikTok post isn't flagged in the app
 2026-10-29 06:45 | researcher | website check: 76 visits/84 views since launch (24h: 4), 1 real subscriber (28 Oct, maybe owner), 0 real comments | connect beehiiv so sign-ups get emails
+2026-10-29 07:07 | creator | Look v5 restyle from Hammad's 5 reference reels (animator Story, rules L1-L5); video 009 rendered at 240p for review | Hammad: OK or notes on the v5 look before any re-render

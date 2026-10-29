@@ -477,17 +477,154 @@ const Subs = ({beats, handle}) => {
   </>);
 };
 
-export const Story = ({beats = [], handle = '@subcreatorpaid', total}) => (
+// ---------- look v5 (29 Oct 2026, from the owner's 5 reference reels): the story plays inside ONE centred stage card
+// on a fine grid that fades out at the edges; the spoken line builds word by word as a headline ABOVE the card (older
+// words fade to grey, money words get a green box, loss words a red box); a mono kicker at the top, a beat tracker under
+// the card and the handle at the bottom. Spec "look": "v4" keeps the old full-frame layout with bottom subtitles.
+const STAGE = {x: 108, y: 430, w: 864, h: 1050, s: 0.8, src: 120}; // source frame y 120..1432 is shown in the card
+const GREY = '#A3A199';
+
+const chunkWords = (beats) => {
+  const all = []; beats.forEach((b, bi) => (b.words || []).forEach((w) => all.push({...w, bi, red: (b.show.red || []).map(clean), green: (b.show.green || []).map(clean)})));
+  const chunks = []; let cur = [];
+  all.forEach((w, i) => {
+    const prev = all[i - 1];
+    if (cur.length && (cur.length >= 7 || (cur.length >= 3 && /[.,:;?!]$/.test(prev.w)) || w.bi !== prev.bi || w.f - prev.f > 16)) { chunks.push(cur); cur = []; }
+    cur.push(w);
+  });
+  if (cur.length) chunks.push(cur);
+  for (let i = chunks.length - 1; i >= 0; i--) if (chunks[i].every((x) => !/\w/.test(x.w))) { if (i > 0) chunks[i - 1].push(...chunks[i]); chunks.splice(i, 1); }
+  return chunks;
+};
+
+const Headline = ({beats, total}) => {
+  const f = useCurrentFrame();
+  const dk = darkAt(beats, total, f); const INK = mixHex(C.ink, '#F6F5F1', dk); const OLD = mixHex(GREY, '#6E6C66', dk);
+  const chunks = React.useMemo(() => chunkWords(beats), [beats]);
+  let ci = -1; chunks.forEach((c, i) => { if (f >= c[0].f - 3) ci = i; });
+  if (ci < 0) return null;
+  const ch = chunks[ci];
+  const shown = ch.filter((w) => f >= w.f - 3);
+  const newest = shown.length - 1;
+  return (
+    <div style={{position: 'absolute', left: 70, right: 70, top: 176, height: 228, display: 'flex', alignItems: 'flex-end', justifyContent: 'center'}}>
+      <div style={{textAlign: 'center', fontFamily: FONT, fontSize: 66, lineHeight: 1.18, letterSpacing: -1}}>
+        {ch.map((w, i) => {
+          const t = f - w.f + 3;
+          if (t < 0 || !/\w/.test(w.w)) return null; // lone punctuation never shows on its own
+          const c = clean(w.w); const txt = String(w.w).replace(/\*/g, '');
+          const box = w.red.includes(c) ? RED : w.green.includes(c) ? C.acc : /^[A-Z]{2,}[.,!?:]?$/.test(txt) && !/^AI\W?$/.test(txt) ? C.ink : null; // comment keywords (all caps) get an ink box
+          const inn = ease(t, 6);
+          const age = i < newest - 1 ? ease(f - (shown[i + 2] ? shown[i + 2].f : f), 8) : 0; // two words later it fades to grey
+          const style = {display: 'inline-block', marginRight: 16, opacity: inn, transform: `translateY(${(1 - inn) * 14}px)`, filter: `blur(${(1 - inn) * 6}px)`,
+            fontWeight: box ? 900 : 800, color: box ? '#fff' : age > 0.5 ? OLD : INK};
+          if (!box) return <span key={i} style={style}>{txt}</span>;
+          const wipe = ease(t - 2, 7);
+          return (
+            <span key={i} style={{...style, position: 'relative', padding: '0 14px'}}>
+              <span style={{position: 'absolute', inset: '4px 0 2px 0', borderRadius: 14, background: box, transform: `scaleX(${wipe})`, transformOrigin: 'left center',
+                boxShadow: `0 10px 34px ${box === RED ? 'rgba(217,58,58,0.35)' : box === C.acc ? 'rgba(46,125,79,0.35)' : 'rgba(21,21,21,0.25)'}`}} />
+              <span style={{position: 'relative', color: wipe > 0.4 ? '#fff' : box}}>{txt}</span>
+            </span>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+const Kicker = ({title, dk = 0}) => (
+  <div style={{position: 'absolute', left: 0, right: 0, top: 128, textAlign: 'center', fontFamily: '"DejaVu Sans Mono", "Courier New", monospace', fontSize: 27, color: mixHex('#8E8C84', '#9C9A92', dk), letterSpacing: 1}}>
+    <span style={{display: 'inline-block', width: 12, height: 12, borderRadius: 6, background: C.acc, marginRight: 14, verticalAlign: 'middle', boxShadow: '0 0 14px rgba(46,125,79,0.6)'}} />
+    {'// ' + String(title || 'sub-creator paid').toLowerCase()}
+  </div>
+);
+
+const Tracker = ({beats, total}) => {
+  const f = useCurrentFrame();
+  const n = beats.length; const W = 420; const gap = 8; const seg = (W - gap * (n - 1)) / n;
+  return (
+    <div style={{position: 'absolute', left: (1080 - W) / 2, top: 1508, width: W, height: 10, display: 'flex', gap}}>
+      {beats.map((b, i) => {
+        const a = b.from; const z = i + 1 < n ? beats[i + 1].from : total;
+        const p = Math.min(1, Math.max(0, (f - a) / Math.max(1, z - a)));
+        const loss = (b.show.red || []).length && !(b.show.green || []).length;
+        return (
+          <div key={i} style={{width: seg, height: 10, borderRadius: 5, background: '#E6E3DA', overflow: 'hidden'}}>
+            <div style={{width: `${p * 100}%`, height: '100%', borderRadius: 5, background: p >= 1 ? '#B9B6AC' : loss ? RED : C.ink}} />
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+// Dark "spotlight" flip (reels 2, 4, 5): the page turns ink with a light cone on the catch / warning beats
+// (show.type "catch" or show.dark), the card stays white so the scene reads the same.
+const isDark = (b) => b && (b.show.dark || b.show.type === 'catch');
+const darkAt = (beats, total, f) => {
+  let d = 0;
+  beats.forEach((b, i) => {
+    if (!isDark(b)) return;
+    const a = b.from - 4; const z = i + 1 < beats.length ? beats[i + 1].from - 4 : total + 99;
+    d = Math.max(d, Math.min(ease(f - a, 10), 1 - ease(f - z, 10)));
+  });
+  return d;
+};
+const mixHex = (a, b, t) => '#' + [1, 3, 5].map((k) => Math.round(parseInt(a.slice(k, k + 2), 16) * (1 - t) + parseInt(b.slice(k, k + 2), 16) * t).toString(16).padStart(2, '0')).join('');
+
+const beatAt = (beats, f) => { let k = 0; beats.forEach((b, i) => { if (f >= b.from) k = i; }); return k; };
+
+const Stage = ({children, beats, total}) => {
+  const f = useCurrentFrame();
+  const k = beatAt(beats, f); const a = beats[k] ? beats[k].from : 0; const z = k + 1 < beats.length ? beats[k + 1].from : total;
+  const drift = interpolate(f, [a + 14, Math.max(a + 15, z - 18)], [1, 1.012], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}); // M4 slow push, P3 still at the end
+  const inn = ease(f + 6, 10); // frame 0 is already readable (H1); this only settles a 6-frame lift
+  return (
+    <div style={{position: 'absolute', left: STAGE.x, top: STAGE.y, width: STAGE.w, height: STAGE.h, borderRadius: 56, background: '#fff', overflow: 'hidden',
+      boxShadow: `0 40px 110px rgba(21,21,21,0.10), 0 10px 30px rgba(21,21,21,0.05), 0 0 0 2px #ECE9E1, 0 0 140px rgba(217,58,58,${0.35 * darkAt(beats, total, f)})`, transform: `scale(${drift * (0.98 + 0.02 * inn)})`}}>
+      <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 1920, transform: `scale(${STAGE.s}) translateY(${-STAGE.src}px)`, transformOrigin: '0 0'}}>
+        {children}
+      </div>
+      <div style={{position: 'absolute', inset: 0, borderRadius: 56, pointerEvents: 'none', background: 'radial-gradient(120% 70% at 50% 0%, rgba(255,255,255,0) 60%, rgba(21,21,21,0.03) 100%)'}} />
+    </div>
+  );
+};
+
+const scenesOf = (beats, total) => beats.map((b, i) => {
+  const start = Math.max(0, b.from - (i ? OV : 0));
+  const end = i + 1 < beats.length ? beats[i + 1].from : total;
+  const len = Math.max(1, end - start);
+  return <Sequence key={i} from={start} durationInFrames={len}><Scene b={b} i={i} start={start} len={len} last={i === beats.length - 1} /></Sequence>;
+});
+
+export const Story = ({beats = [], handle = '@subcreatorpaid', total, look = 'v4', title = ''}) => look === 'v5' ? (
+  <V5 beats={beats} handle={handle} total={total} title={title} />
+) : (
   <AbsoluteFill style={{background: C.bg, overflow: 'hidden', fontFamily: FONT, color: C.ink}}>
     <Fonts />
     <AbsoluteFill style={{backgroundImage: `linear-gradient(${C.line} 2px, transparent 2px), linear-gradient(90deg, ${C.line} 2px, transparent 2px)`, backgroundSize: '90px 90px', opacity: 0.35}} />
-    {beats.map((b, i) => {
-      const start = Math.max(0, b.from - (i ? OV : 0));
-      const end = i + 1 < beats.length ? beats[i + 1].from : total;
-      const len = Math.max(1, end - start);
-      return <Sequence key={i} from={start} durationInFrames={len}><Scene b={b} i={i} start={start} len={len} last={i === beats.length - 1} /></Sequence>;
-    })}
+    {scenesOf(beats, total)}
     <Subs beats={beats} handle={handle} />
     <Audio src={staticFile('voice.wav')} />
   </AbsoluteFill>
 );
+
+const V5 = ({beats, handle, total, title}) => {
+  const f = useCurrentFrame();
+  const dk = darkAt(beats, total, f);
+  return (
+  <AbsoluteFill style={{background: mixHex(C.bg, '#101010', dk), overflow: 'hidden', fontFamily: FONT, color: C.ink}}>
+    <Fonts />
+    <AbsoluteFill style={{backgroundImage: `linear-gradient(${mixHex(C.line, '#2A2A2A', dk)} 2px, transparent 2px), linear-gradient(90deg, ${mixHex(C.line, '#2A2A2A', dk)} 2px, transparent 2px)`, backgroundSize: '60px 60px', backgroundPosition: '30px 0',
+      opacity: 0.7, WebkitMaskImage: 'radial-gradient(70% 55% at 50% 50%, #000 30%, transparent 100%)', maskImage: 'radial-gradient(70% 55% at 50% 50%, #000 30%, transparent 100%)'}} />
+    <AbsoluteFill style={{opacity: dk, background: 'radial-gradient(60% 45% at 50% 30%, rgba(255,244,214,0.16), rgba(255,244,214,0) 70%)'}} />
+    <Kicker title={title} dk={dk} />
+    <Headline beats={beats} total={total} />
+    <Stage beats={beats} total={total}>{scenesOf(beats, total)}</Stage>
+    <Tracker beats={beats} total={total} />
+    <div style={{position: 'absolute', left: 0, right: 0, top: 1580, textAlign: 'center', fontFamily: FONT, fontWeight: 700, fontSize: 34, color: mixHex(C.ink, '#F6F5F1', dk), opacity: 0.55}}>{handle}</div>
+    <Audio src={staticFile('voice.wav')} />
+  </AbsoluteFill>
+  );
+};

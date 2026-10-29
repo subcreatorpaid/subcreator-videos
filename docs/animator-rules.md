@@ -70,3 +70,16 @@ Pick the beat types from the topic type, keep every rule above. Tag each idea wi
 | Comparison | versus, stack | quick alternation between the two sides |
 | Proof | shot with real public-page screenshots + step tracker | slower so people can read |
 Every week, compare saves and shares per topic type and shift the mix toward what works.
+
+## L - Look v5 (owner ask, 29 Oct 2026, from 5 reference reels)
+Default for `"style": "story"` videos; `"look": "v4"` in the spec brings back the old full-frame layout with bottom subtitles.
+Taken from the reels (layout and motion ideas only, no copied content): one centred hero card, the spoken line built word by
+word above it, a dark spotlight flip for the catch, a mono kicker and a progress tracker.
+- L1. The scene plays inside ONE white stage card (x 108-972, y 430-1480, radius 56, soft shadow, never a hard edge). Scenes are
+  drawn at 0.8 scale from source y 120. The card gets a slow 1.2% push per beat that stops 18 frames before the beat ends (M4, P3).
+- L2. Headline above the card replaces the bottom subtitles: up to 7 words, each word fades/blurs in 3 frames before it is
+  spoken; words two places back turn grey. Money words get a green box, loss words a red box, ALL-CAPS comment keywords an ink box.
+- L3. Kicker at y 128: `// <spec title>` in mono with a green dot. Beat tracker (one segment per beat) at y 1508; handle at y 1580.
+- L4. Background: 60 px grid fading out from the centre. Catch / warning beats (`"type": "catch"` or `"dark": true`) flip the
+  page to ink with a warm light cone and a red glow around the card; the card stays white.
+- L5. Brand stays: off-white, ink, green only for money, red for loss, the same face, real logos, soft glows.
