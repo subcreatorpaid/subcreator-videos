@@ -12,7 +12,7 @@ The AI finder and newsletter sign-up are Cloudflare Pages Functions in /function
 import glob, hashlib, html, json, os, shutil, datetime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "_site")
+OUT = os.environ.get("SITE_OUT") or os.path.join(HERE, "_site")
 D = lambda *p: os.path.join(HERE, "data", *p)
 cfg = json.load(open(D("config.json")))
 progs = {p["id"]: p for p in json.load(open(D("links.json")))["programs"]}
@@ -278,6 +278,8 @@ footer .fine{grid-column:1/-1;color:var(--muted);font-size:12px;border-top:1px s
 """
 
 # cache-busting version for site.css + site.js: changes whenever either file changes (static files are cached for a day)
+if os.environ.get("SITE_THEME"):  # look options for the owner to compare (site/themes.py)
+    import sys; sys.path.insert(0, HERE); from themes import THEMES; CSS += THEMES[os.environ["SITE_THEME"]]
 ASSET_V = hashlib.sha1((CSS + open(os.path.join(HERE, "site.js")).read()).encode()).hexdigest()[:10]
 
 def head(title, desc, path, extra=""):
