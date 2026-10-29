@@ -91,7 +91,7 @@ jobs:
           # render at 1/4 size (whole pixels), then scale down with Remotion's own ffmpeg (exact 9:16, even sizes)
           npx remotion render src/index.jsx Mock out/raw.mp4 --props=props.json --scale=0.25 --codec=h264 --crf=18 --concurrency=100%
           h=$(( RES * 16 / 9 / 2 * 2 ))
-          npx remotion ffmpeg -loglevel error -y -i out/raw.mp4 -vf "scale=$RES:$h:flags=lanczos,setsar=1" -c:v libx264 -crf 22 -c:a aac -b:a 96k -movflags +faststart \
+          npx remotion ffmpeg -loglevel error -y -i out/raw.mp4 -vf scale=$RES:$h -c:v libx264 -crf 22 -c:a aac -b:a 96k -movflags +faststart \
             "out/mock${{ matrix.n }}_${names[${{ matrix.n }}]}_${RES}p.mp4"
           rm out/raw.mp4
       - uses: actions/upload-artifact@v4
