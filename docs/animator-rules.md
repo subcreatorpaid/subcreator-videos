@@ -109,3 +109,12 @@ Full text: "Packaging and hook strategy" in `brain/brand.md`. Rules the beat tab
 - R5. Payoff + one takeaway, then the four-part ending. No "smash like".
 - R6. A visual cue (the beat's graphic) changes every 2-3 sentences, in line with P1.
 - R7. Any figure not yet verified carries `[CHECK: claim]` in the script draft; none may remain at render time (guard fails on a leftover marker in spec lines).
+
+## X - Motion style (owner ask, 30 Oct 2026, from a "Video Editing / Motion Breakdown" file and a style template)
+Code: `animator/src/flow/Motion.jsx`, spec `"style": "motion"` plus `"variant"` (`views` | `no10k` | `glass`); sample specs `animator/previews/flow_motion_*.json`; review with `preview.yml` (spec name, 360). Review copies and storyboards: `/mnt/project-files/05-style-and-voice/motion-sample/`.
+- X1. Brand never changes (owner, 30 Oct: "keep the branding same"): off-white `#F5F5F2`, ink `#0E0E10`, lime `#CDF24F`, Inter, red only for loss/the catch. The reference file's ochre and serif fonts are ignored; "glass" = frosted white cards with a lime glow on the off-white page, not a dark theme.
+- X2. One continuous vertical camera travel links all scenes (no hard cuts): spring with about 4% overshoot, zoom dip to 0.8 mid-move, slow sway. Scenes sit 2300 px apart in one world.
+- X3. Kinetic text rises from a mask line; cards float and tilt gently when idle; badges pop in on a spring; dotted lines draw on (trim path); radial burst for groups; one inverted flash cut into "The catch"; a lime circular mask closes onto the S mark at the end.
+- X4. Safe area as in F6 (box scaled 0.7 at 92,262, handle on top). Keep label text 46 px or bigger in scene space (it is scaled by 0.7 on screen).
+- X5. Add a new scene set by writing scene components and a `SETS` entry in Motion.jsx; the CTA guide label is per variant (do not reuse another video's guide title).
+- X6. Do not push to a claude/* branch without `[skip ci]` when only code changed: preview.yml then renders every spec; dispatch one spec by name instead.
