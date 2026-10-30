@@ -28,6 +28,9 @@ Approvals are asked in ONE place: `brain/status.json -> approvals`, shown on the
 - Sponsored content: "Ad"/"Sponsored" label + the platform's paid-partnership toggle.
 - Privacy: email list and comments in our own D1 database; unsubscribe always honoured; no selling data.
 
+## Video look: 3D accents (owner, 30 Oct 2026)
+- Videos may use 3D designs as accents: about 20-30% of scenes, object scenes only, never the whole video and never two in a row; same brand colours. Full rules: docs/animator-rules.md D1-D4.
+
 ## Budgets
 - vidIQ: max 25 credits a week (balance resets 14th of each month). Check `vidiq_balance` first; skip if under 10.
 - GitHub Actions renders: free tier; render only approved videos, max 12 a week.

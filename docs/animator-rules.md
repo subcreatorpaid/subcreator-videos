@@ -119,6 +119,12 @@ Code: `animator/src/flow/Motion.jsx`, spec `"style": "motion"` plus `"variant"` 
 - X5. Add a new scene set by writing scene components and a `SETS` entry in Motion.jsx; the CTA guide label is per variant (do not reuse another video's guide title).
 - X6. Do not push to a claude/* branch without `[skip ci]` when only code changed: preview.yml then renders every spec; dispatch one spec by name instead.
 
+## D - 3D accents (owner, 30 Oct 2026: "include 3D designs for animation, don't make the whole video 3D")
+- D1. 3D is an accent, never the whole video: about 20-30% of scenes (2-4 in a 30 s video), never two 3D scenes in a row. Use it on object scenes only (phone, money stack, coin, bar chart, lock, stamp, app card, browser). Typography scenes stay flat 2D, so kinetic type (Y5) is unchanged.
+- D2. Same brand in 3D: soft matte clay / glossy plastic look, rounded bevelled edges, 3/4 isometric view, soft top-left studio light, soft contact shadow, on the off-white `#F5F5F2` background with the faint dashed grid. Object colours only white, ink `#0E0E10` and lime exactly `#CDF24F` (red `#E5484D` only for loss). No dark theme, no chrome/metal, no photo-real, no neon, no people.
+- D3. Text stays readable: the big headline is flat 2D text above the 3D object; any text on the object is short and spelled exactly. Logos stay flat and sharp.
+- D4. Clip motion for 3D scenes: slow orbit 10-15 degrees or the object turning on its axis, a soft dolly-in, springy drop or bounce; text and logos never warp; same 0.6 s hold at the end. Join 2D and 3D scenes with the same colours and the usual 0.15 s fade or camera push so it feels like one video.
+
 ## Y - Flow prompt workflow (owner idea, 30 Oct 2026)
 Full text: `docs/flow-prompts.md`.
 - Y1. For premium motion the owner makes posters and clips in Google Flow; Claude writes the exact prompts and does the edit. Do not generate images with paid APIs without his OK.
