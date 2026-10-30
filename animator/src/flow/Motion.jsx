@@ -186,14 +186,59 @@ const Catch2 = ({f, B, W}) => (<>
       <div style={{width: 90, height: 90, borderRadius: 45, background: i ? K.red : K.lime, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>{i ? <span style={{fontWeight: 900, fontSize: 60, color: '#fff'}}>!</span> : <Check size={56} p={clamp01((f - at - 4) / 10)} />}</div>
       <div style={{fontWeight: 800, fontSize: 66}}>{label}</div></Card></Float></Pop>; })}
 </>);
+
+// ---- third sample: dark-mode glass UI + animated bar chart (Hammad's style template, 30 Oct 2026), script 002 condensed
+let GLASS = false; // set by Motion before the scenes render
+const G = ({w, h, children, style = {}, glow, dark}) => (
+  <div style={{width: w, height: h, borderRadius: 48, background: dark ? 'rgba(255,255,255,0.07)' : 'rgba(255,255,255,0.62)', border: dark ? '2px solid rgba(255,255,255,0.2)' : '2px solid rgba(255,255,255,0.95)', backdropFilter: 'blur(24px)', color: dark ? '#fff' : K.ui,
+    boxShadow: glow ? '0 0 80px rgba(205,242,79,0.55), 0 20px 50px rgba(14,14,16,0.12)' : '0 30px 60px rgba(14,14,16,0.14), inset 0 1px 0 #fff', fontFamily: FONT, ...style}}>{children}</div>
+);
+const GHook = ({f, B, W}) => {
+  const t = f - B(0); const n = Math.round(2400000 * expo(t - 4, 60));
+  return (<>
+    <div style={{position: 'absolute', left: 140, top: 520, width: 800, height: 800, borderRadius: 400, background: 'radial-gradient(circle, rgba(205,242,79,0.55), transparent 65%)', transform: `scale(${1 + Math.sin(f / 18) * 0.06})`}} />
+    <Ring f={f} x={540} y={900} at={B(0) + 2} d={820} />
+    <Pop f={f} at={B(0) + 2} style={{left: 140, top: 700}}><Float f={f} seed={1}><G w={800} h={400} glow style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+      <div style={{fontWeight: 900, fontSize: 130, letterSpacing: -5}}>{n.toLocaleString('en-US')}</div><div style={{fontWeight: 700, fontSize: 44, color: K.mut}}>views</div></G></Float></Pop>
+    <Rise text="Went viral." at={B(0) + 8} f={f} size={120} color={K.ui} style={{position: 'absolute', left: 90, top: 280, width: 900}} />
+    <Pop f={f} at={W(0, 'zero')} from={0.1} style={{left: 250, top: 1230, width: 580}}><div style={{background: K.red, color: '#fff', borderRadius: 40, textAlign: 'center', fontFamily: FONT, fontWeight: 900, fontSize: 170, letterSpacing: -6, boxShadow: '0 0 70px rgba(229,72,77,0.5)'}}>$0</div></Pop>
+  </>);
+};
+const GFans = ({f, B, W}) => (<>
+  <Rise text="Views don't pay first." at={B(1) + 6} f={f} size={96} color={K.ui} style={{position: 'absolute', left: 90, top: 250, width: 900}} />
+  {Array.from({length: 8}, (_, i) => { const x = ((i * 150 + 1200 - (f - B(1)) * 8) % 1250) - 100; return <div key={i} style={{position: 'absolute', left: x, top: 620 + (i % 2) * 40, opacity: 0.6}}><Dot size={100}  /></div>; })}
+  <div style={{position: 'absolute', left: 90, top: 905}}><Box><span style={{fontFamily: FONT, fontWeight: 900, fontSize: 150}}>Fans do.</span></Box></div>{false && <Rise text="Fans do." at={W(1, 'fans') - 2} f={f} size={170} color={K.ui} style={{position: 'absolute', left: 90, top: 900}} />}
+  {Array.from({length: 4}, (_, i) => <Pop key={i} f={f} at={W(1, 'fans') + 4 + i * 5} style={{left: 140 + i * 215, top: 1230}}><Float f={f} seed={i * 1.7}><Dot size={170} heart={i % 2 === 1} /></Float></Pop>)}
+</>);
+const BARS = [['Spotify', '100 listeners', 100, 'spotify', 'one'], ['YouTube fan funding', '500 subscribers', 500, 'youtube', 'five'], ['YouTube ad money', '1,000 subs + 10M views', 1000, 'youtube', 'ten']];
+const GChart = ({f, B, W}) => (<>
+  <Rise text="Fan money starts earlier." at={B(2) + 6} f={f} size={88} color={K.ui} style={{position: 'absolute', left: 90, top: 240, width: 900}} />
+  <G w={900} h={1020} style={{position: 'absolute', left: 90, top: 560, padding: 50, boxSizing: 'border-box'}}>
+    {BARS.map(([label, sub, v, logo, key], i) => { const at = W(2, key) || B(2) + 20 + i * 40; const p = expo(f - at, 26); const w = 120 + (v / 1000) * 600 * p;
+      return <div key={label} style={{position: 'absolute', left: 50, top: 70 + i * 300, opacity: clamp01((f - at + 6) / 6)}}>
+        <div style={{display: 'flex', alignItems: 'center', gap: 22}}><BrandLogo name={logo} size={64} /><div style={{fontWeight: 800, fontSize: 52}}>{label}</div></div>
+        <div style={{marginTop: 24, width: w, height: 90, borderRadius: 45, background: i === 2 ? K.ui : K.lime, boxShadow: i === 2 ? '0 14px 30px rgba(14,14,16,0.25)' : '0 0 50px rgba(205,242,79,0.55)'}} />
+        <div style={{marginTop: 14, fontWeight: 700, fontSize: 46, color: K.mut}}>{sub}</div></div>; })}
+  </G>
+</>);
+const GCatch = ({f, B, W}) => (<>
+  <Pop f={f} at={B(3) + 14} from={0.1} style={{left: 90, top: 240}}><div style={{background: K.red, color: '#fff', borderRadius: 30, padding: '8px 36px', fontFamily: FONT, fontWeight: 900, fontSize: 80}}>The catch</div></Pop>
+  <Rise text="Fans need a reason to pay." at={B(3) + 20} f={f} size={86} color="#fff" style={{position: 'absolute', left: 90, top: 440, width: 900}} />
+  {[['Bonus episodes', 'bonus'], ['Live chats', 'live'], ['Country + review rules', 'country']].map(([label, key], i) => { const at = W(3, key); return <Pop key={key} f={f} at={at} style={{left: 90, top: 840 + i * 270}}><Float f={f} seed={i}>
+    <G dark w={900} h={210} glow={false} style={{display: 'flex', alignItems: 'center', gap: 30, padding: '0 44px', boxSizing: 'border-box', border: `3px solid ${i === 2 ? K.red : K.lime}`}}>
+      <div style={{width: 90, height: 90, borderRadius: 45, background: i === 2 ? K.red : K.lime, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>{i === 2 ? <span style={{fontWeight: 900, fontSize: 60, color: '#fff'}}>!</span> : <Check size={56} p={clamp01((f - at - 4) / 10)} />}</div>
+      <div style={{fontWeight: 800, fontSize: 58}}>{label}</div></G></Float></Pop>; })}
+</>);
 const SETS = {
+  glass: {scenes: [GHook, GFans, GChart, GCatch, End], catchIdx: 3},
   views: {scenes: [Viral, Fans, Ypp, Ladder, Group, Catch, End], catchIdx: 5},
   no10k: {scenes: [Wait, Reframe, Proof, Catch2, End], catchIdx: 3},
 };
 
 
 export const Motion = ({beats = [], total = 300, variant = 'views'}) => {
-  const {scenes: SCENES, catchIdx} = SETS[variant] || SETS.views;
+  const {scenes: SCENES, catchIdx, dark: glassMode} = SETS[variant] || SETS.views;
+  GLASS = !!glassMode;
   const f = useCurrentFrame();
   const {B, W} = useTimes(beats);
   const N = SCENES.length;
@@ -208,19 +253,19 @@ export const Motion = ({beats = [], total = 300, variant = 'views'}) => {
   const dark = i >= catchIdx;
   // ---- end: circular mask closes onto the brand mark
   const endAt = total - 26; const close = clamp01((f - endAt) / 22);
-  const bg = K.bg;
+  const bg = glassMode ? K.ui : K.bg;
   return (
     <AbsoluteFill style={{background: bg, overflow: 'hidden', fontFamily: FONT}}>
       <div style={{position: 'absolute', left: 0, right: 140, top: 168, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 18}}>
-        <div style={{width: 66, height: 66, borderRadius: 18, background: K.ui, color: K.lime, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 44}}>S</div>
-        <div style={{fontWeight: 800, fontSize: 46, color: K.ui, letterSpacing: -1}}>@subcreatorpaid</div>
+        <div style={{width: 66, height: 66, borderRadius: 18, background: glassMode ? K.lime : K.ui, color: glassMode ? K.ui : K.lime, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 44}}>S</div>
+        <div style={{fontWeight: 800, fontSize: 46, color: glassMode ? '#fff' : K.ui, letterSpacing: -1}}>@subcreatorpaid</div>
       </div>
-      <div style={{position: 'absolute', left: 92, top: 262, width: 1080, height: 1920, transform: 'scale(0.7)', transformOrigin: '0 0', overflow: 'hidden', borderRadius: 60, background: K.bg, boxShadow: shadow}}>
-        <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 1920, transformOrigin: '0 0', filter: flash ? 'invert(1)' : 'none',
+      <div style={{position: 'absolute', left: 92, top: 262, width: 1080, height: 1920, transform: 'scale(0.7)', transformOrigin: '0 0', overflow: 'hidden', borderRadius: 60, background: bg, boxShadow: glassMode ? '0 0 60px rgba(205,242,79,0.15)' : shadow}}>
+        <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 1920, transformOrigin: '0 0', filter: flash && !glassMode ? 'invert(1)' : 'none',
           transform: `translate(540px, 960px) scale(${zoom}) translate(-540px, ${-camY + sway}px)`}}>
           {/* light backdrop with a faint grid, dark panel behind the last two scenes */}
-          <div style={{position: 'absolute', left: -400, top: -900, width: 1880, height: N * GAP + 1800, backgroundImage: 'linear-gradient(#E9E9E3 2px, transparent 2px), linear-gradient(90deg, #E9E9E3 2px, transparent 2px)', backgroundSize: '90px 90px'}} />
-          <div style={{position: 'absolute', left: -400, top: catchIdx * GAP - 120, width: 1880, height: (N - catchIdx) * GAP + 1600, background: K.ui}} />
+          <div style={{position: 'absolute', left: -400, top: -900, width: 1880, height: N * GAP + 1800, backgroundImage: `linear-gradient(${glassMode ? '#1C1C20' : '#E9E9E3'} 2px, transparent 2px), linear-gradient(90deg, ${glassMode ? '#1C1C20' : '#E9E9E3'} 2px, transparent 2px)`, backgroundSize: '90px 90px'}} />
+          <div style={{position: 'absolute', left: -400, top: catchIdx * GAP - 120, width: 1880, height: (N - catchIdx) * GAP + 1600, background: glassMode ? 'transparent' : K.ui}} />
           {Array.from({length: 22}, (_, d) => <div key={d} style={{position: 'absolute', left: hash(d) * 1080, top: hash(d + 7) * N * GAP - 200 + Math.sin(f / 30 + d) * 20, width: 10 + hash(d + 2) * 10, height: 10 + hash(d + 2) * 10, borderRadius: 20, background: K.lime, opacity: 0.7}} />)}
           {SCENES.map((S, k) => (Math.abs(k - i) <= 1 ? <div key={k} style={{position: 'absolute', left: 0, top: k * GAP, width: 1080, height: 1920}}><S f={f} B={B} W={W} guide={variant === 'no10k' ? 'Free creator income guide' : undefined} /></div> : null))}
         </div>
