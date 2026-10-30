@@ -3,7 +3,7 @@ Cheapest route to premium motion: Claude writes the script and the exact prompts
 
 ## Steps (one thread per video)
 1. Script from a fact-checked source (`videos/*/spec.json` or a `brain/` draft). Claude Opus writes new scripts; Gemini does the trend scan only.
-2. Scene table: time, voice line, on-screen words (1-4 per scene), hero object, motion, SFX.
+2. Scene table with as many scenes as possible (owner, 30 Oct: "as many scenes as possible to make animations fast"): a new scene every 1.5-3 s, about 10-14 scenes for 30 s, never fewer than 8, one idea and 1-4 words each, clips 2-4 s. Then: time, voice line, on-screen words (1-4 per scene), hero object, motion, SFX.
 3. IMAGE prompts, one per scene, 9:16, self-contained, and they carry ALL typography: every word spelled out, real brand names for logos, positions, colours, the exact brand look. Format: `[HEADER] [STYLE] <scene content list>` (see FLOW_IMAGE_PROMPTS_finder_launch_full.md). Ask for 3 variants.
 4. Owner sends the posters. Claude reviews each against the checks below and lists what to regenerate (optional).
 5. CLIP prompts (Frames to Video, audio OFF), one per poster, tailored to the actual image: "Keep this poster exactly, including all text and logos, add no new text", then the animation (spring overshoot, staggers, camera push 3-4%, heavy ease-out), then "last 0.6 s hold completely still". 3-6 s each.
