@@ -12,7 +12,7 @@ Uses: stream-scriptor (scripts), render-reel (spec format; read `.claude/skills/
 
 ## Stage A - Sunday drafts (unattended OK)
 For each post in week-plan (status "drafted"):
-0. Run on Claude Opus (`claude-opus-5-5`): scripts, hooks, titles, captions and storytelling are written here, from scratch, following the "Packaging and hook strategy" section of `brain/brand.md` (owner decision 30 Oct 2026; Gemini no longer drafts copy). Old Gemini drafts in `brain/drafts/` are reference only. Verify every number against its official page. Scene posters: write `image_prompts.json` next to the video and push it; `gemini-images.yml` renders them.
+0. Run on Claude Opus (`claude-opus-5-5`): scripts, hooks, titles, captions and storytelling are written here, from scratch, following the "Packaging and hook strategy" section of `brain/brand.md` (owner decision 30 Oct 2026; Gemini no longer drafts copy). Old Gemini drafts in `brain/drafts/` are reference only. Verify every number against its official page. Scene images: write Flow image prompts; Hammad makes them in Google Flow.
 1. Script: 3 hooks (from strategist) + spoken lines (`say`), 35-60 s, one idea per line, the catch stated, CTA per brand.md. Tool videos: what it does for a small creator, one real limit, a free alternative, "link in bio / subcreatorpaid.com/go/<id>", "Affiliate link" on screen.
 2. Render plan (score it with `python3 scripts/virality.py videos/<slug>`; aim 75+): list-video spec (`audio: {"engine": "kokoro"}`), best-fit beat types from the playbook, v4 styles where they help. Slug `YYYYMMDD_<short-name>`.
 3. Website data for income-stream posts: `site/data/streams/<slug>.json` draft (what, followers, pay, steps, catch, great_for, tools, sources, checked).

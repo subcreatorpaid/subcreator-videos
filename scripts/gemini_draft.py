@@ -3,7 +3,7 @@
   python3 scripts/gemini_draft.py scan   daily trend scan with Google Search -> brain/research/<date>_gemini_scan.md
 
 Scripts, hooks, titles, captions and storytelling are written by Claude Opus in Claude threads (owner decision 30 Oct 2026),
-not here. Posters from Flow image prompts: scripts/gemini_image.py.
+not here. Images are made by Hammad in Google Flow (the image API has no free tier on our key).
 
 Needs GEMINI_API_KEY (AI Studio key; a GitHub secret in Actions, never in the repo). Standard library only.
 Everything it writes is a DRAFT: nothing is posted, and every figure must still pass opportunity-check / guard
