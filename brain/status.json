@@ -1,16 +1,16 @@
 {
- "updated": "2026-10-29 07:50",
+ "updated": "2026-10-30 07:55",
  "updated_by": "secretary",
  "today": [
-  {
-   "task": "Check in the TikTok app that video 001 isn't flagged (it had 0 views while YouTube and Instagram got views)",
-   "link": "https://www.tiktok.com/@subcreatorpaid",
-   "mins": 2
-  },
   {
    "task": "Review the 36 new videos and say which post after 2 Nov (the posting queue runs out then)",
    "link": "https://claude.ai/artifact/BDkpce2TAqHhja1nM9bsKU",
    "mins": 20
+  },
+  {
+   "task": "Check in the TikTok app that video 001 isn't flagged (it had 0 views while YouTube and Instagram got views)",
+   "link": "https://www.tiktok.com/@subcreatorpaid",
+   "mins": 2
   },
   {
    "task": "Connect beehiiv to the website sign-up so new subscribers get the welcome email (1 real sign-up so far got none)",
@@ -39,6 +39,10 @@
   {
    "text": "Posting queue ends 2 Nov (video 008). Nothing is scheduled after that, and the week of 26 Oct stays cancelled until you say which videos go next.",
    "since": "2026-10-29"
+  },
+  {
+   "text": "Gemini daily trend scan failed on 30 Oct (step 'Draft with Gemini'); no scan today, web search used instead. Check the key/quota in GitHub if it fails again tomorrow.",
+   "since": "2026-10-30"
   }
  ],
  "pipeline": {
@@ -88,7 +92,7 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-10-29",
+  "checked": "2026-10-30",
   "pending_comments": 0,
   "subscribers": 1,
   "visits_since_launch": 76
