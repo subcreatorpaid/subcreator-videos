@@ -1,0 +1,56 @@
+name: Gemini posters
+
+# Scene posters from Flow image prompts (scripts/gemini_image.py, Gemini image API, secret GEMINI_API_KEY).
+# Runs when an image_prompts.json is pushed (any branch) or by Run workflow. The PNGs are committed back next to the
+# prompts (<dir>/posters/) and attached to the run as an artifact. Nothing is posted.
+on:
+  push:
+    paths: ["**/image_prompts.json"]
+  workflow_dispatch:
+    inputs:
+      file:
+        description: "path to image_prompts.json"
+        required: true
+      only:
+        description: "scene numbers, e.g. 1,4 (empty = all)"
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  posters:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Make posters
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          FILE: ${{ inputs.file }}
+          ONLY: ${{ inputs.only }}
+        run: |
+          files="$FILE"
+          [ -n "$files" ] || files=$(git diff --name-only HEAD~1 HEAD -- '*image_prompts.json')
+          [ -n "$files" ] || { echo "no image_prompts.json changed"; exit 0; }
+          for f in $files; do python3 scripts/gemini_image.py "$f" --only "$ONLY"; done
+          echo "$files" | xargs -n1 dirname | sed 's|$|/posters|' > posters_dirs.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: posters
+          path: "**/posters/"
+          if-no-files-found: ignore
+      - name: Commit posters back
+        run: |
+          git config user.name "gemini-posters[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          xargs git add < posters_dirs.txt
+          git diff --cached --quiet && exit 0
+          git commit -m "Gemini posters $(date -u +%Y-%m-%d) (review)"
+          git push origin HEAD:${{ github.ref_name }}

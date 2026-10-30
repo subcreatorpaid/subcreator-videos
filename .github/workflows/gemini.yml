@@ -1,21 +1,12 @@
-name: Gemini drafts
+name: Gemini trend scan
 
-# Cheap bulk drafting on the Gemini API (scripts/gemini_draft.py): trend scan and hooks/captions for queued ideas.
-# Results land on a gemini/<date> branch with a pull request; merging it is the owner's OK. Nothing is posted.
-# Schedule (owner's choice 29 Oct): trend scan every day 06:00 UTC. The Sunday drafts now run in weekly.yml (drafts + storyboard stills).
+# Cheap daily trend scan on the Gemini API (scripts/gemini_draft.py scan), every day 06:00 UTC or Run workflow.
+# Results land on a gemini/<date>-scan branch with a pull request; merging it is the owner's OK. Nothing is posted.
+# Scripts, hooks and captions are no longer drafted here: Claude Opus writes them in Claude threads (owner, 30 Oct).
 on:
   schedule:
     - cron: "0 6 * * *"
   workflow_dispatch:
-    inputs:
-      job:
-        description: "scan (trend scan) or drafts (hooks + captions)"
-        type: choice
-        options: [scan, drafts]
-        default: drafts
-      n:
-        description: "ideas to draft (drafts only)"
-        default: "5"
 
 permissions:
   contents: write
@@ -30,18 +21,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Draft with Gemini
+      - name: Trend scan with Gemini
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          JOB: ${{ inputs.job || 'scan' }}
-          N: ${{ inputs.n || '5' }}
-        run: python3 scripts/gemini_draft.py "$JOB" --n "$N"
+        run: python3 scripts/gemini_draft.py scan
       - name: Guard checks
         run: python3 scripts/guard.py --strict
       - name: Open a pull request for review
         env:
           GH_TOKEN: ${{ github.token }}
-          JOB: ${{ inputs.job || 'scan' }}
+          JOB: scan
         run: |
           [ -n "$(git status --porcelain)" ] || { echo "nothing new"; exit 0; }
           branch="gemini/$(date -u +%Y-%m-%d)-$JOB-${{ github.run_number }}"

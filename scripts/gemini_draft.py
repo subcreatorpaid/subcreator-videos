@@ -1,7 +1,9 @@
-"""Cheap bulk drafting with the Gemini API, so Claude runs only review and fact-check the results.
+"""Cheap daily trend scan with the Gemini API, so Claude runs only review and fact-check the results.
 
-  python3 scripts/gemini_draft.py scan            daily trend scan with Google Search -> brain/research/<date>_gemini_scan.md
-  python3 scripts/gemini_draft.py drafts [--n 5]  hooks + caption for the next queued ideas -> brain/drafts/<date>_gemini.{json,md}
+  python3 scripts/gemini_draft.py scan   daily trend scan with Google Search -> brain/research/<date>_gemini_scan.md
+
+Scripts, hooks, titles, captions and storytelling are written by Claude Opus in Claude threads (owner decision 30 Oct 2026),
+not here. Posters from Flow image prompts: scripts/gemini_image.py.
 
 Needs GEMINI_API_KEY (AI Studio key; a GitHub secret in Actions, never in the repo). Standard library only.
 Everything it writes is a DRAFT: nothing is posted, and every figure must still pass opportunity-check / guard
@@ -45,7 +47,7 @@ def ask(prompt, system, search=False, as_json=False):
 
 
 def house_rules():
-    return ("You draft content for Sub-Creator Paid, which teaches creators under 10k followers which income streams really pay, "
+    return ("You research for Sub-Creator Paid, which teaches creators under 10k followers which income streams really pay, "
             "with verified USD figures and the catch. Follow this brand book and these rules exactly.\n\n"
             + (ROOT / "brain/brand.md").read_text() + "\n\n" + (ROOT / "brain/rules.md").read_text())
 
@@ -65,53 +67,8 @@ def scan():
     return out
 
 
-def drafts(n):
-    ideas = json.loads((ROOT / "brain/ideas.json").read_text())["ideas"]
-    done = {it.get("title") for f in (ROOT / "brain/drafts").glob("*_gemini.json") for it in json.loads(f.read_text()).get("items", [])}
-    todo = [i for i in ideas if i.get("status") == "queued" and i["title"] not in done][:n]
-    if not todo: print("no queued ideas without a draft"); return None
-    joined = [p["id"] for p in json.loads((ROOT / "site/data/links.json").read_text())["programs"] if p.get("joined")]
-    prompt = (f"Draft short-form video copy for these {len(todo)} ideas:\n{json.dumps(todo, indent=1)}\n\n"
-              "Follow the section 'Packaging and hook strategy' of the brand book. "
-              "For each idea return an object with: rank, title, titles (3 options under 60 characters, each a curiosity loop using a loss "
-              "angle or a shortcut angle), favourite_title (index 0-2), cover ({image_prompt: one visual with conflict or contrast, "
-              "overlay_words: 2-4 words that never repeat the title}), hooks (3 different opening lines, max 12 words each: a big number, "
-              "a myth-bust, a question; each states the exact promise of the title with no intro), belief_challenge (one sentence that "
-              "says why the common belief is incomplete and promises a later payoff), rehooks (1-3 lines, one new question every 10-15 s "
-              "of a 60 s video), takeaway (one line, no 'smash like'), caption (max 600 characters, ends with the free-guide CTA and, if the idea has an affiliate, "
-              "the subcreatorpaid.com/go/<affiliate> link plus 'Affiliate link, I may earn a commission at no cost to you'), "
-              "hashtags (3-5), facts_to_verify (every number used, with the official page to check it on; mark each unverified figure [CHECK: claim] in "
-              "the text, and never invent statistics, studies or quotes). "
-              "Use ranges or labelled examples for money, never promises. Return a JSON array only.\n\n"
-              f"Affiliate ids we have joined (only link these): {', '.join(joined)}")
-    text, _ = ask(prompt, house_rules(), as_json=True)
-    try: items = json.loads(text)
-    except json.JSONDecodeError: sys.exit("Gemini returned invalid JSON:\n" + text[:500])
-    d = ROOT / "brain/drafts"; d.mkdir(exist_ok=True)
-    (d / f"{TODAY}_gemini.json").write_text(json.dumps({"made": TODAY, "by": "gemini", "status": "draft (needs review)", "items": items}, indent=1) + "\n")
-    md = [f"# Gemini drafts {TODAY} (DRAFT: check facts and brand rules before use)\n"]
-    for it in items:
-        md += [f"## {it.get('rank')}. {it.get('title')}", "**Hooks**"] + [f"- {h}" for h in it.get("hooks", [])]
-        t3 = it.get("titles", [])
-        if t3:
-            fav = it.get("favourite_title", 0)
-            md += ["", "**Titles**"] + [f"- {'* ' if i == fav else ''}{x}" for i, x in enumerate(t3)]
-            c = it.get("cover") or {}
-            md += ["", f"**Cover** {c.get('image_prompt', '')} | overlay: {' '.join(c.get('overlay_words', []))}"]
-        if it.get("belief_challenge"): md += ["", "**Belief challenge** " + it["belief_challenge"]]
-        if it.get("rehooks"): md += ["**Re-hooks**"] + [f"- {x}" for x in it["rehooks"]]
-        if it.get("takeaway"): md += ["**Takeaway** " + it["takeaway"]]
-        md += ["", "**Caption**", "", it.get("caption", ""), "", "**Hashtags** " + " ".join(it.get("hashtags", [])), "", "**Facts to verify**"]
-        md += [f"- {f.get('claim')} (check: {f.get('official_source') or f.get('source')})" if isinstance(f, dict) else f"- {f}"
-               for f in it.get("facts_to_verify", [])] + [""]
-    out = d / f"{TODAY}_gemini.md"; out.write_text("\n".join(md))
-    return out
-
-
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("job", choices=["scan", "drafts"])
-    ap.add_argument("--n", type=int, default=5, help="ideas to draft")
-    a = ap.parse_args()
-    out = scan() if a.job == "scan" else drafts(a.n)
-    if out: print(f"wrote {out.relative_to(ROOT)}")
+    ap.add_argument("job", choices=["scan"])
+    ap.parse_args()
+    print(f"wrote {scan().relative_to(ROOT)}")

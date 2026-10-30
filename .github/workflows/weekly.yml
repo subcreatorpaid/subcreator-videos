@@ -1,20 +1,16 @@
 name: Weekly batch (Sunday)
-run-name: "Weekly batch: drafts + storyboard stills"
+run-name: "Weekly batch: storyboard stills"
 
 # Step 1 of the weekly pipeline (no Claude needed). Sundays 07:00 UTC, or Run workflow.
-#   1. Gemini drafts hooks + captions for queued ideas (same script as before).
+#   1. Scripts, hooks and captions are already written by Claude Opus in the creator thread (no Gemini drafts since 30 Oct).
 #   2. Every post in brain/week-plan.json with status "drafted" and a videos/<slug>/spec.json gets storyboard stills
 #      (animate.yml, mode stills), all in parallel, so the whole week is reviewed together.
-#   3. One pull request: Gemini drafts + brain/storyboards/<date>.md (stills with the voice line of each scene).
+#   3. One pull request: brain/storyboards/<date>.md (stills with the voice line of each scene).
 # MERGING THAT PR IS THE OWNER'S OK for the 360p review renders (on-merge.yml). Nothing is posted.
 on:
   schedule:
     - cron: "0 7 * * 0"
   workflow_dispatch:
-    inputs:
-      n:
-        description: "ideas to draft"
-        default: "5"
 
 permissions:
   contents: write
@@ -36,20 +32,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Draft with Gemini (a missing key or API error must not block the stills)
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          N: ${{ inputs.n || '5' }}
-        run: python3 scripts/gemini_draft.py drafts --n "$N" || echo "::warning::Gemini drafts failed; continuing with stills"
       - id: pick
         run: echo "slugs=$(python3 scripts/pipeline.py pick drafted)" >> "$GITHUB_OUTPUT"
       - id: br
         run: |
-          branch="gemini/$(date -u +%Y-%m-%d)-weekly-${{ github.run_number }}"
-          git config user.name "gemini-drafts[bot]"
+          branch="weekly/$(date -u +%Y-%m-%d)-weekly-${{ github.run_number }}"
+          git config user.name "weekly-batch[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$branch"
-          git add brain/ && { git diff --cached --quiet || git commit -m "Gemini weekly drafts $(date -u +%Y-%m-%d) (needs review)"; }
           git push -u origin "$branch"
           echo "branch=$branch" >> "$GITHUB_OUTPUT"
 
@@ -87,10 +77,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          git config user.name "gemini-drafts[bot]"
+          git config user.name "weekly-batch[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add brain/ && { git diff --cached --quiet || git commit -m "Weekly storyboard $(date -u +%Y-%m-%d) (needs review)"; }
           git push origin HEAD
-          gh pr create --base main --head "${{ needs.drafts.outputs.branch }}" --title "Week storyboard + drafts $(date -u +%Y-%m-%d) (review)" \
-            --body "Hooks and captions drafted by Gemini, plus one still per scene with its voice line (brain/storyboards/). Check facts and the look. **Merging = your OK to render the 360p review copies**; nothing is posted. For changes, comment instead of merging." \
+          gh pr create --base main --head "${{ needs.drafts.outputs.branch }}" --title "Week storyboard $(date -u +%Y-%m-%d) (review)" \
+            --body "One still per scene with its voice line (brain/storyboards/). Check facts and the look. **Merging = your OK to render the 360p review copies**; nothing is posted. For changes, comment instead of merging." \
             || echo "Could not open the pull request (Settings > Actions > General > allow Actions to create pull requests). Branch is pushed."

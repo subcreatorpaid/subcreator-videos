@@ -1,0 +1,13 @@
+{
+ "note": "Test 30 Oct: scene 4 of the AI Income Finder launch film, both image models side by side.",
+ "header": "At the very top centre a small ink-black rounded square with a lime letter S, next to the text @subcreatorpaid in bold ink Inter.",
+ "style": "Premium editorial motion-graphic poster, 9:16 vertical 1080x1920, flat vector with one glossy 3D hero, only colours warm off-white #F5F5F2, ink #0E0E10 and lime #CDF24F, faint dashed grid, soft shadows, perfectly sharp crisp spelling-accurate text.",
+ "compare": true,
+ "scenes": [
+  {
+   "n": 4,
+   "name": "ugc_answer",
+   "prompt": "One large ink-black rounded card in the centre. Upper half lime panel with a glossy 3D smartphone filming itself on a tiny tripod with a ring light, small flying phone cards around it. Lower half dark panel: bold white title 'UGC videos', grey line 'Brands pay for videos they run as ads', big lime text '$50–$400 a video'. Above the card, bold ink headline 'For you: UGC'."
+  }
+ ]
+}
