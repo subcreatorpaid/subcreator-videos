@@ -1,0 +1,391 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v125_first_affiliate_sale",
+ "title": "Your first affiliate sale with no audience",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "No audience, no face on camera? Here's a checklist for your first affiliate sale, with the catch.",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "red": [
+     "audience"
+    ],
+    "chips": [
+     [
+      "audience",
+      "0 audience",
+      "red"
+     ],
+     [
+      "face",
+      "no face",
+      null
+     ],
+     [
+      "checklist",
+      "checklist",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "One: pick a marketplace. Digistore24 is free to join, and digital products there often show [70|seventy] to [85|eighty five] percent commissions.",
+   "show": {
+    "type": "page_card",
+    "url": "digistore24.com · affiliates",
+    "mark": "D24",
+    "title": "Free to join",
+    "checked": "Digistore24 blog · confirm on joining",
+    "bullets": [
+     [
+      "free",
+      "Free account",
+      true
+     ],
+     [
+      "commission",
+      "Digital products: often 70–85%",
+      true
+     ],
+     [
+      "promolink",
+      "One promolink per offer",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ]
+   ]
+  },
+  {
+   "say": "Two: vet the offer. Clear refund terms, a real product page, and no income promises.",
+   "show": {
+    "type": "page_card",
+    "url": "your checklist",
+    "mark": "Vet",
+    "title": "Vet before you promote",
+    "checked": "Our rules",
+    "bullets": [
+     [
+      "refund",
+      "Clear refund terms",
+      true
+     ],
+     [
+      "real",
+      "Real product page",
+      false
+     ],
+     [
+      "promises",
+      "No income promises",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ]
+   ]
+  },
+  {
+   "say": "Example: a [$50|fifty dollar] product at [75|seventy five] percent. One sale earns [$37.50|thirty seven fifty].",
+   "show": {
+    "type": "calc",
+    "title": "One sale, example",
+    "green": [
+     "$37.50"
+    ],
+    "rows": [
+     [
+      "fifty",
+      "Product price",
+      "$50",
+      null
+     ],
+     [
+      "seventy",
+      "Commission",
+      "75%",
+      "×"
+     ]
+    ],
+    "result": [
+     "$37.50",
+     "Example earn",
+     37.5,
+     "$",
+     "",
+     2
+    ],
+    "source": "Example maths, rates vary by offer"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "$37.50",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Three: disclose. Put 'affiliate link' on screen and say you earn a commission.",
+   "show": {
+    "type": "page_card",
+    "url": "your video + caption",
+    "mark": "Ad",
+    "title": "Disclose it",
+    "checked": "Our rules",
+    "bullets": [
+     [
+      "on",
+      "'Affiliate link' on screen",
+      true
+     ],
+     [
+      "says",
+      "'I earn a commission'",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: no audience means few clicks. Make one helpful video per product, and a high commission doesn't mean sales.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "clicks",
+      "Few clicks at first",
+      true
+     ],
+     [
+      "rate",
+      "Big rate, no sales promise",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "catch",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [SALE|sale] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. beehiiv is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "First affiliate sale",
+    "keyword": "SALE",
+    "tool": "beehiiv"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$37.50|Thirty seven fifty] from one sale, with no audience? Here's the example.",
+   "show": {
+    "type": "calc",
+    "title": "One sale, example",
+    "green": [
+     "$37.50"
+    ],
+    "rows": [
+     [
+      "$50",
+      "Product price",
+      "$50",
+      null
+     ],
+     [
+      "percent",
+      "Commission",
+      "75%",
+      "×"
+     ]
+    ],
+    "result": [
+     "$37.50",
+     "Example earn",
+     37.5,
+     "$",
+     "",
+     2
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "No audience and no face on camera? You can still start.",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "red": [],
+    "chips": [
+     [
+      "audience",
+      "0 audience",
+      "red"
+     ],
+     [
+      "face",
+      "no face",
+      null
+     ],
+     [
+      "checklist",
+      "checklist",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "How do you get a first affiliate sale from zero?",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "red": [],
+    "chips": [
+     [
+      "audience",
+      "0 audience",
+      "red"
+     ],
+     [
+      "face",
+      "no face",
+      null
+     ],
+     [
+      "checklist",
+      "checklist",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Digistore24: How to make money with Digistore24",
+   "url": "https://www.digistore24.com/blog/make-money-digistore24/"
+  },
+  {
+   "title": "Digistore24 help centre",
+   "url": "https://help.digistore24.com/"
+  }
+ ],
+ "thumb": {
+  "headline": "First\n*affiliate sale*",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 0.6,
+  "sticker": "No face needed",
+  "chip": "With a checklist",
+  "size": 130
+ },
+ "finder_stream": null
+}

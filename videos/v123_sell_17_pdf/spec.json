@@ -1,0 +1,414 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v123_sell_17_pdf",
+ "title": "Sell a $17 PDF with zero followers",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Zero followers, and nothing to sell? Build a [$17|seventeen dollar] PDF this afternoon, with AI.",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "red": [
+     "zero"
+    ],
+    "chips": [
+     [
+      "zero",
+      "0 followers",
+      "red"
+     ],
+     [
+      "seventeen",
+      "$17 PDF",
+      null
+     ],
+     [
+      "AI",
+      "built with AI",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Example maths: [1,000|a thousand] visitors, one percent buy. That's ten sales, [$170|a hundred seventy dollars].",
+   "show": {
+    "type": "calc",
+    "title": "One PDF, example",
+    "green": [
+     "$170"
+    ],
+    "rows": [
+     [
+      "seventeen",
+      "Price",
+      "$17",
+      null
+     ],
+     [
+      "ten",
+      "Sales (1% of 1,000)",
+      "10",
+      "×"
+     ]
+    ],
+    "result": [
+     "$170",
+     "Example gross",
+     170,
+     "$",
+     "",
+     0
+    ],
+    "source": "Example maths, not a promise"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "$170",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Make it small: pick one problem, ask AI for a short checklist, tidy it in Canva, export a PDF. Check every fact yourself.",
+   "show": {
+    "type": "page_card",
+    "url": "canva.com · your PDF",
+    "mark": "PDF",
+    "title": "Build it in an afternoon",
+    "checked": "Example workflow",
+    "bullets": [
+     [
+      "problem",
+      "Pick one problem",
+      true
+     ],
+     [
+      "AI",
+      "AI drafts the checklist",
+      false
+     ],
+     [
+      "fact",
+      "You fact-check it",
+      true
+     ],
+     [
+      "export",
+      "Export as PDF",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ]
+   ]
+  },
+  {
+   "say": "Sell it on Etsy for buyers who search. On a [$17|seventeen dollar] PDF you keep about [$14.93|fourteen ninety three].",
+   "show": {
+    "type": "fee_split",
+    "label": "$17 sale",
+    "mark": "Etsy",
+    "dec": 2,
+    "green": [
+     "$14.93"
+    ],
+    "parts": [
+     [
+      "Etsy",
+      "Listing fee",
+      0.2,
+      "fee"
+     ],
+     [
+      "Etsy",
+      "Transaction fee 6.5%",
+      1.11,
+      "fee"
+     ],
+     [
+      "Etsy",
+      "Payment ~3% + $0.25",
+      0.76,
+      "fee"
+     ],
+     [
+      "$14.93",
+      "You keep",
+      14.93,
+      "keep"
+     ]
+    ],
+    "source": "Checkout Page, Etsy fees (US)"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "$14.93",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Or use Payhip's free plan. It takes five percent, plus card fees, but you bring the buyers.",
+   "show": {
+    "type": "fee_split",
+    "label": "$17 sale",
+    "mark": "Ph",
+    "dec": 2,
+    "parts": [
+     [
+      "five",
+      "Payhip fee 5%",
+      0.85,
+      "fee"
+     ],
+     [
+      "bring",
+      "You keep before card fees",
+      16.15,
+      "keep"
+     ]
+    ],
+    "source": "Sellfy, Payhip pricing 2026"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: with no audience, nobody finds your PDF by luck. Etsy search or Pinterest has to bring buyers, and that one percent is an example, not a promise.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "nobody",
+      "Nobody finds it by luck",
+      true
+     ],
+     [
+      "example",
+      "1% is an example",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "catch",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [PDF|pdf] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. beehiiv is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "Earn with 0 followers",
+    "keyword": "PDF",
+    "tool": "beehiiv"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "[$170|A hundred seventy dollars] from one [$17|seventeen dollar] PDF? Here's the maths.",
+   "show": {
+    "type": "calc",
+    "title": "One PDF, example",
+    "green": [
+     "$170"
+    ],
+    "rows": [
+     [
+      "$17",
+      "Price",
+      "$17",
+      null
+     ],
+     [
+      "ten",
+      "10 sales",
+      "10",
+      "×"
+     ]
+    ],
+    "result": [
+     "$170",
+     "Example gross",
+     170,
+     "$",
+     "",
+     0
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Zero followers and nothing to sell? Fix that today.",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "red": [],
+    "chips": [
+     [
+      "zero",
+      "0 followers",
+      "red"
+     ],
+     [
+      "seventeen",
+      "$17 PDF",
+      null
+     ],
+     [
+      "AI",
+      "built with AI",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Can a PDF you make with AI really sell with zero followers?",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "red": [],
+    "chips": [
+     [
+      "zero",
+      "0 followers",
+      "red"
+     ],
+     [
+      "seventeen",
+      "$17 PDF",
+      null
+     ],
+     [
+      "AI",
+      "built with AI",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Checkout Page: Etsy fees 2026",
+   "url": "https://checkoutpage.com/blog/etsy-fees"
+  },
+  {
+   "title": "Sellfy: Payhip pricing 2026",
+   "url": "https://sellfy.com/blog/payhip-pricing/"
+  }
+ ],
+ "thumb": {
+  "headline": "Sell a\n*$17 PDF*",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 0.6,
+  "sticker": "0 followers",
+  "chip": "Built with AI",
+  "size": 130
+ },
+ "finder_stream": null
+}

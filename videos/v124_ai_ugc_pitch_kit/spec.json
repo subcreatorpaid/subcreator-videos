@@ -1,0 +1,351 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "style": "story",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.1
+ },
+ "gap": 0.25,
+ "slug": "v124_ai_ugc_pitch_kit",
+ "title": "AI UGC pitch kit for beginners",
+ "type": "value",
+ "format": "",
+ "beats": [
+  {
+   "say": "Brands pay beginners for UGC, and AI can help you build the pitch. Here's the kit, and the catch.",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "red": [],
+    "chips": [
+     [
+      "Brands",
+      "brands pay",
+      null
+     ],
+     [
+      "AI",
+      "AI helps",
+      null
+     ],
+     [
+      "kit",
+      "pitch kit",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Beginners usually charge [$50|fifty] to [$400|four hundred dollars] a video.",
+   "hold": 0.8,
+   "show": {
+    "type": "stat_cards",
+    "title": "UGC · BEGINNER RATES",
+    "green": [
+     "$50",
+     "$400"
+    ],
+    "cards": [
+     [
+      "$50",
+      "$50",
+      "per video"
+     ],
+     [
+      "$400",
+      "$400",
+      "per video",
+      true
+     ]
+    ],
+    "source": "Insense, Sep 2026"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "$50",
+     "pop"
+    ],
+    [
+     "$400",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Your kit is three things: three sample videos, a one-line offer, and a price with usage rights in writing.",
+   "show": {
+    "type": "page_card",
+    "url": "your pitch · 1 page",
+    "mark": "Kit",
+    "title": "What to send brands",
+    "checked": "Verified against UGC stream page · 26 Oct 2026",
+    "bullets": [
+     [
+      "three",
+      "3 sample videos",
+      true
+     ],
+     [
+      "offer",
+      "One-line offer",
+      false
+     ],
+     [
+      "price",
+      "Price + usage rights",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ]
+   ]
+  },
+  {
+   "say": "To keep AI samples from looking fake, start from a real photo, keep the phone-camera look, and write plain prompts.",
+   "show": {
+    "type": "page_card",
+    "url": "AI samples · tips",
+    "mark": "AI",
+    "title": "Make samples look real",
+    "checked": "Creator-tested tips, not official rules",
+    "bullets": [
+     [
+      "real",
+      "Real reference photo",
+      true
+     ],
+     [
+      "phone",
+      "Phone-camera look",
+      false
+     ],
+     [
+      "plain",
+      "Plain-language prompts",
+      false
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: say it's AI. Label AI videos on every platform, tell the brand up front, and check each brief.",
+   "show": {
+    "type": "catch",
+    "red": [
+     "catch"
+    ],
+    "hold": "laptop",
+    "items": [
+     [
+      "label",
+      "Label it AI",
+      true
+     ],
+     [
+      "brief",
+      "Check each brief",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "catch",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [UGC|ugc] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Fiverr is linked in my bio. Follow for more.",
+   "show": {
+    "type": "end_rows",
+    "guide": "UGC pitch kit",
+    "keyword": "UGC",
+    "tool": "Fiverr"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "linked",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "hooks": [
+  {
+   "label": "A: the big number",
+   "say": "Brands pay beginners [$50|fifty] to [$400|four hundred dollars] a UGC video.",
+   "show": {
+    "type": "stat_cards",
+    "title": "UGC · BEGINNER RATES",
+    "green": [
+     "$50",
+     "$400"
+    ],
+    "cards": [
+     [
+      "$50",
+      "$50",
+      "per video"
+     ],
+     [
+      "$400",
+      "$400",
+      "per video",
+      true
+     ]
+    ],
+    "source": "Insense, Sep 2026"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "B: the pain line",
+   "say": "Don't want to film everything for brands? Read this.",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "red": [],
+    "chips": [
+     [
+      "Brands",
+      "brands pay",
+      null
+     ],
+     [
+      "AI",
+      "AI helps",
+      null
+     ],
+     [
+      "kit",
+      "pitch kit",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  },
+  {
+   "label": "C: the question",
+   "say": "Can AI help you pitch UGC to brands?",
+   "show": {
+    "type": "talk",
+    "mood": 0.6,
+    "hold": "phone0",
+    "red": [],
+    "chips": [
+     [
+      "Brands",
+      "brands pay",
+      null
+     ],
+     [
+      "AI",
+      "AI helps",
+      null
+     ],
+     [
+      "kit",
+      "pitch kit",
+      null
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     0.6,
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Insense: UGC creator rates (Sep 2026)",
+   "url": "https://insense.pro/blog/ugc-creator-rates"
+  },
+  {
+   "title": "Billo: UGC creator jobs",
+   "url": "https://billo.app/blog/ugc-creator-jobs/"
+  }
+ ],
+ "thumb": {
+  "headline": "AI UGC\n*pitch kit*",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 0.6,
+  "sticker": "Label it AI",
+  "chip": "Under 10k",
+  "size": 130
+ },
+ "finder_stream": null
+}
