@@ -10,6 +10,9 @@ Cheapest route to premium motion: Claude writes the script and the exact prompts
 6. Owner sends the clips. Claude edits (script `scripts/flow_edit_finder.py` is the model): per-beat timing from `animator/prep.py` (Kokoro voice + music + SFX in public/voice.wav), clips in the Instagram safe-area box (0.7 at 92,262), @subcreatorpaid + S mark on top, 0.15 s fades, speed or freeze clips to fit each beat.
 7. 360p review (never 1080p first). Notes in one message. Final 1080p only after the last OK, never 4K.
 
+## 3D accents (owner, 30 Oct 2026; rules D1-D4 in docs/animator-rules.md)
+Mark 20-30% of the object scenes as 3D (never two in a row, never typography scenes). Image prompt adds: "3D render, soft matte clay and glossy plastic, rounded bevelled edges, 3/4 isometric view, soft studio light, soft contact shadow, same off-white grid background, only white, ink and lime #CDF24F; the headline stays flat 2D text". Clip prompt adds: "slow 3D orbit 10-15 degrees / object turns on its axis, text and logos stay sharp and never warp".
+
 ## Poster / clip checks
 - Brand: bg #F5F5F2, ink #0E0E10, lime exactly #CDF24F (soft yellow-green; Flow drifts to neon, say "never neon"), red #E5484D only for loss/the catch, Inter-style bold sans, no serif, no dark theme, no wood/photo backgrounds, no hand-drawn doodle style.
 - Text spelled exactly as the script; logos correct (if wrong, swap in the real file in the edit); top 8% reserved for our header, nothing important in the bottom 20%.
