@@ -32,3 +32,9 @@ Approvals are asked in ONE place: `brain/status.json -> approvals`, shown on the
 - vidIQ: max 25 credits a week (balance resets 14th of each month). Check `vidiq_balance` first; skip if under 10.
 - GitHub Actions renders: free tier; render only approved videos, max 12 a week.
 - Workers AI / D1 / Pages: free tier; guard flags if usage nears limits.
+
+## Video production rules (owner, 30 Oct 2026; full text in docs/animator-rules.md Y1-Y5 and docs/flow-prompts.md)
+- Many short scenes: a new scene every 1.5-3 s (10-14 scenes for 30 s, never fewer than 8); Flow clips 2-4 s.
+- Kinetic typography in every video: at least 40% typography scenes, key word animated in every scene.
+- Brand never changes: off-white #F5F5F2, ink #0E0E10, lime exactly #CDF24F, red only for loss/the catch, Inter. No AI presenter.
+- Flow route: Claude writes exact image + clip prompts (all typography included), the owner makes them in Google Flow, Claude edits. Storyboard/poster check, then 360p review, 1080p only after the last OK.
