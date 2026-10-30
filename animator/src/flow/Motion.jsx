@@ -136,9 +136,64 @@ const End = ({f, B, W}) => (<>
   <Pop f={f} at={W(6, 'follow')} style={{left: 270, top: 1360}}><div style={{width: 540, height: 130, borderRadius: 65, background: f > W(6, 'follow') + 8 ? '#2A2A2D' : K.lime, color: f > W(6, 'follow') + 8 ? '#fff' : K.ui, fontFamily: FONT, fontWeight: 900, fontSize: 56, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>{f > W(6, 'follow') + 8 ? 'Following' : 'Follow'}</div></Pop>
 </>);
 
-const SCENES = [Viral, Fans, Ypp, Ladder, Group, Catch, End];
 
-export const Motion = ({beats = [], total = 300}) => {
+// ---- second sample: "You don't need 10k followers" (script 20261027_no_10k_needed, plan in motion-sample/PLAN_no_10k_needed.md)
+const Wait = ({f, B, W}) => {
+  const t = f - B(0); const n = Math.min(9987, Math.round(9987 * expo(t - 4, 40)));
+  return (<>
+    <Ring f={f} x={540} y={800} at={B(0) + 2} d={820} />
+    <Pop f={f} at={B(0) + 2} style={{left: 130, top: 600}}><Float f={f} seed={1}>
+      <Card w={820} h={420} style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+        <div style={{fontWeight: 900, fontSize: 190, letterSpacing: -8}}>{n.toLocaleString('en-US')}</div>
+        <div style={{fontWeight: 700, fontSize: 46, color: K.mut}}>followers</div></Card></Float></Pop>
+    {['instagram', 'tiktok', 'youtube'].map((name, i) => <Pop key={name} f={f} at={B(0) + 10 + i * 5} style={{left: 250 + i * 250, top: 1130}}><Float f={f} seed={i}>
+      <div style={{width: 110, height: 110, borderRadius: 30, background: '#fff', boxShadow: shadow, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><BrandLogo name={name} size={70} /></div></Float></Pop>)}
+    <Rise text="Still waiting for 10,000?" at={B(0) + 8} f={f} size={96} style={{position: 'absolute', left: 90, top: 280, width: 900}} />
+  </>);
+};
+const Reframe = ({f, B, W}) => {
+  const t = f - B(1); const x = expo(t - W(1, 'need') + B(1), 12);
+  return (<>
+    <Float f={f} seed={2} style={{left: 130, top: 560}}><Card w={820} h={420} style={{display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative'}}>
+      <div style={{fontWeight: 900, fontSize: 190, letterSpacing: -8, color: x > 0.5 ? K.mut : K.ui}}>10,000</div>
+      <div style={{position: 'absolute', left: 80, top: 205, width: 660 * x, height: 16, borderRadius: 8, background: K.red, transform: 'rotate(-6deg)', transformOrigin: '0 50%'}} /></Card></Float>
+    <Rise text="You don't need them." at={B(1) + 6} f={f} size={100} style={{position: 'absolute', left: 90, top: 1090, width: 900}} />
+    <Pop f={f} at={W(1, 'official') || B(1) + 40} style={{left: 90, top: 1330}}><Box><span style={{fontFamily: FONT, fontWeight: 900, fontSize: 64}}>3 official pages</span></Box></Pop>
+    {Array.from({length: 10}, (_, i) => { const a = (i / 10) * Math.PI * 2, r = 330 * expo(t - W(1, 'need') + B(1) - i, 16); return t > W(1, 'need') - B(1) ? <div key={i} style={{position: 'absolute', left: 540 + Math.cos(a) * r - 12, top: 770 + Math.sin(a) * r * 0.7 - 12, width: 24, height: 24, borderRadius: 12, background: K.lime, opacity: 1 - expo(t - 40, 20)}} /> : null; })}
+  </>);
+};
+const PROOF = [['youtube', '500', 'subscribers', 'fan funding'], ['spotify', '100', 'listeners', 'Memberships'], ['opusclip', '0', 'follower minimum', 'affiliate']];
+const Proof = ({f, B, W}) => {
+  const t = f - B(2);
+  const at = [W(2, 'youtube'), W(2, 'spotify'), W(2, 'opusclip')];
+  const draw = [expo(f - at[1] + 14, 24), expo(f - at[2] + 14, 24)];
+  return (<>
+    <Rise text="Official pages say so." at={B(2) + 6} f={f} size={86} style={{position: 'absolute', left: 90, top: 230, width: 900}} />
+    {PROOF.map(([logo, num, unit, tag], i) => <Pop key={logo} f={f} at={at[i]} style={{left: 90, top: 470 + i * 430}}><Float f={f} seed={i * 2}>
+      <Card w={900} h={300} style={{display: 'flex', alignItems: 'center', gap: 34, padding: 40, boxSizing: 'border-box'}}>
+        <div style={{width: 130, height: 130, borderRadius: 34, background: K.bg, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><BrandLogo name={logo} size={90} /></div>
+        <div><div style={{fontWeight: 900, fontSize: 120, letterSpacing: -5, lineHeight: 1}}>{num}</div><div style={{fontWeight: 700, fontSize: 40, color: K.mut}}>{unit}</div></div>
+        <div style={{marginLeft: 'auto'}}><Box><span style={{fontFamily: FONT, fontWeight: 900, fontSize: 34}}>{tag}</span></Box></div></Card></Float></Pop>)}
+    <Draw d="M 130 770 C 60 850 60 880 130 900" p={draw[0]} w={10} />
+    <Draw d="M 130 1200 C 60 1280 60 1310 130 1330" p={draw[1]} w={10} />
+  </>);
+};
+const Catch2 = ({f, B, W}) => (<>
+  <Pop f={f} at={B(3) + 14} from={0.1} style={{left: 90, top: 240}}><div style={{background: K.red, color: '#fff', borderRadius: 30, padding: '8px 36px', fontFamily: FONT, fontWeight: 900, fontSize: 80}}>The catch</div></Pop>
+  <Rise text="Each one needs:" at={B(3) + 20} f={f} size={90} color="#fff" style={{position: 'absolute', left: 90, top: 440, width: 900}} />
+  {[['Approval', 'approval'], ['Real work', 'real']].map(([label, key], i) => { const at = W(3, key); return <Pop key={key} f={f} at={at} style={{left: 90, top: 760 + i * 280}}><Float f={f} seed={i}>
+    <Card w={900} h={220} dark style={{display: 'flex', alignItems: 'center', gap: 30, padding: '0 44px', boxSizing: 'border-box', border: `5px solid ${i ? K.red : K.lime}`, boxShadow: 'none'}}>
+      <div style={{width: 90, height: 90, borderRadius: 45, background: i ? K.red : K.lime, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>{i ? <span style={{fontWeight: 900, fontSize: 60, color: '#fff'}}>!</span> : <Check size={56} p={clamp01((f - at - 4) / 10)} />}</div>
+      <div style={{fontWeight: 800, fontSize: 66}}>{label}</div></Card></Float></Pop>; })}
+</>);
+const SETS = {
+  views: {scenes: [Viral, Fans, Ypp, Ladder, Group, Catch, End], catchIdx: 5},
+  no10k: {scenes: [Wait, Reframe, Proof, Catch2, End], catchIdx: 3},
+};
+
+
+export const Motion = ({beats = [], total = 300, variant = 'views'}) => {
+  const {scenes: SCENES, catchIdx} = SETS[variant] || SETS.views;
   const f = useCurrentFrame();
   const {B, W} = useTimes(beats);
   const N = SCENES.length;
@@ -147,10 +202,10 @@ export const Motion = ({beats = [], total = 300}) => {
   const t = f - B(i); const p = i === 0 ? 1 : spring(t, {w: 0.26, z: 0.68});
   const camY = i === 0 ? cy(0) : mix(cy(i - 1), cy(i), p);
   const dip = i === 0 ? 0 : Math.sin(Math.PI * clamp01(t / 26));
-  const zoom = (1 - 0.2 * dip) * (i === 4 ? mix(1.0, 0.9, clamp01((t - 20) / 60)) : 1) * (1 + (i === 0 ? 0.04 * expo(24 - t, 24) : 0));
+  const zoom = (1 - 0.2 * dip) * (i === catchIdx - 1 && variant === 'views' ? mix(1.0, 0.9, clamp01((t - 20) / 60)) : 1) * (1 + (i === 0 ? 0.04 * expo(24 - t, 24) : 0));
   const sway = Math.sin(f / 37) * 5;
-  const flash = i === 5 && t >= 14 && t < 18; // inverted flash cut into the catch
-  const dark = i >= 5;
+  const flash = i === catchIdx && t >= 14 && t < 18; // inverted flash cut into the catch
+  const dark = i >= catchIdx;
   // ---- end: circular mask closes onto the brand mark
   const endAt = total - 26; const close = clamp01((f - endAt) / 22);
   const bg = K.bg;
@@ -165,7 +220,7 @@ export const Motion = ({beats = [], total = 300}) => {
           transform: `translate(540px, 960px) scale(${zoom}) translate(-540px, ${-camY + sway}px)`}}>
           {/* light backdrop with a faint grid, dark panel behind the last two scenes */}
           <div style={{position: 'absolute', left: -400, top: -900, width: 1880, height: N * GAP + 1800, backgroundImage: 'linear-gradient(#E9E9E3 2px, transparent 2px), linear-gradient(90deg, #E9E9E3 2px, transparent 2px)', backgroundSize: '90px 90px'}} />
-          <div style={{position: 'absolute', left: -400, top: 5 * GAP - 120, width: 1880, height: 2 * GAP + 1600, background: K.ui}} />
+          <div style={{position: 'absolute', left: -400, top: catchIdx * GAP - 120, width: 1880, height: (N - catchIdx) * GAP + 1600, background: K.ui}} />
           {Array.from({length: 22}, (_, d) => <div key={d} style={{position: 'absolute', left: hash(d) * 1080, top: hash(d + 7) * N * GAP - 200 + Math.sin(f / 30 + d) * 20, width: 10 + hash(d + 2) * 10, height: 10 + hash(d + 2) * 10, borderRadius: 20, background: K.lime, opacity: 0.7}} />)}
           {SCENES.map((S, k) => (Math.abs(k - i) <= 1 ? <div key={k} style={{position: 'absolute', left: 0, top: k * GAP, width: 1080, height: 1920}}><S f={f} B={B} W={W} /></div> : null))}
         </div>

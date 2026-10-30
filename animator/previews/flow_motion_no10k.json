@@ -1,0 +1,145 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "gap": 0.25,
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "composition": "Short",
+ "style": "motion",
+ "variant": "no10k",
+ "slug": "flow_motion_no10k",
+ "title": "No 10k needed (motion style sample 2)",
+ "type": "value",
+ "beats": [
+  {
+   "say": "Still waiting for [10,000|ten thousand] followers before you earn?",
+   "show": {
+    "type": "motion"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "10,000",
+     "count"
+    ]
+   ]
+  },
+  {
+   "say": "You don't need them. Three official pages prove it.",
+   "show": {
+    "type": "motion"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "need",
+     "thud"
+    ],
+    [
+     "official",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "YouTube: fan funding from [500|five hundred] subscribers. Spotify: Memberships from [100|one hundred] listeners. OpusClip: affiliate with no follower minimum.",
+   "show": {
+    "type": "motion"
+   },
+   "sfx": [
+    [
+     "youtube",
+     "click"
+    ],
+    [
+     "youtube",
+     "pop"
+    ],
+    [
+     "spotify",
+     "click"
+    ],
+    [
+     "spotify",
+     "pop"
+    ],
+    [
+     "opusclip",
+     "click"
+    ],
+    [
+     "opusclip",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: each one needs approval and real work.",
+   "show": {
+    "type": "motion"
+   },
+   "sfx": [
+    [
+     0,
+     "thud"
+    ],
+    [
+     "approval",
+     "whip"
+    ],
+    [
+     "real",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment GUIDE for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com]. Tools I use are in my bio. Follow for more.",
+   "show": {
+    "type": "motion"
+   },
+   "sfx": [
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "pop"
+    ],
+    [
+     "tools",
+     "pop"
+    ],
+    [
+     "follow",
+     "pop"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "YouTube Help: YouTube Partner Program overview & eligibility",
+   "url": "https://support.google.com/youtube/answer/13429240?hl=en"
+  },
+  {
+   "title": "Spotify newsroom: Memberships for creators (20 Oct 2026)",
+   "url": "https://newsroom.spotify.com/2026-10-20/spotify-memberships-creators/"
+  },
+  {
+   "title": "OpusClip affiliate program",
+   "url": "https://www.opus.pro/affiliate"
+  }
+ ]
+}
