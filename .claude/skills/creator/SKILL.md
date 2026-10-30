@@ -28,3 +28,5 @@ For each post in week-plan (status "drafted"):
 
 ## Rules
 Never script an unverified stream or a tool not in links.json. Never change palette/fonts per video. No real people's photos, no other channels' branding. Say if a fallback voice was used.
+
+- Flow route: for premium motion videos the owner makes posters and clips in Google Flow. Write the exact image prompts (all typography included) and clip prompts per `docs/flow-prompts.md`, review what he sends, then edit it (voice, SFX, header, safe area). 360p first.

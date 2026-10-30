@@ -118,3 +118,9 @@ Code: `animator/src/flow/Motion.jsx`, spec `"style": "motion"` plus `"variant"` 
 - X4. Safe area as in F6 (box scaled 0.7 at 92,262, handle on top). Keep label text 46 px or bigger in scene space (it is scaled by 0.7 on screen).
 - X5. Add a new scene set by writing scene components and a `SETS` entry in Motion.jsx; the CTA guide label is per variant (do not reuse another video's guide title).
 - X6. Do not push to a claude/* branch without `[skip ci]` when only code changed: preview.yml then renders every spec; dispatch one spec by name instead.
+
+## Y - Flow prompt workflow (owner idea, 30 Oct 2026)
+Full text: `docs/flow-prompts.md`.
+- Y1. For premium motion the owner makes posters and clips in Google Flow; Claude writes the exact prompts and does the edit. Do not generate images with paid APIs without his OK.
+- Y2. Image prompts carry all typography, logos and layout; clip prompts say "keep this poster exactly, add no new text" and end with a 0.6 s hold.
+- Y3. Edit = prep.py voice/music/SFX + header + safe-area box + fades; 360p review first, 1080p after the last OK.
