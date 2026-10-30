@@ -9,7 +9,7 @@ Feeds everyone else with verified facts and fresh signals. Writes only to `brain
 Uses: opportunity-check, insights-review, goal-lock. Rules: `brain/rules.md` (vidIQ budget, public pages only).
 
 ## Daily light scan (5-10 min, inside the daily run)
-1. Read today's Gemini scan first: `brain/research/<today>_gemini_scan.md` (made at 06:00 by the "Gemini drafts" workflow; it may still be on an open `gemini/<date>-scan-*` branch/PR: `git fetch origin 'refs/heads/gemini/*:refs/remotes/origin/gemini/*'` and `git show origin/<branch>:<path>`). Only open the official page for items that touch a program we cover (`site/data/streams/*.json`) or link to (`site/data/links.json`). If there is no scan today, fall back to 2-3 standard web searches: creator monetization program news from the last 7 days (YouTube, TikTok, Instagram, Spotify, Snapchat, X).
+1. Read today's Gemini scan first: `brain/research/<today>_gemini_scan.md` (made at 06:00 by the "Gemini trend scan" workflow; it may still be on an open `gemini/<date>-scan-*` branch/PR: `git fetch origin 'refs/heads/gemini/*:refs/remotes/origin/gemini/*'` and `git show origin/<branch>:<path>`). Only open the official page for items that touch a program we cover (`site/data/streams/*.json`) or link to (`site/data/links.json`). If there is no scan today, fall back to 2-3 standard web searches: creator monetization program news from the last 7 days (YouTube, TikTok, Instagram, Spotify, Snapchat, X).
 2. If a covered fact changed (pay, follower minimum, rules): add an alert to `brain/status.json -> alerts` with the source link and mark the stream file `"needs_recheck": true`.
 3. One new idea max into `brain/ideas.json` with `source` and a link. Nothing else.
 

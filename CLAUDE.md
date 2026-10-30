@@ -47,7 +47,8 @@ Hand-offs always go through files in `brain/` (never "remember it"): researcher 
 | New videos (animator) and its rules | `animator/` + `docs/animator-rules.md` (rules v4); workflow `.github/workflows/animate.yml` (mode stills or full) |
 | Website (Cloudflare Pages, builds on every push to main) | `site/build.py`, `functions/api/*` (finder, subscribe, comments on D1) |
 | 100-video plan + render buttons | `content/plan100/` (batch01-08.py -> make.py; bio.py = 4 bio videos + finder tutorial; then master.py -> render_room.py); master folder /mnt/project-files/02-videos/; Render Room (one Render button per video) https://claude.ai/artifact/5RpYRzaySkv1cMp3xQtcok |
-| Gemini drafts (cheap bulk drafting) | `scripts/gemini_draft.py`; workflow `.github/workflows/gemini.yml`: trend scan daily 06:00 UTC -> `brain/research/<date>_gemini_scan.md`, hooks/captions Sundays -> `brain/drafts/`; each run opens a PR, merge = owner OK. Claude fact-checks drafts instead of writing from scratch |
+| Gemini (cheap jobs only) | Trend scan: `scripts/gemini_draft.py scan`, workflow `.github/workflows/gemini.yml` daily 06:00 UTC -> `brain/research/<date>_gemini_scan.md` (opens a PR, merge = owner OK). Images stay in Google Flow (owner's AI Pro plan, 30 Oct): the Gemini image API has no free tier on our key. Gemini no longer writes hooks, captions or scripts |
+| Scripts and storytelling (owner, 30 Oct) | Claude Opus (`claude-opus-5-5`) writes scripts, hooks, titles, captions and story structure in Claude threads (creator/strategist roles, stream-scriptor skill). Other routine work stays on Sonnet |
 | Copy finished videos (no Claude needed) | project folder: `python3 content/plan100/master.py`; owner's PC: `scripts/get_videos.ps1` (right-click > Run with PowerShell -> Downloads\subcreatorpaid-videos) |
 | Weekly pipeline (GitHub, no Claude) | `docs/pipeline.md`: Sunday `weekly.yml` (drafts + storyboard stills PR) -> merge -> `on-merge.yml` (360p) -> label `approve-final` -> `approve.yml` (1080p + Buffer 18:00 London); Monday `stats.yml` |
 | Checks | `scripts/guard.py` (local) and `.github/workflows/guard.yml` (daily live check) |
@@ -58,7 +59,7 @@ Hand-offs always go through files in `brain/` (never "remember it"): researcher 
 1. Pull latest (`git pull`), read this file + `brain/rules.md` + `brain/status.json`.
 2. Do only your role's job. Write results into `brain/` files, not chat.
 3. Renders: review copies at 360p (animate.yml mode `preview`, or preview.yml default); the final 1080p (mode `full`) only after the owner OKs the last review. Never 4K (platforms cap at 1080x1920).
-   Keep Claude use lean: one thread per task; read Gemini scans/drafts instead of re-searching or re-drafting; copy files with scripts, not by hand. Run `python3 scripts/guard.py` before committing. Commit with a clear message ending in the attribution lines from the session, push to main.
+   Keep Claude use lean: one thread per task; read the Gemini trend scan instead of re-searching; copy files with scripts, not by hand. Run `python3 scripts/guard.py` before committing. Commit with a clear message ending in the attribution lines from the session, push to main.
    Every push to main redeploys the website, so batch all of a run's edits into one commit.
 4. Write ONE new file `brain/log/YYYY-MM-DD-HHMM-<role>-<slug>.md` containing one line: `YYYY-MM-DD HH:MM | role | what was done | what needs the owner`. Never edit `brain/log.md` (old history; editing it makes PRs conflict).
 5. If something needs the owner, add it to `status.json -> approvals` (max 3 to-dos a day in `today`), never ping for routine work.

@@ -1,7 +1,7 @@
 name: Storyboard approved - 360p previews
 run-name: "Previews after merge of ${{ github.event.pull_request.head.ref }}"
 
-# Step 2. Merging a weekly storyboard PR (branch gemini/*-weekly-*) is the owner's OK. Renders the 360p review copy of every
+# Step 2. Merging a weekly storyboard PR (branch weekly/*-weekly-*) is the owner's OK. Renders the 360p review copy of every
 # post with status "storyboard" in parallel (animate.yml, mode preview), marks them "previewed" and opens one review issue per video.
 on:
   pull_request:
@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   pick:
-    if: github.event.pull_request.merged == true && contains(github.event.pull_request.head.ref, '-weekly-') && startsWith(github.event.pull_request.head.ref, 'gemini/')
+    if: github.event.pull_request.merged == true && contains(github.event.pull_request.head.ref, '-weekly-') && (startsWith(github.event.pull_request.head.ref, 'weekly/') || startsWith(github.event.pull_request.head.ref, 'gemini/'))
     runs-on: ubuntu-latest
     outputs:
       slugs: ${{ steps.p.outputs.slugs }}

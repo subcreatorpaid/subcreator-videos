@@ -16,6 +16,6 @@
 | Skool | subcreatorpaid | affiliate | payouts (owner to add) |
 | Fiverr Affiliates | subcreatorpaid@gmail.com | affiliate | owner to log in |
 | Kaggle | | free GPU | AI host dropped; unused |
-| Gemini API (AI Studio) | | GitHub secret `GEMINI_API_KEY` (never in the repo) | drafts only: `scripts/gemini_draft.py`, workflow "Gemini drafts" (button) |
+| Gemini API (AI Studio) | | GitHub secret `GEMINI_API_KEY` (never in the repo) | trend scan (`scripts/gemini_draft.py scan`, workflow "Gemini trend scan") only. Image API has no free tier on this key (tested 30 Oct); images stay in Google Flow |
 | vidIQ | connector | research, voice | credits reset 14th monthly |
 | Bitwarden | owner | passwords | |
