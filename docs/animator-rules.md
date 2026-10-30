@@ -125,3 +125,4 @@ Full text: `docs/flow-prompts.md`.
 - Y2. Image prompts carry all typography, logos and layout; clip prompts say "keep this poster exactly, add no new text" and end with a 0.6 s hold.
 - Y3. Edit = prep.py voice/music/SFX + header + safe-area box + fades; 360p review first, 1080p after the last OK.
 - Y4. Many short scenes (owner, 30 Oct 2026): a new scene every 1.5-3 s, 10-14 scenes for a 30 s video, never fewer than 8; Flow clips 2-4 s. Fast cuts and fades of 0.15 s keep the energy up.
+- Y5. Kinetic typography is always included: at least 40% of scenes are typography scenes and every scene animates its key word (see `docs/flow-prompts.md`).

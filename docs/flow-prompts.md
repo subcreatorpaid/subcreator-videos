@@ -15,3 +15,6 @@ Cheapest route to premium motion: Claude writes the script and the exact prompts
 - Text spelled exactly as the script; logos correct (if wrong, swap in the real file in the edit); top 8% reserved for our header, nothing important in the bottom 20%.
 - Clips: no new text, logos not smeared during fast motion (ask "tiles stay still"), nothing painted over text (ripples), hold at the end.
 - Facts: only figures from verified scripts; no `[CHECK:` markers.
+
+## Kinetic typography (owner, 30 Oct 2026: it must be included)
+Every video has at least 40% typography scenes (one 1-4 word phrase as the hero) and an animated key word in every other scene. Effects, varied scene to scene: masked rise, tracking expansion with blur-in, letter-by-letter bounce then wave, pop-in lime box (one key word per scene; red box only for loss words), ghost text drifting opposite, sparkle stars, word-by-word build. Model prompts: `FLOW_TYPO_PROMPTS_views_fans.md` (image prompt + clip prompt).
