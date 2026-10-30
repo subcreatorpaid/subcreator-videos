@@ -127,10 +127,10 @@ const Catch = ({f, B, W}) => (<>
         <div style={{width: 90, height: 90, borderRadius: 45, background: last ? K.red : K.lime, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>{last ? <span style={{fontWeight: 900, fontSize: 60, color: '#fff'}}>!</span> : <Check size={56} p={clamp01((f - at - 4) / 10)} />}</div>
         <div style={{fontWeight: 800, fontSize: 58}}>{label}</div></Card></Float></Pop>; })}
 </>);
-const End = ({f, B, W}) => (<>
+const End = ({f, B, W, guide = 'Fan money before ad money'}) => (<>
   <Rise text="Comment" at={W(6, 'comment')} f={f} size={90} color="#fff" style={{position: 'absolute', left: 90, top: 260}} />
   <Pop f={f} at={W(6, 'guide') || B(6) + 12} style={{left: 90, top: 400}}><div style={{background: K.lime, color: K.ui, borderRadius: 30, padding: '0 34px', fontFamily: FONT, fontWeight: 900, fontSize: 130}}>GUIDE</div></Pop>
-  <Pop f={f} at={W(6, 'free')} style={{left: 90, top: 640}}><Float f={f} seed={3}><Card w={900} h={190} dark style={{display: 'flex', alignItems: 'center', padding: '0 44px', border: `4px solid ${K.lime}`, boxShadow: 'none', fontWeight: 900, fontSize: 56, boxSizing: 'border-box'}}>Fan money before ad money</Card></Float></Pop>
+  <Pop f={f} at={W(6, 'free')} style={{left: 90, top: 640}}><Float f={f} seed={3}><Card w={900} h={190} dark style={{display: 'flex', alignItems: 'center', padding: '0 44px', border: `4px solid ${K.lime}`, boxShadow: 'none', fontWeight: 900, fontSize: 56, boxSizing: 'border-box'}}>{guide}</Card></Float></Pop>
   <Pop f={f} at={W(6, 'subcreatorpaid')} style={{left: 90, top: 900}}><div style={{fontFamily: FONT, fontWeight: 900, fontSize: 82, color: '#fff'}}>subcreatorpaid.com</div><div style={{fontFamily: FONT, fontWeight: 700, fontSize: 40, color: K.lime, marginTop: 12}}>Free AI Income Finder</div></Pop>
   <Pop f={f} at={W(6, 'tools')} style={{left: 90, top: 1130}}><div style={{fontFamily: FONT, fontWeight: 700, fontSize: 52, color: '#A5A5A0'}}>Tools I use: link in bio</div></Pop>
   <Pop f={f} at={W(6, 'follow')} style={{left: 270, top: 1360}}><div style={{width: 540, height: 130, borderRadius: 65, background: f > W(6, 'follow') + 8 ? '#2A2A2D' : K.lime, color: f > W(6, 'follow') + 8 ? '#fff' : K.ui, fontFamily: FONT, fontWeight: 900, fontSize: 56, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>{f > W(6, 'follow') + 8 ? 'Following' : 'Follow'}</div></Pop>
@@ -222,7 +222,7 @@ export const Motion = ({beats = [], total = 300, variant = 'views'}) => {
           <div style={{position: 'absolute', left: -400, top: -900, width: 1880, height: N * GAP + 1800, backgroundImage: 'linear-gradient(#E9E9E3 2px, transparent 2px), linear-gradient(90deg, #E9E9E3 2px, transparent 2px)', backgroundSize: '90px 90px'}} />
           <div style={{position: 'absolute', left: -400, top: catchIdx * GAP - 120, width: 1880, height: (N - catchIdx) * GAP + 1600, background: K.ui}} />
           {Array.from({length: 22}, (_, d) => <div key={d} style={{position: 'absolute', left: hash(d) * 1080, top: hash(d + 7) * N * GAP - 200 + Math.sin(f / 30 + d) * 20, width: 10 + hash(d + 2) * 10, height: 10 + hash(d + 2) * 10, borderRadius: 20, background: K.lime, opacity: 0.7}} />)}
-          {SCENES.map((S, k) => (Math.abs(k - i) <= 1 ? <div key={k} style={{position: 'absolute', left: 0, top: k * GAP, width: 1080, height: 1920}}><S f={f} B={B} W={W} /></div> : null))}
+          {SCENES.map((S, k) => (Math.abs(k - i) <= 1 ? <div key={k} style={{position: 'absolute', left: 0, top: k * GAP, width: 1080, height: 1920}}><S f={f} B={B} W={W} guide={variant === 'no10k' ? 'Free creator income guide' : undefined} /></div> : null))}
         </div>
         {close > 0 && <div style={{position: 'absolute', inset: 0, background: K.lime, clipPath: `circle(${mix(0, 1700, expo(f - endAt, 22))}px at 540px 960px)`, opacity: 1}} />}
         {close > 0 && <div style={{position: 'absolute', left: 540 - 130, top: 960 - 130, width: 260, height: 260, borderRadius: 70, background: K.ui, color: K.lime, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 190, transform: `scale(${spring(f - endAt - 6, {w: 0.34, z: 0.55})})`}}>S</div>}
