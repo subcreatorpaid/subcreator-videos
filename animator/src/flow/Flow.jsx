@@ -5,11 +5,12 @@ import {Fonts} from '../Short';
 import {Launch} from './Launch';
 import {Keynote} from './Keynote';
 import {Reel} from './Reel';
+import {Motion} from './Motion';
 
 export const Flow = (p) => (
   <AbsoluteFill>
     <Fonts />
-    {p.style === 'launch' ? <Launch {...p} /> : p.style === 'keynote' ? <Keynote {...p} /> : <Reel {...p} />}
+    {p.style === 'launch' ? <Launch {...p} /> : p.style === 'keynote' ? <Keynote {...p} /> : p.style === 'motion' ? <Motion {...p} /> : <Reel {...p} />}
     <Audio src={staticFile('voice.wav')} />
   </AbsoluteFill>
 );
