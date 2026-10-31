@@ -22,11 +22,15 @@ speed = spec.get("audio", {}).get("speed", 1.0); gap = spec.get("gap", 0.4)
 pub = HERE / "public"; pub.mkdir(exist_ok=True)
 beats, t = [], LEAD
 for bi, b in enumerate(spec["beats"]):
+    show = dict(b["show"])
+    if show.get("images"):
+        for i in show["images"]: shutil.copy(spec_p.parent / i, pub / ("a_" + pathlib.Path(i).name))
+        show["images"] = ["a_" + pathlib.Path(i).name for i in show["images"]]
     caps, wt = [], t
     for disp, ws in tokens(b["say"]):
         caps.append({"w": disp, "f": round(wt * FPS), "p": False, "k": bool(re.search(r"\d", disp))})
         wt += sum(0.055 * len(w) + 0.13 for w in ws) / speed + (0.12 if disp[-1] in ".,?!" else 0)
-    beats.append({"say": b["say"], "show": b["show"], "from": round((t - (LEAD if not beats else 0.12)) * FPS),
+    beats.append({"say": b["say"], "show": show, "from": round((t - (LEAD if not beats else 0.12)) * FPS),
                   "speakFrom": round(t * FPS), "speakFrames": round((wt - t) * FPS), "words": caps, "riser": False})
     t = wt + (END_PAD if bi == len(spec["beats"]) - 1 else gap)
 total = round(t * FPS)
