@@ -1,0 +1,297 @@
+{
+  "renderer": "animator",
+  "brand": "SUB-CREATOR PAID",
+  "handle": "@subcreatorpaid",
+  "composition": "Short",
+  "style": "fluid",
+  "slug": "v101_adobe_stock",
+  "title": "Adobe Stock: your camera roll can pay (and the catch)",
+  "type": "value",
+  "audio": {
+    "engine": "kokoro",
+    "kokoro_voice": "am_michael+am_puck",
+    "speed": 1.12
+  },
+  "gap": 0.28,
+  "preview_res": 360,
+  "titles": [
+    "Is Your Camera Roll Quietly Worth $25?",
+    "The $0 Way To Sell Your Phone Photos",
+    "Adobe Stock Pays 33%. Here's The Catch"
+  ],
+  "keyword": "STOCK",
+  "affiliate": "fiverr",
+  "sources": [
+    {
+      "title": "Adobe Stock royalty rates for contributors (updated 27 Oct 2026)",
+      "url": "https://helpx.adobe.com/stock/contributor/payments-earnings/royalties-pricing/royalty-rates-assets.html",
+      "checked": "2026-10-31"
+    },
+    {
+      "title": "Adobe Stock contributor payment requirements (updated 11 Jun 2026)",
+      "url": "https://helpx.adobe.com/stock/contributor/help/getting-paid.html",
+      "checked": "2026-10-31"
+    }
+  ],
+  "thumb": {
+    "headline": "Your camera roll\n*can pay*",
+    "hero": "money",
+    "sticker": "Adobe Stock",
+    "chip": "33% per licence",
+    "size": 110
+  },
+  "beats": [
+    {
+      "say": "Your camera roll could be paying you.",
+      "show": {
+        "type": "fluid"
+      },
+      "sfx": [
+        [
+          0,
+          "whoosh"
+        ],
+        [
+          "paying",
+          "pop"
+        ]
+      ]
+    },
+    {
+      "say": "Adobe Stock pays you every time someone licenses your photo. No followers needed.",
+      "show": {
+        "type": "fluid"
+      },
+      "sfx": [
+        [
+          "adobe",
+          "swoosh"
+        ],
+        [
+          "licenses",
+          "pop"
+        ],
+        [
+          "no",
+          "thud"
+        ]
+      ]
+    },
+    {
+      "say": "Photos, vectors and illustrations earn [33%|thirty-three percent]. Videos earn [35%|thirty-five percent].",
+      "show": {
+        "type": "fluid"
+      },
+      "sfx": [
+        [
+          0,
+          "pop"
+        ],
+        [
+          "33%",
+          "ding"
+        ],
+        [
+          "35%",
+          "ding"
+        ]
+      ]
+    },
+    {
+      "say": "But here's the catch nobody mentions.",
+      "show": {
+        "type": "fluid"
+      },
+      "sfx": [
+        [
+          0,
+          "whip"
+        ],
+        [
+          "catch",
+          "thud"
+        ]
+      ]
+    },
+    {
+      "say": "On big subscription plans, one licence can pay as little as [$0.33|thirty-three cents].",
+      "show": {
+        "type": "fluid"
+      },
+      "sfx": [
+        [
+          0,
+          "glass"
+        ],
+        [
+          "$0.33",
+          "count"
+        ]
+      ]
+    },
+    {
+      "say": "Payouts start at [$25|twenty-five dollars]. At that floor, that's about [76|seventy-six] sales.",
+      "show": {
+        "type": "fluid"
+      },
+      "sfx": [
+        [
+          0,
+          "whip"
+        ],
+        [
+          "$25",
+          "card"
+        ],
+        [
+          "76",
+          "count"
+        ]
+      ]
+    },
+    {
+      "say": "And your first payout waits [45|forty-five] days after your first sale.",
+      "show": {
+        "type": "fluid"
+      },
+      "sfx": [
+        [
+          0,
+          "whoosh"
+        ],
+        [
+          "45",
+          "count"
+        ]
+      ]
+    },
+    {
+      "say": "No tax form on file? Adobe can hold back [30%|thirty percent].",
+      "show": {
+        "type": "fluid"
+      },
+      "sfx": [
+        [
+          0,
+          "pop"
+        ],
+        [
+          "30%",
+          "thud"
+        ]
+      ]
+    },
+    {
+      "say": "So: join free, upload photos and clips from your phone, add honest keywords, and pass review.",
+      "show": {
+        "type": "fluid"
+      },
+      "sfx": [
+        [
+          0,
+          "swipe"
+        ],
+        [
+          "join",
+          "click"
+        ],
+        [
+          "upload",
+          "click"
+        ],
+        [
+          "keywords",
+          "click"
+        ],
+        [
+          "review",
+          "ding"
+        ]
+      ]
+    },
+    {
+      "say": "Clips earn the higher cut, so film ten seconds of everything.",
+      "show": {
+        "type": "fluid"
+      },
+      "sfx": [
+        [
+          0,
+          "whoosh"
+        ],
+        [
+          "ten",
+          "pop"
+        ]
+      ]
+    },
+    {
+      "say": "Comment STOCK for the free guide, or grab it on subcreatorpaid.com.",
+      "show": {
+        "type": "fluid"
+      },
+      "sfx": [
+        [
+          0,
+          "swoosh"
+        ],
+        [
+          "stock",
+          "pop"
+        ]
+      ]
+    },
+    {
+      "say": "Everything is on subcreatorpaid.com.",
+      "show": {
+        "type": "fluid",
+        "images": [
+          "../../animator/previews/overview_site/home.png",
+          "../../animator/previews/overview_site/finder.png"
+        ]
+      },
+      "sfx": [
+        [
+          0,
+          "key"
+        ],
+        [
+          "subcreatorpaid.com",
+          "click"
+        ]
+      ]
+    },
+    {
+      "say": "The tool I'd start with is linked in my bio.",
+      "show": {
+        "type": "fluid"
+      },
+      "sfx": [
+        [
+          0,
+          "whip"
+        ],
+        [
+          "tool",
+          "pop"
+        ]
+      ]
+    },
+    {
+      "say": "Follow for one verified stream a week.",
+      "show": {
+        "type": "fluid"
+      },
+      "sfx": [
+        [
+          0,
+          "swoosh"
+        ],
+        [
+          "follow",
+          "click"
+        ]
+      ]
+    }
+  ]
+}

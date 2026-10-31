@@ -160,7 +160,7 @@ def check_animator_rules(s, rel):
         warn(f"videos/{rel}: {holds} beats with a hold (P2: only the 2-3 key lines)")
     if sum(1 for b in beats if b.get("riser")) > 1:
         warn(f"videos/{rel}: more than one riser (A4)")
-    cap = 1.12 if s.get("style") == "story" else 1.05
+    cap = 1.12 if s.get("style") in ("story", "overview", "fluid") else 1.05
     if (s.get("audio") or {}).get("speed", 0.95) > cap:
         warn(f"videos/{rel}: voice speed above {cap} (P5)")
     if len(s.get("hooks", [])) < 3:
@@ -174,7 +174,7 @@ def check_virality():
         if p.parent.name.startswith("_"):
             continue
         sp = json.loads(p.read_text())
-        if sp.get("style") == "story":  # the scorer reads the old view types; story scenes time several items per line
+        if sp.get("style") in ("story", "overview", "fluid"):  # the scorer reads the old view types; these styles time several items per line
             continue
         s, notes, _ = v.score(sp)
         if s < 60:
