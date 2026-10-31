@@ -24,7 +24,7 @@ trading / crypto / investments / loans / get-paid-to-watch schemes.
 - Real brand logos for every platform, program and tool shown (never letters or look-alikes); they keep their own colours.
 - Instagram safe area: all content inside x 60-940, y 230-1440 of 1080x1920; @subcreatorpaid with the S mark at the top centre, never at the very bottom.
 - Type: Inter (Black for hooks, ExtraBold body); website adds Instrument Serif italic accents.
-- Video: 1080x1920, launch-film style (`animator/src/flow/Launch.jsx`, spec `"style": "launch"`, rules in `docs/animator-rules.md` section F), Kokoro voice at 1.12, fast pacing.
+- Video: 1080x1920, the overview-film standard (`animator/src/flow/Overview.jsx`, spec `"style": "overview"`, rules in `docs/animator-rules.md`), Kokoro voice at 1.12, fast pacing.
 - Refuse: cash stacks, luxury shots, fake payouts, other channels' branding or content, real people's photos, a second accent colour (lime is the only accent).
 
 ## Series
@@ -51,11 +51,14 @@ Four parts, 6-8 s in total, in this order:
    No ebook file or affiliate link is sent straight in a DM. Replies to individual DMs in the owner's name still need his OK.
 Each ebook is a related free guide (PDF on the site, email sign-up to get it). Topic guides are drafted by the creator and need the owner's OK before going live.
 
+## Video review order (owner rule, 29 Oct 2026; standard since 31 Oct)
+Every video: 1) storyboard sheet (one still per scene + its voice line) for the owner's OK, 2) 360p review render, 3) 1080p final only after he finishes reviewing. Videos are built in the animator, never with Google Flow or Gemini video. Details: `docs/animator-rules.md`.
+
 ## Packaging and hook strategy (owner ask, 29 Oct 2026; adapted from the YouTube script-writer instructions)
 Applies to every Reel, TikTok and Short, max 60 s. Every script comes with the packaging first, then the script.
 **Packaging**
 - 3 title options, each under 60 characters, each opening a curiosity loop. Use a loss angle ("Is X Quietly Costing You $Y?") or a shortcut angle ("The $0 Way To Start Z"). Mark the favourite. The title is the on-screen hook text and the YouTube Shorts title; Instagram and TikTok use it as the first caption line.
-- Cover: one visual with clear conflict or contrast (give it as an image prompt), plus 2-4 overlay words that never repeat the title. See rules C1-C4 in `docs/animator-rules.md`.
+- Cover: one visual with clear conflict or contrast (give it as an image prompt), plus 2-4 overlay words that never repeat the title. See `docs/animator-rules.md` section 4.
 **Hook and script**
 1. Click confirmation (0-3 s): the first sentence states the exact promise of the title. No intro, no greeting, no channel name.
 2. Belief challenge (3-10 s): why the common belief ("you need 10k") is incomplete or wrong, with a payoff promised for later in the video.

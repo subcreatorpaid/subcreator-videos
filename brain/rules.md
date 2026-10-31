@@ -30,5 +30,6 @@ Approvals are asked in ONE place: `brain/status.json -> approvals`, shown on the
 
 ## Budgets
 - vidIQ: max 25 credits a week (balance resets 14th of each month). Check `vidiq_balance` first; skip if under 10.
+- Video order: storyboard sheet -> owner OK -> 360p review -> owner OK -> 1080p final (see brand.md).
 - GitHub Actions renders: free tier; render only approved videos, max 12 a week.
 - Workers AI / D1 / Pages: free tier; guard flags if usage nears limits.

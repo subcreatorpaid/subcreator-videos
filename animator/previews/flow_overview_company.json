@@ -1,0 +1,443 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.3,
+ "preview_res": 360,
+ "style": "overview",
+ "slug": "flow_overview_company",
+ "title": "Sub-Creator Paid: company overview (channel, website, AI finder, free guides)",
+ "type": "value",
+ "beats": [
+  {
+   "say": "You do not need [10,000|ten thousand] followers to get paid. This is Sub-Creator Paid.",
+   "show": {
+    "type": "overview"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "10",
+     "count"
+    ],
+    [
+     "paid",
+     "thud"
+    ],
+    [
+     "this",
+     "whip"
+    ],
+    [
+     "sub",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "We find the ways small creators really get paid, check every number on the official page, and always show you the catch.",
+   "show": {
+    "type": "overview"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "find",
+     "card"
+    ],
+    [
+     "check",
+     "card"
+    ],
+    [
+     "official",
+     "pop"
+    ],
+    [
+     "catch",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "It's for creators of every size, on Instagram, TikTok and YouTube. Every guide tells you exactly how many followers you need to start. I'm learning alongside you.",
+   "show": {
+    "type": "overview"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "instagram",
+     "pop"
+    ],
+    [
+     "tiktok",
+     "pop"
+    ],
+    [
+     "youtube",
+     "pop"
+    ],
+    [
+     "exactly",
+     "ding"
+    ],
+    [
+     "learning",
+     "glass"
+    ]
+   ]
+  },
+  {
+   "say": "On the channel: short videos. One verified income stream at a time, with the pay in dollars, what you need, and the catch.",
+   "show": {
+    "type": "overview"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "short",
+     "swipe"
+    ],
+    [
+     "one",
+     "card"
+    ],
+    [
+     "pay",
+     "ding"
+    ],
+    [
+     "need",
+     "pop"
+    ],
+    [
+     "catch",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Everything lives on one website: subcreatorpaid.com.",
+   "show": {
+    "type": "overview",
+    "images": [
+     "overview_site/home.png",
+     "overview_site/streams.png",
+     "overview_site/finder.png",
+     "overview_site/tracker.png",
+     "overview_site/tools.png",
+     "overview_site/guide.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "website",
+     "key"
+    ],
+    [
+     "subcreatorpaid",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "[16|Sixteen] income stream guides, from UGC and Etsy to TikTok Rewards and Patreon. Every number has a source and a date.",
+   "show": {
+    "type": "overview"
+   },
+   "sfx": [
+    [
+     0,
+     "page"
+    ],
+    [
+     "16",
+     "count"
+    ],
+    [
+     "ugc",
+     "pop"
+    ],
+    [
+     "etsy",
+     "pop"
+    ],
+    [
+     "rewards",
+     "pop"
+    ],
+    [
+     "patreon",
+     "pop"
+    ],
+    [
+     "source",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The star is the free AI Income Finder, right on the site. Pick your platform and what you enjoy, and watch it match you, again and again. Or just type it: Reels, TikToks and YouTube Shorts, 600 followers.",
+   "show": {
+    "type": "overview"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "ai",
+     "glass"
+    ],
+    [
+     "pick",
+     "click"
+    ],
+    [
+     "watch",
+     "ding"
+    ],
+    [
+     "type",
+     "key"
+    ],
+    [
+     "reels",
+     "pop"
+    ],
+    [
+     "600",
+     "count"
+    ]
+   ]
+  },
+  {
+   "say": "It checks all [16|sixteen] streams and picks your best match: maybe Etsy templates, UGC, or YouTube Shopping. Then it gives you a first step.",
+   "show": {
+    "type": "overview"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "16",
+     "count"
+    ],
+    [
+     "etsy",
+     "card"
+    ],
+    [
+     "ugc",
+     "ding"
+    ],
+    [
+     "youtube",
+     "card"
+    ],
+    [
+     "first",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "There's a tools page with every creator tool we checked, free plans marked, and affiliate links labelled.",
+   "show": {
+    "type": "overview"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "tools",
+     "card"
+    ],
+    [
+     "free",
+     "pop"
+    ],
+    [
+     "affiliate",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Plus free guides. The Small Creator Income Guide covers every stream, with pay ranges, requirements and the first week of steps.",
+   "show": {
+    "type": "overview"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "guide",
+     "page"
+    ],
+    [
+     "covers",
+     "swipe"
+    ],
+    [
+     "first",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Join the free list and get one verified income stream every week. No spam, unsubscribe anytime.",
+   "show": {
+    "type": "overview"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "join",
+     "key"
+    ],
+    [
+     "get",
+     "ding"
+    ],
+    [
+     "one",
+     "whoosh"
+    ],
+    [
+     "every",
+     "pop"
+    ],
+    [
+     "spam",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "So here's what you get, all free: stream guides, the AI Income Finder, the tracker, a tools page, the PDF guide, and a weekly email.",
+   "show": {
+    "type": "overview"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "stream",
+     "card"
+    ],
+    [
+     "finder",
+     "ding"
+    ],
+    [
+     "tracker",
+     "card"
+    ],
+    [
+     "tools",
+     "pop"
+    ],
+    [
+     "pdf",
+     "page"
+    ],
+    [
+     "weekly",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "No hype. No promises. Just real numbers, and the catch.",
+   "show": {
+    "type": "overview"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "hype",
+     "thud"
+    ],
+    [
+     "promises",
+     "thud"
+    ],
+    [
+     "real",
+     "ding"
+    ],
+    [
+     "catch",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Comment GUIDE and I'll send you the free guide, or get it on subcreatorpaid.com. Tools I use are in my bio. Follow for more.",
+   "show": {
+    "type": "overview"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "comment",
+     "pop"
+    ],
+    [
+     "subcreatorpaid",
+     "swoosh"
+    ],
+    [
+     "tools",
+     "pop"
+    ],
+    [
+     "follow",
+     "click"
+    ]
+   ]
+  }
+ ]
+}
