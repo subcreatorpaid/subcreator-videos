@@ -1,0 +1,41 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "audio": {"engine": "kokoro", "kokoro_voice": "am_michael+am_puck", "speed": 1.12},
+ "gap": 0.3,
+ "preview_res": 1080,
+ "style": "casefile",
+ "slug": "case_views_pay",
+ "title": "Case file #01: what a million TikTok views really pays a small creator",
+ "type": "value",
+ "case": {"no": "01", "name": "Creator Rewards"},
+ "sources": [
+  "Stack Influence, 5 TikTok monetization paths (Jun 2026): $0.40-$1.00 per 1,000 qualifying views, third-party report, not official",
+  "Metricool, TikTok Creator Rewards (Dec 2025): 10,000 followers + 100,000 views in 30 days, 18+, selected countries",
+  "site/data/streams/ugc.json, etsy-templates.json, youtube-shopping.json (checked 26 Oct 2026)"
+ ],
+ "beats": [
+  {"say": "One million views on TikTok. That sounds like a paycheck.", "show": {"type": "casefile"},
+   "sfx": [[0, "whoosh"], ["one", "count"], ["tiktok", "pop"], ["paycheck", "stamp"]]},
+  {"say": "Creator Rewards reportedly pays [$0.40|forty cents] to [$1|one dollar] per [1,000|thousand] qualifying views.", "show": {"type": "casefile"},
+   "sfx": [[0, "card"], ["$0.40", "tick"], ["$1", "tick"], ["qualifying", "click"]]},
+  {"say": "So a million views is about [$400|four hundred] to [$1,000|a thousand dollars]. Not bad, right?", "show": {"type": "casefile"},
+   "sfx": [["million", "key"], ["$400", "count"], ["$1,000", "ding"], ["right", "pop"]]},
+  {"say": "Let's X-ray it.", "show": {"type": "casefile"},
+   "sfx": [["x-ray", "scan"]]},
+  {"say": "To join, you need [10,000|ten thousand] followers and [100,000|a hundred thousand] views in thirty days.", "show": {"type": "casefile"},
+   "sfx": [["join", "click"], ["10,000", "tick"], ["100,000", "tick"], ["thirty", "pop"]]},
+  {"say": "At [600|six hundred] followers, those million views pay you zero from Creator Rewards.", "show": {"type": "casefile"},
+   "sfx": [["600", "click"], ["pay", "count"], ["zero", "thud"]]},
+  {"say": "That's why small creators get paid other ways first.", "show": {"type": "casefile"},
+   "sfx": [[0, "scan"], ["small", "whoosh"], ["first", "pop"]]},
+  {"say": "UGC videos for brands. Etsy templates. YouTube Shopping from [500|five hundred] subscribers.", "show": {"type": "casefile"},
+   "sfx": [["ugc", "card"], ["etsy", "card"], ["youtube", "card"], ["500", "click"]]},
+  {"say": "Views are the bonus. Direct pay comes first. Case closed.", "show": {"type": "casefile"},
+   "sfx": [["bonus", "pop"], ["direct", "ding"], ["closed", "stamp"]]},
+  {"say": "Comment PAID for the free guide, or get it on subcreatorpaid.com. The tool I'd start with is linked in my bio. Follow for the next case.", "show": {"type": "casefile"},
+   "sfx": [[0, "whoosh"], ["paid", "pop"], ["subcreatorpaid.com", "click"], ["tool", "card"], ["follow", "click"]]}
+ ]
+}

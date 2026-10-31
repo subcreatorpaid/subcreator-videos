@@ -115,16 +115,37 @@ def bell():
     n = int(0.9 * SR); t = np.arange(n) / SR
     return _norm((np.sin(2 * np.pi * 2093 * t) + 0.4 * np.sin(2 * np.pi * 2093 * 2.4 * t)) * np.exp(-t * 5))
 
+def stamp():
+    # rubber stamp slam: low body hit, paper slap, short rattle (case-file style, 31 Oct 2026)
+    n = int(0.32 * SR); t = np.arange(n) / SR
+    body = np.sin(2 * np.pi * (70 + 120 * np.exp(-t * 30)) * t) * _env(n, 0.0005, 0.05)
+    slap = _bp(_rng.normal(0, 1, n), 400, 3500) * _env(n, 0.0005, 0.018)
+    rattle = _bp(_rng.normal(0, 1, n), 1500, 5000) * _env(n, 0.03, 0.04) * 0.25
+    return _norm(body + 0.8 * slap + rattle)
+
+def scan():
+    # x-ray scanner sweep: rising filtered hum with a bright shimmer, ~0.7 s
+    n = int(0.7 * SR); t = np.arange(n) / SR
+    hum = np.sin(2 * np.pi * np.cumsum(120 + 260 * t / 0.7) / SR) * 0.5
+    sh = _bp(_rng.normal(0, 1, n), 3000, 8000) * (0.4 + 0.6 * np.abs(np.sin(2 * np.pi * 14 * t))) * 0.35
+    return _norm((hum + sh) * np.sin(np.linspace(0, np.pi, n)) ** 1.2)
+
+def tick():
+    # soft UI tick for chips and labels
+    n = int(0.05 * SR); t = np.arange(n) / SR
+    return _norm(np.sin(2 * np.pi * 2400 * t) * _env(n, 0.0003, 0.006) + 0.4 * _bp(_rng.normal(0, 1, n), 3000, 9000) * _env(n, 0.0002, 0.003))
+
 BANK = None
 GAIN = {"key": 0.11, "thud": 0.32, "pop": 0.26, "swipe": 0.24, "zip": 0.16, "card": 0.34, "count": 0.20, "glass": 0.42,
-        "page": 0.34, "whip": 0.30, "whoosh": 0.26, "swoosh": 0.18, "click": 0.36, "drop": 0.36, "ding": 0.26, "bell": 0.16}
+        "page": 0.34, "whip": 0.30, "whoosh": 0.26, "swoosh": 0.18, "click": 0.36, "drop": 0.36, "ding": 0.26, "bell": 0.16,
+        "stamp": 0.40, "scan": 0.22, "tick": 0.22}
 
 def bank():
     global BANK
     if BANK is None:
         BANK = {"thud": thud(), "pop": pop(), "swipe": swipe(), "zip": zip_(), "card": card(), "count": count(), "glass": glass(),
                 "page": page(), "whip": whip(), "whoosh": whoosh(), "swoosh": swoosh(), "click": click(), "drop": drop(),
-                "ding": ding(), "bell": bell()}
+                "ding": ding(), "bell": bell(), "stamp": stamp(), "scan": scan(), "tick": tick()}
         BANK["keys"] = [key(i) for i in range(6)]
     return BANK
 

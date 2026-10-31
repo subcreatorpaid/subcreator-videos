@@ -47,11 +47,7 @@ if hook_n is not None:  # H3: one hook variant as a 4 s clip
 pub = HERE / "public"; pub.mkdir(exist_ok=True)
 a = spec.get("audio", {})
 speed = a.get("speed", 0.95)
-<<<<<<< HEAD
-cap = 1.12 if spec.get("style") in ("story", "softui", "launch", "keynote", "showreel", "overview") else 1.05  # owner asked for an energetic voice (26 Oct 2026): story style allows up to 1.12
-=======
-cap = 1.12 if spec.get("style") in ("story", "softui", "launch", "keynote", "showreel", "motion") else 1.05  # owner asked for an energetic voice (26 Oct 2026): story style allows up to 1.12
->>>>>>> origin/main
+cap = 1.12 if spec.get("style") in ("story", "softui", "launch", "keynote", "showreel", "overview", "motion", "casefile") else 1.05  # owner asked for an energetic voice (26 Oct 2026): story style allows up to 1.12
 if speed > cap: warn(f"voice speed {speed} above {cap} (P5); using {cap}"); speed = cap
 gap = min(0.45, max(0.25, spec.get("gap", GAP)))
 holds = []
@@ -131,11 +127,7 @@ try:
     # A3: a swoosh on every other beat change and a tick on every other reveal, about half the old count
     bounds = [beats[0]["from"] / FPS] + [b["from"] / FPS for b in beats[1::2]] + [N / SR]
     reveals = [(b["speakFrom"] / FPS + 0.2, "blip") for b in beats[2::2]]
-<<<<<<< HEAD
-    if spec.get("style") in ("story", "softui", "launch", "keynote", "showreel", "overview"): bounds, reveals = [0.0, N / SR], []  # story: effects come from each beat's "sfx" list
-=======
-    if spec.get("style") in ("story", "softui", "launch", "keynote", "showreel", "motion"): bounds, reveals = [0.0, N / SR], []  # story: effects come from each beat's "sfx" list
->>>>>>> origin/main
+    if spec.get("style") in ("story", "softui", "launch", "keynote", "showreel", "overview", "motion", "casefile"): bounds, reveals = [0.0, N / SR], []  # story: effects come from each beat's "sfx" list
     music, sfx = synth_bed(N, bounds, reveals)
     # beat "sfx": [[word or seconds-from-line-start, kind], ...] (kinds in renderer/sfx.py)
     ev = []
@@ -200,12 +192,12 @@ def limit(x, ceil=10 ** (-1 / 20), blk=128):
 mix = limit(mix * 10 ** ((-14 - loudness(mix)) / 20)).astype(np.float32)
 sf.write(pub / "voice.wav", mix, SR)
 
-for f in ("Inter-Black.otf", "Inter-ExtraBold.otf", "Inter-Bold.otf", "Inter-Medium.otf", "Inter-SemiBold.otf", "DejaVuSerif-Italic.ttf"):
+for f in ("Inter-Black.otf", "Inter-ExtraBold.otf", "Inter-Bold.otf", "Inter-Medium.otf", "Inter-SemiBold.otf", "DejaVuSerif-Italic.ttf", "JetBrainsMono-Bold.ttf"):
     p = HERE.parent / "fonts" / f
     if p.exists(): shutil.copy(p, pub / f)
 props = {"slug": spec["slug"], "handle": spec.get("handle", "@subcreatorpaid"), "fps": FPS, "total": total, "beats": beats,
          "captions": spec.get("captions", True), "thumb": spec.get("thumb", {}), "style": spec.get("style", ""),
-         "title": spec.get("title", ""), "look": spec.get("look", "v5"), "bg": spec.get("bg", "warm"), "variant": spec.get("variant", "views")}
+         "title": spec.get("title", ""), "look": spec.get("look", "v5"), "bg": spec.get("bg", "warm"), "variant": spec.get("variant", "views"), "case": spec.get("case", {})}
 (HERE / "props.json").write_text(json.dumps(props, indent=1))
 
 # W2: one still per beat at its answer moment (18 frames before the beat ends, when everything is still)

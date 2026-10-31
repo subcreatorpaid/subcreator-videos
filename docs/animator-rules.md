@@ -32,3 +32,11 @@ Videos are built here in the animator (Remotion + Kokoro). No Google Flow, Gemin
 
 ## 4. Always
 Every fact from a verified source with the catch stated, pay as a range, affiliate links labelled, the four-part ending from `brain/brand.md`, covers with one clear contrast and 2-4 words that do not repeat the title.
+
+## 5. Case-file variant (owner's Drive reference explainers, 31 Oct 2026)
+`animator/src/flow/CaseFile.jsx`, spec `"style": "casefile"` (+ `"case": {"no", "name"}`), sample `animator/previews/case_views_pay.json`.
+Same palette and safe box as the overview film. Graph-paper stage, mono case header + progress line, source card for every fact,
+flat outlined objects that stay on screen and gain parts beat by beat, rolling counters, labelled bars, word-by-word caption pill
+(spoken white, rest grey, numbers lime), an "X-ray" scan-line sweep into a dark blueprint of the same object and back, a tapping hand,
+a CASE CLOSED stamp, then the lockup + four-part ending. SFX kinds `stamp`, `scan`, `tick` added in `renderer/sfx.py`.
+`python animator/estimate.py <spec>` makes props with estimated timing for storyboard stills (no voice model needed).
