@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30 07:55",
+ "updated": "2026-10-31 07:50",
  "updated_by": "secretary",
  "today": [
   {
@@ -37,11 +37,11 @@
  ],
  "alerts": [
   {
-   "text": "Posting queue ends 2 Nov (video 008). Nothing is scheduled after that, and the week of 26 Oct stays cancelled until you say which videos go next.",
+   "text": "Posting queue ends 2 Nov (video 008), 2 days from now. Nothing is scheduled after that until you say which videos go next.",
    "since": "2026-10-29"
   },
   {
-   "text": "Gemini daily trend scan failed on 30 Oct (step 'Draft with Gemini'); no scan today, web search used instead. Check the key/quota in GitHub if it fails again tomorrow.",
+   "text": "Gemini daily trend scan has failed two days running (30 and 31 Oct, step 'Draft with Gemini'). Check the Gemini key/quota in GitHub settings; web search is covering for now.",
    "since": "2026-10-30"
   }
  ],
@@ -92,7 +92,7 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-10-30",
+  "checked": "2026-10-31",
   "pending_comments": 0,
   "subscribers": 1,
   "visits_since_launch": 76
