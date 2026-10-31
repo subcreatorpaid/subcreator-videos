@@ -120,6 +120,8 @@ def check_videos(links):
         text = " ".join(strings(s))
         low = text.lower()
         rel = spec.parent.name
+        if "[CHECK:" in text:
+            err(f"videos/{rel}: unverified [CHECK: ...] marker left in the spec (animator rule R7)")
         for w in NEVER:
             if re.search(r"\b" + re.escape(w) + r"\b", low):
                 err(f"videos/{rel}: never-list word {w!r}")

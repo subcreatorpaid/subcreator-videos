@@ -67,7 +67,9 @@ jobs:
           path: |
             models
             ~/.cache/huggingface
-          key: kokoro-v1.0-whisper
+          key: kokoro-v1.0-whisper-tiny-en
+      - name: Word-timing model (faster-whisper, retries, falls back to estimates)
+        run: python scripts/fetch_whisper.py
       - name: Voice model (first run only)
         run: |
           mkdir -p models

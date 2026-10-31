@@ -11,7 +11,7 @@ description: Writes a Sub-Creator Paid "Income Stream" short-form script (Reel, 
 ## Input
 A verified opportunity (the opportunity-check output or an Opportunity Sheet row) and the stream number. If the stream has not been verified, run opportunity-check first or ask.
 
-## The five beats (20-35 s total, about 75-95 spoken words)
+## The five beats (20-60 s total, about 75-165 spoken words; short form, 60 s maximum)
 1. **Hook (0-3 s)** - the payoff stated first, tied to the core belief ("you don't need 10k"). Specific, no hype.
 2. **What it is (3-9 s)** - one plain sentence + a 3-step flow (who -> what -> money).
 3. **Proof (9-15 s)** - a real number: requirement, rate or a labelled example with $ maths that adds up.
@@ -20,7 +20,12 @@ A verified opportunity (the opportunity-check output or an Opportunity Sheet row
 
 Write the climax (the most surprising true fact) first, then build the hook towards it.
 
+## Packaging first (owner rule 29 Oct 2026, full text in `brain/brand.md` "Packaging and hook strategy")
+Before the script, output: **3 title options** (under 60 characters, curiosity loop, loss angle or shortcut angle, favourite marked) and the **cover**: one image prompt with conflict or contrast + 2-4 overlay words that never repeat the title.
+Script rules: line 1 confirms the exact promise of the title (no intro); line 2 challenges the belief and promises a later payoff; a re-hook line every 10-15 s (one in a 25 s video, three or four in 60 s); payoff + one takeaway + the four-part ending, never "smash like". Put a `[VISUAL: ...]` cue every 2-3 sentences and `[CHECK: claim]` after any unverified figure (never invent stats). Max 60 s.
+
 ## Output
+0. **Packaging** - titles + cover, as above.
 1. **Three hooks** - labelled A (direct claim), B (audience call-out "Under 1,000 followers?"), C (myth-bust "You don't need 10k for this"). Recommend one.
 2. **Script** - the five spoken lines.
 3. **Audience gaps** - the 3 questions viewers will ask, with one-line answers (use them in the caption or pinned comment).

@@ -1,0 +1,1 @@
+2026-10-29 15:00 | strategist | added packaging + hook strategy (3 titles, cover, belief challenge, re-hooks, CHECK markers) to brand.md, animator rules R1-R7, stream-scriptor skill, Gemini drafts prompt; no videos changed | nothing

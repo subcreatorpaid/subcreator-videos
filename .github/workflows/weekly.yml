@@ -1,0 +1,86 @@
+name: Weekly batch (Sunday)
+run-name: "Weekly batch: storyboard stills"
+
+# Step 1 of the weekly pipeline (no Claude needed). Sundays 07:00 UTC, or Run workflow.
+#   1. Scripts, hooks and captions are already written by Claude Opus in the creator thread (no Gemini drafts since 30 Oct).
+#   2. Every post in brain/week-plan.json with status "drafted" and a videos/<slug>/spec.json gets storyboard stills
+#      (animate.yml, mode stills), all in parallel, so the whole week is reviewed together.
+#   3. One pull request: brain/storyboards/<date>.md (stills with the voice line of each scene).
+# MERGING THAT PR IS THE OWNER'S OK for the 360p review renders (on-merge.yml). Nothing is posted.
+on:
+  schedule:
+    - cron: "0 7 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: weekly-batch
+  cancel-in-progress: false
+
+jobs:
+  drafts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      slugs: ${{ steps.pick.outputs.slugs }}
+      branch: ${{ steps.br.outputs.branch }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - id: pick
+        run: echo "slugs=$(python3 scripts/pipeline.py pick drafted)" >> "$GITHUB_OUTPUT"
+      - id: br
+        run: |
+          branch="weekly/$(date -u +%Y-%m-%d)-weekly-${{ github.run_number }}"
+          git config user.name "weekly-batch[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git push -u origin "$branch"
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+
+  stills:
+    needs: drafts
+    if: needs.drafts.outputs.slugs != '[]'
+    strategy:
+      fail-fast: false
+      matrix:
+        video: ${{ fromJSON(needs.drafts.outputs.slugs) }}
+    permissions:
+      contents: write
+    uses: ./.github/workflows/animate.yml
+    with:
+      video: ${{ matrix.video }}
+      mode: stills
+
+  pr:
+    needs: [drafts, stills]
+    if: ${{ !cancelled() && needs.drafts.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.drafts.outputs.branch }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Storyboard page (posts whose stills rendered)
+        run: python3 scripts/pipeline.py storyboard
+      - name: Guard checks
+        run: python3 scripts/guard.py --strict
+      - name: Open the review pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "weekly-batch[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add brain/ && { git diff --cached --quiet || git commit -m "Weekly storyboard $(date -u +%Y-%m-%d) (needs review)"; }
+          git push origin HEAD
+          gh pr create --base main --head "${{ needs.drafts.outputs.branch }}" --title "Week storyboard $(date -u +%Y-%m-%d) (review)" \
+            --body "One still per scene with its voice line (brain/storyboards/). Check facts and the look. **Merging = your OK to render the 360p review copies**; nothing is posted. For changes, comment instead of merging." \
+            || echo "Could not open the pull request (Settings > Actions > General > allow Actions to create pull requests). Branch is pushed."

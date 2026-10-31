@@ -1,0 +1,39 @@
+name: Weekly stats (Monday)
+run-name: "Weekly stats report"
+
+# Every Monday 08:00 UTC: followers, views, site visits and sign-ups from the sources whose keys are set
+# (scripts/weekly_stats.py). Writes brain/stats/<date>.md and brain/goals.json. Read-only; routine, so it commits to main.
+on:
+  schedule:
+    - cron: "0 8 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Pull the numbers
+        env:
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_D1_ID: ${{ secrets.CF_D1_ID }}
+          CF_WA_SITE_TAG: ${{ secrets.CF_WA_SITE_TAG }}
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+        run: python3 scripts/weekly_stats.py | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Commit
+        run: |
+          echo "$(date -u '+%Y-%m-%d %H:%M') | stats | weekly stats report (brain/stats) | nothing" > "brain/log/$(date -u +%Y-%m-%d-%H%M)-stats-weekly.md"
+          python3 scripts/guard.py --strict
+          git config user.name "stats[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add brain/ && git commit -m "Weekly stats $(date -u +%Y-%m-%d)" && git push origin HEAD:main

@@ -1,0 +1,1 @@
+2026-10-30 10:20 | creator | Scripts/hooks/captions moved from Gemini to Claude Opus threads (Gemini drafts job removed, weekly.yml stills only, branch weekly/*); Gemini kept for trend scan; Gemini image API tested: no free tier (limit 0), owner chose to keep Flow | owner: merge PR #16; say if Gemini trend scan should go too

@@ -1,0 +1,63 @@
+name: Website health
+
+# Daily full check of subcreatorpaid.com with a plain script (no Claude tokens): pages, links, images,
+# affiliate /go links, AI finder, sign-up endpoint (honeypot test, saves nothing), SSL, speed, phone layout.
+# Fails -> opens (or updates) ONE GitHub issue "Website health: problems found" with the report + screenshots,
+# which GitHub emails / pushes to the owner. Passes -> closes that issue and logs one line in the run summary.
+on:
+  schedule:
+    - cron: "15 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install browser
+        run: pip install -q playwright==1.48.0 && playwright install --with-deps chromium >/dev/null
+      - name: Check website
+        id: check
+        continue-on-error: true
+        run: python3 scripts/site_health.py --shots health-out
+      - name: Summary
+        if: always()
+        run: head -n 5 health-out/report.md >> "$GITHUB_STEP_SUMMARY" || true
+      - name: Save screenshots (failures only)
+        if: steps.check.outcome == 'failure'
+        run: |
+          shopt -s nullglob
+          files=(health-out/*.png)
+          if [ ${#files[@]} -gt 0 ]; then
+            d=$(date -u +%Y%m%d)
+            git config user.name "site-health"; git config user.email "site-health@users.noreply.github.com"
+            git checkout --orphan health-shots && git rm -rf . -q && mkdir -p "$d" && cp health-out/*.png "$d/"
+            git add "$d" && git commit -qm "health screenshots $d" && git push -f origin health-shots
+          fi
+      - name: Open or update issue
+        if: steps.check.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          d=$(date -u +%Y%m%d)
+          { cat health-out/report.md; echo; for f in health-out/*.png; do [ -f "$f" ] && echo "![$(basename $f)](https://raw.githubusercontent.com/${{ github.repository }}/health-shots/$d/$(basename $f))"; done; echo; echo "Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"; } > body.md
+          n=$(gh issue list --state open --search '"Website health: problems found" in:title' --json number -q '.[0].number')
+          if [ -n "$n" ]; then gh issue comment "$n" --body-file body.md; else gh issue create --title "Website health: problems found" --body-file body.md; fi
+      - name: Close issue when healthy
+        if: steps.check.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          n=$(gh issue list --state open --search '"Website health: problems found" in:title' --json number -q '.[0].number')
+          [ -n "$n" ] && gh issue close "$n" --comment "All checks pass again ($(date -u +%F))." || true
+      - name: Fail the run if problems found
+        if: steps.check.outcome == 'failure'
+        run: exit 1
