@@ -1,0 +1,1 @@
+2026-10-31 09:40 | creator | New 'fluid' animator style copied from owner's Drive reference reel; first video v101 Adobe Stock (new topic), 1080p final rendering via animate.yml | owner: watch the 1080p, OK before posting

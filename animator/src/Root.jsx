@@ -9,7 +9,7 @@ import {SoftUI} from './SoftUI';
 import {Flow} from './flow/Flow';
 
 // spec "style": "story" uses the Story renderer (owner pick, 26 Oct 2026); everything else uses Short.
-const Video = (p) => (['launch', 'keynote', 'showreel', 'motion', 'overview'].includes(p.style) ? <Flow {...p} /> : p.style === 'softui' ? <SoftUI {...p} /> : p.style === 'story' ? <Story {...p} /> : <Short {...p} />);
+const Video = (p) => (['launch', 'keynote', 'showreel', 'motion', 'overview', 'fluid'].includes(p.style) ? <Flow {...p} /> : p.style === 'softui' ? <SoftUI {...p} /> : p.style === 'story' ? <Story {...p} /> : <Short {...p} />);
 
 const sample = {slug: 'sample', handle: '@subcreatorpaid', fps: 30, total: 90, beats: [
   {say: 'Sample', from: 0, frames: 90, speakFrom: 10, speakFrames: 60, show: {type: 'hook', lines: ['Going viral', "*WON'T PAY* you yet", 'the real numbers']}},

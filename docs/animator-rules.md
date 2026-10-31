@@ -32,3 +32,9 @@ Videos are built here in the animator (Remotion + Kokoro). No Google Flow, Gemin
 
 ## 4. Always
 Every fact from a verified source with the catch stated, pay as a range, affiliate links labelled, the four-part ending from `brain/brand.md`, covers with one clear contrast and 2-4 words that do not repeat the title.
+
+## 5. Second look: "fluid" (owner's Drive reference reel, 31 Oct 2026)
+`animator/src/flow/Fluid.jsx`, spec `"style": "fluid"` (first video: `videos/v101_adobe_stock`). Full-bleed light / ink / lime backgrounds,
+one soft 3D lime blob that grows, morphs into a block and splits into floating tags, heavy type that blurs in word by word and
+explodes letter by letter, directional motion-blur whips, iris wipes, depth-of-field UI cards, number rolls, and a white
+word-by-word caption pill at y 1330. Same safe area, handle on top, palette and four-part ending as the overview look.
