@@ -1,9 +1,9 @@
 {
- "updated": "2026-10-31 07:50",
+ "updated": "2026-11-01 08:00",
  "updated_by": "secretary",
  "today": [
   {
-   "task": "Review the 36 new videos and say which post after 2 Nov (the posting queue runs out then)",
+   "task": "Posting queue ends TOMORROW (2 Nov). Review the 36 new videos and say which go from 3 Nov",
    "link": "https://claude.ai/artifact/BDkpce2TAqHhja1nM9bsKU",
    "mins": 20
   },
@@ -37,11 +37,11 @@
  ],
  "alerts": [
   {
-   "text": "Posting queue ends 2 Nov (video 008), 2 days from now. Nothing is scheduled after that until you say which videos go next.",
+   "text": "Posting queue ends 2 Nov (video 008). Nothing is scheduled after that until you say which videos go next.",
    "since": "2026-10-29"
   },
   {
-   "text": "Gemini daily trend scan has failed two days running (30 and 31 Oct, step 'Draft with Gemini'). Check the Gemini key/quota in GitHub settings; web search is covering for now.",
+   "text": "Gemini daily trend scan has failed 3 days running (30 Oct, 31 Oct, 1 Nov, step 'Draft with Gemini'). Check the Gemini key/quota in GitHub settings. Web search used meanwhile; no covered-fact changes found.",
    "since": "2026-10-30"
   }
  ],
@@ -92,7 +92,7 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-10-31",
+  "checked": "2026-11-01",
   "pending_comments": 0,
   "subscribers": 1,
   "visits_since_launch": 76
