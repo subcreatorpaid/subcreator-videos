@@ -1,214 +1,102 @@
 {
-  "week_of": "2026-10-26",
-  "review_doc": "https://claude.ai/artifact/CWL9pDUtA8VCvpQ5MYDZ4a",
-  "status": "cancelled_by_owner",
-  "status_flow": "drafted -> approved -> rendered -> checked -> scheduled -> posted",
-  "notes": [
-    "Kit referral not approved yet: /go/kit falls back to kit.com until it is. Swap post 5 to beehiiv if Kit is still pending on render day.",
-    "Post 2 hook changed from 'how I turn' to 'how to turn' (owner hasn't used OpusClip yet). Screen recordings replaced by public-page screenshots captured in GitHub Actions (renderer/snap.py)."
-  ],
-  "posts": [
-    {
-      "n": 1,
-      "day": "2026-10-26",
-      "type": "value",
-      "title": "Spotify now pays podcasts with 100 listeners",
-      "affiliate": null,
-      "slug": "20261026_spotify_memberships",
-      "status": "cancelled",
-      "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261026_spotify_memberships",
-      "buffer": "Buffer: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
-      "slot": "12:00"
-    },
-    {
-      "n": 2,
-      "day": "2026-10-26",
-      "type": "tool",
-      "title": "OpusClip: one podcast into ten Shorts",
-      "affiliate": "opusclip",
-      "slug": "20261026_tool_opusclip",
-      "status": "cancelled",
-      "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261026_tool_opusclip",
-      "buffer": null,
-      "slot": "18:00"
-    },
-    {
-      "n": 3,
-      "day": "2026-10-27",
-      "type": "value",
-      "title": "5 signs a brand deal is fake",
-      "affiliate": null,
-      "slug": "20261027_fake_brand_deals",
-      "status": "cancelled",
-      "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261027_fake_brand_deals",
-      "buffer": "Buffer: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
-      "slot": "18:00"
-    },
-    {
-      "n": 4,
-      "day": "2026-10-28",
-      "type": "value",
-      "title": "YouTube pays from 500 subscribers",
-      "affiliate": null,
-      "slug": "20261028_youtube_500_subs",
-      "status": "cancelled",
-      "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261028_youtube_500_subs",
-      "buffer": "Buffer: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
-      "slot": "12:00"
-    },
-    {
-      "n": 5,
-      "day": "2026-10-28",
-      "type": "tool",
-      "title": "Kit: start an email list for free",
-      "affiliate": "kit",
-      "slug": "20261028_tool_kit",
-      "status": "cancelled",
-      "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261028_tool_kit",
-      "buffer": null,
-      "slot": "18:00"
-    },
-    {
-      "n": 6,
-      "day": "2026-10-29",
-      "type": "value",
-      "title": "3 UGC samples with just your phone",
-      "affiliate": null,
-      "slug": "20261029_ugc_3_samples",
-      "status": "cancelled",
-      "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261029_ugc_3_samples",
-      "buffer": "Buffer: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
-      "slot": "18:00"
-    },
-    {
-      "n": 7,
-      "day": "2026-10-30",
-      "type": "value",
-      "title": "How to disclose a link the FTC way",
-      "affiliate": null,
-      "slug": "20261030_ftc_disclosure",
-      "status": "cancelled",
-      "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261030_ftc_disclosure",
-      "buffer": "Buffer: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
-      "slot": "12:00"
-    },
-    {
-      "n": 8,
-      "day": "2026-10-30",
-      "type": "tool",
-      "title": "ElevenLabs: voiceover as a side service",
-      "affiliate": "elevenlabs",
-      "slug": "20261030_tool_elevenlabs",
-      "status": "cancelled",
-      "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261030_tool_elevenlabs",
-      "buffer": null,
-      "slot": "18:00"
-    },
-    {
-      "n": 9,
-      "day": "2026-10-31",
-      "type": "value",
-      "title": "Why views alone won't pay you yet",
-      "affiliate": null,
-      "slug": "20261031_views_wont_pay",
-      "status": "cancelled",
-      "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261031_views_wont_pay",
-      "buffer": "Buffer: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
-      "slot": "12:00"
-    },
-    {
-      "n": 10,
-      "day": "2026-11-01",
-      "type": "proof",
-      "title": "3 official pages: no 10k needed",
-      "affiliate": null,
-      "slug": "20261101_proof_three_pages",
-      "status": "cancelled",
-      "release_url": "https://github.com/subcreatorpaid/subcreator-videos/releases/tag/video-20261101_proof_three_pages",
-      "buffer": "Buffer: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
-      "slot": "12:00"
-    },
-    {
-      "day": "2026-10-26",
-      "slot": "18:00",
-      "time": null,
-      "slug": "20261027_ugc_brands_pay",
-      "title": "Brands pay for videos",
-      "status": "scheduled",
-      "buffer": "Buffer 18:00 London: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
-      "note": "Owner OK 26 Oct 13:48 ('schedule them starting from today'); one a day 18:00 London; MP4 in /mnt/project-files/first-8-videos/"
-    },
-    {
-      "day": "2026-10-27",
-      "slot": "18:00",
-      "time": null,
-      "slug": "20261027_views_wont_pay",
-      "title": "Viral. Still $0?",
-      "status": "scheduled",
-      "buffer": "Buffer 18:00 London: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
-      "note": "Owner OK 26 Oct 13:48 ('schedule them starting from today'); one a day 18:00 London; MP4 in /mnt/project-files/first-8-videos/"
-    },
-    {
-      "day": "2026-10-28",
-      "slot": "18:00",
-      "time": null,
-      "slug": "20261027_no_10k_needed",
-      "title": "You don't need 10K",
-      "status": "scheduled",
-      "buffer": "Buffer 18:00 London: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
-      "note": "Owner OK 26 Oct 13:48 ('schedule them starting from today'); one a day 18:00 London; MP4 in /mnt/project-files/first-8-videos/"
-    },
-    {
-      "day": "2026-10-29",
-      "slot": "18:00",
-      "time": null,
-      "slug": "20261028_ugc_samples_phone",
-      "title": "3 UGC samples. Phone only.",
-      "status": "scheduled",
-      "buffer": "Buffer 18:00 London: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
-      "note": "Owner OK 26 Oct 13:48 ('schedule them starting from today'); one a day 18:00 London; MP4 in /mnt/project-files/first-8-videos/"
-    },
-    {
-      "day": "2026-10-30",
-      "slot": "18:00",
-      "time": null,
-      "slug": "20261028_price_first_ugc",
-      "title": "What do I charge?",
-      "status": "scheduled",
-      "buffer": "Buffer 18:00 London: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
-      "note": "Owner OK 26 Oct 13:48 ('schedule them starting from today'); one a day 18:00 London; MP4 in /mnt/project-files/first-8-videos/"
-    },
-    {
-      "day": "2026-10-31",
-      "slot": "18:00",
-      "time": null,
-      "slug": "20261029_find_ugc_jobs",
-      "title": "Where UGC jobs hide",
-      "status": "scheduled",
-      "buffer": "Buffer 18:00 London: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
-      "note": "Owner OK 26 Oct 13:48 ('schedule them starting from today'); one a day 18:00 London; MP4 in /mnt/project-files/first-8-videos/"
-    },
-    {
-      "day": "2026-11-01",
-      "slot": "18:00",
-      "time": null,
-      "slug": "20261029_spot_fake_deals",
-      "title": "Fake brand deal?",
-      "status": "scheduled",
-      "buffer": "Buffer 18:00 London: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
-      "note": "Owner OK 26 Oct 13:48 ('schedule them starting from today'); one a day 18:00 London; MP4 in /mnt/project-files/first-8-videos/"
-    },
-    {
-      "day": "2026-11-02",
-      "slot": "18:00",
-      "time": null,
-      "slug": "20261030_disclose_right",
-      "title": "Your bio isn't enough",
-      "status": "scheduled",
-      "buffer": "Buffer 18:00 London: Instagram Reel + TikTok (AI label) + YouTube Short (Education, AI label)",
-      "note": "Owner OK 26 Oct 13:48 ('schedule them starting from today'); one a day 18:00 London; MP4 in /mnt/project-files/first-8-videos/"
-    }
-  ],
-  "approved": "2026-10-25",
-  "note": "26 Oct 07:27: owner does not like this week's videos. Do not post, schedule or re-render any of them. All videos will be remade from scratch with the animator v3 system (videos/20261029_ugc_animated as the approved base) after the owner's next instruction. | 26 Oct 13:48: owner approved the 8 animator videos (001-008) for one-a-day posting from 26 Oct; Buffer needs the owner's computer."
+ "week_of": "2026-11-02",
+ "review_doc": "https://claude.ai/artifact/FYTkyEhfR6hC3tXAp4fUda",
+ "status": "drafted",
+ "status_flow": "drafted -> approved -> rendered -> checked -> scheduled -> posted",
+ "notes": [
+  "Reconstructed by the 1 Nov monthly run from the live Control Room: the Sunday run (1 Nov) drafted these 10 posts but could not push to GitHub. Scripts, captions and slugs are in the review doc; the creator fills slugs after 'approve the week'.",
+  "Previous plan (week of 26 Oct, cancelled by owner) is in git history."
+ ],
+ "posts": [
+  {
+   "n": 1,
+   "day": "2026-11-02",
+   "type": "value",
+   "title": "YouTube Is Testing $20 Payouts (Not $100)",
+   "affiliate": null,
+   "slug": null,
+   "status": "drafted"
+  },
+  {
+   "n": 2,
+   "day": "2026-11-03",
+   "type": "tool",
+   "title": "The $0 Way To Turn One Podcast Into 10 Shorts",
+   "affiliate": "opusclip",
+   "slug": null,
+   "status": "drafted"
+  },
+  {
+   "n": 3,
+   "day": "2026-11-03",
+   "type": "value",
+   "title": "Are You Giving Brands Your Video Twice For Free?",
+   "affiliate": null,
+   "slug": null,
+   "status": "drafted"
+  },
+  {
+   "n": 4,
+   "day": "2026-11-04",
+   "type": "value",
+   "title": "Amazon Pays With 0 Followers. The 180-Day Catch",
+   "affiliate": null,
+   "slug": null,
+   "status": "drafted"
+  },
+  {
+   "n": 5,
+   "day": "2026-11-04",
+   "type": "tool",
+   "title": "Start A Newsletter Before You Have Fans",
+   "affiliate": "beehiiv",
+   "slug": null,
+   "status": "drafted"
+  },
+  {
+   "n": 6,
+   "day": "2026-11-05",
+   "type": "value",
+   "title": "Ko-fi: Paid Tips With 0 Followers (And The Fee)",
+   "affiliate": null,
+   "slug": null,
+   "status": "drafted"
+  },
+  {
+   "n": 7,
+   "day": "2026-11-06",
+   "type": "value",
+   "title": "What Etsy Really Keeps From A $10 Template",
+   "affiliate": null,
+   "slug": null,
+   "status": "drafted"
+  },
+  {
+   "n": 8,
+   "day": "2026-11-06",
+   "type": "tool",
+   "title": "Voiceover As A Side Service, No Mic Needed",
+   "affiliate": "elevenlabs",
+   "slug": null,
+   "status": "drafted"
+  },
+  {
+   "n": 9,
+   "day": "2026-11-07",
+   "type": "value",
+   "title": "TikTok Pays At 10K. Here's What Pays Before",
+   "affiliate": null,
+   "slug": null,
+   "status": "drafted"
+  },
+  {
+   "n": 10,
+   "day": "2026-11-08",
+   "type": "proof",
+   "title": "Our First Week: 130 Views, 1 Follower",
+   "affiliate": null,
+   "slug": null,
+   "status": "drafted"
+  }
+ ]
 }

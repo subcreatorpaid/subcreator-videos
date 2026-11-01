@@ -1,10 +1,10 @@
 {
- "updated": "2026-11-01 09:30",
+ "updated": "2026-11-01 12:00",
  "updated_by": "monthly run (money, researcher, strategist, secretary)",
  "today": [
   {
-   "task": "Posting queue ends TOMORROW (2 Nov). Review the 36 new videos and say which go from 3 Nov",
-   "link": "https://claude.ai/artifact/BDkpce2TAqHhja1nM9bsKU",
+   "task": "Posting queue ends tomorrow (2 Nov). Read the 10 drafts for 2-8 Nov and say 'approve the week' (or pick from the 36 finished videos)",
+   "link": "https://claude.ai/artifact/FYTkyEhfR6hC3tXAp4fUda",
    "mins": 20
   },
   {
@@ -33,6 +33,12 @@
    "what": "Which finished videos to schedule after 008 (2 Nov), one a day at 18:00",
    "say": "schedule videos <numbers> from 3 Nov",
    "since": "2026-10-29"
+  },
+  {
+   "what": "Week of 2 Nov: 10 drafted posts (6 value, 3 tool, 1 proof)",
+   "say": "approve the week",
+   "since": "2026-11-01",
+   "link": "https://claude.ai/artifact/FYTkyEhfR6hC3tXAp4fUda"
   }
  ],
  "alerts": [
@@ -51,10 +57,18 @@
   {
    "text": "Still to check in the TikTok app: is video 001 flagged? (0 TikTok views vs YT/IG views)",
    "since": "2026-10-27"
+  },
+  {
+   "text": "Sunday run 1 Nov could not push to GitHub; its drafts are in the review doc and were re-added to week-plan.json by the monthly run (which could push). Give the Sunday scheduled task push access to subcreatorpaid/subcreator-videos.",
+   "since": "2026-11-01"
+  },
+  {
+   "text": "v101 YouTube title starts with the word 'Title:' ('Title: Is Your Camera Roll Quietly Worth $25?'); remove it in YouTube Studio (2 min).",
+   "since": "2026-11-01"
   }
  ],
  "pipeline": {
-  "drafted": 0,
+  "drafted": 10,
   "approved": 0,
   "rendered": 36,
   "scheduled": 7,
