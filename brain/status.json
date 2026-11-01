@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-01 08:00",
- "updated_by": "secretary",
+ "updated": "2026-11-01 09:30",
+ "updated_by": "monthly run (money, researcher, strategist, secretary)",
  "today": [
   {
    "task": "Posting queue ends TOMORROW (2 Nov). Review the 36 new videos and say which go from 3 Nov",
@@ -8,9 +8,9 @@
    "mins": 20
   },
   {
-   "task": "Check in the TikTok app that video 001 isn't flagged (it had 0 views while YouTube and Instagram got views)",
-   "link": "https://www.tiktok.com/@subcreatorpaid",
-   "mins": 2
+   "task": "Read the monthly report (October: $0 earned, $0 costs, 0 IG/TT followers vs ~780 pace) and the November plan",
+   "link": "https://github.com/subcreatorpaid/subcreator-videos/blob/main/brain/research/2026-11-cfo.md",
+   "mins": 5
   },
   {
    "task": "Connect beehiiv to the website sign-up so new subscribers get the welcome email (1 real sign-up so far got none)",
@@ -43,6 +43,14 @@
   {
    "text": "Gemini daily trend scan has failed 3 days running (30 Oct, 31 Oct, 1 Nov, step 'Draft with Gemini'). Check the Gemini key/quota in GitHub settings. Web search used meanwhile; no covered-fact changes found.",
    "since": "2026-10-30"
+  },
+  {
+   "text": "Monthly report: October income $0, costs $0 known. Followers IG+TT 0 vs ~780 pace (behind; need ~835/week now). Nov plan: brain/research/2026-11-plan.md",
+   "since": "2026-11-01"
+  },
+  {
+   "text": "Still to check in the TikTok app: is video 001 flagged? (0 TikTok views vs YT/IG views)",
+   "since": "2026-10-27"
   }
  ],
  "pipeline": {
@@ -99,9 +107,12 @@
  },
  "last_week": null,
  "money": {
+  "month": "2026-10",
   "earned_month_usd": 0,
   "pending_usd": 0,
   "costs_month_usd": 0,
-  "note": "All tools on free plans."
+  "earned_total_usd": 0,
+  "report": "https://github.com/subcreatorpaid/subcreator-videos/blob/main/brain/research/2026-11-cfo.md",
+  "note": "October: $0 from all sources (no affiliate video posted yet; clicks no data). Costs $0 known; vidIQ plan (2,000 credits/cycle) and domain price not recorded - owner to confirm."
  }
 }

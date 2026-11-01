@@ -1,0 +1,1 @@
+2026-11-01 09:30 | monthly | CFO report Oct ($0 income, $0 known costs) + Nov 4-week plan + learnings tidied to 5 rules; no stream/program due for re-check (all checked 25-26 Oct, due 24-26 Nov); status + dashboard updated | owner: read brain/research/2026-11-cfo.md, pick videos from 3 Nov, OK cover-first experiment
