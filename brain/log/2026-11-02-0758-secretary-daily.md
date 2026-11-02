@@ -1,0 +1,1 @@
+2026-11-02 07:58 | secretary | daily run: guard green, Gemini scan failed 4th day (web search: no covered-fact changes), queue ends today, status + dashboard rebuilt | owner: approve the week or pick videos, check Kit email, connect beehiiv

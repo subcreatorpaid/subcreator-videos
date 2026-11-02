@@ -1,16 +1,16 @@
 {
- "updated": "2026-11-01 12:00",
- "updated_by": "monthly run (money, researcher, strategist, secretary)",
+ "updated": "2026-11-02 07:55",
+ "updated_by": "secretary",
  "today": [
   {
-   "task": "Posting queue ends tomorrow (2 Nov). Read the 10 drafts for 2-8 Nov and say 'approve the week' (or pick from the 36 finished videos)",
+   "task": "Posting queue ends today (2 Nov). Read the 10 drafts for 2-8 Nov and say 'approve the week' (or pick from the 36 finished videos)",
    "link": "https://claude.ai/artifact/FYTkyEhfR6hC3tXAp4fUda",
    "mins": 20
   },
   {
-   "task": "Read the monthly report (October: $0 earned, $0 costs, 0 IG/TT followers vs ~780 pace) and the November plan",
-   "link": "https://github.com/subcreatorpaid/subcreator-videos/blob/main/brain/research/2026-11-cfo.md",
-   "mins": 5
+   "task": "Check your email for the Kit affiliate decision (in review 8 days)",
+   "link": "https://app.kit.com/",
+   "mins": 3
   },
   {
    "task": "Connect beehiiv to the website sign-up so new subscribers get the welcome email (1 real sign-up so far got none)",
@@ -43,11 +43,11 @@
  ],
  "alerts": [
   {
-   "text": "Posting queue ends 2 Nov (video 008). Nothing is scheduled after that until you say which videos go next.",
+   "text": "Posting queue ends today (2 Nov, video 008). Nothing is scheduled after that until you say which videos go next.",
    "since": "2026-10-29"
   },
   {
-   "text": "Gemini daily trend scan has failed 3 days running (30 Oct, 31 Oct, 1 Nov, step 'Draft with Gemini'). Check the Gemini key/quota in GitHub settings. Web search used meanwhile; no covered-fact changes found.",
+   "text": "Gemini daily trend scan has failed 4 days running (30 Oct to 2 Nov, step 'Draft with Gemini'). Check the Gemini key/quota in GitHub settings. Web search used meanwhile; no covered-fact changes found.",
    "since": "2026-10-30"
   },
   {
@@ -97,7 +97,7 @@
   },
   {
    "id": "kit",
-   "status": "in review (since 25 Oct)",
+   "status": "in review (since 25 Oct, 8 days: check email)",
    "earns": "50% for 12 months"
   },
   {
@@ -114,7 +114,7 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "pending_comments": 0,
   "subscribers": 1,
   "visits_since_launch": 76
