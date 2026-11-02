@@ -1,0 +1,216 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "style": "fluid",
+ "slug": "f08_free_newsletter_start",
+ "title": "Start a newsletter for $0",
+ "type": "value",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.28,
+ "preview_res": 360,
+ "titles": [
+  "Start a newsletter for $0",
+  "If your account vanished tomorrow, how would you reach your followers?",
+  "Kit or Substack: which free newsletter is right for you?"
+ ],
+ "sources": [
+  {
+   "title": "Email Vendor Selection: Kit pricing (Aug 2026)",
+   "url": "https://www.emailvendorselection.com/kit-pricing/",
+   "checked": "2026-11-02"
+  },
+  {
+   "title": "SchoolMaker: Substack pricing (Sep 2026)",
+   "url": "https://schoolmaker.com/blog/substack-pricing",
+   "checked": "2026-11-02"
+  }
+ ],
+ "thumb": {
+  "headline": "Newsletter\nfor *$0*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.5,
+  "sticker": "Kit vs Substack",
+  "chip": "Free options compared",
+  "size": 140
+ },
+ "beats": [
+  {
+   "say": "[$0|Zero dollars]. That's what a newsletter costs to start.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ]
+   ]
+  },
+  {
+   "say": "You can start a newsletter today for zero dollars. Here's what each free option costs you later.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "zero",
+     "ding"
+    ],
+    [
+     "later",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Kit is free up to ten thousand subscribers. Substack is free, but takes ten percent once you charge.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "kit",
+     "pop"
+    ],
+    [
+     "substack",
+     "pop"
+    ],
+    [
+     "charge",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Both let you send unlimited free emails to grow the list first.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "unlimited",
+     "ding"
+    ],
+    [
+     "grow",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Give people a reason to join: a free guide, a checklist, or a weekly tip they can use the same day.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "guide",
+     "click"
+    ],
+    [
+     "checklist",
+     "click"
+    ],
+    [
+     "tip",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Then put the sign-up link in your bio and mention it at the end of every video.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "bio",
+     "pop"
+    ],
+    [
+     "mention",
+     "pop"
+    ],
+    [
+     "every",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: free plans have limits, like branding and fewer automations, so check them as you grow.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "limits",
+     "whip"
+    ],
+    [
+     "branding",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [LIST|list] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "fluid",
+    "images": [
+     "../../animator/previews/overview_site/home.png",
+     "../../animator/previews/overview_site/finder.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "key"
+    ]
+   ]
+  },
+  {
+   "say": "Kit is linked in my bio.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Follow for more.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ]
+   ]
+  }
+ ],
+ "idea_rank": 17,
+ "facts_from": "v037_free_newsletter_start",
+ "keyword": "LIST"
+}

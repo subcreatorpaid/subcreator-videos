@@ -1,0 +1,212 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "style": "fluid",
+ "slug": "f03_tiktok_shop_1000",
+ "title": "TikTok Shop affiliate at 1,000 followers",
+ "type": "value",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.28,
+ "preview_res": 360,
+ "titles": [
+  "TikTok Shop affiliate at 1,000 followers",
+  "Stuck under ten thousand and thinking TikTok won't pay you?",
+  "Can you earn on TikTok before ten thousand followers?"
+ ],
+ "sources": [
+  {
+   "title": "Stack Influence: 5 TikTok monetization paths (Jun 2026)",
+   "url": "https://stackinfluence.com/blog/5-tiktok-monetization-paths-that-pay-creators-in-2026",
+   "checked": "2026-11-02"
+  },
+  {
+   "title": "Metricool: TikTok Creator Rewards requirements",
+   "url": "https://metricool.com/tiktok-creator-next/",
+   "checked": "2026-11-02"
+  }
+ ],
+ "thumb": {
+  "headline": "TikTok Shop at\n*1,000*",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": -0.5,
+  "sticker": "Not 10K",
+  "chip": "Earn before Creator Rewards",
+  "size": 130
+ },
+ "beats": [
+  {
+   "say": "[1,000|One thousand] followers. That's when TikTok Shop affiliate opens.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ]
+   ]
+  },
+  {
+   "say": "You don't need ten thousand followers to earn on TikTok. Creator guides say TikTok Shop affiliate opens at one thousand.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "need",
+     "thud"
+    ],
+    [
+     "creator",
+     "swipe"
+    ]
+   ]
+  },
+  {
+   "say": "You pick products from TikTok Shop, add them to your videos, and earn a commission when people buy.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "pick",
+     "pop"
+    ],
+    [
+     "add",
+     "pop"
+    ],
+    [
+     "buy",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "LIVE gifts also open around the same point, so fans can send gifts while you stream.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "live",
+     "pop"
+    ],
+    [
+     "stream",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Compare that with Creator Rewards: ten thousand followers and one hundred thousand monthly views.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "thousand",
+     "pop"
+    ],
+    [
+     "hundred",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Pick products you really use, show them in action, and say clearly that it's an affiliate link.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "use",
+     "click"
+    ],
+    [
+     "action",
+     "click"
+    ],
+    [
+     "affiliate",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: the one thousand rule comes from creator guides and changes by country, so check the Shop tab in your app.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "guides",
+     "whip"
+    ],
+    [
+     "country",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [SHOP|shop] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "fluid",
+    "images": [
+     "../../animator/previews/overview_site/home.png",
+     "../../animator/previews/overview_site/finder.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "key"
+    ]
+   ]
+  },
+  {
+   "say": "The tool I'd start with is linked in my bio.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Follow for more.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ]
+   ]
+  }
+ ],
+ "idea_rank": 11,
+ "facts_from": "v023_tiktok_shop_1000",
+ "keyword": "SHOP"
+}

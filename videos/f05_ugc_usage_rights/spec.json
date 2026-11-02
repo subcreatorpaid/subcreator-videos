@@ -1,0 +1,215 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "style": "fluid",
+ "slug": "f05_ugc_usage_rights",
+ "title": "UGC: charge more when brands run it as an ad",
+ "type": "value",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.28,
+ "preview_res": 360,
+ "titles": [
+  "UGC: charge more when brands run it as an ad",
+  "A brand turned your video into an ad, and paid you the organic price?",
+  "What should you charge when a brand runs your video as an ad?"
+ ],
+ "sources": [
+  {
+   "title": "Insense: UGC creator rates (Sep 2026)",
+   "url": "https://insense.pro/blog/ugc-creator-rates",
+   "checked": "2026-11-02"
+  }
+ ],
+ "thumb": {
+  "headline": "Ads = *charge\nmore*",
+  "hero": "face",
+  "hold": "film",
+  "mood": -0.3,
+  "sticker": "Usage rights",
+  "chip": "UGC pricing",
+  "size": 130
+ },
+ "beats": [
+  {
+   "say": "[$50|Fifty] to [$400|four hundred dollars] is the base price. Ads cost more.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ]
+   ]
+  },
+  {
+   "say": "A brand wants to run your UGC video as a paid ad. That should cost more. Here's why.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "paid",
+     "pop"
+    ],
+    [
+     "more",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Beginners usually charge fifty to four hundred dollars a video. That base price is for a short, organic post.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "fifty",
+     "card"
+    ],
+    [
+     "four",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "Usage rights cover where they post it, for how long, and whether they pay to boost it.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "where",
+     "click"
+    ],
+    [
+     "long",
+     "click"
+    ],
+    [
+     "boost",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Paid ads, more platforms or longer use mean more people see your work, so they cost more.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "paid",
+     "pop"
+    ],
+    [
+     "platforms",
+     "pop"
+    ],
+    [
+     "longer",
+     "pop"
+    ],
+    [
+     "cost",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Ask before you quote: where will it run, for how long, and will you put ad money behind it?",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "ask",
+     "pop"
+    ],
+    [
+     "run",
+     "pop"
+    ],
+    [
+     "money",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: rates swing a lot by niche, so get every term in writing before you film.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "niche",
+     "whip"
+    ],
+    [
+     "writing",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [RIGHTS|rights] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "fluid",
+    "images": [
+     "../../animator/previews/overview_site/home.png",
+     "../../animator/previews/overview_site/finder.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "key"
+    ]
+   ]
+  },
+  {
+   "say": "Fiverr is linked in my bio.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Follow for more.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ]
+   ]
+  }
+ ],
+ "idea_rank": 13,
+ "facts_from": "v035_ugc_usage_rights",
+ "keyword": "RIGHTS"
+}

@@ -1,0 +1,211 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "style": "fluid",
+ "slug": "f01_opusclip_tool",
+ "title": "One long video, ten Shorts (OpusClip)",
+ "type": "tool",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.28,
+ "preview_res": 360,
+ "titles": [
+  "One long video, ten Shorts (OpusClip)",
+  "Spending hours editing every single Short?",
+  "How do you post every day without editing all day?"
+ ],
+ "sources": [
+  {
+   "title": "OpusClip affiliate program",
+   "url": "https://www.opus.pro/affiliate",
+   "checked": "2026-11-02"
+  }
+ ],
+ "thumb": {
+  "headline": "1 video →\n*a week* of Shorts",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": -0.5,
+  "sticker": "OpusClip",
+  "chip": "Repurpose workflow",
+  "size": 110
+ },
+ "beats": [
+  {
+   "say": "[1|One] long video. A week of Shorts.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ]
+   ]
+  },
+  {
+   "say": "Posting every day takes hours. Here's how one long video becomes a week of Shorts.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "hours",
+     "thud"
+    ],
+    [
+     "week",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Paste a long video into OpusClip. It finds the strongest moments and cuts them into vertical clips with captions.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "paste",
+     "drop"
+    ],
+    [
+     "finds",
+     "whoosh"
+    ],
+    [
+     "vertical",
+     "pop"
+    ],
+    [
+     "captions",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "You still choose. Keep the clips that make sense alone, and fix the first line of each one.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "alone",
+     "click"
+    ],
+    [
+     "first",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Post one a day across TikTok, Reels and Shorts, and point every clip to the full video or your free guide.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "one",
+     "pop"
+    ],
+    [
+     "tiktok",
+     "pop"
+    ],
+    [
+     "guide",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "And OpusClip's affiliate program pays twenty-five percent of what people you refer pay, for at least the first year.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "twenty-five",
+     "ding"
+    ],
+    [
+     "year",
+     "card"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: the free plan has limits, and AI picks aren't always your best moments, so review each clip.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "free",
+     "whip"
+    ],
+    [
+     "review",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [CLIPS|clips] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "fluid",
+    "images": [
+     "../../animator/previews/overview_site/home.png",
+     "../../animator/previews/overview_site/finder.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "key"
+    ]
+   ]
+  },
+  {
+   "say": "OpusClip is linked in my bio.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Follow for more.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ]
+   ]
+  }
+ ],
+ "idea_rank": 9,
+ "facts_from": "v039_opusclip_tool",
+ "keyword": "CLIPS"
+}

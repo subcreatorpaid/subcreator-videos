@@ -1,0 +1,220 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "style": "fluid",
+ "slug": "f09_etsy_template_math",
+ "title": "Etsy templates: the full fee math",
+ "type": "value",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.28,
+ "preview_res": 360,
+ "titles": [
+  "Etsy templates: the full fee math",
+  "Listed a template on Etsy, and it never sold?",
+  "What does Etsy really take from a template sale?"
+ ],
+ "sources": [
+  {
+   "title": "Checkout Page: Etsy fees",
+   "url": "https://checkoutpage.com/blog/etsy-fees",
+   "checked": "2026-11-02"
+  }
+ ],
+ "thumb": {
+  "headline": "Etsy keeps\n*$1.40* of $10",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": 0.2,
+  "sticker": "You keep ~$8.60",
+  "sticker_color": "green",
+  "chip": "Template fee math",
+  "size": 120
+ },
+ "beats": [
+  {
+   "say": "[$8.60|Eight sixty]. That's what's left from a [$10|ten dollar] Etsy template.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ]
+   ]
+  },
+  {
+   "say": "Selling templates on Etsy? Here's every fee on a ten dollar sale, and what's left for you.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "fee",
+     "thud"
+    ],
+    [
+     "left",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Twenty cents to list it. Six and a half percent transaction fee. About three percent plus twenty-five cents for payment. You keep about [$8.60|eight sixty].",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "twenty",
+     "card"
+    ],
+    [
+     "six",
+     "card"
+    ],
+    [
+     "three",
+     "card"
+    ],
+    [
+     "$8.60",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Fifty sales a month at [$8.60|eight sixty] is about [$430|four hundred thirty dollars].",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "fifty",
+     "pop"
+    ],
+    [
+     "$8.60",
+     "pop"
+    ],
+    [
+     "$430",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Templates that sell solve one job: a budget sheet, a content calendar, a media kit for small creators.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "budget",
+     "click"
+    ],
+    [
+     "calendar",
+     "click"
+    ],
+    [
+     "media",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Use the words buyers type in your title, show the template in use, and make five listings, not one.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "words",
+     "pop"
+    ],
+    [
+     "show",
+     "pop"
+    ],
+    [
+     "five",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: popular niches are crowded, so pick a narrow audience you understand.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "crowded",
+     "whip"
+    ],
+    [
+     "narrow",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [ETSY|etsy] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "fluid",
+    "images": [
+     "../../animator/previews/overview_site/home.png",
+     "../../animator/previews/overview_site/finder.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "key"
+    ]
+   ]
+  },
+  {
+   "say": "Printify is linked in my bio.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Follow for more.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ]
+   ]
+  }
+ ],
+ "idea_rank": 18,
+ "facts_from": "v034_etsy_template_math",
+ "keyword": "ETSY"
+}

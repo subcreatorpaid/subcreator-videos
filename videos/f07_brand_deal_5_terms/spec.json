@@ -1,0 +1,200 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "style": "fluid",
+ "slug": "f07_brand_deal_5_terms",
+ "title": "5 terms to check before a brand deal",
+ "type": "value",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.28,
+ "preview_res": 360,
+ "titles": [
+  "5 terms to check before a brand deal",
+  "Delivered the video, and the brand wants unlimited changes?",
+  "What should you agree before filming a brand deal?"
+ ],
+ "sources": [
+  {
+   "title": "FTC: Disclosures 101 for social media influencers",
+   "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+   "checked": "2026-11-02"
+  },
+  {
+   "title": "Insense: UGC creator rates (Sep 2026)",
+   "url": "https://insense.pro/blog/ugc-creator-rates",
+   "checked": "2026-11-02"
+  }
+ ],
+ "thumb": {
+  "headline": "5 terms\n*before you film*",
+  "hero": "face",
+  "hold": "phone0",
+  "mood": 0.3,
+  "sticker": "In writing",
+  "chip": "Brand deal checklist",
+  "size": 130
+ },
+ "beats": [
+  {
+   "say": "[5|Five] terms to check before you film a brand deal.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ]
+   ]
+  },
+  {
+   "say": "A brand says yes. Before you film, check these five terms in writing.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "yes",
+     "ding"
+    ],
+    [
+     "five",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "One: the price, and what it includes. Two: usage rights, where and how long they use it.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "price",
+     "click"
+    ],
+    [
+     "usage",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Three: the deadline. Four: how many revisions.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "deadline",
+     "click"
+    ],
+    [
+     "revisions",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "Five: when you get paid, and how.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "paid",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "And how you'll disclose it. The FTC wants paid content clearly labelled, in the video itself.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "disclose",
+     "pop"
+    ],
+    [
+     "video",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: if a term isn't written down, assume it isn't agreed. Ask before you film, not after.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "written",
+     "whip"
+    ],
+    [
+     "before",
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [DEAL|deal] for the free guide, or try the free AI income finder on [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "fluid",
+    "images": [
+     "../../animator/previews/overview_site/home.png",
+     "../../animator/previews/overview_site/finder.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "key"
+    ]
+   ]
+  },
+  {
+   "say": "Kit is linked in my bio.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ]
+   ]
+  },
+  {
+   "say": "Follow for more.",
+   "show": {
+    "type": "fluid"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ]
+   ]
+  }
+ ],
+ "idea_rank": 15,
+ "facts_from": "v075_brand_deal_5_terms",
+ "keyword": "DEAL"
+}
