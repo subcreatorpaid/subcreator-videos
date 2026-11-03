@@ -1,14 +1,14 @@
 {
- "updated": "2026-11-02 07:55",
+ "updated": "2026-11-03 07:50",
  "updated_by": "secretary",
  "today": [
   {
-   "task": "Posting queue ends today (2 Nov). Read the 10 drafts for 2-8 Nov and say 'approve the week' (or pick from the 36 finished videos)",
+   "task": "Nothing is scheduled from today. Read the 10 drafts for 2-8 Nov and say 'approve the week' (or pick from the 36 finished videos)",
    "link": "https://claude.ai/artifact/FYTkyEhfR6hC3tXAp4fUda",
    "mins": 20
   },
   {
-   "task": "Check your email for the Kit affiliate decision (in review 8 days)",
+   "task": "Check your email for the Kit affiliate decision (in review 9 days)",
    "link": "https://app.kit.com/",
    "mins": 3
   },
@@ -43,11 +43,11 @@
  ],
  "alerts": [
   {
-   "text": "Posting queue ends today (2 Nov, video 008). Nothing is scheduled after that until you say which videos go next.",
+   "text": "Posting queue ended yesterday (2 Nov, video 008). Nothing is scheduled from today (3 Nov) until you say which videos go next.",
    "since": "2026-10-29"
   },
   {
-   "text": "Gemini daily trend scan has failed 4 days running (30 Oct to 2 Nov, step 'Draft with Gemini'). Check the Gemini key/quota in GitHub settings. Web search used meanwhile; no covered-fact changes found.",
+   "text": "Gemini daily trend scan has failed 5 days running (30 Oct to 3 Nov, step 'Trend scan with Gemini'). Check the Gemini key/quota in GitHub settings. Web search used meanwhile; no covered-fact changes found.",
    "since": "2026-10-30"
   },
   {
@@ -97,7 +97,7 @@
   },
   {
    "id": "kit",
-   "status": "in review (since 25 Oct, 8 days: check email)",
+   "status": "in review (since 25 Oct, 9 days: check email)",
    "earns": "50% for 12 months"
   },
   {
@@ -114,7 +114,7 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-11-02",
+  "checked": "2026-11-03",
   "pending_comments": 0,
   "subscribers": 1,
   "visits_since_launch": 76
