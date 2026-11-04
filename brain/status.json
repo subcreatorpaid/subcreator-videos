@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03 07:50",
+ "updated": "2026-11-04 07:55",
  "updated_by": "secretary",
  "today": [
   {
@@ -8,7 +8,7 @@
    "mins": 20
   },
   {
-   "task": "Check your email for the Kit affiliate decision (in review 9 days)",
+   "task": "Check your email for the Kit affiliate decision (in review 10 days)",
    "link": "https://app.kit.com/",
    "mins": 3
   },
@@ -43,11 +43,11 @@
  ],
  "alerts": [
   {
-   "text": "Posting queue ended yesterday (2 Nov, video 008). Nothing is scheduled from today (3 Nov) until you say which videos go next.",
+   "text": "Posting queue ended 2 Nov (video 008). Nothing has been scheduled for 3 and 4 Nov; still nothing until you say which videos go next.",
    "since": "2026-10-29"
   },
   {
-   "text": "Gemini daily trend scan has failed 5 days running (30 Oct to 3 Nov, step 'Trend scan with Gemini'). Check the Gemini key/quota in GitHub settings. Web search used meanwhile; no covered-fact changes found.",
+   "text": "Gemini daily trend scan has failed 6 days running (30 Oct to 4 Nov, step 'Trend scan with Gemini'). Check the Gemini key/quota in GitHub settings. Web search used meanwhile; unverified lead: reports of TikTok Creator Rewards pay cuts / fund changes (not yet checked against official page, no covered-fact change confirmed).",
    "since": "2026-10-30"
   },
   {
@@ -97,7 +97,7 @@
   },
   {
    "id": "kit",
-   "status": "in review (since 25 Oct, 9 days: check email)",
+   "status": "in review (since 25 Oct, 10 days: check email)",
    "earns": "50% for 12 months"
   },
   {
@@ -114,7 +114,7 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-11-03",
+  "checked": "2026-11-04",
   "pending_comments": 0,
   "subscribers": 1,
   "visits_since_launch": 76

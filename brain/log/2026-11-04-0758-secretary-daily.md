@@ -1,0 +1,1 @@
+2026-11-04 07:58 | secretary | daily run: guard OK (07:45), Gemini scan failing 6 days, web scan no confirmed fact change, queue empty since 2 Nov | owner: approve the week, Kit email, beehiiv welcome email
