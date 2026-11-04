@@ -14,7 +14,7 @@ import argparse, datetime as dt, json, os, pathlib, sys, time, urllib.error, url
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 API = "https://generativelanguage.googleapis.com/v1beta/models/{}:generateContent"
 # Google retires model names over time, so try an override first, then current ones in order.
-MODELS = [m for m in [os.environ.get("GEMINI_MODEL"), "gemini-flash-latest", "gemini-2.5-flash", "gemini-2.5-flash-lite"] if m]
+MODELS = [m for m in [os.environ.get("GEMINI_MODEL"), "gemini-flash-latest", "gemini-3.5-flash-lite", "gemini-2.5-flash"] if m]
 TODAY = dt.date.today().isoformat()
 
 
