@@ -40,7 +40,7 @@ const Icon = ({name, size = 150}) => {
 // hook: {big, bigWord?, text, box?, logo?, sub?}  big words inside a swelling blob, the line blurs in under it.
 const Hook = ({f, s, B0, E0, w}) => {
   const g = pop(f, B0 + 1, {w: 0.3, z: 0.6}); const bob = Math.sin(f / 14) * 8;
-  const bw = Math.min(w(s.bigWord, 2), B0 + 6); // the big words are the hook: never leave the blob empty const words = String(s.text || '').split(' ');
+  const bw = Math.min(w(s.bigWord, 2), B0 + 6); const words = String(s.text || '').split(' ');
   const len = String(s.big).length; const size = len <= 4 ? 230 : len <= 8 ? 168 : len <= 11 ? 128 : 100;
   return (<>
     <Blob x={CX} y={720 + bob} w={mix(160, 820, g)} h={mix(160, 400, g)} r={200}>
