@@ -1,102 +1,103 @@
 {
- "week_of": "2026-11-02",
- "review_doc": "https://claude.ai/artifact/FYTkyEhfR6hC3tXAp4fUda",
- "status": "drafted",
- "status_flow": "drafted -> approved -> rendered -> checked -> scheduled -> posted",
- "notes": [
-  "Reconstructed by the 1 Nov monthly run from the live Control Room: the Sunday run (1 Nov) drafted these 10 posts but could not push to GitHub. Scripts, captions and slugs are in the review doc; the creator fills slugs after 'approve the week'.",
-  "Previous plan (week of 26 Oct, cancelled by owner) is in git history."
- ],
- "posts": [
-  {
-   "n": 1,
-   "day": "2026-11-02",
-   "type": "value",
-   "title": "YouTube Is Testing $20 Payouts (Not $100)",
-   "affiliate": null,
-   "slug": null,
-   "status": "drafted"
-  },
-  {
-   "n": 2,
-   "day": "2026-11-03",
-   "type": "tool",
-   "title": "The $0 Way To Turn One Podcast Into 10 Shorts",
-   "affiliate": "opusclip",
-   "slug": null,
-   "status": "drafted"
-  },
-  {
-   "n": 3,
-   "day": "2026-11-03",
-   "type": "value",
-   "title": "Are You Giving Brands Your Video Twice For Free?",
-   "affiliate": null,
-   "slug": null,
-   "status": "drafted"
-  },
-  {
-   "n": 4,
-   "day": "2026-11-04",
-   "type": "value",
-   "title": "Amazon Pays With 0 Followers. The 180-Day Catch",
-   "affiliate": null,
-   "slug": null,
-   "status": "drafted"
-  },
-  {
-   "n": 5,
-   "day": "2026-11-04",
-   "type": "tool",
-   "title": "Start A Newsletter Before You Have Fans",
-   "affiliate": "beehiiv",
-   "slug": null,
-   "status": "drafted"
-  },
-  {
-   "n": 6,
-   "day": "2026-11-05",
-   "type": "value",
-   "title": "Ko-fi: Paid Tips With 0 Followers (And The Fee)",
-   "affiliate": null,
-   "slug": null,
-   "status": "drafted"
-  },
-  {
-   "n": 7,
-   "day": "2026-11-06",
-   "type": "value",
-   "title": "What Etsy Really Keeps From A $10 Template",
-   "affiliate": null,
-   "slug": null,
-   "status": "drafted"
-  },
-  {
-   "n": 8,
-   "day": "2026-11-06",
-   "type": "tool",
-   "title": "Voiceover As A Side Service, No Mic Needed",
-   "affiliate": "elevenlabs",
-   "slug": null,
-   "status": "drafted"
-  },
-  {
-   "n": 9,
-   "day": "2026-11-07",
-   "type": "value",
-   "title": "TikTok Pays At 10K. Here's What Pays Before",
-   "affiliate": null,
-   "slug": null,
-   "status": "drafted"
-  },
-  {
-   "n": 10,
-   "day": "2026-11-08",
-   "type": "proof",
-   "title": "Our First Week: 130 Views, 1 Follower",
-   "affiliate": null,
-   "slug": null,
-   "status": "drafted"
-  }
- ]
+  "week_of": "2026-11-02",
+  "review_doc": "https://claude.ai/artifact/FYTkyEhfR6hC3tXAp4fUda",
+  "status": "approved",
+  "status_flow": "drafted -> approved -> rendered -> checked -> scheduled -> posted",
+  "notes": [
+    "Reconstructed by the 1 Nov monthly run from the live Control Room: the Sunday run (1 Nov) drafted these 10 posts but could not push to GitHub. Scripts, captions and slugs are in the review doc; the creator fills slugs after 'approve the week'.",
+    "Previous plan (week of 26 Oct, cancelled by owner) is in git history.",
+    "4 Nov: Hammad asked for the next 5 videos scheduled this week with no review stops ('no need for review this time just do it'). Made n01-n05 in the fluid look with the new FluidKit scene kit (one post a day 4-8 Nov, 18:00 London)."
+  ],
+  "posts": [
+    {
+      "n": 9,
+      "day": "2026-11-04",
+      "type": "value",
+      "title": "TikTok Pays At 10K. Here's What Pays Before",
+      "affiliate": null,
+      "slug": "n01_tiktok_before_10k",
+      "status": "approved"
+    },
+    {
+      "n": 4,
+      "day": "2026-11-05",
+      "type": "value",
+      "title": "Amazon Pays With 0 Followers. The 180-Day Catch",
+      "affiliate": null,
+      "slug": "n02_amazon_180_days",
+      "status": "approved"
+    },
+    {
+      "n": 7,
+      "day": "2026-11-06",
+      "type": "value",
+      "title": "What Etsy Really Keeps From A $10 Template",
+      "affiliate": null,
+      "slug": "n03_etsy_10_template",
+      "status": "approved"
+    },
+    {
+      "n": 8,
+      "day": "2026-11-07",
+      "type": "tool",
+      "title": "Voiceover As A Side Service, No Mic Needed",
+      "affiliate": "elevenlabs",
+      "slug": "n04_elevenlabs_voice",
+      "status": "approved"
+    },
+    {
+      "n": 5,
+      "day": "2026-11-08",
+      "type": "tool",
+      "title": "Start A Newsletter Before You Have Fans",
+      "affiliate": "beehiiv",
+      "slug": "n05_newsletter_zero_fans",
+      "status": "approved"
+    },
+    {
+      "n": 1,
+      "day": "2026-11-02",
+      "type": "value",
+      "title": "YouTube Is Testing $20 Payouts (Not $100)",
+      "affiliate": null,
+      "slug": null,
+      "status": "not made (owner asked for 5 this week, 4 Nov)"
+    },
+    {
+      "n": 2,
+      "day": "2026-11-03",
+      "type": "tool",
+      "title": "The $0 Way To Turn One Podcast Into 10 Shorts",
+      "affiliate": "opusclip",
+      "slug": null,
+      "status": "not made (owner asked for 5 this week, 4 Nov)"
+    },
+    {
+      "n": 3,
+      "day": "2026-11-03",
+      "type": "value",
+      "title": "Are You Giving Brands Your Video Twice For Free?",
+      "affiliate": null,
+      "slug": null,
+      "status": "not made (owner asked for 5 this week, 4 Nov)"
+    },
+    {
+      "n": 6,
+      "day": "2026-11-05",
+      "type": "value",
+      "title": "Ko-fi: Paid Tips With 0 Followers (And The Fee)",
+      "affiliate": null,
+      "slug": null,
+      "status": "not made (owner asked for 5 this week, 4 Nov)"
+    },
+    {
+      "n": 10,
+      "day": "2026-11-08",
+      "type": "proof",
+      "title": "Our First Week: 130 Views, 1 Follower",
+      "affiliate": null,
+      "slug": null,
+      "status": "not made (owner asked for 5 this week, 4 Nov)"
+    }
+  ]
 }

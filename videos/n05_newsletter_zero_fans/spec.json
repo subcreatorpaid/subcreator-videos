@@ -1,0 +1,362 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "style": "fluid",
+ "slug": "n05_newsletter_zero_fans",
+ "title": "Start A Newsletter Before You Have Fans",
+ "type": "tool",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.28,
+ "preview_res": 360,
+ "titles": [
+  "Start A Newsletter Before You Have Fans",
+  "The $0 Way To Own Your Audience",
+  "Are You Quietly Renting Your Followers?"
+ ],
+ "keyword": "LIST",
+ "affiliate": "beehiiv",
+ "sources": [
+  {
+   "title": "beehiiv pricing 2026 (Free plan up to 2,500 subscribers, 1 Oct 2026)",
+   "url": "https://www.beehiiv.com/blog/beehiiv-pricing-2026",
+   "checked": "2026-11-04"
+  },
+  {
+   "title": "beehiiv case study: Geekout newsletter (Apr 2025)",
+   "url": "https://www.beehiiv.com/blog/case-study-geekout-newsletter",
+   "checked": "2026-11-04"
+  }
+ ],
+ "thumb": {
+  "headline": "Own your\n*audience*",
+  "hero": "money",
+  "sticker": "$0 to start",
+  "chip": "Email list",
+  "size": 120
+ },
+ "beats": [
+  {
+   "say": "Start your email list at zero followers. It costs zero dollars.",
+   "show": {
+    "type": "fluid",
+    "scene": "hook",
+    "big": "$0",
+    "bigWord": "zero",
+    "text": "Start your list today",
+    "box": [
+     2
+    ],
+    "logo": "beehiiv"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "zero",
+     "thud"
+    ],
+    [
+     "dollars",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Followers belong to the app. An email list is yours, even if an account gets banned.",
+   "show": {
+    "type": "fluid",
+    "scene": "title",
+    "text": "Your list. Not the app's.",
+    "box": [
+     1
+    ],
+    "logos": [
+     "instagram",
+     "tiktok",
+     "youtube"
+    ],
+    "tags": [
+     [
+      "Algorithm changes",
+      "app"
+     ],
+     [
+      "Account bans",
+      "banned",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "yours",
+     "pop"
+    ],
+    [
+     "banned",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "beehiiv's free plan holds up to [2,500|twenty-five hundred] subscribers.",
+   "show": {
+    "type": "fluid",
+    "scene": "counter",
+    "n": 2500,
+    "word": "2,500",
+    "label": "subscribers on the free plan",
+    "ends": [
+     "$0",
+     "Free plan"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "2,500",
+     "count"
+    ]
+   ]
+  },
+  {
+   "say": "The setup: one free checklist, a four-line welcome email, a comment keyword in every video, and one useful email a week.",
+   "show": {
+    "type": "fluid",
+    "scene": "steps",
+    "title": "The setup",
+    "box": [
+     1
+    ],
+    "steps": [
+     [
+      "checklist",
+      "One free checklist"
+     ],
+     [
+      "welcome",
+      "4-line welcome email"
+     ],
+     [
+      "keyword",
+      "Keyword in every video"
+     ],
+     [
+      "week",
+      "1 useful email a week"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "checklist",
+     "click"
+    ],
+    [
+     "welcome",
+     "click"
+    ],
+    [
+     "keyword",
+     "click"
+    ],
+    [
+     "week",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Now the catch.",
+   "show": {
+    "type": "fluid",
+    "scene": "catch",
+    "top": "now",
+    "sub": "Small lists earn small"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "catch",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Small lists earn small amounts. It takes months of weekly emails to grow.",
+   "show": {
+    "type": "fluid",
+    "scene": "warn",
+    "icon": "mail",
+    "big": "Months",
+    "flipWord": "months",
+    "text": "Growth is slow",
+    "box": [
+     2
+    ],
+    "tag": "of weekly emails",
+    "tagWord": "weekly",
+    "tagRed": false
+   },
+   "sfx": [
+    [
+     0,
+     "glass"
+    ],
+    [
+     "small",
+     "thud"
+    ],
+    [
+     "months",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Later, beehiiv Boosts can pay you per subscriber you send to other newsletters. One case study made [$25,000|twenty-five thousand dollars] with about [31,000|thirty-one thousand] subscribers.",
+   "show": {
+    "type": "fluid",
+    "scene": "stack",
+    "title": "Where the money comes later",
+    "box": [
+     3
+    ],
+    "rows": [
+     {
+      "k": "beehiiv Boosts",
+      "v": "Paid per subscriber",
+      "word": "boosts"
+     },
+     {
+      "k": "One case study (2025)",
+      "v": "$25,000",
+      "tag": "~31,000 subs · not typical",
+      "word": "$25,000"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "boosts",
+     "pop"
+    ],
+    [
+     "$25,000",
+     "count"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [LIST|list] for the free guide, or get it free on [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "fluid",
+    "scene": "comment",
+    "keyword": "LIST"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "LIST",
+     "key"
+    ],
+    [
+     "free",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Everything is on [subcreatorpaid.com|sub creator paid dot com], with the free AI income finder.",
+   "show": {
+    "type": "fluid",
+    "scene": "site",
+    "images": [
+     "../../animator/previews/overview_site/home.png",
+     "../../animator/previews/overview_site/finder.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "key"
+    ],
+    [
+     "finder",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The tool I'd start with is linked in my bio.",
+   "show": {
+    "type": "fluid",
+    "scene": "tool",
+    "brand": "beehiiv",
+    "name": "beehiiv",
+    "desc": "Newsletter platform",
+    "line": "Free plan up to 2,500 subscribers"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "tool",
+     "pop"
+    ],
+    [
+     "linked",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Follow for one verified stream a week.",
+   "show": {
+    "type": "fluid",
+    "scene": "follow"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "follow",
+     "click"
+    ]
+   ]
+  }
+ ]
+}

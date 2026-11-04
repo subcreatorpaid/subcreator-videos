@@ -10,10 +10,10 @@ import {FONT} from '../Short';
 import {expo, expoIn, inOut, spring, kf, mix, clamp01, hash, typedCount, useTimes} from './kit';
 import {BrandLogo} from './art';
 
-const K = {ink: '#0E0E10', lime: '#CDF24F', hi: '#ECFF9E', lo: '#A9D12A', mut: '#6B6A63', card: '#19191C', line: '#2A2A2F', red: '#D93A3A', paper: '#FBFBF8'};
-const MONO = '"DejaVu Sans Mono", ui-monospace, Menlo, monospace';
-const CX = 510; // centre of the safe area (right edge kept clear of the like/comment buttons)
-const BG = {
+export const K = {ink: '#0E0E10', lime: '#CDF24F', hi: '#ECFF9E', lo: '#A9D12A', mut: '#6B6A63', card: '#19191C', line: '#2A2A2F', red: '#D93A3A', paper: '#FBFBF8'};
+export const MONO = '"DejaVu Sans Mono", ui-monospace, Menlo, monospace';
+export const CX = 510; // centre of the safe area (right edge kept clear of the like/comment buttons)
+export const BG = {
   light: 'radial-gradient(120% 75% at 50% 38%, #F7F6F2 0%, #ECEBE5 62%, #DEDDD5 100%)',
   dark: 'radial-gradient(120% 75% at 50% 38%, #1C1C21 0%, #0E0E10 70%)',
   lime: 'radial-gradient(120% 75% at 50% 38%, #DDF97A 0%, #CDF24F 58%, #BCE13C 100%)',
@@ -22,11 +22,11 @@ const SCENE_BG = ['light', 'light', 'light', 'dark', 'dark', 'lime', 'dark', 'da
 // transition INTO scene i
 const TR = {1: 'cut', 2: 'cut', 3: 'whipX', 4: 'zoom', 5: 'iris', 6: 'whipY', 7: 'soft', 8: 'iris', 9: 'soft', 10: 'iris', 11: 'push', 12: 'whipX', 13: 'iris'};
 const IRIS_AT = {5: [CX, 1010], 8: [CX, 640], 10: [CX, 1120], 13: [CX, 1040]};
-const TW = 9; // half-length of a transition, frames
+export const TW = 9; // half-length of a transition, frames
 
 // ------------------------------------------------------------------ primitives
 // Directional (motion) blur through an SVG filter; x/y = blur in px along each axis.
-const MB = ({id, x = 0, y = 0, style = {}, children}) => {
+export const MB = ({id, x = 0, y = 0, style = {}, children}) => {
   const on = x > 0.4 || y > 0.4;
   return (<>
     {on && <svg width="0" height="0" style={{position: 'absolute'}}><filter id={id} x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation={`${x.toFixed(1)} ${y.toFixed(1)}`} /></filter></svg>}
@@ -34,7 +34,7 @@ const MB = ({id, x = 0, y = 0, style = {}, children}) => {
   </>);
 };
 // Words that arrive out of a blur (rise + de-scale); `out` makes them blur away again.
-const BlurIn = ({f, at, text, size = 100, color = K.ink, weight = 900, stagger = 3, ats, out, lh = 0.98, align = 'center', box, style = {}}) => {
+export const BlurIn = ({f, at, text, size = 100, color = K.ink, weight = 900, stagger = 3, ats, out, lh = 0.98, align = 'center', box, style = {}}) => {
   const words = String(text).split(' ');
   return (
     <div style={{fontFamily: FONT, fontWeight: weight, fontSize: size, lineHeight: lh, letterSpacing: -size * 0.045, color, textAlign: align, ...style}}>
@@ -51,7 +51,7 @@ const BlurIn = ({f, at, text, size = 100, color = K.ink, weight = 900, stagger =
   );
 };
 // Letters fly apart (the reference's "scattered" moment).
-const Explode = ({f, at, text, size = 100, color = K.ink, seed = 1, x, y, w = 840}) => {
+export const Explode = ({f, at, text, size = 100, color = K.ink, seed = 1, x, y, w = 840}) => {
   const t = f - at; if (t < 0 || t > 30) return null; const p = expo(t, 22);
   return (
     <div style={{position: 'absolute', left: x - w / 2, top: y, width: w, textAlign: 'center', fontFamily: FONT, fontWeight: 900, fontSize: size, letterSpacing: -size * 0.045, color, lineHeight: 1}}>
@@ -62,23 +62,23 @@ const Explode = ({f, at, text, size = 100, color = K.ink, seed = 1, x, y, w = 84
   );
 };
 // The soft 3D lime blob (circle, block or anything in between).
-const Blob = ({x, y, w, h, r, children, glow = 1, style = {}}) => (
+export const Blob = ({x, y, w, h, r, children, glow = 1, style = {}}) => (
   <div style={{position: 'absolute', left: x - w / 2, top: y - h / 2, width: w, height: h, borderRadius: r,
     background: `radial-gradient(130% 120% at 30% 22%, ${K.hi} 0%, ${K.lime} 42%, ${K.lo} 100%)`,
     boxShadow: `0 ${Math.min(h, 500) * 0.16}px ${Math.min(h, 500) * 0.34}px rgba(118,148,18,${0.32 * glow}), inset 0 -${Math.min(h, 400) * 0.05}px ${Math.min(h, 400) * 0.12}px rgba(80,110,0,0.16), inset 0 ${Math.min(h, 400) * 0.04}px ${Math.min(h, 400) * 0.08}px rgba(255,255,255,0.55)`,
     display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', ...style}}>{children}</div>
 );
-const Tag = ({children, size = 42, dark, style = {}}) => (
+export const Tag = ({children, size = 42, dark, style = {}}) => (
   <span style={{display: 'inline-block', background: dark ? K.ink : '#fff', color: dark ? '#fff' : K.ink, fontFamily: FONT, fontWeight: 800, fontSize: size, letterSpacing: -size * 0.03,
     padding: `${size * 0.22}px ${size * 0.5}px`, borderRadius: size * 0.36, boxShadow: '0 14px 30px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.08)', whiteSpace: 'nowrap', ...style}}>{children}</span>
 );
-const Mono = ({children, size = 26, color = K.ink, style = {}}) => (
+export const Mono = ({children, size = 26, color = K.ink, style = {}}) => (
   <div style={{fontFamily: MONO, fontWeight: 700, fontSize: size, letterSpacing: size * 0.18, textTransform: 'uppercase', color, ...style}}>{children}</div>
 );
-const pop = (f, at, o = {w: 0.42, z: 0.62}) => spring(f - at, o);
+export const pop = (f, at, o = {w: 0.42, z: 0.62}) => spring(f - at, o);
 const at = (el, x, y, extra = {}) => ({position: 'absolute', left: x, top: y, ...extra});
 // Glowing lime cursor (the reference's soft blob pointer) with a click ripple.
-const Glow = ({f, track, clicks = [], dark}) => {
+export const Glow = ({f, track, clicks = [], dark}) => {
   if (f < track[0][0] - 2 || f > track[track.length - 1][0] + 14) return null;
   const x = kf(f, track.map(([t, xx]) => [t, xx])), y = kf(f, track.map(([t, , yy]) => [t, yy]));
   const ck = clicks.find((c) => f >= c && f < c + 16); const t = ck === undefined ? -1 : (f - ck) / 16; const a = expo(f - track[0][0] + 2, 8);
@@ -89,7 +89,7 @@ const Glow = ({f, track, clicks = [], dark}) => {
       transform: `scale(${t >= 0 && t < 0.35 ? 0.75 : 1})`, boxShadow: '0 8px 20px rgba(0,0,0,0.3)', zIndex: 41}} />
   </>);
 };
-const Arrow = ({f, track, clicks = []}) => {
+export const Arrow = ({f, track, clicks = []}) => {
   if (f < track[0][0] || f > track[track.length - 1][0] + 10) return null;
   const x = kf(f, track.map(([t, xx]) => [t, xx])), y = kf(f, track.map(([t, , yy]) => [t, yy])); const ck = clicks.some((c) => f >= c && f < c + 5);
   return (<div style={{position: 'absolute', left: x, top: y, zIndex: 45, transform: `scale(${ck ? 0.85 : 1})`, transformOrigin: '4px 4px'}}>
@@ -390,7 +390,7 @@ const S13 = ({f, W, B, E}) => {
 const SCENES = [S0, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13];
 
 // ------------------------------------------------------------------ captions (white word-by-word pill, like the reference)
-const useChunks = (beats) => {
+export const useChunks = (beats) => {
   const out = [];
   beats.forEach((b) => {
     const ws = (b.words || []).filter((w) => /[\w$%]/.test(w.w)); let cur = [];
@@ -398,7 +398,7 @@ const useChunks = (beats) => {
   });
   return out;
 };
-const Caption = ({f, chunks, tone}) => {
+export const Caption = ({f, chunks, tone}) => {
   const idx = chunks.findIndex((c, i) => f >= c[0].f - 1 && (i === chunks.length - 1 || f < chunks[i + 1][0].f - 1));
   if (idx < 0) return null; const c = chunks[idx]; const last = c[c.length - 1]; if (f > last.f + 26) return null;
   const shown = c.filter((w) => f >= w.f - 1).map((w) => w.w.replace(/[.,:]$/, '')).join(' ');

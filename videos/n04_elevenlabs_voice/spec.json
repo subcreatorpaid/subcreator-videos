@@ -1,0 +1,399 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "style": "fluid",
+ "slug": "n04_elevenlabs_voice",
+ "title": "Can Your Voice Earn With 0 Followers?",
+ "type": "tool",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.28,
+ "preview_res": 360,
+ "titles": [
+  "Can Your Voice Earn With 0 Followers?",
+  "ElevenLabs Pays Per Character. Here's How Much",
+  "The Quiet Way To Rent Out Your Voice"
+ ],
+ "keyword": "VOICE",
+ "affiliate": "elevenlabs",
+ "sources": [
+  {
+   "title": "ElevenLabs blog: monetize your voice with the Voice Library",
+   "url": "https://elevenlabs.io/blog/monetize-your-voice-with-elevenlabs-voice-library-and-create-passive-income",
+   "checked": "2026-11-04"
+  },
+  {
+   "title": "ElevenLabs docs: Voice Library payouts",
+   "url": "https://elevenlabs.io/docs/eleven-creative/voices/payouts",
+   "checked": "2026-11-04"
+  }
+ ],
+ "thumb": {
+  "headline": "Your voice,\n*paid per use*",
+  "hero": "face",
+  "hold": "mic",
+  "mood": 0.7,
+  "sticker": "ElevenLabs",
+  "chip": "Voice Library",
+  "size": 120
+ },
+ "beats": [
+  {
+   "say": "Your voice can earn on ElevenLabs, with zero followers.",
+   "show": {
+    "type": "fluid",
+    "scene": "hook",
+    "big": "0 followers",
+    "bigWord": "zero",
+    "text": "Your voice can earn",
+    "box": [
+     3
+    ],
+    "logo": "elevenlabs"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "elevenlabs",
+     "pop"
+    ],
+    [
+     "zero",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "You clone your own voice and share it in the Voice Library. When paid users use it, you get paid.",
+   "show": {
+    "type": "fluid",
+    "scene": "title",
+    "text": "Share it. Paid per use.",
+    "box": [
+     3
+    ],
+    "logo": "elevenlabs",
+    "tags": [
+     [
+      "Voice Library",
+      "library"
+     ],
+     [
+      "Paid users only",
+      "paid",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "library",
+     "pop"
+    ],
+    [
+     "paid",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The default rate is about three cents per thousand characters. Clear or rare voices can ask up to twenty cents.",
+   "show": {
+    "type": "fluid",
+    "scene": "card",
+    "label": "Voice Library · per 1,000 characters",
+    "title": "What one use pays",
+    "box": [
+     3
+    ],
+    "rows": [
+     [
+      "Default rate",
+      "$0.03",
+      "three"
+     ],
+     [
+      "Clear or rare voice",
+      "up to $0.20",
+      "twenty"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whipX"
+    ],
+    [
+     "three",
+     "pop"
+    ],
+    [
+     "twenty",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Now the catch.",
+   "show": {
+    "type": "fluid",
+    "scene": "catch",
+    "top": "now",
+    "sub": "Most voices earn little"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "catch",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "A ten-minute script is about nine thousand characters. At the default rate, that's about twenty-seven cents.",
+   "show": {
+    "type": "fluid",
+    "scene": "warn",
+    "icon": "mic",
+    "big": "$0.27",
+    "flipWord": "twenty-seven",
+    "text": "One 10-minute script",
+    "box": [
+     1
+    ],
+    "tag": "At the default rate",
+    "tagWord": "default",
+    "tagRed": false
+   },
+   "sfx": [
+    [
+     0,
+     "glass"
+    ],
+    [
+     "nine",
+     "pop"
+    ],
+    [
+     "twenty-seven",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "And the professional clone needs the Creator plan, about [$22|twenty-two dollars] a month.",
+   "show": {
+    "type": "fluid",
+    "scene": "counter",
+    "n": 22,
+    "prefix": "$",
+    "word": "$22",
+    "label": "a month · Creator plan",
+    "ends": [
+     "Clone",
+     "Downgrade later"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "$22",
+     "count"
+    ]
+   ]
+  },
+  {
+   "say": "You can downgrade after uploading. Payouts go out weekly through Stripe, once you reach [$10|ten dollars].",
+   "show": {
+    "type": "fluid",
+    "scene": "stack",
+    "title": "How you get paid",
+    "box": [
+     3
+    ],
+    "rows": [
+     {
+      "k": "After upload",
+      "v": "Downgrade OK",
+      "word": "downgrade"
+     },
+     {
+      "k": "Paid",
+      "v": "Weekly · Stripe",
+      "word": "weekly"
+     },
+     {
+      "k": "Payout from",
+      "v": "$10",
+      "word": "$10"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "downgrade",
+     "pop"
+    ],
+    [
+     "weekly",
+     "pop"
+    ],
+    [
+     "$10",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Record thirty minutes of clean audio in a quiet room, and only ever clone your own voice.",
+   "show": {
+    "type": "fluid",
+    "scene": "steps",
+    "title": "Before you start",
+    "box": [
+     2
+    ],
+    "steps": [
+     [
+      "record",
+      "Record 30 min of clean audio"
+     ],
+     [
+      "quiet",
+      "Quiet room, no music"
+     ],
+     [
+      "own",
+      "Only your own voice"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "record",
+     "click"
+    ],
+    [
+     "quiet",
+     "click"
+    ],
+    [
+     "own",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [VOICE|voice] for the free guide, or get it free on [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "fluid",
+    "scene": "comment",
+    "keyword": "VOICE"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "VOICE",
+     "key"
+    ],
+    [
+     "free",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Everything is on [subcreatorpaid.com|sub creator paid dot com], with the free AI income finder.",
+   "show": {
+    "type": "fluid",
+    "scene": "site",
+    "images": [
+     "../../animator/previews/overview_site/home.png",
+     "../../animator/previews/overview_site/finder.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "key"
+    ],
+    [
+     "finder",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The tool I'd start with is linked in my bio.",
+   "show": {
+    "type": "fluid",
+    "scene": "tool",
+    "brand": "elevenlabs",
+    "name": "ElevenLabs",
+    "desc": "AI voice platform",
+    "line": "Make the clone, share it in the Voice Library"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "tool",
+     "pop"
+    ],
+    [
+     "linked",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Follow for one verified stream a week.",
+   "show": {
+    "type": "fluid",
+    "scene": "follow"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "follow",
+     "click"
+    ]
+   ]
+  }
+ ]
+}

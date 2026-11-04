@@ -8,11 +8,12 @@ import {Reel} from './Reel';
 import {Overview} from './Overview';
 import {Motion} from './Motion';
 import {Fluid} from './Fluid';
+import {FluidKit} from './FluidKit';
 
 export const Flow = (p) => (
   <AbsoluteFill>
     <Fonts />
-    {p.style === 'fluid' ? <Fluid {...p} /> : p.style === 'overview' ? <Overview {...p} /> : p.style === 'launch' ? <Launch {...p} /> : p.style === 'keynote' ? <Keynote {...p} /> : p.style === 'motion' ? <Motion {...p} /> : <Reel {...p} />}
+    {p.style === 'fluid' && (p.beats || []).some((b) => b.show && b.show.scene) ? <FluidKit {...p} /> : p.style === 'fluid' ? <Fluid {...p} /> : p.style === 'overview' ? <Overview {...p} /> : p.style === 'launch' ? <Launch {...p} /> : p.style === 'keynote' ? <Keynote {...p} /> : p.style === 'motion' ? <Motion {...p} /> : <Reel {...p} />}
     <Audio src={staticFile('voice.wav')} />
   </AbsoluteFill>
 );
