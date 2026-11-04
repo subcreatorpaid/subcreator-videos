@@ -1,0 +1,342 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "style": "fluid",
+ "slug": "n03_etsy_10_template",
+ "title": "What Etsy Really Keeps From A $10 Template",
+ "type": "value",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.28,
+ "preview_res": 360,
+ "titles": [
+  "What Etsy Really Keeps From A $10 Template",
+  "Is Etsy Quietly Taking $1.40 Per Sale?",
+  "The $0.20 Way To Sell A Template"
+ ],
+ "keyword": "ETSY",
+ "affiliate": "beehiiv",
+ "sources": [
+  {
+   "title": "Checkout Page: Etsy fees 2026 (US), $10 worked example",
+   "url": "https://checkoutpage.com/blog/etsy-fees",
+   "checked": "2026-11-04"
+  }
+ ],
+ "thumb": {
+  "headline": "$10 sale.\nYou keep *$8.60*",
+  "hero": "money",
+  "sticker": "Etsy fees",
+  "sticker_color": "red",
+  "chip": "US example",
+  "size": 110
+ },
+ "beats": [
+  {
+   "say": "Sell a [$10|ten dollar] template on Etsy, and you keep about [$8.60|eight sixty].",
+   "show": {
+    "type": "fluid",
+    "scene": "hook",
+    "big": "$8.60",
+    "bigWord": "$8.60",
+    "text": "kept from a $10 sale",
+    "box": [
+     3
+    ],
+    "logo": "etsy",
+    "sub": "US example · main fees"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "etsy",
+     "pop"
+    ],
+    [
+     "$8.60",
+     "count"
+    ]
+   ]
+  },
+  {
+   "say": "No followers needed. Buyers find you through Etsy search.",
+   "show": {
+    "type": "fluid",
+    "scene": "title",
+    "text": "Buyers find you in search",
+    "box": [
+     4
+    ],
+    "logo": "etsy",
+    "tags": [
+     [
+      "0 followers",
+      "followers"
+     ],
+     [
+      "Instant download",
+      "search",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "followers",
+     "pop"
+    ],
+    [
+     "search",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Here's where [$1.40|a dollar forty] goes: [$0.20|twenty cents] to list, [6.5%|six and a half percent] per sale, and three percent plus [$0.25|twenty-five cents] to process.",
+   "show": {
+    "type": "fluid",
+    "scene": "card",
+    "label": "Etsy fees · US · $10 sale",
+    "title": "Where $1.40 goes",
+    "box": [
+     2
+    ],
+    "rows": [
+     [
+      "Listing",
+      "$0.20",
+      "list"
+     ],
+     [
+      "Transaction 6.5%",
+      "$0.65",
+      "6.5%"
+     ],
+     [
+      "Processing 3% + $0.25",
+      "$0.55",
+      "process"
+     ]
+    ],
+    "value": "$8.60",
+    "valueWord": "process",
+    "valueLabel": "you keep"
+   },
+   "sfx": [
+    [
+     0,
+     "whipX"
+    ],
+    [
+     "list",
+     "pop"
+    ],
+    [
+     "6.5%",
+     "pop"
+    ],
+    [
+     "process",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "But here's the catch nobody mentions.",
+   "show": {
+    "type": "fluid",
+    "scene": "catch",
+    "sub": "Offsite Ads"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "catch",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "If the sale comes from Etsy's offsite ads, another [15%|fifteen percent] goes. You keep about [$7.10|seven ten].",
+   "show": {
+    "type": "fluid",
+    "scene": "warn",
+    "icon": "x",
+    "big": "$7.10",
+    "flipWord": "$7.10",
+    "text": "Offsite Ads take 15%",
+    "box": [
+     3
+    ],
+    "tag": "Opt out if under $10k a year",
+    "tagWord": "keep",
+    "tagRed": false
+   },
+   "sfx": [
+    [
+     0,
+     "glass"
+    ],
+    [
+     "15%",
+     "thud"
+    ],
+    [
+     "$7.10",
+     "count"
+    ]
+   ]
+  },
+  {
+   "say": "Start narrow: one template type, made in Canva, buyer keywords in the title, and one new listing a week.",
+   "show": {
+    "type": "fluid",
+    "scene": "steps",
+    "title": "Start narrow",
+    "box": [
+     1
+    ],
+    "steps": [
+     [
+      "one",
+      "One template type"
+     ],
+     [
+      "canva",
+      "Make it in Canva"
+     ],
+     [
+      "keywords",
+      "Buyer keywords in title"
+     ],
+     [
+      "week",
+      "1 new listing a week"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "one",
+     "click"
+    ],
+    [
+     "canva",
+     "click"
+    ],
+    [
+     "keywords",
+     "click"
+    ],
+    [
+     "week",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [ETSY|etsy] for the free guide, or get it free on [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "fluid",
+    "scene": "comment",
+    "keyword": "ETSY"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "ETSY",
+     "key"
+    ],
+    [
+     "free",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Everything is on [subcreatorpaid.com|sub creator paid dot com], with the free AI income finder.",
+   "show": {
+    "type": "fluid",
+    "scene": "site",
+    "images": [
+     "../../animator/previews/overview_site/home.png",
+     "../../animator/previews/overview_site/finder.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "key"
+    ],
+    [
+     "finder",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The tool I'd start with is linked in my bio.",
+   "show": {
+    "type": "fluid",
+    "scene": "tool",
+    "brand": "beehiiv",
+    "name": "beehiiv",
+    "desc": "Newsletter platform",
+    "line": "Email your buyers, don't rely on search alone"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "tool",
+     "pop"
+    ],
+    [
+     "linked",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Follow for one verified stream a week.",
+   "show": {
+    "type": "fluid",
+    "scene": "follow"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "follow",
+     "click"
+    ]
+   ]
+  }
+ ]
+}

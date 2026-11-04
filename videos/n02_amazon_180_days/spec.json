@@ -1,0 +1,367 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "style": "fluid",
+ "slug": "n02_amazon_180_days",
+ "title": "Amazon Gives You 180 Days. Then It's Gone",
+ "type": "value",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.28,
+ "preview_res": 360,
+ "titles": [
+  "Amazon Gives You 180 Days. Then It's Gone",
+  "Is Amazon Quietly Withdrawing Your Account?",
+  "The 3-Sale Rule Nobody Tells You"
+ ],
+ "keyword": "AMAZON",
+ "affiliate": "opusclip",
+ "sources": [
+  {
+   "title": "Amazon Associates help: you have 180 days; reviewed after 3 qualifying sales",
+   "url": "https://associates.amazon.ca/help/node/topic/G7MJTPEP9NC3YKMG",
+   "checked": "2026-11-04"
+  },
+  {
+   "title": "Lasso: Amazon affiliate commission rates (Oct 2026)",
+   "url": "https://getlasso.co/amazon-affiliate-commission-rate/",
+   "checked": "2026-11-04"
+  }
+ ],
+ "thumb": {
+  "headline": "180 days\nto *3 sales*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": 0.8,
+  "sticker": "Amazon rule",
+  "sticker_color": "red",
+  "chip": "Associates",
+  "size": 130
+ },
+ "beats": [
+  {
+   "say": "You get [180|a hundred and eighty] days to make three Amazon sales.",
+   "show": {
+    "type": "fluid",
+    "scene": "hook",
+    "big": "180 days",
+    "bigWord": "180",
+    "text": "to make 3 sales",
+    "box": [
+     2
+    ],
+    "logo": "amazon"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "180",
+     "thud"
+    ],
+    [
+     "three",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Amazon Associates lets you join with zero followers. That part is true.",
+   "show": {
+    "type": "fluid",
+    "scene": "title",
+    "text": "Join with 0 followers",
+    "box": [
+     2
+    ],
+    "logo": "amazon",
+    "tags": [
+     [
+      "Free to join",
+      "join"
+     ],
+     [
+      "Any niche",
+      "true"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "zero",
+     "pop"
+    ],
+    [
+     "true",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "But you're not fully in yet. Amazon reviews your account after your third qualifying sale.",
+   "show": {
+    "type": "fluid",
+    "scene": "counter",
+    "n": 3,
+    "word": "third",
+    "label": "qualifying sales, then a review",
+    "ends": [
+     "Apply",
+     "Review"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "third",
+     "count"
+    ],
+    [
+     "review",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Here's the catch: no three sales in [180|a hundred and eighty] days, and the application can be withdrawn.",
+   "show": {
+    "type": "fluid",
+    "scene": "catch",
+    "sub": "No 3 sales in 180 days = withdrawn"
+   },
+   "sfx": [
+    [
+     0,
+     "whipX"
+    ],
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "withdrawn",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "And it pays small. Most categories pay three to four and a half percent, so a [$40|forty dollar] item earns about [$1.80|a dollar eighty].",
+   "show": {
+    "type": "fluid",
+    "scene": "stack",
+    "title": "What a sale pays",
+    "box": [
+     2
+    ],
+    "rows": [
+     {
+      "k": "Most categories",
+      "v": "3%–4.5%",
+      "word": "categories"
+     },
+     {
+      "k": "A $40 item at 4.5%",
+      "v": "≈ $1.80",
+      "tag": "Example",
+      "word": "$40"
+     }
+    ],
+    "note": "Rates vary by category"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "percent",
+     "pop"
+    ],
+    [
+     "$1.80",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Asking friends and family to buy can break the rules. You need real buyers.",
+   "show": {
+    "type": "fluid",
+    "scene": "warn",
+    "icon": "x",
+    "big": "Real buyers",
+    "flipWord": "real",
+    "text": "Friends and family? Risky.",
+    "box": [
+     3
+    ],
+    "tag": "Can break the rules",
+    "tagWord": "rules"
+   },
+   "sfx": [
+    [
+     0,
+     "glass"
+    ],
+    [
+     "break",
+     "thud"
+    ],
+    [
+     "real",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "So apply when your content is ready. Pick three things you use, make one honest video each, and add your links with a disclosure.",
+   "show": {
+    "type": "fluid",
+    "scene": "steps",
+    "title": "Do it in this order",
+    "box": [
+     3
+    ],
+    "steps": [
+     [
+      "apply",
+      "Apply when content is ready"
+     ],
+     [
+      "three",
+      "Pick 3 things you use"
+     ],
+     [
+      "honest",
+      "1 honest video each"
+     ],
+     [
+      "disclosure",
+      "Links + disclosure"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "apply",
+     "click"
+    ],
+    [
+     "three",
+     "click"
+    ],
+    [
+     "honest",
+     "click"
+    ],
+    [
+     "disclosure",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [AMAZON|amazon] for the free guide, or get it free on [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "fluid",
+    "scene": "comment",
+    "keyword": "AMAZON"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "AMAZON",
+     "key"
+    ],
+    [
+     "free",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Everything is on [subcreatorpaid.com|sub creator paid dot com], with the free AI income finder.",
+   "show": {
+    "type": "fluid",
+    "scene": "site",
+    "images": [
+     "../../animator/previews/overview_site/home.png",
+     "../../animator/previews/overview_site/finder.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "key"
+    ],
+    [
+     "finder",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The tool I'd start with is linked in my bio.",
+   "show": {
+    "type": "fluid",
+    "scene": "tool",
+    "brand": "opusclip",
+    "name": "OpusClip",
+    "desc": "AI clipping tool",
+    "line": "Cut one review into shorts for every app"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "tool",
+     "pop"
+    ],
+    [
+     "linked",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Follow for one verified stream a week.",
+   "show": {
+    "type": "fluid",
+    "scene": "follow"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "follow",
+     "click"
+    ]
+   ]
+  }
+ ]
+}

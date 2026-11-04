@@ -1,0 +1,416 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "style": "fluid",
+ "slug": "n01_tiktok_before_10k",
+ "title": "TikTok Pays At 10K. Here's What Pays Before",
+ "type": "value",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.28,
+ "preview_res": 360,
+ "titles": [
+  "TikTok Pays At 10K. Here's What Pays Before",
+  "Is The 10K Rule Quietly Costing You Money?",
+  "3 Ways To Get Paid Before 10K"
+ ],
+ "keyword": "START",
+ "affiliate": "opusclip",
+ "sources": [
+  {
+   "title": "TikTok Creator Rewards requirements (site/data/streams/tiktok-creator-rewards.json)",
+   "url": "https://www.makeinfluence.com/en/academy/tiktok-creator-rewards-program-how-organic-monetization-works-in-2026",
+   "checked": "2026-11-04"
+  },
+  {
+   "title": "Insense: UGC creator rates (Sep 2026)",
+   "url": "https://insense.pro/blog/ugc-creator-rates",
+   "checked": "2026-11-04"
+  },
+  {
+   "title": "Amazon Associates help: account dormancy / 3 qualifying sales in 180 days",
+   "url": "https://associates.amazon.ca/help/node/topic/G7MJTPEP9NC3YKMG",
+   "checked": "2026-11-04"
+  },
+  {
+   "title": "Checkout Page: Etsy fees 2026 (US)",
+   "url": "https://checkoutpage.com/blog/etsy-fees",
+   "checked": "2026-11-04"
+  }
+ ],
+ "thumb": {
+  "headline": "Paid *before*\n10K",
+  "hero": "money",
+  "sticker": "3 streams",
+  "chip": "No 10K needed",
+  "size": 120
+ },
+ "beats": [
+  {
+   "say": "TikTok pays at ten thousand followers. Here's what pays before that.",
+   "show": {
+    "type": "fluid",
+    "scene": "hook",
+    "big": "10,000",
+    "bigWord": "ten",
+    "text": "What pays before that?",
+    "box": [
+     2
+    ],
+    "logo": "tiktok"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "thousand",
+     "thud"
+    ],
+    [
+     "before",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Creator Rewards needs [10,000|ten thousand] followers, [100,000|a hundred thousand] views in thirty days, and you must be eighteen.",
+   "show": {
+    "type": "fluid",
+    "scene": "card",
+    "label": "Creator Rewards · requirements",
+    "title": "The bar to get paid",
+    "box": [
+     4
+    ],
+    "rows": [
+     [
+      "Followers",
+      "10,000",
+      "10,000"
+     ],
+     [
+      "Views, last 30 days",
+      "100,000",
+      "100,000"
+     ],
+     [
+      "Age",
+      "18+",
+      "eighteen"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "10,000",
+     "pop"
+    ],
+    [
+     "100,000",
+     "pop"
+    ],
+    [
+     "eighteen",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "And reports put it at about forty cents to a dollar per thousand views.",
+   "show": {
+    "type": "fluid",
+    "scene": "warn",
+    "icon": "eye",
+    "big": "$0.40–$1",
+    "flipWord": "forty",
+    "text": "Per 1,000 views",
+    "box": [
+     1
+    ],
+    "tag": "Reported, not official",
+    "tagWord": "per"
+   },
+   "sfx": [
+    [
+     0,
+     "glass"
+    ],
+    [
+     "forty",
+     "count"
+    ],
+    [
+     "thousand",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "So what pays before ten thousand? Three things.",
+   "show": {
+    "type": "fluid",
+    "scene": "title",
+    "text": "What pays before 10K?",
+    "box": [
+     3
+    ],
+    "tags": [
+     [
+      "No follower bar",
+      "pays"
+     ],
+     [
+      "3 streams",
+      "three",
+      true
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "three",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "One, U G C. Brands pay for videos, not followers. Beginners charge about fifty to four hundred dollars.",
+   "show": {
+    "type": "fluid",
+    "scene": "hook",
+    "big": "$50–$400",
+    "bigWord": "fifty",
+    "text": "1. UGC: per video",
+    "box": [
+     1
+    ],
+    "sub": "Beginner range · brands judge samples",
+    "bg": "lime"
+   },
+   "sfx": [
+    [
+     0,
+     "whipX"
+    ],
+    [
+     "videos",
+     "pop"
+    ],
+    [
+     "fifty",
+     "count"
+    ],
+    [
+     "hundred",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Two, Amazon Associates. Zero followers to join, but you need three sales in [180|a hundred and eighty] days.",
+   "show": {
+    "type": "fluid",
+    "scene": "title",
+    "text": "2. Amazon Associates",
+    "box": [
+     0
+    ],
+    "logo": "amazon",
+    "tags": [
+     [
+      "0 followers",
+      "zero"
+     ],
+     [
+      "3 sales",
+      "three",
+      true
+     ],
+     [
+      "180 days",
+      "180"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "zero",
+     "pop"
+    ],
+    [
+     "three",
+     "pop"
+    ],
+    [
+     "180",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Three, templates on Etsy. Buyers find you in search, and you keep about [$8.60|eight sixty] of a [$10|ten dollar] sale.",
+   "show": {
+    "type": "fluid",
+    "scene": "stack",
+    "title": "3. Etsy templates",
+    "box": [
+     0
+    ],
+    "rows": [
+     {
+      "k": "One template sale",
+      "v": "$10",
+      "word": "templates"
+     },
+     {
+      "k": "You keep (US, main fees)",
+      "v": "≈ $8.60",
+      "tag": "No ads",
+      "word": "keep"
+     }
+    ],
+    "note": "Example · not a promise"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "search",
+     "pop"
+    ],
+    [
+     "$8.60",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "The catch: none of these are passive. Each needs samples, content or listings first.",
+   "show": {
+    "type": "fluid",
+    "scene": "catch",
+    "sub": "None of these are passive"
+   },
+   "sfx": [
+    [
+     0,
+     "thud"
+    ],
+    [
+     "passive",
+     "thud"
+    ],
+    [
+     "first",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [START|start] for the free guide, or get it free on [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "fluid",
+    "scene": "comment",
+    "keyword": "START"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "START",
+     "key"
+    ],
+    [
+     "free",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Everything is on [subcreatorpaid.com|sub creator paid dot com], with the free AI income finder.",
+   "show": {
+    "type": "fluid",
+    "scene": "site",
+    "images": [
+     "../../animator/previews/overview_site/home.png",
+     "../../animator/previews/overview_site/finder.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "key"
+    ],
+    [
+     "finder",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The tool I'd start with is linked in my bio.",
+   "show": {
+    "type": "fluid",
+    "scene": "tool",
+    "brand": "opusclip",
+    "name": "OpusClip",
+    "desc": "AI clipping tool",
+    "line": "Turn one long video into many short ones"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "tool",
+     "pop"
+    ],
+    [
+     "linked",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Follow for one verified stream a week.",
+   "show": {
+    "type": "fluid",
+    "scene": "follow"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "follow",
+     "click"
+    ]
+   ]
+  }
+ ]
+}
