@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-05 08:00",
+ "updated": "2026-11-06 08:00",
  "updated_by": "secretary",
  "today": [
   {
-   "task": "Buffer scheduling for n01-n05 (4-8 Nov, 18:00) needs your BUFFER token/channels or your PC. Without it, nothing posts today (n02 Amazon is due 5 Nov)",
+   "task": "Buffer scheduling for n01-n05 (4-8 Nov, 18:00) needs your BUFFER token/channels or your PC. Nothing has posted since 2 Nov; n03 (Etsy) is due tonight",
    "link": "https://publish.buffer.com/",
    "mins": 10
   },
@@ -43,7 +43,7 @@
  ],
  "alerts": [
   {
-   "text": "Posting not confirmed: n01 (4 Nov) and n02 (5 Nov) are rendered but not scheduled in Buffer (no token). Posting queue ended 2 Nov.",
+   "text": "Posting not confirmed: n01 (4 Nov) and n02 (5 Nov) rendered but not scheduled in Buffer (no token); n03 is due today 6 Nov. Posting queue ended 2 Nov.",
    "since": "2026-11-05"
   },
   {
@@ -67,7 +67,7 @@
    "since": "2026-11-01"
   },
   {
-   "text": "Gemini scan failed 7 days running: Google retired gemini-2.5-flash (HTTP 404, suggests gemini-3.8-flash). Added gemini-3.8-flash to the model list in scripts/gemini_draft.py; check tomorrow's 06:00 run. Web search used meanwhile: only third-party reports on TikTok payout changes, nothing official, no covered fact changed.",
+   "text": "Gemini scan failed 8 days running (6 Nov run: HTTP 404, gemini-2.5-flash retired). The 3.8-flash fallback added 5 Nov did not rescue it; check the GEMINI_API_KEY/model access in the workflow log. Web search used meanwhile (6 Nov): only third-party reports, nothing official, no covered fact changed.",
    "since": "2026-10-30"
   }
  ],
@@ -118,7 +118,7 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-11-05",
+  "checked": "2026-11-06",
   "pending_comments": 0,
   "subscribers": 1,
   "visits_since_launch": 76
