@@ -1,14 +1,14 @@
 {
- "updated": "2026-11-06 08:00",
+ "updated": "2026-11-07 08:00",
  "updated_by": "secretary",
  "today": [
   {
-   "task": "Buffer scheduling for n01-n05 (4-8 Nov, 18:00) needs your BUFFER token/channels or your PC. Nothing has posted since 2 Nov; n03 (Etsy) is due tonight",
+   "task": "Spot-check the YouTube titles/covers on Buffer posts 2-5 (n02 Amazon goes out tonight 18:00)",
    "link": "https://publish.buffer.com/",
-   "mins": 10
+   "mins": 5
   },
   {
-   "task": "Check your email for the Kit affiliate decision (in review 11 days)",
+   "task": "Check your email for the Kit affiliate decision (in review 13 days)",
    "link": "https://app.kit.com/",
    "mins": 3
   },
@@ -43,12 +43,8 @@
  ],
  "alerts": [
   {
-   "text": "Posting not confirmed: n01 (4 Nov) and n02 (5 Nov) rendered but not scheduled in Buffer (no token); n03 is due today 6 Nov. Posting queue ended 2 Nov.",
-   "since": "2026-11-05"
-  },
-  {
-   "text": "Posting queue ended 2 Nov (video 008). Nothing has been scheduled for 3 and 4 Nov; still nothing until you say which videos go next.",
-   "since": "2026-10-29"
+   "text": "Posting is back: n01-n05 are scheduled in Buffer, 6-10 Nov 18:00 London (n01 not confirmed as posted: check Buffer). Videos after n05 (11 Nov onward) are not scheduled yet.",
+   "since": "2026-11-07"
   },
   {
    "text": "Monthly report: October income $0, costs $0 known. Followers IG+TT 0 vs ~780 pace (behind; need ~835/week now). Nov plan: brain/research/2026-11-plan.md",
@@ -67,7 +63,7 @@
    "since": "2026-11-01"
   },
   {
-   "text": "Gemini scan failed 8 days running (6 Nov run: HTTP 404, gemini-2.5-flash retired). The 3.8-flash fallback added 5 Nov did not rescue it; check the GEMINI_API_KEY/model access in the workflow log. Web search used meanwhile (6 Nov): only third-party reports, nothing official, no covered fact changed.",
+   "text": "Gemini scan failed 9 days running (7 Nov run still failing). Check GEMINI_API_KEY/model access in the workflow log. Web search used meanwhile (7 Nov): only third-party reports of YouTube Partner Program changes for 2027 (Shorts payouts stricter); not verified on an official page, so no stream marked changed. Researcher to verify on Sunday.",
    "since": "2026-10-30"
   }
  ],
@@ -75,7 +71,7 @@
   "drafted": 10,
   "approved": 0,
   "rendered": 36,
-  "scheduled": 7,
+  "scheduled": 12,
   "posted": 1
  },
  "affiliates": [
@@ -101,7 +97,7 @@
   },
   {
    "id": "kit",
-   "status": "in review (since 25 Oct, 11 days: check email)",
+   "status": "in review (since 25 Oct, 13 days: check email)",
    "earns": "50% for 12 months"
   },
   {
@@ -118,7 +114,7 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "pending_comments": 0,
   "subscribers": 1,
   "visits_since_launch": 76

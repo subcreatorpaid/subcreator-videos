@@ -1,0 +1,1 @@
+2026-11-07 08:00 | secretary | daily run: guard ok (7 Nov), Gemini scan still failing (web search used), n01-n05 scheduled in Buffer, status + dashboard rebuilt | owner: Buffer spot-check, Kit email, beehiiv connect
