@@ -1,0 +1,1 @@
+2026-11-08 08:00 | secretary | daily run: guard green (08 Nov 07:32), Gemini scan still failing (10 days), YPP change verified on official blog (effective 1 Feb 2027, no stream change), status + dashboard rebuilt | owner: pick videos to schedule from 11 Nov, Kit email, beehiiv connect

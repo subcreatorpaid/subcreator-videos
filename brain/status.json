@@ -1,14 +1,14 @@
 {
- "updated": "2026-11-07 08:00",
+ "updated": "2026-11-08 08:00",
  "updated_by": "secretary",
  "today": [
   {
-   "task": "Spot-check the YouTube titles/covers on Buffer posts 2-5 (n02 Amazon goes out tonight 18:00)",
+   "task": "Pick the videos to schedule from 11 Nov (n05 on 10 Nov is the last one in Buffer): reply 'schedule videos <numbers> from 11 Nov'",
    "link": "https://publish.buffer.com/",
-   "mins": 5
+   "mins": 2
   },
   {
-   "task": "Check your email for the Kit affiliate decision (in review 13 days)",
+   "task": "Check your email for the Kit affiliate decision (in review 14 days)",
    "link": "https://app.kit.com/",
    "mins": 3
   },
@@ -30,8 +30,8 @@
    "since": "2026-10-26"
   },
   {
-   "what": "Which finished videos to schedule after 008 (2 Nov), one a day at 18:00",
-   "say": "schedule videos <numbers> from 3 Nov",
+   "what": "Which finished videos to schedule from 11 Nov (n05 on 10 Nov is the last one scheduled), one a day at 18:00",
+   "say": "schedule videos <numbers> from 11 Nov",
    "since": "2026-10-29"
   },
   {
@@ -43,7 +43,7 @@
  ],
  "alerts": [
   {
-   "text": "Posting is back: n01-n05 are scheduled in Buffer, 6-10 Nov 18:00 London (n01 not confirmed as posted: check Buffer). Videos after n05 (11 Nov onward) are not scheduled yet.",
+   "text": "n01-n05 are scheduled in Buffer, 6-10 Nov 18:00 London (n03 Etsy goes out tonight; n01/n02 not confirmed as posted: check Buffer). Videos after n05 (11 Nov onward) are not scheduled yet.",
    "since": "2026-11-07"
   },
   {
@@ -63,7 +63,7 @@
    "since": "2026-11-01"
   },
   {
-   "text": "Gemini scan failed 9 days running (7 Nov run still failing). Check GEMINI_API_KEY/model access in the workflow log. Web search used meanwhile (7 Nov): only third-party reports of YouTube Partner Program changes for 2027 (Shorts payouts stricter); not verified on an official page, so no stream marked changed. Researcher to verify on Sunday.",
+   "text": "Gemini scan failed 10 days running (8 Nov 06:44 run failing). Check GEMINI_API_KEY/model access in the workflow log. Meanwhile, official check (8 Nov): YouTube blog 10 Aug 2026 says from 1 Feb 2027 Shorts ad/subscription revenue share needs 10M Shorts views per 90 days and new YPP applicants need 8,000 watch hours or 20M Shorts views; Fan Funding and shopping entry thresholds unchanged, existing members not affected. No stream file changed (https://blog.youtube/news-and-events/new-opportunities-to-earn-and-changes-to-the-youtube-partner-program/).",
    "since": "2026-10-30"
   }
  ],
@@ -97,7 +97,7 @@
   },
   {
    "id": "kit",
-   "status": "in review (since 25 Oct, 13 days: check email)",
+   "status": "in review (since 25 Oct, 14 days: check email)",
    "earns": "50% for 12 months"
   },
   {
@@ -114,7 +114,7 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-11-07",
+  "checked": "2026-11-08",
   "pending_comments": 0,
   "subscribers": 1,
   "visits_since_launch": 76
