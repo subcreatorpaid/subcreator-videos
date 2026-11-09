@@ -1,113 +1,104 @@
 {
-  "week_of": "2026-11-02",
-  "review_doc": "https://claude.ai/artifact/FYTkyEhfR6hC3tXAp4fUda",
-  "status": "approved",
-  "status_flow": "drafted -> approved -> rendered -> checked -> scheduled -> posted",
-  "notes": [
-    "Reconstructed by the 1 Nov monthly run from the live Control Room: the Sunday run (1 Nov) drafted these 10 posts but could not push to GitHub. Scripts, captions and slugs are in the review doc; the creator fills slugs after 'approve the week'.",
-    "Previous plan (week of 26 Oct, cancelled by owner) is in git history.",
-    "4 Nov: Hammad asked for the next 5 videos scheduled this week with no review stops ('no need for review this time just do it'). Made n01-n05 in the fluid look with the new FluidKit scene kit (one post a day 4-8 Nov, 18:00 London)."
-  ],
-  "posts": [
-    {
-      "n": 9,
-      "day": "2026-11-06",
-      "type": "value",
-      "title": "TikTok Pays At 10K. Here's What Pays Before",
-      "affiliate": null,
-      "slug": "n01_tiktok_before_10k",
-      "status": "scheduled",
-      "buffer": "scheduled 2026-11-06 18:00 London via Buffer web app (IG, TikTok, YouTube)"
-    },
-    {
-      "n": 4,
-      "day": "2026-11-07",
-      "type": "value",
-      "title": "Amazon Pays With 0 Followers. The 180-Day Catch",
-      "affiliate": null,
-      "slug": "n02_amazon_180_days",
-      "status": "scheduled",
-      "buffer": "scheduled 2026-11-07 18:00 London via Buffer web app (IG, TikTok, YouTube)"
-    },
-    {
-      "n": 7,
-      "day": "2026-11-08",
-      "type": "value",
-      "title": "What Etsy Really Keeps From A $10 Template",
-      "affiliate": null,
-      "slug": "n03_etsy_10_template",
-      "status": "scheduled",
-      "buffer": "scheduled 2026-11-08 18:00 London via Buffer web app (IG, TikTok, YouTube)"
-    },
-    {
-      "n": 8,
-      "day": "2026-11-09",
-      "type": "tool",
-      "title": "Voiceover As A Side Service, No Mic Needed",
-      "affiliate": "elevenlabs",
-      "slug": "n04_elevenlabs_voice",
-      "status": "scheduled",
-      "buffer": "scheduled 2026-11-09 18:00 London via Buffer web app (IG, TikTok, YouTube)"
-    },
-    {
-      "n": 5,
-      "day": "2026-11-10",
-      "type": "tool",
-      "title": "Start A Newsletter Before You Have Fans",
-      "affiliate": "beehiiv",
-      "slug": "n05_newsletter_zero_fans",
-      "status": "scheduled",
-      "buffer": "scheduled 2026-11-10 18:00 London via Buffer web app (IG, TikTok, YouTube)"
-    },
-    {
-      "n": 1,
-      "day": "2026-11-02",
-      "type": "value",
-      "title": "YouTube Is Testing $20 Payouts (Not $100)",
-      "affiliate": null,
-      "slug": null,
-      "status": "drafted",
-      "note": "not made this week (owner asked for 5, 4 Nov)"
-    },
-    {
-      "n": 2,
-      "day": "2026-11-03",
-      "type": "tool",
-      "title": "The $0 Way To Turn One Podcast Into 10 Shorts",
-      "affiliate": "opusclip",
-      "slug": null,
-      "status": "drafted",
-      "note": "not made this week (owner asked for 5, 4 Nov)"
-    },
-    {
-      "n": 3,
-      "day": "2026-11-03",
-      "type": "value",
-      "title": "Are You Giving Brands Your Video Twice For Free?",
-      "affiliate": null,
-      "slug": null,
-      "status": "drafted",
-      "note": "not made this week (owner asked for 5, 4 Nov)"
-    },
-    {
-      "n": 6,
-      "day": "2026-11-05",
-      "type": "value",
-      "title": "Ko-fi: Paid Tips With 0 Followers (And The Fee)",
-      "affiliate": null,
-      "slug": null,
-      "status": "drafted",
-      "note": "not made this week (owner asked for 5, 4 Nov)"
-    },
-    {
-      "n": 10,
-      "day": "2026-11-08",
-      "type": "proof",
-      "title": "Our First Week: 130 Views, 1 Follower",
-      "affiliate": null,
-      "slug": null,
-      "status": "drafted",
-      "note": "not made this week (owner asked for 5, 4 Nov)"
-    }
-  ]
+ "week_of": "2026-11-09",
+ "review_doc": "https://claude.ai/artifact/9j7M3dYrmvDFCAbY9PjLJJ",
+ "status": "drafted",
+ "status_flow": "drafted -> approved -> rendered -> checked -> scheduled -> posted",
+ "notes": [
+  "Week of 9 Nov: planned by the Sunday run 8 Nov (could not push to GitHub). Titles/days/types/affiliates re-applied from the live Control Room by the 9 Nov secretary run; scripts and captions are in the review doc. Slugs filled by the creator after 'approve the week'.",
+  "Week of 2 Nov (n01-n05 made in the fluid look, 6-10 Nov 18:00 London) is in git history."
+ ],
+ "posts": [
+  {
+   "n": 8,
+   "day": "2026-11-09",
+   "type": "tool",
+   "title": "Voiceover As A Side Service, No Mic Needed",
+   "affiliate": "elevenlabs",
+   "slug": "n04_elevenlabs_voice",
+   "status": "scheduled",
+   "buffer": "scheduled 2026-11-09 18:00 London via Buffer web app (IG, TikTok, YouTube)"
+  },
+  {
+   "n": 5,
+   "day": "2026-11-10",
+   "type": "tool",
+   "title": "Start A Newsletter Before You Have Fans",
+   "affiliate": "beehiiv",
+   "slug": "n05_newsletter_zero_fans",
+   "status": "scheduled",
+   "buffer": "scheduled 2026-11-10 18:00 London via Buffer web app (IG, TikTok, YouTube)"
+  },
+  {
+   "n": 3,
+   "day": "2026-11-11",
+   "type": "value",
+   "title": "YouTube Is Testing $20 Payouts (Not $100)",
+   "affiliate": "opusclip",
+   "slug": null,
+   "status": "drafted"
+  },
+  {
+   "n": 4,
+   "day": "2026-11-11",
+   "type": "value",
+   "title": "5 Ways Accounts Under 2,000 Followers Get Paid",
+   "affiliate": "beehiiv",
+   "slug": null,
+   "status": "drafted"
+  },
+  {
+   "n": 5,
+   "day": "2026-11-12",
+   "type": "value",
+   "title": "Are You Giving Brands Your Video Twice For Free?",
+   "affiliate": "opusclip",
+   "slug": null,
+   "status": "drafted"
+  },
+  {
+   "n": 6,
+   "day": "2026-11-13",
+   "type": "value",
+   "title": "Ko-fi Takes 0% Of Tips. Here's Where It Takes 5%",
+   "affiliate": "skool",
+   "slug": null,
+   "status": "drafted"
+  },
+  {
+   "n": 7,
+   "day": "2026-11-13",
+   "type": "tool",
+   "title": "The $0 Way To Turn One Podcast Into 10 Shorts",
+   "affiliate": "opusclip",
+   "slug": null,
+   "status": "drafted"
+  },
+  {
+   "n": 8,
+   "day": "2026-11-14",
+   "type": "value",
+   "title": "What Gumroad Keeps From A $10 Guide",
+   "affiliate": "beehiiv",
+   "slug": null,
+   "status": "drafted"
+  },
+  {
+   "n": 9,
+   "day": "2026-11-14",
+   "type": "value",
+   "title": "YouTube Doubled The Bar. The 500 Tier Stayed",
+   "affiliate": "opusclip",
+   "slug": null,
+   "status": "drafted"
+  },
+  {
+   "n": 10,
+   "day": "2026-11-15",
+   "type": "proof",
+   "title": "2 Weeks In: 108 Views, 0 Subscribers",
+   "affiliate": "opusclip",
+   "slug": null,
+   "status": "drafted"
+  }
+ ]
 }

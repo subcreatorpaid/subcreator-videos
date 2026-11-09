@@ -1,21 +1,21 @@
 {
- "updated": "2026-11-08 08:00",
+ "updated": "2026-11-09 08:00",
  "updated_by": "secretary",
  "today": [
   {
-   "task": "Pick the videos to schedule from 11 Nov (n05 on 10 Nov is the last one in Buffer): reply 'schedule videos <numbers> from 11 Nov'",
-   "link": "https://publish.buffer.com/",
-   "mins": 2
+   "task": "Open the Week of 9 Nov review doc (8 new posts for 11-15 Nov) and say 'approve the week' in a Claude session",
+   "link": "https://claude.ai/artifact/9j7M3dYrmvDFCAbY9PjLJJ",
+   "mins": 10
   },
   {
-   "task": "Check your email for the Kit affiliate decision (in review 14 days)",
-   "link": "https://app.kit.com/",
+   "task": "Give the Sunday scheduled task push access to subcreatorpaid/subcreator-videos (2nd Sunday it could not push)",
+   "link": "https://claude.ai/code",
    "mins": 3
   },
   {
-   "task": "Connect beehiiv to the website sign-up so new subscribers get the welcome email",
-   "link": "https://app.beehiiv.com/",
-   "mins": 10
+   "task": "In vidIQ, connect the @subcreatorpaid YouTube channel (it is connected to 'The History Invoice'), so the Sunday run can read real numbers",
+   "link": "https://app.vidiq.com/",
+   "mins": 3
   }
  ],
  "approvals": [
@@ -30,20 +30,24 @@
    "since": "2026-10-26"
   },
   {
-   "what": "Which finished videos to schedule from 11 Nov (n05 on 10 Nov is the last one scheduled), one a day at 18:00",
+   "what": "Which finished videos to schedule after 10 Nov (n05 is the last in Buffer). If you approve the week of 9 Nov, its posts fill 11-15 Nov",
    "say": "schedule videos <numbers> from 11 Nov",
    "since": "2026-10-29"
   },
   {
-   "what": "Week of 2 Nov: 10 drafted posts (6 value, 3 tool, 1 proof)",
+   "what": "Week of 9 Nov: 10 posts (6 value, 3 tool, 1 proof); posts 1-2 already scheduled, 8 new drafts for 11-15 Nov",
    "say": "approve the week",
-   "since": "2026-11-01",
-   "link": "https://claude.ai/artifact/FYTkyEhfR6hC3tXAp4fUda"
+   "since": "2026-11-08",
+   "link": "https://claude.ai/artifact/9j7M3dYrmvDFCAbY9PjLJJ"
   }
  ],
  "alerts": [
   {
-   "text": "n01-n05 are scheduled in Buffer, 6-10 Nov 18:00 London (n03 Etsy goes out tonight; n01/n02 not confirmed as posted: check Buffer). Videos after n05 (11 Nov onward) are not scheduled yet.",
+   "text": "Sunday run 8 Nov could not push to GitHub again (repo not in the scheduled task's sources). Its plan was re-applied here from the live dashboard; research and review files from that run are only in the review doc.",
+   "since": "2026-11-08"
+  },
+  {
+   "text": "n01-n04 should be posted by now (n04 ElevenLabs goes out tonight 18:00 London); n05 on 10 Nov is the last one in Buffer. Videos from 11 Nov onward are not scheduled yet. Guard daily run passed (9 Nov).",
    "since": "2026-11-07"
   },
   {
@@ -55,24 +59,24 @@
    "since": "2026-10-27"
   },
   {
-   "text": "Sunday run 1 Nov could not push to GitHub; its drafts are in the review doc and were re-added to week-plan.json by the monthly run (which could push). Give the Sunday scheduled task push access to subcreatorpaid/subcreator-videos.",
-   "since": "2026-11-01"
-  },
-  {
    "text": "v101 YouTube title starts with the word 'Title:' ('Title: Is Your Camera Roll Quietly Worth $25?'); remove it in YouTube Studio (2 min).",
    "since": "2026-11-01"
   },
   {
-   "text": "Gemini scan failed 10 days running (8 Nov 06:44 run failing). Check GEMINI_API_KEY/model access in the workflow log. Meanwhile, official check (8 Nov): YouTube blog 10 Aug 2026 says from 1 Feb 2027 Shorts ad/subscription revenue share needs 10M Shorts views per 90 days and new YPP applicants need 8,000 watch hours or 20M Shorts views; Fan Funding and shopping entry thresholds unchanged, existing members not affected. No stream file changed (https://blog.youtube/news-and-events/new-opportunities-to-earn-and-changes-to-the-youtube-partner-program/).",
+   "text": "Gemini scan failed 11 days running (9 Nov 07:09 run failed again). Check GEMINI_API_KEY/model access in the workflow log. Meanwhile, official check (8 Nov): YouTube blog 10 Aug 2026 says from 1 Feb 2027 Shorts ad/subscription revenue share needs 10M Shorts views per 90 days and new YPP applicants need 8,000 watch hours or 20M Shorts views; Fan Funding and shopping entry thresholds unchanged, existing members not affected. No stream file changed (https://blog.youtube/news-and-events/new-opportunities-to-earn-and-changes-to-the-youtube-partner-program/). 9 Nov web scan: no new covered-fact changes.",
    "since": "2026-10-30"
+  },
+  {
+   "text": "Last week's numbers: no data (no Buffer/platform numbers reached the run; vidIQ reads 'The History Invoice', not @subcreatorpaid).",
+   "since": "2026-11-08"
   }
  ],
  "pipeline": {
-  "drafted": 10,
+  "drafted": 8,
   "approved": 0,
   "rendered": 36,
-  "scheduled": 12,
-  "posted": 1
+  "scheduled": 2,
+  "posted": 0
  },
  "affiliates": [
   {
@@ -97,7 +101,7 @@
   },
   {
    "id": "kit",
-   "status": "in review (since 25 Oct, 14 days: check email)",
+   "status": "in review (since 25 Oct, 15 days: check email)",
    "earns": "50% for 12 months"
   },
   {
@@ -119,7 +123,14 @@
   "subscribers": 1,
   "visits_since_launch": 76
  },
- "last_week": null,
+ "last_week": {
+  "summary": "Week of 2 Nov: no data. 3 posts went to Buffer (n01-n03, posting not confirmed); followers, reach and affiliate clicks were not measured. Email list 1, earned $0, costs $0.",
+  "suggestions": [
+   "researcher: connect @subcreatorpaid in vidIQ or drop Sunday screenshots in brain/research/inbox/ so we get real numbers",
+   "publisher: after n05 posts, pin a comment with subcreatorpaid.com/go/beehiiv",
+   "strategist: use the 'under 2,000 followers' list format (70.9x outlier) with our verified numbers"
+  ]
+ },
  "money": {
   "month": "2026-10",
   "earned_month_usd": 0,

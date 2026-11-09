@@ -1,0 +1,1 @@
+2026-11-09 08:00 | secretary | daily run: guard ok, Gemini scan still failing, no fact changes; re-applied the 8 Nov Sunday plan (week of 9 Nov) from the live dashboard; status+dashboard rebuilt | owner: approve the week, give Sunday task push access, connect vidIQ channel
