@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09 08:00",
+ "updated": "2026-11-10 08:00",
  "updated_by": "secretary",
  "today": [
   {
@@ -47,7 +47,7 @@
    "since": "2026-11-08"
   },
   {
-   "text": "n01-n04 should be posted by now (n04 ElevenLabs goes out tonight 18:00 London); n05 on 10 Nov is the last one in Buffer. Videos from 11 Nov onward are not scheduled yet. Guard daily run passed (9 Nov).",
+   "text": "n05 (beehiiv) goes out tonight 18:00 London and is the last video in Buffer. Videos for 11 Nov onward are not scheduled yet (2 posts due tomorrow). Guard daily run passed (10 Nov).",
    "since": "2026-11-07"
   },
   {
@@ -63,7 +63,7 @@
    "since": "2026-11-01"
   },
   {
-   "text": "Gemini scan failed 11 days running (9 Nov 07:09 run failed again). Check GEMINI_API_KEY/model access in the workflow log. Meanwhile, official check (8 Nov): YouTube blog 10 Aug 2026 says from 1 Feb 2027 Shorts ad/subscription revenue share needs 10M Shorts views per 90 days and new YPP applicants need 8,000 watch hours or 20M Shorts views; Fan Funding and shopping entry thresholds unchanged, existing members not affected. No stream file changed (https://blog.youtube/news-and-events/new-opportunities-to-earn-and-changes-to-the-youtube-partner-program/). 9 Nov web scan: no new covered-fact changes.",
+   "text": "Gemini scan failed 12 days running (10 Nov 06:52 run failed again). Check GEMINI_API_KEY/model access in the workflow log. Meanwhile, official check (8 Nov): YouTube blog 10 Aug 2026 says from 1 Feb 2027 Shorts ad/subscription revenue share needs 10M Shorts views per 90 days and new YPP applicants need 8,000 watch hours or 20M Shorts views; Fan Funding and shopping entry thresholds unchanged, existing members not affected. No stream file changed (https://blog.youtube/news-and-events/new-opportunities-to-earn-and-changes-to-the-youtube-partner-program/). 10 Nov web scan: only the known YouTube Partner Program (YPP) changes (Aug 2026, effective 1 Feb 2027); no new covered-fact changes.",
    "since": "2026-10-30"
   },
   {
@@ -101,7 +101,7 @@
   },
   {
    "id": "kit",
-   "status": "in review (since 25 Oct, 15 days: check email)",
+   "status": "in review (since 25 Oct, 16 days: check email)",
    "earns": "50% for 12 months"
   },
   {
@@ -118,7 +118,7 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-11-08",
+  "checked": "2026-11-10",
   "pending_comments": 0,
   "subscribers": 1,
   "visits_since_launch": 76

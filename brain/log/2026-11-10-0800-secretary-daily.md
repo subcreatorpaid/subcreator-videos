@@ -1,0 +1,1 @@
+2026-11-10 08:00 | secretary | daily run: guard ok (10 Nov), Gemini scan still failing (12 days, web search used), n05 goes out tonight, 11 Nov posts not scheduled, status + dashboard rebuilt | approve the week of 9 Nov; 11 Nov onward unscheduled
