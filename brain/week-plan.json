@@ -6,7 +6,7 @@
  "notes": [
   "Week of 9 Nov: planned by the Sunday run 8 Nov (could not push to GitHub). Titles/days/types/affiliates re-applied from the live Control Room by the 9 Nov secretary run; scripts and captions are in the review doc. Slugs filled by the creator after 'approve the week'.",
   "Week of 2 Nov (n01-n05 made in the fluid look, 6-10 Nov 18:00 London) is in git history.",
-  "10 Nov: owner asked for 6 more videos, no review ('no need to review just do it') and 'change the hook'. n06-n11 made in the fluid look with new hook wording and a different opening scene per video; 1080p finals on Releases. Days for n08-n10 are suggestions. Not scheduled: needs the owner's OK."
+  "10 Nov: owner asked for 6 more videos, no review ('no need to review just do it') and 'change the hook'. n06-n11 made in the fluid look with new hook wording and a different opening scene per video; 1080p finals on Releases. n06, n07, n11 fill this week's drafted slots (12, 13, 14 Nov); n08 Skool (tool), n09 TikTok Shop pilot, n10 Spotify Partner are rendered and ready for next week (16-18 Nov suggested). Not scheduled: needs the owner's OK."
  ],
  "posts": [
   {
@@ -100,33 +100,6 @@
    "affiliate": "opusclip",
    "slug": null,
    "status": "drafted"
-  },
-  {
-   "n": 11,
-   "day": "2026-11-16",
-   "type": "tool",
-   "title": "50 Fans At $10 A Month: What Skool Leaves You",
-   "affiliate": "skool",
-   "slug": "n08_skool_paid_community",
-   "status": "rendered"
-  },
-  {
-   "n": 12,
-   "day": "2026-11-17",
-   "type": "value",
-   "title": "TikTok Shop Lets You In At 1K. The Trap Is 5K",
-   "affiliate": "opusclip",
-   "slug": "n09_tiktok_shop_pilot",
-   "status": "rendered"
-  },
-  {
-   "n": 13,
-   "day": "2026-11-18",
-   "type": "value",
-   "title": "Spotify Gives Podcasters Half The Ad Money",
-   "affiliate": "elevenlabs",
-   "slug": "n10_spotify_partner",
-   "status": "rendered"
   }
  ]
 }
