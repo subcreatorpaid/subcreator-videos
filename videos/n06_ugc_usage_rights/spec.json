@@ -55,7 +55,7 @@
     "scene": "title",
     "text": "Running as an ad?",
     "box": [
-     2
+     3
     ],
     "logos": [
      "instagram",
@@ -173,7 +173,8 @@
     "flipWord": "twenty",
     "text": "of the base fee, per month",
     "box": [
-     1
+     4,
+     5
     ],
     "tag": "Reported range",
     "tagWord": "month"

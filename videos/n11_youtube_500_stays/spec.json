@@ -91,7 +91,7 @@
     "label": "YouTube · fan funding tier",
     "title": "The 500 bar",
     "box": [
-     3
+     1
     ],
     "rows": [
      [
@@ -212,7 +212,8 @@
     "flipWord": "1,000",
     "text": "for ad money from Feb 2027",
     "box": [
-     3
+     4,
+     5
     ],
     "tag": "New channels only",
     "tagWord": "February"

@@ -51,14 +51,13 @@
     "label": "Spotify Partner Program",
     "title": "Your share of ad revenue",
     "box": [
-     1,
-     2
+     1
     ],
     "rows": [
      [
-      "Ad revenue",
-      "50%",
-      "half"
+      "Paid on",
+      "Spotify ads in your show",
+      "ad"
      ]
     ],
     "value": "50%",
@@ -164,7 +163,7 @@
     "flipWord": "one",
     "text": "per episode, or you earn $0",
     "box": [
-     3
+     5
     ],
     "tag": "No break, no pay",
     "tagWord": "break",
