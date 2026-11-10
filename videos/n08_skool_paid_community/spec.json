@@ -1,0 +1,374 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "style": "fluid",
+ "slug": "n08_skool_paid_community",
+ "title": "50 Fans At $10 A Month: What Skool Leaves You",
+ "type": "tool",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.28,
+ "preview_res": 360,
+ "titles": [
+  "50 Fans At $10 A Month: What Skool Leaves You",
+  "Is Skool's $9 Plan Quietly Costing You More?",
+  "The Paid Community Maths Nobody Shows"
+ ],
+ "keyword": "CLUB",
+ "affiliate": "skool",
+ "sources": [
+  {
+   "title": "SchoolMaker: Skool pricing 2026 (updated 10 Sep 2026): Hobby $9 + 10%, Pro $99 + 2.9%, 14-day trial",
+   "url": "https://schoolmaker.com/blog/skool-pricing",
+   "checked": "2026-11-10"
+  },
+  {
+   "title": "Uscreen: Skool pricing in 2026",
+   "url": "https://www.uscreen.tv/blog/skool-pricing/",
+   "checked": "2026-11-10"
+  }
+ ],
+ "thumb": {
+  "headline": "50 fans,\n*$10 a month*",
+  "hero": "money",
+  "sticker": "Skool maths",
+  "chip": "Paid community",
+  "size": 120
+ },
+ "beats": [
+  {
+   "say": "Could fifty fans pay you [$10|ten dollars] a month? Here's what you'd really keep.",
+   "show": {
+    "type": "fluid",
+    "scene": "hook",
+    "big": "50 × $10",
+    "bigWord": "fifty",
+    "text": "What would you keep?",
+    "box": [
+     3
+    ],
+    "logo": "skool"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "fifty",
+     "thud"
+    ],
+    [
+     "keep",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "That's a paid community. Skool is one place to run it.",
+   "show": {
+    "type": "fluid",
+    "scene": "title",
+    "text": "Paid community",
+    "box": [
+     0
+    ],
+    "logo": "skool",
+    "tags": [
+     [
+      "Fans pay monthly",
+      "paid"
+     ],
+     [
+      "One home for it",
+      "run"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "community",
+     "pop"
+    ],
+    [
+     "run",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Skool has two plans. Hobby is [$9|nine dollars] a month plus ten percent. Pro is [$99|ninety nine] plus [2.9%|two point nine percent].",
+   "show": {
+    "type": "fluid",
+    "scene": "card",
+    "label": "Skool · plans",
+    "title": "Two plans, two fees",
+    "box": [
+     3
+    ],
+    "rows": [
+     [
+      "Hobby",
+      "$9 / mo + 10%",
+      "$9"
+     ],
+     [
+      "Pro",
+      "$99 / mo + 2.9%",
+      "$99"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "$9",
+     "pop"
+    ],
+    [
+     "$99",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Fifty members at ten dollars is [$500|five hundred]. On Hobby you keep about [$441|four forty one], before other fees.",
+   "show": {
+    "type": "fluid",
+    "scene": "stack",
+    "title": "Worked example",
+    "box": [
+     2
+    ],
+    "rows": [
+     {
+      "k": "50 × $10",
+      "v": "$500",
+      "word": "$500"
+     },
+     {
+      "k": "Hobby: −$9 −10%",
+      "v": "≈ $441",
+      "tag": "Example",
+      "word": "$441"
+     }
+    ],
+    "note": "Before any other fees"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "$500",
+     "pop"
+    ],
+    [
+     "$441",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "By our maths, Pro only wins above [$1,270|twelve hundred and seventy dollars] a month.",
+   "show": {
+    "type": "fluid",
+    "scene": "warn",
+    "icon": "form",
+    "big": "$1,270+",
+    "flipWord": "$1,270",
+    "text": "a month before Pro pays off",
+    "box": [
+     3
+    ],
+    "tag": "Our maths",
+    "tagWord": "month"
+   },
+   "sfx": [
+    [
+     0,
+     "glass"
+    ],
+    [
+     "$1,270",
+     "pop"
+    ],
+    [
+     "month",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Here's the catch: members leave if nothing new happens. They need a reason to stay every week.",
+   "show": {
+    "type": "fluid",
+    "scene": "catch",
+    "sub": "No weekly value = members leave"
+   },
+   "sfx": [
+    [
+     0,
+     "whipX"
+    ],
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "leave",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Test it free in a group chat first. Then one promise, one weekly call, and invite your best commenters.",
+   "show": {
+    "type": "fluid",
+    "scene": "steps",
+    "title": "Start small",
+    "box": [
+     1
+    ],
+    "steps": [
+     [
+      "free",
+      "Test free in a group chat"
+     ],
+     [
+      "promise",
+      "1 clear promise"
+     ],
+     [
+      "weekly",
+      "1 weekly call"
+     ],
+     [
+      "commenters",
+      "Invite your best commenters"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "free",
+     "click"
+    ],
+    [
+     "promise",
+     "click"
+    ],
+    [
+     "weekly",
+     "click"
+    ],
+    [
+     "commenters",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [CLUB|club] for the free guide, or get it free on [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "fluid",
+    "scene": "comment",
+    "keyword": "CLUB"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "CLUB",
+     "key"
+    ],
+    [
+     "free",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Everything is on [subcreatorpaid.com|sub creator paid dot com], with the free AI income finder.",
+   "show": {
+    "type": "fluid",
+    "scene": "site",
+    "images": [
+     "../../animator/previews/overview_site/home.png",
+     "../../animator/previews/overview_site/finder.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "key"
+    ],
+    [
+     "finder",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The tool I'd start with is linked in my bio.",
+   "show": {
+    "type": "fluid",
+    "scene": "tool",
+    "brand": "skool",
+    "name": "Skool",
+    "desc": "Community platform",
+    "line": "14-day trial, then from $9 a month"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "tool",
+     "pop"
+    ],
+    [
+     "linked",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Follow for one verified stream a week.",
+   "show": {
+    "type": "fluid",
+    "scene": "follow"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "follow",
+     "click"
+    ]
+   ]
+  }
+ ]
+}

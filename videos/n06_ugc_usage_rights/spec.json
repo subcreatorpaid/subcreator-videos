@@ -1,0 +1,386 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "style": "fluid",
+ "slug": "n06_ugc_usage_rights",
+ "title": "Your UGC Video Is An Ad Now. Did You Charge?",
+ "type": "value",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.28,
+ "preview_res": 360,
+ "titles": [
+  "Your UGC Video Is An Ad Now. Did You Charge?",
+  "Is Free Ad Use Quietly Costing You $100?",
+  "The Contract Line That Pays You Twice"
+ ],
+ "keyword": "RIGHTS",
+ "affiliate": "opusclip",
+ "sources": [
+  {
+   "title": "Influish: how much to charge for ad rights (2026), 20-50% of base fee per month",
+   "url": "https://www.influish.com/blog/how-much-should-influencers-charge-for-ad-rights-in-2026",
+   "checked": "2026-11-10"
+  },
+  {
+   "title": "JoinBrands: UGC usage rights brands must agree on",
+   "url": "https://joinbrands.com/blog/ugc-usage-rights-what-brands-must-agree-on/",
+   "checked": "2026-11-10"
+  },
+  {
+   "title": "Insense: UGC creator rates",
+   "url": "https://insense.pro/blog/ugc-creator-rates",
+   "checked": "2026-11-10"
+  }
+ ],
+ "thumb": {
+  "headline": "Paid once,\n*used twice?*",
+  "hero": "face",
+  "hold": "phone",
+  "mood": 0.8,
+  "sticker": "Usage rights",
+  "chip": "UGC contracts",
+  "size": 120
+ },
+ "beats": [
+  {
+   "say": "Your UGC video is running as an ad. Did you charge for that?",
+   "show": {
+    "type": "fluid",
+    "scene": "title",
+    "text": "Running as an ad?",
+    "box": [
+     2
+    ],
+    "logos": [
+     "instagram",
+     "tiktok"
+    ],
+    "tags": [
+     [
+      "Paid ads",
+      "ad"
+     ],
+     [
+      "In your fee?",
+      "charge"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "ad",
+     "thud"
+    ],
+    [
+     "charge",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Most beginners price the video and forget the rights. Those are two different things.",
+   "show": {
+    "type": "fluid",
+    "scene": "stack",
+    "title": "Two things to price",
+    "box": [
+     2
+    ],
+    "rows": [
+     {
+      "k": "Making the video",
+      "v": "Your fee",
+      "word": "video"
+     },
+     {
+      "k": "Using it in ads",
+      "v": "Usage rights",
+      "tag": "Extra",
+      "word": "rights"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "video",
+     "pop"
+    ],
+    [
+     "rights",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Usage rights say where the brand can use it, and for how long. Organic or paid ads. Thirty days or ninety.",
+   "show": {
+    "type": "fluid",
+    "scene": "card",
+    "label": "Usage rights · in writing",
+    "title": "What the brand gets",
+    "box": [
+     3
+    ],
+    "rows": [
+     [
+      "Where",
+      "Organic or paid ads",
+      "Organic"
+     ],
+     [
+      "How long",
+      "30 or 90 days",
+      "Thirty"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "Organic",
+     "pop"
+    ],
+    [
+     "Thirty",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Guides report creators add twenty to fifty percent of the base fee, per month of paid use.",
+   "show": {
+    "type": "fluid",
+    "scene": "warn",
+    "icon": "eye",
+    "big": "20–50%",
+    "flipWord": "twenty",
+    "text": "of the base fee, per month",
+    "box": [
+     1
+    ],
+    "tag": "Reported range",
+    "tagWord": "month"
+   },
+   "sfx": [
+    [
+     0,
+     "glass"
+    ],
+    [
+     "twenty",
+     "pop"
+    ],
+    [
+     "month",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "So on a [$200|two hundred dollar] video, thirty days of ads adds about [$40|forty] to [$100|a hundred dollars].",
+   "show": {
+    "type": "fluid",
+    "scene": "stack",
+    "title": "Worked example",
+    "box": [
+     2
+    ],
+    "rows": [
+     {
+      "k": "Base video",
+      "v": "$200",
+      "word": "$200"
+     },
+     {
+      "k": "+ 30 days of ads",
+      "v": "+$40–$100",
+      "tag": "Example",
+      "word": "$40"
+     }
+    ],
+    "note": "Ranges vary by niche"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "$200",
+     "pop"
+    ],
+    [
+     "$100",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Here's the catch: perpetual use should cost the most. Never give it away inside a cheap deal.",
+   "show": {
+    "type": "fluid",
+    "scene": "catch",
+    "sub": "'Perpetual' should cost the most"
+   },
+   "sfx": [
+    [
+     0,
+     "whipX"
+    ],
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "Never",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Before you sign, check three lines: where it runs, how long, and whether it's paid.",
+   "show": {
+    "type": "fluid",
+    "scene": "steps",
+    "title": "Check before you sign",
+    "box": [
+     3
+    ],
+    "steps": [
+     [
+      "where",
+      "Where it runs"
+     ],
+     [
+      "long",
+      "How long"
+     ],
+     [
+      "paid",
+      "Organic or paid ads"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "where",
+     "click"
+    ],
+    [
+     "long",
+     "click"
+    ],
+    [
+     "paid",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [RIGHTS|rights] for the free guide, or get it free on [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "fluid",
+    "scene": "comment",
+    "keyword": "RIGHTS"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "RIGHTS",
+     "key"
+    ],
+    [
+     "free",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Everything is on [subcreatorpaid.com|sub creator paid dot com], with the free AI income finder.",
+   "show": {
+    "type": "fluid",
+    "scene": "site",
+    "images": [
+     "../../animator/previews/overview_site/home.png",
+     "../../animator/previews/overview_site/finder.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "key"
+    ],
+    [
+     "finder",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The tool I'd start with is linked in my bio.",
+   "show": {
+    "type": "fluid",
+    "scene": "tool",
+    "brand": "opusclip",
+    "name": "OpusClip",
+    "desc": "AI clipping tool",
+    "line": "Cut one shoot into 3 ad versions"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "tool",
+     "pop"
+    ],
+    [
+     "linked",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Follow for one verified stream a week.",
+   "show": {
+    "type": "fluid",
+    "scene": "follow"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "follow",
+     "click"
+    ]
+   ]
+  }
+ ]
+}

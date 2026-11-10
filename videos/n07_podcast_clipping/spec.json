@@ -1,0 +1,367 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "style": "fluid",
+ "slug": "n07_podcast_clipping",
+ "title": "Podcasts Pay Clippers. Here's The Real Rate",
+ "type": "tool",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.28,
+ "preview_res": 360,
+ "titles": [
+  "Podcasts Pay Clippers. Here's The Real Rate",
+  "One Episode, 10 Shorts, Someone Gets Paid",
+  "The $0 Way To Start Clipping"
+ ],
+ "keyword": "CLIP",
+ "affiliate": "opusclip",
+ "sources": [
+  {
+   "title": "OpenClip: podcast clipping, who pays and how much (checked Aug 2026)",
+   "url": "https://openclip.app/clipping/podcast-clipping",
+   "checked": "2026-11-10"
+  },
+  {
+   "title": "Castmagic: OpusClip pricing 2026 (checked 20 Aug 2026)",
+   "url": "https://www.castmagic.io/blog/opus-clip-pricing",
+   "checked": "2026-11-10"
+  }
+ ],
+ "thumb": {
+  "headline": "1 episode,\n*10 paid clips*",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": 0.7,
+  "sticker": "Clipping",
+  "chip": "$0.80–$3 / 1K views",
+  "size": 120
+ },
+ "beats": [
+  {
+   "say": "One podcast episode can become ten shorts. And someone gets paid to cut them.",
+   "show": {
+    "type": "fluid",
+    "scene": "counter",
+    "n": 10,
+    "word": "ten",
+    "label": "shorts from one episode",
+    "ends": [
+     "1 episode",
+     "10 shorts"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "ten",
+     "count"
+    ],
+    [
+     "paid",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "It's called clipping. Shows and networks pay clippers to post their best moments.",
+   "show": {
+    "type": "fluid",
+    "scene": "title",
+    "text": "Clipping",
+    "box": [
+     1
+    ],
+    "logos": [
+     "youtube",
+     "tiktok",
+     "spotify"
+    ],
+    "tags": [
+     [
+      "Shows pay",
+      "Shows"
+     ],
+     [
+      "Networks pay",
+      "networks"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "clipping",
+     "pop"
+    ],
+    [
+     "networks",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Reported rates: about [80 cents|eighty cents] to [$3|three dollars] per thousand verified views.",
+   "show": {
+    "type": "fluid",
+    "scene": "warn",
+    "icon": "eye",
+    "big": "$0.80–$3",
+    "flipWord": "80",
+    "text": "per 1,000 verified views",
+    "box": [
+     1
+    ],
+    "tag": "Reported range, can change",
+    "tagWord": "verified"
+   },
+   "sfx": [
+    [
+     0,
+     "glass"
+    ],
+    [
+     "80",
+     "pop"
+    ],
+    [
+     "verified",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "So a clip with [50,000|fifty thousand] views earns about [$40|forty] to [$150|a hundred and fifty dollars].",
+   "show": {
+    "type": "fluid",
+    "scene": "stack",
+    "title": "Worked example",
+    "box": [
+     2
+    ],
+    "rows": [
+     {
+      "k": "50,000 views",
+      "v": "$40–$150",
+      "tag": "Example",
+      "word": "50,000"
+     }
+    ],
+    "note": "At $0.80–$3 per 1,000"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "50,000",
+     "pop"
+    ],
+    [
+     "$150",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Here's the catch: no views, no pay. And campaigns can change the rate any time.",
+   "show": {
+    "type": "fluid",
+    "scene": "catch",
+    "sub": "No views = no pay"
+   },
+   "sfx": [
+    [
+     0,
+     "whipX"
+    ],
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "pay",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "OpusClip's free plan gives sixty upload minutes a month, with a watermark. Starter is [$15|fifteen dollars] without it.",
+   "show": {
+    "type": "fluid",
+    "scene": "card",
+    "label": "OpusClip · plans",
+    "title": "Free vs Starter",
+    "box": [
+     3
+    ],
+    "rows": [
+     [
+      "Free",
+      "60 min / month, watermark",
+      "free"
+     ],
+     [
+      "Starter",
+      "$15 / month, no watermark",
+      "$15"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "free",
+     "pop"
+    ],
+    [
+     "$15",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Start small: pick one show you like, cut three clips, and send them as your sample.",
+   "show": {
+    "type": "fluid",
+    "scene": "steps",
+    "title": "Your first pitch",
+    "box": [
+     3
+    ],
+    "steps": [
+     [
+      "show",
+      "Pick 1 show you like"
+     ],
+     [
+      "three",
+      "Cut 3 clips"
+     ],
+     [
+      "sample",
+      "Send them as your sample"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "show",
+     "click"
+    ],
+    [
+     "three",
+     "click"
+    ],
+    [
+     "sample",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [CLIP|clip] for the free guide, or get it free on [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "fluid",
+    "scene": "comment",
+    "keyword": "CLIP"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "CLIP",
+     "key"
+    ],
+    [
+     "free",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Everything is on [subcreatorpaid.com|sub creator paid dot com], with the free AI income finder.",
+   "show": {
+    "type": "fluid",
+    "scene": "site",
+    "images": [
+     "../../animator/previews/overview_site/home.png",
+     "../../animator/previews/overview_site/finder.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "key"
+    ],
+    [
+     "finder",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The tool I'd start with is linked in my bio.",
+   "show": {
+    "type": "fluid",
+    "scene": "tool",
+    "brand": "opusclip",
+    "name": "OpusClip",
+    "desc": "AI clipping tool",
+    "line": "Turn one episode into 10 shorts"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "tool",
+     "pop"
+    ],
+    [
+     "linked",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Follow for one verified stream a week.",
+   "show": {
+    "type": "fluid",
+    "scene": "follow"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "follow",
+     "click"
+    ]
+   ]
+  }
+ ]
+}
