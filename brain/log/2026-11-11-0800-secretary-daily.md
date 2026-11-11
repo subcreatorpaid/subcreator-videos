@@ -1,0 +1,1 @@
+2026-11-11 08:00 | secretary | daily run: guard ok (11 Nov), Gemini scan failed 13th day (web scan: only known YPP changes), 11 Nov posts unscheduled, status + dashboard rebuilt | approve the week of 9 Nov
