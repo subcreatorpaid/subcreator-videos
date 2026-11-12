@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-11 08:00",
+ "updated": "2026-11-12 08:00",
  "updated_by": "secretary",
  "today": [
   {
-   "task": "Open the Week of 9 Nov review doc (8 new posts, 2 were due today 11 Nov) and say 'approve the week' in a Claude session",
+   "task": "Open the Week of 9 Nov review doc (8 new posts; 4 are now due or overdue, 11-12 Nov) and say 'approve the week' in a Claude session",
    "link": "https://claude.ai/artifact/9j7M3dYrmvDFCAbY9PjLJJ",
    "mins": 10
   },
@@ -47,7 +47,7 @@
    "since": "2026-11-08"
   },
   {
-   "text": "n05 (beehiiv) went out 10 Nov 18:00 and is the last video in Buffer. 2 posts due TODAY 11 Nov (n3, n4) are not rendered or scheduled until the week is approved. Guard daily run passed (11 Nov).",
+   "text": "n05 (beehiiv) went out 10 Nov 18:00 and is still the last video in Buffer. 4 posts due 11-12 Nov (n3, n4, n5, n6) are not rendered or scheduled until the week is approved. Guard daily run passed (12 Nov).",
    "since": "2026-11-11"
   },
   {
@@ -63,7 +63,7 @@
    "since": "2026-11-01"
   },
   {
-   "text": "Gemini scan failed 13 days running (11 Nov 06:56 run failed again). Check GEMINI_API_KEY/model access in the workflow log. Meanwhile, official check (8 Nov): YouTube blog 10 Aug 2026 says from 1 Feb 2027 Shorts ad/subscription revenue share needs 10M Shorts views per 90 days and new YPP applicants need 8,000 watch hours or 20M Shorts views; Fan Funding and shopping entry thresholds unchanged, existing members not affected. No stream file changed (https://blog.youtube/news-and-events/new-opportunities-to-earn-and-changes-to-the-youtube-partner-program/). 11 Nov web scan: only the known YouTube Partner Program (YPP) changes (Aug 2026, effective 1 Feb 2027); no new covered-fact changes.",
+   "text": "Gemini scan failed 14 days running (12 Nov 06:58 run failed again). Check GEMINI_API_KEY/model access in the workflow log. Meanwhile, official check (8 Nov): YouTube blog 10 Aug 2026 says from 1 Feb 2027 Shorts ad/subscription revenue share needs 10M Shorts views per 90 days and new YPP applicants need 8,000 watch hours or 20M Shorts views; Fan Funding and shopping entry thresholds unchanged, existing members not affected. No stream file changed (https://blog.youtube/news-and-events/new-opportunities-to-earn-and-changes-to-the-youtube-partner-program/). 12 Nov web scan: only the known YouTube Partner Program (YPP) changes (Aug 2026, effective 1 Feb 2027); no new covered-fact changes.",
    "since": "2026-10-30"
   },
   {
@@ -101,7 +101,7 @@
   },
   {
    "id": "kit",
-   "status": "in review (since 25 Oct, 17 days: check email)",
+   "status": "in review (since 25 Oct, 18 days: check email)",
    "earns": "50% for 12 months"
   },
   {
@@ -118,7 +118,7 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-11-11",
+  "checked": "2026-11-12",
   "pending_comments": 0,
   "subscribers": 1,
   "visits_since_launch": 76
