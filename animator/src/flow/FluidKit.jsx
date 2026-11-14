@@ -253,6 +253,9 @@ const Follow = ({f, s, B0, E0, w}) => {
     <div style={{position: 'absolute', left: 80, width: 860, top: 1090}}><BlurIn f={f} at={fo + 6} text={s.line || '1 verified stream a week'} size={58} weight={800} /></div>
   </>);
 };
+// First scene starts PRE frames into its entrance and pulls its word cues forward, so frame 0 is never a near-blank
+// frame (learnings #2, 10 Nov 2026: the opening must show the hook at once).
+const PRE = 14;
 const KINDS = {hook: Hook, title: Title, catch: Catch, card: Card, stack: Stack, counter: Counter, warn: Warn, steps: Steps, comment: Comment, site: Site, tool: Tool, follow: Follow};
 
 export const FluidKit = ({beats = []}) => {
@@ -296,7 +299,9 @@ export const FluidKit = ({beats = []}) => {
     }
     return (
       <div key={i} style={{position: 'absolute', inset: 0, background: BG[bgOf(i)], transform: tf, transformOrigin: '510px 860px', opacity: op, filter: blur > 0.3 ? `blur(${blur}px)` : undefined, clipPath: clip, overflow: 'hidden', zIndex: i}}>
-        <MB id={`K${i}`} x={mbx} y={mby}><S f={f} s={show(i)} B0={B(i)} E0={E(i)} w={W(i)} /></MB>
+        <MB id={`K${i}`} x={mbx} y={mby}>{i === 0
+          ? <S f={f + PRE} s={show(0)} B0={B(0)} E0={E(0) + PRE} w={(word, fb) => B(0) + Math.min((W(0)(word, fb) - B(0)) * 0.35, 16)} />
+          : <S f={f} s={show(i)} B0={B(i)} E0={E(i)} w={W(i)} />}</MB>
       </div>
     );
   };
