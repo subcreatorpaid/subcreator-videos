@@ -1,0 +1,387 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "style": "fluid",
+ "slug": "n11_youtube_500_stays",
+ "title": "YouTube Doubles The Ad Bar. The 500 Bar Stays",
+ "type": "value",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.28,
+ "preview_res": 360,
+ "titles": [
+  "YouTube Doubles The Ad Bar. The 500 Bar Stays",
+  "Is February's YouTube Change Costing You?",
+  "What 500 YouTube Subs Still Unlock"
+ ],
+ "keyword": "FANS",
+ "affiliate": "beehiiv",
+ "sources": [
+  {
+   "title": "PPC Land: new YouTube creators face 8,000-hour bar from Feb 2027 (YouTube update 10 Aug 2026)",
+   "url": "https://ppc.land/new-youtube-creators-face-8-000-hour-bar-for-ad-revenue-from-february-2027/",
+   "checked": "2026-11-10"
+  },
+  {
+   "title": "vidIQ: YouTube Partner Program requirements 2026",
+   "url": "https://vidiq.com/blog/post/monetize-youtube-guide/",
+   "checked": "2026-11-10"
+  }
+ ],
+ "thumb": {
+  "headline": "Ad bar *doubles*,\n500 stays",
+  "hero": "face",
+  "hold": "laptop",
+  "mood": 0.8,
+  "sticker": "Feb 2027",
+  "sticker_color": "red",
+  "chip": "YouTube",
+  "size": 120
+ },
+ "beats": [
+  {
+   "say": "YouTube doubles its ad money bar in February. But the [500|five hundred] sub bar stays.",
+   "show": {
+    "type": "fluid",
+    "scene": "stack",
+    "title": "YouTube, from Feb 2027",
+    "box": [
+     0
+    ],
+    "rows": [
+     {
+      "k": "Ad revenue bar",
+      "v": "4,000 → 8,000 hrs",
+      "tag": "Doubles",
+      "word": "doubles"
+     },
+     {
+      "k": "Fan funding bar",
+      "v": "500 subs",
+      "tag": "Same",
+      "word": "500"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "doubles",
+     "thud"
+    ],
+    [
+     "stays",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "At [500|five hundred] subscribers, plus [3,000|three thousand] watch hours or three million Shorts views, you unlock fan funding.",
+   "show": {
+    "type": "fluid",
+    "scene": "card",
+    "label": "YouTube · fan funding tier",
+    "title": "The 500 bar",
+    "box": [
+     1
+    ],
+    "rows": [
+     [
+      "Subscribers",
+      "500",
+      "500"
+     ],
+     [
+      "Watch hours, 365 days",
+      "3,000",
+      "3,000"
+     ],
+     [
+      "or Shorts views, 90 days",
+      "3M",
+      "million"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "500",
+     "pop"
+    ],
+    [
+     "3,000",
+     "pop"
+    ],
+    [
+     "million",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "That means memberships, Super Thanks, Super Chat and Shopping.",
+   "show": {
+    "type": "fluid",
+    "scene": "title",
+    "text": "What 500 unlocks",
+    "box": [
+     1
+    ],
+    "logo": "youtube",
+    "tags": [
+     [
+      "Memberships",
+      "memberships"
+     ],
+     [
+      "Super Thanks",
+      "Thanks"
+     ],
+     [
+      "Super Chat",
+      "Chat"
+     ],
+     [
+      "Shopping",
+      "Shopping"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "memberships",
+     "pop"
+    ],
+    [
+     "Shopping",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "[3,000|three thousand] hours is about [6,000|six thousand] people watching thirty minutes each.",
+   "show": {
+    "type": "fluid",
+    "scene": "counter",
+    "n": 6000,
+    "word": "6,000",
+    "label": "people × 30 minutes = 3,000 hours",
+    "ends": [
+     "0",
+     "6,000"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "6,000",
+     "count"
+    ],
+    [
+     "each",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Ad money is harder: [1,000|one thousand] subs and [4,000|four thousand] hours, then [8,000|eight thousand] from February.",
+   "show": {
+    "type": "fluid",
+    "scene": "warn",
+    "icon": "clock",
+    "big": "8,000 hrs",
+    "flipWord": "1,000",
+    "text": "for ad money from Feb 2027",
+    "box": [
+     4,
+     5
+    ],
+    "tag": "New channels only",
+    "tagWord": "February"
+   },
+   "sfx": [
+    [
+     0,
+     "glass"
+    ],
+    [
+     "1,000",
+     "pop"
+    ],
+    [
+     "8,000",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Here's the catch: fan money only comes when fans already care. Strangers don't tip.",
+   "show": {
+    "type": "fluid",
+    "scene": "catch",
+    "sub": "Strangers don't tip"
+   },
+   "sfx": [
+    [
+     0,
+     "whipX"
+    ],
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "tip",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "So start now. Post weekly, reply to every comment, and collect emails so fans can find you anywhere.",
+   "show": {
+    "type": "fluid",
+    "scene": "steps",
+    "title": "Start now",
+    "box": [
+     1
+    ],
+    "steps": [
+     [
+      "weekly",
+      "Post weekly"
+     ],
+     [
+      "reply",
+      "Reply to every comment"
+     ],
+     [
+      "emails",
+      "Collect emails"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "weekly",
+     "click"
+    ],
+    [
+     "reply",
+     "click"
+    ],
+    [
+     "emails",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [FANS|fans] for the free guide, or get it free on [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "fluid",
+    "scene": "comment",
+    "keyword": "FANS"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "FANS",
+     "key"
+    ],
+    [
+     "free",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Everything is on [subcreatorpaid.com|sub creator paid dot com], with the free AI income finder.",
+   "show": {
+    "type": "fluid",
+    "scene": "site",
+    "images": [
+     "../../animator/previews/overview_site/home.png",
+     "../../animator/previews/overview_site/finder.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "key"
+    ],
+    [
+     "finder",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The tool I'd start with is linked in my bio.",
+   "show": {
+    "type": "fluid",
+    "scene": "tool",
+    "brand": "beehiiv",
+    "name": "beehiiv",
+    "desc": "Newsletter platform",
+    "line": "Free plan up to 2,500 subscribers"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "tool",
+     "pop"
+    ],
+    [
+     "linked",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Follow for one verified stream a week.",
+   "show": {
+    "type": "fluid",
+    "scene": "follow"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "follow",
+     "click"
+    ]
+   ]
+  }
+ ]
+}

@@ -25,7 +25,7 @@ def ask(prompt, system, search=False, as_json=False):
             "generationConfig": {"temperature": 0.7}}
     if search: body["tools"] = [{"google_search": {}}]
     if as_json: body["generationConfig"]["responseMimeType"] = "application/json"
-    last = None
+    last = None; errs = []
     for model in MODELS:
         for attempt in range(3):
             req = urllib.request.Request(API.format(model), json.dumps(body).encode(), method="POST",
@@ -38,12 +38,12 @@ def ask(prompt, system, search=False, as_json=False):
                 print(f"model {model}")
                 return text, sources
             except urllib.error.HTTPError as e:
-                last = f"{model}: HTTP {e.code} {e.read()[:200]!r}"
+                last = f"{model}: HTTP {e.code} {e.read()[:200]!r}"; errs.append(last)
                 if e.code == 429 or e.code >= 500: time.sleep(5 * (attempt + 1)); continue
                 break  # 400/403/404: wrong model name or key; try the next model
             except (KeyError, IndexError) as e:
-                last = f"{model}: empty answer ({e})"; break
-    sys.exit(f"Gemini failed: {last}")
+                last = f"{model}: empty answer ({e})"; errs.append(last); break
+    sys.exit("Gemini failed on every model:\n" + "\n".join(errs or [str(last)]))
 
 
 def house_rules():

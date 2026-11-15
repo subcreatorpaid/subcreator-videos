@@ -1,0 +1,382 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "style": "fluid",
+ "slug": "n10_spotify_partner",
+ "title": "Spotify Gives Podcasters Half The Ad Money",
+ "type": "value",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.28,
+ "preview_res": 360,
+ "titles": [
+  "Spotify Gives Podcasters Half The Ad Money",
+  "Is One Missing Ad Break Costing You Everything?",
+  "The Spotify Podcast Bar, In Plain Numbers"
+ ],
+ "keyword": "POD",
+ "affiliate": "elevenlabs",
+ "sources": [
+  {
+   "title": "Spotify for Creators: Spotify Partner Program (eligibility, 50% ad revenue, countries)",
+   "url": "https://support.spotify.com/ie/creators/article/spotify-partner-program/",
+   "checked": "2026-11-10"
+  },
+  {
+   "title": "Spotify Partner Program terms",
+   "url": "https://www.spotify.com/us/legal/spotify-partner-program-terms/",
+   "checked": "2026-11-10"
+  }
+ ],
+ "thumb": {
+  "headline": "Half the\n*ad money*",
+  "hero": "face",
+  "hold": "mic",
+  "mood": 0.7,
+  "sticker": "Spotify",
+  "chip": "Partner Program",
+  "size": 120
+ },
+ "beats": [
+  {
+   "say": "Spotify gives podcasters half of the ad money. Here's how you qualify.",
+   "show": {
+    "type": "fluid",
+    "scene": "card",
+    "label": "Spotify Partner Program",
+    "title": "Your share of ad revenue",
+    "box": [
+     1
+    ],
+    "rows": [
+     [
+      "Paid on",
+      "Spotify ads",
+      "ad"
+     ]
+    ],
+    "value": "50%",
+    "valueWord": "half",
+    "valueLabel": "paid to you"
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "half",
+     "thud"
+    ],
+    [
+     "qualify",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "You need three published episodes, plus [2,000|two thousand] hours and [1,000|one thousand] listeners in the last thirty days.",
+   "show": {
+    "type": "fluid",
+    "scene": "stack",
+    "title": "The bar",
+    "box": [
+     1
+    ],
+    "rows": [
+     {
+      "k": "Published episodes",
+      "v": "3+",
+      "word": "three"
+     },
+     {
+      "k": "Hours, last 30 days",
+      "v": "2,000+",
+      "word": "2,000"
+     },
+     {
+      "k": "Audience, last 30 days",
+      "v": "1,000+",
+      "word": "1,000"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "three",
+     "pop"
+    ],
+    [
+     "2,000",
+     "pop"
+    ],
+    [
+     "1,000",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "With [30-minute|thirty minute] episodes, that's about [4,000|four thousand] full listens a month.",
+   "show": {
+    "type": "fluid",
+    "scene": "counter",
+    "n": 4000,
+    "word": "4,000",
+    "label": "full 30-minute listens a month",
+    "ends": [
+     "0",
+     "4,000"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "4,000",
+     "count"
+    ],
+    [
+     "month",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "And you only earn on episodes with at least one ad break.",
+   "show": {
+    "type": "fluid",
+    "scene": "warn",
+    "icon": "mic",
+    "big": "1 ad break",
+    "flipWord": "one",
+    "text": "per episode, or you earn $0",
+    "box": [
+     5
+    ],
+    "tag": "No break, no pay",
+    "tagWord": "break",
+    "tagRed": true
+   },
+   "sfx": [
+    [
+     0,
+     "glass"
+    ],
+    [
+     "one",
+     "pop"
+    ],
+    [
+     "break",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "Here's the catch: to stay in, publish and earn at least [$10|ten dollars] every six months.",
+   "show": {
+    "type": "fluid",
+    "scene": "catch",
+    "sub": "$10 every 6 months or you are out"
+   },
+   "sfx": [
+    [
+     0,
+     "whipX"
+    ],
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "months",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "It's open in the US, the UK, Canada, Australia and dozens more.",
+   "show": {
+    "type": "fluid",
+    "scene": "title",
+    "text": "Where it's open",
+    "box": [
+     1
+    ],
+    "logo": "spotify",
+    "tags": [
+     [
+      "US",
+      "US"
+     ],
+     [
+      "UK",
+      "UK"
+     ],
+     [
+      "Canada",
+      "Canada"
+     ],
+     [
+      "Australia",
+      "Australia"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "UK",
+     "pop"
+    ],
+    [
+     "Australia",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "So publish weekly, add one ad break, and post short video clips to pull listeners in.",
+   "show": {
+    "type": "fluid",
+    "scene": "steps",
+    "title": "Your next 30 days",
+    "box": [
+     2
+    ],
+    "steps": [
+     [
+      "weekly",
+      "Publish weekly"
+     ],
+     [
+      "break",
+      "Add 1 ad break"
+     ],
+     [
+      "clips",
+      "Post short clips"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "weekly",
+     "click"
+    ],
+    [
+     "break",
+     "click"
+    ],
+    [
+     "clips",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [POD|pod] for the free guide, or get it free on [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "fluid",
+    "scene": "comment",
+    "keyword": "POD"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "POD",
+     "key"
+    ],
+    [
+     "free",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Everything is on [subcreatorpaid.com|sub creator paid dot com], with the free AI income finder.",
+   "show": {
+    "type": "fluid",
+    "scene": "site",
+    "images": [
+     "../../animator/previews/overview_site/home.png",
+     "../../animator/previews/overview_site/finder.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "key"
+    ],
+    [
+     "finder",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The tool I'd start with is linked in my bio.",
+   "show": {
+    "type": "fluid",
+    "scene": "tool",
+    "brand": "elevenlabs",
+    "name": "ElevenLabs",
+    "desc": "AI voice platform",
+    "line": "A clean voice intro for your show"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "tool",
+     "pop"
+    ],
+    [
+     "linked",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Follow for one verified stream a week.",
+   "show": {
+    "type": "fluid",
+    "scene": "follow"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "follow",
+     "click"
+    ]
+   ]
+  }
+ ]
+}

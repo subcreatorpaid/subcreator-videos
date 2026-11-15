@@ -1,0 +1,352 @@
+{
+ "renderer": "animator",
+ "brand": "SUB-CREATOR PAID",
+ "handle": "@subcreatorpaid",
+ "composition": "Short",
+ "style": "fluid",
+ "slug": "n09_tiktok_shop_pilot",
+ "title": "TikTok Shop Lets You In At 1K. The Trap Is 5K",
+ "type": "value",
+ "audio": {
+  "engine": "kokoro",
+  "kokoro_voice": "am_michael+am_puck",
+  "speed": 1.12
+ },
+ "gap": 0.28,
+ "preview_res": 360,
+ "titles": [
+  "TikTok Shop Lets You In At 1K. The Trap Is 5K",
+  "Is The TikTok Shop Pilot Quietly Limiting You?",
+  "The 30-Day Pilot Rule Nobody Explains"
+ ],
+ "keyword": "SHOP",
+ "affiliate": "opusclip",
+ "sources": [
+  {
+   "title": "Creators Agency: TikTok Shop affiliate requirements 2026 (verified Jul 2026)",
+   "url": "https://creatorsagency.co/blog/tiktok-shop-affiliate-requirements-2026",
+   "checked": "2026-11-10"
+  },
+  {
+   "title": "Virlo: TikTok Shop affiliate program 2026, the 5k trap",
+   "url": "https://virlo.ai/blog/tiktok-shop-affiliate-program",
+   "checked": "2026-11-10"
+  }
+ ],
+ "thumb": {
+  "headline": "In at 1K,\n*stuck till 5K*",
+  "hero": "face",
+  "hold": "phone",
+  "mood": 0.8,
+  "sticker": "TikTok Shop",
+  "sticker_color": "red",
+  "chip": "Pilot rules",
+  "size": 120
+ },
+ "beats": [
+  {
+   "say": "TikTok Shop lets you in at [1,000|one thousand] followers. The trap is [5,000|five thousand].",
+   "show": {
+    "type": "fluid",
+    "scene": "warn",
+    "icon": "x",
+    "big": "5,000",
+    "flipWord": "1,000",
+    "text": "The real TikTok Shop line",
+    "box": [
+     1,
+     2
+    ],
+    "tag": "The trap",
+    "tagWord": "trap",
+    "tagRed": true
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "1,000",
+     "pop"
+    ],
+    [
+     "5,000",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "In the US you need to be eighteen, pass an ID check, and have [1,000|one thousand] followers.",
+   "show": {
+    "type": "fluid",
+    "scene": "card",
+    "label": "TikTok Shop affiliate · US",
+    "title": "The bar to join",
+    "box": [
+     3
+    ],
+    "rows": [
+     [
+      "Age",
+      "18+",
+      "eighteen"
+     ],
+     [
+      "ID check",
+      "Verified",
+      "ID"
+     ],
+     [
+      "Followers",
+      "1,000",
+      "1,000"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "eighteen",
+     "pop"
+    ],
+    [
+     "ID",
+     "pop"
+    ],
+    [
+     "1,000",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Under [5,000|five thousand], you start in a [30-day|thirty day] pilot. Three shoppable videos a day, three lives a week, no campaigns.",
+   "show": {
+    "type": "fluid",
+    "scene": "stack",
+    "title": "Pilot limits",
+    "box": [
+     1
+    ],
+    "rows": [
+     {
+      "k": "Shoppable videos",
+      "v": "3 / day",
+      "word": "videos"
+     },
+     {
+      "k": "Shoppable LIVEs",
+      "v": "3 / week",
+      "word": "lives"
+     },
+     {
+      "k": "Campaigns",
+      "v": "Not yet",
+      "tag": "Locked",
+      "word": "campaigns"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "videos",
+     "pop"
+    ],
+    [
+     "lives",
+     "pop"
+    ],
+    [
+     "campaigns",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "You graduate at [5,000|five thousand] followers, after at least thirty days.",
+   "show": {
+    "type": "fluid",
+    "scene": "counter",
+    "n": 5000,
+    "word": "5,000",
+    "label": "followers to leave the pilot",
+    "ends": [
+     "1,000",
+     "5,000"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whoosh"
+    ],
+    [
+     "5,000",
+     "count"
+    ],
+    [
+     "thirty",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Here's the catch: sellers set the commission, returns can cancel it, and the rules change fast.",
+   "show": {
+    "type": "fluid",
+    "scene": "catch",
+    "sub": "Returns can cancel your commission"
+   },
+   "sfx": [
+    [
+     0,
+     "whipX"
+    ],
+    [
+     "catch",
+     "thud"
+    ],
+    [
+     "cancel",
+     "thud"
+    ]
+   ]
+  },
+  {
+   "say": "So use the pilot well. Pick five products you really use, show each one in use, and tag every one.",
+   "show": {
+    "type": "fluid",
+    "scene": "steps",
+    "title": "Use the pilot well",
+    "box": [
+     3
+    ],
+    "steps": [
+     [
+      "five",
+      "Pick 5 products you use"
+     ],
+     [
+      "show",
+      "Show each one in use"
+     ],
+     [
+      "tag",
+      "Tag every one"
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "five",
+     "click"
+    ],
+    [
+     "show",
+     "click"
+    ],
+    [
+     "tag",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Comment [SHOP|shop] for the free guide, or get it free on [subcreatorpaid.com|sub creator paid dot com].",
+   "show": {
+    "type": "fluid",
+    "scene": "comment",
+    "keyword": "SHOP"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "SHOP",
+     "key"
+    ],
+    [
+     "free",
+     "pop"
+    ]
+   ]
+  },
+  {
+   "say": "Everything is on [subcreatorpaid.com|sub creator paid dot com], with the free AI income finder.",
+   "show": {
+    "type": "fluid",
+    "scene": "site",
+    "images": [
+     "../../animator/previews/overview_site/home.png",
+     "../../animator/previews/overview_site/finder.png"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "key"
+    ],
+    [
+     "finder",
+     "click"
+    ]
+   ]
+  },
+  {
+   "say": "The tool I'd start with is linked in my bio.",
+   "show": {
+    "type": "fluid",
+    "scene": "tool",
+    "brand": "opusclip",
+    "name": "OpusClip",
+    "desc": "AI clipping tool",
+    "line": "Cut one demo into 5 product clips"
+   },
+   "sfx": [
+    [
+     0,
+     "whip"
+    ],
+    [
+     "tool",
+     "pop"
+    ],
+    [
+     "linked",
+     "ding"
+    ]
+   ]
+  },
+  {
+   "say": "Follow for one verified stream a week.",
+   "show": {
+    "type": "fluid",
+    "scene": "follow"
+   },
+   "sfx": [
+    [
+     0,
+     "swoosh"
+    ],
+    [
+     "follow",
+     "click"
+    ]
+   ]
+  }
+ ]
+}
