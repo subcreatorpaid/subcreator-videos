@@ -1,14 +1,14 @@
 {
- "updated": "2026-11-14 08:00",
+ "updated": "2026-11-15 08:00",
  "updated_by": "secretary",
  "today": [
   {
-   "task": "Open the Week of 9 Nov review doc (8 new posts; 8 are now due or overdue, 11-14 Nov) and say 'approve the week' in a Claude session",
+   "task": "Open the Week of 9 Nov review doc (8 new posts; 8 are now due or overdue, 11-15 Nov) and say 'approve the week' in a Claude session",
    "link": "https://claude.ai/artifact/9j7M3dYrmvDFCAbY9PjLJJ",
    "mins": 10
   },
   {
-   "task": "Check your email for Kit (in review 20 days) and tell me the result; if no reply, nudge their affiliate support",
+   "task": "Check your email for Kit (in review 21 days) and tell me the result; if no reply, nudge their affiliate support",
    "link": "https://kit.com/affiliate",
    "mins": 3
   },
@@ -47,7 +47,7 @@
    "since": "2026-11-08"
   },
   {
-   "text": "n05 (beehiiv) went out 10 Nov 18:00 and is still the last video in Buffer. 8 posts due 11-14 Nov (n3-n8 and 9) are not rendered or scheduled until the week is approved. Guard daily run passed (14 Nov).",
+   "text": "n05 (beehiiv) went out 10 Nov 18:00 and is still the last video in Buffer. 8 posts due 11-15 Nov (n3-n8 and 9) are not rendered or scheduled until the week is approved. Guard daily run passed (15 Nov).",
    "since": "2026-11-11"
   },
   {
@@ -63,12 +63,16 @@
    "since": "2026-11-01"
   },
   {
-   "text": "Gemini scan failed 16 days running (14 Nov 06:46 run failed again). Check GEMINI_API_KEY/model access in the workflow log. Meanwhile, official check (8 Nov): YouTube blog 10 Aug 2026 says from 1 Feb 2027 Shorts ad/subscription revenue share needs 10M Shorts views per 90 days and new YPP applicants need 8,000 watch hours or 20M Shorts views; Fan Funding and shopping entry thresholds unchanged, existing members not affected. No stream file changed (https://blog.youtube/news-and-events/new-opportunities-to-earn-and-changes-to-the-youtube-partner-program/). 14 Nov web scan: only the known YouTube Partner Program (YPP) changes (Aug 2026, effective 1 Feb 2027); no new covered-fact changes.",
+   "text": "Gemini scan failed 17 days running (15 Nov 06:49 run failed again; every model in the list errored, last: gemini-2.5-flash HTTP 404). Check GEMINI_API_KEY/model access in the workflow log. Web scan 15 Nov: nothing new on covered programs; only the known YouTube Partner Program changes (effective 1 Feb 2027, https://blog.youtube/news-and-events/new-opportunities-to-earn-and-changes-to-the-youtube-partner-program/).",
    "since": "2026-10-30"
   },
   {
    "text": "Last week's numbers: no data (no Buffer/platform numbers reached the run; vidIQ reads 'The History Invoice', not @subcreatorpaid).",
    "since": "2026-11-08"
+  },
+  {
+   "text": "Sunday weekly.yml (15 Nov) failed at the storyboard step: drafted posts have no slug yet (pipeline.py crashed). Fixed in this commit (skips posts without a slug). Week of 16 Nov plan was not made by GitHub; the Sunday Claude task still needs push access.",
+   "since": "2026-11-15"
   }
  ],
  "pipeline": {
@@ -118,7 +122,7 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-11-14",
+  "checked": "2026-11-15",
   "pending_comments": 0,
   "subscribers": 1,
   "visits_since_launch": 76

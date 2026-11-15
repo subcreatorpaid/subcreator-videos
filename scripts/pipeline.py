@@ -23,7 +23,7 @@ def rel(tag, name): return f"https://github.com/{REPO}/releases/download/{tag}/{
 
 
 def pick(status):
-    posts = [p for p in load()["posts"] if p.get("status") == status and (ROOT / "videos" / p["slug"] / "spec.json").exists()]
+    posts = [p for p in load()["posts"] if p.get("status") == status and p.get("slug") and (ROOT / "videos" / p["slug"] / "spec.json").exists()]
     return [p["slug"] for p in posts][:10]  # rules.md: max 12 renders a week; the plan has 10 posts
 
 

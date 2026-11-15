@@ -1,0 +1,1 @@
+2026-11-15 08:00 | secretary | daily run: guard ok, Gemini scan failed 17th day, weekly.yml storyboard crash fixed (skip posts without slug), status + dashboard rebuilt | approve the week, Kit email, Sunday task push access
