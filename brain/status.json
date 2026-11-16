@@ -1,19 +1,19 @@
 {
- "updated": "2026-11-15 08:00",
+ "updated": "2026-11-16 08:00",
  "updated_by": "secretary",
  "today": [
   {
-   "task": "Open the Week of 9 Nov review doc (8 new posts; 8 are now due or overdue, 11-15 Nov) and say 'approve the week' in a Claude session",
-   "link": "https://claude.ai/artifact/9j7M3dYrmvDFCAbY9PjLJJ",
-   "mins": 10
+   "task": "Open the Week of 16 Nov review doc (10 posts, 16-22 Nov; first posts are due today) and say 'approve the week' in a Claude session",
+   "link": "https://claude.ai/artifact/DCJZnnMvZm7fzNPHqjy2fp",
+   "mins": 15
   },
   {
-   "task": "Check your email for Kit (in review 21 days) and tell me the result; if no reply, nudge their affiliate support",
+   "task": "Check your email for Kit (in review 22 days) and tell me the result; if no reply, nudge their affiliate support",
    "link": "https://kit.com/affiliate",
    "mins": 3
   },
   {
-   "task": "Give the Sunday scheduled task push access to subcreatorpaid/subcreator-videos (2nd Sunday it could not push)",
+   "task": "Give the Sunday scheduled task push access to subcreatorpaid/subcreator-videos (3rd Sunday it could not push)",
    "link": "https://claude.ai/code",
    "mins": 3
   }
@@ -30,24 +30,24 @@
    "since": "2026-10-26"
   },
   {
-   "what": "Which finished videos to schedule after 10 Nov (n05 is the last in Buffer). If you approve the week of 9 Nov, its posts fill 11-15 Nov",
+   "what": "Which finished videos (001-036) to schedule, if any, besides the week of 16 Nov drafts. n05 (10 Nov) is the last video in Buffer",
    "say": "schedule videos <numbers> from 11 Nov",
    "since": "2026-10-29"
   },
   {
-   "what": "Week of 9 Nov: 10 posts (6 value, 3 tool, 1 proof); posts 1-2 already scheduled, 8 new drafts for 11-15 Nov",
+   "what": "Week of 16 Nov: 10 posts (6 value, 3 tool, 1 proof), 16-22 Nov. Replaces the week of 9 Nov (dates passed, never approved)",
    "say": "approve the week",
-   "since": "2026-11-08",
-   "link": "https://claude.ai/artifact/9j7M3dYrmvDFCAbY9PjLJJ"
+   "since": "2026-11-15",
+   "link": "https://claude.ai/artifact/DCJZnnMvZm7fzNPHqjy2fp"
   }
  ],
  "alerts": [
   {
-   "text": "Sunday run 8 Nov could not push to GitHub again (repo not in the scheduled task's sources). Its plan was re-applied here from the live dashboard; research and review files from that run are only in the review doc.",
+   "text": "Sunday runs 8 and 15 Nov could not push to GitHub (repo not in the scheduled task's sources). The 15 Nov plan was re-applied here from the live dashboard; research and review files from that run are only in the review doc.",
    "since": "2026-11-08"
   },
   {
-   "text": "n05 (beehiiv) went out 10 Nov 18:00 and is still the last video in Buffer. 8 posts due 11-15 Nov (n3-n8 and 9) are not rendered or scheduled until the week is approved. Guard daily run passed (15 Nov).",
+   "text": "Week of 9 Nov retired: dates passed without approval. n04 (9 Nov) and n05 (10 Nov) went to Buffer; posts 3-10 were never made. Nothing is scheduled after 10 Nov until you approve the week of 16 Nov. Guard checks passed (15 Nov).",
    "since": "2026-11-11"
   },
   {
@@ -63,7 +63,7 @@
    "since": "2026-11-01"
   },
   {
-   "text": "Gemini scan failed 17 days running (15 Nov 06:49 run failed again; every model in the list errored, last: gemini-2.5-flash HTTP 404). Check GEMINI_API_KEY/model access in the workflow log. Web scan 15 Nov: nothing new on covered programs; only the known YouTube Partner Program changes (effective 1 Feb 2027, https://blog.youtube/news-and-events/new-opportunities-to-earn-and-changes-to-the-youtube-partner-program/).",
+   "text": "Gemini scan failed 18 days running (no scan 16 Nov; last error gemini-2.5-flash HTTP 404). Check GEMINI_API_KEY/model access in the workflow log. Web scan 16 Nov: nothing new on covered programs; only the known YouTube Partner Program changes (effective 1 Feb 2027, https://blog.youtube/news-and-events/new-opportunities-to-earn-and-changes-to-the-youtube-partner-program/).",
    "since": "2026-10-30"
   },
   {
@@ -71,15 +71,15 @@
    "since": "2026-11-08"
   },
   {
-   "text": "Sunday weekly.yml (15 Nov) failed at the storyboard step: drafted posts have no slug yet (pipeline.py crashed). Fixed in this commit (skips posts without a slug). Week of 16 Nov plan was not made by GitHub; the Sunday Claude task still needs push access.",
+   "text": "Sunday weekly.yml (15 Nov) failed at the storyboard step (fixed 15 Nov: skips posts without a slug). No week-of-16-Nov plan exists yet; the Sunday Claude task still needs push access.",
    "since": "2026-11-15"
   }
  ],
  "pipeline": {
-  "drafted": 8,
+  "drafted": 10,
   "approved": 0,
   "rendered": 36,
-  "scheduled": 2,
+  "scheduled": 0,
   "posted": 0
  },
  "affiliates": [
@@ -105,7 +105,7 @@
   },
   {
    "id": "kit",
-   "status": "in review (since 25 Oct, 20 days: check email)",
+   "status": "in review (since 25 Oct, 22 days: check email)",
    "earns": "50% for 12 months"
   },
   {
@@ -128,11 +128,11 @@
   "visits_since_launch": 76
  },
  "last_week": {
-  "summary": "Week of 2 Nov: no data. 3 posts went to Buffer (n01-n03, posting not confirmed); followers, reach and affiliate clicks were not measured. Email list 1, earned $0, costs $0.",
+  "summary": "Week of 9 Nov: no data. 2 posts went to Buffer (n04 ElevenLabs 9 Nov, n05 beehiiv 10 Nov; posting not confirmed by numbers); 8 drafts never approved. Followers, reach and affiliate clicks not measured. Email list 1, earned $0, costs $0 known.",
   "suggestions": [
-   "researcher: connect @subcreatorpaid in vidIQ or drop Sunday screenshots in brain/research/inbox/ so we get real numbers",
-   "publisher: after n05 posts, pin a comment with subcreatorpaid.com/go/beehiiv",
-   "strategist: use the 'under 2,000 followers' list format (70.9x outlier) with our verified numbers"
+   "secretary/owner: one 'approve the week' for 16-22 Nov unlocks 10 posts",
+   "researcher: connect @subcreatorpaid in vidIQ or drop Sunday screenshots in brain/research/inbox/ for real numbers",
+   "publisher: pin a comment with subcreatorpaid.com/go/opusclip on the 16 Nov podcast video and /go/skool on 18 Nov"
   ]
  },
  "money": {
