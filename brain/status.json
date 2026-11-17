@@ -1,14 +1,14 @@
 {
- "updated": "2026-11-16 08:00",
+ "updated": "2026-11-17 08:00",
  "updated_by": "secretary",
  "today": [
   {
-   "task": "Open the Week of 16 Nov review doc (10 posts, 16-22 Nov; first posts are due today) and say 'approve the week' in a Claude session",
+   "task": "Open the Week of 16 Nov review doc (10 posts, 16-22 Nov; posts 1-2 (16 and 17 Nov) are already overdue) and say 'approve the week' in a Claude session",
    "link": "https://claude.ai/artifact/DCJZnnMvZm7fzNPHqjy2fp",
    "mins": 15
   },
   {
-   "task": "Check your email for Kit (in review 22 days) and tell me the result; if no reply, nudge their affiliate support",
+   "task": "Check your email for Kit (in review 23 days) and tell me the result; if no reply, nudge their affiliate support",
    "link": "https://kit.com/affiliate",
    "mins": 3
   },
@@ -47,7 +47,7 @@
    "since": "2026-11-08"
   },
   {
-   "text": "Week of 9 Nov retired: dates passed without approval. n04 (9 Nov) and n05 (10 Nov) went to Buffer; posts 3-10 were never made. Nothing is scheduled after 10 Nov until you approve the week of 16 Nov. Guard checks passed (15 Nov).",
+   "text": "Nothing is scheduled after 10 Nov. Week of 16 Nov: posts 1 (16 Nov) and 2 (17 Nov) are overdue because the week is not approved yet. Guard checks passed (17 Nov). Say 'approve the week' and the dates will be re-aligned.",
    "since": "2026-11-11"
   },
   {
@@ -63,7 +63,7 @@
    "since": "2026-11-01"
   },
   {
-   "text": "Gemini scan failed 18 days running (no scan 16 Nov; last error gemini-2.5-flash HTTP 404). Check GEMINI_API_KEY/model access in the workflow log. Web scan 16 Nov: nothing new on covered programs; only the known YouTube Partner Program changes (effective 1 Feb 2027, https://blog.youtube/news-and-events/new-opportunities-to-earn-and-changes-to-the-youtube-partner-program/).",
+   "text": "Gemini scan failed 19 days running (no scan 17 Nov either; https://github.com/subcreatorpaid/subcreator-videos/actions/runs/44035269239). Check GEMINI_API_KEY/model access. Web scan 17 Nov: nothing new on covered programs; only the known YouTube Partner Program changes (effective 1 Feb 2027, https://blog.youtube/news-and-events/new-opportunities-to-earn-and-changes-to-the-youtube-partner-program/).",
    "since": "2026-10-30"
   },
   {
@@ -122,7 +122,7 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-11-15",
+  "checked": "2026-11-17",
   "pending_comments": 0,
   "subscribers": 1,
   "visits_since_launch": 76

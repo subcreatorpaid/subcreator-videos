@@ -1,0 +1,1 @@
+2026-11-17 08:00 | secretary | daily run: guard ok, no Gemini scan (failing 19 days), web scan nothing new, week of 16 Nov still unapproved (posts 1-2 overdue), status + dashboard rebuilt | owner: approve the week, check Kit email, push access for Sunday task
