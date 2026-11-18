@@ -1,14 +1,14 @@
 {
- "updated": "2026-11-17 08:00",
+ "updated": "2026-11-18 08:00",
  "updated_by": "secretary",
  "today": [
   {
-   "task": "Open the Week of 16 Nov review doc (10 posts, 16-22 Nov; posts 1-2 (16 and 17 Nov) are already overdue) and say 'approve the week' in a Claude session",
+   "task": "Open the Week of 16 Nov review doc (10 posts, 16-22 Nov; posts 1-5 (16-18 Nov) are now overdue) and say 'approve the week' in a Claude session",
    "link": "https://claude.ai/artifact/DCJZnnMvZm7fzNPHqjy2fp",
    "mins": 15
   },
   {
-   "task": "Check your email for Kit (in review 23 days) and tell me the result; if no reply, nudge their affiliate support",
+   "task": "Check your email for Kit (in review 24 days) and tell me the result; if no reply, nudge their affiliate support",
    "link": "https://kit.com/affiliate",
    "mins": 3
   },
@@ -47,7 +47,7 @@
    "since": "2026-11-08"
   },
   {
-   "text": "Nothing is scheduled after 10 Nov. Week of 16 Nov: posts 1 (16 Nov) and 2 (17 Nov) are overdue because the week is not approved yet. Guard checks passed (17 Nov). Say 'approve the week' and the dates will be re-aligned.",
+   "text": "Nothing is scheduled after 10 Nov. Week of 16 Nov: posts 1-5 (16-18 Nov) are overdue because the week is not approved yet. Guard checks passed (18 Nov). Say 'approve the week' and the dates will be re-aligned.",
    "since": "2026-11-11"
   },
   {
@@ -63,7 +63,7 @@
    "since": "2026-11-01"
   },
   {
-   "text": "Gemini scan failed 19 days running (no scan 17 Nov either; https://github.com/subcreatorpaid/subcreator-videos/actions/runs/44035269239). Check GEMINI_API_KEY/model access. Web scan 17 Nov: nothing new on covered programs; only the known YouTube Partner Program changes (effective 1 Feb 2027, https://blog.youtube/news-and-events/new-opportunities-to-earn-and-changes-to-the-youtube-partner-program/).",
+   "text": "Gemini scan failed 20 days running (no scan 18 Nov either; https://github.com/subcreatorpaid/subcreator-videos/actions/runs/44255375771). Check GEMINI_API_KEY/model access. Web scan 18 Nov: nothing new on covered programs; only the known YouTube Partner Program changes (effective 1 Feb 2027).",
    "since": "2026-10-30"
   },
   {
@@ -105,7 +105,7 @@
   },
   {
    "id": "kit",
-   "status": "in review (since 25 Oct, 22 days: check email)",
+   "status": "in review (since 25 Oct, 24 days: check email)",
    "earns": "50% for 12 months"
   },
   {
@@ -122,7 +122,7 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-11-17",
+  "checked": "2026-11-18",
   "pending_comments": 0,
   "subscribers": 1,
   "visits_since_launch": 76
