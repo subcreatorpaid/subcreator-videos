@@ -1,19 +1,19 @@
 {
- "updated": "2026-11-20 08:00",
+ "updated": "2026-11-21 08:00",
  "updated_by": "secretary",
  "today": [
   {
-   "task": "Open the Week of 16 Nov review doc (10 posts, 16-22 Nov; posts 1-6 (16-19 Nov) are now overdue) and say 'approve the week' in a Claude session",
+   "task": "Open the Week of 16 Nov review doc (10 posts, 16-22 Nov; most of the week (16-21 Nov) is now overdue) and say 'approve the week' in a Claude session",
    "link": "https://claude.ai/artifact/DCJZnnMvZm7fzNPHqjy2fp",
    "mins": 15
   },
   {
-   "task": "Check your email for Kit (in review 26 days) and tell me the result; if no reply, nudge their affiliate support",
+   "task": "Check your email for Kit (in review 27 days) and tell me the result; if no reply, nudge their affiliate support",
    "link": "https://kit.com/affiliate",
    "mins": 3
   },
   {
-   "task": "Give the Sunday scheduled task push access to subcreatorpaid/subcreator-videos (3rd Sunday it could not push)",
+   "task": "Give the Sunday scheduled task push access to subcreatorpaid/subcreator-videos (tomorrow is the 4th Sunday; 3 have failed to push)",
    "link": "https://claude.ai/code",
    "mins": 3
   }
@@ -47,7 +47,7 @@
    "since": "2026-11-08"
   },
   {
-   "text": "Nothing is scheduled after 10 Nov. Week of 16 Nov: posts 1-6 (16-19 Nov) are overdue because the week is not approved yet. Guard checks passed (20 Nov); posts 7-8 (20 Nov) now overdue too. Say 'approve the week' and the dates will be re-aligned.",
+   "text": "Nothing is scheduled after 10 Nov. Week of 16 Nov unapproved: posts due 16-21 Nov are overdue (guard passed 21 Nov). Say 'approve the week' and the dates will be re-aligned.",
    "since": "2026-11-11"
   },
   {
@@ -63,7 +63,7 @@
    "since": "2026-11-01"
   },
   {
-   "text": "Gemini scan failed 22 days running (no scan 20 Nov either; https://github.com/subcreatorpaid/subcreator-videos/actions/runs/44691572450). Check GEMINI_API_KEY/model access. Web scan 20 Nov: nothing new confirmed on covered programs; only the known YouTube Partner Program changes (effective 1 Feb 2027). Unverified headline to check on Sunday: TikTok US creator revenue share 90%.",
+   "text": "Gemini scan failed 23 days running (no scan 21 Nov either; https://github.com/subcreatorpaid/subcreator-videos/actions/runs/44877760236). Check GEMINI_API_KEY/model access. Web scan 21 Nov: nothing new on covered programs (YouTube Partner Program changes, effective 1 Feb 2027, already known). Unverified: TikTok US creator revenue share 90%.",
    "since": "2026-10-30"
   },
   {
