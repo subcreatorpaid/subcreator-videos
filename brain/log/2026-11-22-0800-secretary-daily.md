@@ -1,0 +1,1 @@
+2026-11-22 08:00 | secretary | daily run: guard ok (22 Nov), light scan nothing new, Gemini scan still failing, week of 16 Nov still unapproved, status + dashboard rebuilt | approve the week, check Kit email, give Sunday task push access
