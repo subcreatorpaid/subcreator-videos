@@ -1,26 +1,25 @@
 {
- "week_of": "2026-11-16",
- "review_doc": "https://claude.ai/artifact/DCJZnnMvZm7fzNPHqjy2fp",
+ "week_of": "2026-11-23",
+ "review_doc": "https://claude.ai/artifact/BEGh6CP2n6kMQ3TPU9K9sQ",
  "status": "drafted",
  "status_flow": "drafted -> approved -> rendered -> checked -> scheduled -> posted",
  "notes": [
-  "Week of 16 Nov: planned by the Sunday run 15 Nov (could not push; 3rd time). Titles/days/types/affiliates re-applied from the live Control Room by the 16 Nov secretary run; scripts and captions are in the review doc https://claude.ai/artifact/DCJZnnMvZm7fzNPHqjy2fp. Slugs filled by the creator after 'approve the week'.",
-  "Week of 9 Nov retired (dates passed unapproved); n04 (9 Nov) and n05 (10 Nov) went to Buffer. Five of its drafts are carried into this week.",
-  "Weeks of 2 Nov and 9 Nov are in git history."
+  "Week of 23 Nov: planned by the Sunday run 22 Nov (could not push; 4th time). Titles/days/types/affiliates re-applied from the live Control Room by the 23 Nov secretary run; scripts and captions are in the review doc https://claude.ai/artifact/BEGh6CP2n6kMQ3TPU9K9sQ. Slugs filled by the creator after 'approve the week'.",
+  "Week of 16 Nov retired (dates passed unapproved). Weeks of 2, 9 and 16 Nov are in git history."
  ],
  "posts": [
   {
    "n": 1,
-   "day": "2026-11-16",
+   "day": "2026-11-23",
    "type": "value",
-   "title": "TikTok Shop Lets You In At 1,000. Full Access Is 5,000",
+   "title": "YouTube Doubles The Monetisation Bar In February",
    "affiliate": "opusclip",
    "slug": null,
    "status": "drafted"
   },
   {
    "n": 2,
-   "day": "2026-11-16",
+   "day": "2026-11-23",
    "type": "tool",
    "title": "The $0 Way To Turn One Podcast Into 10 Shorts",
    "affiliate": "opusclip",
@@ -29,7 +28,7 @@
   },
   {
    "n": 3,
-   "day": "2026-11-17",
+   "day": "2026-11-24",
    "type": "value",
    "title": "5 Ways Accounts Under 2,000 Followers Get Paid",
    "affiliate": "beehiiv",
@@ -38,16 +37,16 @@
   },
   {
    "n": 4,
-   "day": "2026-11-18",
+   "day": "2026-11-25",
    "type": "value",
-   "title": "YouTube Shopping Pays At 500 Subs. The Catch Is Time",
-   "affiliate": "opusclip",
+   "title": "Patreon On iPhone Can Cost Your Fans 43% More",
+   "affiliate": "beehiiv",
    "slug": null,
    "status": "drafted"
   },
   {
    "n": 5,
-   "day": "2026-11-18",
+   "day": "2026-11-25",
    "type": "tool",
    "title": "Skool's $9 Plan Costs More Than $9. Here's When",
    "affiliate": "skool",
@@ -56,7 +55,7 @@
   },
   {
    "n": 6,
-   "day": "2026-11-19",
+   "day": "2026-11-26",
    "type": "value",
    "title": "Are You Giving Brands Your Video Twice For Free?",
    "affiliate": "opusclip",
@@ -65,7 +64,7 @@
   },
   {
    "n": 7,
-   "day": "2026-11-20",
+   "day": "2026-11-27",
    "type": "value",
    "title": "Ko-fi Takes 0% Of Tips. Here's Where It Takes 5%",
    "affiliate": "skool",
@@ -74,7 +73,7 @@
   },
   {
    "n": 8,
-   "day": "2026-11-20",
+   "day": "2026-11-27",
    "type": "tool",
    "title": "The Free AI Voice Plan Has A Catch For Creators",
    "affiliate": "elevenlabs",
@@ -83,7 +82,7 @@
   },
   {
    "n": 9,
-   "day": "2026-11-21",
+   "day": "2026-11-28",
    "type": "value",
    "title": "YouTube Is Testing $20 Payouts (Not $100)",
    "affiliate": "opusclip",
@@ -92,9 +91,9 @@
   },
   {
    "n": 10,
-   "day": "2026-11-22",
+   "day": "2026-11-29",
    "type": "proof",
-   "title": "4 Weeks In: Our Real Numbers, $0 Earned",
+   "title": "5 Weeks In: Our Real Numbers, Still $0",
    "affiliate": "beehiiv",
    "slug": null,
    "status": "drafted"

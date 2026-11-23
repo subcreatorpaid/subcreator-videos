@@ -1,0 +1,1 @@
+2026-11-23 08:00 | secretary | daily run: guard ok, recovered 22 Nov Sunday plan (week of 23 Nov, YPP + Patreon alerts) from live dashboard into brain files, Gemini scan still failing, website speed 57 on 22 Nov, stream facts stale 25 Nov, status + dashboard rebuilt | approve the week, push access + Gemini key, check Kit email
