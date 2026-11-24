@@ -1,0 +1,1 @@
+2026-11-24 08:00 | secretary | daily run: guard ok (24 Nov), Gemini scan still failing, daily web scan found nothing new beyond YPP change, stream facts go stale 25 Nov, status + dashboard rebuilt | approve the week, push access + Gemini key, check Kit email
