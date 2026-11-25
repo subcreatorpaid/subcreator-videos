@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24 08:00",
+ "updated": "2026-11-25 08:00",
  "updated_by": "secretary",
  "today": [
   {
@@ -47,7 +47,7 @@
    "since": "2026-11-08"
   },
   {
-   "text": "Fact change: YouTube raises the full YPP bar from 1 Feb 2027 (1,000 subs + 8,000 hours or 20M Shorts views; Shorts ad share pauses under 10M Shorts views in 90 days; 500-sub tier unchanged). Source TechTimes 11 Aug 2026; confirm on the YouTube blog. Post 1 of the week covers it.",
+   "text": "Fact change: YouTube raises the full YPP bar from 1 Feb 2027 (1,000 subs + 8,000 hours or 20M Shorts views; Shorts ad share pauses under 10M Shorts views in 90 days; 500-sub tier unchanged). Source TechTimes 11 Aug 2026; confirm on the YouTube blog. Post 1 of the week covers it. Official YouTube blog post exists (blog.youtube, YPP updates 2027); confirm figures there when refreshing.",
    "since": "2026-11-22"
   },
   {
@@ -55,15 +55,15 @@
    "since": "2026-11-22"
   },
   {
-   "text": "Nothing is scheduled after 10 Nov; week of 23 Nov posts 1-3 are due/overdue. Guard passed 24 Nov. Say 'approve the week' to render and schedule.",
+   "text": "Nothing is scheduled after 10 Nov; week of 23 Nov posts 1-3 are overdue (4 due this week). Guard passed 25 Nov. Say \"approve the week\" to render and schedule.",
    "since": "2026-11-11"
   },
   {
-   "text": "Stream facts checked 25-26 Oct pass the 30-day limit from 25 Nov (guard --strict will then fail daily). Needs a facts refresh (youtube-shopping, youtube-fan-funding, amazon-associates, etsy-templates, spotify-memberships first, then the rest).",
+   "text": "Stream facts: amazon-associates, etsy-templates, spotify-memberships, youtube-fan-funding are now 31 days old (guard warns); the other 11 hit 30 days tomorrow and guard --strict will start failing. Needs a facts refresh run.",
    "since": "2026-11-23"
   },
   {
-   "text": "Gemini scan failed 26 days running (24 Nov: https://github.com/subcreatorpaid/subcreator-videos/actions/runs/45344473744). gemini-2.5-flash returns 404; check GEMINI_API_KEY/project access.",
+   "text": "Gemini scan failed 27 days running (25 Nov: https://github.com/subcreatorpaid/subcreator-videos/actions/runs/45565042212). gemini-2.5-flash returns 404; check GEMINI_API_KEY/project access.",
    "since": "2026-10-30"
   },
   {
@@ -134,7 +134,7 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-11-24",
+  "checked": "2026-11-25",
   "pending_comments": 0,
   "subscribers": 1,
   "visits_since_launch": 76
