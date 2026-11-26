@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25 08:00",
+ "updated": "2026-11-26 08:00",
  "updated_by": "secretary",
  "today": [
   {
@@ -55,19 +55,19 @@
    "since": "2026-11-22"
   },
   {
-   "text": "Nothing is scheduled after 10 Nov; week of 23 Nov posts 1-3 are overdue (4 due this week). Guard passed 25 Nov. Say \"approve the week\" to render and schedule.",
+   "text": "Nothing is scheduled after 10 Nov; week of 23 Nov posts 1-6 (23-26 Nov) are now due or overdue, 4 more due 27-29 Nov. Guard passed 26 Nov (0 errors, 24 warnings). Say \"approve the week\" to render and schedule.",
    "since": "2026-11-11"
   },
   {
-   "text": "Stream facts: amazon-associates, etsy-templates, spotify-memberships, youtube-fan-funding are now 31 days old (guard warns); the other 11 hit 30 days tomorrow and guard --strict will start failing. Needs a facts refresh run.",
+   "text": "Stream facts: all 15 stream files are now 31-32 days old (guard warns, strict still passes with 0 errors). Needs a facts refresh run.",
    "since": "2026-11-23"
   },
   {
-   "text": "Gemini scan failed 27 days running (25 Nov: https://github.com/subcreatorpaid/subcreator-videos/actions/runs/45565042212). gemini-2.5-flash returns 404; check GEMINI_API_KEY/project access.",
+   "text": "Gemini scan failed 28 days running (latest failed run 25 Nov: https://github.com/subcreatorpaid/subcreator-videos/actions/runs/45565042212). gemini-2.5-flash returns 404; check GEMINI_API_KEY/project access. Daily scan used web search instead.",
    "since": "2026-10-30"
   },
   {
-   "text": "Website health failed 22 Nov: homepage phone speed score 57 (minimum 60). All else passed (29 pages, links, SSL 62 days). Watch whether it repeats.",
+   "text": "Website health failed once on 22 Nov (phone speed 57, minimum 60); passed since, incl. 25 Nov guard. Watching.",
    "since": "2026-11-22"
   },
   {
@@ -134,7 +134,7 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-11-25",
+  "checked": "2026-11-26",
   "pending_comments": 0,
   "subscribers": 1,
   "visits_since_launch": 76
