@@ -1,0 +1,1 @@
+2026-11-27 08:00 | secretary | daily run: guard passed 26 Nov, Gemini scan still failing (29 days), no new fact changes, Kit inbox search empty, status + dashboard rebuilt | owner: approve the week (posts 1-8 overdue), fix Sunday task GitHub access, check Kit email
