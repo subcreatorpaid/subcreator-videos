@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-27 08:00",
+ "updated": "2026-11-28 08:00",
  "updated_by": "secretary",
  "today": [
   {
-   "task": "Open the Week of 23 Nov review doc (10 posts, 23-29 Nov; posts 1-8 are now due or overdue) and say 'approve the week' in a Claude session",
+   "task": "Open the Week of 23 Nov review doc (10 posts, 23-29 Nov; posts 1-9 are now due or overdue) and say 'approve the week' in a Claude session",
    "link": "https://claude.ai/artifact/BEGh6CP2n6kMQ3TPU9K9sQ",
    "mins": 15
   },
@@ -13,7 +13,7 @@
    "mins": 5
   },
   {
-   "task": "Check your email for Kit (in review 33 days; none found in the connected inbox) and tell me the result; if no reply, nudge their affiliate support",
+   "task": "Check your email for Kit (in review 34 days; none found in the connected inbox) and tell me the result; if no reply, nudge their affiliate support",
    "link": "https://kit.com/affiliate",
    "mins": 3
   }
@@ -55,15 +55,15 @@
    "since": "2026-11-22"
   },
   {
-   "text": "Nothing is scheduled after 10 Nov; week of 23 Nov posts 1-8 (23-27 Nov) are now due or overdue, 2 more due 28-29 Nov. Guard passed 26 Nov (0 errors). Say \"approve the week\" to render and schedule.",
+   "text": "Nothing is scheduled after 10 Nov; week of 23 Nov posts 1-9 (23-28 Nov) are now due or overdue, post 10 due 29 Nov. Guard passed 27 Nov (0 errors, 24 warnings). Say \"approve the week\" to render and schedule.",
    "since": "2026-11-11"
   },
   {
-   "text": "Stream facts: all 15 stream files are now 32-33 days old (guard warns, strict still passes with 0 errors). Needs a facts refresh run.",
+   "text": "Stream facts: all 15 stream files are now 33-34 days old (guard warns, strict still passes with 0 errors). Needs a facts refresh run.",
    "since": "2026-11-23"
   },
   {
-   "text": "Gemini scan failed 29 days running (latest failed run 26 Nov: https://github.com/subcreatorpaid/subcreator-videos/actions/runs/45858470691). gemini-2.5-flash returns 404; check GEMINI_API_KEY/project access. Daily scan used web search instead.",
+   "text": "Gemini scan failed 30 days running (latest failed run 27 Nov: https://github.com/subcreatorpaid/subcreator-videos/actions/runs/46031172462). gemini-2.5-flash returns 404; check GEMINI_API_KEY/project access. Daily scan used web search instead (28 Nov: nothing new beyond the Aug YPP change).",
    "since": "2026-10-30"
   },
   {
@@ -117,7 +117,7 @@
   },
   {
    "id": "kit",
-   "status": "in review (since 25 Oct, 33 days: check email)",
+   "status": "in review (since 25 Oct, 34 days: check email)",
    "earns": "50% for 12 months"
   },
   {
@@ -134,7 +134,7 @@
  "website": {
   "url": "https://subcreatorpaid.com",
   "health": "ok",
-  "checked": "2026-11-26",
+  "checked": "2026-11-27",
   "pending_comments": 0,
   "subscribers": 1,
   "visits_since_launch": 76

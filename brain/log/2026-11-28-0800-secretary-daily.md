@@ -1,0 +1,1 @@
+2026-11-28 08:00 | secretary | daily run: guard ok 27 Nov, Gemini still failing, no new fact changes, status + dashboard refreshed | owner: approve the week (posts 1-9 overdue), fix Sunday task repo access, check Kit email
